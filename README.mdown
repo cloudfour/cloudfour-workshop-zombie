@@ -1,0 +1,11 @@
+# Workshop: Prepare for the Zombie Apocalypse
+
+## Jason Grigsby and Lyza Danger Gardner
+
+### January 18, 2012, Web Visions New York
+
+#### Organization
+
+* `code` : Code examples
+* `content` : Core content for workshop and presentation
+* `presentation` : Presentation slides (in HTML5) (transformation layer)
