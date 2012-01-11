@@ -73,18 +73,40 @@ a {
     clear: both; }
 
 #left {
+  zoom: 1;
   clear: left;
   float: left;
-  width: 550px; }
+  width: 550px;
+  background: transparent;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(50%, rgba(228, 61, 61, 0.1)), color-stop(100%, rgba(228, 61, 61, 0.2)));
+  background: -moz-linear-gradient(top, transparent 0%, rgba(228, 61, 61, 0.1) 50%, rgba(228, 61, 61, 0.2) 100%);
+  background: -o-linear-gradient(top, transparent 0%, rgba(228, 61, 61, 0.1) 50%, rgba(228, 61, 61, 0.2) 100%);
+  background: -ms-linear-gradient(top, transparent 0%, rgba(228, 61, 61, 0.1) 50%, rgba(228, 61, 61, 0.2) 100%);
+  background: linear-gradient(top, transparent 0%, rgba(228, 61, 61, 0.1) 50%, rgba(228, 61, 61, 0.2) 100%); }
+  #left:after {
+    content: ' ';
+    display: block;
+    height: 0;
+    clear: both; }
 
 #right {
+  padding-top: 260px;
+  background-image: url(../images/zombie-girl.png);
+  background-position: 20px -10px;
+  background-repeat: no-repeat;
   margin-left: 560px; }
   #right > div {
     background: rgba(255, 255, 255, 0.15);
-    padding: .5em; }
+    padding: .5em;
+    margin: 10px 0; }
 
 #footer {
   display: block;
   clear: both;
   text-align: center;
   margin: 0 auto; }
+
+.kill {
+  padding-left: 40px;
+  background-image: url(../images/bomb.png);
+  background-repeat: no-repeat; }
