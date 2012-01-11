@@ -1,0 +1,124 @@
+@mixin ghetto-clearfix {
+  &:after {
+    content:            ' ';
+    display:            block;
+    height:             0;
+    clear:              both;
+  }
+  zoom:                 1;
+}
+
+/* Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin:               0;
+  padding:              0;
+  border:               0;
+  vertical-align:       baseline;
+}
+
+/* Remedial HTML5 for older browser (by which I mean IE, mostly) */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+$color-background:#000;
+$color-body:#fff;
+$color-accent:rgb(228,61,61);
+$color-quiet:#ccc;
+$body-font:"Special Elite";
+$accent-font:"Nosifer";
+
+body {
+  background-color:     $color-background;
+  color:                $color-body;
+  font:                 100% $body-font;
+}
+
+h1, h2 {
+  font-family:          $accent-font, cursive;
+  color:                $color-accent;
+  text-shadow:          3px 3px 5px #300;
+}
+
+h1 {
+  font-size:            2.5em;
+}
+
+
+p {
+  margin:               1em 0;
+  line-height:          1.25em;
+}
+
+a {
+  color:                $color-accent;
+  text-decoration:      none;
+}
+
+.red {
+  color:                $color-accent;
+}
+
+.grey {
+  color:                $color-quiet;
+}
+
+.news-item {
+  margin:               15px;
+  border-bottom:        1px dashed $color-accent;
+  .detail-data {
+    font-size:          .95em;
+    margin:             5px;
+  }
+}
+
+#header {                                       // TODO: This should be nav ul
+  display:              block;
+  clear:                both;
+  
+  li {
+    display:            block;
+    float:              left;
+    a {
+      display:          block;
+      background:       $color-accent;
+      padding:          .5em;
+      margin:           .5em;
+      color:            $color-body;
+      text-decoration:  none;
+    }
+  }
+}
+
+#page {                                         // TODO: This should really be body > div or somesuch
+  width:                920px;
+  margin:               0 auto;
+}
+
+#container {
+  @include              ghetto-clearfix;
+  margin:               10px;
+  width:                900px;
+  clear:                both;
+}
+
+#left {
+  clear:                left;
+  float:                left;
+  width:                550px;
+}
+
+#right {
+  margin-left:          560px;
+  & > div {
+    background:         rgba(255,255,255,.15);
+    padding:            .5em;
+  }
+}
+
+#footer {
+  display:              block;
+  clear:                both;
+  text-align:           center;
+  margin:               0 auto;
+}

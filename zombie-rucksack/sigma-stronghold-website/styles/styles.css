@@ -1,0 +1,90 @@
+/* Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline; }
+
+/* Remedial HTML5 for older browser (by which I mean IE, mostly) */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  background-color: black;
+  color: white;
+  font: 100% "Special Elite"; }
+
+h1, h2 {
+  font-family: "Nosifer", cursive;
+  color: #e43d3d;
+  text-shadow: 3px 3px 5px #300; }
+
+h1 {
+  font-size: 2.5em; }
+
+p {
+  margin: 1em 0;
+  line-height: 1.25em; }
+
+a {
+  color: #e43d3d;
+  text-decoration: none; }
+
+.red {
+  color: #e43d3d; }
+
+.grey {
+  color: #cccccc; }
+
+.news-item {
+  margin: 15px;
+  border-bottom: 1px dashed #e43d3d; }
+  .news-item .detail-data {
+    font-size: .95em;
+    margin: 5px; }
+
+#header {
+  display: block;
+  clear: both; }
+  #header li {
+    display: block;
+    float: left; }
+    #header li a {
+      display: block;
+      background: #e43d3d;
+      padding: .5em;
+      margin: .5em;
+      color: white;
+      text-decoration: none; }
+
+#page {
+  width: 920px;
+  margin: 0 auto; }
+
+#container {
+  zoom: 1;
+  margin: 10px;
+  width: 900px;
+  clear: both; }
+  #container:after {
+    content: ' ';
+    display: block;
+    height: 0;
+    clear: both; }
+
+#left {
+  clear: left;
+  float: left;
+  width: 550px; }
+
+#right {
+  margin-left: 560px; }
+  #right > div {
+    background: rgba(255, 255, 255, 0.15);
+    padding: .5em; }
+
+#footer {
+  display: block;
+  clear: both;
+  text-align: center;
+  margin: 0 auto; }
