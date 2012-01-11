@@ -1,0 +1,23 @@
+@mixin ghetto-clearfix {
+  &:after {
+    content:            ' ';
+    display:            block;
+    height:             0;
+    clear:              both;
+  }
+  zoom:                 1;
+}
+
+@font-face {
+  font-family: 'Nosifer';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nosifer'), local('Nosifer-Regular'), url('http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff') format('woff');
+}
+
+$color-background:#000;
+$color-body:#fff;
+$color-accent:rgb(228,61,61);
+$color-quiet:#ccc;
+$body-font:"Special Elite";
+$accent-font:"Nosifer";

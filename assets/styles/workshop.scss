@@ -1,0 +1,16 @@
+@import 'common';
+
+body {
+  background-color:     $color-background;
+  color:                $color-body;
+}
+
+h1 {
+  font-family:          $accent-font;
+  color:                $color-accent;
+  text-shadow:          3px 3px 5px #300;
+}
+
+a, a:visited {
+  color:                $color-accent;
+}

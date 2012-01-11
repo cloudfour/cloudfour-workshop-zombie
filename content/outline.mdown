@@ -9,8 +9,7 @@
 
 #### Outline and overview: What you'll learn as a new recruit
 
-Assess the Threat
------------------
+# Assess the Threat
 
 > The zombie gadget army is marching over yon hill.
 
@@ -20,10 +19,9 @@ A high-level overview of the coming zombie apocalypse, and why you'd better star
 
 > Disruption will only accelerate. The quantity and diversity of connected devices—
 > many of which we haven't imagined yet—will explode, as will the quantity and
-> diversity of the people around the world who use them.
+> diversity of the people around the world who use them. -- [FutureFriend.ly][futurefriendly]
 
-A cleansing boot camp to prepare your body and soul
----------------------------------------------------
+# A cleansing boot camp to prepare your body and soul
 
 > You got fat, Gomer Pyle.
 
@@ -43,8 +41,7 @@ Establish and maintain good web hygiene habits. We've become lazy, our sites blo
 * Server-side optimization quickies
 * Content-/mobile-first thinking
 
-Release the hounds
-------------------
+# Release the hounds
 
 > You already have some blunt weapons. They just need to be sharpened and oiled.
 
@@ -62,13 +59,12 @@ Release the hounds
 * Mobile-first responsive web design.
 * Reporting to your superiors (bearing the message of flexible layouts).
 
-Bloodier uprisings
-------------------
+# Bloodier uprisings
 
 > These zombies aren't dying cleanly.
 
 > Our existing standards, workflows, and infrastructure won't hold up. Today's onslaught
-> of devices is already pushing them to the breaking point. They can't withstand what's ahead.
+> of devices is already pushing them to the breaking point. They can't withstand what's ahead. -- [FutureFriend.ly][futurefriendly]
 
 ## Overview
 
@@ -80,14 +76,13 @@ Running into the limits of what we can do easily, in the client, or reliably at 
 * The problem with images.
 * The problem with content ordering.
 
-A honed killing machine
------------------------
+# A honed killing machine
 
 > Bad-ass, Special-ops kind of stuff to really show 'em who's the boss.
 
 ## Overview
 
-Device APIs and cache manifests.
+Brandishing hardcore device APIs, sniffing for superpowers and caching the hell out of stuff will leave 'em quaking in their boots. If zombies wear boots. Which they might not.
 
 ## Topics
 
@@ -96,8 +91,7 @@ Device APIs and cache manifests.
 * Feature detection.
 
 
-A band of brothers
-------------------
+# A band of brothers
 
 > Might not need to re-invent the same zombie-blasting cannon over and over again.
 
@@ -111,14 +105,13 @@ Getting a leg up by using tools and frameworks out there.
 * Polyfills.
 
 
-Know thy enemy
---------------
+# Know thy enemy
 
 > It walks like a duck, it talks like a duck. It's actually a zombie. Shoot it anyway.
 
 ## Overview
 
-Server-side device detection, grouping and content adaptation. Learn to spot those wayward bad guys.
+Server-side device detection, grouping and content adaptation. Learn to spot those wayward bad guys and know in advance what they're capable of.
 
 ## Topics
 
@@ -129,30 +122,28 @@ Server-side device detection, grouping and content adaptation. Learn to spot tho
 * Content adaptation.
 
 
-Desperate times call for desperate measures
--------------------------------------------
+# Desperate times call for desperate measures
 
 > Don't be afraid to make it up as you go along.
 
 > Proprietary solutions will dominate at first. Innovation necessarily precedes
 > standardization. Technologists will scramble to these solutions before realizing
-> (yet again) that a standardized platform is needed to maintain sanity.
+> (yet again) that a standardized platform is needed to maintain sanity. -- [FutureFriend.ly][futurefriendly]
 
 ## Overview
 
-Clever hacks for maximum kill power. Other ways to skin a zombie.
+Clever hacks for maximum kill power: other ways to skin a zombie.
 
 ## Topics
 
 * Unusual techniques.
 * Hybrid web-native apps.
 
-When the authorities fail to react with due speed
--------------------------------------------------
+# When the authorities fail to react with due speed
 
 > The standards process will be painfully slow. We will struggle with
 > (and eventually agree upon) appropriate standards. During this period,
-> the web will fall even further behind proprietary solutions.
+> the web will fall even further behind proprietary solutions. -- [FutureFriend.ly][futurefriendly]
 
 ## Overview
 
@@ -164,4 +155,4 @@ The standards we need aren't there yet. Looking to the future.
 > for their survival. -- [Wikipedia][wiki-apocalypse]
 
 [wiki-apocalypse]: http://en.wikipedia.org/wiki/Zombie_apocalypse "Wikipedia article on Zombie Apocalypse"
-
+[futurefriendly]: http://futurefriend.ly "Future Friendly"
