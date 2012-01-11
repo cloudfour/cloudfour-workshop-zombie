@@ -1,35 +1,162 @@
 % Prepare for the Zombie Apocalypse: WebVisions NYC
 % Jason Grigsby and Lyza Danger Gardner
 
-# Prepare for the Zombie Apocalypse
+# Apocalypse 101: Zombie Preparedness
 
 ## Jason Grigsby and Lyza Danger Gardner
 
 ### January 18, 2012, Web Visions NYC
 
-# Introduction and Agenda
+Assess the Threat
+-----------------
 
-1. Responsive Web Design (RWD)
-2. Mobile First Responsive Web Design
+> The zombie gadget army is marching over yon hill.
 
-# Responsive Web Design
+## Abstract
 
-In this case, there is no "desktop site."
+A high-level overview of the coming zombie apocalypse, and why you'd better start arming yourself.
 
-Aliquam lectus orci, adipiscing et, sodales ac, feugiat non, lacus. Ut dictum velit nec est. Quisque posuere, purus sit amet malesuada blandit, sapien sapien auctor arcu, sed pulvinar felis mi sollicitudin tortor. Maecenas volutpat, nisl et dignissim pharetra, urna lectus ultrices est, vel pretium pede turpis id velit. Aliquam sagittis magna in felis egestas rutrum. Proin wisi libero, vestibulum eget, pulvinar nec, suscipit ut, mi. Integer in arcu ultricies leo dapibus ultricies. Sed rhoncus lobortis dolor. Suspendisse dolor. Mauris sapien velit, pulvinar non, rutrum non, consectetuer eget, metus. Morbi tincidunt lorem at urna. Etiam porta. Ut mauris. Phasellus tristique rhoncus magna. Nam tincidunt consequat urna. Sed tempor.
+> Disruption will only accelerate. The quantity and diversity of connected devices—
+> many of which we haven't imagined yet—will explode, as will the quantity and
+> diversity of the people around the world who use them.
 
-# Mobile First Responsive Web Design
+A cleansing boot camp to prepare your body and soul
+---------------------------------------------------
 
-Aliquam lectus orci, adipiscing et, sodales ac, feugiat non, lacus. Ut dictum velit nec est. Quisque posuere, purus sit amet malesuada blandit, sapien sapien auctor arcu, sed pulvinar felis mi sollicitudin tortor. Maecenas volutpat, nisl et dignissim pharetra, urna lectus ultrices est, vel pretium pede turpis id velit. Aliquam sagittis magna in felis egestas rutrum. Proin wisi libero, vestibulum eget, pulvinar nec, suscipit ut, mi. Integer in arcu ultricies leo dapibus ultricies. Sed rhoncus lobortis dolor. Suspendisse dolor. Mauris sapien velit, pulvinar non, rutrum non, consectetuer eget, metus. Morbi tincidunt lorem at urna. Etiam porta. Ut mauris. Phasellus tristique rhoncus magna. Nam tincidunt consequat urna. Sed tempor.
+> You got fat, Gomer Pyle.
 
-# Device Detection
+## Abstract
 
-Aliquam lectus orci, adipiscing et, sodales ac, feugiat non, lacus. Ut dictum velit nec est. Quisque posuere, purus sit amet malesuada blandit, sapien sapien auctor arcu, sed pulvinar felis mi sollicitudin tortor. Maecenas volutpat, nisl et dignissim pharetra, urna lectus ultrices est, vel pretium pede turpis id velit. Aliquam sagittis magna in felis egestas rutrum. Proin wisi libero, vestibulum eget, pulvinar nec, suscipit ut, mi. Integer in arcu ultricies leo dapibus ultricies. Sed rhoncus lobortis dolor. Suspendisse dolor. Mauris sapien velit, pulvinar non, rutrum non, consectetuer eget, metus. Morbi tincidunt lorem at urna. Etiam porta. Ut mauris. Phasellus tristique rhoncus magna. Nam tincidunt consequat urna. Sed tempor.
+Establish and maintain good web hygiene habits. We've become lazy, our sites bloated and stupid. Those things you could get away with back at the farm will get you killed straightaway in zombie gadget combat. Time to shape up and ship out.
 
-# jQuery Mobile
+> Initial contacts with zombies are extremely traumatic, causing shock, panic, disbelief and possibly denial, 
+> hampering survivors' ability to deal with hostile encounters.
+> -- [Wikipedia][wiki-apocalypse]
 
-Aliquam lectus orci, adipiscing et, sodales ac, feugiat non, lacus. Ut dictum velit nec est. Quisque posuere, purus sit amet malesuada blandit, sapien sapien auctor arcu, sed pulvinar felis mi sollicitudin tortor. Maecenas volutpat, nisl et dignissim pharetra, urna lectus ultrices est, vel pretium pede turpis id velit. Aliquam sagittis magna in felis egestas rutrum. Proin wisi libero, vestibulum eget, pulvinar nec, suscipit ut, mi. Integer in arcu ultricies leo dapibus ultricies. Sed rhoncus lobortis dolor. Suspendisse dolor. Mauris sapien velit, pulvinar non, rutrum non, consectetuer eget, metus. Morbi tincidunt lorem at urna. Etiam porta. Ut mauris. Phasellus tristique rhoncus magna. Nam tincidunt consequat urna. Sed tempor.
+## Topics
 
-# PhoneGap Build
+* Fixing broken sites (validation, etc.)
+* Cutting the fat (optimizing images, reducing div-itis)
+* Removing the stupid (extraneous crap on page; non-semantic markup)
+* Server-side optimization quickies
+* Content-/mobile-first thinking
 
-Aliquam lectus orci, adipiscing et, sodales ac, feugiat non, lacus. Ut dictum velit nec est. Quisque posuere, purus sit amet malesuada blandit, sapien sapien auctor arcu, sed pulvinar felis mi sollicitudin tortor. Maecenas volutpat, nisl et dignissim pharetra, urna lectus ultrices est, vel pretium pede turpis id velit. Aliquam sagittis magna in felis egestas rutrum. Proin wisi libero, vestibulum eget, pulvinar nec, suscipit ut, mi. Integer in arcu ultricies leo dapibus ultricies. Sed rhoncus lobortis dolor. Suspendisse dolor. Mauris sapien velit, pulvinar non, rutrum non, consectetuer eget, metus. Morbi tincidunt lorem at urna. Etiam porta. Ut mauris. Phasellus tristique rhoncus magna. Nam tincidunt consequat urna. Sed tempor.
+## Exercises
+
+* Building a bug-out bag (with performance tools like YSlow, etc.)
+* Finding the *broken* pieces of a web page (validation)
+* Finding the *bloated* pieces of a web page, fixing (optimization)
+* Finding the *stupid* pieces of a web page (content first)
+* Demo: server-side items
+
+Release the hounds
+------------------
+
+> You already have some blunt weapons. They just need to be sharpened and oiled.
+
+## Abstract
+
+> "While aggressive quarantine may contain the epidemic, or a cure may lead to coexistence
+> of humans and zombies, the most effective way to contain the rise of the undead is to
+> hit hard and hit often." 
+> -- Philip Munz, Ioan Hudea, Joe Imad, and Robert J. Smith? [sic], *When Zombies Attack!* (2009)
+
+## Topics
+
+* Releasing non-existent control (quarantine doesn't work).
+* Responsive web design.
+* Mobile-first responsive web design.
+* Reporting to your superiors (bearing the message of flexible layouts).
+
+## Exercises
+
+* Instead of starting with bad (rigid) code, maybe start with a design. Implement it.
+* Kill board. Floated zombies. 
+* Wait a minute. Design for mobile first. e.g. width 100% as default.
+
+Bloodier uprisings
+------------------
+
+> These zombies aren't dying cleanly.
+
+> Our existing standards, workflows, and infrastructure won't hold up. Today's onslaught
+> of devices is already pushing them to the breaking point. They can't withstand what's ahead.
+
+## Abstract
+
+Running into the limits of what we can do easily, in the client, or reliably at all. A get-real look at the struggles we face.
+
+## Stuff
+
+* The problem with media queries.
+* The problem with images.
+* The problem with content ordering.
+
+A band of brothers
+------------------
+
+> Might not need to re-invent the same zombie-blasting cannon over and over again.
+
+## Abstract
+
+Getting a leg up by using tools and frameworks out there.
+
+## Stuff
+
+* Frameworks: jQuery Mobile.
+* Polyfills.
+
+
+Know thy enemy
+--------------
+
+> It walks like a duck, it talks like a duck. It's actually a zombie. Shoot it anyway.
+
+## Abstract
+
+Server-side device detection, grouping and content adaptation.
+
+## Stuff
+
+* Device detection.
+* Device databases.
+* Device features.
+* Device classes.
+
+
+Desperate times call for desperate measures
+-------------------------------------------
+
+> Don't be afraid to make shit up.
+
+> Proprietary solutions will dominate at first. Innovation necessarily precedes
+> standardization. Technologists will scramble to these solutions before realizing
+> (yet again) that a standardized platform is needed to maintain sanity.
+
+## Abstract
+
+Clever hacks for maximum kill power. Other ways to skin a zombie.
+
+## Stuff
+
+* Unusual techniques.
+* Hybrid web-native apps.
+
+When the authorities fail to react with due speed
+-------------------------------------------------
+
+> The standards process will be painfully slow. We will struggle with
+> (and eventually agree upon) appropriate standards. During this period,
+> the web will fall even further behind proprietary solutions.
+
+## Abstract
+
+The standards we need aren't there yet. Looking to the future.
+
+> The response of authorities to the threat is slower than its rate of growth, giving the
+> zombie plague time to expand beyond containment. This results in the collapse of the given
+> society. Zombies take full control while small groups of the living must fight
+> for their survival. -- [Wikipedia][wiki-apocalypse]
+
+[wiki-apocalypse]: http://en.wikipedia.org/wiki/Zombie_apocalypse "Wikipedia article on Zombie Apocalypse"
+
