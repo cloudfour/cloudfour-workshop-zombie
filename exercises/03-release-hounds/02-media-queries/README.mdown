@@ -1,0 +1,6 @@
+# Accomplished Here
+
+* Media query for narrow screens (breakpoint 600px)
+** Single column
+** Nav changes
+** Font and padding adjustments

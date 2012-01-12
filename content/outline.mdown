@@ -59,6 +59,32 @@ Establish and maintain good web hygiene habits. We've become lazy, our sites blo
 * Mobile-first responsive web design.
 * Reporting to your superiors (bearing the message of flexible layouts).
 
+# A honed killing machine
+
+> Bad-ass, Special-ops kind of stuff to really show 'em who's the boss.
+
+## Overview
+
+Brandishing hardcore device APIs, sniffing for superpowers and caching the hell out of stuff will leave 'em quaking in their boots. If zombies wear boots. Which they might not.
+
+## Topics
+
+* Cache manifests.
+* Device APIs.
+* Feature detection.
+
+# A band of brothers
+
+> Might not need to re-invent the same zombie-blasting cannon over and over again.
+
+## Overview
+
+Getting a leg up by using tools and frameworks out there.
+
+## Topics
+
+* Frameworks: e.g. jQuery Mobile.
+
 # Bloodier uprisings
 
 > These zombies aren't dying cleanly.
@@ -75,33 +101,6 @@ Running into the limits of what we can do easily, in the client, or reliably at 
 * The problem with media queries.
 * The problem with images.
 * The problem with content ordering.
-
-# A honed killing machine
-
-> Bad-ass, Special-ops kind of stuff to really show 'em who's the boss.
-
-## Overview
-
-Brandishing hardcore device APIs, sniffing for superpowers and caching the hell out of stuff will leave 'em quaking in their boots. If zombies wear boots. Which they might not.
-
-## Topics
-
-* Cache manifests.
-* Device APIs.
-* Feature detection.
-
-
-# A band of brothers
-
-> Might not need to re-invent the same zombie-blasting cannon over and over again.
-
-## Overview
-
-Getting a leg up by using tools and frameworks out there.
-
-## Topics
-
-* Frameworks: e.g. jQuery Mobile.
 * Polyfills.
 
 

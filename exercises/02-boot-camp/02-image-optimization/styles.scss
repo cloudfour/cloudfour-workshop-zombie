@@ -51,7 +51,7 @@ body {
   background-color:     $color-background-dark;
   color:                $color-body;
   font:                 100% $body-font;
-  background-image:     url(../images/moon.jpg);
+  background-image:     url(images/moon.jpg);
   background-repeat:    no-repeat;
   
 }
@@ -69,7 +69,7 @@ h1 {
 h2 {
   line-height:          1.25em;
   font-size:            1.25em;
-  background:           url(../images/blip.jpg) no-repeat 0 2px;
+  background:           url(images/blip.png) no-repeat 0 2px;
   padding-left:         25px;
   margin:               0 0 .25em 0;
 }
@@ -103,7 +103,7 @@ a {
 
 .kill {
   padding-left:         40px;
-  background-image:     url(../images/bomb.png);
+  background-image:     url(images/bomb.png);
   background-repeat:    no-repeat;
 }
 
@@ -159,10 +159,6 @@ a {
 }
 
 #right {
-  padding-top:          260px;
-  background-image:     url(../images/zombie-girl.png);
-  background-position:  40px 0px;
-  background-repeat:    no-repeat;
   margin-left:          560px;
   & > div {
     padding:            .5em;

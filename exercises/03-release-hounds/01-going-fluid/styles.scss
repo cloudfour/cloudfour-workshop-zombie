@@ -1,0 +1,180 @@
+@mixin ghetto-clearfix {
+  &:after {
+    content:            ' ';
+    display:            block;
+    height:             0;
+    clear:              both;
+  }
+  zoom:                 1;
+}
+
+@mixin two-linear-gradient($color1, $color2, $stop1: 0%, $stop2: 100%) {
+  background: $color1; // Old browsers
+  background: -webkit-gradient(linear, left top, left bottom, color-stop($stop1, $color1), color-stop($stop2, $color2)); // Webkit
+  background: -moz-linear-gradient(top, $color1 $stop1, $color2 $stop2); // FF 3.6+
+  background: -o-linear-gradient(top, $color1 $stop1, $color2 $stop2); // Opera 11.10+
+  background: -ms-linear-gradient(top, $color1 $stop1, $color2 $stop2); // IE10+
+  background: linear-gradient(top, $color1 $stop1, $color2 $stop2); // W3C
+}
+
+@mixin three-linear-gradient($color1, $color2, $color3, $stop1: 0%, $stop2: 50%, $stop3: 100%) {
+    background: $color1; // Old browsers
+    background: -webkit-gradient(linear, left top, left bottom, color-stop($stop1, $color1), color-stop($stop2, $color2), color-stop($stop3, $color3));
+    background: -moz-linear-gradient(top, $color1 $stop1, $color2 $stop2, $color3 $stop3); // FF 3.6+
+    background: -o-linear-gradient(top, $color1 $stop1, $color2 $stop2, $color3 $stop3); // Opera 11.10+
+    background: -ms-linear-gradient(top, $color1 $stop1, $color2 $stop2, $color3 $stop3); // IE10+
+    background: linear-gradient(top, $color1 $stop1, $color2 $stop2, $color3 $stop3); // W3C
+}
+
+/* Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin:               0;
+  padding:              0;
+  border:               0;
+  vertical-align:       baseline;
+}
+
+/* Remedial HTML5 for older browser (by which I mean IE, mostly) */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+$color-background:#222;
+$color-background-dark:#000;
+$color-body:#fff;
+$color-accent:rgb(228,61,61);
+$color-quiet:#ccc;
+$body-font:"Special Elite";
+$accent-font:"Nosifer";
+
+body {
+  background-color:     $color-background-dark;
+  color:                $color-body;
+  font:                 100% $body-font;
+  background-image:     url(images/moon.jpg);
+  background-repeat:    no-repeat;
+  
+}
+
+h1, h2 {
+  font-family:          $accent-font, cursive;
+  color:                $color-accent;
+  text-shadow:          3px 3px 5px #300;
+}
+
+h1 {
+  font-size:            2.5em;
+}
+
+h2 {
+  line-height:          1.25em;
+  font-size:            1.25em;
+  background:           url(images/blip.png) no-repeat 0 2px;
+  padding-left:         25px;
+  margin:               0 0 .25em 0;
+}
+
+p {
+  margin:               1em 0;
+  line-height:          1.25em;
+}
+
+a {
+  color:                $color-accent;
+  text-decoration:      none;
+}
+
+body > div {
+  max-width:            920px;
+  margin:               0 auto;
+  border-color:         rgba(255,255,255,.2);
+  border-width:         0px 7px;
+}
+
+small {
+  color:                $color-quiet;
+  font-size:            1em;
+  display:              block;
+}
+
+.news-item {
+  margin:               15px;
+  border-bottom:        1px dashed $color-accent;
+  h3 {
+    em {
+      color:            $color-accent;
+      font-style:       normal;
+    }
+  }
+  p {
+    font-size:          .95em;
+    margin:             .5em 0;
+  }
+}
+
+.kill {
+  padding-left:         40px;
+  background-image:     url(images/bomb.png);
+  background-repeat:    no-repeat;
+}
+
+#header {
+  background-color:     rgba(0,0,0,.4);
+  display:              block;
+  @include              ghetto-clearfix;
+  padding:              1em 0 0 1em;
+  clear:                both;
+  li {
+    display:            block;
+    float:              left;
+    a {
+      display:          block;
+      background:       $color-accent;
+      padding:          .5em;
+      margin:           .5em .5em 0 .5em;
+      color:            $color-body;
+      text-decoration:  none;
+    }
+  }
+}
+
+#container {
+  @include              ghetto-clearfix;
+  background:           $color-background-dark;
+  padding:              .625em;
+  max-width:            900px;
+  clear:                both;
+}
+
+#main {
+  @include              ghetto-clearfix;
+  margin-left:          1.5%;
+  clear:                left;
+  float:                left;
+  width:                60%;
+  @include              three-linear-gradient(transparent, rgba($color-accent, .1), rgba($color-accent, .2));
+  border:               6px solid rgba($color-body, .35);
+  border-width:         0 0 6px 0;
+}
+
+#moarnews {
+  text-align:           right;
+  padding:              1em;
+}
+
+#sidebar {
+  margin-left:          63.5%;
+  & > div {
+    padding:            .5em;
+
+  }
+}
+footer {
+  display:              block;
+  clear:                both;
+  text-align:           center;
+  padding:              1em;
+  @include              two-linear-gradient(rgba($color-accent, .2), transparent);
+  border:               1px solid rgba($color-body, .2);
+  border-width:         1px 0 0 0;
+}

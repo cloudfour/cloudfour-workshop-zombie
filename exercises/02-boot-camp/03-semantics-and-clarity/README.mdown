@@ -1,0 +1,19 @@
+# Accomplished here
+
+## HTML5 Element changes
+
+* `div#navigation` changed to `<nav>` element.
+* `#page` id removed from `<div>`; used parent-child selector instead.
+* Convert `#footer` to `<footer>` element.
+* Reduce structural complexity in news items.
+* Replaced `span.grey` with `<small>`
+* `span.black` was pointless; no style for it. Also some other useless spans in the news divs.
+* Instead of `.red`, used an `<em>` element, which carries semantic meaning.
+* Removed extra internal `<div>`s from sidebar.
+* Minifying CSS
+
+## Taking it to the next level
+
+* Address as hCard
+* `<article>` instead of `<div>` for news items.
+* `<section>` instead of other `<div>s`

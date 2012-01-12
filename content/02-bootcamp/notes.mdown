@@ -1,0 +1,1 @@
+Minifying content using <http://www.refresh-sf.com/yui/>. I used the SASS compressed style. Maybe walk through it together.

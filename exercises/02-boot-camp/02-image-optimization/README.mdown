@@ -1,0 +1,11 @@
+# Accomplished here
+
+1. Concatenated Google font stylesheets; removed unused stylesheets
+2. Removed link to non-existent home.css
+3. Removed ugly, scaled and hideous girl image.
+4. Converted address to text
+5. moon.jpg : Go to <http://smush.it> and compress; replace.
+6. Fix 404 in CSS (blip.png)
+7. Add a favicon.ico and the related `<link>` tag.
+8. Used contents of .htaccess to bring up score on lyzadanger.com/zombie
+9. Created a favicon.ico

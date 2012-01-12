@@ -1,0 +1,4 @@
+# Accomplished here
+
+1. Fix invalid code
+2. Remove weather widget: It's Flash, it's big, and it creates some validation problems
