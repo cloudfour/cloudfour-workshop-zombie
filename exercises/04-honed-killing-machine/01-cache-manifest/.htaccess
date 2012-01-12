@@ -1,3 +1,5 @@
+AddType text/cache-manifest .appcache
+
 FileETag none
 
 AddOutputFilterByType DEFLATE text/css
