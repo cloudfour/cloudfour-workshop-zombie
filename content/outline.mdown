@@ -73,17 +73,6 @@ Brandishing hardcore device APIs, sniffing for superpowers and caching the hell 
 * Device APIs.
 * Feature detection.
 
-# A band of brothers
-
-> Might not need to re-invent the same zombie-blasting cannon over and over again.
-
-## Overview
-
-Getting a leg up by using tools and frameworks out there.
-
-## Topics
-
-* Frameworks: e.g. jQuery Mobile.
 
 # Bloodier uprisings
 
@@ -103,22 +92,17 @@ Running into the limits of what we can do easily, in the client, or reliably at 
 * The problem with content ordering.
 * Polyfills.
 
+# A band of brothers
 
-# Know thy enemy
-
-> It walks like a duck, it talks like a duck. It's actually a zombie. Shoot it anyway.
+> Might not need to re-invent the same zombie-blasting cannon over and over again.
 
 ## Overview
 
-Server-side device detection, grouping and content adaptation. Learn to spot those wayward bad guys and know in advance what they're capable of.
+Getting a leg up by using tools and frameworks out there.
 
 ## Topics
 
-* Device detection.
-* Device databases.
-* Device features.
-* Device classes.
-* Content adaptation.
+* Frameworks: e.g. jQuery Mobile.
 
 
 # Desperate times call for desperate measures
@@ -137,6 +121,24 @@ Clever hacks for maximum kill power: other ways to skin a zombie.
 
 * Unusual techniques.
 * Hybrid web-native apps.
+
+
+# Know thy enemy
+
+> It walks like a duck, it talks like a duck. It's actually a zombie. Shoot it anyway.
+
+## Overview
+
+Server-side device detection, grouping and content adaptation. Learn to spot those wayward bad guys and know in advance what they're capable of.
+
+## Topics
+
+* Device detection.
+* Device databases.
+* Device features.
+* Device classes.
+* Content adaptation.
+
 
 # When the authorities fail to react with due speed
 
