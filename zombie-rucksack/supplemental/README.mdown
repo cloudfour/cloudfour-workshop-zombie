@@ -1,0 +1,3 @@
+# Supplemental!
+
+The contents of this directory are supplemental items that are useful for the exercises we'll go through in the workshop together. Some of these things you'll *definitely* need; some are only needed if you have trouble getting something to work quite right or don't feel like typing quite so much!

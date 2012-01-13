@@ -1,0 +1,3 @@
+# Survival Tools!
+
+The contents of this directory are intended to serve as templates and aids to your wild journey through the zombie-infested mobile web world.
