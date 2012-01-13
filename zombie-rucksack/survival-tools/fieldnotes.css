@@ -28,9 +28,15 @@ body {
   font-family: "Special Elite", serif;
   line-height: 1.4em; }
 
-h1, h2 {
+h1 {
   font-family: "Nosifer", cursive;
   color: #e43d3d; }
+
+h2 {
+  color: #e43d3d;
+  border-width: 0 0 1px 0;
+  border-style: dashed;
+  border-color: rgba(85, 85, 85, 0.65); }
 
 pre, code {
   border: 1px solid #e43d3d;
@@ -43,3 +49,6 @@ pre {
 
 pre code {
   border-width: 0; }
+
+body > section > section {
+  background-color: #fffeee; }
