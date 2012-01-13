@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="fieldnotes.css" />
+</head>
+<body>
+<section id="boot-camp">
+<h1>2. Boot Camp</h1>
+<section id="sigma-stronghold-web-site">
+<h2>Sigma Stronghold Web Site</h2>
+<p>You'll find the Sigma Stronghold web site landing page in <code>zombie-rucksack/sigma-stronghold-website/index.html</code>.</p>
+</section>
+<section id="weapons">
+<h2>Weapons</h2>
+<ul>
+<li><a href="http://developer.yahoo.com/yslow/">ySlow</a></li>
+<li><a href="http://validator.w3.org/">W3C validator</a></li>
+<li><a href="http://smush.it">Smush.it</a></li>
+<li><a href="http://spriteme.org/">SpriteMe</a></li>
+</ul>
+</section>
+<section id="using-the-w3c-validator">
+<h2>Using the W3C Validator</h2>
+<ol type="1">
+<li>Go to the <a href="http://validator.w3.org/" title="W3C Validator">W3C validator</a>.</li>
+<li>You can either use the <em>Validate by File Upload</em> tab (and upload <code>index.html</code>) or you can use the <em>Validate by Direct Input</em> tab and copy-and-paste the source of the page (using the <em>View Source...</em> tool in your browser).</li>
+</ol>
+</section>
+<section id="using-yslow">
+<h2>Using ySlow</h2>
+<p>TODO: Screen shot of icon</p>
+<ol type="1">
+<li>View the <code>index.html</code> file in your modern web browser (suggest either Chrome or Firefox for now).</li>
+<li>Activate the ySlow plugin/extension. Usually this is done by clicking a little icon.</li>
+<li>Click the <em>run test</em> button to start running tests.</li>
+<li>To see how big the whole page is, check out the <em>Statistics</em> tab.</li>
+<li>For individual details about each resource, try the <em>Components</em> tab.</li>
+</ol>
+</section>
+<section id="exercise-step-1">
+<h2>Exercise Step 1</h2>
+<section id="fixing-whats-broken-and-getting-rid-of-the-weather">
+<h3>Fixing what's broken and getting rid of the weather</h3>
+<ol type="1">
+<li>Find and fix the broken nested <code>&lt;span&gt;</code> elements in index.html. Use the <a href="http://validator.w3.org/" title="W3C Validator">W3C validator</a> as your guide.</li>
+<li>Remove the entire weather widget (<code>div#weather</code>).</li>
+<li>Revalidate/repeat until you see the green happy color.</li>
+</ol>
+</section>
+</section>
+<section id="exercise-step-2">
+<h2>Exercise Step 2</h2>
+<section id="the-missing-bits">
+<h3>The missing bits</h3>
+<ol type="1">
+<li>Reduce the Google fonts stylesheets to a single <code>&lt;link&gt;</code> tag.
+<ol type="a">
+<li>The two fonts actually being used on the page are <em>Nosifer</em> (drippy headlines) and <em>Special Elite</em> (body).</li>
+<li>Remove the <code>&lt;link&gt;</code> tags for fonts that aren't being used at all.</li>
+<li>Concatenate the remaining two fonts into a single <code>&lt;link&gt;</code> tag using this format: <code>&lt;link href=&quot;http://fonts.googleapis.com/css?family=Cool+Font|Squiggly&quot; rel=&quot;stylesheet&quot;&gt;</code></li>
+</ol></li>
+<li>Remove the <code>&lt;link&gt;</code> tag that points to <code>home.css</code>.</li>
+<li>Update the CSS rule for <code>h2</code>. Update the filename from <code>blip.jpg</code> to <code>blip.png</code>.</li>
+<li>Add a favicon.
+<ol type="a">
+<li>Find <code>favicon.ico</code> in the <code>supplemental/sigma-stronghold-website</code> folder inside of your rucksack.</li>
+<li>Copy that into the <code>sigma-stronghold-website</code> directory (at the top level of your rucksack).</li>
+<li>Add this code just after the Google fonts stylesheet <code>&lt;link&gt;</code>s: <code>&lt;link rel=&quot;shortcut icon&quot; href=&quot;favicon.ico&quot; /&gt;</code></li>
+</ol></li>
+</ol>
+</section>
+</section>
+<section id="exercise-step-3">
+<h2>Exercise Step 3</h2>
+<section id="deflabbing-some-images">
+<h3>Deflabbing some images</h3>
+<ol type="1">
+<li>Remove the <code>zombie-girl</code> image and its containing <code>&lt;div&gt;</code> entirely (<code>div#nozombies</code>).</li>
+<li><p>Replace the image for contact-HQ with the following HTML chunk:</p>
+<pre><code>&lt;h2&gt;Contact HQ&lt;/h2&gt;
+&lt;p&gt;Abandoned Post Office&lt;br /&gt;
+23 Daryl Dixon Road&lt;br /&gt;
+Manhattan Offset Zone&lt;br /&gt;
+&lt;a href=&quot;mailto:help@sigma-stronghold.com&quot;&gt;help@sigma-stronghold.com&lt;/a&gt;&lt;br /&gt;
+CB Channel 32.6&lt;/p&gt;
+</code></pre></li>
+<li><p>Deflate the moon image using the smush.it tool.</p>
+<ol type="a">
+<li>Go to <a href="http://smush.it">smush.it</a></li>
+<li>Use the <em>Uploader</em> tab.</li>
+<li>Upload the image <code>images/moon.jpg</code> (in your rucksack, in the <code>sigma-stronghold-website</code> directory).</li>
+<li>Replace <code>images/moon.jpg</code> with the smushed version.</li>
+</ol></li>
+</ol>
+</section>
+</section>
+</section>
+</body>
+</html>

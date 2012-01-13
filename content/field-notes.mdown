@@ -1,0 +1,75 @@
+# 2. Boot Camp
+
+## Sigma Stronghold Web Site
+
+You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma-stronghold-website/index.html`.
+
+## Weapons
+
+* [ySlow](http://developer.yahoo.com/yslow/)
+* [W3C validator](http://validator.w3.org/)
+* [Smush.it](http://smush.it)
+* [SpriteMe](http://spriteme.org/)
+
+## Using the W3C Validator
+
+1. Go to the [W3C validator][w3cv].
+2. You can either use the *Validate by File Upload* tab (and upload `index.html`) or you can use the *Validate by Direct Input* tab and copy-and-paste the source of the page (using the *View Source...* tool in your browser).
+
+## Using ySlow
+
+TODO: Screen shot of icon
+
+1. View the `index.html` file in your modern web browser (suggest either Chrome or Firefox for now).
+2. Activate the ySlow plugin/extension. Usually this is done by clicking a little icon.
+3. Click the *run test* button to start running tests.
+4. To see how big the whole page is, check out the *Statistics* tab.
+5. For individual details about each resource, try the *Components* tab.
+
+## Exercise Step 1
+
+### Fixing what's broken and getting rid of the weather
+
+1. Find and fix the broken nested `<span>` elements in index.html. Use the [W3C validator][w3cv] as your guide.
+2. Remove the entire weather widget (`div#weather`).
+3. Revalidate/repeat until you see the green happy color.
+
+## Exercise Step 2
+
+### The missing bits
+
+1. Reduce the Google fonts stylesheets to a single `<link>` tag.
+    a. The two fonts actually being used on the page are *Nosifer* (drippy headlines) and *Special Elite* (body).
+    b. Remove the `<link>` tags for fonts that aren't being used at all.
+    c. Concatenate the remaining two fonts into a single `<link>` tag using this format:
+    `<link href="http://fonts.googleapis.com/css?family=Cool+Font|Squiggly" rel="stylesheet">`
+2. Remove the `<link>` tag that points to `home.css`.
+3. Update the CSS rule for `h2`. Update the filename from `blip.jpg` to `blip.png`.
+4. Add a favicon.
+    a. Find `favicon.ico` in the `supplemental/sigma-stronghold-website` folder inside of your rucksack.
+    b. Copy that into the `sigma-stronghold-website` directory (at the top level of your rucksack).
+    c. Add this code just after the Google fonts stylesheet `<link>`s: `<link rel="shortcut icon" href="favicon.ico" />`
+
+[w3cv]: http://validator.w3.org/ "W3C Validator"
+
+## Exercise Step 3
+
+### Deflabbing some images
+
+1. Remove the `zombie-girl` image and its containing `<div>` entirely (`div#nozombies`).
+2. Replace the image for contact-HQ with the following HTML chunk:
+
+        <h2>Contact HQ</h2>
+        <p>Abandoned Post Office<br />
+        23 Daryl Dixon Road<br />
+        Manhattan Offset Zone<br />
+        <a href="mailto:help@sigma-stronghold.com">help@sigma-stronghold.com</a><br />
+        CB Channel 32.6</p>
+        
+3. Deflate the moon image using the smush.it tool.
+
+    a. Go to [smush.it](http://smush.it)
+    b. Use the *Uploader* tab.
+    c. Upload the image `images/moon.jpg` (in your rucksack, in the `sigma-stronghold-website` directory).
+    d. Replace `images/moon.jpg` with the smushed version.
+    

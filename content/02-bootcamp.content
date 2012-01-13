@@ -1,0 +1,209 @@
+% Zombie 101: Boot Camp | WebVisions NYC
+% Jason Grigsby and Lyza Danger Gardner
+
+# A cleansing boot camp to prepare your body and soul
+
+![](images/02-gomer.png "You got fat, Gomer Pyle")
+
+> You got fat, Gomer Pyle.
+
+TODO: Image
+
+# We don't want to end up dead
+
+> Initial contacts with zombies are extremely traumatic, causing shock, panic, disbelief and possibly denial, hampering survivors' ability to deal with hostile encounters. — [Wikipedia][wiki-apocalypse]
+
+# The web is fat
+
+![](images/02-web-is-fat.png "The Web is Fat")
+
+Syrupy Flash videos, gimmicky news tickers, potbellied background images, slapdash syndicated content, an irrelevant weather forecast: the crap we fling around on web pages these days is the internet equivalent of corn syrup, trans fat or bubblegum. Lots of empty calories clogging the arteries of the web.
+
+
+* The mobile web is like an economy seat. 
+* Average size of a web page is growing.
+
+## Speaker Notes
+
+* The mobile web is like an economy seat. Just because you're fat doesn't make it bigger. You've got to squeeze that ass into that seat.
+* Average size of a web page is growing: Need Jason input.
+
+# We got sloppy
+
+![](images/02-i-am-sad.png "I am sad")
+
+We web devs are, as a species, not exactly lazy. But we will take advantage of shortcuts and see what we can get away with.
+
+* Browsers let us get away with ~~anything~~ almost anything.
+* Customers aren't paying for W3C compliance.
+* Broadband is "everywhere."
+
+## Speaker Notes
+
+We liked to hear ourselves talk about making sure we wrote valid code, but, in the end, browsers put up with crap markup anyway. Customers don't exactly beat down your door to get web pages that the W3C validator has approved. They don't tend to look underneath the proverbial rug.
+
+It's like we forgot to zip up our fly, and no one really notices anyway.
+
+# Unfortunately, not so much
+
+![](images/02-my-fat-site.png "My fat site")
+
+When it comes to the mobile web, the notion of valid markup and lean pages is not just something to mutter platitudes about. It's important.
+
+* Bytes cost money.
+* Slow costs money.
+* Invalid markup costs money.
+
+## Speaker Notes
+
+How? Frustrated users bail. Trust me. Throw too many bytes at a mobile user and she will be fiscally punished. 
+
+We know better (progressive enhancement, semantic markup), but we're eating Twinkies and pork rinds anyway.
+
+Back to the basics. Cleaning up our act. It's boot camp time.
+
+# In the name of morale improvement
+
+Sergeant Dingus built a [web site](../zombie-rucksack/sigma-stronghold-website) to cheer on his comrades in basic training at the Sigma Stronghold. This ragtag group of underdogs is the neighborhood's only hope against the staggering Zombie horde.
+
+Our recruit Gomer and this web site are not too different. Bloated, lazy and distracted.
+
+# It's your mission...
+
+Help Gomer and Sgt. Dingus get this sorry sack of a web page in fighting trim.
+
+The first battle is with ourselves. 
+
+## Find your copy in your pack
+
+Everyone open your `zombie-rucksack`. Find the `sigma-stronghold-website` folder and open the `index.html` file in a *modern* web browser.
+
+# Doing a bit of Recon
+
+We need to load our weapons:
+
+1. [ySlow](http://developer.yahoo.com/yslow/)
+2. [W3C validator](http://validator.w3.org/)
+
+# What's broken?
+
+First things first. Let's go see what's presently broken.
+
+Go to the [W3C validator](http://validator.w3.org/) and use the instructions in your field notebook to evaluate the present condition of `index.html`.
+
+
+## Speaker Notes
+
+* Run through W3C validator
+* Assuming HTML5 things (pointing out the differences in markup)
+* Main things broken are poorly-nested `span`s and a bunch of stuff with the weather widget.
+* Let's start with the `spans`.
+
+An example: `<html>` tag not required. In fact, you can have a closing `</html>` tag without an opening one. Once I did that, unintentionally. This caused crash after crash on certain...what was it...Android browsers? Ask Bryan.
+
+Could have a missing image or script.
+As an aside: HTTP requests.
+Broken markup is like a loose cannon. It might not go off, but it might.
+
+# Getting the big, heavy picture
+
+Let's see just how overweight this page is by using the *ySlow* tool.
+
+TODO: Screen shot
+
+# What flab can we trim?
+
+* Let's talk about the weather widget
+
+~~~~
+<div id="weather">
+  <div style='width: 240px; height: 420px; background-image: url( http://vortex.accuweather.com/adcbin/netweather_v2/backgrounds/black_240x420_bg.jpg ); background-repeat: no-repeat; background-color: #000000;' >
+  <div id='NetweatherContainer' style='height: 405px;' >
+  <script src='http://netweather.accuweather.com/adcbin/netweather_v2/netweatherV2ex.asp?partner=netweather&tStyle=whteYell&logo=1&zipcode=10001&lang=eng&size=12&theme=black&metric=0&target=_self'></script>
+  </div>
+  <div style='text-align: center; font-family: arial, helvetica, verdana, sans-serif; font-size: 10px; line-height: 15px; color: #FFFFFF;' >
+  <a style='font-size: 10px; color: #FFFFFF' href='http://www.accuweather.com/us/ny/new-york/10001/city-weather-forecast.asp?partner=accuweather' >Weather Forecast</a> | <a style='color: #FFFFFF' href='http://www.accuweather.com/maps-satellite.asp' >Weather Maps</a> | 
+  <a style='color: #FFFFFF' href='http://www.accuweather.com/index-radar.asp?partner=accuweather&zipcode=10001' >Weather Radar</a></div></div>
+  </div>
+</div>
+
+~~~~
+
+# Problems with that weather
+
+* It's Flash (Flash doesn't work on most mobile web browsers).
+* It creates a number of HTTP requests (more HTTP requests = worse performance).
+* It has janky inline CSS (difficult to style; messy code).
+* It's kinda big, filesize-wise (again, performance).
+* It's URL parameters aren't escaped (causes validation errors).
+* Since the end of the civilized world, it hasn't really worked.
+
+> I thought the weather widget looked kinda cool. But I admit, it hasn't had an accurate weather reading since four months ago. I guess AccuWeather HQ must have suffered a direct hit. -- Sgt. Dingus
+
+# Cleanup Part I
+
+* Get those `<span>`s untangled.
+* Remove the weather widget.
+* Run ySlow again.
+
+# Status Check!
+
+TODO: Screen shot of ySlow
+
+# Google font madness
+
+* The Sigma Stronghold site uses Google fonts for web typography.
+* Some of the stylesheets are for Google fonts that aren't being used.
+* Also, we can concatenate our Google font CSS so that we don't have to make multiple HTTP requests.
+    * You can do this by separating the font names with the pipe `|` character.
+    * e.g. `<link href="http://fonts.googleapis.com/css?family=Cool+Font|Squiggly" rel="stylesheet">`
+
+# Some of these things seem to be missing
+
+* `home.css` doesn't exist, yet there is a stylesheet link to it.
+* There's a reference to `blip.jpg` in a CSS rule, yet that file doesn't exist (the correct image filename is `blip.png`).
+* The site doesn't have a favico(n). We can fix that...
+
+## Speaker notes
+
+* 404s are expensive. They represent a needless round-trip request to the server, only to have the client come up empty-handed.
+
+# Cleanup Part II
+
+* Remove link to non-existent `home.css`.
+* Update the CSS to use the correct `blip.png`.
+* Copy in the favico(n) and add a `<link>` tag for it.
+
+## Speaker Notes
+
+* p.s. You can also concatenate font weights
+
+# It's still fat
+
+OK, we've sort of got the site in regulation uniform, but it's still bulgy.
+
+Let's talk about images.
+
+* The contact information for HQ is an image. This is bad. It is also a huge image. Also bad.
+* The zombie girl image is hideous, and it is also very large.
+* The moon background image is ginormous.
+
+> I'm a bit embarrassed about the HQ address image. I didn't even really think about it. Also, we've had some of the troops complain about too much specific zombie imagery on the site overall. I'm attached to the moon photo because my brother took it and I think it's kind of cool. The other images, meh. -- Sgt. Dingus
+
+## Speaker Notes
+
+* Use WebInspector to look at the Network tab.
+* `Zombie Girl` is totally enormous. 
+
+
+# It's a very full moon
+
+* Moon image is ~135k by itself.
+* Let's optimize that image using smush.it.
+
+
+## Speaker Notes
+
+Run ySlow again to show fatness. Look at images in *components* tab.
+
+[wiki-apocalypse]: http://en.wikipedia.org/wiki/Zombie_apocalypse "Wikipedia article on Zombie Apocalypse"
