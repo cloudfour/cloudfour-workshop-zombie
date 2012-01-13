@@ -7,9 +7,9 @@
 
 > You got fat, Gomer Pyle.
 
-TODO: Image
-
 # We don't want to end up dead
+
+TODO: Zombie gadget image
 
 > Initial contacts with zombies are extremely traumatic, causing shock, panic, disbelief and possibly denial, hampering survivors' ability to deal with hostile encounters. — [Wikipedia][wiki-apocalypse]
 
@@ -34,9 +34,11 @@ Syrupy Flash videos, gimmicky news tickers, potbellied background images, slapda
 
 We web devs are, as a species, not exactly lazy. But we will take advantage of shortcuts and see what we can get away with.
 
+## A false sense of security
+
 * Browsers let us get away with ~~anything~~ almost anything.
-* Customers aren't paying for W3C compliance.
 * Broadband is "everywhere."
+* The customer doesn't want to hear about optimization, anyway. It's not sexy.
 
 ## Speaker Notes
 
@@ -44,7 +46,7 @@ We liked to hear ourselves talk about making sure we wrote valid code, but, in t
 
 It's like we forgot to zip up our fly, and no one really notices anyway.
 
-# Unfortunately, not so much
+# Unfortunately
 
 ![](images/02-my-fat-site.png "My fat site")
 
@@ -68,11 +70,22 @@ Sergeant Dingus built a [web site](../zombie-rucksack/sigma-stronghold-website) 
 
 Our recruit Gomer and this web site are not too different. Bloated, lazy and distracted.
 
-# It's your mission...
+## It's your mission...
 
-Help Gomer and Sgt. Dingus get this sorry sack of a web page in fighting trim.
+### Help Gomer and Sgt. Dingus get this sorry sack of a web page in fighting trim.
 
-The first battle is with ourselves. 
+# OK, Grasshopper
+
+We can hear your collective moans. What? Cleaning up and optimizing a *desktop* web site is akin to KP or repetitive calisthenics.
+
+However, the first battle is with ourselves. To become refined zombie-squishing machines, we must practice relentless discipline. 
+
+## Speaker Notes
+
+Performance optimization and cleanup may seem like it  is a far tangent from mobile web design and development. However, the two are tightly interlocked.
+
+* Smaller, faster web sites are by their very nature much more mobile friendly.
+* 
 
 ## Find your copy in your pack
 
@@ -109,7 +122,7 @@ Broken markup is like a loose cannon. It might not go off, but it might.
 
 Let's see just how overweight this page is by using the *ySlow* tool.
 
-TODO: Screen shot
+TODO: Drawing of ySlow
 
 # What flab can we trim?
 
@@ -142,6 +155,8 @@ TODO: Screen shot
 
 # Cleanup Part I
 
+TODO: Optional mop
+
 * Get those `<span>`s untangled.
 * Remove the weather widget.
 * Run ySlow again.
@@ -156,7 +171,11 @@ TODO: Screen shot of ySlow
 * Some of the stylesheets are for Google fonts that aren't being used.
 * Also, we can concatenate our Google font CSS so that we don't have to make multiple HTTP requests.
     * You can do this by separating the font names with the pipe `|` character.
-    * e.g. `<link href="http://fonts.googleapis.com/css?family=Cool+Font|Squiggly" rel="stylesheet">`
+    * e.g. 
+        
+        ~~~~
+        <link href="http://fonts.googleapis.com/css?family=Cool+Font|Squiggly" rel="stylesheet">
+        ~~~~
 
 # Some of these things seem to be missing
 
@@ -167,6 +186,7 @@ TODO: Screen shot of ySlow
 ## Speaker notes
 
 * 404s are expensive. They represent a needless round-trip request to the server, only to have the client come up empty-handed.
+* This is especially painful for mobile browsers, which have limited concurrent connections available.
 
 # Cleanup Part II
 
@@ -180,9 +200,7 @@ TODO: Screen shot of ySlow
 
 # It's still fat
 
-OK, we've sort of got the site in regulation uniform, but it's still bulgy.
-
-Let's talk about images.
+OK, we've sort of got the site in regulation uniform, but it's still bulgy. *Let's talk about images*.
 
 * The contact information for HQ is an image. This is bad. It is also a huge image. Also bad.
 * The zombie girl image is hideous, and it is also very large.
@@ -195,15 +213,190 @@ Let's talk about images.
 * Use WebInspector to look at the Network tab.
 * `Zombie Girl` is totally enormous. 
 
-
-# It's a very full moon
+# Step III: It's a *very* full moon
 
 * Moon image is ~135k by itself.
-* Let's optimize that image using smush.it.
+* Let's optimize that image using [smush.it](http://smush.it).
+* Let's also get rid of the zombie girl drawing and convert the address to text.
 
+## Speaker Notes
+
+* Talk about the give-and-take of iterative design and compromises in mobile development.
+
+# Status Check!
+
+* Several of ySlow's grading criteria require web server configuration adjustments.
+* Don't panic. Most are easy.
+
+## Quick hits in .htaccess
+
+By tuning our apache server configuration, we can work minor wonders.
+
+* GZIP: If you're not gzipping, please, for the love of all that is good in the world, consider it.
+* ETag configuration: By which we mean, don't use eTags.
+* Far-future expires headers: Let browsers cache!
 
 ## Speaker Notes
 
 Run ySlow again to show fatness. Look at images in *components* tab.
+
+# This might not be a sing-along
+
+Let's walk through the Sigma Stronghold web site and do some server-side tweaks. We'll be looking at a version hosted on a real web host.
+
+If your computer is running an apache server*, you can probably do some of these changes locally.
+
+(*If you are using a recent Mac, you have apache.)
+
+# .htaccess Magic
+
+## Enabling GZIP compression in apache...
+
+### Apache 2.x
+
+~~~~
+<IfModule mod_deflate.c>
+  SetOutputFilter DEFLATE
+  # Don’t compress
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+  SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+  #Dealing with proxy servers
+  <IfModule mod_headers.c>
+    Header append Vary User-Agent
+  </IfModule>
+</IfModule>
+~~~~
+
+# Setting far-future expires headers
+
+    <IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 seconds"
+    ExpiresByType image/gif "access plus 2 years"
+    ExpiresByType image/jpeg "access plus 2 years"
+    ExpiresByType image/png "access plus 2 years"
+    ExpiresByType text/css "access plus 2 years"
+    ExpiresByType text/javascript "access plus 2 years"
+    ExpiresByType application/x-javascript "access plus 2 years"
+    ExpiresByType image/x-icon "access plus 2 years"
+    </IfModule>
+
+# Turning off ETags
+
+    FileETag none
+
+# Status Check!
+
+* We can't control the HTTP Response headers for Google fonts; pity.
+* Using a CDN is a bit beyond the scope of this project.
+* We're not using so-called "cookie-free domains."
+
+## But!
+
+* Our total page weight has gone from ~530k to ~111k on an empty cache...
+* ...and a primed cache means the page is only 2.6k!
+
+### Nice work, soldiers!
+
+## Speaker Notes
+
+* My copy of .htaccess is in the step 2 folder; need to remove the .test extension.
+* Explain cookie-free domains and cookies.
+
+# Getting a bit more sophisticated
+
+You're no longer quite as green, soldiers, but there is still work to be done.
+
+# Some of the markup is a bit stupid
+
+There, we said it. There are a few daft things in the markup that are going to hold it back from being the mobile-friendly success it could be. Some examples:
+
+* `<span class="red">`, etc.
+* `<div id="left">`, etc.
+* Needlessly nested `<div>` elements in the news item section.
+
+# And there are some things that could be more sophisticated
+
+We're dealing with an HTML5 document, but not taking advantage of all that HTML5 has to offer here. Ditto with more advanced CSS2.1 and CSS3 selectors.
+
+* We can use some relevant HTML5 elements (`<footer>`, `<nav>`, etc.)
+* We can use basic HTML elements instead of `<span>`s and classes so that the markup carries semantic meaning.
+* We can cut down on the div-itis.
+
+# Getting more semantic
+
+Instead of
+
+    <div class="title"><h3>Kill confirm: <span class="red">zombie #421</span> has been neutralized</h3></div>
+    
+how about
+
+    <h3>Kill confirm: <em>zombie #421</em> has been neutralized</h3>
+
+## Speaker notes
+
+* `div` is extraneous
+* We can use `<em>` and style with CSS.
+
+
+# Getting more semantic, cont.
+
+Instead of
+
+    <div><span class="grey">20120621//1935 :: <span class="byline grey">A/V Wonk Phil Starken</span></span></div>
+
+how about
+
+    <small>20120621//1935 :: A/V Wonk Phil Starken</small>
+
+## Speaker Notes
+
+* What we meant by `grey` is quieter, de-emphasized text. Using a `small` element makes sense, and we can style it to be grey using CSS.
+
+# What we did for you
+
+* `div#navigation` changed to `<nav>` element.
+* `#page` id removed from `<div>`; used parent-child selector instead.
+* Convert `#footer` to `<footer>` element.
+* Reduce structural complexity in news items: removed extra `<div>`s.
+* Replaced `span.grey` with `<small>`
+* `span.black` was pointless; no style for it. Also some other useless spans in the news divs.
+* Instead of `.red`, used an `<em>` element, which carries semantic meaning.
+* Removed extra internal `<div>`s from sidebar.
+* `#left` and `#right` renamed to `#main` and `#sidebar`, respectively
+
+# Taking it further...
+
+We didn't do these things but they might be cool, too:
+
+* Address could be hCard
+* `<article>` element instead of `<div>` for news items.
+* `<section>` element instead of other `<div>`s.
+
+# Wrapping it all up
+
+1. Drop the updated HTML and CSS into place (check out the changes if you'd like!).
+2. Minify the CSS using the [Online YUI Compressor](http://www.refresh-sf.com/yui/).
+
+# What have we accomplished here?
+
+* Much, much fewer bytes.
+* Much cleaner markup.
+* We've identified content that is important to us. We've sloughed off some less important stuff.
+* We've gone semantic.
+
+## Speaker Notes
+
+* Much, much fewer bytes. *Faster sites make happier customers.*
+* Much cleaner markup. More stable, less crashy. *More reliable and predictable.*
+* We've identified content that is important to us. We've sloughed off some less important stuff. *Content focus*.
+* We've gone semantic. *Makes adaptation to devices much easier.*
+
+# Congratulations
+
+The Sigma Stronghold web site no longer sucks so much. It's leaner, faster and stronger and better—much like you, recruit.
+
+### You have now graduated from Zombie boot camp. Get ready to face the bad guys.
+
 
 [wiki-apocalypse]: http://en.wikipedia.org/wiki/Zombie_apocalypse "Wikipedia article on Zombie Apocalypse"

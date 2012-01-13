@@ -1,5 +1,3 @@
-% Zombie Preparedness 101 | Field Notes
-
 # 2. Boot Camp
 
 ## Sigma Stronghold Web Site
@@ -19,8 +17,6 @@ You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma
 2. You can either use the *Validate by File Upload* tab (and upload `index.html`) or you can use the *Validate by Direct Input* tab and copy-and-paste the source of the page (using the *View Source...* tool in your browser).
 
 ## Using ySlow
-
-TODO: Screen shot of icon
 
 1. View the `index.html` file in your modern web browser (suggest either Chrome or Firefox for now).
 2. Activate the ySlow plugin/extension. Usually this is done by clicking a little icon.
@@ -48,7 +44,7 @@ TODO: Screen shot of icon
 2. Remove the `<link>` tag that points to `home.css`.
 3. Update the CSS rule for `h2`. Update the filename from `blip.jpg` to `blip.png`.
 4. Add a favicon.
-    a. Find `favicon.ico` in the `supplemental/sigma-stronghold-website` folder inside of your rucksack.
+    a. Find `favicon.ico` in the `supplemental/boot-camp` folder inside of your rucksack.
     b. Copy that into the `sigma-stronghold-website` directory (at the top level of your rucksack).
     c. Add this code just after the Google fonts stylesheet `<link>`s: `<link rel="shortcut icon" href="favicon.ico" />`
 
@@ -74,4 +70,56 @@ TODO: Screen shot of icon
     b. Use the *Uploader* tab.
     c. Upload the image `images/moon.jpg` (in your rucksack, in the `sigma-stronghold-website` directory).
     d. Replace `images/moon.jpg` with the smushed version.
+
+## Exercise Step 4 (A bit more advanced): Apache configuration
+
+### Warning: This will only work if you have an apache 2.x web server running and 
+
+1. Create a new file in the sigma stronghold web site directory called `.htaccess`.
+2. We suggest adding the configuration sections individually, save and test to minimize web-server-borkage likelihood.
+3. Enable GZIP:
+
+    
+        <IfModule mod_deflate.c>
+         SetOutputFilter DEFLATE
+         # Don’t compress
+         SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+         SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+         #Dealing with proxy servers
+         <IfModule mod_headers.c>
+         Header append Vary User-Agent
+         </IfModule>
+        </IfModule>
+
+4. Create far-future expires headers:
+
+        <IfModule mod_expires.c>
+        ExpiresActive On
+        ExpiresByType text/html "access plus 1 seconds"
+        ExpiresByType image/gif "access plus 2 years"
+        ExpiresByType image/jpeg "access plus 2 years"
+        ExpiresByType image/png "access plus 2 years"
+        ExpiresByType text/css "access plus 2 years"
+        ExpiresByType text/javascript "access plus 2 years"
+        ExpiresByType application/x-javascript "access plus 2 years"
+        ExpiresByType image/x-icon "access plus 2 years"
+        </IfModule>
+
+5. Turn off ETags:
+
+        FileETag none
+        
+## Exercise Step 5
+
+1. Most of this semantic work has been done for you (so much typing!). Find the cleaned up HTML and CSS in your rucksack, in `supplemental/boot-camp/semantic`.
+2. Replace the `index.html` and `styles.css` files in your `sigma-stronghold-website` with these versions.
+3. Minify the CSS.
+    a. Go to the [Online YUI Compressor](http://www.refresh-sf.com/yui/).
+    b. Paste the contents of the CSS file (make sure to use the updated/semantically-better version you just moved into the site's directory!) into the field.
+    c. Make sure to set the *file type* drop-down to `CSS`.
+    d. Don't worry about any other settings; click *COMPRESS*.
+    e. Copy the resulting, compressed CSS into the `styles.css` file (overwriting what was there) and save.
+    f. Be sure to test!
+
+
     

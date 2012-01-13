@@ -11,6 +11,7 @@
 * Instead of `.red`, used an `<em>` element, which carries semantic meaning.
 * Removed extra internal `<div>`s from sidebar.
 * Minifying CSS
+* `#left` and `#right` renamed to `#main` and `#sidebar`, respectively
 
 ## Taking it to the next level
 

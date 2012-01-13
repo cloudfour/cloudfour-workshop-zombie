@@ -29,10 +29,10 @@ Jason Grigsby and Lyza Danger Gardner
 <blockquote>
 <p>You got fat, Gomer Pyle.</p>
 </blockquote>
-<p>TODO: Image</p>
 </div>
 <div id="we-dont-want-to-end-up-dead" class="slide">
 <h1>We don't want to end up dead</h1>
+<p>TODO: Zombie gadget image</p>
 <blockquote>
 <p>Initial contacts with zombies are extremely traumatic, causing shock, panic, disbelief and possibly denial, hampering survivors' ability to deal with hostile encounters. — <a href="http://en.wikipedia.org/wiki/Zombie_apocalypse" title="Wikipedia article on Zombie Apocalypse">Wikipedia</a></p>
 </blockquote>
@@ -61,19 +61,22 @@ Jason Grigsby and Lyza Danger Gardner
 <img src="images/02-i-am-sad.png" title="I am sad" /><p class="caption"></p>
 </div>
 <p>We web devs are, as a species, not exactly lazy. But we will take advantage of shortcuts and see what we can get away with.</p>
+<div id="a-false-sense-of-security">
+<h2>A false sense of security</h2>
 <ul>
 <li>Browsers let us get away with <span style="text-decoration: line-through;">anything</span> almost anything.</li>
-<li>Customers aren't paying for W3C compliance.</li>
 <li>Broadband is &quot;everywhere.&quot;</li>
+<li>The customer doesn't want to hear about optimization, anyway. It's not sexy.</li>
 </ul>
+</div>
 <div id="speaker-notes-1">
 <h2>Speaker Notes</h2>
 <p>We liked to hear ourselves talk about making sure we wrote valid code, but, in the end, browsers put up with crap markup anyway. Customers don't exactly beat down your door to get web pages that the W3C validator has approved. They don't tend to look underneath the proverbial rug.</p>
 <p>It's like we forgot to zip up our fly, and no one really notices anyway.</p>
 </div>
 </div>
-<div id="unfortunately-not-so-much" class="slide">
-<h1>Unfortunately, not so much</h1>
+<div id="unfortunately" class="slide">
+<h1>Unfortunately</h1>
 <div class="figure">
 <img src="images/02-my-fat-site.png" title="My fat site" /><p class="caption"></p>
 </div>
@@ -94,11 +97,25 @@ Jason Grigsby and Lyza Danger Gardner
 <h1>In the name of morale improvement</h1>
 <p>Sergeant Dingus built a <a href="../zombie-rucksack/sigma-stronghold-website">web site</a> to cheer on his comrades in basic training at the Sigma Stronghold. This ragtag group of underdogs is the neighborhood's only hope against the staggering Zombie horde.</p>
 <p>Our recruit Gomer and this web site are not too different. Bloated, lazy and distracted.</p>
+<div id="its-your-mission...">
+<h2>It's your mission...</h2>
+<div id="help-gomer-and-sgt.-dingus-get-this-sorry-sack-of-a-web-page-in-fighting-trim.">
+<h3>Help Gomer and Sgt. Dingus get this sorry sack of a web page in fighting trim.</h3>
 </div>
-<div id="its-your-mission..." class="slide">
-<h1>It's your mission...</h1>
-<p>Help Gomer and Sgt. Dingus get this sorry sack of a web page in fighting trim.</p>
-<p>The first battle is with ourselves.</p>
+</div>
+</div>
+<div id="ok-grasshopper" class="slide">
+<h1>OK, Grasshopper</h1>
+<p>We can hear your collective moans. What? Cleaning up and optimizing a <em>desktop</em> web site is akin to KP or repetitive calisthenics.</p>
+<p>However, the first battle is with ourselves. To become refined zombie-squishing machines, we must practice relentless discipline.</p>
+<div id="speaker-notes-3">
+<h2>Speaker Notes</h2>
+<p>Performance optimization and cleanup may seem like it is a far tangent from mobile web design and development. However, the two are tightly interlocked.</p>
+<ul>
+<li>Smaller, faster web sites are by their very nature much more mobile friendly.</li>
+</ul>
+<p>*</p>
+</div>
 <div id="find-your-copy-in-your-pack">
 <h2>Find your copy in your pack</h2>
 <p>Everyone open your <code>zombie-rucksack</code>. Find the <code>sigma-stronghold-website</code> folder and open the <code>index.html</code> file in a <em>modern</em> web browser.</p>
@@ -116,7 +133,7 @@ Jason Grigsby and Lyza Danger Gardner
 <h1>What's broken?</h1>
 <p>First things first. Let's go see what's presently broken.</p>
 <p>Go to the <a href="http://validator.w3.org/">W3C validator</a> and use the instructions in your field notebook to evaluate the present condition of <code>index.html</code>.</p>
-<div id="speaker-notes-3">
+<div id="speaker-notes-4">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Run through W3C validator</li>
@@ -131,7 +148,7 @@ Jason Grigsby and Lyza Danger Gardner
 <div id="getting-the-big-heavy-picture" class="slide">
 <h1>Getting the big, heavy picture</h1>
 <p>Let's see just how overweight this page is by using the <em>ySlow</em> tool.</p>
-<p>TODO: Screen shot</p>
+<p>TODO: Drawing of ySlow</p>
 </div>
 <div id="what-flab-can-we-trim" class="slide">
 <h1>What flab can we trim?</h1>
@@ -166,6 +183,7 @@ Jason Grigsby and Lyza Danger Gardner
 </div>
 <div id="cleanup-part-i" class="slide">
 <h1>Cleanup Part I</h1>
+<p>TODO: Optional mop</p>
 <ul>
 <li>Get those <code>&lt;span&gt;</code>s untangled.</li>
 <li>Remove the weather widget.</li>
@@ -184,7 +202,9 @@ Jason Grigsby and Lyza Danger Gardner
 <li>Also, we can concatenate our Google font CSS so that we don't have to make multiple HTTP requests.
 <ul>
 <li>You can do this by separating the font names with the pipe <code>|</code> character.</li>
-<li>e.g. <code>&lt;link href=&quot;http://fonts.googleapis.com/css?family=Cool+Font|Squiggly&quot; rel=&quot;stylesheet&quot;&gt;</code></li>
+<li><p>e.g.</p>
+<pre><code>&lt;link href=&quot;http://fonts.googleapis.com/css?family=Cool+Font|Squiggly&quot; rel=&quot;stylesheet&quot;&gt;
+</code></pre></li>
 </ul></li>
 </ul>
 </div>
@@ -195,10 +215,11 @@ Jason Grigsby and Lyza Danger Gardner
 <li>There's a reference to <code>blip.jpg</code> in a CSS rule, yet that file doesn't exist (the correct image filename is <code>blip.png</code>).</li>
 <li>The site doesn't have a favico(n). We can fix that...</li>
 </ul>
-<div id="speaker-notes-4">
+<div id="speaker-notes-5">
 <h2>Speaker notes</h2>
 <ul>
 <li>404s are expensive. They represent a needless round-trip request to the server, only to have the client come up empty-handed.</li>
+<li>This is especially painful for mobile browsers, which have limited concurrent connections available.</li>
 </ul>
 </div>
 </div>
@@ -209,7 +230,7 @@ Jason Grigsby and Lyza Danger Gardner
 <li>Update the CSS to use the correct <code>blip.png</code>.</li>
 <li>Copy in the favico(n) and add a <code>&lt;link&gt;</code> tag for it.</li>
 </ul>
-<div id="speaker-notes-5">
+<div id="speaker-notes-6">
 <h2>Speaker Notes</h2>
 <ul>
 <li>p.s. You can also concatenate font weights</li>
@@ -218,8 +239,7 @@ Jason Grigsby and Lyza Danger Gardner
 </div>
 <div id="its-still-fat" class="slide">
 <h1>It's still fat</h1>
-<p>OK, we've sort of got the site in regulation uniform, but it's still bulgy.</p>
-<p>Let's talk about images.</p>
+<p>OK, we've sort of got the site in regulation uniform, but it's still bulgy. <em>Let's talk about images</em>.</p>
 <ul>
 <li>The contact information for HQ is an image. This is bad. It is also a huge image. Also bad.</li>
 <li>The zombie girl image is hideous, and it is also very large.</li>
@@ -228,7 +248,7 @@ Jason Grigsby and Lyza Danger Gardner
 <blockquote>
 <p>I'm a bit embarrassed about the HQ address image. I didn't even really think about it. Also, we've had some of the troops complain about too much specific zombie imagery on the site overall. I'm attached to the moon photo because my brother took it and I think it's kind of cool. The other images, meh. -- Sgt. Dingus</p>
 </blockquote>
-<div id="speaker-notes-6">
+<div id="speaker-notes-7">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Use WebInspector to look at the Network tab.</li>
@@ -236,15 +256,217 @@ Jason Grigsby and Lyza Danger Gardner
 </ul>
 </div>
 </div>
-<div id="its-a-very-full-moon" class="slide">
-<h1>It's a very full moon</h1>
+<div id="step-iii-its-a-very-full-moon" class="slide">
+<h1>Step III: It's a <em>very</em> full moon</h1>
 <ul>
 <li>Moon image is ~135k by itself.</li>
-<li>Let's optimize that image using smush.it.</li>
+<li>Let's optimize that image using <a href="http://smush.it">smush.it</a>.</li>
+<li>Let's also get rid of the zombie girl drawing and convert the address to text.</li>
 </ul>
-<div id="speaker-notes-7">
+<div id="speaker-notes-8">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Talk about the give-and-take of iterative design and compromises in mobile development.</li>
+</ul>
+</div>
+</div>
+<div id="status-check-1" class="slide">
+<h1>Status Check!</h1>
+<ul>
+<li>Several of ySlow's grading criteria require web server configuration adjustments.</li>
+<li>Don't panic. Most are easy.</li>
+</ul>
+<div id="quick-hits-in-.htaccess">
+<h2>Quick hits in .htaccess</h2>
+<p>By tuning our apache server configuration, we can work minor wonders.</p>
+<ul>
+<li>GZIP: If you're not gzipping, please, for the love of all that is good in the world, consider it.</li>
+<li>ETag configuration: By which we mean, don't use eTags.</li>
+<li>Far-future expires headers: Let browsers cache!</li>
+</ul>
+</div>
+<div id="speaker-notes-9">
 <h2>Speaker Notes</h2>
 <p>Run ySlow again to show fatness. Look at images in <em>components</em> tab.</p>
+</div>
+</div>
+<div id="this-might-not-be-a-sing-along" class="slide">
+<h1>This might not be a sing-along</h1>
+<p>Let's walk through the Sigma Stronghold web site and do some server-side tweaks. We'll be looking at a version hosted on a real web host.</p>
+<p>If your computer is running an apache server*, you can probably do some of these changes locally.</p>
+<p>(*If you are using a recent Mac, you have apache.)</p>
+</div>
+<div id="htaccess-magic" class="slide">
+<h1>.htaccess Magic</h1>
+<div id="enabling-gzip-compression-in-apache...">
+<h2>Enabling GZIP compression in apache...</h2>
+<div id="apache-2.x">
+<h3>Apache 2.x</h3>
+<pre><code>&lt;IfModule mod_deflate.c&gt;
+  SetOutputFilter DEFLATE
+  # Don’t compress
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+  SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+  #Dealing with proxy servers
+  &lt;IfModule mod_headers.c&gt;
+    Header append Vary User-Agent
+  &lt;/IfModule&gt;
+&lt;/IfModule&gt;
+</code></pre>
+</div>
+</div>
+</div>
+<div id="setting-far-future-expires-headers" class="slide">
+<h1>Setting far-future expires headers</h1>
+<pre><code>&lt;IfModule mod_expires.c&gt;
+ExpiresActive On
+ExpiresByType text/html &quot;access plus 1 seconds&quot;
+ExpiresByType image/gif &quot;access plus 2 years&quot;
+ExpiresByType image/jpeg &quot;access plus 2 years&quot;
+ExpiresByType image/png &quot;access plus 2 years&quot;
+ExpiresByType text/css &quot;access plus 2 years&quot;
+ExpiresByType text/javascript &quot;access plus 2 years&quot;
+ExpiresByType application/x-javascript &quot;access plus 2 years&quot;
+ExpiresByType image/x-icon &quot;access plus 2 years&quot;
+&lt;/IfModule&gt;
+</code></pre>
+</div>
+<div id="turning-off-etags" class="slide">
+<h1>Turning off ETags</h1>
+<pre><code>FileETag none
+</code></pre>
+</div>
+<div id="status-check-2" class="slide">
+<h1>Status Check!</h1>
+<ul>
+<li>We can't control the HTTP Response headers for Google fonts; pity.</li>
+<li>Using a CDN is a bit beyond the scope of this project.</li>
+<li>We're not using so-called &quot;cookie-free domains.&quot;</li>
+</ul>
+<div id="but">
+<h2>But!</h2>
+<ul>
+<li>Our total page weight has gone from ~530k to ~111k on an empty cache...</li>
+<li>...and a primed cache means the page is only 2.6k!</li>
+</ul>
+<div id="nice-work-soldiers">
+<h3>Nice work, soldiers!</h3>
+</div>
+</div>
+<div id="speaker-notes-10">
+<h2>Speaker Notes</h2>
+<ul>
+<li>My copy of .htaccess is in the step 2 folder; need to remove the .test extension.</li>
+<li>Explain cookie-free domains and cookies.</li>
+</ul>
+</div>
+</div>
+<div id="getting-a-bit-more-sophisticated" class="slide">
+<h1>Getting a bit more sophisticated</h1>
+<p>You're no longer quite as green, soldiers, but there is still work to be done.</p>
+</div>
+<div id="some-of-the-markup-is-a-bit-stupid" class="slide">
+<h1>Some of the markup is a bit stupid</h1>
+<p>There, we said it. There are a few daft things in the markup that are going to hold it back from being the mobile-friendly success it could be. Some examples:</p>
+<ul>
+<li><code>&lt;span class=&quot;red&quot;&gt;</code>, etc.</li>
+<li><code>&lt;div id=&quot;left&quot;&gt;</code>, etc.</li>
+<li>Needlessly nested <code>&lt;div&gt;</code> elements in the news item section.</li>
+</ul>
+</div>
+<div id="and-there-are-some-things-that-could-be-more-sophisticated" class="slide">
+<h1>And there are some things that could be more sophisticated</h1>
+<p>We're dealing with an HTML5 document, but not taking advantage of all that HTML5 has to offer here. Ditto with more advanced CSS2.1 and CSS3 selectors.</p>
+<ul>
+<li>We can use some relevant HTML5 elements (<code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code>, etc.)</li>
+<li>We can use basic HTML elements instead of <code>&lt;span&gt;</code>s and classes so that the markup carries semantic meaning.</li>
+<li>We can cut down on the div-itis.</li>
+</ul>
+</div>
+<div id="getting-more-semantic" class="slide">
+<h1>Getting more semantic</h1>
+<p>Instead of</p>
+<pre><code>&lt;div class=&quot;title&quot;&gt;&lt;h3&gt;Kill confirm: &lt;span class=&quot;red&quot;&gt;zombie #421&lt;/span&gt; has been neutralized&lt;/h3&gt;&lt;/div&gt;
+</code></pre>
+<p>how about</p>
+<pre><code>&lt;h3&gt;Kill confirm: &lt;em&gt;zombie #421&lt;/em&gt; has been neutralized&lt;/h3&gt;
+</code></pre>
+<div id="speaker-notes-11">
+<h2>Speaker notes</h2>
+<ul>
+<li><code>div</code> is extraneous</li>
+<li>We can use <code>&lt;em&gt;</code> and style with CSS.</li>
+</ul>
+</div>
+</div>
+<div id="getting-more-semantic-cont." class="slide">
+<h1>Getting more semantic, cont.</h1>
+<p>Instead of</p>
+<pre><code>&lt;div&gt;&lt;span class=&quot;grey&quot;&gt;20120621//1935 :: &lt;span class=&quot;byline grey&quot;&gt;A/V Wonk Phil Starken&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
+</code></pre>
+<p>how about</p>
+<pre><code>&lt;small&gt;20120621//1935 :: A/V Wonk Phil Starken&lt;/small&gt;
+</code></pre>
+<div id="speaker-notes-12">
+<h2>Speaker Notes</h2>
+<ul>
+<li>What we meant by <code>grey</code> is quieter, de-emphasized text. Using a <code>small</code> element makes sense, and we can style it to be grey using CSS.</li>
+</ul>
+</div>
+</div>
+<div id="what-we-did-for-you" class="slide">
+<h1>What we did for you</h1>
+<ul>
+<li><code>div#navigation</code> changed to <code>&lt;nav&gt;</code> element.</li>
+<li><code>#page</code> id removed from <code>&lt;div&gt;</code>; used parent-child selector instead.</li>
+<li>Convert <code>#footer</code> to <code>&lt;footer&gt;</code> element.</li>
+<li>Reduce structural complexity in news items: removed extra <code>&lt;div&gt;</code>s.</li>
+<li>Replaced <code>span.grey</code> with <code>&lt;small&gt;</code></li>
+<li><code>span.black</code> was pointless; no style for it. Also some other useless spans in the news divs.</li>
+<li>Instead of <code>.red</code>, used an <code>&lt;em&gt;</code> element, which carries semantic meaning.</li>
+<li>Removed extra internal <code>&lt;div&gt;</code>s from sidebar.</li>
+<li><code>#left</code> and <code>#right</code> renamed to <code>#main</code> and <code>#sidebar</code>, respectively</li>
+</ul>
+</div>
+<div id="taking-it-further..." class="slide">
+<h1>Taking it further...</h1>
+<p>We didn't do these things but they might be cool, too:</p>
+<ul>
+<li>Address could be hCard</li>
+<li><code>&lt;article&gt;</code> element instead of <code>&lt;div&gt;</code> for news items.</li>
+<li><code>&lt;section&gt;</code> element instead of other <code>&lt;div&gt;</code>s.</li>
+</ul>
+</div>
+<div id="wrapping-it-all-up" class="slide">
+<h1>Wrapping it all up</h1>
+<ol style="list-style-type: decimal">
+<li>Drop the updated HTML and CSS into place (check out the changes if you'd like!).</li>
+<li>Minify the CSS using the <a href="http://www.refresh-sf.com/yui/">Online YUI Compressor</a>.</li>
+</ol>
+</div>
+<div id="what-have-we-accomplished-here" class="slide">
+<h1>What have we accomplished here?</h1>
+<ul>
+<li>Much, much fewer bytes.</li>
+<li>Much cleaner markup.</li>
+<li>We've identified content that is important to us. We've sloughed off some less important stuff.</li>
+<li>We've gone semantic.</li>
+</ul>
+<div id="speaker-notes-13">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Much, much fewer bytes. <em>Faster sites make happier customers.</em></li>
+<li>Much cleaner markup. More stable, less crashy. <em>More reliable and predictable.</em></li>
+<li>We've identified content that is important to us. We've sloughed off some less important stuff. <em>Content focus</em>.</li>
+<li>We've gone semantic. <em>Makes adaptation to devices much easier.</em></li>
+</ul>
+</div>
+</div>
+<div id="congratulations" class="slide">
+<h1>Congratulations</h1>
+<p>The Sigma Stronghold web site no longer sucks so much. It's leaner, faster and stronger and better—much like you, recruit.</p>
+<div id="you-have-now-graduated-from-zombie-boot-camp.-get-ready-to-face-the-bad-guys.">
+<h3>You have now graduated from Zombie boot camp. Get ready to face the bad guys.</h3>
 </div>
 </div>
 </body>

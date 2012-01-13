@@ -26,11 +26,14 @@ body {
   background-color: #fffeee;
   color: #555555;
   font-family: "Special Elite", serif;
-  line-height: 1.4em; }
+  line-height: 1.5em; }
+
+h1, h2 {
+  margin: 0;
+  padding: .5em; }
 
 h1 {
-  font-family: "Nosifer", cursive;
-  color: #e43d3d; }
+  color: #555555; }
 
 h2 {
   color: #e43d3d;
@@ -39,7 +42,9 @@ h2 {
   border-color: rgba(85, 85, 85, 0.65); }
 
 pre, code {
-  border: 1px solid #e43d3d;
+  border-width: 1px;
+  border-style: dashed;
+  border-color: #e43d3d;
   font-family: "Anonymous Pro", monospace;
   padding: .15em .35em;
   margin: 0 .25em; }
@@ -49,6 +54,9 @@ pre {
 
 pre code {
   border-width: 0; }
+
+body > section {
+  padding: 0 1em; }
 
 body > section > section {
   background-color: #fffeee; }

@@ -26,38 +26,48 @@ body {
   background-color: black;
   color: #fffeee;
   font-family: "Special Elite", serif;
-  line-height: 1.75em; }
+  line-height: 1.6em; }
 
-h1, h2 {
+h1 {
   font-family: "Nosifer", cursive;
   color: #e43d3d;
   text-shadow: 3px 3px 5px #300; }
 
 h2 {
-  font-size: 1.1em; }
+  color: #e43d3d;
+  font-size: 1.25em; }
+
+h3 {
+  text-transform: uppercase; }
+  h3:before {
+    content: "**"; }
+  h3:after {
+    content: "**"; }
 
 a, a:visited {
   color: #e43d3d; }
 
 code, pre {
-  background-color: #fffeee;
-  font-family: "Anonymous Pro", monospace;
-  color: white; }
+  font-family: "Anonymous Pro", monospace; }
 
 code {
-  padding: .1em .25em;
+  padding: .15em;
+  margin: 0 .15em;
   font-family: "Anonymous Pro", monospace;
-  border: 1px solid #e43d3d;
-  color: black; }
+  border: 1px dashed #e43d3d; }
 
 pre {
   overflow: scroll;
   border-width: 1px;
-  border: 1px solid #e43d3d; }
+  border: 1px solid #e43d3d;
+  color: black; }
 
 pre code {
   border-width: 0px;
   font-size: .75em; }
+
+blockquote {
+  line-height: 1.2em; }
 
 li ul li {
   font-style: normal; }
@@ -76,3 +86,10 @@ div.slide {
     max-width: 50%; }
     div.slide div.figure img {
       max-width: 100%; }
+
+div.toolbar {
+  height: 1em;
+  font-size: .5em;
+  background-color: #fffeee;
+  line-height: 1em;
+  padding: .5em; }
