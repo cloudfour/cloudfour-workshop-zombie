@@ -2,15 +2,69 @@
 
 body {
   background-color:     $color-background;
-  color:                $color-body;
+  color:                $color-warm;
+  font-family:          $body-font;
+  line-height:          1.75em;
 }
 
-h1 {
+h1, h2 {
   font-family:          $accent-font;
   color:                $color-accent;
   text-shadow:          3px 3px 5px #300;
 }
 
+h2 {
+  font-size:            1.1em;
+}
+
 a, a:visited {
   color:                $color-accent;
+}
+
+code, pre {
+  background-color:     $color-warm;
+  font-family:          $code-font;
+  color:                $color-body;
+}
+
+code {
+  padding:              .1em .25em;
+  font-family:          $code-font;
+  border:               1px solid $color-accent;
+  color:                $color-background;
+}
+
+pre {
+  overflow:             scroll;
+  border-width:         1px;
+  border:               1px solid $color-accent;
+}
+
+pre code {
+  border-width:         0px;
+  font-size:            .75em;
+}
+
+li ul li {
+  font-style:           normal;
+}
+
+div[id^="speaker-notes"] {
+  display: none;
+}
+
+div.slide {
+  line-height:            1.5em;
+  font-size:              1.25em;
+  h1 {
+    margin:               .5em;
+  }
+  div.figure {
+    float:                right;
+    width:                40%;
+    max-width:            50%;
+    img {
+      max-width:          100%;
+    }
+  }
 }
