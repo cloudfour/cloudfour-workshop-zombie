@@ -10,23 +10,19 @@
 <h1>Geolocation Testing</h1>
 </body>
 <script>
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
-  } else {
-    onGeoError("Browser doesn't support geolocation");
-  }
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
+} else {
+  onGeoError(new Error('Sorry, Geolocation not supported in this browser!'));
 }
 
 function onGeoSuccess(position) {
   var coordinates = position.coords;
   alert(coordinates.latitude + ", " + coordinates.longitude);
 }
-
 function onGeoError(error) {
   alert(error.message);
 }
 
-getLocation();
 </script>
 </html>

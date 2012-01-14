@@ -1,0 +1,232 @@
+# Faster, Better, Stronger
+
+We're starting to make the leap to mobile-savvy now. How do we make this site even leaner, faster on mobile devices?
+
+# ApplicationCache
+
+* An API that is part of the HTML5 spec
+* Define what resources should (or should not be) cached using a cache manifest
+* ApplicationCache object and its methods exposed to JavaScript
+
+## Speaker Notes
+
+We're going to be talking about the cache manifest piece of ApplicationCache
+
+# Cache manifests
+
+A *cache manifest* is a file that lets you tell the client about resources that should be cached.
+
+You can use a cache manifest to create an *offline mode* for your web site or app.
+
+# Cache manifests
+
+Cache manifest browser support. TODO
+
+# Cache manifest syntax
+
+Writing a cache manifest file sounds simple—in premise. In its simplest:
+
+CACHE MANIFEST
+
+CACHE:
+foo.jpg
+bar.png
+index.html
+ding/dong.html
+
+## Speaker Notes
+
+* Paths are relative to the location of the manifest. Kind of like CSS.
+* The CACHE header line is not strictly required, but is good form.
+
+# Serving cache manifests
+
+Cache manifest files must be served as a particular `MIME` type (`text/cache-manifest`) or browsers will not recognize them.
+
+Often this can be handled by adding the following to your `.htaccess` or other Apache configuration file:
+
+`AddType text/cache-manifest .appcache`
+
+## Speaker Notes
+
+* If you generate your appcache file with a server-side scripting language, can set a header.
+
+# Cache manifest conventions
+
+* Preferred extension is `.appcache`
+
+# How to tell the browser about your appcache
+
+There is a `manifest` attribute on the `html` element.
+
+`<html manifest="manifest.appcache">`
+
+# Ways things end up in appCache
+
+* Listed in the cache manifest file (explicit)
+* Is a document with a manifest defined (implicit)
+* Is any resource referenced within an HTML document that is in the implicit or explicit cache.
+
+# Be very wary
+
+* It's very easy to screw this up.
+* Again: If an HTML document is in the implicit cache, any resource it references (images, CSS, whatever) *must* be declared in the cache manifest file or they will not be available to the browser.
+
+# It's tempting...
+
+...to perhaps list all of your site's resources in the cache manifest file.
+
+* This is of course a maintenance pain.
+* More importantly, as soon as a browser gets a cache manifest file, it will *immediately* (asynchronously) download all of the resources in that cache manifest.
+
+## Speaker Notes
+
+This is the idea behind the implicit caching via the manifest attribute. But you can only do that with HTML files. There is no way to lazy load any other kind of resource.
+
+# Conclusion
+
+Cache manifest can be a good approach for creating offline modes of web sites and apps. It tends to be more manageable for smaller or app-like web sites.
+
+## Speaker Notes
+
+As cache manifests get more extensive and complex, one often ends up having to create dynamic cache manifest files on the server. Things can get very complicated, very fast.
+
+# Manifesting the Sigma Stronghold Site
+
+Let's create a simple cache manifest for the Sigma Stronghold site.
+
+* Need to add the landing page and its needed resources to the `CACHE` section.
+* Like this:
+
+        CACHE MANIFEST
+
+        CACHE:
+
+        index.html
+        favicon.ico
+        images/blip.png
+        images/bomb.png
+        images/moon.jpg
+        styles.css
+        http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
+
+## Speaker Notes
+
+* Not technically required to add index.html to the cache manifest, but it is good form.
+* "I'm going to add that to a cache manifest file.."
+
+# Updating the config
+
+Now we need to edit the `.htaccess` file to serve this file correctly. Like we said before, that looks like:
+
+    AddType text/cache-manifest .appcache
+
+# Let 'er Rip
+
+How'd that go?
+
+Wait a minute...
+
+# Where'd our fonts go?
+
+We added the Google Fonts CSS stylesheet to our cache manifest, but the actual font files are not in the cache manifest. Uh oh! Now what?
+
+We need to add the Google Font files to the cache, explicitly:
+
+    http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff      http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff
+    
+# It ain't perfect
+
+This cache manifest situation works nicely in iOS, Android and in Chrome on the desktop. FireFox, however, is not thrilled about it.
+
+This is *so* typical of mobile web development.
+
+## Speaker Notes
+
+Good fallback fonts!
+
+# But hey, it's pretty decent
+
+It's all about what we're targeting and where we're drawing the line.
+
+## Speaker Notes
+
+There are other options, like dynamically generating cache manifests or only delivering them to certain user agents.
+
+# And now for something completely different
+
+Let's rinse off that cache manifest stink, shall we? It's time to get down to the stuff that really makes mobile *mobile*. Something that will make us like Navy SEALs or otherwise really cool.
+
+# Let's talk about device APIs
+
+* Device APIs: TODO 
+
+# Geolocation
+
+Geolocation is the darling of many. It's consummately mobile and easy to describe. There are oh so many ways to make good use of a user's current location to deliver adapted experiences or add functionality to applications. Whee!
+
+It is also one of the device APIs that is relatively widely supported in the browser.
+
+# W3C Geolocation API
+
+The W3C Geolocation API is a standard way of exposing geolocation information to JavaScript in the browser. It is rather well adopted.
+
+Browsers that implement the W3C Geolocation API expose the `navigator.geolocation` object and its methods to the browser.
+
+# Using the W3C API to get the current location
+
+Here's what it looks like:
+
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
+
+## Speaker Notes
+
+* Use the function defined as successCallback to work with position stuff.
+
+# Let's try it out
+
+Hey, let's build a basic geolocation test page to see how that geolocation API works. Most modern leading desktop browsers support the W3C geolocation spec (but you'll need at least IE9; they were (surprise!) a bit late to the party).
+
+* Find a starting point in the `index.html` file in your rucksack, inside of the `where-am-i` folder.
+
+# Testing for API support
+
+    <script>
+      if (navigator.geolocation) {
+        // Do something, dammit!
+      }
+    </script>
+
+# Doing something, dammit
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
+    } else {
+      onGeoError(new Error('Sorry, Geolocation not supported in this browser!'));
+    }
+
+# And now what...?
+
+We need to define our success and error callbacks.
+
+      function onGeoSuccess(position) {
+        var coordinates = position.coords;
+        alert(coordinates.latitude + ", " + coordinates.longitude);
+      }
+      function onGeoError(error) {
+        alert(error.message);
+      }
+
+# All together now!
+
+Using your field notes as a guide, update the `index.html` in the `where-am-i` folder and try it out!
+
+If it works, you should get a JavaScript alert with your current location.
+
+## Speaker Notes
+
+Most browsers will prompt you for permission first.
+
+# And now we ride off into the Zombie-tinted sunset?
+
+Well, not so much...

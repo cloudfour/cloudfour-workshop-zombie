@@ -198,6 +198,141 @@ body > div {
     }
 
 
-## End result
+# 4. A Honed Killing Machine
 
-If stuff stuff
+## ApplicationCache!
+
+### More Information about ApplicationCache
+
+* There are enough little gotchas in appCache that it may behoove you to [read the spec](http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html).
+* A handy site that lists a lot of the common gotchas can be found at <http://appcachefacts.info/>.
+* We find that it is easiest to inspect and debug appCache using's Webkit's Web Inspector tool (available in Chrome, Safari).
+
+### Cache Manifest Quickies
+
+1. File must be served as `text/application-cache`. Often this can be effected by adding the following line to an apache config (`.htaccess` file or the like).
+    `AddType text/cache-manifest .appcache`
+
+2. Basic cache manifest syntax:
+
+        CACHE MANIFEST
+
+        CACHE:
+        foo.jpg
+        bar.png
+        index.html
+        ding/dong.html
+
+3. Reference a cache manifest with the `manifest` attribute of the `<html>` tag. e.g. `<html manifest="manifest.appcache">`.
+
+### Creating a Cache Manifest for the Sigma Stronghold Site
+
+*Note*: If you are not running apache locally, you may not be able to get cache manifests working on your laptop. No worries!
+
+1. Create a file called `manifest.appcache` in the `sigma-stronghold-website` folder in your rucksack.
+2. Let's start by adding the landing page (really all we have of the site!) and its resources to the application cache: CSS, images...etc:
+
+        CACHE MANIFEST
+
+        CACHE:
+
+        index.html
+        favicon.ico
+        images/blip.png
+        images/bomb.png
+        images/moon.jpg
+        styles.css
+        http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
+
+3. Edit the `.htaccess` file in the `sigma-stronghold-website` directory (create `.htaccess` if it doesn't exist yet).
+4. Add the line:
+
+        `AddType text/cache-manifest .appcache`
+        
+5. Edit `index.html`. Change the `<html>` tag to read:
+
+        `<html manifest="manifest.appcache">`
+        
+6. Use the WebInspector to see if your appCache worked!
+
+### Improving the Cache Manifest
+
+We need to cache those Google fonts! Add this to the end of the `CACHE` section:
+
+    http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff
+    http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff
+
+# Device APIs: Focus on Geolocation!
+
+## W3C Geolocation API
+
+* The spec for the [W3C Geolocation API spec](http://dev.w3.org/geo/api/spec-source.html) is relatively short and easy to understand (as specs go).
+
+### Quick Details
+
+Browsers that implement the W3C geolocation spec expose the `navigator.geolocation` object and its methods to the browser.
+
+#### Code Snippets
+
+        navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
+        
+        function successCallback(position) {
+          // Latitude and Longitude are usually what you're after.
+          // They're properties of the coords object on position.
+          alert(position.coords.latitude + ', ' + position.coords.longitude);
+        }
+        function errorCallback(error) {
+          // Do something or freak out.
+        }
+
+### Building a Quickie Geolocation Test Page
+
+TODO: HTML template in `where-am-i` folder.
+
+1. Open the `index.html` file in the `where-am-i` folder in your rucksack.
+2. After the closing `</body>` tag, add:
+
+        <script>
+          if (navigator.geolocation) { // Test for W3C geolocation support
+            
+          }
+        </script>
+3. OK! Now expand upon that:
+
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
+        } else {
+          onGeoError(new Error('Sorry, Geolocation not supported in this browser!'));
+        }
+
+4. *Note*: This won't work (well, there will be JS errors) until we define the `onGeoSuccess` and `onGeoError` callback functions. So let's do that now:
+5. Add this to the JavaScript (right after what's already there):
+
+        function onGeoSuccess(position) {
+          var coordinates = position.coords;
+          alert(coordinates.latitude + ", " + coordinates.longitude);
+        }
+        function onGeoError(error) {
+          alert(error.message);
+        }
+        
+6. Try it out!
+
+TODO: Stuck? Find the script in...blah blah.
+
+# 6. A Band of Brothers
+
+* [jQuery Mobile](http://www.jquerymobile.com)
+
+
+# 7. Desperate Times call for...
+
+## Hybrid App Development with PhoneGap and PhoneGap Build
+
+* [PhoneGap](http://www.phonegap.com)
+* [PhoneGap Build](http://build.phonegap.com)
+
+## Anatomy of a PhoneGap Build Config File
+
+TODO: Put app icons in the exercise area for this and link into the config.xml
+TODO: Put config.xml example in rucksack

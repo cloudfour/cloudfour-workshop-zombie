@@ -1,0 +1,26 @@
+# Exasperated, at the limits
+
+Sometimes you need to do something that you just can't quite pull off (yet) on the mobile web.
+
+# A blistering quick ride through hybrid-land
+
+# PhoneGap  and PhoneGap Build
+
+# Anatomy of a PhoneGap project
+
+# The PhoneGap API
+
+* Using phonegap.js in your project
+* A single JS API for reusable code
+
+# No really, it's pretty danged easy
+
+# Using the PhoneGap API to access device capabilities
+
+* Using phonegap.js
+* You magically get phonegap.js
+
+# Anatomy of a config file
+
+Example of `config.xml` here.
+
