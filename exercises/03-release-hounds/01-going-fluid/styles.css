@@ -43,7 +43,8 @@ body > div {
   max-width: 920px;
   margin: 0 auto;
   border-color: rgba(255, 255, 255, 0.2);
-  border-width: 0px 7px; }
+  border-width: 0px 7px;
+  border-style: solid; }
 
 small {
   color: #cccccc;

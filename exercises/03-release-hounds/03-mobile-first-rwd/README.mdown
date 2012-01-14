@@ -4,3 +4,4 @@
 ** Default view is single column.
 ** But default nav is tabbed.
 * New breakpoint added at 750px
+* Removing border from `body > div` except in wider variants

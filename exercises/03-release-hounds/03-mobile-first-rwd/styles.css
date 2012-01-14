@@ -39,9 +39,7 @@ a {
 
 body > div {
   max-width: 920px;
-  margin: 0 auto;
-  border-color: rgba(255, 255, 255, 0.2);
-  border-width: 0px 7px; }
+  margin: 0 auto; }
 
 small {
   color: #cccccc;
@@ -146,6 +144,11 @@ footer {
   body {
     background-image: url(images/moon.jpg);
     background-repeat: no-repeat; }
+
+  body > div {
+    border-color: rgba(255, 255, 255, 0.2);
+    border-width: 0px 7px;
+    border-style: solid; }
 
   #main {
     margin-left: 1.5%;

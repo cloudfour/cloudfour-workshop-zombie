@@ -120,8 +120,84 @@ You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma
     d. Don't worry about any other settings; click *COMPRESS*.
     e. Copy the resulting, compressed CSS into the `styles.css` file (overwriting what was there) and save.
     f. Be sure to test!
-
-# Release the Hounds!
-
-
     
+[More information about enabling GZIP on apache](http://www.techiepark.com/tutorials/how-to-enable-gzip-compression-in-apache-server-to-speed-up-website/)
+
+# 3. Release the Hounds!
+
+For more expounding on the topic of relinquishing control, see Lyza's presentation ["Crap, it doesn't look quite right: Or, How I learned to stop worrying and set my mobile web sites free"](http://www.slideshare.net/lyzadanger/crap-it-doesnt-look-quite-right-or-how-i-learned-to-stop-worrying-and-set-my-mobile-web-sites-free-9518337) on Slideshare.
+
+## Notes on Fluid CSS and Responsive Web Design (RWD)
+
+* See Ethan's ([@beep](http://twitter.com/beep)) original article about RWD on [A List Apart](http://www.alistapart.com/articles/responsive-web-design/)
+* Fluid formula: `result = target / context`
+* Rough rule of thumb for font sizes: `1em = 100% ~= 16px ~= 12pt`. *Approximately*.
+* Percentages (%) and `em`s are both fluid units, `pt`s, `px`, inches and pica are fixed. (Technically, `px` are not *absolute* absolute, as the size of a pixel varies with different devices and screens and are not *fixed*, per se. However, for our purposes, they are effectively absolute, as they do not scale).
+
+## Exercise 1: Going Fluid
+
+1. Edit `styles.css` in the `sigma-stronghold-website` folder in your rucksack.
+2. Set a `max-width` instead of a `width` on the two main containing elements, `body > div` and `#container`. Change the `padding` on `#container` to be in `em`s (relative) instead of `px` (absolute). You should end up with these two rules:
+
+### Instead of
+
+~~~
+body > div {
+  max-width: 920px;
+  margin: 0 auto;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-width: 0px 7px;
+  border-style: solid; 
+}
+~~~
+
+### Use
+
+~~~
+#container {
+  zoom: 1;
+  background: black;
+  padding: .625em;
+  max-width: 900px;
+  clear: both;
+}
+~~~
+
+### Instead of
+
+    #main {
+      zoom: 1;
+      margin-left: 10px;
+      clear: left;
+      float: left;
+      width: 550px;
+      ...
+    }
+
+### use
+
+    #main {
+      zoom: 1;
+      margin-left: 1.5%;
+      clear: left;
+      float: left;
+      width: 60%;
+      ...
+    }
+
+### Instead of
+
+    #sidebar {
+      margin-left: 570px; 
+    }
+
+### Use
+
+    #sidebar {
+      margin-left: 63.5%;
+    }
+
+
+## End result
+
+If stuff stuff

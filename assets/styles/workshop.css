@@ -80,12 +80,41 @@ div.slide {
   font-size: 1.25em; }
   div.slide h1 {
     margin: .5em; }
+  div.slide img {
+    max-width: 20%;
+    margin: 0 1em; }
+  div.slide p img {
+    float: right; }
+  div.slide img[alt^='Big'], div.slide p img[alt^='Big'] {
+    max-width: 85%;
+    max-height: 65%;
+    float: none; }
   div.slide div.figure {
     float: right;
+    margin-right: 1em;
     width: 40%;
     max-width: 50%; }
     div.slide div.figure img {
+      max-width: 100%;
+      max-height: 65%; }
+  div.slide div[id^="figure"] {
+    max-width: 100%;
+    text-align: center; }
+    div.slide div[id^="figure"] h2, div.slide div[id^="figure"] h3 {
+      display: none; }
+    div.slide div[id^="figure"] div.figure {
+      width: 100%;
       max-width: 100%; }
+    div.slide div[id^="figure"] img {
+      max-width: 100%;
+      max-height: 70%;
+      float: none; }
+  div.slide div[id^="instead"] {
+    float: left;
+    width: 45%; }
+  div.slide div[id^="use"] {
+    float: right;
+    width: 45%; }
 
 div.toolbar {
   height: 1em;

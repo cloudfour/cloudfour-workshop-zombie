@@ -152,10 +152,92 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <li>Be sure to test!</li>
 </ol></li>
 </ol>
+<p><a href="http://www.techiepark.com/tutorials/how-to-enable-gzip-compression-in-apache-server-to-speed-up-website/">More information about enabling GZIP on apache</a></p>
 </section>
 </section>
 <section id="release-the-hounds">
-<h1>Release the Hounds!</h1>
+<h1>3. Release the Hounds!</h1>
+<p>For more expounding on the topic of relinquishing control, see Lyza's presentation <a href="http://www.slideshare.net/lyzadanger/crap-it-doesnt-look-quite-right-or-how-i-learned-to-stop-worrying-and-set-my-mobile-web-sites-free-9518337">&quot;Crap, it doesn't look quite right: Or, How I learned to stop worrying and set my mobile web sites free&quot;</a> on Slideshare.</p>
+<section id="notes-on-fluid-css-and-responsive-web-design-rwd">
+<h2>Notes on Fluid CSS and Responsive Web Design (RWD)</h2>
+<ul>
+<li>See Ethan's (<a href="http://twitter.com/beep">@beep</a>) original article about RWD on <a href="http://www.alistapart.com/articles/responsive-web-design/">A List Apart</a></li>
+<li>Fluid formula: <code>result = target / context</code></li>
+<li>Rough rule of thumb for font sizes: <code>1em = 100% ~= 16px ~= 12pt</code>. <em>Approximately</em>.</li>
+<li>Percentages (%) and <code>em</code>s are both fluid units, <code>pt</code>s, <code>px</code>, inches and pica are fixed. (Technically, <code>px</code> are not <em>absolute</em> absolute, as the size of a pixel varies with different devices and screens and are not <em>fixed</em>, per se. However, for our purposes, they are effectively absolute, as they do not scale).</li>
+</ul>
+</section>
+<section id="exercise-1-going-fluid">
+<h2>Exercise 1: Going Fluid</h2>
+<ol type="1">
+<li>Edit <code>styles.css</code> in the <code>sigma-stronghold-website</code> folder in your rucksack.</li>
+<li>Set a <code>max-width</code> instead of a <code>width</code> on the two main containing elements, <code>body &gt; div</code> and <code>#container</code>. Change the <code>padding</code> on <code>#container</code> to be in <code>em</code>s (relative) instead of <code>px</code> (absolute). You should end up with these two rules:</li>
+</ol>
+<section id="instead-of">
+<h3>Instead of</h3>
+<pre><code>body &gt; div {
+  max-width: 920px;
+  margin: 0 auto;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-width: 0px 7px;
+  border-style: solid; 
+}
+</code></pre>
+</section>
+<section id="use">
+<h3>Use</h3>
+<pre><code>#container {
+  zoom: 1;
+  background: black;
+  padding: .625em;
+  max-width: 900px;
+  clear: both;
+}
+</code></pre>
+</section>
+<section id="instead-of-1">
+<h3>Instead of</h3>
+<pre><code>#main {
+  zoom: 1;
+  margin-left: 10px;
+  clear: left;
+  float: left;
+  width: 550px;
+  ...
+}
+</code></pre>
+</section>
+<section id="use-1">
+<h3>use</h3>
+<pre><code>#main {
+  zoom: 1;
+  margin-left: 1.5%;
+  clear: left;
+  float: left;
+  width: 60%;
+  ...
+}
+</code></pre>
+</section>
+<section id="instead-of-2">
+<h3>Instead of</h3>
+<pre><code>#sidebar {
+  margin-left: 570px; 
+}
+</code></pre>
+</section>
+<section id="use-2">
+<h3>Use</h3>
+<pre><code>#sidebar {
+  margin-left: 63.5%;
+}
+</code></pre>
+</section>
+</section>
+<section id="end-result">
+<h2>End result</h2>
+<p>If stuff stuff</p>
+</section>
 </section>
 </body>
 </html>

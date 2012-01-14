@@ -107,7 +107,7 @@ a {
   background-repeat:    no-repeat;
 }
 
-#header {                                       // TODO: This should be nav ul
+#header {                                       
   background-color:     rgba(0,0,0,.4);
   display:              block;
   @include              ghetto-clearfix;
@@ -127,7 +127,7 @@ a {
   }
 }
 
-#page {                                         // TODO: This should really be body > div or somesuch
+#page {                                         
   width:                920px;
   margin:               0 auto;
   border:               solid rgba(255,255,255,.2);

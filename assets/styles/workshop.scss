@@ -73,13 +73,51 @@ div.slide {
   h1 {
     margin:               .5em;
   }
+  img {
+    max-width:            20%;
+    margin:               0 1em;
+  }
+  p img {
+    float: right;
+  }
+  img[alt^='Big'], p img[alt^='Big'] {
+    max-width:            85%;
+    max-height:           65%;
+    float:                none;
+  }
   div.figure {
     float:                right;
+    margin-right:         1em;
     width:                40%;
     max-width:            50%;
     img {
       max-width:          100%;
+      max-height:         65%;
     }
+  }
+  div[id^="figure"] {
+    max-width:            100%;
+    text-align:           center;
+    & h2, & h3 {
+      display: none;
+    }
+    div.figure {
+      width:              100%;
+      max-width:          100%;
+    }
+    img {
+      max-width:          100%;
+      max-height:         70%;
+      float: none;
+    }
+  }
+  div[id^="instead"] {
+    float:                left;
+    width:                45%;
+  }
+  div[id^="use"] {
+    float:                right;
+    width:                45%;
   }
 }
 
