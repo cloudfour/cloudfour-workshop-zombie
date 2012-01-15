@@ -1,22 +1,19 @@
-# Accomplished Here
+% CSS Changes for Fluid Grid
 
-## CSS Changes
+# CSS Changes
 
-~~~~.css
-
-    body > div {
-      max-width:            920px;
-      margin:               0 auto;
-      border-color:         rgba(255,255,255,.2);
-      border-width:         0px 7px;
-    }
-
+~~~~ {.css}
+body > div {
+  max-width:            920px;
+  margin:               0 auto;
+  border-color:         rgba(255,255,255,.2);
+  border-width:         0px 7px;
+}
 ~~~~~
 
 Note `max-width`
 
-~~~~.css
-
+~~~~ {.css}
 #container {
   zoom: 1;
   background: black;
@@ -29,8 +26,7 @@ Note `max-width`
 
 Note `max-width` and `padding`.
 
-~~~~.css
-
+~~~~ {.css}
 #main {
   zoom: 1;
   margin-left: 1.5%;
@@ -50,7 +46,6 @@ Note `max-width` and `padding`.
 #sidebar {
   margin-left: 63.5%;
 }
-
 ~~~~
 
 Pretty much just `margin` and `width` here.

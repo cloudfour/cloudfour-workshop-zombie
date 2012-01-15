@@ -1,3 +1,6 @@
+% Field Notes | Zombie 101, Webvisions NYC
+% Jason Grigsby and Lyza Danger Gardner
+
 # 2. Boot Camp
 
 ## Sigma Stronghold Web Site
@@ -57,12 +60,14 @@ You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma
 1. Remove the `zombie-girl` image and its containing `<div>` entirely (`div#nozombies`).
 2. Replace the image for contact-HQ with the following HTML chunk:
 
+    ~~~ {.html}
         <h2>Contact HQ</h2>
         <p>Abandoned Post Office<br />
         23 Daryl Dixon Road<br />
         Manhattan Offset Zone<br />
         <a href="mailto:help@sigma-stronghold.com">help@sigma-stronghold.com</a><br />
         CB Channel 32.6</p>
+    ~~~
         
 3. Deflate the moon image using the smush.it tool.
 
@@ -111,7 +116,7 @@ You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma
         
 ## Exercise Step 5
 
-1. Most of this semantic work has been done for you (so much typing!). Find the cleaned up HTML and CSS in your rucksack, in `supplemental/boot-camp/semantic`.
+1. Most of this semantic work has been done for you (so much typing!). Find the cleaned up HTML and CSS in your rucksack, in [`supplemental/boot-camp/semantic`](../supplemental/boot-camp/semantic).
 2. Replace the `index.html` and `styles.css` files in your `sigma-stronghold-website` with these versions.
 3. Minify the CSS.
     a. Go to the [Online YUI Compressor](http://www.refresh-sf.com/yui/).
@@ -141,7 +146,7 @@ For more expounding on the topic of relinquishing control, see Lyza's presentati
 
 ### Instead of
 
-~~~
+~~~ {.css}
 body > div {
   max-width: 920px;
   margin: 0 auto;
@@ -153,7 +158,7 @@ body > div {
 
 ### Use
 
-~~~
+~~~ {.css}
 #container {
   zoom: 1;
   background: black;
@@ -165,38 +170,144 @@ body > div {
 
 ### Instead of
 
-    #main {
-      zoom: 1;
-      margin-left: 10px;
-      clear: left;
-      float: left;
-      width: 550px;
-      ...
-    }
+~~~ {.css}
+#main {
+  zoom: 1;
+  margin-left: 10px;
+  clear: left;
+  float: left;
+  width: 550px;
+  ...           // And so on
+}
+~~~
 
 ### use
 
-    #main {
-      zoom: 1;
-      margin-left: 1.5%;
-      clear: left;
-      float: left;
-      width: 60%;
-      ...
-    }
+~~~ {.css}
+#main {
+  zoom: 1;
+  margin-left: 1.5%;
+  clear: left;
+  float: left;
+  width: 60%;
+  ...
+}
+~~~
 
 ### Instead of
 
-    #sidebar {
-      margin-left: 570px; 
-    }
+~~~ {.css}
+#sidebar {
+  margin-left: 570px; 
+}
+~~~
 
 ### Use
 
-    #sidebar {
-      margin-left: 63.5%;
-    }
+~~~ {.css}
+#sidebar {
+  margin-left: 63.5%;
+}
+~~~
 
+## Media Queries!
+
+* You can always [read the spec](http://www.w3.org/TR/css3-mediaqueries/)
+
+### Exercise: Adding media queries to the Sigma Stronghold CSS
+
+1. Edit `styles.css` in the `sigma-stronghold-website` folder.
+
+1. Make `#main` and `#sidebar` not float:
+
+    ~~~ {.css}
+    @media screen and (max-width:600px) {
+      #main, #sidebar {
+        width: 100%;
+        float: none;
+        clear: both;
+        margin: 0; 
+      }
+    }
+    ~~~
+    
+1. Get rid of the background image:
+
+    ~~~ {.css}
+    @media screen and (max-width:600px) {
+      ...   // #main, #sidebar
+      body {
+        background-image: none; 
+      }
+    }
+    ~~~
+    
+1. Make the navigation vertically-oriented and tap-able:
+
+    ~~~ {.css}
+    @media screen and (max-width:600px) {
+      ... // #main, #sidebar, body
+      #header nav ul li {
+        float: none;
+        clear: both;
+        width: 100%;
+        margin: .5em 0; 
+      }
+      #header nav ul li a {
+          margin: 0;
+          padding: .75em; 
+      }
+    }
+    ~~~
+    
+1. Adjust padding and font sizes:
+
+    ~~~ {.css}
+    @media screen and (max-width:600px) {
+      ... // #main, #sidebar, body, #header nav...
+      #header {
+        padding: 1em 0; }
+      #header h1, #header h3 {
+        padding: 0 .375em; }
+      h1 {
+        font-size: 1.75em;
+        line-height: 1.25em; }
+      h3 {
+        font-size: 1.1em;
+        line-height: 1.2em; }
+      p {
+        font-size: .9em;
+        line-height: 1.4em; }
+    }
+    ~~~
+
+1. You can find the whole [chunk of CSS here](sigma-media-query.html).
+
+### Mobile-first RWD
+
+#### Baseline CSS
+
+* Single-column view
+* Tabbed navigation
+* No body background image
+
+#### >=750px Breakpoint
+
+* Two-column layout
+* Body background image
+* Font and padding adjustments
+
+#### <= 550px Breakpoint
+
+* Vertical navigation
+* Font and padding adjustments
+
+### Quick Exercise: Drop in mobile-first CSS
+
+No new CSS is added for this (aside from the media query adjustment), we're not going to make you do the busywork of moving the rules around in the file.
+
+1. Find the updated, [mobile-first CSS file here](../supplemental/release-hounds/mobile-first.css).
+2. Replace the `styles.css` in `sigma-stronghold-website` with this CSS.
 
 # 4. A Honed Killing Machine
 
@@ -308,13 +419,15 @@ TODO: HTML template in `where-am-i` folder.
 4. *Note*: This won't work (well, there will be JS errors) until we define the `onGeoSuccess` and `onGeoError` callback functions. So let's do that now:
 5. Add this to the JavaScript (right after what's already there):
 
-        function onGeoSuccess(position) {
-          var coordinates = position.coords;
-          alert(coordinates.latitude + ", " + coordinates.longitude);
-        }
-        function onGeoError(error) {
-          alert(error.message);
-        }
+~~~~ {.javascript}
+function onGeoSuccess(position) {
+  var coordinates = position.coords;
+  alert(coordinates.latitude + ", " + coordinates.longitude);
+}
+function onGeoError(error) {
+  alert(error.message);
+}
+~~~~
         
 6. Try it out!
 

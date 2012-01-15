@@ -181,32 +181,18 @@ footer {
 }
 
 @media all and (max-width:600px) {
+  #main, #sidebar {
+    width: 100%;
+    float: none;
+    clear: both;
+    margin: 0;
+  }
+  
   body {
     background-image:   none;
   }
   
-  h1 {
-    font-size:          1.75em;
-    line-height:        1.25em;
-  }
-  h3 {
-    font-size:          1.1em;
-    line-height:        1.2em;
-  }
-  
-  p {
-    font-size:          .9em;
-    line-height:        1.4em;
-  }
-
   #header {
-    padding:              1em 0;
-  }
-  
-  #header {
-    & h1, & h3 {
-      padding:            0 .375em;
-    } 
     & nav ul {
       li {
         float:            none;
@@ -219,12 +205,22 @@ footer {
         }
       }
     }
+    & h1, & h3 {
+      padding:            0 .375em;
+    }
+    padding:              1em 0; 
   }
-  
-  #main, #sidebar {
-    width: 100%;
-    float: none;
-    clear: both;
-    margin: 0;
+
+  h1 {
+    font-size:          1.75em;
+    line-height:        1.25em;
   }
+  h3 {
+    font-size:          1.1em;
+    line-height:        1.2em;
+  }
+  p {
+    font-size:          .9em;
+    line-height:        1.4em;
+  }  
 }

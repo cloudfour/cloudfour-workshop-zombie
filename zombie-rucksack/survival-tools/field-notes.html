@@ -3,13 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
-  <title></title>
+  <meta name="author" content="Jason Grigsby and Lyza Danger Gardner" />
+  <title>Field Notes | Zombie 101, Webvisions NYC</title>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <style type="text/css">
+/*<![CDATA[*/
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode, table.sourceCode pre 
+   { margin: 0; padding: 0; border: 0; vertical-align: baseline; border: none; }
+td.lineNumbers { border-right: 1px solid #AAAAAA; text-align: right; color: #AAAAAA; padding-right: 5px; padding-left: 5px; }
+td.sourceCode { padding-left: 5px; }
+code.sourceCode span.kw { color: #007020; font-weight: bold; } 
+code.sourceCode span.dt { color: #902000; }
+code.sourceCode span.dv { color: #40a070; }
+code.sourceCode span.bn { color: #40a070; }
+code.sourceCode span.fl { color: #40a070; }
+code.sourceCode span.ch { color: #4070a0; }
+code.sourceCode span.st { color: #4070a0; }
+code.sourceCode span.co { color: #60a0b0; font-style: italic; }
+code.sourceCode span.ot { color: #007020; }
+code.sourceCode span.al { color: red; font-weight: bold; }
+code.sourceCode span.fu { color: #06287e; }
+code.sourceCode span.re { }
+code.sourceCode span.er { color: red; font-weight: bold; }
+/*]]>*/
+  </style>
   <link rel="stylesheet" href="fieldnotes.css" />
 </head>
 <body>
+<header>
+<h1 class="title">Field Notes | Zombie 101, Webvisions NYC</h1>
+<h3 class="author">Jason Grigsby and Lyza Danger Gardner</h3>
+</header>
 <section id="boot-camp">
 <h1>2. Boot Camp</h1>
 <section id="sigma-stronghold-web-site">
@@ -82,13 +108,7 @@
 <ol type="1">
 <li>Remove the <code>zombie-girl</code> image and its containing <code>&lt;div&gt;</code> entirely (<code>div#nozombies</code>).</li>
 <li><p>Replace the image for contact-HQ with the following HTML chunk:</p>
-<pre><code>&lt;h2&gt;Contact HQ&lt;/h2&gt;
-&lt;p&gt;Abandoned Post Office&lt;br /&gt;
-23 Daryl Dixon Road&lt;br /&gt;
-Manhattan Offset Zone&lt;br /&gt;
-&lt;a href=&quot;mailto:help@sigma-stronghold.com&quot;&gt;help@sigma-stronghold.com&lt;/a&gt;&lt;br /&gt;
-CB Channel 32.6&lt;/p&gt;
-</code></pre></li>
+<pre class="sourceCode"><code class="sourceCode html">    <span class="kw">&lt;h2&gt;</span>Contact HQ<span class="kw">&lt;/h2&gt;</span><br />    <span class="kw">&lt;p&gt;</span>Abandoned Post Office<span class="kw">&lt;br</span> <span class="kw">/&gt;</span><br />    23 Daryl Dixon Road<span class="kw">&lt;br</span> <span class="kw">/&gt;</span><br />    Manhattan Offset Zone<span class="kw">&lt;br</span> <span class="kw">/&gt;</span><br />    <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;mailto:help@sigma-stronghold.com&quot;</span><span class="kw">&gt;</span>help@sigma-stronghold.com<span class="kw">&lt;/a&gt;&lt;br</span> <span class="kw">/&gt;</span><br />    CB Channel 32.6<span class="kw">&lt;/p&gt;</span></code></pre></li>
 <li><p>Deflate the moon image using the smush.it tool.</p>
 <ol type="a">
 <li>Go to <a href="http://smush.it">smush.it</a></li>
@@ -140,7 +160,7 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <section id="exercise-step-5">
 <h2>Exercise Step 5</h2>
 <ol type="1">
-<li>Most of this semantic work has been done for you (so much typing!). Find the cleaned up HTML and CSS in your rucksack, in <code>supplemental/boot-camp/semantic</code>.</li>
+<li>Most of this semantic work has been done for you (so much typing!). Find the cleaned up HTML and CSS in your rucksack, in <a href="../supplemental/boot-camp/semantic"><code>supplemental/boot-camp/semantic</code></a>.</li>
 <li>Replace the <code>index.html</code> and <code>styles.css</code> files in your <code>sigma-stronghold-website</code> with these versions.</li>
 <li>Minify the CSS.
 <ol type="a">
@@ -175,63 +195,82 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 </ol>
 <section id="instead-of">
 <h3>Instead of</h3>
-<pre><code>body &gt; div {
-  max-width: 920px;
-  margin: 0 auto;
-  border-color: rgba(255, 255, 255, 0.2);
-  border-width: 0px 7px;
-  border-style: solid; 
-}
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br />  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span><br />  <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span><br />  <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span><br />  <span class="kw">border-style:</span> <span class="dt">solid</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
 </section>
 <section id="use">
 <h3>Use</h3>
-<pre><code>#container {
-  zoom: 1;
-  background: black;
-  padding: .625em;
-  max-width: 900px;
-  clear: both;
-}
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">padding:</span> <span class="dt">.625em</span><span class="kw">;</span><br />  <span class="kw">max-width:</span> <span class="dt">900px</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
 </section>
 <section id="instead-of-1">
 <h3>Instead of</h3>
-<pre><code>#main {
-  zoom: 1;
-  margin-left: 10px;
-  clear: left;
-  float: left;
-  width: 550px;
-  ...
-}
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">margin-left:</span> <span class="dt">10px</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">width:</span> <span class="dt">550px</span><span class="kw">;</span><br />  <span class="er">...</span>           <span class="er">//</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span><br /><span class="kw">}</span></code></pre>
 </section>
 <section id="use-1">
 <h3>use</h3>
-<pre><code>#main {
-  zoom: 1;
-  margin-left: 1.5%;
-  clear: left;
-  float: left;
-  width: 60%;
-  ...
-}
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span><br />  <span class="er">...</span><br /><span class="kw">}</span></code></pre>
 </section>
 <section id="instead-of-2">
 <h3>Instead of</h3>
-<pre><code>#sidebar {
-  margin-left: 570px; 
-}
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span><br />  <span class="kw">margin-left:</span> <span class="dt">570px</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
 </section>
 <section id="use-2">
 <h3>Use</h3>
-<pre><code>#sidebar {
-  margin-left: 63.5%;
-}
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span><br />  <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+</section>
+</section>
+<section id="media-queries">
+<h2>Media Queries!</h2>
+<ul>
+<li>You can always <a href="http://www.w3.org/TR/css3-mediaqueries/">read the spec</a></li>
+</ul>
+<section id="exercise-adding-media-queries-to-the-sigma-stronghold-css">
+<h3>Exercise: Adding media queries to the Sigma Stronghold CSS</h3>
+<ol type="1">
+<li><p>Edit <code>styles.css</code> in the <code>sigma-stronghold-website</code> folder.</p></li>
+<li><p>Make <code>#main</code> and <code>#sidebar</code> not float:</p>
+<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span><br />  <span class="fl">#main</span>, <span class="fl">#sidebar</span> <span class="kw">{</span><br />    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span><br />    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span><br />    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br />    <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span> <br />  <span class="kw">}</span><br /><span class="dv">}</span></code></pre></li>
+<li><p>Get rid of the background image:</p>
+<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span><br />  <span class="fl">...</span>   // <span class="fl">#main</span>, <span class="fl">#sidebar</span><br />  body <span class="kw">{</span><br />    <span class="kw">background-image:</span> <span class="dt">none</span><span class="kw">;</span> <br />  <span class="kw">}</span><br /><span class="dv">}</span></code></pre></li>
+<li><p>Make the navigation vertically-oriented and tap-able:</p>
+<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span><br />  <span class="fl">...</span> // <span class="fl">#main</span>, <span class="fl">#sidebar</span>, body<br />  <span class="fl">#header</span> nav ul li <span class="kw">{</span><br />    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span><br />    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br />    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span><br />    <span class="kw">margin:</span> <span class="dt">.5em</span> <span class="dt">0</span><span class="kw">;</span> <br />  <span class="kw">}</span><br />  <span class="fl">#header</span> nav ul li a <span class="kw">{</span><br />      <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span><br />      <span class="kw">padding:</span> <span class="dt">.75em</span><span class="kw">;</span> <br />  <span class="kw">}</span><br /><span class="dv">}</span></code></pre></li>
+<li><p>Adjust padding and font sizes:</p>
+<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span><br />  <span class="fl">...</span> // <span class="fl">#main</span>, <span class="fl">#sidebar</span>, body, <span class="fl">#header</span> nav<span class="fl">...</span><br />  <span class="fl">#header</span> <span class="kw">{</span><br />    <span class="kw">padding:</span> <span class="dt">1em</span> <span class="dt">0</span><span class="kw">;</span> <span class="kw">}</span><br />  <span class="fl">#header</span> h1, <span class="fl">#header</span> h3 <span class="kw">{</span><br />    <span class="kw">padding:</span> <span class="dt">0</span> <span class="dt">.375em</span><span class="kw">;</span> <span class="kw">}</span><br />  h1 <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">1.75em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span> <span class="kw">}</span><br />  h3 <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">1.1em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.2em</span><span class="kw">;</span> <span class="kw">}</span><br />  p <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">.9em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.4em</span><span class="kw">;</span> <span class="kw">}</span><br /><span class="dv">}</span></code></pre></li>
+<li><p>You can find the whole <a href="sigma-media-query.html">chunk of CSS here</a>.</p></li>
+</ol>
+</section>
+<section id="mobile-first-rwd">
+<h3>Mobile-first RWD</h3>
+<section id="baseline-css">
+<h4>Baseline CSS</h4>
+<ul>
+<li>Single-column view</li>
+<li>Tabbed navigation</li>
+<li>No body background image</li>
+</ul>
+</section>
+<section id="px-breakpoint">
+<h4>&gt;=750px Breakpoint</h4>
+<ul>
+<li>Two-column layout</li>
+<li>Body background image</li>
+<li>Font and padding adjustments</li>
+</ul>
+</section>
+<section id="px-breakpoint-1">
+<h4>&lt;= 550px Breakpoint</h4>
+<ul>
+<li>Vertical navigation</li>
+<li>Font and padding adjustments</li>
+</ul>
+</section>
+</section>
+<section id="quick-exercise-drop-in-mobile-first-css">
+<h3>Quick Exercise: Drop in mobile-first CSS</h3>
+<p>No new CSS is added for this (aside from the media query adjustment), we're not going to make you do the busywork of moving the rules around in the file.</p>
+<ol type="1">
+<li>Find the updated, <a href="../supplemental/release-hounds/mobile-first.css">mobile-first CSS file here</a>.</li>
+<li>Replace the <code>styles.css</code> in <code>sigma-stronghold-website</code> with this CSS.</li>
+</ol>
 </section>
 </section>
 </section>
@@ -345,16 +384,11 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 }
 </code></pre></li>
 <li><em>Note</em>: This won't work (well, there will be JS errors) until we define the <code>onGeoSuccess</code> and <code>onGeoError</code> callback functions. So let's do that now:</li>
-<li><p>Add this to the JavaScript (right after what's already there):</p>
-<pre><code>function onGeoSuccess(position) {
-  var coordinates = position.coords;
-  alert(coordinates.latitude + &quot;, &quot; + coordinates.longitude);
-}
-function onGeoError(error) {
-  alert(error.message);
-}
-</code></pre></li>
-<li><p>Try it out!</p></li>
+<li><p>Add this to the JavaScript (right after what's already there):</p></li>
+</ol>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">function</span> onGeoSuccess(position) {<br />  <span class="kw">var</span> coordinates = <span class="kw">position</span>.<span class="fu">coords</span>;<br />  alert(<span class="kw">coordinates</span>.<span class="fu">latitude</span> + <span class="st">&quot;, &quot;</span> + <span class="kw">coordinates</span>.<span class="fu">longitude</span>);<br />}<br /><span class="kw">function</span> onGeoError(error) {<br />  alert(<span class="kw">error</span>.<span class="fu">message</span>);<br />}</code></pre>
+<ol start="6" type="1">
+<li>Try it out!</li>
 </ol>
 <p>TODO: Stuck? Find the script in...blah blah.</p>
 </section>

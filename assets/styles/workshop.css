@@ -44,6 +44,9 @@ h3 {
   h3:after {
     content: "**"; }
 
+h4 {
+  text-transform: uppercase; }
+
 a, a:visited {
   color: #e43d3d; }
 

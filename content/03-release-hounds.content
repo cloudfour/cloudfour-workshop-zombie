@@ -251,15 +251,266 @@ We've already done the sloppy math on `#main` and decided it should be 60% wide.
 
 # What about the sidebar?
 
-## Figure: The sidebar currently has a left margin of 570px
+## The sidebar currently has a left margin of 570px
 
 ![](images/03-sidebar.png)
 
+570px is within the context of the `#container` element. So, to convert it to fluid, we apply the formula:
 
-# Nice on desktop, but not so good on mobile
+#### 570 (target) / 900 (context) ~= 63.5%
+
+(It's closer to 63.25%, but we have a little bit of wiggle room in our math right now)
+
+# Margins can be proportional, too
+
+### Instead of
+
+~~~ {.css}
+#sidebar {
+  margin-left: 570px; 
+  }
+~~~
+
+### Use
+
+~~~ {.css}
+#sidebar {
+  margin-left: 63.5%;
+}
+~~~
+
+# In summary...
+
+* We edited the rules for `body > div`, `#container`, `#main` and `#sidebar`.
+* `body > div` and `#container` retain a pixel-based width, but it is a `max-width`. These containers scale *down* but not up. This was a design decision.
+* `#main` and `#sidebar` and their padding and margin widths are proportional now. These elements scale within their parent element `#container`.
+* If you like, you can find the finished version of the fluid CSS in your rucksack (see field notes for details).
+
+# So, what did that get us?
 
 ![](images/sigma-site-screenshots/iphone-fluid-broken.jpg "Oh, dear") ![](images/sigma-site-screenshots/iphone-fluid-broken-2.jpg "Oh, dear")
 
 It's proportional, all right.
 
+### What was the point of that? Still looks wretched on mobile
 
+# That's where Media Queries come in
+
+Fluid grids are the first tenet of RWD. Now it's time for the vital second tenet: 
+
+## Media Queries!
+
+#### CSS3 media queries let you *selectively apply CSS* based upon the present environment of the user's browser.
+
+# Media Types
+
+Media types have been around a while. It's how we make print stylesheets, e.g.
+
+~~~ {.html}
+<link rel="stylesheet" media="print" href="print.css">
+~~~
+
+## Speaker Notes
+
+Other popular media types
+
+* screen
+* projection
+
+# Media Features
+
+#### Media types have media features.
+
+For example, `width` is a media feature of several media types, including `screen`, `print` and more.
+
+`orientation` is a media feature of various bitmap media types.
+
+# Logical expressions
+
+#### CSS media queries evaluate the current value of *media features* in logical expressions to determine whether to apply the enclosed CSS.
+
+~~~ {.css}
+@media screen and (min-width: 600px) {
+  // In browsers that support media queries,
+  // rules in here will only be applied if the
+  // query expression evaluates as true
+}
+~~~
+
+### Also
+
+~~~ {.html}
+<link rel="stylesheet" media="screen and (min-width:600px)" href="thing.css">
+~~~
+
+## Speaker Notes
+
+* @import syntax also supported.
+* Mention that `width` is the media feature; `min-width` is a query on that feature.
+
+# So?
+
+![](images/sigma-site-screenshots/iphone-fluid-broken.jpg "Oh, dear") ![](images/sigma-site-screenshots/iphone-fluid-broken-2.jpg "Oh, dear")
+
+By using media queries, we can apply different CSS in different situations.
+
+The problem with the Sigma Stronghold site on narrow screens is that the columns are too small and the nav feels too cramped.
+
+## Speaker Notes
+
+* The most popular application of this is to adapt layout depending on the current window width, which is what we are going to do.
+
+# Let's make this more responsive
+
+* Let's make the site layout more *responsive* by adapting it for narrower windows.
+* Instead of two columns of content, let's have a single column.
+* And instead of tabbed navigation, let's make the navigation elements bigger and more tap-able.
+
+# First whack at media query-adapted layout
+
+Let's say that any screen narrower than 600px should have a single-column view of the content, and vertical navigation items.
+
+TODO: Graphic of two layouts
+
+## Speaker Notes
+
+Choosing a breakpoint at 600px somewhat arbitrarily.
+
+# Constructing our media query
+
+We want to create a set of CSS rules that only get applied to browser windows narrower than 600 px. That looks like:
+
+~~~ {.css}
+@media screen and (max-width:600px) {
+  // Rules for narrow screens here
+}
+~~~
+
+# And what goes inside of there?
+
+First, let's make the two content containers span the full width of their parent container and not float:
+
+~~~ {.css}
+@media screen and (max-width:600px) {
+  #main, #sidebar {
+    width: 100%;
+    float: none;
+    clear: both;
+    margin: 0; 
+  }
+}
+~~~
+
+# Moonset
+
+That moon image is simply too huge and wonky for mobile. Let's kill it.
+
+~~~ {.css}
+@media screen and (max-width:600px) {
+  ...   // #main, #sidebar
+  body {
+    background-image: none; 
+  }
+}
+~~~
+
+# Navigational Aids
+
+Let's make the navigation vertical and tap-able.
+
+~~~ {.css}
+@media screen and (max-width:600px) {
+  ... // #main, #sidebar, body
+  #header nav ul li {
+    float: none;
+    clear: both;
+    width: 100%;
+    margin: .5em 0; 
+  }
+  #header nav ul li a {
+      margin: 0;
+      padding: .75em; 
+  }
+}
+~~~
+
+# A question of taste
+
+Often as screen sizes change, proportions feel a bit different. 
+
+~~~ {.css}
+@media screen and (max-width:600px) {
+  ... // #main, #sidebar, body, #header nav...
+  #header {
+    padding: 1em 0; }
+  #header h1, #header h3 {
+    padding: 0 .375em; }
+  h1 {
+    font-size: 1.75em;
+    line-height: 1.25em; }
+  h3 {
+    font-size: 1.1em;
+    line-height: 1.2em; }
+  p {
+    font-size: .9em;
+    line-height: 1.4em; }
+}
+~~~
+
+## Speaker Notes
+
+* Put the ending brace on the same line for space reasons here.
+
+# And...check it out...
+
+## Figure: iPhone Responsive
+
+![](images/sigma-site-screenshots/iphone-responsive-2.jpg)
+
+# And...
+
+## Figure: Android responsive
+
+![](images/sigma-site-screenshots/android-responsive.png)
+
+# Mobile first RWD
+
+* Content- and mobile-first approach
+* More subtle approach that focuses our thinking
+* Instead of adapting downward for simpler browsers/devices, more adherance to progressive enhancement
+
+# Inverting the picture
+
+Stepping back and thinking what we want our baseline experience to be.
+
+* Let's make the single-column width the default layout and *enhance* to the two-column view and the background image.
+* *But*, let's make the tabbed navigation default (not the vertical).
+* Let's also fine-tune the _breakpoints_.
+    * Let's make the vertical navigation appear for windows <= 550px.
+    * Let's make the double column view kick in and the moon background appear for windows >= 750px.
+
+## Speaker Notes
+
+* TODO: Ask Jason about image download (moon)
+* Talk about media query support and how it's a bit easier to handle on the desktop
+
+# CSS Restructuring
+
+~~~ {.css}
+// Baseline CSS
+// Single column layout for #main and #sidebar
+// No background moon image
+// Tabbed nav (horizontal)
+
+@media screen and (min-width: 750px) {
+  // Two-column view
+  // Moon background image
+  // Proportion adjustments for padding and fonts
+}
+@media screen and (max-width: 550px) {
+  // Vertical navigation
+  // Proportion adjustments for padding and fonts
+}
+~~~
+
+TODO: What about responsive images?

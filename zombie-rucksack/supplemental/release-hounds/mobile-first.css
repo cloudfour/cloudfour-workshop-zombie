@@ -12,9 +12,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   background-color: black;
   color: white;
-  font: 100% "Special Elite";
-  background-image: url(images/moon.jpg);
-  background-repeat: no-repeat; }
+  font: 100% "Special Elite"; }
 
 h1, h2 {
   font-family: "Nosifer", cursive;
@@ -41,10 +39,7 @@ a {
 
 body > div {
   max-width: 920px;
-  margin: 0 auto;
-  border-color: rgba(255, 255, 255, 0.2);
-  border-width: 0px 7px;
-  border-style: solid; }
+  margin: 0 auto; }
 
 small {
   color: #cccccc;
@@ -101,11 +96,11 @@ small {
     clear: both; }
 
 #main {
+  width: 100%;
+  float: none;
+  clear: both;
+  margin: 0;
   zoom: 1;
-  margin-left: 1.5%;
-  clear: left;
-  float: left;
-  width: 60%;
   background: transparent;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(50%, rgba(228, 61, 61, 0.1)), color-stop(100%, rgba(228, 61, 61, 0.2)));
   background: -moz-linear-gradient(top, transparent 0%, rgba(228, 61, 61, 0.1) 50%, rgba(228, 61, 61, 0.2) 100%);
@@ -125,7 +120,9 @@ small {
   padding: 1em; }
 
 #sidebar {
-  margin-left: 63.5%; }
+  float: none;
+  clear: both;
+  margin: 0; }
   #sidebar > div {
     padding: .5em; }
 
@@ -143,28 +140,28 @@ footer {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-width: 1px 0 0 0; }
 
-@media all and (max-width:600px) {
-  #main, #sidebar {
-    width: 100%;
-    float: none;
-    clear: both;
-    margin: 0; }
+@media all and (min-width:750px) {
+  body {
+    background-image: url(images/moon.jpg);
+    background-repeat: no-repeat; }
 
+  body > div {
+    border-color: rgba(255, 255, 255, 0.2);
+    border-width: 0px 7px;
+    border-style: solid; }
+
+  #main {
+    margin-left: 1.5%;
+    clear: left;
+    float: left;
+    width: 60%; }
+
+  #sidebar {
+    margin-left: 63.5%;
+    clear: none; } }
+@media all and (max-width:550px) {
   body {
     background-image: none; }
-
-  #header {
-    padding: 1em 0; }
-    #header nav ul li {
-      float: none;
-      clear: both;
-      width: 100%;
-      margin: .5em 0; }
-      #header nav ul li a {
-        margin: 0;
-        padding: .75em; }
-    #header h1, #header h3 {
-      padding: 0 .375em; }
 
   h1 {
     font-size: 1.75em;
@@ -176,4 +173,18 @@ footer {
 
   p {
     font-size: .9em;
-    line-height: 1.4em; } }
+    line-height: 1.4em; }
+
+  #header {
+    padding: 1em 0; }
+
+  #header h1, #header h3 {
+    padding: 0 .375em; }
+  #header nav ul li {
+    float: none;
+    clear: both;
+    width: 100%;
+    margin: .5em 0; }
+    #header nav ul li a {
+      margin: 0;
+      padding: .75em; } }
