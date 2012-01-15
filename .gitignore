@@ -1,4 +1,2 @@
-bin/*
 *sass-cache*
 *.DS_Store
-*.scss

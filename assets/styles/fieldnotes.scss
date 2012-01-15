@@ -1,0 +1,70 @@
+@import 'common';
+
+body {
+  background-color:     $color-warm;
+  color:                $color-dark;
+  font-family:          $body-font;
+  line-height:          1.5em;
+}
+
+h1, h2 {
+  margin:               0;
+  padding:              .5em;
+}
+
+h1 {
+  color:                $color-dark;
+}
+
+h2 {
+  color:                $color-accent;
+  border-width:         0 0 1px 0;
+  border-style:         dashed;
+  border-color:         rgba($color-dark, .65);
+}
+
+a, a:visited {
+  color:                darken($color-accent, 15%);
+}
+
+pre, code {
+  border-width:         1px;
+  border-style:         dashed;
+  border-color:         $color-accent;
+  font-family:          $code-font;
+  padding:              .15em .35em;
+  margin:               0 .25em;
+}
+
+pre {
+  overflow:             scroll;
+}
+
+pre code {
+  border-width:         0;
+}
+body > section {
+  padding:              0 1em;
+}
+
+body > section > section {
+  background-color:     $color-warm;
+  @include              ghetto-clearfix;
+}
+
+section[id^="instead"] {
+  float:                left;
+  width:                45%;
+  clear:                left;
+  margin-bottom:        1em;
+  @include              ghetto-clearfix;
+}
+
+section[id^="use"] {
+  float:                right;
+  width:                45%;
+
+  margin-bottom:        1em;
+  border-bottom:        1px;
+  @include              ghetto-clearfix;
+}
