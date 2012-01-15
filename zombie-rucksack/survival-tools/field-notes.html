@@ -234,9 +234,163 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 </code></pre>
 </section>
 </section>
-<section id="end-result">
-<h2>End result</h2>
-<p>If stuff stuff</p>
+</section>
+<section id="a-honed-killing-machine">
+<h1>4. A Honed Killing Machine</h1>
+<section id="applicationcache">
+<h2>ApplicationCache!</h2>
+<section id="more-information-about-applicationcache">
+<h3>More Information about ApplicationCache</h3>
+<ul>
+<li>There are enough little gotchas in appCache that it may behoove you to <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html">read the spec</a>.</li>
+<li>A handy site that lists a lot of the common gotchas can be found at <a href="http://appcachefacts.info/"><code class="url">http://appcachefacts.info/</code></a>.</li>
+<li>We find that it is easiest to inspect and debug appCache using's Webkit's Web Inspector tool (available in Chrome, Safari).</li>
+</ul>
+</section>
+<section id="cache-manifest-quickies">
+<h3>Cache Manifest Quickies</h3>
+<ol type="1">
+<li><p>File must be served as <code>text/application-cache</code>. Often this can be effected by adding the following line to an apache config (<code>.htaccess</code> file or the like). <code>AddType text/cache-manifest .appcache</code></p></li>
+<li><p>Basic cache manifest syntax:</p>
+<pre><code>CACHE MANIFEST
+
+CACHE:
+foo.jpg
+bar.png
+index.html
+ding/dong.html
+</code></pre></li>
+<li><p>Reference a cache manifest with the <code>manifest</code> attribute of the <code>&lt;html&gt;</code> tag. e.g. <code>&lt;html manifest=&quot;manifest.appcache&quot;&gt;</code>.</p></li>
+</ol>
+</section>
+<section id="creating-a-cache-manifest-for-the-sigma-stronghold-site">
+<h3>Creating a Cache Manifest for the Sigma Stronghold Site</h3>
+<p><em>Note</em>: If you are not running apache locally, you may not be able to get cache manifests working on your laptop. No worries!</p>
+<ol type="1">
+<li>Create a file called <code>manifest.appcache</code> in the <code>sigma-stronghold-website</code> folder in your rucksack.</li>
+<li><p>Let's start by adding the landing page (really all we have of the site!) and its resources to the application cache: CSS, images...etc:</p>
+<pre><code>CACHE MANIFEST
+
+CACHE:
+
+index.html
+favicon.ico
+images/blip.png
+images/bomb.png
+images/moon.jpg
+styles.css
+http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
+</code></pre></li>
+<li>Edit the <code>.htaccess</code> file in the <code>sigma-stronghold-website</code> directory (create <code>.htaccess</code> if it doesn't exist yet).</li>
+<li><p>Add the line:</p>
+<pre><code>`AddType text/cache-manifest .appcache`
+</code></pre></li>
+<li><p>Edit <code>index.html</code>. Change the <code>&lt;html&gt;</code> tag to read:</p>
+<pre><code>`&lt;html manifest=&quot;manifest.appcache&quot;&gt;`
+</code></pre></li>
+<li><p>Use the WebInspector to see if your appCache worked!</p></li>
+</ol>
+</section>
+<section id="improving-the-cache-manifest">
+<h3>Improving the Cache Manifest</h3>
+<p>We need to cache those Google fonts! Add this to the end of the <code>CACHE</code> section:</p>
+<pre><code>http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff
+http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff
+</code></pre>
+</section>
+</section>
+</section>
+<section id="device-apis-focus-on-geolocation">
+<h1>Device APIs: Focus on Geolocation!</h1>
+<section id="w3c-geolocation-api">
+<h2>W3C Geolocation API</h2>
+<ul>
+<li>The spec for the <a href="http://dev.w3.org/geo/api/spec-source.html">W3C Geolocation API spec</a> is relatively short and easy to understand (as specs go).</li>
+</ul>
+<section id="quick-details">
+<h3>Quick Details</h3>
+<p>Browsers that implement the W3C geolocation spec expose the <code>navigator.geolocation</code> object and its methods to the browser.</p>
+<section id="code-snippets">
+<h4>Code Snippets</h4>
+<pre><code>    navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
+
+    function successCallback(position) {
+      // Latitude and Longitude are usually what you're after.
+      // They're properties of the coords object on position.
+      alert(position.coords.latitude + ', ' + position.coords.longitude);
+    }
+    function errorCallback(error) {
+      // Do something or freak out.
+    }
+</code></pre>
+</section>
+</section>
+<section id="building-a-quickie-geolocation-test-page">
+<h3>Building a Quickie Geolocation Test Page</h3>
+<p>TODO: HTML template in <code>where-am-i</code> folder.</p>
+<ol type="1">
+<li>Open the <code>index.html</code> file in the <code>where-am-i</code> folder in your rucksack.</li>
+<li><p>After the closing <code>&lt;/body&gt;</code> tag, add:</p>
+<pre><code>&lt;script&gt;
+  if (navigator.geolocation) { // Test for W3C geolocation support
+
+  }
+&lt;/script&gt;
+</code></pre></li>
+<li><p>OK! Now expand upon that:</p>
+<pre><code>if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
+} else {
+  onGeoError(new Error('Sorry, Geolocation not supported in this browser!'));
+}
+</code></pre></li>
+<li><em>Note</em>: This won't work (well, there will be JS errors) until we define the <code>onGeoSuccess</code> and <code>onGeoError</code> callback functions. So let's do that now:</li>
+<li><p>Add this to the JavaScript (right after what's already there):</p>
+<pre><code>function onGeoSuccess(position) {
+  var coordinates = position.coords;
+  alert(coordinates.latitude + &quot;, &quot; + coordinates.longitude);
+}
+function onGeoError(error) {
+  alert(error.message);
+}
+</code></pre></li>
+<li><p>Try it out!</p></li>
+</ol>
+<p>TODO: Stuck? Find the script in...blah blah.</p>
+</section>
+</section>
+</section>
+<section id="a-band-of-brothers">
+<h1>6. A Band of Brothers</h1>
+<ul>
+<li><a href="http://www.jquerymobile.com">jQuery Mobile</a></li>
+</ul>
+<section id="exercise-1-a-basic-jquery-mobile-page">
+<h2>Exercise 1: A Basic jQuery Mobile Page</h2>
+</section>
+<section id="exercise-2-drop-in-the-content">
+<h2>Exercise 2: Drop in the content</h2>
+</section>
+<section id="exercise-3-add-the-javascript">
+<h2>Exercise 3: Add the JavaScript</h2>
+<ul>
+<li>Click handler for &quot;Got One&quot;</li>
+<li>GeoLocation</li>
+</ul>
+</section>
+</section>
+<section id="desperate-times-call-for...">
+<h1>7. Desperate Times call for...</h1>
+<section id="hybrid-app-development-with-phonegap-and-phonegap-build">
+<h2>Hybrid App Development with PhoneGap and PhoneGap Build</h2>
+<ul>
+<li><a href="http://www.phonegap.com">PhoneGap</a></li>
+<li><a href="http://build.phonegap.com">PhoneGap Build</a></li>
+</ul>
+</section>
+<section id="anatomy-of-a-phonegap-build-config-file">
+<h2>Anatomy of a PhoneGap Build Config File</h2>
+<p>TODO: Put app icons in the exercise area for this and link into the config.xml TODO: Put config.xml example in rucksack</p>
 </section>
 </section>
 </body>

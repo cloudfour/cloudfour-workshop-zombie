@@ -1,0 +1,265 @@
+% Zombie 101: Release the Hounds!
+% Jason Grigsby and Lyza Danger Gardner
+
+# You already have some blunt weapons
+
+## Let's sharpen them
+
+It may seem like we're still mired on the desktop with all that Sigma Stronghold optimization.
+
+### It's time to get mobile
+
+TODO: Push final step of section 2 to lyzadanger.com
+
+# Oh dear, that's ugly, isn't it?
+
+The current structure of the Sigma Stronghold web site is a *fixed-width, rigid layout*. That is not going to adapt in the face of the zombie gadget crisis. What do we do?
+
+## We adapt!
+
+When the going gets tough, we kill zombies.
+
+# Lesson 1: Quarantine never works
+
+* We have to relinquish our false sense of control and set our content free.
+* We don't get to *decide* or even reliably *know* our user's screen sizes.
+* If we try to quarantine the zombies with rigid, pixel-perfect designs, they'll just be more pissed off when they ultimately escape.
+
+## Speaker Notes
+
+Expound on limits of control.
+
+# Responsive Web Design (RWD)
+
+Responsive Web Design (RWD) is a technique, championed by Ethan Marcotte (@beep), that argues adapting an experience for the user's environment, instead of using a rigid, one-size-fits-all type of structure.
+
+RWD is based upon the notion of creating a fluid, proportional layout (instead of pixel- or absolute-unit-based layouts). RWD layouts *scale, flex and adapt* to *flow comfortably* in the user's browser, whatever size or shape it might be at the moment.
+
+# RWD Elements
+
+RWD is driven by three main technical pieces:
+
+* Fluid CSS layouts
+* CSS3 Media Queries
+* Responsive Images and Objects
+
+# RWD Part I: Fluid CSS layouts
+
+![](images/03-sigma-site-structure.png "Site structure")
+
+Right now, the Sigma Stronghold web site's structure is like this.
+
+* `body > div` that contains all content: 920px
+* `#container` (all content is inside of this `div`): 900px
+* `#main`: 500px
+* `#sidebar`: No specific width set, but a left margin of 570px
+
+# What's so bad about fixed layouts?
+
+![](images/03-portals.png)
+
+# Accounts for this
+
+![](images/sigma-site-screenshots/android-broken.png "Oopsie")
+
+
+# Fluid layouts, on the other hand...
+
+## Figure: Fluid Layouts Scale
+
+![](images/03-fluid-scales.png)
+
+# The fluid formula
+
+## Figure: Fluid Formula: Result = Target / Context
+
+![](images/03-fluid-formula.png)
+
+
+# Result = Target / Context
+
+## Result
+
+![](images/03-result.png)
+
+Proportional units
+
+# Result = Target / Context
+
+## Target
+
+![](images/03-target.png)
+
+Our original, absolute units
+
+# Result = Target / Context
+
+![](images/03-context.png)
+
+## Context
+
+Let's talk about *context* a bit, yes?
+
+# Applying the fluid formula
+
+![](images/03-formula-applied.png)
+
+## Current metrics of Sigma Stronghold site
+
+* `body > div` that contains all content: 920px
+* `#container` (all content is inside of this `div`): 900px
+* `#main`: 500px
+* `#sidebar`: No specific width set, but a left margin of 570px
+
+# Applying the formula to the \#main div
+
+![](images/03-main.png)
+
+Let's see how this plays out on the `div#main` on the Sigma Stronghold site, shall we?
+
+# Example of the formula
+
+## Figure: A precise example of the formula
+
+![](images/03-formula-example.png)
+
+
+# Or, roughly
+
+## Figure: Approximation of formula results
+
+![](images/03-formula-approximate.png)
+
+# Let's start from the top
+
+![](images/03-containers.png)
+
+Let's start with the first items in our list:
+
+* `body > div` that contains all content: 920px
+* `#container` (all content is inside of this `div`): 900px
+
+## We're going to play a little twist on pure fluid layouts here
+
+It is viable to mix fixed and fluid units in some ways.
+
+## Speaker Notes
+
+* We're making the design executive decision that we never want the content of the page to be wider than these measurements. The design can scale down but 920px and 900px are as large as these elements should ever appear. 
+* This is a bit of a curveball on the normal, full-fluid approach, but, hey, the web is a crazy place. And this is still viable, as long as you're OK with the content being a bit narrow on very wide screens.
+* It's all about give and take and evaluation.
+
+# Let's dive in...
+
+Open your `styles.css` file in the Sigma Stronghold web site folder.
+
+### Let's convert this thing to scale and adapt to different devices and browsers
+
+We don't have to throw the undead baby out with the bathwater here. We can change some CSS rules in a targeted way to get fluid!
+
+# Revising our CSS
+
+To achieve the goal of the overall content width—never wider than 920px overall—we'll use the `max-width` CSS property.
+
+### Instead of
+
+~~~~
+body > div {
+  width: 920px;
+  ...
+ }
+~~~~
+
+### Use
+
+~~~~
+body > div {
+ max-width: 920px;
+ ...
+}
+~~~~
+
+## Speaker Notes
+
+* This constrains our outer container to never exceed 920px—but it can certainly be smaller.
+* Strictly speaking, this div is probably not necessary.
+* `body > div` and `div#main` are centered in the browser window by way of the `margin: 0 auto`.
+
+# Revising our CSS, cont.
+
+### Instead of
+
+~~~
+#container {
+  zoom: 1;
+  background: black;
+  padding: 10px;
+  width: 900px;
+  clear: both; }
+~~~
+
+### Use
+
+~~~
+#container {
+  zoom: 1;
+  background: black;
+  padding: .625em;
+  max-width: 900px;
+  clear: both; }
+~~~
+
+
+## Speaker Notes
+
+* If folks are curious, the `zoom` property is part of a clearfix for IE.
+* Note the padding conversion to `em`.
+* Similar to the containing div, we're making this never wider than 900px. That's an absolute. Sometimes there are absolutes.
+
+
+# Making the content areas stretchy and fluid
+
+## Figure: The containers scale down comfortably now
+
+![](images/03-containers-scale.png)
+
+# Onward!
+
+We've already done the sloppy math on `#main` and decided it should be 60% wide.
+
+### Instead of
+
+    #main {
+      zoom: 1;
+      margin-left: 10px;
+      clear: left;
+      float: left;
+      width: 550px;
+      ...
+    }
+
+### use
+
+    #main {
+      zoom: 1;
+      margin-left: 1.5%;
+      clear: left;
+      float: left;
+      width: 60%;
+      ...
+    }
+
+# What about the sidebar?
+
+## Figure: The sidebar currently has a left margin of 570px
+
+![](images/03-sidebar.png)
+
+
+# Nice on desktop, but not so good on mobile
+
+![](images/sigma-site-screenshots/iphone-fluid-broken.jpg "Oh, dear") ![](images/sigma-site-screenshots/iphone-fluid-broken-2.jpg "Oh, dear")
+
+It's proportional, all right.
+
+

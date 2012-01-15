@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Jason Grigsby and Lyza Danger Gardner" />
+  <title>Zombie 101: Release the Hounds!</title>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="../assets/styles/workshop.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js.gz"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Zombie 101: Release the Hounds!</h1>
+  <p class="author">
+Jason Grigsby and Lyza Danger Gardner
+  </p>
+</div>
+<div id="you-already-have-some-blunt-weapons" class="slide">
+<h1>You already have some blunt weapons</h1>
+<div id="lets-sharpen-them">
+<h2>Let's sharpen them</h2>
+<p>It may seem like we're still mired on the desktop with all that Sigma Stronghold optimization.</p>
+<div id="its-time-to-get-mobile">
+<h3>It's time to get mobile</h3>
+<p>TODO: Push final step of section 2 to lyzadanger.com</p>
+</div>
+</div>
+</div>
+<div id="oh-dear-thats-ugly-isnt-it" class="slide">
+<h1>Oh dear, that's ugly, isn't it?</h1>
+<p>The current structure of the Sigma Stronghold web site is a <em>fixed-width, rigid layout</em>. That is not going to adapt in the face of the zombie gadget crisis. What do we do?</p>
+<div id="we-adapt">
+<h2>We adapt!</h2>
+<p>When the going gets tough, we kill zombies.</p>
+</div>
+</div>
+<div id="lesson-1-quarantine-never-works" class="slide">
+<h1>Lesson 1: Quarantine never works</h1>
+<ul>
+<li>We have to relinquish our false sense of control and set our content free.</li>
+<li>We don't get to <em>decide</em> or even reliably <em>know</em> our user's screen sizes.</li>
+<li>If we try to quarantine the zombies with rigid, pixel-perfect designs, they'll just be more pissed off when they ultimately escape.</li>
+</ul>
+<div id="speaker-notes">
+<h2>Speaker Notes</h2>
+<p>Expound on limits of control.</p>
+</div>
+</div>
+<div id="responsive-web-design-rwd" class="slide">
+<h1>Responsive Web Design (RWD)</h1>
+<p>Responsive Web Design (RWD) is a technique, championed by Ethan Marcotte (@beep), that argues adapting an experience for the user's environment, instead of using a rigid, one-size-fits-all type of structure.</p>
+<p>RWD is based upon the notion of creating a fluid, proportional layout (instead of pixel- or absolute-unit-based layouts). RWD layouts <em>scale, flex and adapt</em> to <em>flow comfortably</em> in the user's browser, whatever size or shape it might be at the moment.</p>
+</div>
+<div id="rwd-elements" class="slide">
+<h1>RWD Elements</h1>
+<p>RWD is driven by three main technical pieces:</p>
+<ul>
+<li>Fluid CSS layouts</li>
+<li>CSS3 Media Queries</li>
+<li>Responsive Images and Objects</li>
+</ul>
+</div>
+<div id="rwd-part-i-fluid-css-layouts" class="slide">
+<h1>RWD Part I: Fluid CSS layouts</h1>
+<div class="figure">
+<img src="images/03-sigma-site-structure.png" title="Site structure" /><p class="caption"></p>
+</div>
+<p>Right now, the Sigma Stronghold web site's structure is like this.</p>
+<ul>
+<li><code>body &gt; div</code> that contains all content: 920px</li>
+<li><code>#container</code> (all content is inside of this <code>div</code>): 900px</li>
+<li><code>#main</code>: 500px</li>
+<li><code>#sidebar</code>: No specific width set, but a left margin of 570px</li>
+</ul>
+</div>
+<div id="whats-so-bad-about-fixed-layouts" class="slide">
+<h1>What's so bad about fixed layouts?</h1>
+<div class="figure">
+<img src="images/03-portals.png" /><p class="caption"></p>
+</div>
+</div>
+<div id="accounts-for-this" class="slide">
+<h1>Accounts for this</h1>
+<div class="figure">
+<img src="images/sigma-site-screenshots/android-broken.png" title="Oopsie" /><p class="caption"></p>
+</div>
+</div>
+<div id="fluid-layouts-on-the-other-hand..." class="slide">
+<h1>Fluid layouts, on the other hand...</h1>
+<div id="figure-fluid-layouts-scale">
+<h2>Figure: Fluid Layouts Scale</h2>
+<div class="figure">
+<img src="images/03-fluid-scales.png" /><p class="caption"></p>
+</div>
+</div>
+</div>
+<div id="the-fluid-formula" class="slide">
+<h1>The fluid formula</h1>
+<div id="figure-fluid-formula-result-target-context">
+<h2>Figure: Fluid Formula: Result = Target / Context</h2>
+<div class="figure">
+<img src="images/03-fluid-formula.png" /><p class="caption"></p>
+</div>
+</div>
+</div>
+<div id="result-target-context" class="slide">
+<h1>Result = Target / Context</h1>
+<div id="result">
+<h2>Result</h2>
+<div class="figure">
+<img src="images/03-result.png" /><p class="caption"></p>
+</div>
+<p>Proportional units</p>
+</div>
+</div>
+<div id="result-target-context-1" class="slide">
+<h1>Result = Target / Context</h1>
+<div id="target">
+<h2>Target</h2>
+<div class="figure">
+<img src="images/03-target.png" /><p class="caption"></p>
+</div>
+<p>Our original, absolute units</p>
+</div>
+</div>
+<div id="result-target-context-2" class="slide">
+<h1>Result = Target / Context</h1>
+<div class="figure">
+<img src="images/03-context.png" /><p class="caption"></p>
+</div>
+<div id="context">
+<h2>Context</h2>
+<p>Let's talk about <em>context</em> a bit, yes?</p>
+</div>
+</div>
+<div id="applying-the-fluid-formula" class="slide">
+<h1>Applying the fluid formula</h1>
+<div class="figure">
+<img src="images/03-formula-applied.png" /><p class="caption"></p>
+</div>
+<div id="current-metrics-of-sigma-stronghold-site">
+<h2>Current metrics of Sigma Stronghold site</h2>
+<ul>
+<li><code>body &gt; div</code> that contains all content: 920px</li>
+<li><code>#container</code> (all content is inside of this <code>div</code>): 900px</li>
+<li><code>#main</code>: 500px</li>
+<li><code>#sidebar</code>: No specific width set, but a left margin of 570px</li>
+</ul>
+</div>
+</div>
+<div id="applying-the-formula-to-the-main-div" class="slide">
+<h1>Applying the formula to the #main div</h1>
+<div class="figure">
+<img src="images/03-main.png" /><p class="caption"></p>
+</div>
+<p>Let's see how this plays out on the <code>div#main</code> on the Sigma Stronghold site, shall we?</p>
+</div>
+<div id="example-of-the-formula" class="slide">
+<h1>Example of the formula</h1>
+<div id="figure-a-precise-example-of-the-formula">
+<h2>Figure: A precise example of the formula</h2>
+<div class="figure">
+<img src="images/03-formula-example.png" /><p class="caption"></p>
+</div>
+</div>
+</div>
+<div id="or-roughly" class="slide">
+<h1>Or, roughly</h1>
+<div id="figure-approximation-of-formula-results">
+<h2>Figure: Approximation of formula results</h2>
+<div class="figure">
+<img src="images/03-formula-approximate.png" /><p class="caption"></p>
+</div>
+</div>
+</div>
+<div id="lets-start-from-the-top" class="slide">
+<h1>Let's start from the top</h1>
+<div class="figure">
+<img src="images/03-containers.png" /><p class="caption"></p>
+</div>
+<p>Let's start with the first items in our list:</p>
+<ul>
+<li><code>body &gt; div</code> that contains all content: 920px</li>
+<li><code>#container</code> (all content is inside of this <code>div</code>): 900px</li>
+</ul>
+<div id="were-going-to-play-a-little-twist-on-pure-fluid-layouts-here">
+<h2>We're going to play a little twist on pure fluid layouts here</h2>
+<p>It is viable to mix fixed and fluid units in some ways.</p>
+</div>
+<div id="speaker-notes-1">
+<h2>Speaker Notes</h2>
+<ul>
+<li>We're making the design executive decision that we never want the content of the page to be wider than these measurements. The design can scale down but 920px and 900px are as large as these elements should ever appear.</li>
+<li>This is a bit of a curveball on the normal, full-fluid approach, but, hey, the web is a crazy place. And this is still viable, as long as you're OK with the content being a bit narrow on very wide screens.</li>
+<li>It's all about give and take and evaluation.</li>
+</ul>
+</div>
+</div>
+<div id="lets-dive-in..." class="slide">
+<h1>Let's dive in...</h1>
+<p>Open your <code>styles.css</code> file in the Sigma Stronghold web site folder.</p>
+<div id="lets-convert-this-thing-to-scale-and-adapt-to-different-devices-and-browsers">
+<h3>Let's convert this thing to scale and adapt to different devices and browsers</h3>
+<p>We don't have to throw the undead baby out with the bathwater here. We can change some CSS rules in a targeted way to get fluid!</p>
+</div>
+</div>
+<div id="revising-our-css" class="slide">
+<h1>Revising our CSS</h1>
+<p>To achieve the goal of the overall content width—never wider than 920px overall—we'll use the <code>max-width</code> CSS property.</p>
+<div id="instead-of">
+<h3>Instead of</h3>
+<pre><code>body &gt; div {
+  width: 920px;
+  ...
+ }
+</code></pre>
+</div>
+<div id="use">
+<h3>Use</h3>
+<pre><code>body &gt; div {
+ max-width: 920px;
+ ...
+}
+</code></pre>
+</div>
+<div id="speaker-notes-2">
+<h2>Speaker Notes</h2>
+<ul>
+<li>This constrains our outer container to never exceed 920px—but it can certainly be smaller.</li>
+<li>Strictly speaking, this div is probably not necessary.</li>
+<li><code>body &gt; div</code> and <code>div#main</code> are centered in the browser window by way of the <code>margin: 0 auto</code>.</li>
+</ul>
+</div>
+</div>
+<div id="revising-our-css-cont." class="slide">
+<h1>Revising our CSS, cont.</h1>
+<div id="instead-of-1">
+<h3>Instead of</h3>
+<pre><code>#container {
+  zoom: 1;
+  background: black;
+  padding: 10px;
+  width: 900px;
+  clear: both; }
+</code></pre>
+</div>
+<div id="use-1">
+<h3>Use</h3>
+<pre><code>#container {
+  zoom: 1;
+  background: black;
+  padding: .625em;
+  max-width: 900px;
+  clear: both; }
+</code></pre>
+</div>
+<div id="speaker-notes-3">
+<h2>Speaker Notes</h2>
+<ul>
+<li>If folks are curious, the <code>zoom</code> property is part of a clearfix for IE.</li>
+<li>Note the padding conversion to <code>em</code>.</li>
+<li>Similar to the containing div, we're making this never wider than 900px. That's an absolute. Sometimes there are absolutes.</li>
+</ul>
+</div>
+</div>
+<div id="making-the-content-areas-stretchy-and-fluid" class="slide">
+<h1>Making the content areas stretchy and fluid</h1>
+<div id="figure-the-containers-scale-down-comfortably-now">
+<h2>Figure: The containers scale down comfortably now</h2>
+<div class="figure">
+<img src="images/03-containers-scale.png" /><p class="caption"></p>
+</div>
+</div>
+</div>
+<div id="onward" class="slide">
+<h1>Onward!</h1>
+<p>We've already done the sloppy math on <code>#main</code> and decided it should be 60% wide.</p>
+<div id="instead-of-2">
+<h3>Instead of</h3>
+<pre><code>#main {
+  zoom: 1;
+  margin-left: 10px;
+  clear: left;
+  float: left;
+  width: 550px;
+  ...
+}
+</code></pre>
+</div>
+<div id="use-2">
+<h3>use</h3>
+<pre><code>#main {
+  zoom: 1;
+  margin-left: 1.5%;
+  clear: left;
+  float: left;
+  width: 60%;
+  ...
+}
+</code></pre>
+</div>
+</div>
+<div id="what-about-the-sidebar" class="slide">
+<h1>What about the sidebar?</h1>
+<div id="figure-the-sidebar-currently-has-a-left-margin-of-570px">
+<h2>Figure: The sidebar currently has a left margin of 570px</h2>
+<div class="figure">
+<img src="images/03-sidebar.png" /><p class="caption"></p>
+</div>
+</div>
+</div>
+<div id="nice-on-desktop-but-not-so-good-on-mobile" class="slide">
+<h1>Nice on desktop, but not so good on mobile</h1>
+<p><img src="images/sigma-site-screenshots/iphone-fluid-broken.jpg" title="Oh, dear" /> <img src="images/sigma-site-screenshots/iphone-fluid-broken-2.jpg" title="Oh, dear" /></p>
+<p>It's proportional, all right.</p>
+</div>
+</body>
+</html>
