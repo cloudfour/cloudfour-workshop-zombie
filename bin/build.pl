@@ -28,6 +28,7 @@ $slide_path   = $basepath . "/presentation";
 $src_path     = $basepath . "/assets";
 $pack_path    = $basepath . "/zombie-rucksack";
 $ex_path      = $basepath . "/exercises";
+$flags    = '--from=markdown --to=slidy --standalone';
 
 ## When was the last time a shared/common resource was updated?
 my $common_mtime = 0;
@@ -128,7 +129,6 @@ find(\&build_survival, @survival_items);
 
 $src_file = $content_path . "/outline.mdown";
 $output   = $slide_path   . "/outline.html";
-$flags    = '--from=markdown --to=slidy --standalone';
 if (&needs_update($src_file, $output)) {
   system("$pandoc $flags --css=../assets/styles/workshop.css $src_file > $output");
   print "Outline updated \n";
