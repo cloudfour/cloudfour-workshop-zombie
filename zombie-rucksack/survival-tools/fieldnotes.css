@@ -33,7 +33,8 @@ h1, h2 {
   padding: .5em; }
 
 h1 {
-  color: #555555; }
+  color: #555555;
+  font-size: 2.25em; }
 
 h2 {
   color: #e43d3d;

@@ -5,7 +5,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="pandoc" />
-  <title></title>
+  <meta name="author" content="Jason Grigsby and Lyza Danger Gardner" />
+  <title>Zombie 101: Desperate Times Call for Desperate Measures</title>
   <style type="text/css">
 /*<![CDATA[*/
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode, table.sourceCode pre 
@@ -35,17 +36,44 @@ code.sourceCode span.er { color: red; font-weight: bold; }
     charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
-<div id="exasperated-at-the-limits" class="slide">
-<h1>Exasperated, at the limits</h1>
-<p>Sometimes you need to do something that you just can't quite pull off (yet) on the mobile web.</p>
+<div class="slide titlepage">
+  <h1 class="title">Zombie 101: Desperate Times Call for Desperate Measures</h1>
+  <p class="author">
+Jason Grigsby and Lyza Danger Gardner
+  </p>
 </div>
 <div id="a-blistering-quick-ride-through-hybrid-land" class="slide">
 <h1>A blistering quick ride through hybrid-land</h1>
-<p>yep</p>
+<p>Sometimes you need to do something that you just can't quite pull off (yet) on the mobile web.</p>
+<p>Sometimes zombies mate with the populace at large and the offspring get the best of both worlds—web-based technologies wrapped in native app goodness.</p>
+<p>Giddyup!</p>
+<p>TODO: Drawing: Web technology + native app wrapper = hybrid</p>
 </div>
 <div id="phonegap-and-phonegap-build" class="slide">
 <h1>PhoneGap and PhoneGap Build</h1>
+<div id="figure-phonegap-platforms">
+<h2>Figure: PhoneGap Platforms</h2>
+<div class="figure">
+<img src="images/07-phonegap-platforms.png" /><p class="caption"></p>
+</div>
+</div>
+<div id="phonegap">
+<h2>PhoneGap</h2>
+<p><img src="images/07-phonegap-logo.png" /> <img src="images/07-phonegapbuild-logo.png" /></p>
+<ul>
+<li>PhoneGap is one option for using HTML5 technologies to create native apps for multiple platforms.</li>
+</ul>
+</div>
+<div id="phonegap-build">
+<h2>PhoneGap Build</h2>
+<ul>
+<li>With PhoneGap Build you can build your projects in the cloud (that is, you don't have to compile/build natively for each platform yourself).</li>
+</ul>
+</div>
+<div id="speaker-notes">
+<h2>Speaker Notes</h2>
 <p>PhoneGap Build is based on the W3C Web Widget spec.</p>
+</div>
 </div>
 <div id="anatomy-of-a-phonegap-project" class="slide">
 <h1>Anatomy of a PhoneGap project</h1>
@@ -53,27 +81,64 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </div>
 <div id="the-phonegap-api" class="slide">
 <h1>The PhoneGap API</h1>
-<ul>
-<li>Using phonegap.js in your project</li>
-<li>A single JS API for reusable code</li>
-</ul>
+<p>In our quick example, we're simply going to wrap the existing &quot;I Got One!&quot; application and make it native. But that doesn't use PhoneGap to its true advantage...</p>
+<p>Phonegap.js provides a universal JavaScript API to access device features not exposed to the browser (yet).</p>
 </div>
 <div id="no-really-its-pretty-danged-easy" class="slide">
 <h1>No really, it's pretty danged easy</h1>
-<p>yes</p>
+<p>Let's see how fast we can bust out a native Android version of &quot;I Got One!&quot;.</p>
+<div id="how-to-make-a-phonegap-build-project">
+<h3>How to make a PhoneGap Build project</h3>
+<ol style="list-style-type: decimal">
+<li>Create a config.xml file.</li>
+<li>ZIP up our files.</li>
+<li>Upload and build.</li>
+<li>Install on device.</li>
+</ol>
 </div>
-<div id="using-the-phonegap-api-to-access-device-capabilities" class="slide">
-<h1>Using the PhoneGap API to access device capabilities</h1>
-<ul>
-<li>Using phonegap.js</li>
-<li>You magically get phonegap.js</li>
-</ul>
 </div>
 <div id="anatomy-of-a-config.xml" class="slide">
 <h1>Anatomy of a config.xml</h1>
 <div id="code">
-<h2>Code</h2>
+<h5>Code</h5>
 <pre class="sourceCode"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; <span class="kw">?&gt;</span><br />    <span class="kw">&lt;widget</span><span class="ot"> xmlns</span> <span class="ot">=</span> <span class="st">&quot;http://www.w3.org/ns/widgets&quot;</span><br /><span class="ot">        xmlns:gap</span> <span class="ot">=</span> <span class="st">&quot;http://phonegap.com/ns/1.0&quot;</span><br /><span class="ot">        id</span>        <span class="ot">=</span> <span class="st">&quot;com.cloudfour.gotone&quot;</span><br /><span class="ot">        versionCode=</span><span class="st">&quot;10&quot;</span><br /><span class="ot">        version</span>   <span class="ot">=</span> <span class="st">&quot;1.0.0&quot;</span><span class="kw">&gt;</span><br /><br />    <span class="kw">&lt;name&gt;</span>I Got One<span class="kw">&lt;/name&gt;</span><br /><br />    <span class="kw">&lt;description&gt;</span><br />       Track your zombie kills!<br />    <span class="kw">&lt;/description&gt;</span><br /><br />    <span class="kw">&lt;author</span><span class="ot"> href=</span><span class="st">&quot;https://www.cloudfour.com&quot;</span><span class="ot"> email=</span><span class="st">&quot;info@cloudfour.com&quot;</span><span class="kw">&gt;</span><br />        Lyza Gardner and Jason Grigsby<br />    <span class="kw">&lt;/author&gt;</span><br /><br />    <span class="kw">&lt;preference</span><span class="ot"> name=</span><span class="st">&quot;orientation&quot;</span><span class="ot"> value=</span><span class="st">&quot;portrait&quot;</span> <span class="kw">/&gt;</span><br /><br /><span class="kw">&lt;/widget&gt;</span></code></pre>
+</div>
+<div id="config.xml">
+<h5>config.xml</h5>
+</div>
+</div>
+<div id="lets-add-some-icons" class="slide">
+<h1>Let's add some icons</h1>
+<div id="code-1">
+<h5>Code</h5>
+<pre class="sourceCode"><code class="sourceCode xml">    <span class="kw">&lt;preference</span><span class="ot"> name=</span><span class="st">&quot;orientation&quot;</span><span class="ot"> value=</span><span class="st">&quot;portrait&quot;</span> <span class="kw">/&gt;</span><br /><br />    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-iphone.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;57&quot;</span><span class="ot"> height=</span><span class="st">&quot;57&quot;</span><span class="kw">/&gt;</span><br />    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-ipad.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;72&quot;</span><span class="ot"> height=</span><span class="st">&quot;72&quot;</span><span class="kw">/&gt;</span><br />    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-iphone4.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;114&quot;</span><span class="ot"> height=</span><span class="st">&quot;114&quot;</span><span class="kw">/&gt;</span><br /><br />    <span class="kw">&lt;gap:splash</span><span class="ot"> src=</span><span class="st">&quot;app-icons/splash.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;320&quot;</span><span class="ot"> height=</span><span class="st">&quot;480&quot;</span> <span class="kw">/&gt;</span><br />    <span class="kw">&lt;gap:splash</span><span class="ot"> src=</span><span class="st">&quot;app-icons/splash-2x.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;640&quot;</span><span class="ot"> height=</span><span class="st">&quot;960&quot;</span><span class="kw">/&gt;</span><br /><span class="er">&lt;</span>/widget&gt;</code></pre>
+</div>
+<div id="config.xml-1">
+<h5>config.xml</h5>
+</div>
+</div>
+<div id="zip-upload-build" class="slide">
+<h1>ZIP, Upload, Build</h1>
+<div id="figure-phonegap-build-screen-shot">
+<h2>Figure: PhoneGap Build screen shot</h2>
+<div class="figure">
+<img src="images/07-phonegap-build-screenshot.png" /><p class="caption"></p>
+</div>
+</div>
+<div id="speaker-notes-1">
+<h2>Speaker Notes</h2>
+<ul>
+<li>You can see that the icons get picked up automatically.</li>
+</ul>
+</div>
+</div>
+<div id="install-on-device-or-emulator" class="slide">
+<h1>Install on device or emulator</h1>
+<div id="figure-i-got-one-running-on-a-galaxy-s">
+<h2>Figure: &quot;I Got One!&quot; running on a Galaxy S</h2>
+<div class="figure">
+<img src="images/07-galaxy-screenshot.png" /><p class="caption"></p>
+</div>
 </div>
 </div>
 </body>

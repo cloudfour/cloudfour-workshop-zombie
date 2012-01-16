@@ -416,27 +416,46 @@ Browsers that implement the W3C geolocation spec expose the `navigator.geolocati
     }
 ~~~
 
+### Running a local web server
+
+*Note*: If you view the geolocation test page (next section) as a `file://` in your web browser (that is, as a local file; not served by a web server), security settings will generally prevent you from geolocation information. Typically, an error will be generated akin to the user denying permission for geolocation.
+
+Some possible ways to get things working:
+
+1. If you run OS X's default apache web server, you can move the contents of the zombie rucksack somewhere within the area (document root) served as web resources. This is typically in the `Sites` folder in your user's home directory (note that Web Sharing will need to be enabled in your system settings to get this to work).
+2. If you have a hosting provider, you could do your work there, if you choose.
+3. Here is a ruby one-liner for serving the current directory (you'd access your stuff by going to `localhost:9090` in a browser):
+
+    ~~~ {.ruby}
+    ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 9090, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"
+    ~~~
+    
+4. There is also a [one-line python script](http://www.garyrobinson.net/2004/03/one_line_python.html) for doing the same general thing.
+5. I use [MAMP](http://www.mamp.info) on my Mac as a web server (comes with PHP and mysql). There's [XAMPP](www.apachefriends.org/en/xampp.html) for Windows and Linux. These are pretty easy installs but might be more than you want to deal with right at this second.
+
+*If you don't have a web-served environment handy, no biggie. You can still follow along!*
+
 ### Building a Quickie Geolocation Test Page
 
 1. Open the `index.html` file in the `where-am-i` folder in your rucksack.
 2. Find the `<script>` tags. 
 
     ~~~ {.javascript}
-        <script>
-          if (navigator.geolocation) { // Test for W3C geolocation support
-            
-          }
-        </script>
+    <script>
+      if (navigator.geolocation) { // Test for W3C geolocation support
+        
+      }
+    </script>
     ~~~
         
 3. OK! Now expand upon that:
 
     ~~~ {.javascript}
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
-        } else {
-          onGeoError(new Error('Sorry, Geolocation not supported in this browser!'));
-        }
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
+    } else {
+      onGeoError(new Error('Sorry, Geolocation not supported in this browser!'));
+    }
     ~~~
 
 4. *Note*: This won't work (well, there will be JS errors) until we define the `onGeoSuccess` and `onGeoError` callback functions. So let's do that now. Add this to the JavaScript (right after what's already there):
@@ -585,6 +604,8 @@ For this step, we use [Lawnchair](http://westcoastlogic.com/lawnchair/), an open
     	<script src="date.format.js"></script>
     ~~~
 
+----------------------------------
+
 # 7. Desperate Times call for...
 
 ## Hybrid App Development with PhoneGap and PhoneGap Build
@@ -593,3 +614,36 @@ For this step, we use [Lawnchair](http://westcoastlogic.com/lawnchair/), an open
 * [PhoneGap Build](http://build.phonegap.com)
 
 ## Anatomy of a PhoneGap Build Config File
+
+Here's our example `config.xml` file.
+
+~~~ {.xml}
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.cloudfour.gotone"
+        versionCode="10"
+        version   = "1.0.0">
+
+    <name>I Got One</name>
+
+    <description>
+       Track your zombie kills!
+    </description>
+
+    <author href="https://www.cloudfour.com" email="info@cloudfour.com">
+        Lyza Gardner and Jason Grigsby
+    </author>
+
+    <preference name="orientation" value="portrait" />
+
+    <icon src="app-icons/touch-icon-iphone.png" width="57" height="57"/>
+    <icon src="app-icons/touch-icon-ipad.png" width="72" height="72"/>
+    <icon src="app-icons/touch-icon-iphone4.png" width="114" height="114"/>
+
+    <gap:splash src="app-icons/splash.png" width="320" height="480" />
+    <gap:splash src="app-icons/splash-2x.png" width="640" height="960"/>
+</widget>
+~~~
+
+(You can also find this in [`supplemental/desperate-times/config.xml`](../supplemental/desperate-times/config.xml)).

@@ -1,12 +1,33 @@
-# Exasperated, at the limits
-
-Sometimes you need to do something that you just can't quite pull off (yet) on the mobile web.
+% Zombie 101: Desperate Times Call for Desperate Measures
+% Jason Grigsby and Lyza Danger Gardner
 
 # A blistering quick ride through hybrid-land
 
-yep
+Sometimes you need to do something that you just can't quite pull off (yet) on the mobile web.
+
+Sometimes zombies mate with the populace at large and the offspring get the best of both worlds—web-based technologies wrapped in native app goodness.
+
+Giddyup!
+
+TODO: Drawing: Web technology + native app wrapper = hybrid
 
 # PhoneGap and PhoneGap Build
+
+## Figure: PhoneGap Platforms
+
+![](images/07-phonegap-platforms.png)
+
+## PhoneGap
+
+![](images/07-phonegap-logo.png) ![](images/07-phonegapbuild-logo.png)
+
+* PhoneGap is one option for using HTML5 technologies to create native apps for multiple platforms.
+
+## PhoneGap Build
+
+* With PhoneGap Build you can build your projects in the cloud (that is, you don't have to compile/build natively for each platform yourself).
+
+## Speaker Notes
 
 PhoneGap Build is based on the W3C Web Widget spec.
 
@@ -16,21 +37,24 @@ TODO: Drawing of PhoneGap project structure
 
 # The PhoneGap API
 
-* Using phonegap.js in your project
-* A single JS API for reusable code
+In our quick example, we're simply going to wrap the existing "I Got One!" application and make it native. But that doesn't use PhoneGap to its true advantage...
+
+Phonegap.js provides a universal JavaScript API to access device features not exposed to the browser (yet).
 
 # No really, it's pretty danged easy
 
-yes
+Let's see how fast we can bust out a native Android version of "I Got One!".
 
-# Using the PhoneGap API to access device capabilities
+### How to make a PhoneGap Build project
 
-* Using phonegap.js
-* You magically get phonegap.js
+1. Create a config.xml file.
+2. ZIP up our files.
+3. Upload and build.
+4. Install on device.
 
 # Anatomy of a config.xml
 
-## Code
+##### Code
 
 ~~~ {.xml}
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -54,3 +78,39 @@ yes
 
 </widget>
 ~~~
+
+##### config.xml
+
+# Let's add some icons
+
+##### Code
+
+~~~ {.xml}
+    <preference name="orientation" value="portrait" />
+
+    <icon src="app-icons/touch-icon-iphone.png" width="57" height="57"/>
+    <icon src="app-icons/touch-icon-ipad.png" width="72" height="72"/>
+    <icon src="app-icons/touch-icon-iphone4.png" width="114" height="114"/>
+
+    <gap:splash src="app-icons/splash.png" width="320" height="480" />
+    <gap:splash src="app-icons/splash-2x.png" width="640" height="960"/>
+</widget>
+~~~
+
+##### config.xml
+
+# ZIP, Upload, Build
+
+## Figure: PhoneGap Build screen shot
+
+![](images/07-phonegap-build-screenshot.png)
+
+## Speaker Notes
+
+* You can see that the icons get picked up automatically.
+
+# Install on device or emulator
+
+## Figure: "I Got One!" running on a Galaxy S
+
+![](images/07-galaxy-screenshot.png)
