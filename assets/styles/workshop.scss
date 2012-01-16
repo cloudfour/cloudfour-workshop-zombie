@@ -39,7 +39,7 @@ h5 {
 }
 
 a, a:visited {
-  color:                $color-accent;
+  color:                $color-accent !important;
 }
 
 code, pre {
@@ -51,6 +51,8 @@ code {
   margin:               0 .15em;
   font-family:          $code-font;
   border:               1px dashed $color-accent;
+  white-space:          nowrap;
+  overflow:             scroll;
 }
 
 pre {
@@ -63,6 +65,7 @@ pre {
 pre code {
   border-width:         0px;
   font-size:            .75em;
+  white-space:          pre;
 }
 
 blockquote {

@@ -53,7 +53,7 @@ h5 {
   font-weight: normal; }
 
 a, a:visited {
-  color: #e43d3d; }
+  color: #e43d3d !important; }
 
 code, pre {
   font-family: "Anonymous Pro", monospace; }
@@ -62,7 +62,9 @@ code {
   padding: .15em;
   margin: 0 .15em;
   font-family: "Anonymous Pro", monospace;
-  border: 1px dashed #e43d3d; }
+  border: 1px dashed #e43d3d;
+  white-space: nowrap;
+  overflow: scroll; }
 
 pre {
   overflow: scroll;
@@ -72,7 +74,8 @@ pre {
 
 pre code {
   border-width: 0px;
-  font-size: .75em; }
+  font-size: .75em;
+  white-space: pre; }
 
 blockquote {
   line-height: 1.2em; }
