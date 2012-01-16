@@ -293,7 +293,7 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <h3>Cache Manifest Quickies</h3>
 <ol type="1">
 <li><p>File must be served as <code>text/application-cache</code>. Often this can be effected by adding the following line to an apache config (<code>.htaccess</code> file or the like).</p>
-<pre><code>`AddType text/cache-manifest .appcache`
+<pre><code>AddType text/cache-manifest .appcache
 </code></pre></li>
 <li><p>Basic cache manifest syntax:</p>
 <pre><code>CACHE MANIFEST
@@ -313,17 +313,17 @@ ding/dong.html
 <ol type="1">
 <li>Create a file called <code>manifest.appcache</code> in the <code>sigma-stronghold-website</code> folder in your rucksack.</li>
 <li><p>Let's start by adding the landing page (really all we have of the site!) and its resources to the application cache: CSS, images...etc:</p>
-<pre><code>    CACHE MANIFEST
+<pre><code>CACHE MANIFEST
 
-    CACHE:
+CACHE:
 
-    index.html
-    favicon.ico
-    images/blip.png
-    images/bomb.png
-    images/moon.jpg
-    styles.css
-    http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
+index.html
+favicon.ico
+images/blip.png
+images/bomb.png
+images/moon.jpg
+styles.css
+http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
 </code></pre></li>
 <li><p>Edit the <code>.htaccess</code> file in the <code>sigma-stronghold-website</code> directory (create <code>.htaccess</code> if it doesn't exist yet).</p></li>
 <li><p>Add the line:</p>
@@ -386,7 +386,7 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <ol type="1">
 <li>Find the &quot;I got one!&quot; starting point in your rucksack in <a href="../i-got-one/index.html"><code>i-got-one/index.html</code></a>.</li>
 <li><p>Add a header:</p>
-<pre class="sourceCode"><code class="sourceCode html">  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;</span><br />    <span class="kw">&lt;h1&gt;</span>I got one!<span class="kw">&lt;/h1&gt;</span><br />  <span class="kw">&lt;/div&gt;</span></code></pre></li>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;h1&gt;</span>I got one!<span class="kw">&lt;/h1&gt;</span><br /><span class="kw">&lt;/div&gt;</span></code></pre></li>
 <li><p>Add a <code>&lt;select&gt;</code> element, an <code>&lt;input&gt;</code> button and an empty <code>&lt;ul&gt;</code> to hold our incoming dead zombies. This should be the contents of the <code>&lt;div data-role=&quot;content&quot;&gt;</code>:</p>
 <pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;fieldcontain&quot;</span><span class="kw">&gt;</span><br />    <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span>How'd you nab it?<span class="kw">&lt;/label&gt;</span><br />    <span class="kw">&lt;select</span><span class="ot"> name=</span><span class="st">&quot;how-zombie&quot;</span><span class="ot"> id=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;tank&quot;</span><span class="kw">&gt;</span>Tank<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;conflagration&quot;</span><span class="kw">&gt;</span>Conflagration<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;poison&quot;</span><span class="kw">&gt;</span>Poison<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;nukes&quot;</span><span class="kw">&gt;</span>Micro-nukes<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;trickery&quot;</span><span class="kw">&gt;</span>Trickery<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;corrosive&quot;</span><span class="kw">&gt;</span>Corrosive<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;dismemberment&quot;</span><span class="kw">&gt;</span>Dismemberment<span class="kw">&lt;/option&gt;</span><br />    <span class="kw">&lt;/select&gt;</span><br />  <span class="kw">&lt;/div&gt;</span><br />  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;button&quot;</span><span class="ot"> value=</span><span class="st">&quot;I got one!&quot;</span><span class="ot"> id=</span><span class="st">&quot;got-one&quot;</span><span class="ot"> data-theme=</span><span class="st">&quot;b&quot;</span> <span class="kw">/&gt;</span><br /><br />  <span class="kw">&lt;ul</span><span class="ot"> data-role=</span><span class="st">&quot;listview&quot;</span><span class="ot"> data-inset=</span><span class="st">&quot;true&quot;</span><span class="ot"> id=</span><span class="st">&quot;zombielist&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;/ul&gt;</span><br /><br /><span class="kw">&lt;/div&gt;</span></code></pre></li>
 <li><p>Drop in the intial JavaScript by adding a <code>&lt;script&gt;</code> tag after the <code>geo.js</code> <code>&lt;script&gt;</code> tag:</p>

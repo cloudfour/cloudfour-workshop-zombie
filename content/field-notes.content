@@ -330,18 +330,20 @@ No new CSS is added for this (aside from the media query adjustment), we're not 
 1. File must be served as `text/application-cache`. Often this can be effected by adding the following line to an apache config (`.htaccess` file or the like).
 
     ~~~
-    `AddType text/cache-manifest .appcache`
+    AddType text/cache-manifest .appcache
     ~~~
 
 2. Basic cache manifest syntax:
 
-        CACHE MANIFEST
+    ~~~
+    CACHE MANIFEST
 
-        CACHE:
-        foo.jpg
-        bar.png
-        index.html
-        ding/dong.html
+    CACHE:
+    foo.jpg
+    bar.png
+    index.html
+    ding/dong.html
+    ~~~
 
 3. Reference a cache manifest with the `manifest` attribute of the `<html>` tag. e.g. `<html manifest="manifest.appcache">`.
 
@@ -353,17 +355,17 @@ No new CSS is added for this (aside from the media query adjustment), we're not 
 2. Let's start by adding the landing page (really all we have of the site!) and its resources to the application cache: CSS, images...etc:
 
     ~~~
-        CACHE MANIFEST
+    CACHE MANIFEST
 
-        CACHE:
+    CACHE:
 
-        index.html
-        favicon.ico
-        images/blip.png
-        images/bomb.png
-        images/moon.jpg
-        styles.css
-        http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
+    index.html
+    favicon.ico
+    images/blip.png
+    images/bomb.png
+    images/moon.jpg
+    styles.css
+    http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
     ~~~
 
 3. Edit the `.htaccess` file in the `sigma-stronghold-website` directory (create `.htaccess` if it doesn't exist yet).
