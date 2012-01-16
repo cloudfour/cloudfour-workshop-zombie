@@ -1,12 +1,19 @@
-% Zombie 101: Boot Camp
+% Zombie 101: Assess the Threat
 % Jason Grigsby and Lyza Danger Gardner
 
 # Signs of the Apocalypse are Everywhere!
 
-* Mobile phones omnipresent
-* Growing faster than early days of the web
-
 ![](images/01-iphone-adoption-graph.png)
+
+* Mobile phones omnipresent
+* iPhone and iPod Touch alone [growing faster than early days of the Internet][morgan-stanley]
+* Android’s growth curve was faster than the iPhone’s
+
+# Dumb zombies growing as well
+
+## Figure: Opera Mini Growth Chart
+
+![](images/01-opera-mini-growth.png)
 
 # Soon more mobile phones than people on the planet
 
@@ -15,11 +22,13 @@
 * Soon more mobile phones than people
 * Then what will we do?
 
-# Different types of phones is overwhelming
+# Overwhelming number of phones
 
-* Mobile operating systems still growing
+![](images/01-there-is-no-android.jpg)
+
+* Mobile operating systems still [growing][mobile-os]
 * New versions released quickly
-* There is no Android
+* [There is no Android][no-android]
 
 # Phones are just the beginning
 
@@ -33,16 +42,31 @@
 * Best apps are HTML5 and feel nothing like web pages.
 * What about Apple’s TV plans?
 
+# Zombie virus spreading Everywhere
+
+* Cost of smart chips heading towards zero
+* RFID taking off ahead of near field communications (NFC)
+* More and more of the inanimate things that surround us will become alive
+* Challenges our definitions of computers, phones and devices
+
 # Soon to be 10B mobile devices
 
-* Meeker graph
+## Figure: 10 Billion devices predicted
 
-# If we stick our heads in the sand, we will be overrun.
+![](images/01-10billion-devices.png)
 
-* Disruptive technology slide.
+# Ignoring the problem isn’t an option
+
+## Figure: Mobile is disruptive technology. Destroys wealth.
+
+![](images/01-disruptive-technology.png)
 
 # We must prepare for the Zombie Apocalypse
 
 * We’re glad you’ve taken up the challenge.
 * It’s not going to be easy, but we’re going to give you the tools to become lean, mean fighting machines.
 * Let’s get started!
+
+[morgan-stanley]: http://www.morganstanley.com/institutional/techresearch/mobile_internet_report122009.html
+[mobile-os]: http://radar.oreilly.com/2010/05/mobile-operating-systems-and-b.html
+[no-android]: http://stephanierieger.com/the-trouble-with-android/
