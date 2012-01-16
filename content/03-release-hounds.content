@@ -3,23 +3,29 @@
 
 # You already have some blunt weapons
 
+TODO: Blunt weapon drawing
+
 ## Let's sharpen them
 
 It may seem like we're still mired on the desktop with all that Sigma Stronghold optimization.
 
 ### It's time to get mobile
 
-TODO: Push final step of section 2 to lyzadanger.com
-
 # Oh dear, that's ugly, isn't it?
+
+![](images/sigma-site-screenshots/iphone-broken-2.jpg) ![](images/sigma-site-screenshots/android-broken.png)
 
 The current structure of the Sigma Stronghold web site is a *fixed-width, rigid layout*. That is not going to adapt in the face of the zombie gadget crisis. What do we do?
 
-## We adapt!
+# We adapt!
 
 When the going gets tough, we kill zombies.
 
+TODO: PEW PEW PEW graphic
+
 # Lesson 1: Quarantine never works
+
+![](images/03-quarantine-never-works.png)
 
 * We have to relinquish our false sense of control and set our content free.
 * We don't get to *decide* or even reliably *know* our user's screen sizes.
@@ -56,12 +62,15 @@ Right now, the Sigma Stronghold web site's structure is like this.
 
 # What's so bad about fixed layouts?
 
+## Figure: Portals into content
+
 ![](images/03-portals.png)
 
 # Accounts for this
 
-![](images/sigma-site-screenshots/android-broken.png "Oopsie")
+## Figure: Cut off site on mobile
 
+![](images/sigma-site-screenshots/android-broken.png "Oopsie")
 
 # Fluid layouts, on the other hand...
 
@@ -74,7 +83,6 @@ Right now, the Sigma Stronghold web site's structure is like this.
 ## Figure: Fluid Formula: Result = Target / Context
 
 ![](images/03-fluid-formula.png)
-
 
 # Result = Target / Context
 
@@ -122,7 +130,6 @@ Let's see how this plays out on the `div#main` on the Sigma Stronghold site, sha
 ## Figure: A precise example of the formula
 
 ![](images/03-formula-example.png)
-
 
 # Or, roughly
 
@@ -296,6 +303,8 @@ It's proportional, all right.
 
 # That's where Media Queries come in
 
+TODO: Media queries shebang drawing
+
 Fluid grids are the first tenet of RWD. Now it's time for the vital second tenet: 
 
 ## Media Queries!
@@ -363,14 +372,17 @@ The problem with the Sigma Stronghold site on narrow screens is that the columns
 # Let's make this more responsive
 
 * Let's make the site layout more *responsive* by adapting it for narrower windows.
-* Instead of two columns of content, let's have a single column.
-* And instead of tabbed navigation, let's make the navigation elements bigger and more tap-able.
 
-# First whack at media query-adapted layout
+    * Instead of two columns of content, let's have a single column.
+    * And instead of tabbed navigation, let's make the navigation elements bigger and more tap-able.
+
+# First whack at media queries
 
 Let's say that any screen narrower than 600px should have a single-column view of the content, and vertical navigation items.
 
-TODO: Graphic of two layouts
+## Figure: Adaptive Layout
+
+![](images/03-responsive-layout.png)
 
 ## Speaker Notes
 
