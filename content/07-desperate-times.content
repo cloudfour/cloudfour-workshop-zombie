@@ -114,3 +114,9 @@ Let's see how fast we can bust out a native Android version of "I Got One!".
 ## Figure: "I Got One!" running on a Galaxy S
 
 ![](images/07-galaxy-screenshot.png)
+
+# Sniffing 'em out
+
+There's another trick to the zombie-squishing trade. Sometimes you gotta get some recon.
+
+If you want to know what kind of zombie you're facing before you shoot at it, you might consider device and/or capability detection. You see, you need to [know thy enemy](08-know-thy-enemy.html).

@@ -274,3 +274,7 @@ TODO: Screen shot
 
 * Date objects don't unserialize correctly from Lawnchair (so we are storing a string representation of a Date object).
 * jQM `pagecreate` and `pageinit` events can be a bit tricky.
+
+# Getting the final mile
+
+Sometimes the zombies you face are not vulnerable to the mad skills you possess. Some things just aren't yet attainable on the mobile web, which is why [desperate times call for desperate measures](07-desperate-times.html).
