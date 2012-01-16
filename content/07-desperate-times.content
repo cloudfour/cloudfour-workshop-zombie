@@ -4,9 +4,15 @@ Sometimes you need to do something that you just can't quite pull off (yet) on t
 
 # A blistering quick ride through hybrid-land
 
-# PhoneGap  and PhoneGap Build
+yep
+
+# PhoneGap and PhoneGap Build
+
+PhoneGap Build is based on the W3C Web Widget spec.
 
 # Anatomy of a PhoneGap project
+
+TODO: Drawing of PhoneGap project structure
 
 # The PhoneGap API
 
@@ -15,12 +21,36 @@ Sometimes you need to do something that you just can't quite pull off (yet) on t
 
 # No really, it's pretty danged easy
 
+yes
+
 # Using the PhoneGap API to access device capabilities
 
 * Using phonegap.js
 * You magically get phonegap.js
 
-# Anatomy of a config file
+# Anatomy of a config.xml
 
-Example of `config.xml` here.
+## Code
 
+~~~ {.xml}
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.cloudfour.gotone"
+        versionCode="10"
+        version   = "1.0.0">
+
+    <name>I Got One</name>
+
+    <description>
+       Track your zombie kills!
+    </description>
+
+    <author href="https://www.cloudfour.com" email="info@cloudfour.com">
+        Lyza Gardner and Jason Grigsby
+    </author>
+
+    <preference name="orientation" value="portrait" />
+
+</widget>
+~~~
