@@ -21,9 +21,9 @@ A *cache manifest* is a file that lets you tell the client about resources that 
 
 You can use a cache manifest to create an *offline mode* for your web site or app.
 
-# Cache manifests
+## Speaker Notes
 
-Cache manifest browser support. TODO
+* Browser support
 
 # Cache manifest syntax
 
@@ -71,6 +71,8 @@ There is a `manifest` attribute on the `html` element.
 * Is any resource referenced within an HTML document that is in the implicit or explicit cache.
 
 # Be very wary
+
+![](images/04-danger.png)
 
 * It's very easy to screw this up.
 * Again: If an HTML document is in the implicit cache, any resource it references (images, CSS, whatever) *must* be declared in the cache manifest file or they will not be available to the browser.
@@ -127,6 +129,8 @@ Now we need to edit the `.htaccess` file to serve this file correctly. Like we s
 
 # Let 'er Rip
 
+![](images/04-confusion.png)
+
 How'd that go?
 
 Wait a minute...
@@ -154,6 +158,8 @@ Good fallback fonts!
 
 # But hey, it's pretty decent
 
+![](images/04-drawing-line.png)
+
 It's all about what we're targeting and where we're drawing the line.
 
 ## Speaker Notes
@@ -166,9 +172,11 @@ Let's rinse off that cache manifest stink, shall we? It's time to get down to th
 
 # Let's talk about device APIs
 
-* Device APIs: TODO 
+* Device APIs: Exposed ways to get at the capabilities of devices!
 
 # Geolocation
+
+![](images/04-compass.png)
 
 Geolocation is the darling of many. It's consummately mobile and easy to describe. There are oh so many ways to make good use of a user's current location to deliver adapted experiences or add functionality to applications. Whee!
 
@@ -244,4 +252,7 @@ Most browsers will prompt you for permission first.
 
 # And now we ride off into the Zombie-tinted sunset?
 
-Well, not so much...
+## Figure: Zombie-red cheerful sunset
+
+![](images/04-sunset.png)
+

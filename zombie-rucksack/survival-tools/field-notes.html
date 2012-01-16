@@ -36,6 +36,7 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <h1 class="title">Field Notes | Zombie 101, Webvisions NYC</h1>
 <h3 class="author">Jason Grigsby and Lyza Danger Gardner</h3>
 </header>
+<hr />
 <section id="boot-camp">
 <h1>2. Boot Camp</h1>
 <section id="sigma-stronghold-web-site">
@@ -173,6 +174,7 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 </ol></li>
 </ol>
 <p><a href="http://www.techiepark.com/tutorials/how-to-enable-gzip-compression-in-apache-server-to-speed-up-website/">More information about enabling GZIP on apache</a></p>
+<hr />
 </section>
 </section>
 <section id="release-the-hounds">
@@ -271,6 +273,7 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <li>Find the updated, <a href="../supplemental/release-hounds/mobile-first.css">mobile-first CSS file here</a>.</li>
 <li>Replace the <code>styles.css</code> in <code>sigma-stronghold-website</code> with this CSS.</li>
 </ol>
+<hr />
 </section>
 </section>
 </section>
@@ -289,7 +292,9 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <section id="cache-manifest-quickies">
 <h3>Cache Manifest Quickies</h3>
 <ol type="1">
-<li><p>File must be served as <code>text/application-cache</code>. Often this can be effected by adding the following line to an apache config (<code>.htaccess</code> file or the like). <code>AddType text/cache-manifest .appcache</code></p></li>
+<li><p>File must be served as <code>text/application-cache</code>. Often this can be effected by adding the following line to an apache config (<code>.htaccess</code> file or the like).</p>
+<pre><code>`AddType text/cache-manifest .appcache`
+</code></pre></li>
 <li><p>Basic cache manifest syntax:</p>
 <pre><code>CACHE MANIFEST
 
@@ -308,24 +313,24 @@ ding/dong.html
 <ol type="1">
 <li>Create a file called <code>manifest.appcache</code> in the <code>sigma-stronghold-website</code> folder in your rucksack.</li>
 <li><p>Let's start by adding the landing page (really all we have of the site!) and its resources to the application cache: CSS, images...etc:</p>
-<pre><code>CACHE MANIFEST
+<pre><code>    CACHE MANIFEST
 
-CACHE:
+    CACHE:
 
-index.html
-favicon.ico
-images/blip.png
-images/bomb.png
-images/moon.jpg
-styles.css
-http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
+    index.html
+    favicon.ico
+    images/blip.png
+    images/bomb.png
+    images/moon.jpg
+    styles.css
+    http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
 </code></pre></li>
-<li>Edit the <code>.htaccess</code> file in the <code>sigma-stronghold-website</code> directory (create <code>.htaccess</code> if it doesn't exist yet).</li>
+<li><p>Edit the <code>.htaccess</code> file in the <code>sigma-stronghold-website</code> directory (create <code>.htaccess</code> if it doesn't exist yet).</p></li>
 <li><p>Add the line:</p>
-<pre><code>`AddType text/cache-manifest .appcache`
+<pre><code>AddType text/cache-manifest .appcache
 </code></pre></li>
 <li><p>Edit <code>index.html</code>. Change the <code>&lt;html&gt;</code> tag to read:</p>
-<pre><code>`&lt;html manifest=&quot;manifest.appcache&quot;&gt;`
+<pre><code>&lt;html manifest=&quot;manifest.appcache&quot;&gt;
 </code></pre></li>
 <li><p>Use the WebInspector to see if your appCache worked!</p></li>
 </ol>
@@ -351,46 +356,22 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <p>Browsers that implement the W3C geolocation spec expose the <code>navigator.geolocation</code> object and its methods to the browser.</p>
 <section id="code-snippets">
 <h4>Code Snippets</h4>
-<pre><code>    navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
-
-    function successCallback(position) {
-      // Latitude and Longitude are usually what you're after.
-      // They're properties of the coords object on position.
-      alert(position.coords.latitude + ', ' + position.coords.longitude);
-    }
-    function errorCallback(error) {
-      // Do something or freak out.
-    }
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode javascript">    <span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(successCallback, errorCallback)<br /><br />    <span class="kw">function</span> successCallback(position) {<br />      <span class="co">// Latitude and Longitude are usually what you're after.</span><br />      <span class="co">// They're properties of the coords object on position.</span><br />      alert(<span class="kw">position.coords</span>.<span class="fu">latitude</span> + <span class="ch">', '</span> + <span class="kw">position.coords</span>.<span class="fu">longitude</span>);<br />    }<br />    <span class="kw">function</span> errorCallback(error) {<br />      <span class="co">// Do something or freak out.</span><br />    }</code></pre>
 </section>
 </section>
 <section id="building-a-quickie-geolocation-test-page">
 <h3>Building a Quickie Geolocation Test Page</h3>
-<p>TODO: HTML template in <code>where-am-i</code> folder.</p>
 <ol type="1">
 <li>Open the <code>index.html</code> file in the <code>where-am-i</code> folder in your rucksack.</li>
-<li><p>After the closing <code>&lt;/body&gt;</code> tag, add:</p>
-<pre><code>&lt;script&gt;
-  if (navigator.geolocation) { // Test for W3C geolocation support
-
-  }
-&lt;/script&gt;
-</code></pre></li>
+<li><p>Find the <code>&lt;script&gt;</code> tags.</p>
+<pre class="sourceCode"><code class="sourceCode javascript">    &lt;script&gt;<br />      <span class="kw">if</span> (<span class="kw">navigator</span>.<span class="fu">geolocation</span>) { <span class="co">// Test for W3C geolocation support</span><br /><br />      }<br />    &lt;/script&gt;</code></pre></li>
 <li><p>OK! Now expand upon that:</p>
-<pre><code>if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
-} else {
-  onGeoError(new Error('Sorry, Geolocation not supported in this browser!'));
-}
-</code></pre></li>
-<li><em>Note</em>: This won't work (well, there will be JS errors) until we define the <code>onGeoSuccess</code> and <code>onGeoError</code> callback functions. So let's do that now:</li>
-<li><p>Add this to the JavaScript (right after what's already there):</p></li>
+<pre class="sourceCode"><code class="sourceCode javascript">    <span class="kw">if</span> (<span class="kw">navigator</span>.<span class="fu">geolocation</span>) {<br />      <span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(onGeoSuccess, onGeoError);<br />    } <span class="kw">else</span> {<br />      onGeoError(<span class="kw">new</span> Error(<span class="ch">'Sorry, Geolocation not supported in this browser!'</span>));<br />    }</code></pre></li>
+<li><p><em>Note</em>: This won't work (well, there will be JS errors) until we define the <code>onGeoSuccess</code> and <code>onGeoError</code> callback functions. So let's do that now. Add this to the JavaScript (right after what's already there):</p>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">function</span> onGeoSuccess(position) {<br />  <span class="kw">var</span> coordinates = <span class="kw">position</span>.<span class="fu">coords</span>;<br />  alert(<span class="kw">coordinates</span>.<span class="fu">latitude</span> + <span class="st">&quot;, &quot;</span> + <span class="kw">coordinates</span>.<span class="fu">longitude</span>);<br />}<br /><span class="kw">function</span> onGeoError(error) {<br />  alert(<span class="kw">error</span>.<span class="fu">message</span>);<br />}</code></pre></li>
+<li><p>Try it out!</p></li>
+<li><p>Having trouble? Find the contents of the <code>&lt;script&gt;</code> in <a href="../supplemental/where-am-i/geo-script.js"><code>supplemental/where-am-i/geo-script.js</code></a>.</p></li>
 </ol>
-<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">function</span> onGeoSuccess(position) {<br />  <span class="kw">var</span> coordinates = <span class="kw">position</span>.<span class="fu">coords</span>;<br />  alert(<span class="kw">coordinates</span>.<span class="fu">latitude</span> + <span class="st">&quot;, &quot;</span> + <span class="kw">coordinates</span>.<span class="fu">longitude</span>);<br />}<br /><span class="kw">function</span> onGeoError(error) {<br />  alert(<span class="kw">error</span>.<span class="fu">message</span>);<br />}</code></pre>
-<ol start="6" type="1">
-<li>Try it out!</li>
-</ol>
-<p>TODO: Stuck? Find the script in...blah blah.</p>
 <hr />
 </section>
 </section>

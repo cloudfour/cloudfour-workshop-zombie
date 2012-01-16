@@ -1,6 +1,8 @@
 % Field Notes | Zombie 101, Webvisions NYC
 % Jason Grigsby and Lyza Danger Gardner
 
+----------------
+
 # 2. Boot Camp
 
 ## Sigma Stronghold Web Site
@@ -127,6 +129,8 @@ You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma
     f. Be sure to test!
     
 [More information about enabling GZIP on apache](http://www.techiepark.com/tutorials/how-to-enable-gzip-compression-in-apache-server-to-speed-up-website/)
+
+-----------------------
 
 # 3. Release the Hounds!
 
@@ -309,6 +313,8 @@ No new CSS is added for this (aside from the media query adjustment), we're not 
 1. Find the updated, [mobile-first CSS file here](../supplemental/release-hounds/mobile-first.css).
 2. Replace the `styles.css` in `sigma-stronghold-website` with this CSS.
 
+-----------------------------
+
 # 4. A Honed Killing Machine
 
 ## ApplicationCache!
@@ -322,7 +328,10 @@ No new CSS is added for this (aside from the media query adjustment), we're not 
 ### Cache Manifest Quickies
 
 1. File must be served as `text/application-cache`. Often this can be effected by adding the following line to an apache config (`.htaccess` file or the like).
+
+    ~~~
     `AddType text/cache-manifest .appcache`
+    ~~~
 
 2. Basic cache manifest syntax:
 
@@ -343,6 +352,7 @@ No new CSS is added for this (aside from the media query adjustment), we're not 
 1. Create a file called `manifest.appcache` in the `sigma-stronghold-website` folder in your rucksack.
 2. Let's start by adding the landing page (really all we have of the site!) and its resources to the application cache: CSS, images...etc:
 
+    ~~~
         CACHE MANIFEST
 
         CACHE:
@@ -354,15 +364,21 @@ No new CSS is added for this (aside from the media query adjustment), we're not 
         images/moon.jpg
         styles.css
         http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
+    ~~~
 
 3. Edit the `.htaccess` file in the `sigma-stronghold-website` directory (create `.htaccess` if it doesn't exist yet).
-4. Add the line:
 
-        `AddType text/cache-manifest .appcache`
+4. Add the line:
+    
+    ~~~
+    AddType text/cache-manifest .appcache
+    ~~~
         
 5. Edit `index.html`. Change the `<html>` tag to read:
 
-        `<html manifest="manifest.appcache">`
+    ~~~
+    <html manifest="manifest.appcache">
+    ~~~
         
 6. Use the WebInspector to see if your appCache worked!
 
@@ -385,54 +401,57 @@ Browsers that implement the W3C geolocation spec expose the `navigator.geolocati
 
 #### Code Snippets
 
-        navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
-        
-        function successCallback(position) {
-          // Latitude and Longitude are usually what you're after.
-          // They're properties of the coords object on position.
-          alert(position.coords.latitude + ', ' + position.coords.longitude);
-        }
-        function errorCallback(error) {
-          // Do something or freak out.
-        }
+~~~ {.javascript}
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
+    
+    function successCallback(position) {
+      // Latitude and Longitude are usually what you're after.
+      // They're properties of the coords object on position.
+      alert(position.coords.latitude + ', ' + position.coords.longitude);
+    }
+    function errorCallback(error) {
+      // Do something or freak out.
+    }
+~~~
 
 ### Building a Quickie Geolocation Test Page
 
-TODO: HTML template in `where-am-i` folder.
-
 1. Open the `index.html` file in the `where-am-i` folder in your rucksack.
-2. After the closing `</body>` tag, add:
+2. Find the `<script>` tags. 
 
+    ~~~ {.javascript}
         <script>
           if (navigator.geolocation) { // Test for W3C geolocation support
             
           }
         </script>
+    ~~~
         
 3. OK! Now expand upon that:
 
+    ~~~ {.javascript}
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
         } else {
           onGeoError(new Error('Sorry, Geolocation not supported in this browser!'));
         }
+    ~~~
 
-4. *Note*: This won't work (well, there will be JS errors) until we define the `onGeoSuccess` and `onGeoError` callback functions. So let's do that now:
-5. Add this to the JavaScript (right after what's already there):
+4. *Note*: This won't work (well, there will be JS errors) until we define the `onGeoSuccess` and `onGeoError` callback functions. So let's do that now. Add this to the JavaScript (right after what's already there):
 
-~~~~ {.javascript}
-function onGeoSuccess(position) {
-  var coordinates = position.coords;
-  alert(coordinates.latitude + ", " + coordinates.longitude);
-}
-function onGeoError(error) {
-  alert(error.message);
-}
-~~~~
+    ~~~~ {.javascript}
+    function onGeoSuccess(position) {
+      var coordinates = position.coords;
+      alert(coordinates.latitude + ", " + coordinates.longitude);
+    }
+    function onGeoError(error) {
+      alert(error.message);
+    }
+    ~~~~
         
 6. Try it out!
 
-TODO: Stuck? Find the script in...blah blah.
+7. Having trouble? Find the contents of the `<script>` in [`supplemental/where-am-i/geo-script.js`](../supplemental/where-am-i/geo-script.js).
 
 -------------------------
 
@@ -446,9 +465,9 @@ TODO: Stuck? Find the script in...blah blah.
 1. Add a header:
 
     ~~~ {.html}
-      <div data-role="header">
-        <h1>I got one!</h1>
-      </div>
+    <div data-role="header">
+      <h1>I got one!</h1>
+    </div>
     ~~~
 
 1. Add a `<select>` element, an `<input>` button and an empty `<ul>` to hold our incoming dead zombies. This should be the contents of the `<div data-role="content">`:

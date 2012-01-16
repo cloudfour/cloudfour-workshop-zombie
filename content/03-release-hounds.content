@@ -2,8 +2,7 @@
 % Jason Grigsby and Lyza Danger Gardner
 
 # You already have some blunt weapons
-
-TODO: Blunt weapon drawing
+![](images/03-sharpen.png)
 
 ## Let's sharpen them
 
@@ -21,7 +20,7 @@ The current structure of the Sigma Stronghold web site is a *fixed-width, rigid 
 
 When the going gets tough, we kill zombies.
 
-TODO: PEW PEW PEW graphic
+![](images/03-pew.png)
 
 # Lesson 1: Quarantine never works
 
@@ -307,7 +306,7 @@ It's proportional, all right.
 
 # That's where Media Queries come in
 
-TODO: Media queries shebang drawing
+![](images/03-media-queries.png)
 
 Fluid grids are the first tenet of RWD. Now it's time for the vital second tenet: 
 

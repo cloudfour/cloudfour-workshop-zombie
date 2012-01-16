@@ -62,10 +62,12 @@ Jason Grigsby and Lyza Danger Gardner
 <h1>Cache manifests</h1>
 <p>A <em>cache manifest</em> is a file that lets you tell the client about resources that should be cached.</p>
 <p>You can use a cache manifest to create an <em>offline mode</em> for your web site or app.</p>
+<div id="speaker-notes-1">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Browser support</li>
+</ul>
 </div>
-<div id="cache-manifests-1" class="slide">
-<h1>Cache manifests</h1>
-<p>Cache manifest browser support. TODO</p>
 </div>
 <div id="cache-manifest-syntax" class="slide">
 <h1>Cache manifest syntax</h1>
@@ -78,7 +80,7 @@ bar.png
 index.html
 ding/dong.html
 </code></pre>
-<div id="speaker-notes-1">
+<div id="speaker-notes-2">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Paths are relative to the location of the manifest. Kind of like CSS.</li>
@@ -92,7 +94,7 @@ ding/dong.html
 <p>Often this can be handled by adding the following to your <code>.htaccess</code> or other Apache configuration file:</p>
 <p><code>AddType text/cache-manifest .appcache</code></p>
 <p>(Preferred extension is <code>.appcache</code>)</p>
-<div id="speaker-notes-2">
+<div id="speaker-notes-3">
 <h2>Speaker Notes</h2>
 <ul>
 <li>If you generate your appcache file with a server-side scripting language, can set a header.</li>
@@ -114,6 +116,9 @@ ding/dong.html
 </div>
 <div id="be-very-wary" class="slide">
 <h1>Be very wary</h1>
+<div class="figure">
+<img src="images/04-danger.png" /><p class="caption"></p>
+</div>
 <ul>
 <li>It's very easy to screw this up.</li>
 <li>Again: If an HTML document is in the implicit cache, any resource it references (images, CSS, whatever) <em>must</em> be declared in the cache manifest file or they will not be available to the browser.</li>
@@ -126,7 +131,7 @@ ding/dong.html
 <li>This is of course a maintenance pain.</li>
 <li>More importantly, as soon as a browser gets a cache manifest file, it will <em>immediately</em> (asynchronously) download all of the resources in that cache manifest.</li>
 </ul>
-<div id="speaker-notes-3">
+<div id="speaker-notes-4">
 <h2>Speaker Notes</h2>
 <p>This is the idea behind the implicit caching via the manifest attribute. But you can only do that with HTML files. There is no way to lazy load any other kind of resource.</p>
 </div>
@@ -134,7 +139,7 @@ ding/dong.html
 <div id="conclusion" class="slide">
 <h1>Conclusion</h1>
 <p>Cache manifest can be a good approach for creating offline modes of web sites and apps. It tends to be more manageable for smaller or app-like web sites.</p>
-<div id="speaker-notes-4">
+<div id="speaker-notes-5">
 <h2>Speaker Notes</h2>
 <p>As cache manifests get more extensive and complex, one often ends up having to create dynamic cache manifest files on the server. Things can get very complicated, very fast.</p>
 </div>
@@ -160,7 +165,7 @@ ding/dong.html
     http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
 </code></pre>
 </div>
-<div id="speaker-notes-5">
+<div id="speaker-notes-6">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Not technically required to add index.html to the cache manifest, but it is good form.</li>
@@ -176,6 +181,9 @@ ding/dong.html
 </div>
 <div id="let-er-rip" class="slide">
 <h1>Let 'er Rip</h1>
+<div class="figure">
+<img src="images/04-confusion.png" /><p class="caption"></p>
+</div>
 <p>How'd that go?</p>
 <p>Wait a minute...</p>
 </div>
@@ -191,15 +199,18 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <h1>It ain't perfect</h1>
 <p>This cache manifest situation works nicely in iOS, Android and in Chrome on the desktop. FireFox, however, is not thrilled about it.</p>
 <p>This is <em>so</em> typical of mobile web development.</p>
-<div id="speaker-notes-6">
+<div id="speaker-notes-7">
 <h2>Speaker Notes</h2>
 <p>Good fallback fonts!</p>
 </div>
 </div>
 <div id="but-hey-its-pretty-decent" class="slide">
 <h1>But hey, it's pretty decent</h1>
+<div class="figure">
+<img src="images/04-drawing-line.png" /><p class="caption"></p>
+</div>
 <p>It's all about what we're targeting and where we're drawing the line.</p>
-<div id="speaker-notes-7">
+<div id="speaker-notes-8">
 <h2>Speaker Notes</h2>
 <p>There are other options, like dynamically generating cache manifests or only delivering them to certain user agents.</p>
 </div>
@@ -211,11 +222,14 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <div id="lets-talk-about-device-apis" class="slide">
 <h1>Let's talk about device APIs</h1>
 <ul>
-<li>Device APIs: TODO</li>
+<li>Device APIs: Exposed ways to get at the capabilities of devices!</li>
 </ul>
 </div>
 <div id="geolocation" class="slide">
 <h1>Geolocation</h1>
+<div class="figure">
+<img src="images/04-compass.png" /><p class="caption"></p>
+</div>
 <p>Geolocation is the darling of many. It's consummately mobile and easy to describe. There are oh so many ways to make good use of a user's current location to deliver adapted experiences or add functionality to applications. Whee!</p>
 <p>It is also one of the device APIs that is relatively widely supported in the browser.</p>
 </div>
@@ -228,7 +242,7 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <h1>Using the W3C API to get the current location</h1>
 <p>Here's what it looks like:</p>
 <pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(successCallback, errorCallback)</code></pre>
-<div id="speaker-notes-8">
+<div id="speaker-notes-9">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Use the function defined as successCallback to work with position stuff.</li>
@@ -259,14 +273,19 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <h1>All together now!</h1>
 <p>Using your field notes as a guide, update the <code>index.html</code> in the <code>where-am-i</code> folder and try it out!</p>
 <p>If it works, you should get a JavaScript alert with your current location.</p>
-<div id="speaker-notes-9">
+<div id="speaker-notes-10">
 <h2>Speaker Notes</h2>
 <p>Most browsers will prompt you for permission first.</p>
 </div>
 </div>
 <div id="and-now-we-ride-off-into-the-zombie-tinted-sunset" class="slide">
 <h1>And now we ride off into the Zombie-tinted sunset?</h1>
-<p>Well, not so much...</p>
+<div id="figure-zombie-red-cheerful-sunset">
+<h2>Figure: Zombie-red cheerful sunset</h2>
+<div class="figure">
+<img src="images/04-sunset.png" /><p class="caption"></p>
+</div>
+</div>
 </div>
 </body>
 </html>
