@@ -17,6 +17,8 @@ We're going to be talking about the cache manifest piece of ApplicationCache
 
 # Cache manifests
 
+![](images/04-cache-manifest.png)
+
 A *cache manifest* is a file that lets you tell the client about resources that should be cached.
 
 You can use a cache manifest to create an *offline mode* for your web site or app.
@@ -38,6 +40,8 @@ bar.png
 index.html
 ding/dong.html
 ~~~
+
+##### manifest.appcache
 
 ## Speaker Notes
 
@@ -135,6 +139,16 @@ How'd that go?
 
 Wait a minute...
 
+# Common cache manifest gotchas
+
+![](images/04-danger.png)
+
+* Changes to files in cache not "seen" by browsers — the cache manifest itself must change.
+* All resources for an HTML document in the cache must also be in the cache manifest, whether that HTML document got there explicitly or implicitly.
+* Any error in the cache manifest will cause the whole thing not to work. A single 404 can also wreak havoc.
+* A changed cache manifest requires *two* subsequent requests for the changes to be visible.
+
+
 # Where'd our fonts go?
 
 We added the Google Fonts CSS stylesheet to our cache manifest, but the actual font files are not in the cache manifest. Uh oh! Now what?
@@ -172,7 +186,9 @@ Let's rinse off that cache manifest stink, shall we? It's time to get down to th
 
 # Let's talk about device APIs
 
-* Device APIs: Exposed ways to get at the capabilities of devices!
+## Figure: Device APIS!
+
+![](images/04-device-apis.png)
 
 # Geolocation
 

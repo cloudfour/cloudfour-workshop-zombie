@@ -56,17 +56,28 @@ Jason Grigsby and Lyza Danger Gardner
 </div>
 <div id="i-got-one" class="slide">
 <h1>I got one!</h1>
+<div class="figure">
+<img src="images/06-3ws.png" /><p class="caption"></p>
+</div>
 <p>Sigma Stronghold leaders want a way for agents in the field to be able to record their zombie kills. Let's whip 'em up a quick mobile web app using the jQuery Mobile framework.</p>
-<p>TODO: When/where/how graphic</p>
 <p>Find the starting point for the little web app in your rucksack (see your field notes).</p>
 </div>
 <div id="basic-jquery-mobile-page" class="slide">
 <h1>Basic jQuery Mobile Page</h1>
-<p>TODO: Drawing of jQM structure</p>
+<div class="figure">
+<img src="images/06-jqm.png" /><p class="caption"></p>
+</div>
+<ul>
+<li>Delineated by HTML5 <code>data-</code> attributes.</li>
+</ul>
+<div id="code">
+<h2>Code</h2>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;html&gt;</span><br /><span class="kw">&lt;head&gt;&lt;/head&gt;</span><br /><span class="kw">&lt;body&gt;</span><br /><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;page&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;&lt;/div&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;&lt;/div&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;footer&quot;</span><span class="kw">&gt;&lt;/div&gt;</span><br /><span class="kw">&lt;/div&gt;</span><br /><span class="kw">&lt;/body&gt;</span><br /><span class="kw">&lt;/html&gt;</span></code></pre>
+</div>
 </div>
 <div id="structure-of-jquery-mobile-page" class="slide">
 <h1>Structure of jQuery Mobile Page</h1>
-<div id="code">
+<div id="code-1">
 <h2>Code</h2>
 <pre class="sourceCode"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span> <br /><span class="kw">&lt;html&gt;</span> <br />    <span class="kw">&lt;head&gt;</span> <br />    <span class="kw">&lt;title&gt;</span>I Got One!<span class="kw">&lt;/title&gt;</span> <br />    <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;</span><span class="kw">&gt;</span><br />    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css&quot;</span> <span class="kw">/&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/jquery-1.6.4.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br /><span class="kw">&lt;/head&gt;</span><br /><span class="kw">&lt;body&gt;</span> <br /><br /><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;page&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;/div&gt;</span><br /><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;/div&gt;</span><br /><span class="kw">&lt;/div&gt;</span><br /><br /><span class="kw">&lt;/body&gt;</span><br /><span class="kw">&lt;/html&gt;</span></code></pre>
 </div>
@@ -79,7 +90,7 @@ Jason Grigsby and Lyza Danger Gardner
 </div>
 <div id="relying-on-our-bros" class="slide">
 <h1>Relying on our bros</h1>
-<div id="code-1">
+<div id="code-2">
 <h2>Code</h2>
 <pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;</span><span class="kw">&gt;</span><br /><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css&quot;</span> <span class="kw">/&gt;</span><br /><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/jquery-1.6.4.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br /><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br /><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;date.format.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br /><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;http://code.google.com/apis/gears/gears_init.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br /><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;geo.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br /><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;zombie.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></code></pre>
 </div>
@@ -99,7 +110,7 @@ Jason Grigsby and Lyza Danger Gardner
 <div id="putting-the-form-in" class="slide">
 <h1>Putting the &quot;Form&quot; In</h1>
 <p>Easy, but not too exciting. Let's put in some UI elements that will let Sigma Stronghold fighters record a nabbed zombie.</p>
-<div id="code-2">
+<div id="code-3">
 <h2>Code</h2>
 <pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;fieldcontain&quot;</span><span class="kw">&gt;</span><br />    <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span>How'd you nab it?<span class="kw">&lt;/label&gt;</span><br />    <span class="kw">&lt;select</span><span class="ot"> name=</span><span class="st">&quot;how-zombie&quot;</span><span class="ot"> id=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;tank&quot;</span><span class="kw">&gt;</span>Tank<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;conflagration&quot;</span><span class="kw">&gt;</span>Conflagration<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;poison&quot;</span><span class="kw">&gt;</span>Poison<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;nukes&quot;</span><span class="kw">&gt;</span>Micro-nukes<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;trickery&quot;</span><span class="kw">&gt;</span>Trickery<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;corrosive&quot;</span><span class="kw">&gt;</span>Corrosive<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;dismemberment&quot;</span><span class="kw">&gt;</span>Dismemberment<span class="kw">&lt;/option&gt;</span><br />    <span class="kw">&lt;/select&gt;</span><br />  <span class="kw">&lt;/div&gt;</span><br />  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;button&quot;</span><span class="ot"> value=</span><span class="st">&quot;I got one!&quot;</span><span class="ot"> id=</span><span class="st">&quot;got-one&quot;</span><span class="ot"> data-theme=</span><span class="st">&quot;b&quot;</span> <span class="kw">/&gt;</span><br /><br />  <span class="kw">&lt;ul</span><span class="ot"> data-role=</span><span class="st">&quot;listview&quot;</span><span class="ot"> data-inset=</span><span class="st">&quot;true&quot;</span><span class="ot"> id=</span><span class="st">&quot;zombielist&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;/ul&gt;</span><br /><span class="kw">&lt;/div&gt;</span></code></pre>
 </div>
@@ -119,21 +130,26 @@ Jason Grigsby and Lyza Danger Gardner
 </div>
 <div id="basic-structure-of-a-little-zombie-manager" class="slide">
 <h1>Basic structure of a little zombie manager</h1>
-<div id="code-3">
+<div id="code-4">
 <h2>Code</h2>
 <pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">window</span>.<span class="fu">zombieManager</span> = (<span class="kw">function</span>() {<br />  <span class="kw">var</span> zombies       = <span class="kw">new</span> <span class="kw">Array</span>();<br />  <span class="kw">var</span> zombie_icons  = { };<br /><br />  <span class="kw">var</span> resetZombies = <span class="kw">function</span>() {};<br />  <span class="kw">var</span> showZombies = <span class="kw">function</span>() {};<br /><br />  <span class="kw">return</span> {<br />    <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) { }<br />  }<br />}());</code></pre>
 </div>
 </div>
 <div id="setting-things-up-when-the-jqm-page-inits" class="slide">
 <h1>Setting things up when the JQM page inits</h1>
-<div id="code-4">
+<div id="code-5">
 <h2>Code</h2>
 <pre class="sourceCode"><code class="sourceCode javascript">$(<span class="st">&quot;#nab-zombie&quot;</span>).<span class="fu">live</span>(<span class="ch">'pageinit'</span>, <span class="kw">function</span>() {<br />  <span class="kw">var</span> geoHappy = <span class="kw">geo_position_js</span>.<span class="fu">init</span>();<br />  $(<span class="st">&quot;#got-one&quot;</span>).<span class="fu">click</span>(<span class="kw">function</span>() {<br />    <span class="kw">var</span> now = <span class="kw">new</span> <span class="kw">Date</span>();<br />    <span class="kw">var</span> how = $(<span class="st">&quot;#how-zombie&quot;</span>).<span class="fu">val</span>();<br />    <span class="kw">if</span> (geoHappy) {<br />      <span class="kw">geo_position_js</span>.<span class="fu">getCurrentPosition</span>(<span class="kw">function</span>(position) {<br />        <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, position, how);<br />      }, <span class="kw">function</span>(error) {<br />        <span class="kw">console</span>.<span class="fu">log</span>(<span class="st">&quot;Geolocation error: &quot;</span> + <span class="kw">error</span>.<span class="fu">message</span>);<br />        <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, null, how);<br />      });<br />    } <span class="kw">else</span> { <span class="co">// It's also OK to add a zombie w/o location data</span><br />      <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, null, how);<br />    }<br />  });<br />});</code></pre>
 </div>
 </div>
 <div id="try-it-out" class="slide">
 <h1>Try it out!</h1>
-<p>TODO: Screen shot</p>
+<div id="figure-i-got-one-on-an-android">
+<h2>Figure: &quot;I got one!&quot; on an Android</h2>
+<div class="figure">
+<img src="images/i-got-one-screenshots/android-list.png" /><p class="caption"></p>
+</div>
+</div>
 </div>
 <div id="cool-yeah-maybe-ok-but-kind-of-useless" class="slide">
 <h1>Cool, yeah, maybe, OK, but kind of useless</h1>
@@ -143,11 +159,13 @@ Jason Grigsby and Lyza Danger Gardner
 </ul>
 <div id="how-about-a-device-api">
 <h3>How about a device API?</h3>
-<p>TODO: Storage drawing</p>
 </div>
 </div>
 <div id="localstorage" class="slide">
 <h1>localStorage</h1>
+<div class="figure">
+<img src="images/06-storage.png" /><p class="caption"></p>
+</div>
 <p>There is another standard device API for storing simple string key-value pairs on the client: <em>localStorage</em>.</p>
 <div id="however-we-need-to-store-more-than-strings...">
 <h3>However, we need to store more than strings...</h3>
@@ -173,7 +191,7 @@ Jason Grigsby and Lyza Danger Gardner
 </div>
 <div id="add-an-init-function" class="slide">
 <h1>Add an init function</h1>
-<div id="code-5">
+<div id="code-6">
 <h2>Code</h2>
 <pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">return</span> {<br />  <span class="co">// Init; build initial #zombielist</span><br />  <span class="dt">init          </span>: <span class="kw">function</span>() {<br />    <span class="kw">zombieChair</span>.<span class="fu">get</span>(<span class="ch">'zombies'</span>, <span class="kw">function</span>(zombiesOnIce) {<br />      <span class="kw">if</span> (zombiesOnIce) {<br />        zombies = <span class="kw">zombiesOnIce</span>.<span class="fu">value</span>;<br />      }<br />    });<br />    showZombies();<br />  },<br />  <span class="co">// Add a new zombie to the list of zombies</span><br />  <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) {<br />  <span class="co">// ...</span></code></pre>
 </div>

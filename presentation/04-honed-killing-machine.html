@@ -60,6 +60,9 @@ Jason Grigsby and Lyza Danger Gardner
 </div>
 <div id="cache-manifests" class="slide">
 <h1>Cache manifests</h1>
+<div class="figure">
+<img src="images/04-cache-manifest.png" /><p class="caption"></p>
+</div>
 <p>A <em>cache manifest</em> is a file that lets you tell the client about resources that should be cached.</p>
 <p>You can use a cache manifest to create an <em>offline mode</em> for your web site or app.</p>
 <div id="speaker-notes-1">
@@ -80,6 +83,9 @@ bar.png
 index.html
 ding/dong.html
 </code></pre>
+<div id="manifest.appcache">
+<h5>manifest.appcache</h5>
+</div>
 <div id="speaker-notes-2">
 <h2>Speaker Notes</h2>
 <ul>
@@ -187,6 +193,18 @@ ding/dong.html
 <p>How'd that go?</p>
 <p>Wait a minute...</p>
 </div>
+<div id="common-cache-manifest-gotchas" class="slide">
+<h1>Common cache manifest gotchas</h1>
+<div class="figure">
+<img src="images/04-danger.png" /><p class="caption"></p>
+</div>
+<ul>
+<li>Changes to files in cache not &quot;seen&quot; by browsers — the cache manifest itself must change.</li>
+<li>All resources for an HTML document in the cache must also be in the cache manifest, whether that HTML document got there explicitly or implicitly.</li>
+<li>Any error in the cache manifest will cause the whole thing not to work. A single 404 can also wreak havoc.</li>
+<li>A changed cache manifest requires <em>two</em> subsequent requests for the changes to be visible.</li>
+</ul>
+</div>
 <div id="whered-our-fonts-go" class="slide">
 <h1>Where'd our fonts go?</h1>
 <p>We added the Google Fonts CSS stylesheet to our cache manifest, but the actual font files are not in the cache manifest. Uh oh! Now what?</p>
@@ -221,9 +239,12 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 </div>
 <div id="lets-talk-about-device-apis" class="slide">
 <h1>Let's talk about device APIs</h1>
-<ul>
-<li>Device APIs: Exposed ways to get at the capabilities of devices!</li>
-</ul>
+<div id="figure-device-apis">
+<h2>Figure: Device APIS!</h2>
+<div class="figure">
+<img src="images/04-device-apis.png" /><p class="caption"></p>
+</div>
+</div>
 </div>
 <div id="geolocation" class="slide">
 <h1>Geolocation</h1>

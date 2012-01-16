@@ -7,6 +7,27 @@
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Jason Grigsby and Lyza Danger Gardner" />
   <title>Zombie 101: Boot Camp</title>
+  <style type="text/css">
+/*<![CDATA[*/
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode, table.sourceCode pre 
+   { margin: 0; padding: 0; border: 0; vertical-align: baseline; border: none; }
+td.lineNumbers { border-right: 1px solid #AAAAAA; text-align: right; color: #AAAAAA; padding-right: 5px; padding-left: 5px; }
+td.sourceCode { padding-left: 5px; }
+code.sourceCode span.kw { color: #007020; font-weight: bold; } 
+code.sourceCode span.dt { color: #902000; }
+code.sourceCode span.dv { color: #40a070; }
+code.sourceCode span.bn { color: #40a070; }
+code.sourceCode span.fl { color: #40a070; }
+code.sourceCode span.ch { color: #4070a0; }
+code.sourceCode span.st { color: #4070a0; }
+code.sourceCode span.co { color: #60a0b0; font-style: italic; }
+code.sourceCode span.ot { color: #007020; }
+code.sourceCode span.al { color: red; font-weight: bold; }
+code.sourceCode span.fu { color: #06287e; }
+code.sourceCode span.re { }
+code.sourceCode span.er { color: red; font-weight: bold; }
+/*]]>*/
+  </style>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
     href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
@@ -116,7 +137,6 @@ Jason Grigsby and Lyza Danger Gardner
 <ul>
 <li>Smaller, faster web sites are by their very nature much more mobile friendly.</li>
 </ul>
-<p>*</p>
 </div>
 <div id="find-your-copy-in-your-pack">
 <h2>Find your copy in your pack</h2>
@@ -150,7 +170,12 @@ Jason Grigsby and Lyza Danger Gardner
 <div id="getting-the-big-heavy-picture" class="slide">
 <h1>Getting the big, heavy picture</h1>
 <p>Let's see just how overweight this page is by using the <em>ySlow</em> tool.</p>
-<p>TODO: Drawing of ySlow</p>
+<div id="figure-yslow">
+<h2>Figure: ySlow</h2>
+<div class="figure">
+<img src="images/02-yslow.png" /><p class="caption"></p>
+</div>
+</div>
 </div>
 <div id="what-flab-can-we-trim" class="slide">
 <h1>What flab can we trim?</h1>
@@ -185,7 +210,9 @@ Jason Grigsby and Lyza Danger Gardner
 </div>
 <div id="cleanup-part-i" class="slide">
 <h1>Cleanup Part I</h1>
-<p>TODO: Optional mop</p>
+<div class="figure">
+<img src="images/02-mop.png" /><p class="caption"></p>
+</div>
 <ul>
 <li>Get those <code>&lt;span&gt;</code>s untangled.</li>
 <li>Remove the weather widget.</li>
@@ -194,7 +221,7 @@ Jason Grigsby and Lyza Danger Gardner
 </div>
 <div id="status-check" class="slide">
 <h1>Status Check!</h1>
-<p>TODO: Screen shot of ySlow</p>
+<p>Check in with ySlow to see how we're doing now.</p>
 </div>
 <div id="google-font-madness" class="slide">
 <h1>Google font madness</h1>
@@ -248,7 +275,7 @@ Jason Grigsby and Lyza Danger Gardner
 <li>The moon background image is ginormous.</li>
 </ul>
 <blockquote>
-<p>I'm a bit embarrassed about the HQ address image. I didn't even really think about it. Also, we've had some of the troops complain about too much specific zombie imagery on the site overall. I'm attached to the moon photo because my brother took it and I think it's kind of cool. The other images, meh. -- Sgt. Dingus</p>
+<p>I'm a bit embarrassed about the HQ address image. I didn't even really think about it. Also, we've had some of the troops complain about too much specific zombie imagery on the site overall. I'm attached to the moon photo because my brother took it and I think it's kind of cool. The other images, meh. — Sgt. Dingus</p>
 </blockquote>
 <div id="speaker-notes-7">
 <h2>Speaker Notes</h2>
@@ -387,12 +414,14 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 </div>
 <div id="getting-more-semantic" class="slide">
 <h1>Getting more semantic</h1>
-<p>Instead of</p>
-<pre><code>&lt;div class=&quot;title&quot;&gt;&lt;h3&gt;Kill confirm: &lt;span class=&quot;red&quot;&gt;zombie #421&lt;/span&gt; has been neutralized&lt;/h3&gt;&lt;/div&gt;
-</code></pre>
-<p>how about</p>
-<pre><code>&lt;h3&gt;Kill confirm: &lt;em&gt;zombie #421&lt;/em&gt; has been neutralized&lt;/h3&gt;
-</code></pre>
+<div id="instead-of">
+<h3>Instead of</h3>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;title&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;h3&gt;</span>Kill confirm: <br />    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;red&quot;</span><span class="kw">&gt;</span><br />      zombie #421<br />    <span class="kw">&lt;/span&gt;</span> <br />    has been neutralized<br />  <span class="kw">&lt;/h3&gt;</span><br /><span class="kw">&lt;/div&gt;</span></code></pre>
+</div>
+<div id="use">
+<h3>Use</h3>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;h3&gt;</span>Kill confirm: <br />  <span class="kw">&lt;em&gt;</span>zombie #421<span class="kw">&lt;/em&gt;</span> <br />  has been neutralized<br /><span class="kw">&lt;/h3&gt;</span></code></pre>
+</div>
 <div id="speaker-notes-11">
 <h2>Speaker notes</h2>
 <ul>
@@ -403,12 +432,14 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 </div>
 <div id="getting-more-semantic-cont." class="slide">
 <h1>Getting more semantic, cont.</h1>
-<p>Instead of</p>
-<pre><code>&lt;div&gt;&lt;span class=&quot;grey&quot;&gt;20120621//1935 :: &lt;span class=&quot;byline grey&quot;&gt;A/V Wonk Phil Starken&lt;/span&gt;&lt;/span&gt;&lt;/div&gt;
-</code></pre>
-<p>how about</p>
-<pre><code>&lt;small&gt;20120621//1935 :: A/V Wonk Phil Starken&lt;/small&gt;
-</code></pre>
+<div id="instead-of-1">
+<h3>Instead of</h3>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;div&gt;</span><br />  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;grey&quot;</span><span class="kw">&gt;</span>20120621//1935 :: <br />    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;byline grey&quot;</span><span class="kw">&gt;</span><br />      A/V Wonk Phil Starken<br />    <span class="kw">&lt;/span&gt;</span><br />  <span class="kw">&lt;/span&gt;</span><br /><span class="kw">&lt;/div&gt;</span></code></pre>
+</div>
+<div id="use-1">
+<h3>Use</h3>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;small&gt;</span><br />  20120621//1935 :: A/V Wonk Phil Starken<br /><span class="kw">&lt;/small&gt;</span></code></pre>
+</div>
 <div id="speaker-notes-12">
 <h2>Speaker Notes</h2>
 <ul>

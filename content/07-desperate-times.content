@@ -3,13 +3,13 @@
 
 # A blistering quick ride through hybrid-land
 
+![](images/07-hybrid.png)
+
 Sometimes you need to do something that you just can't quite pull off (yet) on the mobile web.
 
 Sometimes zombies mate with the populace at large and the offspring get the best of both worlds—web-based technologies wrapped in native app goodness.
 
 Giddyup!
-
-TODO: Drawing: Web technology + native app wrapper = hybrid
 
 # PhoneGap and PhoneGap Build
 
@@ -33,7 +33,11 @@ PhoneGap Build is based on the W3C Web Widget spec.
 
 # Anatomy of a PhoneGap project
 
-TODO: Drawing of PhoneGap project structure
+![](images/07-anatomy.png)
+
+* Web stuff: HTML, JS, CSS, images, whatever!
+* A config.xml file
+* For PhoneGap Build, ZIP it up and then upload it.
 
 # The PhoneGap API
 

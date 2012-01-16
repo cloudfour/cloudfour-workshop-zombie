@@ -15,15 +15,32 @@ jQuery Mobile is a mobile web framework built atop the popular jQuery library.
 
 # I got one!
 
-Sigma Stronghold leaders want a way for agents in the field to be able to record their zombie kills. Let's whip 'em up a quick mobile web app using the jQuery Mobile framework.
+![](images/06-3ws.png)
 
-TODO: When/where/how graphic
+Sigma Stronghold leaders want a way for agents in the field to be able to record their zombie kills. Let's whip 'em up a quick mobile web app using the jQuery Mobile framework.
 
 Find the starting point for the little web app in your rucksack (see your field notes).
 
 # Basic jQuery Mobile Page
 
-TODO: Drawing of jQM structure
+![](images/06-jqm.png)
+
+* Delineated by HTML5 `data-` attributes.
+
+## Code
+
+~~~ {.html}
+<html>
+<head></head>
+<body>
+<div data-role="page">
+  <div data-role="header"></div>
+  <div data-role="content"></div>
+  <div data-role="footer"></div>
+</div>
+</body>
+</html>
+~~~
 
 # Structure of jQuery Mobile Page
 
@@ -172,18 +189,21 @@ $("#nab-zombie").live('pageinit', function() {
 
 # Try it out!
 
-TODO: Screen shot
+## Figure: "I got one!" on an Android
+
+![](images/i-got-one-screenshots/android-list.png)
 
 # Cool, yeah, maybe, OK, but kind of useless
+
 
 * As soon as the page is reloaded, all of the zombies go away.
 * We need a way to store found zombies on the client.
 
 ### How about a device API?
 
-TODO: Storage drawing
-
 # localStorage
+
+![](images/06-storage.png)
 
 There is another standard device API for storing simple string key-value pairs on the client: *localStorage*.
 

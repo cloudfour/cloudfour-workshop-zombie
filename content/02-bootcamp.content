@@ -85,7 +85,6 @@ However, the first battle is with ourselves. To become refined zombie-squishing 
 Performance optimization and cleanup may seem like it  is a far tangent from mobile web design and development. However, the two are tightly interlocked.
 
 * Smaller, faster web sites are by their very nature much more mobile friendly.
-* 
 
 ## Find your copy in your pack
 
@@ -122,7 +121,10 @@ Broken markup is like a loose cannon. It might not go off, but it might.
 
 Let's see just how overweight this page is by using the *ySlow* tool.
 
-TODO: Drawing of ySlow
+## Figure: ySlow
+
+![](images/02-yslow.png)
+
 
 # What flab can we trim?
 
@@ -155,7 +157,7 @@ TODO: Drawing of ySlow
 
 # Cleanup Part I
 
-TODO: Optional mop
+![](images/02-mop.png)
 
 * Get those `<span>`s untangled.
 * Remove the weather widget.
@@ -163,7 +165,7 @@ TODO: Optional mop
 
 # Status Check!
 
-TODO: Screen shot of ySlow
+Check in with ySlow to see how we're doing now.
 
 # Google font madness
 
@@ -206,7 +208,7 @@ OK, we've sort of got the site in regulation uniform, but it's still bulgy. *Let
 * The zombie girl image is hideous, and it is also very large.
 * The moon background image is ginormous.
 
-> I'm a bit embarrassed about the HQ address image. I didn't even really think about it. Also, we've had some of the troops complain about too much specific zombie imagery on the site overall. I'm attached to the moon photo because my brother took it and I think it's kind of cool. The other images, meh. -- Sgt. Dingus
+> I'm a bit embarrassed about the HQ address image. I didn't even really think about it. Also, we've had some of the troops complain about too much specific zombie imagery on the site overall. I'm attached to the moon photo because my brother took it and I think it's kind of cool. The other images, meh. — Sgt. Dingus
 
 ## Speaker Notes
 
@@ -325,13 +327,27 @@ We're dealing with an HTML5 document, but not taking advantage of all that HTML5
 
 # Getting more semantic
 
-Instead of
+### Instead of
 
-    <div class="title"><h3>Kill confirm: <span class="red">zombie #421</span> has been neutralized</h3></div>
+~~~ {.html}
+<div class="title">
+  <h3>Kill confirm: 
+    <span class="red">
+      zombie #421
+    </span> 
+    has been neutralized
+  </h3>
+</div>
+~~~
     
-how about
+### Use
 
-    <h3>Kill confirm: <em>zombie #421</em> has been neutralized</h3>
+~~~ {.html}
+<h3>Kill confirm: 
+  <em>zombie #421</em> 
+  has been neutralized
+</h3>
+~~~
 
 ## Speaker notes
 
@@ -341,13 +357,25 @@ how about
 
 # Getting more semantic, cont.
 
-Instead of
+### Instead of
 
-    <div><span class="grey">20120621//1935 :: <span class="byline grey">A/V Wonk Phil Starken</span></span></div>
+~~~ {.html}
+<div>
+  <span class="grey">20120621//1935 :: 
+    <span class="byline grey">
+      A/V Wonk Phil Starken
+    </span>
+  </span>
+</div>
+~~~
 
-how about
+### Use
 
-    <small>20120621//1935 :: A/V Wonk Phil Starken</small>
+~~~ {.html}
+<small>
+  20120621//1935 :: A/V Wonk Phil Starken
+</small>
+~~~
 
 ## Speaker Notes
 
