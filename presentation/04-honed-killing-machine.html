@@ -5,7 +5,29 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="pandoc" />
-  <title></title>
+  <meta name="author" content="Jason Grigsby and Lyza Danger Gardner" />
+  <title>Zombie 101: A Honed Killing Machine</title>
+  <style type="text/css">
+/*<![CDATA[*/
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode, table.sourceCode pre 
+   { margin: 0; padding: 0; border: 0; vertical-align: baseline; border: none; }
+td.lineNumbers { border-right: 1px solid #AAAAAA; text-align: right; color: #AAAAAA; padding-right: 5px; padding-left: 5px; }
+td.sourceCode { padding-left: 5px; }
+code.sourceCode span.kw { color: #007020; font-weight: bold; } 
+code.sourceCode span.dt { color: #902000; }
+code.sourceCode span.dv { color: #40a070; }
+code.sourceCode span.bn { color: #40a070; }
+code.sourceCode span.fl { color: #40a070; }
+code.sourceCode span.ch { color: #4070a0; }
+code.sourceCode span.st { color: #4070a0; }
+code.sourceCode span.co { color: #60a0b0; font-style: italic; }
+code.sourceCode span.ot { color: #007020; }
+code.sourceCode span.al { color: red; font-weight: bold; }
+code.sourceCode span.fu { color: #06287e; }
+code.sourceCode span.re { }
+code.sourceCode span.er { color: red; font-weight: bold; }
+/*]]>*/
+  </style>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
     href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
@@ -14,6 +36,12 @@
     charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
+<div class="slide titlepage">
+  <h1 class="title">Zombie 101: A Honed Killing Machine</h1>
+  <p class="author">
+Jason Grigsby and Lyza Danger Gardner
+  </p>
+</div>
 <div id="faster-better-stronger" class="slide">
 <h1>Faster, Better, Stronger</h1>
 <p>We're starting to make the leap to mobile-savvy now. How do we make this site even leaner, faster on mobile devices?</p>
@@ -42,8 +70,14 @@
 <div id="cache-manifest-syntax" class="slide">
 <h1>Cache manifest syntax</h1>
 <p>Writing a cache manifest file sounds simple—in premise. In its simplest:</p>
-<p>CACHE MANIFEST</p>
-<p>CACHE: foo.jpg bar.png index.html ding/dong.html</p>
+<pre><code>CACHE MANIFEST
+
+CACHE:
+foo.jpg
+bar.png
+index.html
+ding/dong.html
+</code></pre>
 <div id="speaker-notes-1">
 <h2>Speaker Notes</h2>
 <ul>
@@ -57,18 +91,13 @@
 <p>Cache manifest files must be served as a particular <code>MIME</code> type (<code>text/cache-manifest</code>) or browsers will not recognize them.</p>
 <p>Often this can be handled by adding the following to your <code>.htaccess</code> or other Apache configuration file:</p>
 <p><code>AddType text/cache-manifest .appcache</code></p>
+<p>(Preferred extension is <code>.appcache</code>)</p>
 <div id="speaker-notes-2">
 <h2>Speaker Notes</h2>
 <ul>
 <li>If you generate your appcache file with a server-side scripting language, can set a header.</li>
 </ul>
 </div>
-</div>
-<div id="cache-manifest-conventions" class="slide">
-<h1>Cache manifest conventions</h1>
-<ul>
-<li>Preferred extension is <code>.appcache</code></li>
-</ul>
 </div>
 <div id="how-to-tell-the-browser-about-your-appcache" class="slide">
 <h1>How to tell the browser about your appcache</h1>
@@ -115,20 +144,22 @@
 <p>Let's create a simple cache manifest for the Sigma Stronghold site.</p>
 <ul>
 <li>Need to add the landing page and its needed resources to the <code>CACHE</code> section.</li>
-<li><p>Like this:</p>
-<pre><code>CACHE MANIFEST
-
-CACHE:
-
-index.html
-favicon.ico
-images/blip.png
-images/bomb.png
-images/moon.jpg
-styles.css
-http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
-</code></pre></li>
+<li>Like this:</li>
 </ul>
+<div id="code">
+<h2>Code</h2>
+<pre><code>    CACHE MANIFEST
+
+    CACHE:
+    index.html
+    favicon.ico
+    images/blip.png
+    images/bomb.png
+    images/moon.jpg
+    styles.css
+    http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
+</code></pre>
+</div>
 <div id="speaker-notes-5">
 <h2>Speaker Notes</h2>
 <ul>
@@ -152,7 +183,8 @@ http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
 <h1>Where'd our fonts go?</h1>
 <p>We added the Google Fonts CSS stylesheet to our cache manifest, but the actual font files are not in the cache manifest. Uh oh! Now what?</p>
 <p>We need to add the Google Font files to the cache, explicitly:</p>
-<pre><code>http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff      http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff
+<pre><code>http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff
+http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff
 </code></pre>
 </div>
 <div id="it-aint-perfect" class="slide">
@@ -195,8 +227,7 @@ http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
 <div id="using-the-w3c-api-to-get-the-current-location" class="slide">
 <h1>Using the W3C API to get the current location</h1>
 <p>Here's what it looks like:</p>
-<pre><code>    navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(successCallback, errorCallback)</code></pre>
 <div id="speaker-notes-8">
 <h2>Speaker Notes</h2>
 <ul>
@@ -213,33 +244,16 @@ http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
 </div>
 <div id="testing-for-api-support" class="slide">
 <h1>Testing for API support</h1>
-<pre><code>&lt;script&gt;
-  if (navigator.geolocation) {
-    // Do something, dammit!
-  }
-&lt;/script&gt;
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode javascript">&lt;script&gt;<br />  <span class="kw">if</span> (<span class="kw">navigator</span>.<span class="fu">geolocation</span>) {<br />    <span class="co">// Do something, dammit!</span><br />  }<br />&lt;/script&gt;</code></pre>
 </div>
 <div id="doing-something-dammit" class="slide">
 <h1>Doing something, dammit</h1>
-<pre><code>if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
-} else {
-  onGeoError(new Error('Sorry, Geolocation not supported in this browser!'));
-}
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">if</span> (<span class="kw">navigator</span>.<span class="fu">geolocation</span>) {<br />  <span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(onGeoSuccess, onGeoError);<br />} <span class="kw">else</span> {<br />  onGeoError(<span class="kw">new</span> Error(<span class="ch">'Sorry, Geolocation not supported in this browser!'</span>));<br />}</code></pre>
 </div>
 <div id="and-now-what..." class="slide">
 <h1>And now what...?</h1>
 <p>We need to define our success and error callbacks.</p>
-<pre><code>  function onGeoSuccess(position) {
-    var coordinates = position.coords;
-    alert(coordinates.latitude + &quot;, &quot; + coordinates.longitude);
-  }
-  function onGeoError(error) {
-    alert(error.message);
-  }
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">function</span> onGeoSuccess(position) {<br />  <span class="kw">var</span> coordinates = <span class="kw">position</span>.<span class="fu">coords</span>;<br />  alert(<span class="kw">coordinates</span>.<span class="fu">latitude</span> + <span class="st">&quot;, &quot;</span> + <span class="kw">coordinates</span>.<span class="fu">longitude</span>);<br />}<br /><span class="kw">function</span> onGeoError(error) {<br />  alert(<span class="kw">error</span>.<span class="fu">message</span>);<br />}</code></pre>
 </div>
 <div id="all-together-now" class="slide">
 <h1>All together now!</h1>

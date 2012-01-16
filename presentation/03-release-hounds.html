@@ -247,19 +247,11 @@ Jason Grigsby and Lyza Danger Gardner
 <p>To achieve the goal of the overall content width—never wider than 920px overall—we'll use the <code>max-width</code> CSS property.</p>
 <div id="instead-of">
 <h3>Instead of</h3>
-<pre><code>body &gt; div {
-  width: 920px;
-  ...
- }
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br />  <span class="kw">width:</span> <span class="dt">920px</span><span class="kw">;</span><br />  <span class="er">...</span><br /> <span class="kw">}</span></code></pre>
 </div>
 <div id="use">
 <h3>Use</h3>
-<pre><code>body &gt; div {
- max-width: 920px;
- ...
-}
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br /> <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span><br /> <span class="er">...</span><br /><span class="kw">}</span></code></pre>
 </div>
 <div id="speaker-notes-2">
 <h2>Speaker Notes</h2>
@@ -274,23 +266,11 @@ Jason Grigsby and Lyza Danger Gardner
 <h1>Revising our CSS, cont.</h1>
 <div id="instead-of-1">
 <h3>Instead of</h3>
-<pre><code>#container {
-  zoom: 1;
-  background: black;
-  padding: 10px;
-  width: 900px;
-  clear: both; }
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">padding:</span> <span class="dt">10px</span><span class="kw">;</span><br />  <span class="kw">width:</span> <span class="dt">900px</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span> <span class="kw">}</span></code></pre>
 </div>
 <div id="use-1">
 <h3>Use</h3>
-<pre><code>#container {
-  zoom: 1;
-  background: black;
-  padding: .625em;
-  max-width: 900px;
-  clear: both; }
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">padding:</span> <span class="dt">.625em</span><span class="kw">;</span><br />  <span class="kw">max-width:</span> <span class="dt">900px</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span> <span class="kw">}</span></code></pre>
 </div>
 <div id="speaker-notes-3">
 <h2>Speaker Notes</h2>
@@ -315,27 +295,11 @@ Jason Grigsby and Lyza Danger Gardner
 <p>We've already done the sloppy math on <code>#main</code> and decided it should be 60% wide.</p>
 <div id="instead-of-2">
 <h3>Instead of</h3>
-<pre><code>#main {
-  zoom: 1;
-  margin-left: 10px;
-  clear: left;
-  float: left;
-  width: 550px;
-  ...
-}
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode css">    <span class="fl">#main</span> <span class="kw">{</span><br />      <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />      <span class="kw">margin-left:</span> <span class="dt">10px</span><span class="kw">;</span><br />      <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />      <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />      <span class="kw">width:</span> <span class="dt">550px</span><span class="kw">;</span><br />      <span class="er">...</span><br />    <span class="kw">}</span></code></pre>
 </div>
 <div id="use-2">
 <h3>use</h3>
-<pre><code>#main {
-  zoom: 1;
-  margin-left: 1.5%;
-  clear: left;
-  float: left;
-  width: 60%;
-  ...
-}
-</code></pre>
+<pre class="sourceCode"><code class="sourceCode css">    <span class="fl">#main</span> <span class="kw">{</span><br />      <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />      <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span><br />      <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />      <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />      <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span><br />      <span class="er">...</span><br />    <span class="kw">}</span></code></pre>
 </div>
 </div>
 <div id="what-about-the-sidebar" class="slide">

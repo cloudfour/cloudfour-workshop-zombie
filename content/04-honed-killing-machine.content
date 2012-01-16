@@ -1,3 +1,6 @@
+% Zombie 101: A Honed Killing Machine
+% Jason Grigsby and Lyza Danger Gardner
+
 # Faster, Better, Stronger
 
 We're starting to make the leap to mobile-savvy now. How do we make this site even leaner, faster on mobile devices?
@@ -26,6 +29,7 @@ Cache manifest browser support. TODO
 
 Writing a cache manifest file sounds simple—in premise. In its simplest:
 
+~~~
 CACHE MANIFEST
 
 CACHE:
@@ -33,6 +37,7 @@ foo.jpg
 bar.png
 index.html
 ding/dong.html
+~~~
 
 ## Speaker Notes
 
@@ -47,13 +52,11 @@ Often this can be handled by adding the following to your `.htaccess` or other A
 
 `AddType text/cache-manifest .appcache`
 
+(Preferred extension is `.appcache`)
+
 ## Speaker Notes
 
 * If you generate your appcache file with a server-side scripting language, can set a header.
-
-# Cache manifest conventions
-
-* Preferred extension is `.appcache`
 
 # How to tell the browser about your appcache
 
@@ -98,10 +101,11 @@ Let's create a simple cache manifest for the Sigma Stronghold site.
 * Need to add the landing page and its needed resources to the `CACHE` section.
 * Like this:
 
+## Code
+
         CACHE MANIFEST
 
         CACHE:
-
         index.html
         favicon.ico
         images/blip.png
@@ -133,7 +137,10 @@ We added the Google Fonts CSS stylesheet to our cache manifest, but the actual f
 
 We need to add the Google Font files to the cache, explicitly:
 
-    http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff      http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff
+~~~
+http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff
+http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff
+~~~
     
 # It ain't perfect
 
@@ -177,7 +184,9 @@ Browsers that implement the W3C Geolocation API expose the `navigator.geolocatio
 
 Here's what it looks like:
 
-        navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
+~~~ {.javascript}
+navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
+~~~
 
 ## Speaker Notes
 
@@ -191,31 +200,37 @@ Hey, let's build a basic geolocation test page to see how that geolocation API w
 
 # Testing for API support
 
-    <script>
-      if (navigator.geolocation) {
-        // Do something, dammit!
-      }
-    </script>
+~~~ {.javascript}
+<script>
+  if (navigator.geolocation) {
+    // Do something, dammit!
+  }
+</script>
+~~~
 
 # Doing something, dammit
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
-    } else {
-      onGeoError(new Error('Sorry, Geolocation not supported in this browser!'));
-    }
+~~~ {.javascript}
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
+} else {
+  onGeoError(new Error('Sorry, Geolocation not supported in this browser!'));
+}
+~~~
 
 # And now what...?
 
 We need to define our success and error callbacks.
 
-      function onGeoSuccess(position) {
-        var coordinates = position.coords;
-        alert(coordinates.latitude + ", " + coordinates.longitude);
-      }
-      function onGeoError(error) {
-        alert(error.message);
-      }
+~~~ {.javascript}
+function onGeoSuccess(position) {
+  var coordinates = position.coords;
+  alert(coordinates.latitude + ", " + coordinates.longitude);
+}
+function onGeoError(error) {
+  alert(error.message);
+}
+~~~
 
 # All together now!
 

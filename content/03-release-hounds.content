@@ -170,7 +170,7 @@ To achieve the goal of the overall content width—never wider than 920px overal
 
 ### Instead of
 
-~~~~
+~~~~ {.css}
 body > div {
   width: 920px;
   ...
@@ -179,7 +179,7 @@ body > div {
 
 ### Use
 
-~~~~
+~~~~ {.css}
 body > div {
  max-width: 920px;
  ...
@@ -196,7 +196,7 @@ body > div {
 
 ### Instead of
 
-~~~
+~~~ {.css}
 #container {
   zoom: 1;
   background: black;
@@ -207,7 +207,7 @@ body > div {
 
 ### Use
 
-~~~
+~~~ {.css}
 #container {
   zoom: 1;
   background: black;
@@ -236,6 +236,7 @@ We've already done the sloppy math on `#main` and decided it should be 60% wide.
 
 ### Instead of
 
+~~~ {.css}
     #main {
       zoom: 1;
       margin-left: 10px;
@@ -244,9 +245,11 @@ We've already done the sloppy math on `#main` and decided it should be 60% wide.
       width: 550px;
       ...
     }
+~~~
 
 ### use
 
+~~~ {.css}
     #main {
       zoom: 1;
       margin-left: 1.5%;
@@ -255,6 +258,7 @@ We've already done the sloppy math on `#main` and decided it should be 60% wide.
       width: 60%;
       ...
     }
+~~~
 
 # What about the sidebar?
 
