@@ -5,7 +5,29 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="pandoc" />
-  <title></title>
+  <meta name="author" content="Jason Grigsby and Lyza Danger Gardner" />
+  <title>Zombie 101: A Band of Brothers</title>
+  <style type="text/css">
+/*<![CDATA[*/
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode, table.sourceCode pre 
+   { margin: 0; padding: 0; border: 0; vertical-align: baseline; border: none; }
+td.lineNumbers { border-right: 1px solid #AAAAAA; text-align: right; color: #AAAAAA; padding-right: 5px; padding-left: 5px; }
+td.sourceCode { padding-left: 5px; }
+code.sourceCode span.kw { color: #007020; font-weight: bold; } 
+code.sourceCode span.dt { color: #902000; }
+code.sourceCode span.dv { color: #40a070; }
+code.sourceCode span.bn { color: #40a070; }
+code.sourceCode span.fl { color: #40a070; }
+code.sourceCode span.ch { color: #4070a0; }
+code.sourceCode span.st { color: #4070a0; }
+code.sourceCode span.co { color: #60a0b0; font-style: italic; }
+code.sourceCode span.ot { color: #007020; }
+code.sourceCode span.al { color: red; font-weight: bold; }
+code.sourceCode span.fu { color: #06287e; }
+code.sourceCode span.re { }
+code.sourceCode span.er { color: red; font-weight: bold; }
+/*]]>*/
+  </style>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
     href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
@@ -14,35 +36,167 @@
     charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
-<div id="frameworks" class="titleslide" class="slide">
+<div class="slide titlepage">
+  <h1 class="title">Zombie 101: A Band of Brothers</h1>
+  <p class="author">
+Jason Grigsby and Lyza Danger Gardner
+  </p>
+</div>
+<div id="frameworks" class="slide">
 <h1>Frameworks</h1>
+<p>Sometimes you don't want to keep re-inventing the same zombie-blasting cannon over and over again. We zombie fighters might be a ragtag bunch, but we stick together.</p>
+<p>Frameworks, libraries, tools, templates...all of these can give you a leg up.</p>
 </div>
-<div id="jquery-mobile" class="titleslide" class="slide">
+<div id="jquery-mobile" class="slide">
 <h1>jQuery Mobile</h1>
+<div class="figure">
+<img src="images/06-jquerymobile-com.png" /><p class="caption"></p>
 </div>
-<div id="basic-jquery-mobile-page" class="titleslide" class="slide">
+<p>jQuery Mobile is a mobile web framework built atop the popular jQuery library.</p>
+</div>
+<div id="i-got-one" class="slide">
+<h1>I got one!</h1>
+<p>Sigma Stronghold leaders want a way for agents in the field to be able to record their zombie kills. Let's whip 'em up a quick mobile web app using the jQuery Mobile framework.</p>
+<p>TODO: When/where/how graphic</p>
+<p>Find the starting point for the little web app in your rucksack (see your field notes).</p>
+</div>
+<div id="basic-jquery-mobile-page" class="slide">
 <h1>Basic jQuery Mobile Page</h1>
+<p>TODO: Drawing of jQM structure</p>
 </div>
-<div id="putting-the-form-in" class="titleslide" class="slide">
+<div id="structure-of-jquery-mobile-page" class="slide">
+<h1>Structure of jQuery Mobile Page</h1>
+<div id="code">
+<h2>Code</h2>
+<pre class="sourceCode"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span> <br /><span class="kw">&lt;html&gt;</span> <br />    <span class="kw">&lt;head&gt;</span> <br />    <span class="kw">&lt;title&gt;</span>I Got One!<span class="kw">&lt;/title&gt;</span> <br />    <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;</span><span class="kw">&gt;</span><br />    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css&quot;</span> <span class="kw">/&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/jquery-1.6.4.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br /><span class="kw">&lt;/head&gt;</span><br /><span class="kw">&lt;body&gt;</span> <br /><br /><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;page&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;/div&gt;</span><br /><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;/div&gt;</span><br /><span class="kw">&lt;/div&gt;</span><br /><br /><span class="kw">&lt;/body&gt;</span><br /><span class="kw">&lt;/html&gt;</span></code></pre>
+</div>
+<div id="speaker-notes">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Note the maximum-scale zoom thing here</li>
+</ul>
+</div>
+</div>
+<div id="relying-on-our-bros" class="slide">
+<h1>Relying on our bros</h1>
+<div id="code-1">
+<h2>Code</h2>
+<pre class="sourceCode"><code class="sourceCode html">    <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;</span><span class="kw">&gt;</span><br />    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css&quot;</span> <span class="kw">/&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/jquery-1.6.4.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;date.format.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;http://code.google.com/apis/gears/gears_init.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;geo.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;zombie.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></code></pre>
+</div>
+<div id="speaker-notes-1">
+<h2>Speaker Notes</h2>
+<ul>
+<li><code>date.format.js</code> is a little library that emulates PHP syntax for date formatting.</li>
+<li>We're using the geolocation-js-library.</li>
+</ul>
+</div>
+</div>
+<div id="add-a-header" class="slide">
+<h1>Add a header</h1>
+<p>At the outset, our jQM page is empty. Let's put some stuff in it.</p>
+<pre class="sourceCode"><code class="sourceCode html">  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;</span><br />    <span class="kw">&lt;h1&gt;</span>I got one!<span class="kw">&lt;/h1&gt;</span><br />  <span class="kw">&lt;/div&gt;</span></code></pre>
+</div>
+<div id="putting-the-form-in" class="slide">
 <h1>Putting the &quot;Form&quot; In</h1>
+<p>Easy, but not too exciting. Let's put in some UI elements that will let Sigma Stronghold fighters record a nabbed zombie.</p>
+<div id="code-2">
+<h2>Code</h2>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;fieldcontain&quot;</span><span class="kw">&gt;</span><br />    <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span>How'd you nab it?<span class="kw">&lt;/label&gt;</span><br />    <span class="kw">&lt;select</span><span class="ot"> name=</span><span class="st">&quot;how-zombie&quot;</span><span class="ot"> id=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;tank&quot;</span><span class="kw">&gt;</span>Tank<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;conflagration&quot;</span><span class="kw">&gt;</span>Conflagration<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;poison&quot;</span><span class="kw">&gt;</span>Poison<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;nukes&quot;</span><span class="kw">&gt;</span>Micro-nukes<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;trickery&quot;</span><span class="kw">&gt;</span>Trickery<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;corrosive&quot;</span><span class="kw">&gt;</span>Corrosive<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;dismemberment&quot;</span><span class="kw">&gt;</span>Dismemberment<span class="kw">&lt;/option&gt;</span><br />    <span class="kw">&lt;/select&gt;</span><br />  <span class="kw">&lt;/div&gt;</span><br />  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;button&quot;</span><span class="ot"> value=</span><span class="st">&quot;I got one!&quot;</span><span class="ot"> id=</span><span class="st">&quot;got-one&quot;</span><span class="ot"> data-theme=</span><span class="st">&quot;b&quot;</span> <span class="kw">/&gt;</span><br /><br />  <span class="kw">&lt;ul</span><span class="ot"> data-role=</span><span class="st">&quot;listview&quot;</span><span class="ot"> data-inset=</span><span class="st">&quot;true&quot;</span><span class="ot"> id=</span><span class="st">&quot;zombielist&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;/ul&gt;</span><br /><span class="kw">&lt;/div&gt;</span></code></pre>
 </div>
-<div id="storing-data-on-the-client" class="titleslide" class="slide">
-<h1>Storing data on the client</h1>
+<div id="speaker-notes-2">
+<h2>Speaker Notes</h2>
+<ul>
+<li>A select list for how the zombie was nabbed</li>
+<li>A button to click</li>
+<li>An empty list to hold incoming zombies</li>
+</ul>
 </div>
-<div id="localstorage" class="titleslide" class="slide">
+</div>
+<div id="adding-the-javascript" class="slide">
+<h1>Adding the JavaScript</h1>
+<p>Now we can drop in some custom JavaScript that makes this go:</p>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;zombie.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></code></pre>
+</div>
+<div id="basic-structure-of-a-little-zombie-manager" class="slide">
+<h1>Basic structure of a little zombie manager</h1>
+<div id="code-3">
+<h2>Code</h2>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">window</span>.<span class="fu">zombieManager</span> = (<span class="kw">function</span>() {<br />  <span class="kw">var</span> zombies       = <span class="kw">new</span> <span class="kw">Array</span>();<br />  <span class="kw">var</span> zombie_icons  = { };<br /><br />  <span class="kw">var</span> resetZombies = <span class="kw">function</span>() {};<br />  <span class="kw">var</span> showZombies = <span class="kw">function</span>() {};<br /><br />  <span class="kw">return</span> {<br />    <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) { }<br />  }<br />}());</code></pre>
+</div>
+</div>
+<div id="setting-things-up-when-the-jqm-page-inits" class="slide">
+<h1>Setting things up when the JQM page inits</h1>
+<div id="code-4">
+<h2>Code</h2>
+<pre class="sourceCode"><code class="sourceCode javascript">$(<span class="st">&quot;#nab-zombie&quot;</span>).<span class="fu">live</span>(<span class="ch">'pageinit'</span>, <span class="kw">function</span>() {<br />  <span class="kw">var</span> geoHappy = <span class="kw">geo_position_js</span>.<span class="fu">init</span>();<br />  $(<span class="st">&quot;#got-one&quot;</span>).<span class="fu">click</span>(<span class="kw">function</span>() {<br />    <span class="kw">var</span> now = <span class="kw">new</span> <span class="kw">Date</span>();<br />    <span class="kw">var</span> how = $(<span class="st">&quot;#how-zombie&quot;</span>).<span class="fu">val</span>();<br />    <span class="kw">if</span> (geoHappy) {<br />      <span class="kw">geo_position_js</span>.<span class="fu">getCurrentPosition</span>(<span class="kw">function</span>(position) {<br />        <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, position, how);<br />      }, <span class="kw">function</span>(error) {<br />        <span class="kw">console</span>.<span class="fu">log</span>(<span class="st">&quot;Geolocation error: &quot;</span> + <span class="kw">error</span>.<span class="fu">message</span>);<br />        <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, null, how);<br />      });<br />    } <span class="kw">else</span> { <span class="co">// It's also OK to add a zombie w/o location data</span><br />      <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, null, how);<br />    }<br />  });<br />});</code></pre>
+</div>
+</div>
+<div id="try-it-out" class="slide">
+<h1>Try it out!</h1>
+<p>TODO: Screen shot</p>
+</div>
+<div id="cool-yeah-maybe-ok-but-kind-of-useless" class="slide">
+<h1>Cool, yeah, maybe, OK, but kind of useless</h1>
+<ul>
+<li>As soon as the page is reloaded, all of the zombies go away.</li>
+<li>We need a way to store found zombies on the client.</li>
+</ul>
+<div id="how-about-a-device-api">
+<h3>How about a device API?</h3>
+<p>TODO: Storage drawing</p>
+</div>
+</div>
+<div id="localstorage" class="slide">
 <h1>localStorage</h1>
+<p>There is another standard device API for storing simple string key-value pairs on the client: <em>localStorage</em>.</p>
+<div id="however-we-need-to-store-more-than-strings...">
+<h3>However, we need to store more than strings...</h3>
 </div>
-<div id="except" class="titleslide" class="slide">
-<h1>Except</h1>
 </div>
-<div id="lawnchair" class="titleslide" class="slide">
-<h1>Lawnchair</h1>
+<div id="leaning-on-our-brothers-again" class="slide">
+<h1>Leaning on our brothers again</h1>
+<div id="lawnchair">
+<h2>Lawnchair</h2>
+<ul>
+<li>Lawnchair is an open source, simple JSON storage utility that can store data on the client.</li>
+<li>Several adapters are available for Lawnchair, including one that uses localStorage underneath (DOM adapter).</li>
+</ul>
 </div>
-<div id="as-always-there-are-gotchas" class="titleslide" class="slide">
+</div>
+<div id="lets-kick-up-a-lawnchair-yeah" class="slide">
+<h1>Let's kick up a Lawnchair, yeah?</h1>
+<p>Instantiate the Lawnchair.</p>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">window</span>.<span class="fu">zombieManager</span> = (<span class="kw">function</span>() {<br />  <span class="kw">var</span> zombies       = <span class="kw">new</span> <span class="kw">Array</span>();<br />  <span class="kw">var</span> zombieChair   = Lawnchair({<span class="dt">name</span>: <span class="ch">'zombies'</span>}, <span class="kw">function</span>() {});</code></pre>
+</div>
+<div id="add-an-init-function" class="slide">
+<h1>Add an init function</h1>
+<div id="code-5">
+<h2>Code</h2>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">return</span> {<br />  <span class="co">// Init; build initial #zombielist</span><br />  <span class="dt">init          </span>: <span class="kw">function</span>() {<br />    <span class="kw">zombieChair</span>.<span class="fu">get</span>(<span class="ch">'zombies'</span>, <span class="kw">function</span>(zombiesOnIce) {<br />      <span class="kw">if</span> (zombiesOnIce) {<br />        zombies = <span class="kw">zombiesOnIce</span>.<span class="fu">value</span>;<br />      }<br />    });<br />    showZombies();<br />  },<br />  <span class="co">// Add a new zombie to the list of zombies</span><br />  <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) {<br />  <span class="co">// ...</span></code></pre>
+</div>
+</div>
+<div id="update-the-addzombie-function..." class="slide">
+<h1>...update the addZombie function...</h1>
+<pre class="sourceCode"><code class="sourceCode javascript">  },<br />  <span class="co">// Add a new zombie to the list of zombies</span><br />  <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) {<br />    zombies[<span class="kw">zombies</span>.<span class="fu">length</span>] = {<br />      <span class="dt">when      </span>: <span class="kw">zombieWhen</span>.<span class="fu">valueOf</span>(),<br />      <span class="dt">where     </span>: zombieWhere,<br />      <span class="dt">how       </span>: zombieHow<br />    };<br />    <span class="kw">zombieChair</span>.<span class="fu">save</span>({<span class="dt">key</span>: <span class="ch">'zombies'</span>, <span class="dt">value </span>: zombies });<br />    showZombies();<br />  }</code></pre>
+</div>
+<div id="update-the-resetzombies-function..." class="slide">
+<h1>...update the resetZombies function...</h1>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">var</span> resetZombies = <span class="kw">function</span>() {<br />    zombies = <span class="kw">new</span> <span class="kw">Array</span>();<br />    <span class="kw">zombieChair</span>.<span class="fu">nuke</span>();<br />    $(<span class="ch">'li.zombie'</span>).<span class="fu">remove</span>();<br />    $(<span class="ch">'#zombielist'</span>).<span class="fu">listview</span>(<span class="ch">'refresh'</span>);<br />  };</code></pre>
+</div>
+<div id="and-add-a-call-to-the-init-function..." class="slide">
+<h1>And add a call to the init function...</h1>
+<pre class="sourceCode"><code class="sourceCode javascript">$(<span class="st">&quot;#nab-zombie&quot;</span>).<span class="fu">live</span>(<span class="ch">'pageinit'</span>, <span class="kw">function</span>() {<br /><br />  <span class="co">// Initialize our list of zombies</span><br />  <span class="kw">zombieManager</span>.<span class="fu">init</span>();<br />  <span class="co">// Is Geolocation supported?</span><br />  <span class="co">// ...</span></code></pre>
+</div>
+<div id="take-it-for-a-spin" class="slide">
+<h1>Take it for a spin</h1>
+<p>TODO: Screen shot</p>
+</div>
+<div id="as-always-there-are-gotchas" class="slide">
 <h1>As always, there are gotchas</h1>
-</div>
-<div id="section" class="titleslide" class="slide">
-<h1></h1>
+<ul>
+<li>Date objects don't unserialize correctly from Lawnchair (so we are storing a string representation of a Date object).</li>
+<li>jQM <code>pagecreate</code> and <code>pageinit</code> events can be a bit tricky.</li>
+</ul>
 </div>
 </body>
 </html>

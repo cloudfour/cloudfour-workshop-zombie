@@ -1,0 +1,6 @@
+Things missing from second step:
+
+* Init function
+* All references to Lawnchair, including the included .js
+
+Initial index-start does not have link to zombie.js

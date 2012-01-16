@@ -115,6 +115,16 @@ div.slide {
       float: none;
     }
   }
+  
+  div[id^="code"] {
+    h1, h2, h3, h4, h5, h6 {
+      display:            none;
+    }
+    & pre {
+      font-size:          .65em;
+      line-height:        .9em;
+    }
+  }
   div[id^="instead"] {
     float:                left;
     width:                45%;

@@ -112,6 +112,11 @@ div.slide {
       max-width: 100%;
       max-height: 70%;
       float: none; }
+  div.slide div[id^="code"] h1, div.slide div[id^="code"] h2, div.slide div[id^="code"] h3, div.slide div[id^="code"] h4, div.slide div[id^="code"] h5, div.slide div[id^="code"] h6 {
+    display: none; }
+  div.slide div[id^="code"] pre {
+    font-size: .65em;
+    line-height: .9em; }
   div.slide div[id^="instead"] {
     float: left;
     width: 45%; }
