@@ -1,0 +1,116 @@
+% Zombie 101: Know Thy Enemy
+% Jason Grigsby and Lyza Danger Gardner
+
+# Sometimes one-size-fits all doesn’t cut it
+
+> Let's say you're walking along minding your own damn business one night when suddenly out of nowhere, a Zombie pops out and has the audacity to try to assault you. What is it you are supposed to do in this situation? You could run but how do you know for how long, where to and how fast? You could fight but how do you know what to fight with, where to strike and how hard? You could plead but how would you know if this Zombie has the capacity to understand what you are saying? You could play dead but then you’d just get killed. — [Zombie Types][zombie-types]
+
+# Where RWD needs assistance
+
+* Need to deliver different images using img tag
+* Content reordering
+* Different content makes sense depending on device
+* Need for extreme optimization of performance
+* Serving really old phones (can you progressively enhance from XHTML-MP to HTML5? Doctypes included?)
+
+# Know Thy Enemy
+
+> There are several varieties of the typical garden variety zombie, depending on what caused the people to become zombies, they may show different varieties of physical and mental strength, and naturally, the tactics used to fight each variant differ accordingly. — [Zombie Types][zombie-types]
+
+# Zombie Detection Databases
+
+Mobile device databases contain detailed information about the browser, platform, and hardware features of mobile devices. All a device detection database needs is a user agent string and it can tell you a lot about the device.
+
+# A Zombie’s Unique DNA string
+
+Every browser in the world has a user agent string. This string tells us a lot about the browser.
+
+`Mozilla/5.0 (Windows NT 6.0) AppleWebKit/535.1 (KHTML, like Gecko) 
+Chrome/14.0.792.0 Safari/535.1`
+
+That’s the user agent string for Chrome 14 running on Windows Vista. Obvious, right?
+
+# User agent switching is evil, right?
+
+You’ve heard the propaganda that says user agent switching is a bad practice. And who can forget the many web sites left behind during the “runs best on IE6” era.
+
+But you’re fighting zombies here! Religion takes a back seat to survival.
+
+Plus, 25 of Alexa’s Top 30 sites use device detection. The five that don’t? They don’t have mobile sites at all.
+
+# Many device detection database options
+
+* [WURFL][wurfl] (Wireless Universal Resource FiLe) by [ScientiaMobile][scientiamobile]
+* [DeviceAtlas][deviceatlas] by [dotMobi][dotmobi]
+* [OpenDDR][openddr] / New Apache [DeviceMap][devicemap] Project
+* [51degrees][51]
+
+Pay special attention to the licenses.
+
+# Get an ID on those zombie
+
+Let’s do a test run using a device detection database.
+
+1. Go to the [ScientiaMobile WURFL Explorer][explorer] on your mobile phone
+2. Check out the various attributes. What do you see that would be useful?
+3. Can you find the screen resolution of your phone?
+4. Go to the [ScientiaMobile WURFL Explorer][explorer] on your laptop
+5. Try some other mobile user agents from your rucksack for comparison
+
+# Testing capabilities
+
+Device databases are most useful for testing capabilities. Once you have a user agent string, you can things like:
+
+## Is this a mobile device?
+
+`$value = $device->getCapability('is_wireless_device');`
+
+OR
+
+## Does this browser-device combo support cookies?
+
+`$value = $device->getCapability('cookie_support');`
+
+# Zombie are like snowflakes
+
+Each one is unique, but for the most part, you don’t care. You can’t build a specific tool for each one, even if a specialized weapon would be most effective.
+
+Instead, you need to group them into categories that are similar enough that you can treat them similarly.
+
+# Herd them into device classes
+
+![](images/08-herd-devices.png)
+
+A *device class* is an abstract collection of common characteristics that define a group of devices and their browsers.
+
+# As few device classes as possible
+
+## Figure: Typical device classes
+
+![](images/08-typical-classes.png)
+
+# Tips for device detection
+
+* Responsive web design still makes sense within device classes
+* Overlap as much as you can between templates. No need to maintain wholly separate templates.
+* Think about what you fallback to if the device isn’t found in the database.
+
+# Best practices
+
+* Support every URL regardless of device
+* Don’t dumb it down just because the screen is smaller
+* Allow people to select a different experience
+* Use JavaScript to verify the detection and correct errors
+* Feed the corrections back into your database
+* [RESS: Responsive Design + Server Side Components][ress]
+
+
+[zombie-types]: http://uncyclopedia.wikia.com/wiki/Zombie_Types
+[wurfl]: http://wurfl.sourceforge.net/
+[scientiamobile]: http://www.scientiamobile.com/
+[deviceatlas]: http://deviceatlas.com/
+[dotmobi]: http://mtld.mobi/
+[51]: http://51degrees.mobi/Products/DeviceData.aspx
+[devicemap]: http://wiki.apache.org/incubator/DeviceMapProposal
+[explorer]: http://www.tera-wurfl.com/explore/
+[ress]: http://www.lukew.com/ff/entry.asp?1392

@@ -5,7 +5,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="pandoc" />
-  <title></title>
+  <meta name="author" content="Jason Grigsby and Lyza Danger Gardner" />
+  <title>Zombie 101: Know Thy Enemy</title>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
     href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
@@ -14,8 +15,123 @@
     charset="utf-8" type="text/javascript"></script>
 </head>
 <body>
-<div id="section" class="titleslide" class="slide">
-<h1></h1>
+<div class="slide titlepage">
+  <h1 class="title">Zombie 101: Know Thy Enemy</h1>
+  <p class="author">
+Jason Grigsby and Lyza Danger Gardner
+  </p>
+</div>
+<div id="sometimes-one-size-fits-all-doesnt-cut-it" class="slide">
+<h1>Sometimes one-size-fits all doesn’t cut it</h1>
+<blockquote>
+<p>Let's say you're walking along minding your own damn business one night when suddenly out of nowhere, a Zombie pops out and has the audacity to try to assault you. What is it you are supposed to do in this situation? You could run but how do you know for how long, where to and how fast? You could fight but how do you know what to fight with, where to strike and how hard? You could plead but how would you know if this Zombie has the capacity to understand what you are saying? You could play dead but then you’d just get killed. — <a href="http://uncyclopedia.wikia.com/wiki/Zombie_Types">Zombie Types</a></p>
+</blockquote>
+</div>
+<div id="where-rwd-needs-assistance" class="slide">
+<h1>Where RWD needs assistance</h1>
+<ul>
+<li>Need to deliver different images using img tag</li>
+<li>Content reordering</li>
+<li>Different content makes sense depending on device</li>
+<li>Need for extreme optimization of performance</li>
+<li>Serving really old phones (can you progressively enhance from XHTML-MP to HTML5? Doctypes included?)</li>
+</ul>
+</div>
+<div id="know-thy-enemy" class="slide">
+<h1>Know Thy Enemy</h1>
+<blockquote>
+<p>There are several varieties of the typical garden variety zombie, depending on what caused the people to become zombies, they may show different varieties of physical and mental strength, and naturally, the tactics used to fight each variant differ accordingly. — <a href="http://uncyclopedia.wikia.com/wiki/Zombie_Types">Zombie Types</a></p>
+</blockquote>
+</div>
+<div id="zombie-detection-databases" class="slide">
+<h1>Zombie Detection Databases</h1>
+<p>Mobile device databases contain detailed information about the browser, platform, and hardware features of mobile devices. All a device detection database needs is a user agent string and it can tell you a lot about the device.</p>
+</div>
+<div id="a-zombies-unique-dna-string" class="slide">
+<h1>A Zombie’s Unique DNA string</h1>
+<p>Every browser in the world has a user agent string. This string tells us a lot about the browser.</p>
+<p><code>Mozilla/5.0 (Windows NT 6.0) AppleWebKit/535.1 (KHTML, like Gecko)  Chrome/14.0.792.0 Safari/535.1</code></p>
+<p>That’s the user agent string for Chrome 14 running on Windows Vista. Obvious, right?</p>
+</div>
+<div id="user-agent-switching-is-evil-right" class="slide">
+<h1>User agent switching is evil, right?</h1>
+<p>You’ve heard the propaganda that says user agent switching is a bad practice. And who can forget the many web sites left behind during the “runs best on IE6” era.</p>
+<p>But you’re fighting zombies here! Religion takes a back seat to survival.</p>
+<p>Plus, 25 of Alexa’s Top 30 sites use device detection. The five that don’t? They don’t have mobile sites at all.</p>
+</div>
+<div id="many-device-detection-database-options" class="slide">
+<h1>Many device detection database options</h1>
+<ul>
+<li><a href="http://wurfl.sourceforge.net/">WURFL</a> (Wireless Universal Resource FiLe) by <a href="http://www.scientiamobile.com/">ScientiaMobile</a></li>
+<li><a href="http://deviceatlas.com/">DeviceAtlas</a> by <a href="http://mtld.mobi/">dotMobi</a></li>
+<li>[OpenDDR][openddr] / New Apache <a href="http://wiki.apache.org/incubator/DeviceMapProposal">DeviceMap</a> Project</li>
+<li><a href="http://51degrees.mobi/Products/DeviceData.aspx">51degrees</a></li>
+</ul>
+<p>Pay special attention to the licenses.</p>
+</div>
+<div id="get-an-id-on-those-zombie" class="slide">
+<h1>Get an ID on those zombie</h1>
+<p>Let’s do a test run using a device detection database.</p>
+<ol style="list-style-type: decimal">
+<li>Go to the <a href="http://www.tera-wurfl.com/explore/">ScientiaMobile WURFL Explorer</a> on your mobile phone</li>
+<li>Check out the various attributes. What do you see that would be useful?</li>
+<li>Can you find the screen resolution of your phone?</li>
+<li>Go to the <a href="http://www.tera-wurfl.com/explore/">ScientiaMobile WURFL Explorer</a> on your laptop</li>
+<li>Try some other mobile user agents from your rucksack for comparison</li>
+</ol>
+</div>
+<div id="testing-capabilities" class="slide">
+<h1>Testing capabilities</h1>
+<p>Device databases are most useful for testing capabilities. Once you have a user agent string, you can things like:</p>
+<div id="is-this-a-mobile-device">
+<h2>Is this a mobile device?</h2>
+<p><code>$value = $device-&gt;getCapability('is_wireless_device');</code></p>
+<p>OR</p>
+</div>
+<div id="does-this-browser-device-combo-support-cookies">
+<h2>Does this browser-device combo support cookies?</h2>
+<p><code>$value = $device-&gt;getCapability('cookie_support');</code></p>
+</div>
+</div>
+<div id="zombie-are-like-snowflakes" class="slide">
+<h1>Zombie are like snowflakes</h1>
+<p>Each one is unique, but for the most part, you don’t care. You can’t build a specific tool for each one, even if a specialized weapon would be most effective.</p>
+<p>Instead, you need to group them into categories that are similar enough that you can treat them similarly.</p>
+</div>
+<div id="herd-them-into-device-classes" class="slide">
+<h1>Herd them into device classes</h1>
+<div class="figure">
+<img src="images/08-herd-devices.png" /><p class="caption"></p>
+</div>
+<p>A <em>device class</em> is an abstract collection of common characteristics that define a group of devices and their browsers.</p>
+</div>
+<div id="as-few-device-classes-as-possible" class="slide">
+<h1>As few device classes as possible</h1>
+<div id="figure-typical-device-classes">
+<h2>Figure: Typical device classes</h2>
+<div class="figure">
+<img src="images/08-typical-classes.png" /><p class="caption"></p>
+</div>
+</div>
+</div>
+<div id="tips-for-device-detection" class="slide">
+<h1>Tips for device detection</h1>
+<ul>
+<li>Responsive web design still makes sense within device classes</li>
+<li>Overlap as much as you can between templates. No need to maintain wholly separate templates.</li>
+<li>Think about what you fallback to if the device isn’t found in the database.</li>
+</ul>
+</div>
+<div id="best-practices" class="slide">
+<h1>Best practices</h1>
+<ul>
+<li>Support every URL regardless of device</li>
+<li>Don’t dumb it down just because the screen is smaller</li>
+<li>Allow people to select a different experience</li>
+<li>Use JavaScript to verify the detection and correct errors</li>
+<li>Feed the corrections back into your database</li>
+<li><a href="http://www.lukew.com/ff/entry.asp?1392">RESS: Responsive Design + Server Side Components</a></li>
+</ul>
 </div>
 </body>
 </html>
