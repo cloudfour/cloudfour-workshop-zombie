@@ -647,3 +647,45 @@ Here's our example `config.xml` file.
 ~~~
 
 (You can also find this in [`supplemental/desperate-times/config.xml`](../supplemental/desperate-times/config.xml)).
+
+-------------------------
+# 8. Know Thy Enemy
+
+## Many device detection database options
+
+* [WURFL][wurfl] (Wireless Universal Resource FiLe) by [ScientiaMobile][scientiamobile]
+* [DeviceAtlas][deviceatlas] by [dotMobi][dotmobi]
+* [OpenDDR][openddr] / New Apache [DeviceMap][devicemap] Project
+* [51degrees][51]
+
+## Sniffing 'em out
+
+1. Go to the [ScientiaMobile WURFL Explorer][explorer] on your mobile phone
+2. Check out the various attributes. What do you see that would be useful?
+3. Can you find the screen resolution of your phone?
+4. Go to the [ScientiaMobile WURFL Explorer][explorer] on your laptop
+5. Try some other mobile user agents from your rucksack for comparison
+
+## WURFL code snipp-lets
+
+~~~ {.php}
+<?php
+// This assumes the WURFL library is installed and
+// a $device object has been initialized.
+$value = $device->getCapability('is_wireless_device');
+$value = $device->getCapability('cookie_support');
+?>
+~~~
+
+More documentation on WURFL available on its [Sourceforge page][wurfl].
+
+
+[zombie-types]: http://uncyclopedia.wikia.com/wiki/Zombie_Types
+[wurfl]: http://wurfl.sourceforge.net/
+[scientiamobile]: http://www.scientiamobile.com/
+[deviceatlas]: http://deviceatlas.com/
+[dotmobi]: http://mtld.mobi/
+[51]: http://51degrees.mobi/Products/DeviceData.aspx
+[devicemap]: http://wiki.apache.org/incubator/DeviceMapProposal
+[explorer]: http://www.tera-wurfl.com/explore/
+[ress]: http://www.lukew.com/ff/entry.asp?1392

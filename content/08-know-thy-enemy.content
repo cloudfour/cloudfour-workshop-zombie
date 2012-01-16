@@ -25,8 +25,10 @@ Mobile device databases contain detailed information about the browser, platform
 
 Every browser in the world has a user agent string. This string tells us a lot about the browser.
 
-`Mozilla/5.0 (Windows NT 6.0) AppleWebKit/535.1 (KHTML, like Gecko) 
-Chrome/14.0.792.0 Safari/535.1`
+~~~
+Mozilla/5.0 (Windows NT 6.0) AppleWebKit/535.1 (KHTML, like Gecko) 
+Chrome/14.0.792.0 Safari/535.1
+~~~
 
 That’s the user agent string for Chrome 14 running on Windows Vista. Obvious, right?
 
@@ -103,6 +105,12 @@ A *device class* is an abstract collection of common characteristics that define
 * Use JavaScript to verify the detection and correct errors
 * Feed the corrections back into your database
 * [RESS: Responsive Design + Server Side Components][ress]
+
+# Can we have that sunset back?
+
+![](images/04-sunset.png)
+
+It can all sound a bit chaotic, even for a post-apocalyptic kind of situation. Do we take matters into our own hands? What do we do when the authorities fail to react with due speed? [What's in store](09-a-brave-future.html)?
 
 
 [zombie-types]: http://uncyclopedia.wikia.com/wiki/Zombie_Types

@@ -444,6 +444,34 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <p>Here's our example <code>config.xml</code> file.</p>
 <pre class="sourceCode"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; <span class="kw">?&gt;</span><br />    <span class="kw">&lt;widget</span><span class="ot"> xmlns</span> <span class="ot">=</span> <span class="st">&quot;http://www.w3.org/ns/widgets&quot;</span><br /><span class="ot">        xmlns:gap</span> <span class="ot">=</span> <span class="st">&quot;http://phonegap.com/ns/1.0&quot;</span><br /><span class="ot">        id</span>        <span class="ot">=</span> <span class="st">&quot;com.cloudfour.gotone&quot;</span><br /><span class="ot">        versionCode=</span><span class="st">&quot;10&quot;</span><br /><span class="ot">        version</span>   <span class="ot">=</span> <span class="st">&quot;1.0.0&quot;</span><span class="kw">&gt;</span><br /><br />    <span class="kw">&lt;name&gt;</span>I Got One<span class="kw">&lt;/name&gt;</span><br /><br />    <span class="kw">&lt;description&gt;</span><br />       Track your zombie kills!<br />    <span class="kw">&lt;/description&gt;</span><br /><br />    <span class="kw">&lt;author</span><span class="ot"> href=</span><span class="st">&quot;https://www.cloudfour.com&quot;</span><span class="ot"> email=</span><span class="st">&quot;info@cloudfour.com&quot;</span><span class="kw">&gt;</span><br />        Lyza Gardner and Jason Grigsby<br />    <span class="kw">&lt;/author&gt;</span><br /><br />    <span class="kw">&lt;preference</span><span class="ot"> name=</span><span class="st">&quot;orientation&quot;</span><span class="ot"> value=</span><span class="st">&quot;portrait&quot;</span> <span class="kw">/&gt;</span><br /><br />    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-iphone.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;57&quot;</span><span class="ot"> height=</span><span class="st">&quot;57&quot;</span><span class="kw">/&gt;</span><br />    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-ipad.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;72&quot;</span><span class="ot"> height=</span><span class="st">&quot;72&quot;</span><span class="kw">/&gt;</span><br />    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-iphone4.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;114&quot;</span><span class="ot"> height=</span><span class="st">&quot;114&quot;</span><span class="kw">/&gt;</span><br /><br />    <span class="kw">&lt;gap:splash</span><span class="ot"> src=</span><span class="st">&quot;app-icons/splash.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;320&quot;</span><span class="ot"> height=</span><span class="st">&quot;480&quot;</span> <span class="kw">/&gt;</span><br />    <span class="kw">&lt;gap:splash</span><span class="ot"> src=</span><span class="st">&quot;app-icons/splash-2x.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;640&quot;</span><span class="ot"> height=</span><span class="st">&quot;960&quot;</span><span class="kw">/&gt;</span><br /><span class="kw">&lt;/widget&gt;</span></code></pre>
 <p>(You can also find this in <a href="../supplemental/desperate-times/config.xml"><code>supplemental/desperate-times/config.xml</code></a>).</p>
+<hr />
+</section>
+</section>
+<section id="know-thy-enemy">
+<h1>8. Know Thy Enemy</h1>
+<section id="many-device-detection-database-options">
+<h2>Many device detection database options</h2>
+<ul>
+<li><a href="http://wurfl.sourceforge.net/">WURFL</a> (Wireless Universal Resource FiLe) by <a href="http://www.scientiamobile.com/">ScientiaMobile</a></li>
+<li><a href="http://deviceatlas.com/">DeviceAtlas</a> by <a href="http://mtld.mobi/">dotMobi</a></li>
+<li>[OpenDDR][openddr] / New Apache <a href="http://wiki.apache.org/incubator/DeviceMapProposal">DeviceMap</a> Project</li>
+<li><a href="http://51degrees.mobi/Products/DeviceData.aspx">51degrees</a></li>
+</ul>
+</section>
+<section id="sniffing-em-out">
+<h2>Sniffing 'em out</h2>
+<ol type="1">
+<li>Go to the <a href="http://www.tera-wurfl.com/explore/">ScientiaMobile WURFL Explorer</a> on your mobile phone</li>
+<li>Check out the various attributes. What do you see that would be useful?</li>
+<li>Can you find the screen resolution of your phone?</li>
+<li>Go to the <a href="http://www.tera-wurfl.com/explore/">ScientiaMobile WURFL Explorer</a> on your laptop</li>
+<li>Try some other mobile user agents from your rucksack for comparison</li>
+</ol>
+</section>
+<section id="wurfl-code-snipp-lets">
+<h2>WURFL code snipp-lets</h2>
+<pre class="sourceCode"><code class="sourceCode php"><span class="kw">&lt;?php</span><br /><span class="co">// This assumes the WURFL library is installed and</span><br /><span class="co">// a $device object has been initialized.</span><br /><span class="kw">$value</span> = <span class="kw">$device</span>-&gt;getCapability<span class="ot">(</span><span class="st">'is_wireless_device'</span><span class="ot">);</span><br /><span class="kw">$value</span> = <span class="kw">$device</span>-&gt;getCapability<span class="ot">(</span><span class="st">'cookie_support'</span><span class="ot">);</span><br /><span class="kw">?&gt;</span></code></pre>
+<p>More documentation on WURFL available on its <a href="http://wurfl.sourceforge.net/">Sourceforge page</a>.</p>
 </section>
 </section>
 </body>
