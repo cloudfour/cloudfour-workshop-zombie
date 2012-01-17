@@ -1,6 +1,62 @@
 % Zombie 101: Bloodier Uprisings
 % Jason Grigsby and Lyza Danger Gardner
 
-# Coming Soon
+# Media queries often hide problems
 
-Sorry, kids. This section isn't ready for prime time. Head on forward to [band of brothers](06-band-of-brothers.html).
+Reviewed over 100 RWD sites. Found that:
+
+* 38% had a mobile site that was < 10% smaller than the desktop
+* 4% mobile was the same size
+* 25% mobile was LARGER than the desktop
+
+# Screen size != bandwidth
+
+Yes, this is true, but so what?
+
+On average, mobile is still slower than desktop. We shouldn’t be delivering larger sites to mobile users.
+
+# Why are the bigger?
+
+* Hiding a background image by using display:none on the element will not prevent it from downloading.
+* Large desktop-size images are delivered to all devices even if they never use the image at that size.
+* Mediaqueries don’t impact JavaScript so even if you hide a Google Map, the code still downloads.
+
+# Get your media queries in order
+
+First thing to fix media queries is to put them in order. Small screen before large screens.
+
+This causes means the fallback for images will be the small images, not the large ones.
+
+> The absence of support for media queries is in fact the first media query. — Bryan Rieger
+
+# Prevent extra background image downloads
+
+Things that work:
+
+* Use display:none on the parent element
+* Media queries that don’t overlap:
+
+~~~ {.css }
+@media all and (min-width: 501px) {
+    #test5 {background-image:url('test5-desktop.png');width:200px;height:75px;}
+}
+@media all and (max-width: 500px) {
+    #test5 {background-image:url('test5-mobile.png');width:200px;height:75px;}
+}
+~~~
+
+# Newer browsers support more
+
+As of iOS 4.2:
+
+* background-image:none in mediaquery on the element will override image
+* overriding a background-image will only result in one image being downloaded
+
+But, display:none on element still downloads images.
+
+# What about image tags?
+
+* <img> can only have one src attribute
+* First load conundrum — server doesn’t know what to do
+
+# 
