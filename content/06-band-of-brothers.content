@@ -195,7 +195,7 @@ When a soldier nabs a zombie by tapping the "I Got One!" button, we'll need a pl
 
 # A list widget what now?
 
-### jQuery Turns This
+### jQuery Mobile Turns This
 
 ~~~ {.html}
 <ul data-role="listview" data-inset="true" id="zombielist">

@@ -99,6 +99,13 @@ Let's talk about *context* a bit, yes?
 
 #### TARGET / CONTEXT = RESULT
 
+* A `div` of 250px wide
+* Inside of a 500px `div`
+* Overall content width of 750px
+* The 500px `div` is the context
+
+#### 250px / 500px = 50% *not* 250px / 750px = 33.33%
+
 # Applying the fluid formula
 
 ![](images/03-formula-applied.png)
@@ -137,9 +144,7 @@ Let's start with the first items in our list:
 * `body > div` that contains all content: 920px
 * `#container` (all content is inside of this `div`): 900px
 
-## We're going to play a little twist on pure fluid layouts here
-
-It is viable to mix fixed and fluid units in some ways.
+### Goal: Convert the Sigma Stronghold web site to a fluid layout.
 
 ## Speaker Notes
 
