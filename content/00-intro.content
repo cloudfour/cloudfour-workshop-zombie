@@ -2,6 +2,25 @@
 % Jason Grigsby and Lyza Gardner
 % Web Visions NYC, January 18, 2012
 
+# Welcome to Zombie Preparedness 101
+
+The zombie apocalypse is already upon us. Some have chosen to ignore the signs. Or believe that the few friendly zombies that they and their neighbors know are indicative of the larger zombie populace. Naive.
+
+Thankfully you’ve chosen to get ready for the inevitable. To get the tools to fight back.
+
+You’re in the right place.
+
+# What You Will Learn Today
+
+* Mobile web performance and semantic markup
+* Responsive web design & Mobile First RWD
+* AppCache and GeoLocation
+* jQuery Mobile
+* PhoneGap
+* Device Detection
+
+But before we begin…
+
 # The Zombies are coming—make sure to lay in supplies
 
 * Get ye to your rucksack. You can download your `zombie-rucksack` at [http://cloudfour.github.com/rucksack.zip](http://cloudfour.github.com/rucksack.zip).
@@ -12,17 +31,11 @@
 
 You've got to fight zombies. We're giving you some tools.
 
-* `survival-tools`: In this pocket you'll find the very-vital `field-notes.html`. You'll want to open that up first thing in a browser so you can follow along. Go do that now!
-* `supplemental`:  We know how frustrating it is to get a bit behind in an example during a group exercise. So we've put lots of finished code snippets in here. They're linked to from your field notes.
+* In this pocket you'll find the very-vital `field-notes.html`. You'll want to open that up first thing in a browser so you can follow along. Go do that now!
+*  We know how frustrating it is to get a bit behind in an example during a group exercise. So we've put lots of finished code snippets in here. They're linked to from your field notes.
 * The other pockets in your rucksack (`i-got-one`, `sigma-stronghold-website`, etc.) are starting points for the stuff we're going to do.
 
-# Portland Preview
-
-* Some slides may be missing images.
-* Some transitions and demos may be less than Hollywood-smooth.
-* Most content is complete, however, some sections are not.
-
-## Please!
+# Act as if your life depends on it…
 
 * Ask questions.
 * Speak up if you are confused!
