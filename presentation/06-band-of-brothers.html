@@ -140,12 +140,19 @@ Frameworks (jQuery Mobile) and localStorage
 </div>
 <div id="et-voila" class="slide">
 <h1>Et Voila!</h1>
-<p>TODO: Screenshot of header</p>
+<div id="figure-a-header-in-jqm">
+<h2>Figure: A header in jQM</h2>
+<div class="figure">
+<img src="images/06-header.png" /><p class="caption"></p>
+</div>
+</div>
 </div>
 <div id="putting-the-form-in" class="slide">
 <h1>Putting the &quot;Form&quot; In</h1>
+<div class="figure">
+<img src="images/06-starting-point.png" /><p class="caption"></p>
+</div>
 <p>Easy, but not too exciting. Let's put in some UI elements that will let Sigma Stronghold fighters record a nabbed zombie.</p>
-<p>TODO: Screen shot of just UI elements</p>
 </div>
 <div id="how-do-we-do-that" class="slide">
 <h1>How do we do that?</h1>
@@ -162,13 +169,13 @@ Frameworks (jQuery Mobile) and localStorage
 </ul>
 <div id="code-3">
 <h2>Code</h2>
-<pre class="sourceCode"><code class="sourceCode html">  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;button&quot;</span><span class="ot"> value=</span><span class="st">&quot;I got one!&quot;</span><span class="ot"> id=</span><span class="st">&quot;got-one&quot;</span><span class="ot"> data-theme=</span><span class="st">&quot;b&quot;</span> <span class="kw">/&gt;</span></code></pre>
+<pre class="sourceCode"><code class="sourceCode html">      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;dismemberment&quot;</span><span class="kw">&gt;</span>Dismemberment<span class="kw">&lt;/option&gt;</span><br />    <span class="kw">&lt;/select&gt;</span><br />  <span class="kw">&lt;/div&gt;</span> <br />  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;button&quot;</span><span class="ot"> value=</span><span class="st">&quot;I got one!&quot;</span><span class="ot"> id=</span><span class="st">&quot;got-one&quot;</span><span class="ot"> data-theme=</span><span class="st">&quot;b&quot;</span> <span class="kw">/&gt;</span><br /><span class="kw">&lt;/div&gt;</span></code></pre>
 </div>
 </div>
 <div id="dead-zombie-storage" class="slide">
 <h1>Dead Zombie Storage</h1>
 <p>When a soldier nabs a zombie by tapping the &quot;I Got One!&quot; button, we'll need a place to display the info about that poor zombie. For each zombie nabbed, we'll add a row to a <code>&lt;ul&gt;</code>. Let's create an empty <code>&lt;ul&gt;</code> to hold those incoming zombies. Put this at the very bottom of the <code>&lt;div data-role=&quot;content&quot;&gt;</code></p>
-<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;ul</span><span class="ot"> data-role=</span><span class="st">&quot;listview&quot;</span><span class="ot"> data-inset=</span><span class="st">&quot;true&quot;</span><span class="ot"> id=</span><span class="st">&quot;zombielist&quot;</span><span class="kw">&gt;</span><br /><span class="kw">&lt;/ul&gt;</span><br /><span class="kw">&lt;/div&gt;</span> <span class="co">&lt;!-- /End &lt;div data-role=&quot;content&quot;&gt; --&gt;</span></code></pre>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;/div&gt;</span> <br /><span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;button&quot;</span><span class="ot"> value=</span><span class="st">&quot;I got one!&quot;</span><span class="ot"> id=</span><span class="st">&quot;got-one&quot;</span><span class="ot"> data-theme=</span><span class="st">&quot;b&quot;</span> <span class="kw">/&gt;</span><br /><span class="kw">&lt;ul</span><span class="ot"> data-role=</span><span class="st">&quot;listview&quot;</span><span class="ot"> data-inset=</span><span class="st">&quot;true&quot;</span><span class="ot"> id=</span><span class="st">&quot;zombielist&quot;</span><span class="kw">&gt;</span><br /><span class="kw">&lt;/ul&gt;</span><br /><span class="kw">&lt;/div&gt;</span> <span class="co">&lt;!-- /End &lt;div data-role=&quot;content&quot;&gt; --&gt;</span></code></pre>
 <p><code>data-role=&quot;listview&quot;</code> indicates to jQuery Mobile that this list should be styled as a list widget.</p>
 </div>
 <div id="a-list-widget-what-now" class="slide">
@@ -195,12 +202,14 @@ Frameworks (jQuery Mobile) and localStorage
 </div>
 <div id="a-quick-aside-about-browser-support" class="slide">
 <h1>A quick aside about browser support</h1>
+<div class="figure">
+<img src="images/06-no-js.png" /><p class="caption"></p>
+</div>
 <ul>
 <li>By its nature, jQuery Mobile practices enthusiastic progressive enhancement</li>
 <li>jQuery Mobile works in browsers that do not support JavaScript</li>
 <li>However, our functionality requirements for the &quot;I got one!&quot; app effectively require JavaScript</li>
 </ul>
-<p>TODO: Screenshot of JS-off</p>
 </div>
 <div id="warning-javascript-ahead" class="slide">
 <h1>Warning: JavaScript ahead</h1>
@@ -210,20 +219,97 @@ Frameworks (jQuery Mobile) and localStorage
 <h1>Adding the JavaScript</h1>
 <p>Now we can drop in some custom JavaScript that makes this go:</p>
 <pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;zombie.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></code></pre>
+<p>The curious can open up <code>zombie.js</code> and follow along as I confuse you through the next several slides!</p>
 </div>
-<div id="basic-structure-of-a-little-zombie-manager" class="slide">
-<h1>Basic structure of a little zombie manager</h1>
+<div id="working-with-jquery-mobile-events" class="slide">
+<h1>Working with jQuery Mobile events</h1>
+<ul>
+<li>When the page is done loading and the widgets have been marked up...
+<ul>
+<li>Check for geolocation support</li>
+<li>Add a click handler for the &quot;I Got One!&quot; button</li>
+</ul></li>
+</ul>
+<pre class="sourceCode"><code class="sourceCode javascript">$(<span class="st">&quot;#nab-zombie&quot;</span>).<span class="fu">live</span>(<span class="ch">'pageinit'</span>, <span class="kw">function</span>() {<br />  <span class="co">// Is Geolocation supported?</span><br />  <span class="kw">var</span> geoHappy = <span class="kw">geo_position_js</span>.<span class="fu">init</span>();<br />  <span class="co">// Click handler for the &quot;Got One&quot; button</span><br />  $(<span class="st">&quot;#got-one&quot;</span>).<span class="fu">click</span>(<span class="kw">function</span>() {<br /><br />  });<br />});</code></pre>
+</div>
+<div id="more-about-that-click-handler" class="slide">
+<h1>More about that click handler</h1>
+<ul>
+<li>Need to organize the info that will populate our zombie <code>&lt;li&gt;</code></li>
+<li>Where, when and how...</li>
+</ul>
+<pre class="sourceCode"><code class="sourceCode javascript">$(<span class="st">&quot;#got-one&quot;</span>).<span class="fu">click</span>(<span class="kw">function</span>() {<br />  <span class="co">// A Date object (will default to right now)</span><br />  <span class="kw">var</span> now = <span class="kw">new</span> <span class="kw">Date</span>();<br />  <span class="co">// What's the value of the #how-zombie &lt;select&gt;?</span><br />  <span class="kw">var</span> how = $(<span class="st">&quot;#how-zombie&quot;</span>).<span class="fu">val</span>();<br />  <span class="kw">if</span> (geoHappy) { <span class="co">// Get position data if supported</span><br /><br />  } <span class="kw">else</span> { <span class="co">// It's also OK to add a zombie w/o location data</span><br /><br />  }<br />});</code></pre>
+</div>
+<div id="fleshing-it-out..." class="slide">
+<h1>Fleshing it out...</h1>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">if</span> (geoHappy) {<br />  <span class="co">// Get the current position (just like with W3C API)</span><br />  <span class="kw">geo_position_js</span>.<span class="fu">getCurrentPosition</span>(<span class="kw">function</span>(position) {<br />    <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, position, how);<br />  }, <span class="kw">function</span>(error) {<br />    <span class="kw">console</span>.<span class="fu">log</span>(<span class="st">&quot;Geolocation error: &quot;</span> + <span class="kw">error</span>.<span class="fu">message</span>);<br />    <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, null, how);<br />  });<br />} <span class="kw">else</span> { <span class="co">// It's also OK to add a zombie w/o location data</span><br />  <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, null, how);<br />}</code></pre>
+<p>We'll talk about <code>zombieManager</code> in just a moment.</p>
+</div>
+<div id="all-together-now" class="slide">
+<h1>All together now</h1>
 <div id="code-4">
 <h2>Code</h2>
-<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">window</span>.<span class="fu">zombieManager</span> = (<span class="kw">function</span>() {<br />  <span class="kw">var</span> zombies       = <span class="kw">new</span> <span class="kw">Array</span>();<br />  <span class="kw">var</span> zombie_icons  = { };<br /><br />  <span class="kw">var</span> resetZombies = <span class="kw">function</span>() {};<br />  <span class="kw">var</span> showZombies = <span class="kw">function</span>() {};<br /><br />  <span class="kw">return</span> {<br />    <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) { }<br />  }<br />}());</code></pre>
+<pre class="sourceCode"><code class="sourceCode javascript">$(<span class="st">&quot;#nab-zombie&quot;</span>).<span class="fu">live</span>(<span class="ch">'pageinit'</span>, <span class="kw">function</span>() {<br />  <span class="co">// Is Geolocation supported?</span><br />  <span class="kw">var</span> geoHappy = <span class="kw">geo_position_js</span>.<span class="fu">init</span>();<br />  <span class="co">// Click handler for the &quot;Got One&quot; button</span><br />  $(<span class="st">&quot;#got-one&quot;</span>).<span class="fu">click</span>(<span class="kw">function</span>() {<br />    <span class="kw">var</span> now = <span class="kw">new</span> <span class="kw">Date</span>();<br />    <span class="kw">var</span> how = $(<span class="st">&quot;#how-zombie&quot;</span>).<span class="fu">val</span>();<br />    <span class="co">// Get position data if supported</span><br />    <span class="kw">if</span> (geoHappy) {<br />      <span class="kw">geo_position_js</span>.<span class="fu">getCurrentPosition</span>(<span class="kw">function</span>(position) {<br />        <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, position, how);<br />      }, <span class="kw">function</span>(error) {<br />        <span class="kw">console</span>.<span class="fu">log</span>(<span class="st">&quot;Geolocation error: &quot;</span> + <span class="kw">error</span>.<span class="fu">message</span>);<br />        <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, null, how);<br />      });<br />    } <span class="kw">else</span> { <span class="co">// It's also OK to add a zombie w/o location data</span><br />      <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, null, how);<br />    }<br />  });<br />});</code></pre>
 </div>
 </div>
-<div id="setting-things-up-when-the-jqm-page-inits" class="slide">
-<h1>Setting things up when the JQM page inits</h1>
+<div id="managing-our-zombies" class="slide">
+<h1>Managing our Zombies</h1>
+<p>We need a way to:</p>
+<ul>
+<li>Add a new dead zombie</li>
+<li>Store our dead zombies</li>
+<li>Show dead zombie details (in a <code>&lt;li&gt;</code> added to the <code>&lt;ul#zombielist&gt;</code>)</li>
+<li>Reset zombies</li>
+</ul>
+</div>
+<div id="building-our-zombie-manager" class="slide">
+<h1>Building our Zombie Manager</h1>
 <div id="code-5">
 <h2>Code</h2>
-<pre class="sourceCode"><code class="sourceCode javascript">$(<span class="st">&quot;#nab-zombie&quot;</span>).<span class="fu">live</span>(<span class="ch">'pageinit'</span>, <span class="kw">function</span>() {<br />  <span class="kw">var</span> geoHappy = <span class="kw">geo_position_js</span>.<span class="fu">init</span>();<br />  $(<span class="st">&quot;#got-one&quot;</span>).<span class="fu">click</span>(<span class="kw">function</span>() {<br />    <span class="kw">var</span> now = <span class="kw">new</span> <span class="kw">Date</span>();<br />    <span class="kw">var</span> how = $(<span class="st">&quot;#how-zombie&quot;</span>).<span class="fu">val</span>();<br />    <span class="kw">if</span> (geoHappy) {<br />      <span class="kw">geo_position_js</span>.<span class="fu">getCurrentPosition</span>(<span class="kw">function</span>(position) {<br />        <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, position, how);<br />      }, <span class="kw">function</span>(error) {<br />        <span class="kw">console</span>.<span class="fu">log</span>(<span class="st">&quot;Geolocation error: &quot;</span> + <span class="kw">error</span>.<span class="fu">message</span>);<br />        <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, null, how);<br />      });<br />    } <span class="kw">else</span> { <span class="co">// It's also OK to add a zombie w/o location data</span><br />      <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, null, how);<br />    }<br />  });<br />});</code></pre>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">window</span>.<span class="fu">zombieManager</span> = (<span class="kw">function</span>() {<br />  <span class="co">// An array to hold our dead zombies</span><br />  <span class="kw">var</span> zombies       = <span class="kw">new</span> <span class="kw">Array</span>();<br />  <span class="co">// Each killing method has a corresponding icon. Here we map them.</span><br />  <span class="kw">var</span> zombie_icons  = {<br />    <span class="ch">'nukes'</span>         : <span class="ch">'z2.png'</span>,<br />    <span class="ch">'conflagration'</span> : <span class="ch">'z5.png'</span>,<br />    <span class="ch">'tank'</span>          : <span class="ch">'z7.png'</span>,<br />    <span class="ch">'trickery'</span>      : <span class="ch">'z11.png'</span>,<br />    <span class="ch">'poison'</span>        : <span class="ch">'z13.png'</span>,<br />    <span class="ch">'corrosive'</span>     : <span class="ch">'z8.png'</span>,<br />    <span class="ch">'dismemberment'</span> : <span class="ch">'z14.png'</span><br />  };<br />  <span class="co">// Wipe out the zombies and start over</span><br />  <span class="kw">var</span> resetZombies = <span class="kw">function</span>() { };<br /><br />  <span class="co">// Refresh/show &lt;ul&gt; of zombies nabbed</span><br />  <span class="kw">var</span> showZombies = <span class="kw">function</span>() { };<br /><br />  <span class="co">// Return object literal</span><br />  <span class="kw">return</span> {<br />    <span class="co">// Add a new zombie to the list of zombies</span><br />    <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) { }<br />  }<br />}());</code></pre>
 </div>
+</div>
+<div id="a-few-deets" class="slide">
+<h1>A few deets</h1>
+<ul>
+<li><p>The <code>zombieManager</code> function invokes itself:</p>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">window</span>.<span class="fu">zombieManager</span> = (<span class="kw">function</span>() {<br />  <span class="co">// ...</span><br />}());</code></pre></li>
+<li><p><code>zombieManager.addZombie</code> is now available:</p>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">return</span> {<br />    <span class="co">// Add a new zombie to the list of zombies</span><br />    <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) { }<br />  }</code></pre></li>
+<li><p>So, the <code>window.zombieManager</code> object is available to us, and has a single available method, <code>addZombie</code>.</p></li>
+</ul>
+</div>
+<div id="adding-a-dead-zombie" class="slide">
+<h1>Adding a Dead Zombie</h1>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">return</span> {<br />  <span class="co">// Add a new zombie to the list of zombies</span><br />  <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) {<br />    <span class="co">// Add a new object to the zombies array</span><br />    zombies[<span class="kw">zombies</span>.<span class="fu">length</span>] = {<br />      <span class="dt">when      </span>: <span class="kw">zombieWhen</span>.<span class="fu">valueOf</span>(),<br />      <span class="dt">where     </span>: zombieWhere,<br />      <span class="dt">how       </span>: zombieHow<br />    };<br />    showZombies();<br />  }<br />}</code></pre>
+<p>Let's go look at <code>showZombies</code>...</p>
+</div>
+<div id="showing-the-dead-zombies" class="slide">
+<h1>Showing the dead Zombies</h1>
+<div id="code-6">
+<h2>Code</h2>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="co">// Refresh/show &lt;ul&gt; of zombies nabbed</span><br /><span class="kw">var</span> showZombies = <span class="kw">function</span>() {<br />  <span class="kw">for</span>(<span class="kw">var</span> i = <span class="dv">0</span>; i &lt; <span class="kw">zombies</span>.<span class="fu">length</span>; i++) {<br />    <span class="co">// Create and format an &lt;li&gt; element with each zombie's details</span><br />    <span class="co">// More details in just a sec...</span><br />  }<br />  <span class="kw">if</span> (zombies &amp;&amp; <span class="kw">zombies</span>.<span class="fu">length</span> &amp;&amp; !$(<span class="ch">'#zombie-reset'</span>).<span class="fu">length</span>) {<br />    $startOver = $(<span class="ch">'&lt;button&gt;Reset my Zombies&lt;/button&gt;'</span>).<span class="fu">attr</span>(<span class="ch">'id'</span>, <span class="ch">'zombie-reset'</span>);<br />    $(<span class="ch">'#zombielist'</span>).<span class="fu">after</span>($startOver);<br />    <span class="co">// Assign click handler to reset the zombie list</span><br />    $(<span class="ch">'#zombie-reset'</span>).<span class="fu">button</span>().<span class="fu">click</span>(<span class="kw">function</span>() {<br />      resetZombies();<br />    });<br />  }<br />  <span class="co">// Refresh the listview for #zombielist because we've (likely)</span><br />  <span class="co">// altered the list.</span><br />  $(<span class="ch">'#zombielist'</span>).<span class="fu">listview</span>(<span class="ch">'refresh'</span>);<br />};</code></pre>
+<ul>
+<li>Have to refresh the listview (for the <code>&lt;ul#zombielist&gt;</code>) after altering elements in the list.</li>
+</ul>
+</div>
+</div>
+<div id="building-a-row-for-the-dead-zombie" class="slide">
+<h1>Building a row for the dead zombie</h1>
+<p>We're trying to emulate this markup:</p>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;ul</span><span class="ot"> data-role=</span><span class="st">&quot;listview&quot;</span><span class="ot"> data-inset=</span><span class="st">&quot;true&quot;</span><span class="ot"> id=</span><span class="st">&quot;zombielist&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;li&gt;&lt;img</span><span class="ot"> src=</span><span class="st">&quot;icons/z2.png&quot;</span><span class="ot"> alt=</span><span class="st">&quot;Killed by micro-nukes&quot;</span> <span class="kw">/&gt;&lt;h3&gt;</span>Zombie Nabbed!<span class="kw">&lt;/h3&gt;</span><br />  <span class="kw">&lt;p&gt;&lt;strong&gt;</span>01/18/12 13:44<span class="kw">&lt;/strong&gt;&lt;/p&gt;</span><br />  <span class="kw">&lt;p&gt;</span>Coordinates: 40.7678494, -73.9853328<span class="kw">&lt;/p&gt;&lt;/li&gt;</span><br /><span class="kw">&lt;/ul&gt;</span></code></pre>
+</div>
+<div id="the-guts-of-showzombies" class="slide">
+<h1>The guts of showZombies</h1>
+<div id="code-7">
+<h2>Code</h2>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">for</span>(<span class="kw">var</span> i = <span class="dv">0</span>; i &lt; <span class="kw">zombies</span>.<span class="fu">length</span>; i++) {<br />  <span class="kw">var</span> zombieWhen = <span class="kw">new</span> <span class="kw">Date</span>(zombies[i].<span class="fu">when</span>);<br />  <span class="kw">var</span> zombieID   = <span class="ch">'zombie-'</span> + <span class="kw">zombieWhen</span>.<span class="fu">format</span>(<span class="ch">'mdyhis'</span>);<br /><br />  <span class="kw">if</span> (!$(<span class="st">&quot;#&quot;</span> + zombieID).<span class="fu">length</span>) { <span class="co">// If there isn't an &lt;li&gt; for this zombie</span><br />    <span class="co">// Creating &lt;li class=&quot;zombie&quot; id=&quot;[zombieID]&quot;&gt;&lt;/li&gt;</span><br />    <span class="kw">var</span> $zombieRow = $(<span class="ch">'&lt;li&gt;&lt;/li&gt;'</span>).<span class="fu">addClass</span>(<span class="ch">'zombie'</span>).<span class="fu">attr</span>(<span class="ch">'id'</span>, zombieID);<br />    <span class="co">// Creating the icon (&lt;img&gt; tag)</span><br />    <span class="kw">if</span> (zombies[i].<span class="fu">how</span> &amp;&amp; zombie_icons[zombies[i].<span class="fu">how</span>]) {<br />      $zombieImg = $(<span class="st">&quot;&lt;img&gt;&quot;</span>).<span class="fu">attr</span>(<br />        { <span class="dt">src </span>:  <span class="ch">'icons/'</span> + zombie_icons[zombies[i].<span class="fu">how</span>],<br />          <span class="dt">alt </span>:  <span class="ch">'How it died'</span><br />        });<br />      $<span class="kw">zombieRow</span>.<span class="fu">append</span>($zombieImg);<br />    }<br />    <span class="co">// Header and datetime info</span><br />    $<span class="kw">zombieRow</span>.<span class="fu">append</span>( <br />      <span class="ch">'&lt;h3&gt;Zombie Nabbed!&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;'</span>  + <span class="kw">zombieWhen</span>.<span class="fu">format</span>(<span class="ch">'m/d/y H:i'</span>)  + <span class="ch">'&lt;/strong&gt;&lt;/p&gt;'</span><br />    );<br />    <span class="co">// If there is location information, add it to the &lt;li&gt;</span><br />    <span class="kw">if</span> (zombies[i].<span class="fu">where</span> &amp;&amp; zombies[i].<span class="fu">where</span>.<span class="fu">coords</span>) {<br />      <span class="kw">var</span> coords = zombies[i].<span class="fu">where</span>.<span class="fu">coords</span>;<br />      $<span class="kw">zombieRow</span>.<span class="fu">append</span>(<span class="ch">'&lt;p&gt;Coordinates: '</span> <br />      + <span class="kw">coords</span>.<span class="fu">latitude</span> + <span class="ch">', '</span> <br />      + <span class="kw">coords</span>.<span class="fu">longitude</span> + <span class="ch">'&lt;/p&gt;'</span>);<br />    }<br />    <span class="co">// Prepend the new &lt;li&gt; to the beginning of #zombielist</span><br />    $(<span class="ch">'#zombielist'</span>).<span class="fu">prepend</span>($zombieRow);<br />  }<br />}</code></pre>
+</div>
+</div>
+<div id="resetting-zombies" class="slide">
+<h1>Resetting Zombies</h1>
+<p>Now we can add zombies and show zombies. What if someone wants to start over and reset their zombies?</p>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="co">// Wipe out the zombies and start over</span><br /><span class="kw">var</span> resetZombies = <span class="kw">function</span>() {<br />  zombies = <span class="kw">new</span> <span class="kw">Array</span>();<br />  $(<span class="ch">'li.zombie'</span>).<span class="fu">remove</span>();<br />  <span class="co">// We've altered the listview by removing its elements...so...</span><br />  $(<span class="ch">'#zombielist'</span>).<span class="fu">listview</span>(<span class="ch">'refresh'</span>);<br />};</code></pre>
 </div>
 <div id="try-it-out-1" class="slide">
 <h1>Try it out!</h1>
@@ -269,27 +355,34 @@ Frameworks (jQuery Mobile) and localStorage
 </div>
 <div id="lets-kick-up-a-lawnchair-yeah" class="slide">
 <h1>Let's kick up a Lawnchair, yeah?</h1>
-<p>Instantiate the Lawnchair.</p>
+<p>Instantiate the Lawnchair. Do this right after initializing the <code>zombies</code> array in the <code>zombieManager</code> function.</p>
 <pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">window</span>.<span class="fu">zombieManager</span> = (<span class="kw">function</span>() {<br />  <span class="kw">var</span> zombies       = <span class="kw">new</span> <span class="kw">Array</span>();<br />  <span class="kw">var</span> zombieChair   = Lawnchair({<span class="dt">name</span>: <span class="ch">'zombies'</span>}, <span class="kw">function</span>() {});</code></pre>
 </div>
 <div id="add-an-init-function" class="slide">
 <h1>Add an init function</h1>
-<div id="code-6">
+<p>We'll need a way for to call an initialization function when the page is ready, to get those dead zombies out of ice storage, into the <code>zombies</code> array and displayed:</p>
+<div id="code-8">
 <h2>Code</h2>
-<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">return</span> {<br />  <span class="co">// Init; build initial #zombielist</span><br />  <span class="dt">init          </span>: <span class="kw">function</span>() {<br />    <span class="kw">zombieChair</span>.<span class="fu">get</span>(<span class="ch">'zombies'</span>, <span class="kw">function</span>(zombiesOnIce) {<br />      <span class="kw">if</span> (zombiesOnIce) {<br />        zombies = <span class="kw">zombiesOnIce</span>.<span class="fu">value</span>;<br />      }<br />    });<br />    showZombies();<br />  },<br />  <span class="co">// Add a new zombie to the list of zombies</span><br />  <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) {<br />  <span class="co">// ...</span></code></pre>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">return</span> {<br />  <span class="co">// Init; build initial #zombielist</span><br />  <span class="dt">init          </span>: <span class="kw">function</span>() {<br />    <span class="kw">zombieChair</span>.<span class="fu">get</span>(<span class="ch">'zombies'</span>, <span class="kw">function</span>(zombiesOnIce) {<br />      <span class="kw">if</span> (zombiesOnIce) {<br />        <span class="co">// If there are zombies stored, populate the </span><br />        <span class="co">// zombies array with those zombies</span><br />        zombies = <span class="kw">zombiesOnIce</span>.<span class="fu">value</span>;<br />      }<br />    });<br />    <span class="co">// Now, show the zombies</span><br />    showZombies();<br />  },<br />  <span class="co">// Add a new zombie to the list of zombies</span><br />  <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) {<br />  <span class="co">// ...</span></code></pre>
 </div>
 </div>
 <div id="update-the-addzombie-function..." class="slide">
 <h1>...update the addZombie function...</h1>
+<p>We need to store the zombie in the Lawnchair as well as the ephemeral array.</p>
 <pre class="sourceCode"><code class="sourceCode javascript">  },<br />  <span class="co">// Add a new zombie to the list of zombies</span><br />  <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) {<br />    zombies[<span class="kw">zombies</span>.<span class="fu">length</span>] = {<br />      <span class="dt">when      </span>: <span class="kw">zombieWhen</span>.<span class="fu">valueOf</span>(),<br />      <span class="dt">where     </span>: zombieWhere,<br />      <span class="dt">how       </span>: zombieHow<br />    };<br />    <span class="kw">zombieChair</span>.<span class="fu">save</span>({<span class="dt">key</span>: <span class="ch">'zombies'</span>, <span class="dt">value </span>: zombies });<br />    showZombies();<br />  }</code></pre>
 </div>
 <div id="update-the-resetzombies-function..." class="slide">
 <h1>...update the resetZombies function...</h1>
+<p>Nuke the contents of the Lawnchair as well as the array.</p>
 <pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">var</span> resetZombies = <span class="kw">function</span>() {<br />    zombies = <span class="kw">new</span> <span class="kw">Array</span>();<br />    <span class="kw">zombieChair</span>.<span class="fu">nuke</span>();<br />    $(<span class="ch">'li.zombie'</span>).<span class="fu">remove</span>();<br />    $(<span class="ch">'#zombielist'</span>).<span class="fu">listview</span>(<span class="ch">'refresh'</span>);<br />  };</code></pre>
 </div>
 <div id="and-add-a-call-to-the-init-function..." class="slide">
 <h1>And add a call to the init function...</h1>
-<pre class="sourceCode"><code class="sourceCode javascript">$(<span class="st">&quot;#nab-zombie&quot;</span>).<span class="fu">live</span>(<span class="ch">'pageinit'</span>, <span class="kw">function</span>() {<br /><br />  <span class="co">// Initialize our list of zombies</span><br />  <span class="kw">zombieManager</span>.<span class="fu">init</span>();<br />  <span class="co">// Is Geolocation supported?</span><br />  <span class="co">// ...</span></code></pre>
+<div id="and-finally">
+<h3>And finally</h3>
+<p>When the jQM page and its widgets are ready to go, call that <code>init</code> function:</p>
+<pre class="sourceCode"><code class="sourceCode javascript">$(<span class="st">&quot;#nab-zombie&quot;</span>).<span class="fu">live</span>(<span class="ch">'pageinit'</span>, <span class="kw">function</span>() {<br />  <span class="co">// Initialize our list of zombies</span><br />  <span class="kw">zombieManager</span>.<span class="fu">init</span>();<br />  <span class="co">// Is Geolocation supported?</span><br />  <span class="co">// ...</span></code></pre>
+</div>
 </div>
 <div id="take-it-for-a-spin" class="slide">
 <h1>Take it for a spin</h1>

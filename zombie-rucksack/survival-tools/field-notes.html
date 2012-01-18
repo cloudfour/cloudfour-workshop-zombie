@@ -38,6 +38,14 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </header>
 <nav id="TOC">
 <ul>
+<li><a href="#building-your-battle-kit">0. Building your battle kit</a><ul>
+<li><a href="#weapons">Weapons</a><ul>
+<li><a href="#running-a-local-web-server">Running a local web server</a><ul>
+<li><a href="#examples-that-require-a-web-server">Examples that require a web server</a></li>
+<li><a href="#some-possible-ways-to-get-things-working">Some possible ways to get things working:</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
 <li><a href="#boot-camp-performance-and-semantic-clarity">2. Boot Camp: Performance and Semantic Clarity</a><ul>
 <li><a href="#sigma-stronghold-web-site">Sigma Stronghold Web Site</a></li>
 <li><a href="#weapons-for-performance">Weapons for Performance</a><ul>
@@ -98,13 +106,11 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li><a href="#creating-a-cache-manifest-for-the-sigma-stronghold-site">Creating a Cache Manifest for the Sigma Stronghold Site</a></li>
 <li><a href="#improving-the-cache-manifest">Improving the Cache Manifest</a></li>
 </ul></li>
-</ul></li>
 <li><a href="#device-apis-focus-on-geolocation">Device APIs: Focus on Geolocation!</a><ul>
 <li><a href="#w3c-geolocation-api">W3C Geolocation API</a><ul>
-<li><a href="#quick-details">Quick Details</a><ul>
+<li><a href="#quick-details">Quick Details</a></li>
 <li><a href="#code-snippets">Code Snippets</a></li>
 </ul></li>
-<li><a href="#running-a-local-web-server">Running a local web server</a></li>
 <li><a href="#building-a-quickie-geolocation-test-page">Building a Quickie Geolocation Test Page</a></li>
 </ul></li>
 </ul></li>
@@ -125,6 +131,47 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ul>
 </nav>
 <hr />
+<section id="building-your-battle-kit">
+<h1><a href="#TOC">0. Building your battle kit</a></h1>
+<section id="weapons">
+<h2><a href="#TOC">Weapons</a></h2>
+<ol type="1">
+<li>The <a href="http://developer.yahoo.com/yslow/">ySlow</a> browser extension (Chrome and Firefox).</li>
+<li>A local web server (optional, but handy!)</li>
+<li>A good text editor</li>
+<li>A JavaScript/DOM debug tool (We recommend WebInspector in Chrome/Safari/Webkit browsers or FireBug in FireFox).</li>
+<li>This zombie rucksack.</li>
+</ol>
+<section id="running-a-local-web-server">
+<h3><a href="#TOC">Running a local web server</a></h3>
+<p>Some examples in today's workshop will only fully work on a proper web server. <em>It is not a big deal</em> if you can't or don't want to set up a local web server; you can just follow along on the big screen.</p>
+<section id="examples-that-require-a-web-server">
+<h4><a href="#TOC">Examples that require a web server</a></h4>
+<ol type="1">
+<li>Performance optimization using an <code>.htaccess</code> file (section 2: Boot Camp)</li>
+<li>Cache manifests/ApplicationCache (section 5: Honed Killing Machine)</li>
+<li>Geolocation (section 5, section 6: A Band of Brothers)
+<ol type="a">
+<li>You can still build the web app in section 6; it simply won't do geolocation</li>
+<li>Geolocation is not generally possible when viewing web pages as files (i.e. without a web server) in a browser for security reasons.</li>
+</ol></li>
+</ol>
+</section>
+<section id="some-possible-ways-to-get-things-working">
+<h4><a href="#TOC">Some possible ways to get things working:</a></h4>
+<ol type="1">
+<li>If you run OS X's default apache web server, you can move the contents of the zombie rucksack somewhere within the area (document root) served as web resources. This is typically in the <code>Sites</code> folder in your user's home directory (note that Web Sharing will need to be enabled in your system settings to get this to work).</li>
+<li>If you have a hosting provider, you could do your work there, if you choose.</li>
+<li><p>Here is a ruby one-liner for serving the current directory (you'd access your stuff by going to <code>localhost:9090</code> in a browser):</p>
+<pre class="sourceCode"><code class="sourceCode ruby">ruby -r webrick -e <span class="st">&quot;s = WEBrick::HTTPServer.new(:Port =&gt; 9090, :DocumentRoot =&gt; Dir.pwd); trap('INT') { s.shutdown }; s.start&quot;</span></code></pre></li>
+<li>There is also a <a href="http://www.garyrobinson.net/2004/03/one_line_python.html">one-line python script</a> for doing the same general thing.</li>
+<li><p>I use <a href="http://www.mamp.info">MAMP</a> on my Mac as a web server (comes with PHP and mysql). There's <a href="www.apachefriends.org/en/xampp.html">XAMPP</a> for Windows and Linux. These are pretty easy installs but might be more than you want to deal with right at this second.</p></li>
+</ol>
+<p><em>If you don't have a web-served environment handy, no biggie. You can still follow along!</em></p>
+</section>
+</section>
+</section>
+</section>
 <section id="boot-camp-performance-and-semantic-clarity">
 <h1><a href="#TOC">2. Boot Camp: Performance and Semantic Clarity</a></h1>
 <section id="sigma-stronghold-web-site">
@@ -481,35 +528,21 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 </code></pre>
 </section>
 </section>
-</section>
 <section id="device-apis-focus-on-geolocation">
-<h1><a href="#TOC">Device APIs: Focus on Geolocation!</a></h1>
+<h2><a href="#TOC">Device APIs: Focus on Geolocation!</a></h2>
 <section id="w3c-geolocation-api">
-<h2><a href="#TOC">W3C Geolocation API</a></h2>
+<h3><a href="#TOC">W3C Geolocation API</a></h3>
 <ul>
 <li>The spec for the <a href="http://dev.w3.org/geo/api/spec-source.html">W3C Geolocation API spec</a> is relatively short and easy to understand (as specs go).</li>
 </ul>
 <section id="quick-details">
-<h3><a href="#TOC">Quick Details</a></h3>
+<h4><a href="#TOC">Quick Details</a></h4>
 <p>Browsers that implement the W3C geolocation spec expose the <code>navigator.geolocation</code> object and its methods to the browser.</p>
+</section>
 <section id="code-snippets">
 <h4><a href="#TOC">Code Snippets</a></h4>
-<pre class="sourceCode"><code class="sourceCode javascript">    <span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(successCallback, errorCallback)<br /><br />    <span class="kw">function</span> successCallback(position) {<br />      <span class="co">// Latitude and Longitude are usually what you're after.</span><br />      <span class="co">// They're properties of the coords object on position.</span><br />      alert(<span class="kw">position.coords</span>.<span class="fu">latitude</span> + <span class="ch">', '</span> + <span class="kw">position.coords</span>.<span class="fu">longitude</span>);<br />    }<br />    <span class="kw">function</span> errorCallback(error) {<br />      <span class="co">// Do something or freak out.</span><br />    }</code></pre>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(successCallback, errorCallback);<br /><br /><span class="kw">function</span> successCallback(position) {<br />  <span class="co">// Latitude and Longitude are usually what you're after.</span><br />  <span class="co">// They're properties of the coords object on position.</span><br />  alert(<span class="kw">position.coords</span>.<span class="fu">latitude</span> + <span class="ch">', '</span> + <span class="kw">position.coords</span>.<span class="fu">longitude</span>);<br />}<br /><span class="kw">function</span> errorCallback(error) {<br />  <span class="co">// Do something or freak out.</span><br />}</code></pre>
 </section>
-</section>
-<section id="running-a-local-web-server">
-<h3><a href="#TOC">Running a local web server</a></h3>
-<p><em>Note</em>: If you view the geolocation test page (next section) as a <code>file://</code> in your web browser (that is, as a local file; not served by a web server), security settings will generally prevent you from geolocation information. Typically, an error will be generated akin to the user denying permission for geolocation.</p>
-<p>Some possible ways to get things working:</p>
-<ol type="1">
-<li>If you run OS X's default apache web server, you can move the contents of the zombie rucksack somewhere within the area (document root) served as web resources. This is typically in the <code>Sites</code> folder in your user's home directory (note that Web Sharing will need to be enabled in your system settings to get this to work).</li>
-<li>If you have a hosting provider, you could do your work there, if you choose.</li>
-<li><p>Here is a ruby one-liner for serving the current directory (you'd access your stuff by going to <code>localhost:9090</code> in a browser):</p>
-<pre class="sourceCode"><code class="sourceCode ruby">ruby -r webrick -e <span class="st">&quot;s = WEBrick::HTTPServer.new(:Port =&gt; 9090, :DocumentRoot =&gt; Dir.pwd); trap('INT') { s.shutdown }; s.start&quot;</span></code></pre></li>
-<li>There is also a <a href="http://www.garyrobinson.net/2004/03/one_line_python.html">one-line python script</a> for doing the same general thing.</li>
-<li><p>I use <a href="http://www.mamp.info">MAMP</a> on my Mac as a web server (comes with PHP and mysql). There's <a href="www.apachefriends.org/en/xampp.html">XAMPP</a> for Windows and Linux. These are pretty easy installs but might be more than you want to deal with right at this second.</p></li>
-</ol>
-<p><em>If you don't have a web-served environment handy, no biggie. You can still follow along!</em></p>
 </section>
 <section id="building-a-quickie-geolocation-test-page">
 <h3><a href="#TOC">Building a Quickie Geolocation Test Page</a></h3>
@@ -564,8 +597,6 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <li><p>Now add a call to that new <code>init</code> function we wrote...</p>
 <pre class="sourceCode"><code class="sourceCode javascript">$(<span class="st">&quot;#nab-zombie&quot;</span>).<span class="fu">live</span>(<span class="ch">'pageinit'</span>, <span class="kw">function</span>() {<br /><br />  <span class="co">// Initialize our list of zombies</span><br />  <span class="kw">zombieManager</span>.<span class="fu">init</span>();<br />  <span class="co">// Is Geolocation supported?</span><br />  <span class="co">// ...</span></code></pre></li>
 <li><p>That's a lot of JavaScript. You can also find a final version of <code>zombie.js</code> in <a href="../supplemental/band-of-brothers/zombie.js"><code>supplemental/band-of-brothers/zombie.js</code></a>.</p></li>
-<li><p>Now, edit <code>index.html</code> again. You need to add the <code>Lawnchair.js</code> and the DOM adapter (<code>dom.js</code>):</p>
-<pre class="sourceCode"><code class="sourceCode html">  <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;Lawnchair.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;dom.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;date.format.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></code></pre></li>
 </ol>
 <hr />
 </section>

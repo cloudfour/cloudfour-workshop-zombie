@@ -14,8 +14,8 @@ window.zombieManager = (function() {
   // Wipe out the zombies and start over
   var resetZombies = function() {
     zombies = new Array();
-    zombieChair.nuke();
     $('li.zombie').remove();
+    zombieChair.nuke();
     $('#zombielist').listview('refresh');
   };
   
@@ -73,7 +73,6 @@ window.zombieManager = (function() {
   
   // Return object literal with two available methods (init and addZombie)
   return {
-    // Init; build initial #zombielist
     init          : function() {
       zombieChair.get('zombies', function(zombiesOnIce) {
         if (zombiesOnIce) {
@@ -96,8 +95,6 @@ window.zombieManager = (function() {
 }());
 
 $("#nab-zombie").live('pageinit', function() {
-
-  // Initialize our list of zombies
   zombieManager.init();
   // Is Geolocation supported?
   var geoHappy = geo_position_js.init();

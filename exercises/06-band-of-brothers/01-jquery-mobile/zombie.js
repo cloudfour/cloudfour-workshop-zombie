@@ -83,7 +83,6 @@ window.zombieManager = (function() {
   }
 }());
 
-// TODO: Crap. Should this be pagecreate?
 $("#nab-zombie").live('pageinit', function() {
   // Is Geolocation supported?
   var geoHappy = geo_position_js.init();

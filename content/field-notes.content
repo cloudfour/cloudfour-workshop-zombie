@@ -3,6 +3,44 @@
 
 ----------------
 
+# 0. Building your battle kit
+
+## Weapons
+
+1. The [ySlow](http://developer.yahoo.com/yslow/) browser extension (Chrome and Firefox).
+2. A local web server (optional, but handy!)
+3. A good text editor
+4. A JavaScript/DOM debug tool (We recommend WebInspector in Chrome/Safari/Webkit browsers or FireBug in FireFox).
+5. This zombie rucksack.
+
+### Running a local web server
+
+Some examples in today's workshop will only fully work on a proper web server. *It is not a big deal* if you can't or don't want to set up a local web server; you can just follow along on the big screen.
+
+#### Examples that require a web server
+
+1. Performance optimization using an `.htaccess` file (section 2: Boot Camp)
+2. Cache manifests/ApplicationCache (section 5: Honed Killing Machine)
+3. Geolocation (section 5, section 6: A Band of Brothers)
+    a. You can still build the web app in section 6; it simply won't do geolocation
+    b. Geolocation is not generally possible when viewing web pages as files (i.e. without a web server) in a browser for security reasons.
+
+#### Some possible ways to get things working:
+
+1. If you run OS X's default apache web server, you can move the contents of the zombie rucksack somewhere within the area (document root) served as web resources. This is typically in the `Sites` folder in your user's home directory (note that Web Sharing will need to be enabled in your system settings to get this to work).
+2. If you have a hosting provider, you could do your work there, if you choose.
+3. Here is a ruby one-liner for serving the current directory (you'd access your stuff by going to `localhost:9090` in a browser):
+
+    ~~~ {.ruby}
+    ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 9090, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"
+    ~~~
+    
+4. There is also a [one-line python script](http://www.garyrobinson.net/2004/03/one_line_python.html) for doing the same general thing.
+5. I use [MAMP](http://www.mamp.info) on my Mac as a web server (comes with PHP and mysql). There's [XAMPP](www.apachefriends.org/en/xampp.html) for Windows and Linux. These are pretty easy installs but might be more than you want to deal with right at this second.
+
+*If you don't have a web-served environment handy, no biggie. You can still follow along!*
+
+
 # 2. Boot Camp: Performance and Semantic Clarity
 
 ## Sigma Stronghold Web Site
@@ -521,49 +559,30 @@ We need to cache those Google fonts! Add this to the end of the `CACHE` section:
     http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff
     http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff
 
-# Device APIs: Focus on Geolocation!
+## Device APIs: Focus on Geolocation!
 
-## W3C Geolocation API
+### W3C Geolocation API
 
 * The spec for the [W3C Geolocation API spec](http://dev.w3.org/geo/api/spec-source.html) is relatively short and easy to understand (as specs go).
 
-### Quick Details
+#### Quick Details
 
 Browsers that implement the W3C geolocation spec expose the `navigator.geolocation` object and its methods to the browser.
 
 #### Code Snippets
 
 ~~~ {.javascript}
-    navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
-    
-    function successCallback(position) {
-      // Latitude and Longitude are usually what you're after.
-      // They're properties of the coords object on position.
-      alert(position.coords.latitude + ', ' + position.coords.longitude);
-    }
-    function errorCallback(error) {
-      // Do something or freak out.
-    }
+navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+function successCallback(position) {
+  // Latitude and Longitude are usually what you're after.
+  // They're properties of the coords object on position.
+  alert(position.coords.latitude + ', ' + position.coords.longitude);
+}
+function errorCallback(error) {
+  // Do something or freak out.
+}
 ~~~
-
-### Running a local web server
-
-*Note*: If you view the geolocation test page (next section) as a `file://` in your web browser (that is, as a local file; not served by a web server), security settings will generally prevent you from geolocation information. Typically, an error will be generated akin to the user denying permission for geolocation.
-
-Some possible ways to get things working:
-
-1. If you run OS X's default apache web server, you can move the contents of the zombie rucksack somewhere within the area (document root) served as web resources. This is typically in the `Sites` folder in your user's home directory (note that Web Sharing will need to be enabled in your system settings to get this to work).
-2. If you have a hosting provider, you could do your work there, if you choose.
-3. Here is a ruby one-liner for serving the current directory (you'd access your stuff by going to `localhost:9090` in a browser):
-
-    ~~~ {.ruby}
-    ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 9090, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"
-    ~~~
-    
-4. There is also a [one-line python script](http://www.garyrobinson.net/2004/03/one_line_python.html) for doing the same general thing.
-5. I use [MAMP](http://www.mamp.info) on my Mac as a web server (comes with PHP and mysql). There's [XAMPP](www.apachefriends.org/en/xampp.html) for Windows and Linux. These are pretty easy installs but might be more than you want to deal with right at this second.
-
-*If you don't have a web-served environment handy, no biggie. You can still follow along!*
 
 ### Building a Quickie Geolocation Test Page
 
@@ -726,15 +745,6 @@ For this step, we use [Lawnchair](http://westcoastlogic.com/lawnchair/), an open
     ~~~
 
 7. That's a lot of JavaScript. You can also find a final version of `zombie.js` in [`supplemental/band-of-brothers/zombie.js`](../supplemental/band-of-brothers/zombie.js).
-
-8. Now, edit `index.html` again. You need to add the `Lawnchair.js` and the DOM adapter (`dom.js`):
-    
-    ~~~ {.html}
-      <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
-    	<script src="Lawnchair.js"></script>
-    	<script src="dom.js"></script>
-    	<script src="date.format.js"></script>
-    ~~~
 
 ----------------------------------
 

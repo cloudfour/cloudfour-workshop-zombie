@@ -131,13 +131,15 @@ At the outset, our jQM page is empty. Let's put some stuff in it.
 
 # Et Voila!
 
-TODO: Screenshot of header
+## Figure: A header in jQM
+
+![](images/06-header.png)
 
 # Putting the "Form" In
 
-Easy, but not too exciting. Let's put in some UI elements that will let Sigma Stronghold fighters record a nabbed zombie.
+![](images/06-starting-point.png)
 
-TODO: Screen shot of just UI elements
+Easy, but not too exciting. Let's put in some UI elements that will let Sigma Stronghold fighters record a nabbed zombie.
 
 # How do we do that?
 
@@ -170,7 +172,11 @@ First, let's add a `<select>` element, just like you would do for any HTML form 
 ## Code 
 
 ~~~ {.html}
+      <option value="dismemberment">Dismemberment</option>
+    </select>
+  </div> 
   <input type="button" value="I got one!" id="got-one" data-theme="b" />
+</div>
 ~~~
 
 # Dead Zombie Storage
@@ -178,6 +184,8 @@ First, let's add a `<select>` element, just like you would do for any HTML form 
 When a soldier nabs a zombie by tapping the "I Got One!" button, we'll need a place to display the info about that poor zombie. For each zombie nabbed, we'll add a row to a `<ul>`. Let's create an empty `<ul>` to hold those incoming zombies. Put this at the very bottom of the `<div data-role="content">`
 
 ~~~ {.html}
+</div> 
+<input type="button" value="I got one!" id="got-one" data-theme="b" />
 <ul data-role="listview" data-inset="true" id="zombielist">
 </ul>
 </div> <!-- /End <div data-role="content"> -->
@@ -209,11 +217,11 @@ When a soldier nabs a zombie by tapping the "I Got One!" button, we'll need a pl
 
 # A quick aside about browser support
 
+![](images/06-no-js.png)
+
 * By its nature, jQuery Mobile practices enthusiastic progressive enhancement
 * jQuery Mobile works in browsers that do not support JavaScript
 * However, our functionality requirements for the "I got one!" app effectively require JavaScript
-
-TODO: Screenshot of JS-off
 
 # Warning: JavaScript ahead
 
@@ -227,34 +235,75 @@ Now we can drop in some custom JavaScript that makes this go:
 <script src="zombie.js"></script>
 ~~~
 
-# Basic structure of a little zombie manager
+The curious can open up `zombie.js` and follow along as I confuse you through the next several slides!
 
-## Code
+# Working with jQuery Mobile events
+
+* When the page is done loading and the widgets have been marked up...
+    * Check for geolocation support
+    * Add a click handler for the "I Got One!" button
 
 ~~~ {.javascript}
-window.zombieManager = (function() {
-  var zombies       = new Array();
-  var zombie_icons  = { };
+$("#nab-zombie").live('pageinit', function() {
+  // Is Geolocation supported?
+  var geoHappy = geo_position_js.init();
+  // Click handler for the "Got One" button
+  $("#got-one").click(function() {
   
-  var resetZombies = function() {};
-  var showZombies = function() {};
-
-  return {
-    addZombie     : function(zombieWhen, zombieWhere, zombieHow) { }
-  }
-}());
+  });
+});
 ~~~
 
-# Setting things up when the JQM page inits
+# More about that click handler
+
+* Need to organize the info that will populate our zombie `<li>`
+* Where, when and how...
+
+~~~ {.javascript}
+$("#got-one").click(function() {
+  // A Date object (will default to right now)
+  var now = new Date();
+  // What's the value of the #how-zombie <select>?
+  var how = $("#how-zombie").val();
+  if (geoHappy) { // Get position data if supported
+  
+  } else { // It's also OK to add a zombie w/o location data
+  
+  }
+});
+~~~
+
+# Fleshing it out...
+
+~~~ {.javascript}
+if (geoHappy) {
+  // Get the current position (just like with W3C API)
+  geo_position_js.getCurrentPosition(function(position) {
+    zombieManager.addZombie(now, position, how);
+  }, function(error) {
+    console.log("Geolocation error: " + error.message);
+    zombieManager.addZombie(now, null, how);
+  });
+} else { // It's also OK to add a zombie w/o location data
+  zombieManager.addZombie(now, null, how);
+}
+~~~
+
+We'll talk about `zombieManager` in just a moment.
+
+# All together now
 
 ## Code
 
 ~~~ {.javascript}
 $("#nab-zombie").live('pageinit', function() {
+  // Is Geolocation supported?
   var geoHappy = geo_position_js.init();
+  // Click handler for the "Got One" button
   $("#got-one").click(function() {
     var now = new Date();
     var how = $("#how-zombie").val();
+    // Get position data if supported
     if (geoHappy) {
       geo_position_js.getCurrentPosition(function(position) {
         zombieManager.addZombie(now, position, how);
@@ -267,6 +316,178 @@ $("#nab-zombie").live('pageinit', function() {
     }
   });
 });
+~~~
+
+# Managing our Zombies
+
+We need a way to:
+
+* Add a new dead zombie
+* Store our dead zombies
+* Show dead zombie details (in a `<li>` added to the `<ul#zombielist>`)
+* Reset zombies
+
+# Building our Zombie Manager
+
+## Code
+
+~~~ {.javascript}
+window.zombieManager = (function() {
+  // An array to hold our dead zombies
+  var zombies       = new Array();
+  // Each killing method has a corresponding icon. Here we map them.
+  var zombie_icons  = {
+    'nukes'         : 'z2.png',
+    'conflagration' : 'z5.png',
+    'tank'          : 'z7.png',
+    'trickery'      : 'z11.png',
+    'poison'        : 'z13.png',
+    'corrosive'     : 'z8.png',
+    'dismemberment' : 'z14.png'
+  };
+  // Wipe out the zombies and start over
+  var resetZombies = function() { };
+  
+  // Refresh/show <ul> of zombies nabbed
+  var showZombies = function() { };
+  
+  // Return object literal
+  return {
+    // Add a new zombie to the list of zombies
+    addZombie     : function(zombieWhen, zombieWhere, zombieHow) { }
+  }
+}());
+~~~
+
+# A few deets
+
+* The `zombieManager` function invokes itself:
+
+    ~~~ {.javascript}
+    window.zombieManager = (function() {
+      // ...
+    }());
+    ~~~
+
+* `zombieManager.addZombie` is now available:
+
+    ~~~ {.javascript}
+    return {
+        // Add a new zombie to the list of zombies
+        addZombie     : function(zombieWhen, zombieWhere, zombieHow) { }
+      }
+    ~~~
+
+* So, the `window.zombieManager` object is available to us, and has a single available method, `addZombie`.
+
+# Adding a Dead Zombie
+
+~~~ {.javascript}
+return {
+  // Add a new zombie to the list of zombies
+  addZombie     : function(zombieWhen, zombieWhere, zombieHow) {
+    // Add a new object to the zombies array
+    zombies[zombies.length] = {
+      when      : zombieWhen.valueOf(),
+      where     : zombieWhere,
+      how       : zombieHow
+    };
+    showZombies();
+  }
+}
+~~~
+
+Let's go look at `showZombies`...
+
+# Showing the dead Zombies
+
+## Code
+
+~~~ {.javascript}
+// Refresh/show <ul> of zombies nabbed
+var showZombies = function() {
+  for(var i = 0; i < zombies.length; i++) {
+    // Create and format an <li> element with each zombie's details
+    // More details in just a sec...
+  }
+  if (zombies && zombies.length && !$('#zombie-reset').length) {
+    $startOver = $('<button>Reset my Zombies</button>').attr('id', 'zombie-reset');
+    $('#zombielist').after($startOver);
+    // Assign click handler to reset the zombie list
+    $('#zombie-reset').button().click(function() {
+      resetZombies();
+    });
+  }
+  // Refresh the listview for #zombielist because we've (likely)
+  // altered the list.
+  $('#zombielist').listview('refresh');
+};
+~~~
+
+* Have to refresh the listview (for the `<ul#zombielist>`) after altering elements in the list.
+
+# Building a row for the dead zombie
+
+We're trying to emulate this markup:
+
+~~~ {.html}
+<ul data-role="listview" data-inset="true" id="zombielist">
+  <li><img src="icons/z2.png" alt="Killed by micro-nukes" /><h3>Zombie Nabbed!</h3>
+  <p><strong>01/18/12 13:44</strong></p>
+  <p>Coordinates: 40.7678494, -73.9853328</p></li>
+</ul>
+~~~
+
+
+# The guts of showZombies
+
+## Code
+
+~~~ {.javascript}
+for(var i = 0; i < zombies.length; i++) {
+  var zombieWhen = new Date(zombies[i].when);
+  var zombieID   = 'zombie-' + zombieWhen.format('mdyhis');
+  
+  if (!$("#" + zombieID).length) { // If there isn't an <li> for this zombie
+    // Creating <li class="zombie" id="[zombieID]"></li>
+    var $zombieRow = $('<li></li>').addClass('zombie').attr('id', zombieID);
+    // Creating the icon (<img> tag)
+    if (zombies[i].how && zombie_icons[zombies[i].how]) {
+      $zombieImg = $("<img>").attr(
+        { src :  'icons/' + zombie_icons[zombies[i].how],
+          alt :  'How it died'
+        });
+      $zombieRow.append($zombieImg);
+    }
+    // Header and datetime info
+    $zombieRow.append( 
+      '<h3>Zombie Nabbed!</h3><p><strong>'  + zombieWhen.format('m/d/y H:i')  + '</strong></p>'
+    );
+    // If there is location information, add it to the <li>
+    if (zombies[i].where && zombies[i].where.coords) {
+      var coords = zombies[i].where.coords;
+      $zombieRow.append('<p>Coordinates: ' 
+      + coords.latitude + ', ' 
+      + coords.longitude + '</p>');
+    }
+    // Prepend the new <li> to the beginning of #zombielist
+    $('#zombielist').prepend($zombieRow);
+  }
+}
+~~~
+
+# Resetting Zombies
+
+Now we can add zombies and show zombies. What if someone wants to start over and reset their zombies?
+
+~~~ {.javascript}
+// Wipe out the zombies and start over
+var resetZombies = function() {
+  zombies = new Array();
+  $('li.zombie').remove();
+  // We've altered the listview by removing its elements...so...
+  $('#zombielist').listview('refresh');
+};
 ~~~
 
 # Try it out!
@@ -302,7 +523,7 @@ There is another standard device API for storing simple string key-value pairs o
 
 # Let's kick up a Lawnchair, yeah?
 
-Instantiate the Lawnchair.
+Instantiate the Lawnchair. Do this right after initializing the `zombies` array in the `zombieManager` function.
 
 ~~~ {.javascript}
 window.zombieManager = (function() {
@@ -312,6 +533,8 @@ window.zombieManager = (function() {
 
 # Add an init function
 
+We'll need a way for to call an initialization function when the page is ready, to get those dead zombies out of ice storage, into the `zombies` array and displayed:
+
 ## Code
 
 ~~~ {.javascript}
@@ -320,9 +543,12 @@ return {
   init          : function() {
     zombieChair.get('zombies', function(zombiesOnIce) {
       if (zombiesOnIce) {
+        // If there are zombies stored, populate the 
+        // zombies array with those zombies
         zombies = zombiesOnIce.value;
       }
     });
+    // Now, show the zombies
     showZombies();
   },
   // Add a new zombie to the list of zombies
@@ -331,6 +557,8 @@ return {
 ~~~
 
 # ...update the addZombie function...
+
+We need to store the zombie in the Lawnchair as well as the ephemeral array.
 
 ~~~ {.javascript}
   },
@@ -348,6 +576,8 @@ return {
 
 # ...update the resetZombies function...
 
+Nuke the contents of the Lawnchair as well as the array.
+
 ~~~ {.javascript}
 var resetZombies = function() {
     zombies = new Array();
@@ -359,9 +589,12 @@ var resetZombies = function() {
 
 # And add a call to the init function...
 
+### And finally
+
+When the jQM page and its widgets are ready to go, call that `init` function:
+
 ~~~ {.javascript}
 $("#nab-zombie").live('pageinit', function() {
-
   // Initialize our list of zombies
   zombieManager.init();
   // Is Geolocation supported?
