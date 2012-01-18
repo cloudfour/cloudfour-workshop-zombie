@@ -79,6 +79,7 @@ Let's see how fast we can bust out a native Android version of "I Got One!".
     </author>
 
     <preference name="orientation" value="portrait" />
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
 
 </widget>
 ~~~

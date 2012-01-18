@@ -16,6 +16,7 @@
     </author>
 
     <preference name="orientation" value="portrait" />
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
 
     <icon src="app-icons/touch-icon-iphone.png" width="57" height="57"/>
     <icon src="app-icons/touch-icon-ipad.png" width="72" height="72"/>

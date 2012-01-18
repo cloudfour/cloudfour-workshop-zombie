@@ -79,14 +79,11 @@ $("#nab-zombie").live('pageinit', function() {
   zombieManager.init();
   
   var geoHappy = false;
-  if (geo_position_js.init()) {
-    geoHappy = true;
-  }
   $("#got-one").click(function() {
     var now = new Date();
     var how = $("#how-zombie").val();
-    if (geoHappy) {
-      geo_position_js.getCurrentPosition(function(position) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
         zombieManager.addZombie(now, position, how);
       }, function(error) {
         zombieManager.addZombie(now, null, how);
