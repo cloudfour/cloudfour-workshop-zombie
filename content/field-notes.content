@@ -18,7 +18,7 @@ You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma
 
 ## Sing Along if you Like!
 
-TODO: Instructions
+You can optionally follow along in your own text editor as we clean up Sigma Stronghold's (markup) act.
 
 ### Fixing what's broken and getting rid of the weather
 
@@ -123,6 +123,10 @@ We didn't do these things but they might be cool, too:
 
 * [SpriteMe](http://spriteme.org/) for creating CSS sprites. By combining multiple CSS images into individual sprites, you both reduce overall image file size (usually) and reduce the number of HTTP requests (definitely).
 * [Online YUI Compressor](http://www.refresh-sf.com/yui/) Handy tool to help compress and minify CSS and JavaScript.
+
+### Survival Tools
+
+* [Sample .htaccess file](../survival-tools/.htaccess.example).
 
 ## Get ready to go into battle!
 
