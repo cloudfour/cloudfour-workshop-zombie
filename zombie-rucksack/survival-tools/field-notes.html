@@ -111,12 +111,12 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li><a href="#quick-details">Quick Details</a></li>
 <li><a href="#code-snippets">Code Snippets</a></li>
 </ul></li>
-<li><a href="#building-a-quickie-geolocation-test-page">Building a Quickie Geolocation Test Page</a></li>
 </ul></li>
+<li><a href="#do-this-building-a-quickie-geolocation-test-page"><em>Do This</em>: Building a Quickie Geolocation Test Page</a></li>
 </ul></li>
 <li><a href="#a-band-of-brothers">6. A Band of Brothers</a><ul>
-<li><a href="#exercise-1-a-jquery-mobile-page-for-nabbing-zombies">Exercise 1: A jQuery Mobile Page for Nabbing Zombies</a></li>
-<li><a href="#step-2-making-the-data-persistent">Step 2: Making the data persistent</a></li>
+<li><a href="#do-this-a-jquery-mobile-page-for-nabbing-zombies"><em>Do This</em>: A jQuery Mobile Page for Nabbing Zombies</a></li>
+<li><a href="#do-this-persistant-data-with-lawnchair"><em>Do This</em>: Persistant data with Lawnchair</a></li>
 </ul></li>
 <li><a href="#desperate-times-call-for...">7. Desperate Times call for...</a><ul>
 <li><a href="#hybrid-app-development-with-phonegap-and-phonegap-build">Hybrid App Development with PhoneGap and PhoneGap Build</a></li>
@@ -125,7 +125,7 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li><a href="#know-thy-enemy">8. Know Thy Enemy</a><ul>
 <li><a href="#many-device-detection-database-options">Many device detection database options</a></li>
 <li><a href="#some-sample-user-agent-strings">Some sample User Agent strings</a></li>
-<li><a href="#sniffing-em-out">Sniffing 'em out</a></li>
+<li><a href="#do-this-sniffing-em-out"><em>Do This</em>: Sniffing 'em out</a></li>
 <li><a href="#wurfl-code-snipp-lets">WURFL code snipp-lets</a></li>
 </ul></li>
 </ul>
@@ -544,8 +544,9 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(successCallback, errorCallback);<br /><br /><span class="kw">function</span> successCallback(position) {<br />  <span class="co">// Latitude and Longitude are usually what you're after.</span><br />  <span class="co">// They're properties of the coords object on position.</span><br />  alert(<span class="kw">position.coords</span>.<span class="fu">latitude</span> + <span class="ch">', '</span> + <span class="kw">position.coords</span>.<span class="fu">longitude</span>);<br />}<br /><span class="kw">function</span> errorCallback(error) {<br />  <span class="co">// Do something or freak out.</span><br />}</code></pre>
 </section>
 </section>
-<section id="building-a-quickie-geolocation-test-page">
-<h3><a href="#TOC">Building a Quickie Geolocation Test Page</a></h3>
+</section>
+<section id="do-this-building-a-quickie-geolocation-test-page">
+<h2><a href="#TOC"><em>Do This</em>: Building a Quickie Geolocation Test Page</a></h2>
 <ol type="1">
 <li>Open the <code>index.html</code> file in the <code>where-am-i</code> folder in your rucksack.</li>
 <li><p>Find the <code>&lt;script&gt;</code> tags.</p>
@@ -560,7 +561,6 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <hr />
 </section>
 </section>
-</section>
 <section id="a-band-of-brothers">
 <h1><a href="#TOC">6. A Band of Brothers</a></h1>
 <ul>
@@ -568,8 +568,8 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <li><a href="http://jacwright.com/projects/javascript/date_format/">JavaScript Date.Format</a>: A small library to emulate PHP-style date formatting.</li>
 <li><a href="http://code.google.com/p/geo-location-javascript/">Geo-location-js</a>: A very easy cross-platform geolocation library that emulates the W3C Geolocation API.</li>
 </ul>
-<section id="exercise-1-a-jquery-mobile-page-for-nabbing-zombies">
-<h2><a href="#TOC">Exercise 1: A jQuery Mobile Page for Nabbing Zombies</a></h2>
+<section id="do-this-a-jquery-mobile-page-for-nabbing-zombies">
+<h2><a href="#TOC"><em>Do This</em>: A jQuery Mobile Page for Nabbing Zombies</a></h2>
 <ol type="1">
 <li>Find the &quot;I got one!&quot; starting point in your rucksack in <a href="../i-got-one/index.html"><code>i-got-one/index.html</code></a>.</li>
 <li><p>Add a header:</p>
@@ -581,8 +581,8 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <li><p>You can find the finished version of <code>index.html</code> for this step in your rucksack in <a href="../supplemental/band-of-brothers/step1.html"><code>supplemental/band-of-brothers/step1.html</code></a>.</p></li>
 </ol>
 </section>
-<section id="step-2-making-the-data-persistent">
-<h2><a href="#TOC">Step 2: Making the data persistent</a></h2>
+<section id="do-this-persistant-data-with-lawnchair">
+<h2><a href="#TOC"><em>Do This</em>: Persistant data with Lawnchair</a></h2>
 <p>For this step, we use <a href="http://westcoastlogic.com/lawnchair/">Lawnchair</a>, an open-source JS library for storing data on the client:</p>
 <ol type="1">
 <li><p>Edit the <code>zombie.js</code> file.</p></li>
@@ -652,8 +652,8 @@ Mozilla/5.0 (Linux; U; Android 2.1-update1; en-us; SAMSUNG-SGH-I897/I897UCJH7 Bu
 facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
 </code></pre>
 </section>
-<section id="sniffing-em-out">
-<h2><a href="#TOC">Sniffing 'em out</a></h2>
+<section id="do-this-sniffing-em-out">
+<h2><a href="#TOC"><em>Do This</em>: Sniffing 'em out</a></h2>
 <ol type="1">
 <li>Go to the <a href="http://www.tera-wurfl.com/explore/">ScientiaMobile WURFL Explorer</a> on your mobile phone</li>
 <li>Check out the various attributes. What do you see that would be useful?</li>

@@ -14,9 +14,9 @@ You’re in the right place.
 
 * Mobile web performance and semantic markup
 * Responsive web design & Mobile First RWD
-* AppCache and GeoLocation
-* jQuery Mobile
-* PhoneGap
+* ApplicationCache and GeoLocation APIs
+* jQuery Mobile and other third-party tools and libraries
+* PhoneGap Build
 * Device Detection
 
 But before we begin…
@@ -25,7 +25,8 @@ But before we begin…
 
 * Get ye to your rucksack. You can download your `zombie-rucksack` at [http://cloudfour.github.com/rucksack.zip](http://cloudfour.github.com/rucksack.zip).
 * Make sure to have a text editor easily at hand.
-* If you have access to a web server (locally or on a hosting provider), that's super. You *can* simply view example files in your browser, but there are a few exercises you won't be able to participate in.
+* Open the file `survival-tools/field-notes.html` in a web browser. You'll need it!
+* If you have access to a web server (locally or on a hosting provider), that's super. You *can* simply view example files in your browser, but there are a few exercises you won't be able to participate in. See section 0 of your field notes for details.
 
 # Inside of your rucksack
 

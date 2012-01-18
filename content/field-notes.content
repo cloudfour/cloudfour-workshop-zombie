@@ -584,7 +584,7 @@ function errorCallback(error) {
 }
 ~~~
 
-### Building a Quickie Geolocation Test Page
+## *Do This*: Building a Quickie Geolocation Test Page
 
 1. Open the `index.html` file in the `where-am-i` folder in your rucksack.
 2. Find the `<script>` tags. 
@@ -631,7 +631,7 @@ function errorCallback(error) {
 * [JavaScript Date.Format](http://jacwright.com/projects/javascript/date_format/): A small library to emulate PHP-style date formatting.
 * [Geo-location-js](http://code.google.com/p/geo-location-javascript/): A very easy cross-platform geolocation library that emulates the W3C Geolocation API.
 
-## Exercise 1: A jQuery Mobile Page for Nabbing Zombies
+## *Do This*: A jQuery Mobile Page for Nabbing Zombies
 
 1. Find the "I got one!" starting point in your rucksack in [`i-got-one/index.html`](../i-got-one/index.html).
 1. Add a header:
@@ -674,7 +674,7 @@ function errorCallback(error) {
 
 1. You can find the finished version of `index.html` for this step in your rucksack in [`supplemental/band-of-brothers/step1.html`](../supplemental/band-of-brothers/step1.html).
 
-## Step 2: Making the data persistent
+## *Do This*: Persistant data with Lawnchair
 
 For this step, we use [Lawnchair](http://westcoastlogic.com/lawnchair/), an open-source JS library for storing data on the client:
 
@@ -825,7 +825,7 @@ Mozilla/5.0 (Linux; U; Android 2.1-update1; en-us; SAMSUNG-SGH-I897/I897UCJH7 Bu
 facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
 ~~~
 
-## Sniffing 'em out
+## *Do This*: Sniffing 'em out
 
 1. Go to the [ScientiaMobile WURFL Explorer][explorer] on your mobile phone
 2. Check out the various attributes. What do you see that would be useful?
