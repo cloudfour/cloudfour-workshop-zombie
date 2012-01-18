@@ -5,7 +5,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="pandoc" />
-  <meta name="author" content="jQuery Mobile and localStorage" />
+  <meta name="author" content="Frameworks (jQuery Mobile) and localStorage" />
   <title>A Band of Brothers</title>
   <style type="text/css">
 /*<![CDATA[*/
@@ -39,13 +39,24 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <div class="slide titlepage">
   <h1 class="title">A Band of Brothers</h1>
   <p class="author">
-jQuery Mobile and localStorage
+Frameworks (jQuery Mobile) and localStorage
   </p>
+</div>
+<div id="i-got-one" class="slide">
+<h1>I got one!</h1>
+<div class="figure">
+<img src="images/06-3ws.png" /><p class="caption"></p>
+</div>
+<p>Sigma Stronghold leaders want a way for agents in the field to be able to record their zombie kills.</p>
+<p>Each time a soldier nabs a zombie out there, he or she should be able to record when, where and how that zombie met its fate. Kind of like a zombie kill board.</p>
 </div>
 <div id="frameworks" class="slide">
 <h1>Frameworks</h1>
+<div id="so-how-do-we-build-something-like-this">
+<h2>So, how do we build something like this?</h2>
 <p>Sometimes you don't want to keep re-inventing the same zombie-blasting cannon over and over again. We zombie fighters might be a ragtag bunch, but we stick together.</p>
 <p>Frameworks, libraries, tools, templates...all of these can give you a leg up.</p>
+</div>
 </div>
 <div id="jquery-mobile" class="slide">
 <h1>jQuery Mobile</h1>
@@ -53,31 +64,20 @@ jQuery Mobile and localStorage
 <img src="images/06-jquerymobile-com.png" /><p class="caption"></p>
 </div>
 <p>jQuery Mobile is a mobile web framework built atop the popular jQuery library.</p>
+<p>jQuery Mobile works hand-in-hand with semantic HTML5 markup.</p>
 </div>
-<div id="i-got-one" class="slide">
-<h1>I got one!</h1>
-<div class="figure">
-<img src="images/06-3ws.png" /><p class="caption"></p>
-</div>
-<p>Sigma Stronghold leaders want a way for agents in the field to be able to record their zombie kills. Let's whip 'em up a quick mobile web app using the jQuery Mobile framework.</p>
-<p>Find the starting point for the little web app in your rucksack (see your field notes).</p>
-</div>
-<div id="basic-jquery-mobile-page" class="slide">
-<h1>Basic jQuery Mobile Page</h1>
-<div class="figure">
-<img src="images/06-jqm.png" /><p class="caption"></p>
-</div>
+<div id="building-with-jquery-mobile" class="slide">
+<h1>Building with jQuery Mobile</h1>
+<p>Content and applications with jQuery Mobile are constructed from:</p>
 <ul>
-<li>Delineated by HTML5 <code>data-</code> attributes.</li>
+<li>Rather basic HTML5 markup.</li>
+<li>The inclusion of the jQuery core JavaScript library, the jQuery Mobile JS and the jQuery Mobile CSS.</li>
+<li>You can build on this with your own JavaScript, as you please.</li>
 </ul>
-<div id="code">
-<h2>Code</h2>
-<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;html&gt;</span><br /><span class="kw">&lt;head&gt;&lt;/head&gt;</span><br /><span class="kw">&lt;body&gt;</span><br /><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;page&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;&lt;/div&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;&lt;/div&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;footer&quot;</span><span class="kw">&gt;&lt;/div&gt;</span><br /><span class="kw">&lt;/div&gt;</span><br /><span class="kw">&lt;/body&gt;</span><br /><span class="kw">&lt;/html&gt;</span></code></pre>
-</div>
 </div>
 <div id="structure-of-jquery-mobile-page" class="slide">
 <h1>Structure of jQuery Mobile Page</h1>
-<div id="code-1">
+<div id="code">
 <h2>Code</h2>
 <pre class="sourceCode"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span> <br /><span class="kw">&lt;html&gt;</span> <br />    <span class="kw">&lt;head&gt;</span> <br />    <span class="kw">&lt;title&gt;</span>I Got One!<span class="kw">&lt;/title&gt;</span> <br />    <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;</span><span class="kw">&gt;</span><br />    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css&quot;</span> <span class="kw">/&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/jquery-1.6.4.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br />    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br /><span class="kw">&lt;/head&gt;</span><br /><span class="kw">&lt;body&gt;</span> <br /><br /><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;page&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;/div&gt;</span><br /><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;/div&gt;</span><br /><span class="kw">&lt;/div&gt;</span><br /><br /><span class="kw">&lt;/body&gt;</span><br /><span class="kw">&lt;/html&gt;</span></code></pre>
 </div>
@@ -88,40 +88,123 @@ jQuery Mobile and localStorage
 </ul>
 </div>
 </div>
+<div id="jquery-mobile-page-structure" class="slide">
+<h1>jQuery Mobile Page Structure</h1>
+<div class="figure">
+<img src="images/06-jqm.png" /><p class="caption"></p>
+</div>
+<ul>
+<li>Delineated by HTML5 <code>data-</code> attributes.</li>
+<li>Enables content loading via AJAX.</li>
+</ul>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;page&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;&lt;/div&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;&lt;/div&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;footer&quot;</span><span class="kw">&gt;&lt;/div&gt;</span><br /><span class="kw">&lt;/div&gt;</span></code></pre>
+</div>
 <div id="relying-on-our-bros" class="slide">
 <h1>Relying on our bros</h1>
-<div id="code-2">
+<div id="code-1">
 <h2>Code</h2>
 <pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;</span><span class="kw">&gt;</span><br /><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css&quot;</span> <span class="kw">/&gt;</span><br /><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/jquery-1.6.4.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br /><span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br /><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;date.format.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br /><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;http://code.google.com/apis/gears/gears_init.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br /><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;geo.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span><br /><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;zombie.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></code></pre>
-</div>
-<div id="speaker-notes-1">
-<h2>Speaker Notes</h2>
 <ul>
-<li><code>date.format.js</code> is a little library that emulates PHP syntax for date formatting.</li>
-<li>We're using the geolocation-js-library.</li>
+<li><code>date.format.js</code> (Date.format) lets us do much easier date formatting with JavaScript.</li>
+<li>Using Google Gears and the <code>geo-location-js</code> library makes cross-platform geolocation a snap.</li>
 </ul>
+</div>
+</div>
+<div id="ok-lets-go" class="slide">
+<h1>OK, let's go!</h1>
+<p>Find the starting point for the &quot;I got one!&quot; web app in your rucksack, in the <code>i-got-one</code> folder. Go ahead and open <code>index.html</code> in your text editor.</p>
+<div id="our-mission">
+<h3>Our mission</h3>
+<p>The starting point is an empty jQuery Mobile page. We'll need to:</p>
+<ol style="list-style-type: decimal">
+<li>Add a header to see how jQM automatically styles stuff for us.</li>
+<li>Drop in some user interface elements so soldiers can enter their nabbed zombies.</li>
+<li>Add some custom JavaScript</li>
+</ol>
 </div>
 </div>
 <div id="add-a-header" class="slide">
 <h1>Add a header</h1>
 <p>At the outset, our jQM page is empty. Let's put some stuff in it.</p>
+<ul>
+<li>This is in the <code>&lt;div data-role=&quot;header&quot;&gt;</code>.</li>
+<li>jQuery Mobile's CSS and JS will stye this into a (rather iOS-esque) header element.</li>
+</ul>
 <pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;h1&gt;</span>I got one!<span class="kw">&lt;/h1&gt;</span><br /><span class="kw">&lt;/div&gt;</span></code></pre>
+<div id="index.html">
+<h5>index.html</h5>
+</div>
+<div id="try-it-out">
+<h3>Try it out!</h3>
+</div>
+</div>
+<div id="et-voila" class="slide">
+<h1>Et Voila!</h1>
+<p>TODO: Screenshot of header</p>
 </div>
 <div id="putting-the-form-in" class="slide">
 <h1>Putting the &quot;Form&quot; In</h1>
 <p>Easy, but not too exciting. Let's put in some UI elements that will let Sigma Stronghold fighters record a nabbed zombie.</p>
+<p>TODO: Screen shot of just UI elements</p>
+</div>
+<div id="how-do-we-do-that" class="slide">
+<h1>How do we do that?</h1>
+<p>First, let's add a <code>&lt;select&gt;</code> element, just like you would do for any HTML form (except in our case, we don't have a containing form). Add this to the <code>&lt;div data-role=&quot;content&quot;&gt;</code> area.</p>
+<div id="code-2">
+<h2>Code</h2>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;fieldcontain&quot;</span><span class="kw">&gt;</span><br />    <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span>How'd you nab it?<span class="kw">&lt;/label&gt;</span><br />    <span class="kw">&lt;select</span><span class="ot"> name=</span><span class="st">&quot;how-zombie&quot;</span><span class="ot"> id=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;tank&quot;</span><span class="kw">&gt;</span>Tank<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;conflagration&quot;</span><span class="kw">&gt;</span>Conflagration<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;poison&quot;</span><span class="kw">&gt;</span>Poison<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;nukes&quot;</span><span class="kw">&gt;</span>Micro-nukes<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;trickery&quot;</span><span class="kw">&gt;</span>Trickery<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;corrosive&quot;</span><span class="kw">&gt;</span>Corrosive<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;dismemberment&quot;</span><span class="kw">&gt;</span>Dismemberment<span class="kw">&lt;/option&gt;</span><br />    <span class="kw">&lt;/select&gt;</span><br />  <span class="kw">&lt;/div&gt;</span> <br /><br /><span class="kw">&lt;/div&gt;</span></code></pre>
+</div>
+</div>
+<div id="now-well-add-a-button" class="slide">
+<h1>Now, we'll add a button</h1>
+<ul>
+<li>Again, jQuery Mobile will create a styled, mobile-ish button from this <code>&lt;input&gt;</code> field.</li>
+</ul>
 <div id="code-3">
 <h2>Code</h2>
-<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;fieldcontain&quot;</span><span class="kw">&gt;</span><br />    <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span>How'd you nab it?<span class="kw">&lt;/label&gt;</span><br />    <span class="kw">&lt;select</span><span class="ot"> name=</span><span class="st">&quot;how-zombie&quot;</span><span class="ot"> id=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;tank&quot;</span><span class="kw">&gt;</span>Tank<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;conflagration&quot;</span><span class="kw">&gt;</span>Conflagration<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;poison&quot;</span><span class="kw">&gt;</span>Poison<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;nukes&quot;</span><span class="kw">&gt;</span>Micro-nukes<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;trickery&quot;</span><span class="kw">&gt;</span>Trickery<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;corrosive&quot;</span><span class="kw">&gt;</span>Corrosive<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;dismemberment&quot;</span><span class="kw">&gt;</span>Dismemberment<span class="kw">&lt;/option&gt;</span><br />    <span class="kw">&lt;/select&gt;</span><br />  <span class="kw">&lt;/div&gt;</span><br />  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;button&quot;</span><span class="ot"> value=</span><span class="st">&quot;I got one!&quot;</span><span class="ot"> id=</span><span class="st">&quot;got-one&quot;</span><span class="ot"> data-theme=</span><span class="st">&quot;b&quot;</span> <span class="kw">/&gt;</span><br /><br />  <span class="kw">&lt;ul</span><span class="ot"> data-role=</span><span class="st">&quot;listview&quot;</span><span class="ot"> data-inset=</span><span class="st">&quot;true&quot;</span><span class="ot"> id=</span><span class="st">&quot;zombielist&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;/ul&gt;</span><br /><span class="kw">&lt;/div&gt;</span></code></pre>
+<pre class="sourceCode"><code class="sourceCode html">  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;button&quot;</span><span class="ot"> value=</span><span class="st">&quot;I got one!&quot;</span><span class="ot"> id=</span><span class="st">&quot;got-one&quot;</span><span class="ot"> data-theme=</span><span class="st">&quot;b&quot;</span> <span class="kw">/&gt;</span></code></pre>
 </div>
-<div id="speaker-notes-2">
-<h2>Speaker Notes</h2>
+</div>
+<div id="dead-zombie-storage" class="slide">
+<h1>Dead Zombie Storage</h1>
+<p>When a soldier nabs a zombie by tapping the &quot;I Got One!&quot; button, we'll need a place to display the info about that poor zombie. For each zombie nabbed, we'll add a row to a <code>&lt;ul&gt;</code>. Let's create an empty <code>&lt;ul&gt;</code> to hold those incoming zombies. Put this at the very bottom of the <code>&lt;div data-role=&quot;content&quot;&gt;</code></p>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;ul</span><span class="ot"> data-role=</span><span class="st">&quot;listview&quot;</span><span class="ot"> data-inset=</span><span class="st">&quot;true&quot;</span><span class="ot"> id=</span><span class="st">&quot;zombielist&quot;</span><span class="kw">&gt;</span><br /><span class="kw">&lt;/ul&gt;</span><br /><span class="kw">&lt;/div&gt;</span> <span class="co">&lt;!-- /End &lt;div data-role=&quot;content&quot;&gt; --&gt;</span></code></pre>
+<p><code>data-role=&quot;listview&quot;</code> indicates to jQuery Mobile that this list should be styled as a list widget.</p>
+</div>
+<div id="a-list-widget-what-now" class="slide">
+<h1>A list widget what now?</h1>
+<div id="jquery-turns-this">
+<h3>jQuery Turns This</h3>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;ul</span><span class="ot"> data-role=</span><span class="st">&quot;listview&quot;</span><span class="ot"> data-inset=</span><span class="st">&quot;true&quot;</span><span class="ot"> id=</span><span class="st">&quot;zombielist&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;li&gt;&lt;img</span><span class="ot"> src=</span><span class="st">&quot;icons/z2.png&quot;</span><span class="ot"> alt=</span><span class="st">&quot;Killed by micro-nukes&quot;</span> <span class="kw">/&gt;&lt;h3&gt;</span>Zombie Nabbed!<span class="kw">&lt;/h3&gt;</span><br />  <span class="kw">&lt;p&gt;&lt;strong&gt;</span>01/18/12 13:44<span class="kw">&lt;/strong&gt;&lt;/p&gt;</span><br />  <span class="kw">&lt;p&gt;</span>Coordinates: 40.7678494, -73.9853328<span class="kw">&lt;/p&gt;&lt;/li&gt;</span><br /><span class="kw">&lt;/ul&gt;</span></code></pre>
+</div>
+<div id="into-this">
+<h3>Into this</h3>
+<div class="figure">
+<img src="images/06-li-example.png" /><p class="caption"></p>
+</div>
+</div>
+</div>
+<div id="and-now-we-have-a-starting-point" class="slide">
+<h1>And now we have a starting point</h1>
+<div id="figure-screen-shot-of-our-current-page">
+<h2>Figure: Screen shot of our current page</h2>
+<div class="figure">
+<img src="images/06-starting-point.png" /><p class="caption"></p>
+</div>
+</div>
+</div>
+<div id="a-quick-aside-about-browser-support" class="slide">
+<h1>A quick aside about browser support</h1>
 <ul>
-<li>A select list for how the zombie was nabbed</li>
-<li>A button to click</li>
-<li>An empty list to hold incoming zombies</li>
+<li>By its nature, jQuery Mobile practices enthusiastic progressive enhancement</li>
+<li>jQuery Mobile works in browsers that do not support JavaScript</li>
+<li>However, our functionality requirements for the &quot;I got one!&quot; app effectively require JavaScript</li>
 </ul>
+<p>TODO: Screenshot of JS-off</p>
 </div>
+<div id="warning-javascript-ahead" class="slide">
+<h1>Warning: JavaScript ahead</h1>
+<p>TODO: Drawing of warning light</p>
 </div>
 <div id="adding-the-javascript" class="slide">
 <h1>Adding the JavaScript</h1>
@@ -142,7 +225,7 @@ jQuery Mobile and localStorage
 <pre class="sourceCode"><code class="sourceCode javascript">$(<span class="st">&quot;#nab-zombie&quot;</span>).<span class="fu">live</span>(<span class="ch">'pageinit'</span>, <span class="kw">function</span>() {<br />  <span class="kw">var</span> geoHappy = <span class="kw">geo_position_js</span>.<span class="fu">init</span>();<br />  $(<span class="st">&quot;#got-one&quot;</span>).<span class="fu">click</span>(<span class="kw">function</span>() {<br />    <span class="kw">var</span> now = <span class="kw">new</span> <span class="kw">Date</span>();<br />    <span class="kw">var</span> how = $(<span class="st">&quot;#how-zombie&quot;</span>).<span class="fu">val</span>();<br />    <span class="kw">if</span> (geoHappy) {<br />      <span class="kw">geo_position_js</span>.<span class="fu">getCurrentPosition</span>(<span class="kw">function</span>(position) {<br />        <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, position, how);<br />      }, <span class="kw">function</span>(error) {<br />        <span class="kw">console</span>.<span class="fu">log</span>(<span class="st">&quot;Geolocation error: &quot;</span> + <span class="kw">error</span>.<span class="fu">message</span>);<br />        <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, null, how);<br />      });<br />    } <span class="kw">else</span> { <span class="co">// It's also OK to add a zombie w/o location data</span><br />      <span class="kw">zombieManager</span>.<span class="fu">addZombie</span>(now, null, how);<br />    }<br />  });<br />});</code></pre>
 </div>
 </div>
-<div id="try-it-out" class="slide">
+<div id="try-it-out-1" class="slide">
 <h1>Try it out!</h1>
 <div id="figure-i-got-one-on-an-android">
 <h2>Figure: &quot;I got one!&quot; on an Android</h2>

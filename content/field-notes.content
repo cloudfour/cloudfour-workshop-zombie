@@ -609,6 +609,8 @@ Some possible ways to get things working:
 # 6. A Band of Brothers
 
 * [jQuery Mobile](http://www.jquerymobile.com)
+* [JavaScript Date.Format](http://jacwright.com/projects/javascript/date_format/): A small library to emulate PHP-style date formatting.
+* [Geo-location-js](http://code.google.com/p/geo-location-javascript/): A very easy cross-platform geolocation library that emulates the W3C Geolocation API.
 
 ## Exercise 1: A jQuery Mobile Page for Nabbing Zombies
 

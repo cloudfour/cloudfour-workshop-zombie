@@ -1,7 +1,18 @@
 % A Band of Brothers
-% jQuery Mobile and localStorage
+% Frameworks (jQuery Mobile) and localStorage
+
+
+# I got one!
+
+![](images/06-3ws.png)
+
+Sigma Stronghold leaders want a way for agents in the field to be able to record their zombie kills.
+
+Each time a soldier nabs a zombie out there, he or she should be able to record when, where and how that zombie met its fate. Kind of like a zombie kill board.
 
 # Frameworks
+
+## So, how do we build something like this?
 
 Sometimes you don't want to keep re-inventing the same zombie-blasting cannon over and over again. We zombie fighters might be a ragtag bunch, but we stick together.
 
@@ -13,34 +24,16 @@ Frameworks, libraries, tools, templates...all of these can give you a leg up.
 
 jQuery Mobile is a mobile web framework built atop the popular jQuery library.
 
-# I got one!
+jQuery Mobile works hand-in-hand with semantic HTML5 markup.
 
-![](images/06-3ws.png)
+# Building with jQuery Mobile
 
-Sigma Stronghold leaders want a way for agents in the field to be able to record their zombie kills. Let's whip 'em up a quick mobile web app using the jQuery Mobile framework.
+Content and applications with jQuery Mobile are constructed from:
 
-Find the starting point for the little web app in your rucksack (see your field notes).
+* Rather basic HTML5 markup.
+* The inclusion of the jQuery core JavaScript library, the jQuery Mobile JS and the jQuery Mobile CSS.
+* You can build on this with your own JavaScript, as you please.
 
-# Basic jQuery Mobile Page
-
-![](images/06-jqm.png)
-
-* Delineated by HTML5 `data-` attributes.
-
-## Code
-
-~~~ {.html}
-<html>
-<head></head>
-<body>
-<div data-role="page">
-  <div data-role="header"></div>
-  <div data-role="content"></div>
-  <div data-role="footer"></div>
-</div>
-</body>
-</html>
-~~~
 
 # Structure of jQuery Mobile Page
 
@@ -74,6 +67,21 @@ Find the starting point for the little web app in your rucksack (see your field 
 
 * Note the maximum-scale zoom thing here
 
+# jQuery Mobile Page Structure
+
+![](images/06-jqm.png)
+
+* Delineated by HTML5 `data-` attributes.
+* Enables content loading via AJAX.
+
+~~~ {.html}
+<div data-role="page">
+  <div data-role="header"></div>
+  <div data-role="content"></div>
+  <div data-role="footer"></div>
+</div>
+~~~
+
 # Relying on our bros
 
 ## Code
@@ -89,14 +97,27 @@ Find the starting point for the little web app in your rucksack (see your field 
 <script src="zombie.js"></script>
 ~~~
 
-## Speaker Notes
+* `date.format.js` (Date.format) lets us do much easier date formatting with JavaScript.
+* Using Google Gears and the `geo-location-js` library makes cross-platform geolocation a snap.
 
-* `date.format.js` is a little library that emulates PHP syntax for date formatting.
-* We're using the geolocation-js-library.
+# OK, let's go!
+
+Find the starting point for the "I got one!" web app in your rucksack, in the `i-got-one` folder. Go ahead and open `index.html` in your text editor.
+
+### Our mission
+
+The starting point is an empty jQuery Mobile page. We'll need to:
+
+1. Add a header to see how jQM automatically styles stuff for us.
+2. Drop in some user interface elements so soldiers can enter their nabbed zombies.
+3. Add some custom JavaScript
 
 # Add a header
 
 At the outset, our jQM page is empty. Let's put some stuff in it.
+
+* This is in the `<div data-role="header">`.
+* jQuery Mobile's CSS and JS will stye this into a (rather iOS-esque) header element.
 
 ~~~ {.html}
 <div data-role="header">
@@ -104,9 +125,23 @@ At the outset, our jQM page is empty. Let's put some stuff in it.
 </div>
 ~~~
 
+##### index.html
+
+### Try it out!
+
+# Et Voila!
+
+TODO: Screenshot of header
+
 # Putting the "Form" In
 
 Easy, but not too exciting. Let's put in some UI elements that will let Sigma Stronghold fighters record a nabbed zombie.
+
+TODO: Screen shot of just UI elements
+
+# How do we do that?
+
+First, let's add a `<select>` element, just like you would do for any HTML form (except in our case, we don't have a containing form). Add this to the `<div data-role="content">` area.
 
 ## Code
 
@@ -123,19 +158,66 @@ Easy, but not too exciting. Let's put in some UI elements that will let Sigma St
       <option value="corrosive">Corrosive</option>
       <option value="dismemberment">Dismemberment</option>
     </select>
-  </div>
-  <input type="button" value="I got one!" id="got-one" data-theme="b" />
-  
-  <ul data-role="listview" data-inset="true" id="zombielist">
-  </ul>
+  </div> 
+
 </div>
 ~~~
 
-## Speaker Notes
+# Now, we'll add a button
 
-* A select list for how the zombie was nabbed
-* A button to click
-* An empty list to hold incoming zombies
+* Again, jQuery Mobile will create a styled, mobile-ish button from this `<input>` field.
+
+## Code 
+
+~~~ {.html}
+  <input type="button" value="I got one!" id="got-one" data-theme="b" />
+~~~
+
+# Dead Zombie Storage
+
+When a soldier nabs a zombie by tapping the "I Got One!" button, we'll need a place to display the info about that poor zombie. For each zombie nabbed, we'll add a row to a `<ul>`. Let's create an empty `<ul>` to hold those incoming zombies. Put this at the very bottom of the `<div data-role="content">`
+
+~~~ {.html}
+<ul data-role="listview" data-inset="true" id="zombielist">
+</ul>
+</div> <!-- /End <div data-role="content"> -->
+~~~
+
+`data-role="listview"` indicates to jQuery Mobile that this list should be styled as a list widget.
+
+# A list widget what now?
+
+### jQuery Turns This
+
+~~~ {.html}
+<ul data-role="listview" data-inset="true" id="zombielist">
+  <li><img src="icons/z2.png" alt="Killed by micro-nukes" /><h3>Zombie Nabbed!</h3>
+  <p><strong>01/18/12 13:44</strong></p>
+  <p>Coordinates: 40.7678494, -73.9853328</p></li>
+</ul>
+~~~
+
+### Into this
+
+![](images/06-li-example.png)
+
+# And now we have a starting point
+
+## Figure: Screen shot of our current page
+
+![](images/06-starting-point.png)
+
+# A quick aside about browser support
+
+* By its nature, jQuery Mobile practices enthusiastic progressive enhancement
+* jQuery Mobile works in browsers that do not support JavaScript
+* However, our functionality requirements for the "I got one!" app effectively require JavaScript
+
+TODO: Screenshot of JS-off
+
+# Warning: JavaScript ahead
+
+TODO: Drawing of warning light
 
 # Adding the JavaScript
 
