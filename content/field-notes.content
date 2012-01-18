@@ -3,11 +3,11 @@
 
 ----------------
 
-# 2. Boot Camp
+# Boot Camp
 
 ## Sigma Stronghold Web Site
 
-You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma-stronghold-website/index.html`.
+You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma-stronghold-website/index.html`. [Here's what it looks like right now](../sigma-stronghold-website/).
 
 ## Weapons
 
@@ -16,28 +16,15 @@ You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma
 * [Smush.it](http://smush.it)
 * [SpriteMe](http://spriteme.org/)
 
-## Using the W3C Validator
+## Sing Along if you Like!
 
-1. Go to the [W3C validator][w3cv].
-2. You can either use the *Validate by File Upload* tab (and upload `index.html`) or you can use the *Validate by Direct Input* tab and copy-and-paste the source of the page (using the *View Source...* tool in your browser).
-
-## Using ySlow
-
-1. View the `index.html` file in your modern web browser (suggest either Chrome or Firefox for now).
-2. Activate the ySlow plugin/extension. Usually this is done by clicking a little icon.
-3. Click the *run test* button to start running tests.
-4. To see how big the whole page is, check out the *Statistics* tab.
-5. For individual details about each resource, try the *Components* tab.
-
-## Exercise Step 1
+TODO: Instructions
 
 ### Fixing what's broken and getting rid of the weather
 
 1. Find and fix the broken nested `<span>` elements in index.html. Use the [W3C validator][w3cv] as your guide.
 2. Remove the entire weather widget (`div#weather`).
 3. Revalidate/repeat until you see the green happy color.
-
-## Exercise Step 2
 
 ### The missing bits
 
@@ -54,8 +41,6 @@ You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma
     c. Add this code just after the Google fonts stylesheet `<link>`s: `<link rel="shortcut icon" href="favicon.ico" />`
 
 [w3cv]: http://validator.w3.org/ "W3C Validator"
-
-## Exercise Step 3
 
 ### Deflabbing some images
 
@@ -78,15 +63,11 @@ You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma
     c. Upload the image `images/moon.jpg` (in your rucksack, in the `sigma-stronghold-website` directory).
     d. Replace `images/moon.jpg` with the smushed version.
 
-## Exercise Step 4 (A bit more advanced): Apache configuration
+### Server-side optimization in Apache 2.x 
 
-### Warning: This will only work if you have an apache 2.x web server running and 
+A sample .htaccess file.
 
-1. Create a new file in the sigma stronghold web site directory called `.htaccess`.
-2. We suggest adding the configuration sections individually, save and test to minimize web-server-borkage likelihood.
-3. Enable GZIP:
-
-    
+        # Turn on and configure GZIP compression
         <IfModule mod_deflate.c>
          SetOutputFilter DEFLATE
          # Don’t compress
@@ -97,9 +78,8 @@ You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma
          Header append Vary User-Agent
          </IfModule>
         </IfModule>
-
-4. Create far-future expires headers:
-
+        
+        # Use mod_expires to set future expirations on resources
         <IfModule mod_expires.c>
         ExpiresActive On
         ExpiresByType text/html "access plus 1 seconds"
@@ -112,23 +92,37 @@ You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma
         ExpiresByType image/x-icon "access plus 2 years"
         </IfModule>
 
-5. Turn off ETags:
-
+        # Turn off ETags
         FileETag none
-        
-## Exercise Step 5
 
-1. Most of this semantic work has been done for you (so much typing!). Find the cleaned up HTML and CSS in your rucksack, in [`supplemental/boot-camp/semantic`](../supplemental/boot-camp/semantic).
-2. Replace the `index.html` and `styles.css` files in your `sigma-stronghold-website` with these versions.
-3. Minify the CSS.
-    a. Go to the [Online YUI Compressor](http://www.refresh-sf.com/yui/).
-    b. Paste the contents of the CSS file (make sure to use the updated/semantically-better version you just moved into the site's directory!) into the field.
-    c. Make sure to set the *file type* drop-down to `CSS`.
-    d. Don't worry about any other settings; click *COMPRESS*.
-    e. Copy the resulting, compressed CSS into the `styles.css` file (overwriting what was there) and save.
-    f. Be sure to test!
-    
 [More information about enabling GZIP on apache](http://www.techiepark.com/tutorials/how-to-enable-gzip-compression-in-apache-server-to-speed-up-website/)
+
+## Getting all semantic up in here
+
+### Some of the things improved in the Sigma Stronghold markup:
+
+* `div#navigation` changed to `<nav>` element.
+* `#page` id removed from `<div>`; used parent-child selector instead.
+* Convert `#footer` to `<footer>` element.
+* Reduce structural complexity in news items: removed extra `<div>`s.
+* Replaced `span.grey` with `<small>`
+* `span.black` was pointless; no style for it. Also some other useless spans in the news divs.
+* Instead of `.red`, used an `<em>` element, which carries semantic meaning.
+* Removed extra internal `<div>`s from sidebar.
+* `#left` and `#right` renamed to `#main` and `#sidebar`, respectively
+
+### Taking it further...
+
+We didn't do these things but they might be cool, too:
+
+* Address could be hCard
+* `<article>` element instead of `<div>` for news items.
+* `<section>` element instead of other `<div>`s.
+
+### Other Tools for Training
+
+* [SpriteMe](http://spriteme.org/) for creating CSS sprites. By combining multiple CSS images into individual sprites, you both reduce overall image file size (usually) and reduce the number of HTTP requests (definitely).
+* [Online YUI Compressor](http://www.refresh-sf.com/yui/) Handy tool to help compress and minify CSS and JavaScript.
 
 -----------------------
 

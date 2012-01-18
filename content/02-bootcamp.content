@@ -7,6 +7,8 @@
 
 > You got fat, Gomer Pyle.
 
+Before we even let you *look* at zombie enemies, we're going to have to slim you down and smarten you up.
+
 # We don't want to end up dead
 
 ![](images/02-zombie-device.png)
@@ -19,14 +21,8 @@
 
 Syrupy Flash videos, gimmicky news tickers, potbellied background images, slapdash syndicated content, an irrelevant weather forecast: the crap we fling around on web pages these days is the internet equivalent of corn syrup, trans fat or bubblegum. Lots of empty calories clogging the arteries of the web.
 
-
 * The mobile web is like an economy seat. 
 * Average size of a web page is growing.
-
-## Speaker Notes
-
-* The mobile web is like an economy seat. Just because you're fat doesn't make it bigger. You've got to squeeze that ass into that seat.
-* Average size of a web page is growing: Need Jason input.
 
 # We got sloppy
 
@@ -40,10 +36,6 @@ We web devs are, as a species, not exactly lazy. But we will take advantage of s
 * Broadband is "everywhere."
 * The customer doesn't want to hear about optimization, anyway. It's not sexy.
 
-## Speaker Notes
-
-We liked to hear ourselves talk about making sure we wrote valid code, but, in the end, browsers put up with crap markup anyway. Customers don't exactly beat down your door to get web pages that the W3C validator has approved. They don't tend to look underneath the proverbial rug.
-
 It's like we forgot to zip up our fly, and no one really notices anyway.
 
 # Unfortunately
@@ -56,21 +48,15 @@ When it comes to the mobile web, the notion of valid markup and lean pages is no
 * Slow costs money.
 * Invalid markup costs money.
 
-## Speaker Notes
+# Sigma Stronghold
 
-How? Frustrated users bail. Trust me. Throw too many bytes at a mobile user and she will be fiscally punished. 
-
-We know better (progressive enhancement, semantic markup), but we're eating Twinkies and pork rinds anyway.
-
-Back to the basics. Cleaning up our act. It's boot camp time.
-
-# In the name of morale improvement
+![](images/02-sigma-start.png)
 
 Sergeant Dingus built a [web site](../zombie-rucksack/sigma-stronghold-website) to cheer on his comrades in basic training at the Sigma Stronghold. This ragtag group of underdogs is the neighborhood's only hope against the staggering Zombie horde.
 
 Our recruit Gomer and this web site are not too different. Bloated, lazy and distracted.
 
-## It's your mission...
+## It's our mission...
 
 ### Help Gomer and Sgt. Dingus get this sorry sack of a web page in fighting trim.
 
@@ -80,16 +66,6 @@ We can hear your collective moans. What? Cleaning up and optimizing a *desktop* 
 
 However, the first battle is with ourselves. To become refined zombie-squishing machines, we must practice relentless discipline. 
 
-## Speaker Notes
-
-Performance optimization and cleanup may seem like it  is a far tangent from mobile web design and development. However, the two are tightly interlocked.
-
-* Smaller, faster web sites are by their very nature much more mobile friendly.
-
-## Find your copy in your pack
-
-Everyone open your `zombie-rucksack`. Find the `sigma-stronghold-website` folder and open the `index.html` file in a *modern* web browser.
-
 # Doing a bit of Recon
 
 We need to load our weapons:
@@ -97,25 +73,9 @@ We need to load our weapons:
 1. [ySlow](http://developer.yahoo.com/yslow/)
 2. [W3C validator](http://validator.w3.org/)
 
-# What's broken?
+## What's broken?
 
 First things first. Let's go see what's presently broken.
-
-Go to the [W3C validator](http://validator.w3.org/) and use the instructions in your field notebook to evaluate the present condition of `index.html`.
-
-
-## Speaker Notes
-
-* Run through W3C validator
-* Assuming HTML5 things (pointing out the differences in markup)
-* Main things broken are poorly-nested `span`s and a bunch of stuff with the weather widget.
-* Let's start with the `spans`.
-
-An example: `<html>` tag not required. In fact, you can have a closing `</html>` tag without an opening one. Once I did that, unintentionally. This caused crash after crash on certain...what was it...Android browsers? Ask Bryan.
-
-Could have a missing image or script.
-As an aside: HTTP requests.
-Broken markup is like a loose cannon. It might not go off, but it might.
 
 # Getting the big, heavy picture
 
@@ -125,6 +85,16 @@ Let's see just how overweight this page is by using the *ySlow* tool.
 
 ![](images/02-yslow.png)
 
+# What's the plan?
+
+The Sigma Stronghold web site won't hold up to the zombie horde packing around that much lard. Once we fix the code to make it valid, what else can we do to make this tub of guts a bit more spritely?
+
+### A motley list of tactical weapons
+
+* Optimize images.
+* Discuss goals of content and evaluate what is core and vital versus what is really just fluff. De-fluff.
+* Reduce the amount of HTTP requests by CSS concatenation and fixing 404s.
+* Perform some server-side tuning.
 
 # What flab can we trim?
 
@@ -153,19 +123,7 @@ Let's see just how overweight this page is by using the *ySlow* tool.
 * It's URL parameters aren't escaped (causes validation errors).
 * Since the end of the civilized world, it hasn't really worked.
 
-> I thought the weather widget looked kinda cool. But I admit, it hasn't had an accurate weather reading since four months ago. I guess AccuWeather HQ must have suffered a direct hit. -- Sgt. Dingus
-
-# Cleanup Part I
-
-![](images/02-mop.png)
-
-* Get those `<span>`s untangled.
-* Remove the weather widget.
-* Run ySlow again.
-
-# Status Check!
-
-Check in with ySlow to see how we're doing now.
+> I thought the weather widget looked kinda cool. But I admit, it hasn't had an accurate weather reading since four months ago. I guess AccuWeather HQ must have suffered a direct hit. — Sgt. Dingus
 
 # Google font madness
 
@@ -175,30 +133,15 @@ Check in with ySlow to see how we're doing now.
     * You can do this by separating the font names with the pipe `|` character.
     * e.g. 
         
-        ~~~~
+        ~~~ {.html}
         <link href="http://fonts.googleapis.com/css?family=Cool+Font|Squiggly" rel="stylesheet">
-        ~~~~
+        ~~~
 
 # Some of these things seem to be missing
 
 * `home.css` doesn't exist, yet there is a stylesheet link to it.
 * There's a reference to `blip.jpg` in a CSS rule, yet that file doesn't exist (the correct image filename is `blip.png`).
 * The site doesn't have a favico(n). We can fix that...
-
-## Speaker notes
-
-* 404s are expensive. They represent a needless round-trip request to the server, only to have the client come up empty-handed.
-* This is especially painful for mobile browsers, which have limited concurrent connections available.
-
-# Cleanup Part II
-
-* Remove link to non-existent `home.css`.
-* Update the CSS to use the correct `blip.png`.
-* Copy in the favico(n) and add a `<link>` tag for it.
-
-## Speaker Notes
-
-* p.s. You can also concatenate font weights
 
 # It's still fat
 
@@ -208,49 +151,23 @@ OK, we've sort of got the site in regulation uniform, but it's still bulgy. *Let
 * The zombie girl image is hideous, and it is also very large.
 * The moon background image is ginormous.
 
-> I'm a bit embarrassed about the HQ address image. I didn't even really think about it. Also, we've had some of the troops complain about too much specific zombie imagery on the site overall. I'm attached to the moon photo because my brother took it and I think it's kind of cool. The other images, meh. — Sgt. Dingus
+# Let's fix it
 
-## Speaker Notes
-
-* Use WebInspector to look at the Network tab.
-* `Zombie Girl` is totally enormous. 
-
-# Step III: It's a *very* full moon
+> I'm a bit embarrassed about the HQ address image. I didn't even really think about it. Also, we've had some of the troops complain about too much specific zombie imagery on the site overall. I'm attached to the moon photo because my brother took it and I think it's kind of cool. The other images, meh. — Sgt. Dingus.
 
 * Moon image is ~135k by itself.
 * Let's optimize that image using [smush.it](http://smush.it).
 * Let's also get rid of the zombie girl drawing and convert the address to text.
 
-## Speaker Notes
-
-* Talk about the give-and-take of iterative design and compromises in mobile development.
-
-# Status Check!
+# What now?
 
 * Several of ySlow's grading criteria require web server configuration adjustments.
-* Don't panic. Most are easy.
 
 ## Quick hits in .htaccess
 
-By tuning our apache server configuration, we can work minor wonders.
+By tuning our apache server configuration, we can work minor wonders. Let me show you a bit of trickery!
 
-* GZIP: If you're not gzipping, please, for the love of all that is good in the world, consider it.
-* ETag configuration: By which we mean, don't use eTags.
-* Far-future expires headers: Let browsers cache!
-
-## Speaker Notes
-
-Run ySlow again to show fatness. Look at images in *components* tab.
-
-# This might not be a sing-along
-
-Let's walk through the Sigma Stronghold web site and do some server-side tweaks. We'll be looking at a version hosted on a real web host.
-
-If your computer is running an apache server*, you can probably do some of these changes locally.
-
-(*If you are using a recent Mac, you have apache.)
-
-# .htaccess Magic
+# Apache configuration magic
 
 ## Enabling GZIP compression in apache...
 
@@ -271,41 +188,36 @@ If your computer is running an apache server*, you can probably do some of these
 
 # Setting far-future expires headers
 
-    <IfModule mod_expires.c>
-    ExpiresActive On
-    ExpiresByType text/html "access plus 1 seconds"
-    ExpiresByType image/gif "access plus 2 years"
-    ExpiresByType image/jpeg "access plus 2 years"
-    ExpiresByType image/png "access plus 2 years"
-    ExpiresByType text/css "access plus 2 years"
-    ExpiresByType text/javascript "access plus 2 years"
-    ExpiresByType application/x-javascript "access plus 2 years"
-    ExpiresByType image/x-icon "access plus 2 years"
-    </IfModule>
+~~~~
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/html "access plus 1 seconds"
+ExpiresByType image/gif "access plus 2 years"
+ExpiresByType image/jpeg "access plus 2 years"
+ExpiresByType image/png "access plus 2 years"
+ExpiresByType text/css "access plus 2 years"
+ExpiresByType text/javascript "access plus 2 years"
+ExpiresByType application/x-javascript "access plus 2 years"
+ExpiresByType image/x-icon "access plus 2 years"
+</IfModule>
+~~~~
 
 # Turning off ETags
 
-    FileETag none
+~~~~
+FileETag none
+~~~~
 
-# Status Check!
-
-* We can't control the HTTP Response headers for Google fonts; pity.
-* Using a CDN is a bit beyond the scope of this project.
-* We're not using so-called "cookie-free domains."
-
-## But!
+# Nice!
 
 * Our total page weight has gone from ~530k to ~111k on an empty cache...
-* ...and a primed cache means the page is only 2.6k!
+* ...and a primed cache means the page is only a few kilobytes!
 
 ### Nice work, soldiers!
 
-## Speaker Notes
+# Advanced Boot Camp
 
-* My copy of .htaccess is in the step 2 folder; need to remove the .test extension.
-* Explain cookie-free domains and cookies.
-
-# Getting a bit more sophisticated
+## Getting ready for the mobile leap by getting semantic
 
 You're no longer quite as green, soldiers, but there is still work to be done.
 
@@ -349,12 +261,6 @@ We're dealing with an HTML5 document, but not taking advantage of all that HTML5
 </h3>
 ~~~
 
-## Speaker notes
-
-* `div` is extraneous
-* We can use `<em>` and style with CSS.
-
-
 # Getting more semantic, cont.
 
 ### Instead of
@@ -379,9 +285,9 @@ We're dealing with an HTML5 document, but not taking advantage of all that HTML5
 
 ## Speaker Notes
 
-* What we meant by `grey` is quieter, de-emphasized text. Using a `small` element makes sense, and we can style it to be grey using CSS.
+Pull up the old and new HTML side by side?
 
-# What we did for you
+### What we did for you
 
 * `div#navigation` changed to `<nav>` element.
 * `#page` id removed from `<div>`; used parent-child selector instead.
@@ -393,7 +299,7 @@ We're dealing with an HTML5 document, but not taking advantage of all that HTML5
 * Removed extra internal `<div>`s from sidebar.
 * `#left` and `#right` renamed to `#main` and `#sidebar`, respectively
 
-# Taking it further...
+### Taking it further...
 
 We didn't do these things but they might be cool, too:
 
@@ -401,24 +307,12 @@ We didn't do these things but they might be cool, too:
 * `<article>` element instead of `<div>` for news items.
 * `<section>` element instead of other `<div>`s.
 
-# Wrapping it all up
-
-1. Drop the updated HTML and CSS into place (check out the changes if you'd like!).
-2. Minify the CSS using the [Online YUI Compressor](http://www.refresh-sf.com/yui/).
-
 # What have we accomplished here?
 
 * Much, much fewer bytes.
 * Much cleaner markup.
 * We've identified content that is important to us. We've sloughed off some less important stuff.
 * We've gone semantic.
-
-## Speaker Notes
-
-* Much, much fewer bytes. *Faster sites make happier customers.*
-* Much cleaner markup. More stable, less crashy. *More reliable and predictable.*
-* We've identified content that is important to us. We've sloughed off some less important stuff. *Content focus*.
-* We've gone semantic. *Makes adaptation to devices much easier.*
 
 # Congratulations
 

@@ -50,6 +50,7 @@ Mobile web performance and semantic markup
 <blockquote>
 <p>You got fat, Gomer Pyle.</p>
 </blockquote>
+<p>Before we even let you <em>look</em> at zombie enemies, we're going to have to slim you down and smarten you up.</p>
 </div>
 <div id="we-dont-want-to-end-up-dead" class="slide">
 <h1>We don't want to end up dead</h1>
@@ -70,13 +71,6 @@ Mobile web performance and semantic markup
 <li>The mobile web is like an economy seat.</li>
 <li>Average size of a web page is growing.</li>
 </ul>
-<div id="speaker-notes">
-<h2>Speaker Notes</h2>
-<ul>
-<li>The mobile web is like an economy seat. Just because you're fat doesn't make it bigger. You've got to squeeze that ass into that seat.</li>
-<li>Average size of a web page is growing: Need Jason input.</li>
-</ul>
-</div>
 </div>
 <div id="we-got-sloppy" class="slide">
 <h1>We got sloppy</h1>
@@ -91,10 +85,6 @@ Mobile web performance and semantic markup
 <li>Broadband is &quot;everywhere.&quot;</li>
 <li>The customer doesn't want to hear about optimization, anyway. It's not sexy.</li>
 </ul>
-</div>
-<div id="speaker-notes-1">
-<h2>Speaker Notes</h2>
-<p>We liked to hear ourselves talk about making sure we wrote valid code, but, in the end, browsers put up with crap markup anyway. Customers don't exactly beat down your door to get web pages that the W3C validator has approved. They don't tend to look underneath the proverbial rug.</p>
 <p>It's like we forgot to zip up our fly, and no one really notices anyway.</p>
 </div>
 </div>
@@ -109,19 +99,16 @@ Mobile web performance and semantic markup
 <li>Slow costs money.</li>
 <li>Invalid markup costs money.</li>
 </ul>
-<div id="speaker-notes-2">
-<h2>Speaker Notes</h2>
-<p>How? Frustrated users bail. Trust me. Throw too many bytes at a mobile user and she will be fiscally punished.</p>
-<p>We know better (progressive enhancement, semantic markup), but we're eating Twinkies and pork rinds anyway.</p>
-<p>Back to the basics. Cleaning up our act. It's boot camp time.</p>
 </div>
+<div id="sigma-stronghold" class="slide">
+<h1>Sigma Stronghold</h1>
+<div class="figure">
+<img src="images/02-sigma-start.png" /><p class="caption"></p>
 </div>
-<div id="in-the-name-of-morale-improvement" class="slide">
-<h1>In the name of morale improvement</h1>
 <p>Sergeant Dingus built a <a href="../zombie-rucksack/sigma-stronghold-website">web site</a> to cheer on his comrades in basic training at the Sigma Stronghold. This ragtag group of underdogs is the neighborhood's only hope against the staggering Zombie horde.</p>
 <p>Our recruit Gomer and this web site are not too different. Bloated, lazy and distracted.</p>
-<div id="its-your-mission...">
-<h2>It's your mission...</h2>
+<div id="its-our-mission...">
+<h2>It's our mission...</h2>
 <div id="help-gomer-and-sgt.-dingus-get-this-sorry-sack-of-a-web-page-in-fighting-trim.">
 <h3>Help Gomer and Sgt. Dingus get this sorry sack of a web page in fighting trim.</h3>
 </div>
@@ -131,17 +118,6 @@ Mobile web performance and semantic markup
 <h1>OK, Grasshopper</h1>
 <p>We can hear your collective moans. What? Cleaning up and optimizing a <em>desktop</em> web site is akin to KP or repetitive calisthenics.</p>
 <p>However, the first battle is with ourselves. To become refined zombie-squishing machines, we must practice relentless discipline.</p>
-<div id="speaker-notes-3">
-<h2>Speaker Notes</h2>
-<p>Performance optimization and cleanup may seem like it is a far tangent from mobile web design and development. However, the two are tightly interlocked.</p>
-<ul>
-<li>Smaller, faster web sites are by their very nature much more mobile friendly.</li>
-</ul>
-</div>
-<div id="find-your-copy-in-your-pack">
-<h2>Find your copy in your pack</h2>
-<p>Everyone open your <code>zombie-rucksack</code>. Find the <code>sigma-stronghold-website</code> folder and open the <code>index.html</code> file in a <em>modern</em> web browser.</p>
-</div>
 </div>
 <div id="doing-a-bit-of-recon" class="slide">
 <h1>Doing a bit of Recon</h1>
@@ -150,21 +126,9 @@ Mobile web performance and semantic markup
 <li><a href="http://developer.yahoo.com/yslow/">ySlow</a></li>
 <li><a href="http://validator.w3.org/">W3C validator</a></li>
 </ol>
-</div>
-<div id="whats-broken" class="slide">
-<h1>What's broken?</h1>
+<div id="whats-broken">
+<h2>What's broken?</h2>
 <p>First things first. Let's go see what's presently broken.</p>
-<p>Go to the <a href="http://validator.w3.org/">W3C validator</a> and use the instructions in your field notebook to evaluate the present condition of <code>index.html</code>.</p>
-<div id="speaker-notes-4">
-<h2>Speaker Notes</h2>
-<ul>
-<li>Run through W3C validator</li>
-<li>Assuming HTML5 things (pointing out the differences in markup)</li>
-<li>Main things broken are poorly-nested <code>span</code>s and a bunch of stuff with the weather widget.</li>
-<li>Let's start with the <code>spans</code>.</li>
-</ul>
-<p>An example: <code>&lt;html&gt;</code> tag not required. In fact, you can have a closing <code>&lt;/html&gt;</code> tag without an opening one. Once I did that, unintentionally. This caused crash after crash on certain...what was it...Android browsers? Ask Bryan.</p>
-<p>Could have a missing image or script. As an aside: HTTP requests. Broken markup is like a loose cannon. It might not go off, but it might.</p>
 </div>
 </div>
 <div id="getting-the-big-heavy-picture" class="slide">
@@ -175,6 +139,19 @@ Mobile web performance and semantic markup
 <div class="figure">
 <img src="images/02-yslow.png" /><p class="caption"></p>
 </div>
+</div>
+</div>
+<div id="whats-the-plan" class="slide">
+<h1>What's the plan?</h1>
+<p>The Sigma Stronghold web site won't hold up to the zombie horde packing around that much lard. Once we fix the code to make it valid, what else can we do to make this tub of guts a bit more spritely?</p>
+<div id="a-motley-list-of-tactical-weapons">
+<h3>A motley list of tactical weapons</h3>
+<ul>
+<li>Optimize images.</li>
+<li>Discuss goals of content and evaluate what is core and vital versus what is really just fluff. De-fluff.</li>
+<li>Reduce the amount of HTTP requests by CSS concatenation and fixing 404s.</li>
+<li>Perform some server-side tuning.</li>
+</ul>
 </div>
 </div>
 <div id="what-flab-can-we-trim" class="slide">
@@ -205,23 +182,8 @@ Mobile web performance and semantic markup
 <li>Since the end of the civilized world, it hasn't really worked.</li>
 </ul>
 <blockquote>
-<p>I thought the weather widget looked kinda cool. But I admit, it hasn't had an accurate weather reading since four months ago. I guess AccuWeather HQ must have suffered a direct hit. -- Sgt. Dingus</p>
+<p>I thought the weather widget looked kinda cool. But I admit, it hasn't had an accurate weather reading since four months ago. I guess AccuWeather HQ must have suffered a direct hit. — Sgt. Dingus</p>
 </blockquote>
-</div>
-<div id="cleanup-part-i" class="slide">
-<h1>Cleanup Part I</h1>
-<div class="figure">
-<img src="images/02-mop.png" /><p class="caption"></p>
-</div>
-<ul>
-<li>Get those <code>&lt;span&gt;</code>s untangled.</li>
-<li>Remove the weather widget.</li>
-<li>Run ySlow again.</li>
-</ul>
-</div>
-<div id="status-check" class="slide">
-<h1>Status Check!</h1>
-<p>Check in with ySlow to see how we're doing now.</p>
 </div>
 <div id="google-font-madness" class="slide">
 <h1>Google font madness</h1>
@@ -232,8 +194,7 @@ Mobile web performance and semantic markup
 <ul>
 <li>You can do this by separating the font names with the pipe <code>|</code> character.</li>
 <li><p>e.g.</p>
-<pre><code>&lt;link href=&quot;http://fonts.googleapis.com/css?family=Cool+Font|Squiggly&quot; rel=&quot;stylesheet&quot;&gt;
-</code></pre></li>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Cool+Font|Squiggly&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span></code></pre></li>
 </ul></li>
 </ul>
 </div>
@@ -244,27 +205,6 @@ Mobile web performance and semantic markup
 <li>There's a reference to <code>blip.jpg</code> in a CSS rule, yet that file doesn't exist (the correct image filename is <code>blip.png</code>).</li>
 <li>The site doesn't have a favico(n). We can fix that...</li>
 </ul>
-<div id="speaker-notes-5">
-<h2>Speaker notes</h2>
-<ul>
-<li>404s are expensive. They represent a needless round-trip request to the server, only to have the client come up empty-handed.</li>
-<li>This is especially painful for mobile browsers, which have limited concurrent connections available.</li>
-</ul>
-</div>
-</div>
-<div id="cleanup-part-ii" class="slide">
-<h1>Cleanup Part II</h1>
-<ul>
-<li>Remove link to non-existent <code>home.css</code>.</li>
-<li>Update the CSS to use the correct <code>blip.png</code>.</li>
-<li>Copy in the favico(n) and add a <code>&lt;link&gt;</code> tag for it.</li>
-</ul>
-<div id="speaker-notes-6">
-<h2>Speaker Notes</h2>
-<ul>
-<li>p.s. You can also concatenate font weights</li>
-</ul>
-</div>
 </div>
 <div id="its-still-fat" class="slide">
 <h1>It's still fat</h1>
@@ -274,59 +214,30 @@ Mobile web performance and semantic markup
 <li>The zombie girl image is hideous, and it is also very large.</li>
 <li>The moon background image is ginormous.</li>
 </ul>
+</div>
+<div id="lets-fix-it" class="slide">
+<h1>Let's fix it</h1>
 <blockquote>
-<p>I'm a bit embarrassed about the HQ address image. I didn't even really think about it. Also, we've had some of the troops complain about too much specific zombie imagery on the site overall. I'm attached to the moon photo because my brother took it and I think it's kind of cool. The other images, meh. — Sgt. Dingus</p>
+<p>I'm a bit embarrassed about the HQ address image. I didn't even really think about it. Also, we've had some of the troops complain about too much specific zombie imagery on the site overall. I'm attached to the moon photo because my brother took it and I think it's kind of cool. The other images, meh. — Sgt. Dingus.</p>
 </blockquote>
-<div id="speaker-notes-7">
-<h2>Speaker Notes</h2>
-<ul>
-<li>Use WebInspector to look at the Network tab.</li>
-<li><code>Zombie Girl</code> is totally enormous.</li>
-</ul>
-</div>
-</div>
-<div id="step-iii-its-a-very-full-moon" class="slide">
-<h1>Step III: It's a <em>very</em> full moon</h1>
 <ul>
 <li>Moon image is ~135k by itself.</li>
 <li>Let's optimize that image using <a href="http://smush.it">smush.it</a>.</li>
 <li>Let's also get rid of the zombie girl drawing and convert the address to text.</li>
 </ul>
-<div id="speaker-notes-8">
-<h2>Speaker Notes</h2>
-<ul>
-<li>Talk about the give-and-take of iterative design and compromises in mobile development.</li>
-</ul>
 </div>
-</div>
-<div id="status-check-1" class="slide">
-<h1>Status Check!</h1>
+<div id="what-now" class="slide">
+<h1>What now?</h1>
 <ul>
 <li>Several of ySlow's grading criteria require web server configuration adjustments.</li>
-<li>Don't panic. Most are easy.</li>
 </ul>
 <div id="quick-hits-in-.htaccess">
 <h2>Quick hits in .htaccess</h2>
-<p>By tuning our apache server configuration, we can work minor wonders.</p>
-<ul>
-<li>GZIP: If you're not gzipping, please, for the love of all that is good in the world, consider it.</li>
-<li>ETag configuration: By which we mean, don't use eTags.</li>
-<li>Far-future expires headers: Let browsers cache!</li>
-</ul>
-</div>
-<div id="speaker-notes-9">
-<h2>Speaker Notes</h2>
-<p>Run ySlow again to show fatness. Look at images in <em>components</em> tab.</p>
+<p>By tuning our apache server configuration, we can work minor wonders. Let me show you a bit of trickery!</p>
 </div>
 </div>
-<div id="this-might-not-be-a-sing-along" class="slide">
-<h1>This might not be a sing-along</h1>
-<p>Let's walk through the Sigma Stronghold web site and do some server-side tweaks. We'll be looking at a version hosted on a real web host.</p>
-<p>If your computer is running an apache server*, you can probably do some of these changes locally.</p>
-<p>(*If you are using a recent Mac, you have apache.)</p>
-</div>
-<div id="htaccess-magic" class="slide">
-<h1>.htaccess Magic</h1>
+<div id="apache-configuration-magic" class="slide">
+<h1>Apache configuration magic</h1>
 <div id="enabling-gzip-compression-in-apache...">
 <h2>Enabling GZIP compression in apache...</h2>
 <div id="apache-2.x">
@@ -365,34 +276,22 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <pre><code>FileETag none
 </code></pre>
 </div>
-<div id="status-check-2" class="slide">
-<h1>Status Check!</h1>
-<ul>
-<li>We can't control the HTTP Response headers for Google fonts; pity.</li>
-<li>Using a CDN is a bit beyond the scope of this project.</li>
-<li>We're not using so-called &quot;cookie-free domains.&quot;</li>
-</ul>
-<div id="but">
-<h2>But!</h2>
+<div id="nice" class="slide">
+<h1>Nice!</h1>
 <ul>
 <li>Our total page weight has gone from ~530k to ~111k on an empty cache...</li>
-<li>...and a primed cache means the page is only 2.6k!</li>
+<li>...and a primed cache means the page is only a few kilobytes!</li>
 </ul>
 <div id="nice-work-soldiers">
 <h3>Nice work, soldiers!</h3>
 </div>
 </div>
-<div id="speaker-notes-10">
-<h2>Speaker Notes</h2>
-<ul>
-<li>My copy of .htaccess is in the step 2 folder; need to remove the .test extension.</li>
-<li>Explain cookie-free domains and cookies.</li>
-</ul>
-</div>
-</div>
-<div id="getting-a-bit-more-sophisticated" class="slide">
-<h1>Getting a bit more sophisticated</h1>
+<div id="advanced-boot-camp" class="slide">
+<h1>Advanced Boot Camp</h1>
+<div id="getting-ready-for-the-mobile-leap-by-getting-semantic">
+<h2>Getting ready for the mobile leap by getting semantic</h2>
 <p>You're no longer quite as green, soldiers, but there is still work to be done.</p>
+</div>
 </div>
 <div id="some-of-the-markup-is-a-bit-stupid" class="slide">
 <h1>Some of the markup is a bit stupid</h1>
@@ -422,13 +321,6 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <h3>Use</h3>
 <pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;h3&gt;</span>Kill confirm: <br />  <span class="kw">&lt;em&gt;</span>zombie #421<span class="kw">&lt;/em&gt;</span> <br />  has been neutralized<br /><span class="kw">&lt;/h3&gt;</span></code></pre>
 </div>
-<div id="speaker-notes-11">
-<h2>Speaker notes</h2>
-<ul>
-<li><code>div</code> is extraneous</li>
-<li>We can use <code>&lt;em&gt;</code> and style with CSS.</li>
-</ul>
-</div>
 </div>
 <div id="getting-more-semantic-cont." class="slide">
 <h1>Getting more semantic, cont.</h1>
@@ -440,15 +332,11 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <h3>Use</h3>
 <pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;small&gt;</span><br />  20120621//1935 :: A/V Wonk Phil Starken<br /><span class="kw">&lt;/small&gt;</span></code></pre>
 </div>
-<div id="speaker-notes-12">
+<div id="speaker-notes">
 <h2>Speaker Notes</h2>
-<ul>
-<li>What we meant by <code>grey</code> is quieter, de-emphasized text. Using a <code>small</code> element makes sense, and we can style it to be grey using CSS.</li>
-</ul>
-</div>
-</div>
-<div id="what-we-did-for-you" class="slide">
-<h1>What we did for you</h1>
+<p>Pull up the old and new HTML side by side?</p>
+<div id="what-we-did-for-you">
+<h3>What we did for you</h3>
 <ul>
 <li><code>div#navigation</code> changed to <code>&lt;nav&gt;</code> element.</li>
 <li><code>#page</code> id removed from <code>&lt;div&gt;</code>; used parent-child selector instead.</li>
@@ -461,8 +349,8 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <li><code>#left</code> and <code>#right</code> renamed to <code>#main</code> and <code>#sidebar</code>, respectively</li>
 </ul>
 </div>
-<div id="taking-it-further..." class="slide">
-<h1>Taking it further...</h1>
+<div id="taking-it-further...">
+<h3>Taking it further...</h3>
 <p>We didn't do these things but they might be cool, too:</p>
 <ul>
 <li>Address could be hCard</li>
@@ -470,12 +358,7 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <li><code>&lt;section&gt;</code> element instead of other <code>&lt;div&gt;</code>s.</li>
 </ul>
 </div>
-<div id="wrapping-it-all-up" class="slide">
-<h1>Wrapping it all up</h1>
-<ol style="list-style-type: decimal">
-<li>Drop the updated HTML and CSS into place (check out the changes if you'd like!).</li>
-<li>Minify the CSS using the <a href="http://www.refresh-sf.com/yui/">Online YUI Compressor</a>.</li>
-</ol>
+</div>
 </div>
 <div id="what-have-we-accomplished-here" class="slide">
 <h1>What have we accomplished here?</h1>
@@ -485,15 +368,6 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <li>We've identified content that is important to us. We've sloughed off some less important stuff.</li>
 <li>We've gone semantic.</li>
 </ul>
-<div id="speaker-notes-13">
-<h2>Speaker Notes</h2>
-<ul>
-<li>Much, much fewer bytes. <em>Faster sites make happier customers.</em></li>
-<li>Much cleaner markup. More stable, less crashy. <em>More reliable and predictable.</em></li>
-<li>We've identified content that is important to us. We've sloughed off some less important stuff. <em>Content focus</em>.</li>
-<li>We've gone semantic. <em>Makes adaptation to devices much easier.</em></li>
-</ul>
-</div>
 </div>
 <div id="congratulations" class="slide">
 <h1>Congratulations</h1>

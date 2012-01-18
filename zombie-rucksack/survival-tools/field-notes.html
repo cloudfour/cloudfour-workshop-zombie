@@ -38,10 +38,10 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </header>
 <hr />
 <section id="boot-camp">
-<h1>2. Boot Camp</h1>
+<h1>Boot Camp</h1>
 <section id="sigma-stronghold-web-site">
 <h2>Sigma Stronghold Web Site</h2>
-<p>You'll find the Sigma Stronghold web site landing page in <code>zombie-rucksack/sigma-stronghold-website/index.html</code>.</p>
+<p>You'll find the Sigma Stronghold web site landing page in <code>zombie-rucksack/sigma-stronghold-website/index.html</code>. <a href="../sigma-stronghold-website/">Here's what it looks like right now</a>.</p>
 </section>
 <section id="weapons">
 <h2>Weapons</h2>
@@ -52,25 +52,9 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li><a href="http://spriteme.org/">SpriteMe</a></li>
 </ul>
 </section>
-<section id="using-the-w3c-validator">
-<h2>Using the W3C Validator</h2>
-<ol type="1">
-<li>Go to the <a href="http://validator.w3.org/" title="W3C Validator">W3C validator</a>.</li>
-<li>You can either use the <em>Validate by File Upload</em> tab (and upload <code>index.html</code>) or you can use the <em>Validate by Direct Input</em> tab and copy-and-paste the source of the page (using the <em>View Source...</em> tool in your browser).</li>
-</ol>
-</section>
-<section id="using-yslow">
-<h2>Using ySlow</h2>
-<ol type="1">
-<li>View the <code>index.html</code> file in your modern web browser (suggest either Chrome or Firefox for now).</li>
-<li>Activate the ySlow plugin/extension. Usually this is done by clicking a little icon.</li>
-<li>Click the <em>run test</em> button to start running tests.</li>
-<li>To see how big the whole page is, check out the <em>Statistics</em> tab.</li>
-<li>For individual details about each resource, try the <em>Components</em> tab.</li>
-</ol>
-</section>
-<section id="exercise-step-1">
-<h2>Exercise Step 1</h2>
+<section id="sing-along-if-you-like">
+<h2>Sing Along if you Like!</h2>
+<p>TODO: Instructions</p>
 <section id="fixing-whats-broken-and-getting-rid-of-the-weather">
 <h3>Fixing what's broken and getting rid of the weather</h3>
 <ol type="1">
@@ -79,9 +63,6 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li>Revalidate/repeat until you see the green happy color.</li>
 </ol>
 </section>
-</section>
-<section id="exercise-step-2">
-<h2>Exercise Step 2</h2>
 <section id="the-missing-bits">
 <h3>The missing bits</h3>
 <ol type="1">
@@ -101,9 +82,6 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ol></li>
 </ol>
 </section>
-</section>
-<section id="exercise-step-3">
-<h2>Exercise Step 3</h2>
 <section id="deflabbing-some-images">
 <h3>Deflabbing some images</h3>
 <ol type="1">
@@ -119,62 +97,73 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ol></li>
 </ol>
 </section>
-</section>
-<section id="exercise-step-4-a-bit-more-advanced-apache-configuration">
-<h2>Exercise Step 4 (A bit more advanced): Apache configuration</h2>
-<section id="warning-this-will-only-work-if-you-have-an-apache-2.x-web-server-running-and">
-<h3>Warning: This will only work if you have an apache 2.x web server running and</h3>
-<ol type="1">
-<li>Create a new file in the sigma stronghold web site directory called <code>.htaccess</code>.</li>
-<li>We suggest adding the configuration sections individually, save and test to minimize web-server-borkage likelihood.</li>
-<li><p>Enable GZIP:</p>
-<pre><code>&lt;IfModule mod_deflate.c&gt;
- SetOutputFilter DEFLATE
- # Don’t compress
- SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
- SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
- #Dealing with proxy servers
- &lt;IfModule mod_headers.c&gt;
- Header append Vary User-Agent
- &lt;/IfModule&gt;
-&lt;/IfModule&gt;
-</code></pre></li>
-<li><p>Create far-future expires headers:</p>
-<pre><code>&lt;IfModule mod_expires.c&gt;
-ExpiresActive On
-ExpiresByType text/html &quot;access plus 1 seconds&quot;
-ExpiresByType image/gif &quot;access plus 2 years&quot;
-ExpiresByType image/jpeg &quot;access plus 2 years&quot;
-ExpiresByType image/png &quot;access plus 2 years&quot;
-ExpiresByType text/css &quot;access plus 2 years&quot;
-ExpiresByType text/javascript &quot;access plus 2 years&quot;
-ExpiresByType application/x-javascript &quot;access plus 2 years&quot;
-ExpiresByType image/x-icon &quot;access plus 2 years&quot;
-&lt;/IfModule&gt;
-</code></pre></li>
-<li><p>Turn off ETags:</p>
-<pre><code>FileETag none
-</code></pre></li>
-</ol>
-</section>
-</section>
-<section id="exercise-step-5">
-<h2>Exercise Step 5</h2>
-<ol type="1">
-<li>Most of this semantic work has been done for you (so much typing!). Find the cleaned up HTML and CSS in your rucksack, in <a href="../supplemental/boot-camp/semantic"><code>supplemental/boot-camp/semantic</code></a>.</li>
-<li>Replace the <code>index.html</code> and <code>styles.css</code> files in your <code>sigma-stronghold-website</code> with these versions.</li>
-<li>Minify the CSS.
-<ol type="a">
-<li>Go to the <a href="http://www.refresh-sf.com/yui/">Online YUI Compressor</a>.</li>
-<li>Paste the contents of the CSS file (make sure to use the updated/semantically-better version you just moved into the site's directory!) into the field.</li>
-<li>Make sure to set the <em>file type</em> drop-down to <code>CSS</code>.</li>
-<li>Don't worry about any other settings; click <em>COMPRESS</em>.</li>
-<li>Copy the resulting, compressed CSS into the <code>styles.css</code> file (overwriting what was there) and save.</li>
-<li>Be sure to test!</li>
-</ol></li>
-</ol>
+<section id="server-side-optimization-in-apache-2.x">
+<h3>Server-side optimization in Apache 2.x</h3>
+<p>A sample .htaccess file.</p>
+<pre><code>    # Turn on and configure GZIP compression
+    &lt;IfModule mod_deflate.c&gt;
+     SetOutputFilter DEFLATE
+     # Don’t compress
+     SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+     SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+     #Dealing with proxy servers
+     &lt;IfModule mod_headers.c&gt;
+     Header append Vary User-Agent
+     &lt;/IfModule&gt;
+    &lt;/IfModule&gt;
+
+    # Use mod_expires to set future expirations on resources
+    &lt;IfModule mod_expires.c&gt;
+    ExpiresActive On
+    ExpiresByType text/html &quot;access plus 1 seconds&quot;
+    ExpiresByType image/gif &quot;access plus 2 years&quot;
+    ExpiresByType image/jpeg &quot;access plus 2 years&quot;
+    ExpiresByType image/png &quot;access plus 2 years&quot;
+    ExpiresByType text/css &quot;access plus 2 years&quot;
+    ExpiresByType text/javascript &quot;access plus 2 years&quot;
+    ExpiresByType application/x-javascript &quot;access plus 2 years&quot;
+    ExpiresByType image/x-icon &quot;access plus 2 years&quot;
+    &lt;/IfModule&gt;
+
+    # Turn off ETags
+    FileETag none
+</code></pre>
 <p><a href="http://www.techiepark.com/tutorials/how-to-enable-gzip-compression-in-apache-server-to-speed-up-website/">More information about enabling GZIP on apache</a></p>
+</section>
+</section>
+<section id="getting-all-semantic-up-in-here">
+<h2>Getting all semantic up in here</h2>
+<section id="some-of-the-things-improved-in-the-sigma-stronghold-markup">
+<h3>Some of the things improved in the Sigma Stronghold markup:</h3>
+<ul>
+<li><code>div#navigation</code> changed to <code>&lt;nav&gt;</code> element.</li>
+<li><code>#page</code> id removed from <code>&lt;div&gt;</code>; used parent-child selector instead.</li>
+<li>Convert <code>#footer</code> to <code>&lt;footer&gt;</code> element.</li>
+<li>Reduce structural complexity in news items: removed extra <code>&lt;div&gt;</code>s.</li>
+<li>Replaced <code>span.grey</code> with <code>&lt;small&gt;</code></li>
+<li><code>span.black</code> was pointless; no style for it. Also some other useless spans in the news divs.</li>
+<li>Instead of <code>.red</code>, used an <code>&lt;em&gt;</code> element, which carries semantic meaning.</li>
+<li>Removed extra internal <code>&lt;div&gt;</code>s from sidebar.</li>
+<li><code>#left</code> and <code>#right</code> renamed to <code>#main</code> and <code>#sidebar</code>, respectively</li>
+</ul>
+</section>
+<section id="taking-it-further...">
+<h3>Taking it further...</h3>
+<p>We didn't do these things but they might be cool, too:</p>
+<ul>
+<li>Address could be hCard</li>
+<li><code>&lt;article&gt;</code> element instead of <code>&lt;div&gt;</code> for news items.</li>
+<li><code>&lt;section&gt;</code> element instead of other <code>&lt;div&gt;</code>s.</li>
+</ul>
+</section>
+<section id="other-tools-for-training">
+<h3>Other Tools for Training</h3>
+<ul>
+<li><a href="http://spriteme.org/">SpriteMe</a> for creating CSS sprites. By combining multiple CSS images into individual sprites, you both reduce overall image file size (usually) and reduce the number of HTTP requests (definitely).</li>
+<li><a href="http://www.refresh-sf.com/yui/">Online YUI Compressor</a> Handy tool to help compress and minify CSS and JavaScript.</li>
+</ul>
 <hr />
+</section>
 </section>
 </section>
 <section id="release-the-hounds">
