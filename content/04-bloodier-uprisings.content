@@ -17,7 +17,7 @@ Yes, this is true, but so what?
 
 On average, mobile is still slower than desktop. We shouldn’t be delivering larger sites to mobile users.
 
-# Why are they bigger?
+# Why are they so big?
 
 * Hiding a background image by using display:none on the element will not prevent it from downloading.
 * Large desktop-size images are delivered to all devices even if they never use the image at that size.

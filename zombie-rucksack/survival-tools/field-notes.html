@@ -99,6 +99,34 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li><a href="#if-you-have-any-woes...">If you have any woes...</a></li>
 </ul></li>
 </ul></li>
+<li><a href="#bloodier-uprisings">4. Bloodier Uprisings</a><ul>
+<li><a href="#techniques-for-handling-ie-in-rwd">Techniques for handling IE in RWD</a><ul>
+<li><a href="#conditional-comments">Conditional Comments</a><ul>
+<li><a href="#references">References</a></li>
+</ul></li>
+<li><a href="#javascript-polyfills">JavaScript Polyfills</a></li>
+</ul></li>
+<li><a href="#preventing-extra-downloads-when-using-css-background-images">Preventing extra downloads when using CSS background images</a><ul>
+<li><a href="#things-that-work">Things that work:</a></li>
+<li><a href="#newer-browsers-support-more">Newer browsers support more</a><ul>
+<li><a href="#references-1">References</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#responsive-imgs">Responsive IMGs</a></li>
+<li><a href="#option-1-javascript-checks-screen-width-and-sets-a-cookie">Option 1: JavaScript checks screen width and sets a cookie</a><ul>
+<li><a href="#best-examples">Best examples</a></li>
+<li><a href="#problems">Problems</a></li>
+</ul></li>
+<li><a href="#option-2-noscript-tag">Option 2: Noscript tag</a><ul>
+<li><a href="#best-examples-1">Best examples</a></li>
+<li><a href="#problems-1">Problems</a></li>
+</ul></li>
+<li><a href="#option-3-sencha.io-src">Option 3: Sencha.io SRC</a><ul>
+<li><a href="#best-examples-2">Best examples</a></li>
+<li><a href="#problems-2">Problems</a></li>
+</ul></li>
+<li><a href="#other-rwd-challenges">Other RWD Challenges</a></li>
+</ul></li>
 <li><a href="#a-honed-killing-machine">5. A Honed Killing Machine</a><ul>
 <li><a href="#applicationcache">ApplicationCache!</a><ul>
 <li><a href="#more-information-about-applicationcache">More Information about ApplicationCache</a></li>
@@ -460,6 +488,145 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ol>
 <hr />
 </section>
+</section>
+</section>
+<section id="bloodier-uprisings">
+<h1><a href="#TOC">4. Bloodier Uprisings</a></h1>
+<section id="techniques-for-handling-ie-in-rwd">
+<h2><a href="#TOC">Techniques for handling IE in RWD</a></h2>
+<section id="conditional-comments">
+<h3><a href="#TOC">Conditional Comments</a></h3>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;taps.css&quot;</span> <span class="kw">/&gt;</span><br /><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;layout.css&quot;</span><span class="ot"> media=</span><span class="st">&quot;all and min-width: 481px)&quot;</span><span class="kw">&gt;</span><br /><span class="co">&lt;!--[if (lt IE 9) &amp; (!IEMobile)]&gt;</span><br /><span class="co">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;layout.css&quot; media=&quot;all&quot; /&gt;</span><br /><span class="co">&lt;![endif]--&gt;</span></code></pre>
+<p>The conditional comments only apply to IE versions less than 9 (lt IE 9) and those that are not IE Mobile (!IEMobile). IE9 supports media queries and since this is a mobile first responsive web design, the fact IE Mobile doesn’t support the media query is fine. It should get the mobile (default) layout regardess.</p>
+<section id="references">
+<h4><a href="#TOC">References</a></h4>
+<ul>
+<li><a href="http://adactio.com/journal/4494/">Windows mobile media queries</a></li>
+<li><a href="http://msdn.microsoft.com/en-us/library/ie/ms537512(v=vs.85).aspx">Microsoft documentation on conditional comments syntax</a></li>
+</ul>
+</section>
+</section>
+<section id="javascript-polyfills">
+<h3><a href="#TOC">JavaScript Polyfills</a></h3>
+<p>These solutions use JavaScript to make Internet Explorer understand some basic media queries.</p>
+<ul>
+<li><a href="https://github.com/scottjehl/Respond">Respond.js</a></li>
+<li><a href="http://code.google.com/p/css3-mediaqueries-js/">css3-mediaqueries-js</a></li>
+</ul>
+<p>Respond.js was created by Scott Jehl and the Filament Group for the Boston Globe project. It is the fastest solution, but only supports a subset of media query options.</p>
+<p>When using these polyfills, test carefully and verify the scripts perform adequately for you on older computers. The scripts are fairly intensive.</p>
+</section>
+</section>
+<section id="preventing-extra-downloads-when-using-css-background-images">
+<h2><a href="#TOC">Preventing extra downloads when using CSS background images</a></h2>
+<section id="things-that-work">
+<h3><a href="#TOC">Things that work:</a></h3>
+<ul>
+<li>Use display:none on the parent element</li>
+<li>Media queries that don’t overlap:</li>
+</ul>
+<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:</span> <span class="er">500px)</span> <span class="dv">{</span><br />    <span class="fl">#logo</span> <span class="kw">{background-image:</span><span class="dt">url(</span><span class="st">'small.png'</span><span class="dt">)</span><span class="kw">;}</span><br /><span class="dv">}</span><br /><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:</span> <span class="er">501px)</span> <span class="dv">{</span><br />    <span class="fl">#logo</span> <span class="kw">{background-image:</span><span class="dt">url(</span><span class="st">'large.png'</span><span class="dt">)</span><span class="kw">;}</span><br /><span class="dv">}</span></code></pre>
+</section>
+<section id="newer-browsers-support-more">
+<h3><a href="#TOC">Newer browsers support more</a></h3>
+<p>As of iOS 4.2:</p>
+<ul>
+<li>background-image:none on the element will override image without an extra download</li>
+<li>replacing a background-image will only result in one image being downloaded</li>
+</ul>
+<p>Be aware that even in the latest browsers, display:none on element still downloads images.</p>
+<section id="references-1">
+<h4><a href="#TOC">References</a></h4>
+<ul>
+<li><a href="http://www.cloudfour.com/examples/mediaqueries/image-test/">Media Query Image Download Test</a></li>
+<li><a href="http://aaronmentele.com/2012/01/15/media-queries-for-mobile-browsers/">Media Queries for Mobile Devices</a></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="responsive-imgs">
+<h2><a href="#TOC">Responsive IMGs</a></h2>
+<p>Big challege for RWD: img tags only allow one src attribute.</p>
+</section>
+<section id="option-1-javascript-checks-screen-width-and-sets-a-cookie">
+<h2><a href="#TOC">Option 1: JavaScript checks screen width and sets a cookie</a></h2>
+<section id="best-examples">
+<h3><a href="#TOC">Best examples</a></h3>
+<ul>
+<li><a href="https://github.com/filamentgroup/Responsive-Images">Responsive Images JS</a></li>
+<li><a href="http://adaptive-images.com/">Adaptive Images</a></li>
+</ul>
+</section>
+<section id="problems">
+<h3><a href="#TOC">Problems</a></h3>
+<ul>
+<li>Sometimes the browser requests images before the JavaScript executes which means the cookie isn’t set. Race condition.</li>
+<li>What is the fallback if cookies aren’t enabled?</li>
+<li>Relies on the current way browsers load content which could change. No contract between the browser and the developer.</li>
+</ul>
+</section>
+</section>
+<section id="option-2-noscript-tag">
+<h2><a href="#TOC">Option 2: Noscript tag</a></h2>
+<ul>
+<li>Put small image inside noscript tag.</li>
+<li>Put info for other images in data-* on noscript tag.</li>
+<li>Use javascript to build correct img tag for screen size.</li>
+</ul>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;noscript</span><span class="ot"> data-large=</span><span class="st">&quot;Koala.jpg&quot;</span><span class="ot"> data-small=</span><span class="st">&quot;Koala-small.jpg&quot;</span><span class="ot"> data-alt=</span><span class="st">&quot;Koala&quot;</span><span class="kw">&gt;</span><br /><span class="kw">&lt;img</span><span class="ot"> scr=</span><span class="st">&quot;Koala.jpg&quot;</span><span class="ot"> alt=</span><span class="st">&quot;Koala&quot;</span> <span class="kw">/&gt;</span><br /><span class="kw">&lt;/noscript&gt;</span></code></pre>
+<section id="best-examples-1">
+<h3><a href="#TOC">Best examples</a></h3>
+<ul>
+<li><a href="http://www.monoliitti.com/images/">Testing Responsive Images</a></li>
+<li><a href="http://www.headlondon.com/our-thoughts/technology/posts/creating-responsive-images-using-the-noscript-tag">Creating responsive images using the noscript tag</a></li>
+</ul>
+</section>
+<section id="problems-1">
+<h3><a href="#TOC">Problems</a></h3>
+<ul>
+<li>Markup has been changed in a way that only makes sense for this solution.</li>
+<li>No longer semantic.</li>
+</ul>
+</section>
+</section>
+<section id="option-3-sencha.io-src">
+<h2><a href="#TOC">Option 3: Sencha.io SRC</a></h2>
+<ul>
+<li>Use or build a service like Sencha.io SRC to deliver the correctly sized image:</li>
+</ul>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;http://src.sencha.io/[ORIGINAL IMAGE URL]&quot;</span> <span class="kw">/&gt;</span></code></pre>
+<section id="best-examples-2">
+<h3><a href="#TOC">Best examples</a></h3>
+<ul>
+<li><a href="http://www.sencha.com/learn/how-to-use-src-sencha-io/">How to use src.sencha.io</a></li>
+<li><a href="http://www.sencha.com/blog/sencha-io-src-update/">Sencha.io Src Update</a></li>
+</ul>
+</section>
+<section id="problems-2">
+<h3><a href="#TOC">Problems</a></h3>
+<ul>
+<li>All of your images are being routed through a third-party service.</li>
+<li>How does Sencha know what size image to use anyways? It relies on device detection which some developers dislike.</li>
+</ul>
+</section>
+</section>
+<section id="other-rwd-challenges">
+<h2><a href="#TOC">Other RWD Challenges</a></h2>
+<ul>
+<li>Delivering the right size video</li>
+<li>Breakpoint management and zoom levels
+<ul>
+<li>Look at using EMs for media queries like <a href="http://paulrobertlloyd.com/">Paul Robert Lloyd’s site</a></li>
+</ul></li>
+<li>Progressively enhancing from XHTML-MP to HTML5</li>
+<li>Content ordering (Flexbox can’t come soon enough)
+<ul>
+<li><a href="http://www.the-haystack.com/2012/01/04/learn-you-a-flexbox/">Learn You a Flexbox for Great Good!</a></li>
+</ul></li>
+<li>Third-party widgets (particularly ad networks)</li>
+<li>Integrating with content management systems</li>
+</ul>
+<hr />
 </section>
 </section>
 <section id="a-honed-killing-machine">
