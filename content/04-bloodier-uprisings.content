@@ -1,7 +1,9 @@
 % Bloodier Uprisings
 % Mobile First Responsive Web Design
 
-# Media queries often hide problems
+# Most RWD sites are not mobile First
+
+![](images/04-rwd-compare.png)
 
 Reviewed over 100 RWD sites. Found that:
 
@@ -15,7 +17,7 @@ Yes, this is true, but so what?
 
 On average, mobile is still slower than desktop. We shouldn’t be delivering larger sites to mobile users.
 
-# Why are the bigger?
+# Why are they bigger?
 
 * Hiding a background image by using display:none on the element will not prevent it from downloading.
 * Large desktop-size images are delivered to all devices even if they never use the image at that size.
@@ -29,6 +31,25 @@ This causes means the fallback for images will be the small images, not the larg
 
 > The absence of support for media queries is in fact the first media query. — Bryan Rieger
 
+# The first zombie was IE
+
+IE8 and below don’t support media queries.
+
+~~~ {.html}
+<link rel="stylesheet" type="text/css" href="taps.css" />
+<link rel="stylesheet" type="text/css" href="layout.css" media="all and min-width: 481px)">
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" type="text/css" href="layout.css" media="all" />
+<![endif]-->
+~~~
+
+# Or use a JavaScript Polyfill
+
+* Respond.js: [https://github.com/scottjehl/Respond]( https://github.com/scottjehl/Respond)
+* CSS3MediaQueries.js: [http://code.google.com/p/css3-mediaqueries-js/](http://code.google.com/p/css3-mediaqueries-js/)
+
+Respond is faster, but only contains a subset of CSS support. Start with it. 
+
 # Prevent extra background image downloads
 
 Things that work:
@@ -37,11 +58,11 @@ Things that work:
 * Media queries that don’t overlap:
 
 ~~~ {.css }
-@media all and (min-width: 501px) {
-    #test5 {background-image:url('test5-desktop.png');width:200px;height:75px;}
-}
 @media all and (max-width: 500px) {
-    #test5 {background-image:url('test5-mobile.png');width:200px;height:75px;}
+    #logo {background-image:url('small.png');}
+}
+@media all and (min-width: 501px) {
+    #logo {background-image:url('large.png');}
 }
 ~~~
 
@@ -49,15 +70,86 @@ Things that work:
 
 As of iOS 4.2:
 
-* background-image:none in mediaquery on the element will override image
-* overriding a background-image will only result in one image being downloaded
+* background-image:none on the element will override image without an extra download
+* replacing a background-image will only result in one image being downloaded
 
 But, display:none on element still downloads images.
 
 # What about image tags?
 
-* <img> can only have one src attribute
-* First load conundrum — server doesn’t know what to do
+* &lt;img&gt; can only have one src attribute
+* First load problem -- server knows nothing about the client. How do you know what src to use?
+* Delivering the right-sized image can mean huge savings (up to 80%) on file size.
+
+Many people are seeking a solution for responsive images.
+
+# Responsive images: Option 1
+
+* JavaScript checks the width of the screen and sets a cookie.
+* Image requests contain that cookie giving the server the information it needs.
+* .htaccess file on server checks for cookie and routes requests to the correct file depending on screen size.
+
+# Option 1 Problems
+
+* Sometimes the browser requests images before the JavaScript executes which means the cookie isn’t set. Race condition.
+* What is the fallback if cookies aren’t enabled?
+* Relies on the current way browsers load content which could change. No contract between the browser and the developer.
+
+# Responsive images: Option 2
+
+* Put small image inside noscript tag.
+* Put info for other images in data-* on noscript tag.
+* Use javascript to build correct img tag for screen size.
+
+~~~ {.html}
+<noscript data-large="Koala.jpg" data-small="Koala-small.jpg" data-alt="Koala">
+<img scr="Koala.jpg" alt="Koala" />
+</noscript>
+~~~
+
+# Option 2 Problems
+
+* Markup has been changed in a way that only makes sense for this solution.
+* No longer semantic.
+
+# Responsive images: Option 3
+
+* Use or build a service like Sencha.io SRC to deliver the correctly sized image:
+
+~~~ {.html}
+<img src="http://src.sencha.io/[ORIGINAL IMAGE URL]" />
+~~~
+
+# Option 3 Problems
+
+* All of your images are being routed through a third-party service.
+* How does Sencha know what size image to use anyways? It relies on device detection which some developers dislike.
+
+# Only real solution is new standard
+
+~~~ {.html}
+<picture alt="Giraffe">
+  <source src="giraffe-sml.jpg" media="(max-width:480px)">
+  <source src="giraffe-lrg.jpg" media="(min-width:481px)">
+  <img src="giraffe-sml.jpg" alt="Giraffe" />
+  <p>Long description</p>
+</picture>
+~~~
+
+# Other RWD Challenges
+
+* Delivering the right size video
+* Breakpoint management and zoom levels
+* Progressively enhancing from XHTML-MP to HTML5
+* Content ordering (Flexbox can’t come soon enough)
+* Third-party widgets (particularly ad networks)
+* Integrating with content management systems
+
+# This is all very new
+
+No one has built a site that goes from a feature phone all the way to a television with an optimized experience for each form factor.
+
+Is it even possible?
 
 # Taking it to a whole 'nuther level
 

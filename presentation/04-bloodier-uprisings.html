@@ -42,8 +42,11 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 Mobile First Responsive Web Design
   </p>
 </div>
-<div id="media-queries-often-hide-problems" class="slide">
-<h1>Media queries often hide problems</h1>
+<div id="most-rwd-sites-are-not-mobile-first" class="slide">
+<h1>Most RWD sites are not mobile First</h1>
+<div class="figure">
+<img src="images/04-rwd-compare.png" /><p class="caption"></p>
+</div>
 <p>Reviewed over 100 RWD sites. Found that:</p>
 <ul>
 <li>38% had a mobile site that was &lt; 10% smaller than the desktop</li>
@@ -56,8 +59,8 @@ Mobile First Responsive Web Design
 <p>Yes, this is true, but so what?</p>
 <p>On average, mobile is still slower than desktop. We shouldn’t be delivering larger sites to mobile users.</p>
 </div>
-<div id="why-are-the-bigger" class="slide">
-<h1>Why are the bigger?</h1>
+<div id="why-are-they-bigger" class="slide">
+<h1>Why are they bigger?</h1>
 <ul>
 <li>Hiding a background image by using display:none on the element will not prevent it from downloading.</li>
 <li>Large desktop-size images are delivered to all devices even if they never use the image at that size.</li>
@@ -72,6 +75,19 @@ Mobile First Responsive Web Design
 <p>The absence of support for media queries is in fact the first media query. — Bryan Rieger</p>
 </blockquote>
 </div>
+<div id="the-first-zombie-was-ie" class="slide">
+<h1>The first zombie was IE</h1>
+<p>IE8 and below don’t support media queries.</p>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;taps.css&quot;</span> <span class="kw">/&gt;</span><br /><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;layout.css&quot;</span><span class="ot"> media=</span><span class="st">&quot;all and min-width: 481px)&quot;</span><span class="kw">&gt;</span><br /><span class="co">&lt;!--[if (lt IE 9) &amp; (!IEMobile)]&gt;</span><br /><span class="co">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;layout.css&quot; media=&quot;all&quot; /&gt;</span><br /><span class="co">&lt;![endif]--&gt;</span></code></pre>
+</div>
+<div id="or-use-a-javascript-polyfill" class="slide">
+<h1>Or use a JavaScript Polyfill</h1>
+<ul>
+<li>Respond.js: <a href="https://github.com/scottjehl/Respond">https://github.com/scottjehl/Respond</a></li>
+<li>CSS3MediaQueries.js: <a href="http://code.google.com/p/css3-mediaqueries-js/">http://code.google.com/p/css3-mediaqueries-js/</a></li>
+</ul>
+<p>Respond is faster, but only contains a subset of CSS support. Start with it.</p>
+</div>
 <div id="prevent-extra-background-image-downloads" class="slide">
 <h1>Prevent extra background image downloads</h1>
 <p>Things that work:</p>
@@ -79,23 +95,91 @@ Mobile First Responsive Web Design
 <li>Use display:none on the parent element</li>
 <li>Media queries that don’t overlap:</li>
 </ul>
-<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:</span> <span class="er">501px)</span> <span class="dv">{</span><br />    <span class="fl">#test5</span> <span class="kw">{background-image:</span><span class="dt">url(</span><span class="st">'test5-desktop.png'</span><span class="dt">)</span><span class="kw">;width:</span><span class="dt">200px</span><span class="kw">;height:</span><span class="dt">75px</span><span class="kw">;}</span><br /><span class="dv">}</span><br /><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:</span> <span class="er">500px)</span> <span class="dv">{</span><br />    <span class="fl">#test5</span> <span class="kw">{background-image:</span><span class="dt">url(</span><span class="st">'test5-mobile.png'</span><span class="dt">)</span><span class="kw">;width:</span><span class="dt">200px</span><span class="kw">;height:</span><span class="dt">75px</span><span class="kw">;}</span><br /><span class="dv">}</span></code></pre>
+<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:</span> <span class="er">500px)</span> <span class="dv">{</span><br />    <span class="fl">#logo</span> <span class="kw">{background-image:</span><span class="dt">url(</span><span class="st">'small.png'</span><span class="dt">)</span><span class="kw">;}</span><br /><span class="dv">}</span><br /><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:</span> <span class="er">501px)</span> <span class="dv">{</span><br />    <span class="fl">#logo</span> <span class="kw">{background-image:</span><span class="dt">url(</span><span class="st">'large.png'</span><span class="dt">)</span><span class="kw">;}</span><br /><span class="dv">}</span></code></pre>
 </div>
 <div id="newer-browsers-support-more" class="slide">
 <h1>Newer browsers support more</h1>
 <p>As of iOS 4.2:</p>
 <ul>
-<li>background-image:none in mediaquery on the element will override image</li>
-<li>overriding a background-image will only result in one image being downloaded</li>
+<li>background-image:none on the element will override image without an extra download</li>
+<li>replacing a background-image will only result in one image being downloaded</li>
 </ul>
 <p>But, display:none on element still downloads images.</p>
 </div>
 <div id="what-about-image-tags" class="slide">
 <h1>What about image tags?</h1>
 <ul>
-<li><img> can only have one src attribute</li>
-<li>First load conundrum — server doesn’t know what to do</li>
+<li>&lt;img&gt; can only have one src attribute</li>
+<li>First load problem -- server knows nothing about the client. How do you know what src to use?</li>
+<li>Delivering the right-sized image can mean huge savings (up to 80%) on file size.</li>
 </ul>
+<p>Many people are seeking a solution for responsive images.</p>
+</div>
+<div id="responsive-images-option-1" class="slide">
+<h1>Responsive images: Option 1</h1>
+<ul>
+<li>JavaScript checks the width of the screen and sets a cookie.</li>
+<li>Image requests contain that cookie giving the server the information it needs.</li>
+<li>.htaccess file on server checks for cookie and routes requests to the correct file depending on screen size.</li>
+</ul>
+</div>
+<div id="option-1-problems" class="slide">
+<h1>Option 1 Problems</h1>
+<ul>
+<li>Sometimes the browser requests images before the JavaScript executes which means the cookie isn’t set. Race condition.</li>
+<li>What is the fallback if cookies aren’t enabled?</li>
+<li>Relies on the current way browsers load content which could change. No contract between the browser and the developer.</li>
+</ul>
+</div>
+<div id="responsive-images-option-2" class="slide">
+<h1>Responsive images: Option 2</h1>
+<ul>
+<li>Put small image inside noscript tag.</li>
+<li>Put info for other images in data-* on noscript tag.</li>
+<li>Use javascript to build correct img tag for screen size.</li>
+</ul>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;noscript</span><span class="ot"> data-large=</span><span class="st">&quot;Koala.jpg&quot;</span><span class="ot"> data-small=</span><span class="st">&quot;Koala-small.jpg&quot;</span><span class="ot"> data-alt=</span><span class="st">&quot;Koala&quot;</span><span class="kw">&gt;</span><br /><span class="kw">&lt;img</span><span class="ot"> scr=</span><span class="st">&quot;Koala.jpg&quot;</span><span class="ot"> alt=</span><span class="st">&quot;Koala&quot;</span> <span class="kw">/&gt;</span><br /><span class="kw">&lt;/noscript&gt;</span></code></pre>
+</div>
+<div id="option-2-problems" class="slide">
+<h1>Option 2 Problems</h1>
+<ul>
+<li>Markup has been changed in a way that only makes sense for this solution.</li>
+<li>No longer semantic.</li>
+</ul>
+</div>
+<div id="responsive-images-option-3" class="slide">
+<h1>Responsive images: Option 3</h1>
+<ul>
+<li>Use or build a service like Sencha.io SRC to deliver the correctly sized image:</li>
+</ul>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;http://src.sencha.io/[ORIGINAL IMAGE URL]&quot;</span> <span class="kw">/&gt;</span></code></pre>
+</div>
+<div id="option-3-problems" class="slide">
+<h1>Option 3 Problems</h1>
+<ul>
+<li>All of your images are being routed through a third-party service.</li>
+<li>How does Sencha know what size image to use anyways? It relies on device detection which some developers dislike.</li>
+</ul>
+</div>
+<div id="only-real-solution-is-new-standard" class="slide">
+<h1>Only real solution is new standard</h1>
+<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;picture</span><span class="ot"> alt=</span><span class="st">&quot;Giraffe&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;source</span><span class="ot"> src=</span><span class="st">&quot;giraffe-sml.jpg&quot;</span><span class="ot"> media=</span><span class="st">&quot;(max-width:480px)&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;source</span><span class="ot"> src=</span><span class="st">&quot;giraffe-lrg.jpg&quot;</span><span class="ot"> media=</span><span class="st">&quot;(min-width:481px)&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;giraffe-sml.jpg&quot;</span><span class="ot"> alt=</span><span class="st">&quot;Giraffe&quot;</span> <span class="kw">/&gt;</span><br />  <span class="kw">&lt;p&gt;</span>Long description<span class="kw">&lt;/p&gt;</span><br /><span class="kw">&lt;/picture&gt;</span></code></pre>
+</div>
+<div id="other-rwd-challenges" class="slide">
+<h1>Other RWD Challenges</h1>
+<ul>
+<li>Delivering the right size video</li>
+<li>Breakpoint management and zoom levels</li>
+<li>Progressively enhancing from XHTML-MP to HTML5</li>
+<li>Content ordering (Flexbox can’t come soon enough)</li>
+<li>Third-party widgets (particularly ad networks)</li>
+<li>Integrating with content management systems</li>
+</ul>
+</div>
+<div id="this-is-all-very-new" class="slide">
+<h1>This is all very new</h1>
+<p>No one has built a site that goes from a feature phone all the way to a television with an optimized experience for each form factor.</p>
+<p>Is it even possible?</p>
 </div>
 <div id="taking-it-to-a-whole-nuther-level" class="slide">
 <h1>Taking it to a whole 'nuther level</h1>
