@@ -189,7 +189,7 @@ For more expounding on the topic of relinquishing control, see Lyza's presentati
 ## *Do This*: Converting the CSS to a fluid layout
 
 1. Edit `styles.css` in the `sigma-stronghold-website` folder in your rucksack.
-2. Set a `max-width` instead of a `width` on the two main containing elements, `body > div` and `#container`. Change the `padding` on `#container` to be in `em`s (relative) instead of `px` (absolute). You should end up with these two rules:
+2. Set a `max-width` instead of a `width` on the two main containing elements, `body > div` and `#container`. Change the `padding` on `#container` to be in `em`s (relative) instead of `px` (absolute). You should end up with these changes:
 
 ### Instead of
 
@@ -278,8 +278,6 @@ body > div {
   margin-left: 63.5%;
 }
 ~~~
-
-TODO: Provide end result CSS here.
 
 ## Media Queries!
 

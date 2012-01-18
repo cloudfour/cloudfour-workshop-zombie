@@ -605,7 +605,9 @@ $("#nab-zombie").live('pageinit', function() {
 
 # Take it for a spin
 
-TODO: Screen shot
+## Figure: Screen shot of I Got One!
+
+![](images/06-screen.png)
 
 # As always, there are gotchas
 

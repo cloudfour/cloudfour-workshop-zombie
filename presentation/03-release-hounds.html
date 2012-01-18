@@ -500,6 +500,64 @@ Jason Grigsby and Lyza Danger Gardner
 <pre class="sourceCode"><code class="sourceCode css">// Baseline CSS<br />// Single column layout for <span class="fl">#main</span> and <span class="fl">#sidebar</span><br />// No background moon image<br />// Tabbed nav (horizontal)<br /><br /><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(min-width:</span> <span class="er">750px)</span> <span class="dv">{</span><br />  // Two-column view<br />  // Moon background image<br />  // Proportion adjustments for padding and fonts<br /><span class="dv">}</span><br /><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:</span> <span class="er">550px)</span> <span class="dv">{</span><br />  // Vertical navigation<br />  // Proportion adjustments for padding and fonts<br /><span class="dv">}</span></code></pre>
 </div>
 </div>
+<div id="building-the-baseline" class="slide">
+<h1>Building the baseline</h1>
+<div id="instead-of-4">
+<h4>Instead of</h4>
+<pre class="sourceCode"><code class="sourceCode css">body <span class="kw">{</span><br />  <span class="kw">background-color:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span><br />  <span class="kw">font:</span> <span class="dt">100%</span> <span class="st">&quot;Special Elite&quot;</span><span class="kw">;</span><br />  <span class="kw">background-image:</span> <span class="dt">url(</span>images/moon<span class="dt">.</span>jpg<span class="dt">)</span><span class="kw">;</span><br />  <span class="kw">background-repeat:</span> <span class="dt">no-repeat</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+</div>
+<div id="use-4">
+<h4>Use</h4>
+<pre class="sourceCode"><code class="sourceCode css">body <span class="kw">{</span><br />  <span class="kw">background-color:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span><br />  <span class="kw">font:</span> <span class="dt">100%</span> <span class="st">&quot;Special Elite&quot;</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+</div>
+</div>
+<div id="baseline-cont." class="slide">
+<h1>Baseline (cont.)</h1>
+<div id="instead-of-5">
+<h4>Instead Of</h4>
+<pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br />  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span><br />  <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span><br />  <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span><br />  <span class="kw">border-style:</span> <span class="dt">solid</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+</div>
+<div id="use-5">
+<h4>Use</h4>
+<pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br />  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
+</div>
+</div>
+<div id="baseline-cont.-1" class="slide">
+<h1>Baseline (cont.)</h1>
+<div id="instead-of-6">
+<h4>Instead of</h4>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span><br />  <span class="er">///</span> <span class="er">...</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span> <span class="er">...</span><br /><span class="kw">}</span></code></pre>
+</div>
+<div id="use-6">
+<h4>Use</h4>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span><br />  <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span><br />  <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="er">///</span> <span class="er">...</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span> <span class="er">...</span><br /><span class="kw">}</span></code></pre>
+</div>
+</div>
+<div id="baseline-cont.-2" class="slide">
+<h1>Baseline (cont.)</h1>
+<div id="instead-of-7">
+<h4>Instead of</h4>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span><br />  <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+</div>
+<div id="use-7">
+<h4>Use</h4>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span><br />  <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
+</div>
+</div>
+<div id="a-breakpoint-for-wider-screens" class="slide">
+<h1>A breakpoint for wider screens</h1>
+<div id="code-2">
+<h2>Code</h2>
+<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:750px)</span> <span class="dv">{</span><br />  <span class="co">/* Adding back in the background image */</span><br />  body <span class="kw">{</span><br />    <span class="kw">background-image:</span> <span class="dt">url(</span>images/moon<span class="dt">.</span>jpg<span class="dt">)</span><span class="kw">;</span><br />    <span class="kw">background-repeat:</span> <span class="dt">no-repeat</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><br />  <span class="co">/* Here's a border */</span><br />  body &gt; div <span class="kw">{</span><br />    <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span><br />    <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span><br />    <span class="kw">border-style:</span> <span class="dt">solid</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><br />  <span class="co">/* Float #main left; make it 60% width of its parent container */</span><br />  <span class="fl">#main</span> <span class="kw">{</span><br />    <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span><br />    <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />    <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />    <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><br />  <span class="co">/* A fluid left margin for a right-aligned #sidebar */</span><br />  <span class="fl">#sidebar</span> <span class="kw">{</span><br />    <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span><br />    <span class="kw">clear:</span> <span class="dt">none</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><span class="dv">}</span></code></pre>
+</div>
+</div>
+<div id="a-narrower-breakpoint" class="slide">
+<h1>A narrower breakpoint</h1>
+<div id="code-3">
+<h2>Code</h2>
+<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:550px)</span> <span class="dv">{</span><br />  <span class="co">/* Here is the stacked navigation */</span><br />  <span class="fl">#header</span> nav ul li <span class="kw">{</span><br />    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span><br />    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br />    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span><br />    <span class="kw">margin:</span> <span class="dt">.5em</span> <span class="dt">0</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  <span class="fl">#header</span> nav ul li a <span class="kw">{</span><br />    <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span><br />    <span class="kw">padding:</span> <span class="dt">.75em</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  <span class="co">/* Padding and font adjustments */</span><br />  h1 <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">1.75em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  h3 <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">1.1em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.2em</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  p <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">.9em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.4em</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  <span class="fl">#header</span> <span class="kw">{</span><br />    <span class="kw">padding:</span> <span class="dt">1em</span> <span class="dt">0</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  <span class="fl">#header</span> h1, <span class="fl">#header</span> h3 <span class="kw">{</span><br />    <span class="kw">padding:</span> <span class="dt">0</span> <span class="dt">.375em</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><span class="dv">}</span></code></pre>
+</div>
+</div>
 <div id="were-now-mobile-first" class="slide">
 <h1>We're now mobile-first</h1>
 <p>Look at that, soldier! We're thinking mobile- and content-first. We're adapting our requirements and our layout based on the yins and yangs of project and customer requirements. Balance is key.</p>

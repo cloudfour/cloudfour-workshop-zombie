@@ -510,6 +510,177 @@ Stepping back and thinking what we want our baseline experience to be.
 }
 ~~~
 
+# Building the baseline
+
+#### Instead of
+
+~~~ {.css}
+body {
+  background-color: black;
+  color: white;
+  font: 100% "Special Elite";
+  background-image: url(images/moon.jpg);
+  background-repeat: no-repeat;
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+body {
+  background-color: black;
+  color: white;
+  font: 100% "Special Elite";
+}
+~~~
+
+# Baseline (cont.)
+
+#### Instead Of
+
+~~~ {.css}
+body > div {
+  max-width: 920px;
+  margin: 0 auto;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-width: 0px 7px;
+  border-style: solid;
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+body > div {
+  max-width: 920px;
+  margin: 0 auto; 
+}
+~~~
+
+# Baseline (cont.)
+
+#### Instead of
+
+~~~ {.css}
+#main {
+  zoom: 1;
+  margin-left: 1.5%;
+  clear: left;
+  float: left;
+  width: 60%;
+  /// ... And so on ...
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+#main {
+  width: 100%;
+  float: none;
+  clear: both;
+  margin: 0;
+  zoom: 1;
+  /// ... And so on ...
+}
+~~~
+
+# Baseline (cont.)
+
+#### Instead of
+
+~~~ {.css}
+#sidebar {
+  margin-left: 63.5%;
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+#sidebar {
+  float: none;
+  clear: both;
+  margin: 0; 
+}
+~~~
+
+# A breakpoint for wider screens
+
+## Code
+
+~~~ {.css}
+@media all and (min-width:750px) {
+  /* Adding back in the background image */
+  body {
+    background-image: url(images/moon.jpg);
+    background-repeat: no-repeat;
+  }
+
+  /* Here's a border */
+  body > div {
+    border-color: rgba(255, 255, 255, 0.2);
+    border-width: 0px 7px;
+    border-style: solid;
+  }
+
+  /* Float #main left; make it 60% width of its parent container */
+  #main {
+    margin-left: 1.5%;
+    clear: left;
+    float: left;
+    width: 60%;
+  }
+
+  /* A fluid left margin for a right-aligned #sidebar */
+  #sidebar {
+    margin-left: 63.5%;
+    clear: none;
+  }
+}
+~~~
+
+# A narrower breakpoint
+
+## Code
+
+~~~ {.css}
+@media all and (max-width:550px) {
+  /* Here is the stacked navigation */
+  #header nav ul li {
+    float: none;
+    clear: both;
+    width: 100%;
+    margin: .5em 0;
+  }
+  #header nav ul li a {
+    margin: 0;
+    padding: .75em;
+  }
+  /* Padding and font adjustments */
+  h1 {
+    font-size: 1.75em;
+    line-height: 1.25em;
+  }
+  h3 {
+    font-size: 1.1em;
+    line-height: 1.2em;
+  }
+  p {
+    font-size: .9em;
+    line-height: 1.4em;
+  }
+  #header {
+    padding: 1em 0;
+  }
+  #header h1, #header h3 {
+    padding: 0 .375em;
+  }
+}
+~~~
+
+
+
 # We're now mobile-first
 
 Look at that, soldier! We're thinking mobile- and content-first. We're adapting our requirements and our layout based on the yins and yangs of project and customer requirements. Balance is key.
