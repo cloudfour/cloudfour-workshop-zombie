@@ -5,8 +5,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="pandoc" />
-  <meta name="author" content="Jason Grigsby and Lyza Danger Gardner" />
-  <title>Zombie 101: Bloodier Uprisings</title>
+  <meta name="author" content="Mobile First Responsive Web Design" />
+  <title>Bloodier Uprisings</title>
   <style type="text/css">
 /*<![CDATA[*/
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode, table.sourceCode pre 
@@ -37,9 +37,9 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Zombie 101: Bloodier Uprisings</h1>
+  <h1 class="title">Bloodier Uprisings</h1>
   <p class="author">
-Jason Grigsby and Lyza Danger Gardner
+Mobile First Responsive Web Design
   </p>
 </div>
 <div id="media-queries-often-hide-problems" class="slide">
@@ -80,6 +80,25 @@ Jason Grigsby and Lyza Danger Gardner
 <li>Media queries that don’t overlap:</li>
 </ul>
 <pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:</span> <span class="er">501px)</span> <span class="dv">{</span><br />    <span class="fl">#test5</span> <span class="kw">{background-image:</span><span class="dt">url(</span><span class="st">'test5-desktop.png'</span><span class="dt">)</span><span class="kw">;width:</span><span class="dt">200px</span><span class="kw">;height:</span><span class="dt">75px</span><span class="kw">;}</span><br /><span class="dv">}</span><br /><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:</span> <span class="er">500px)</span> <span class="dv">{</span><br />    <span class="fl">#test5</span> <span class="kw">{background-image:</span><span class="dt">url(</span><span class="st">'test5-mobile.png'</span><span class="dt">)</span><span class="kw">;width:</span><span class="dt">200px</span><span class="kw">;height:</span><span class="dt">75px</span><span class="kw">;}</span><br /><span class="dv">}</span></code></pre>
+</div>
+<div id="newer-browsers-support-more" class="slide">
+<h1>Newer browsers support more</h1>
+<p>As of iOS 4.2:</p>
+<ul>
+<li>background-image:none in mediaquery on the element will override image</li>
+<li>overriding a background-image will only result in one image being downloaded</li>
+</ul>
+<p>But, display:none on element still downloads images.</p>
+</div>
+<div id="what-about-image-tags" class="slide">
+<h1>What about image tags?</h1>
+<ul>
+<li><img> can only have one src attribute</li>
+<li>First load conundrum — server doesn’t know what to do</li>
+</ul>
+</div>
+<div id="section" class="titleslide" class="slide">
+<h1></h1>
 </div>
 </body>
 </html>

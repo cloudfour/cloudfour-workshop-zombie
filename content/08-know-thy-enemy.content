@@ -1,5 +1,5 @@
-% Zombie 101: Know Thy Enemy
-% Jason Grigsby and Lyza Danger Gardner
+% Know Thy Enemy
+% Device Detection
 
 # Sometimes one-size-fits all doesn’t cut it
 
@@ -122,3 +122,4 @@ It can all sound a bit chaotic, even for a post-apocalyptic kind of situation. D
 [devicemap]: http://wiki.apache.org/incubator/DeviceMapProposal
 [explorer]: http://www.tera-wurfl.com/explore/
 [ress]: http://www.lukew.com/ff/entry.asp?1392
+[openddr]: http://openddr.org
