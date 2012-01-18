@@ -124,6 +124,15 @@ We didn't do these things but they might be cool, too:
 * [SpriteMe](http://spriteme.org/) for creating CSS sprites. By combining multiple CSS images into individual sprites, you both reduce overall image file size (usually) and reduce the number of HTTP requests (definitely).
 * [Online YUI Compressor](http://www.refresh-sf.com/yui/) Handy tool to help compress and minify CSS and JavaScript.
 
+## Get ready to go into battle!
+
+### Do this!
+
+* Replace the current versions of `index.html` and `styles.css` in your `sigma-stronghold-website` directory with the versions in [`supplemental/boot-camp`](../supplemental/boot-camp). 
+* If you haven't already, copy the `favicon.ico` file from [`supplemental/boot-camp`](../supplemental/boot-camp) to your `sigma-stronghold-website` folder.
+
+Now you have the semantically-improved, optimized version of Sigma Stronghold's web site. *Onward!*
+
 -----------------------
 
 # 3. Release the Hounds!
