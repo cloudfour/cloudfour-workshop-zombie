@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Mobile First Responsive Web Design" />
+  <title>Bloodier Uprisings</title>
+  <style type="text/css">
+/*<![CDATA[*/
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode, table.sourceCode pre 
+   { margin: 0; padding: 0; border: 0; vertical-align: baseline; border: none; }
+td.lineNumbers { border-right: 1px solid #AAAAAA; text-align: right; color: #AAAAAA; padding-right: 5px; padding-left: 5px; }
+td.sourceCode { padding-left: 5px; }
+code.sourceCode span.kw { color: #007020; font-weight: bold; } 
+code.sourceCode span.dt { color: #902000; }
+code.sourceCode span.dv { color: #40a070; }
+code.sourceCode span.bn { color: #40a070; }
+code.sourceCode span.fl { color: #40a070; }
+code.sourceCode span.ch { color: #4070a0; }
+code.sourceCode span.st { color: #4070a0; }
+code.sourceCode span.co { color: #60a0b0; font-style: italic; }
+code.sourceCode span.ot { color: #007020; }
+code.sourceCode span.al { color: red; font-weight: bold; }
+code.sourceCode span.fu { color: #06287e; }
+code.sourceCode span.re { }
+code.sourceCode span.er { color: red; font-weight: bold; }
+/*]]>*/
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="../assets/styles/workshop.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js.gz"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">Bloodier Uprisings</h1>
+  <p class="author">
+Mobile First Responsive Web Design
+  </p>
+</div>
+<div id="media-queries-often-hide-problems" class="slide">
+<h1>Media queries often hide problems</h1>
+<p>Reviewed over 100 RWD sites. Found that:</p>
+<ul>
+<li>38% had a mobile site that was &lt; 10% smaller than the desktop</li>
+<li>4% mobile was the same size</li>
+<li>25% mobile was LARGER than the desktop</li>
+</ul>
+</div>
+<div id="screen-size-bandwidth" class="slide">
+<h1>Screen size != bandwidth</h1>
+<p>Yes, this is true, but so what?</p>
+<p>On average, mobile is still slower than desktop. We shouldn’t be delivering larger sites to mobile users.</p>
+</div>
+<div id="why-are-the-bigger" class="slide">
+<h1>Why are the bigger?</h1>
+<ul>
+<li>Hiding a background image by using display:none on the element will not prevent it from downloading.</li>
+<li>Large desktop-size images are delivered to all devices even if they never use the image at that size.</li>
+<li>Mediaqueries don’t impact JavaScript so even if you hide a Google Map, the code still downloads.</li>
+</ul>
+</div>
+<div id="get-your-media-queries-in-order" class="slide">
+<h1>Get your media queries in order</h1>
+<p>First thing to fix media queries is to put them in order. Small screen before large screens.</p>
+<p>This causes means the fallback for images will be the small images, not the large ones.</p>
+<blockquote>
+<p>The absence of support for media queries is in fact the first media query. — Bryan Rieger</p>
+</blockquote>
+</div>
+<div id="prevent-extra-background-image-downloads" class="slide">
+<h1>Prevent extra background image downloads</h1>
+<p>Things that work:</p>
+<ul>
+<li>Use display:none on the parent element</li>
+<li>Media queries that don’t overlap:</li>
+</ul>
+<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:</span> <span class="er">501px)</span> <span class="dv">{</span><br />    <span class="fl">#test5</span> <span class="kw">{background-image:</span><span class="dt">url(</span><span class="st">'test5-desktop.png'</span><span class="dt">)</span><span class="kw">;width:</span><span class="dt">200px</span><span class="kw">;height:</span><span class="dt">75px</span><span class="kw">;}</span><br /><span class="dv">}</span><br /><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:</span> <span class="er">500px)</span> <span class="dv">{</span><br />    <span class="fl">#test5</span> <span class="kw">{background-image:</span><span class="dt">url(</span><span class="st">'test5-mobile.png'</span><span class="dt">)</span><span class="kw">;width:</span><span class="dt">200px</span><span class="kw">;height:</span><span class="dt">75px</span><span class="kw">;}</span><br /><span class="dv">}</span></code></pre>
+</div>
+<div id="newer-browsers-support-more" class="slide">
+<h1>Newer browsers support more</h1>
+<p>As of iOS 4.2:</p>
+<ul>
+<li>background-image:none in mediaquery on the element will override image</li>
+<li>overriding a background-image will only result in one image being downloaded</li>
+</ul>
+<p>But, display:none on element still downloads images.</p>
+</div>
+<div id="what-about-image-tags" class="slide">
+<h1>What about image tags?</h1>
+<ul>
+<li><img> can only have one src attribute</li>
+<li>First load conundrum — server doesn’t know what to do</li>
+</ul>
+</div>
+<div id="taking-it-to-a-whole-nuther-level" class="slide">
+<h1>Taking it to a whole 'nuther level</h1>
+<p>Now we're trained, we've got a bit of flight time under our belt. It's time to specialize, to <a href="05-honed-killing-machine.html">shape ourselves into ultimate fighting machines</a>!</p>
+</div>
+</body>
+</html>

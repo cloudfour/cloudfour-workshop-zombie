@@ -145,27 +145,16 @@ Jason Grigsby and Lyza Danger Gardner
 </div>
 </div>
 </div>
+<div id="the-fluid-formula-1" class="slide">
+<h1>The fluid formula</h1>
+<div id="figure-the-fluid-formula-applied">
+<h2>Figure: The fluid formula applied</h2>
+<div class="figure">
+<img src="images/03-formula-applied.png" /><p class="caption"></p>
+</div>
+</div>
+</div>
 <div id="result-target-context" class="slide">
-<h1>Result = Target / Context</h1>
-<div id="result">
-<h2>Result</h2>
-<div class="figure">
-<img src="images/03-result.png" /><p class="caption"></p>
-</div>
-<p>Proportional units</p>
-</div>
-</div>
-<div id="result-target-context-1" class="slide">
-<h1>Result = Target / Context</h1>
-<div id="target">
-<h2>Target</h2>
-<div class="figure">
-<img src="images/03-target.png" /><p class="caption"></p>
-</div>
-<p>Our original, absolute units</p>
-</div>
-</div>
-<div id="result-target-context-2" class="slide">
 <h1>Result = Target / Context</h1>
 <div class="figure">
 <img src="images/03-context.png" /><p class="caption"></p>
@@ -173,6 +162,9 @@ Jason Grigsby and Lyza Danger Gardner
 <div id="context">
 <h2>Context</h2>
 <p>Let's talk about <em>context</em> a bit, yes?</p>
+<div id="target-context-result">
+<h4>TARGET / CONTEXT = RESULT</h4>
+</div>
 </div>
 </div>
 <div id="applying-the-fluid-formula" class="slide">
@@ -257,14 +249,6 @@ Jason Grigsby and Lyza Danger Gardner
 <h3>Use</h3>
 <pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br /> <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span><br /> <span class="er">...</span><br /><span class="kw">}</span></code></pre>
 </div>
-<div id="speaker-notes-2">
-<h2>Speaker Notes</h2>
-<ul>
-<li>This constrains our outer container to never exceed 920px—but it can certainly be smaller.</li>
-<li>Strictly speaking, this div is probably not necessary.</li>
-<li><code>body &gt; div</code> and <code>div#main</code> are centered in the browser window by way of the <code>margin: 0 auto</code>.</li>
-</ul>
-</div>
 </div>
 <div id="revising-our-css-cont." class="slide">
 <h1>Revising our CSS, cont.</h1>
@@ -276,7 +260,7 @@ Jason Grigsby and Lyza Danger Gardner
 <h3>Use</h3>
 <pre class="sourceCode"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">padding:</span> <span class="dt">.625em</span><span class="kw">;</span><br />  <span class="kw">max-width:</span> <span class="dt">900px</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span> <span class="kw">}</span></code></pre>
 </div>
-<div id="speaker-notes-3">
+<div id="speaker-notes-2">
 <h2>Speaker Notes</h2>
 <ul>
 <li>If folks are curious, the <code>zoom</code> property is part of a clearfix for IE.</li>
@@ -365,14 +349,6 @@ Jason Grigsby and Lyza Danger Gardner
 <h1>Media Types</h1>
 <p>Media types have been around a while. It's how we make print stylesheets, e.g.</p>
 <pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> media=</span><span class="st">&quot;print&quot;</span><span class="ot"> href=</span><span class="st">&quot;print.css&quot;</span><span class="kw">&gt;</span></code></pre>
-<div id="speaker-notes-4">
-<h2>Speaker Notes</h2>
-<p>Other popular media types</p>
-<ul>
-<li>screen</li>
-<li>projection</li>
-</ul>
-</div>
 </div>
 <div id="media-features" class="slide">
 <h1>Media Features</h1>
@@ -392,7 +368,7 @@ Jason Grigsby and Lyza Danger Gardner
 <h3>Also</h3>
 <pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> media=</span><span class="st">&quot;screen and (min-width:600px)&quot;</span><span class="ot"> href=</span><span class="st">&quot;thing.css&quot;</span><span class="kw">&gt;</span></code></pre>
 </div>
-<div id="speaker-notes-5">
+<div id="speaker-notes-3">
 <h2>Speaker Notes</h2>
 <ul>
 <li>@import syntax also supported.</li>
@@ -405,33 +381,27 @@ Jason Grigsby and Lyza Danger Gardner
 <p><img src="images/sigma-site-screenshots/iphone-fluid-broken.jpg" title="Oh, dear" /> <img src="images/sigma-site-screenshots/iphone-fluid-broken-2.jpg" title="Oh, dear" /></p>
 <p>By using media queries, we can apply different CSS in different situations.</p>
 <p>The problem with the Sigma Stronghold site on narrow screens is that the columns are too small and the nav feels too cramped.</p>
-<div id="speaker-notes-6">
-<h2>Speaker Notes</h2>
+</div>
+<div id="heres-one-way-we-could-do-it" class="slide">
+<h1>Here's one way we could do it</h1>
+<div id="for-narrower-screens">
+<h3>For narrower screens</h3>
 <ul>
-<li>The most popular application of this is to adapt layout depending on the current window width, which is what we are going to do.</li>
+<li>Instead of two columns of content, we could have a single column.</li>
+<li>And instead of tabbed navigation, we could make the navigation elements bigger and more tap-able.</li>
+<li>Let's say that any screen narrower than 600px should have a single-column view of the content, and vertical navigation items.</li>
 </ul>
 </div>
 </div>
-<div id="lets-make-this-more-responsive" class="slide">
-<h1>Let's make this more responsive</h1>
-<ul>
-<li><p>Let's make the site layout more <em>responsive</em> by adapting it for narrower windows.</p>
-<ul>
-<li>Instead of two columns of content, let's have a single column.</li>
-<li>And instead of tabbed navigation, let's make the navigation elements bigger and more tap-able.</li>
-</ul></li>
-</ul>
-</div>
-<div id="first-whack-at-media-queries" class="slide">
-<h1>First whack at media queries</h1>
-<p>Let's say that any screen narrower than 600px should have a single-column view of the content, and vertical navigation items.</p>
+<div id="something-like-this..." class="slide">
+<h1>Something like this...</h1>
 <div id="figure-adaptive-layout">
 <h2>Figure: Adaptive Layout</h2>
 <div class="figure">
 <img src="images/03-responsive-layout.png" /><p class="caption"></p>
 </div>
 </div>
-<div id="speaker-notes-7">
+<div id="speaker-notes-4">
 <h2>Speaker Notes</h2>
 <p>Choosing a breakpoint at 600px somewhat arbitrarily.</p>
 </div>
@@ -459,8 +429,11 @@ Jason Grigsby and Lyza Danger Gardner
 <div id="a-question-of-taste" class="slide">
 <h1>A question of taste</h1>
 <p>Often as screen sizes change, proportions feel a bit different.</p>
+<div id="code">
+<h2>Code</h2>
 <pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span><br />  <span class="fl">...</span> // <span class="fl">#main</span>, <span class="fl">#sidebar</span>, body, <span class="fl">#header</span> nav<span class="fl">...</span><br />  <span class="fl">#header</span> <span class="kw">{</span><br />    <span class="kw">padding:</span> <span class="dt">1em</span> <span class="dt">0</span><span class="kw">;</span> <span class="kw">}</span><br />  <span class="fl">#header</span> h1, <span class="fl">#header</span> h3 <span class="kw">{</span><br />    <span class="kw">padding:</span> <span class="dt">0</span> <span class="dt">.375em</span><span class="kw">;</span> <span class="kw">}</span><br />  h1 <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">1.75em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span> <span class="kw">}</span><br />  h3 <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">1.1em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.2em</span><span class="kw">;</span> <span class="kw">}</span><br />  p <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">.9em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.4em</span><span class="kw">;</span> <span class="kw">}</span><br /><span class="dv">}</span></code></pre>
-<div id="speaker-notes-8">
+</div>
+<div id="speaker-notes-5">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Put the ending brace on the same line for space reasons here.</li>
@@ -485,6 +458,10 @@ Jason Grigsby and Lyza Danger Gardner
 </div>
 </div>
 </div>
+<div id="but...lets-think-about-this-a-bit-more." class="slide">
+<h1>But...let's think about this a bit more.</h1>
+<p>Thinking.</p>
+</div>
 <div id="mobile-first-rwd" class="slide">
 <h1>Mobile first RWD</h1>
 <ul>
@@ -499,28 +476,35 @@ Jason Grigsby and Lyza Danger Gardner
 <ul>
 <li>Let's make the single-column width the default layout and <em>enhance</em> to the two-column view and the background image.</li>
 <li><em>But</em>, let's make the tabbed navigation default (not the vertical).</li>
+</ul>
+</div>
+<div id="thinking-through-some-breakpoints" class="slide">
+<h1>Thinking through some breakpoints</h1>
+<ul>
 <li>Let's also fine-tune the <em>breakpoints</em>.
 <ul>
 <li>Let's make the vertical navigation appear for windows &lt;= 550px.</li>
 <li>Let's make the double column view kick in and the moon background appear for windows &gt;= 750px.</li>
 </ul></li>
 </ul>
-<div id="speaker-notes-9">
-<h2>Speaker Notes</h2>
-<ul>
-<li>TODO: Ask Jason about image download (moon)</li>
-<li>Talk about media query support and how it's a bit easier to handle on the desktop</li>
-</ul>
-</div>
 </div>
 <div id="css-restructuring" class="slide">
 <h1>CSS Restructuring</h1>
+<div id="code-1">
+<h2>Code</h2>
 <pre class="sourceCode"><code class="sourceCode css">// Baseline CSS<br />// Single column layout for <span class="fl">#main</span> and <span class="fl">#sidebar</span><br />// No background moon image<br />// Tabbed nav (horizontal)<br /><br /><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(min-width:</span> <span class="er">750px)</span> <span class="dv">{</span><br />  // Two-column view<br />  // Moon background image<br />  // Proportion adjustments for padding and fonts<br /><span class="dv">}</span><br /><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:</span> <span class="er">550px)</span> <span class="dv">{</span><br />  // Vertical navigation<br />  // Proportion adjustments for padding and fonts<br /><span class="dv">}</span></code></pre>
+</div>
 </div>
 <div id="were-now-mobile-first" class="slide">
 <h1>We're now mobile-first</h1>
 <p>Look at that, soldier! We're thinking mobile- and content-first. We're adapting our requirements and our layout based on the yins and yangs of project and customer requirements. Balance is key.</p>
-<p>Now we're trained, we've got a bit of flight time under our belt. It's time to specialize, to <a href="04-honed-killing-machine.html">shape ourselves into ultimate fighting machines</a>!</p>
+</div>
+<div id="and-now-we-ride-off-into-the-zombie-tinted-sunset" class="slide">
+<h1>And now we ride off into the Zombie-tinted sunset?</h1>
+<div class="figure">
+<img src="images/04-sunset.png" /><p class="caption"></p>
+</div>
+<p>Zombies are known for not being the easiest things to kill. What do we do when we start facing <a href="04-bloodier-uprisings.html">bloodier battles</a>?</p>
 </div>
 </body>
 </html>

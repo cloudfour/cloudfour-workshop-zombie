@@ -24,8 +24,18 @@ h2 {
   border-color:         rgba($color-dark, .65);
 }
 
+h3, h4 {
+  clear:                both;
+}
+
 a, a:visited {
   color:                darken($color-accent, 15%);
+}
+
+a {
+  h1 &, h2 &, h3 &, h4 &, h5 & {
+    text-decoration:    none;
+  }
 }
 
 pre, code {
@@ -64,8 +74,13 @@ section[id^="instead"] {
 section[id^="use"] {
   float:                right;
   width:                45%;
-
   margin-bottom:        1em;
   border-bottom:        1px;
   @include              ghetto-clearfix;
+}
+
+nav#TOC {
+  ul > li > ul > li > ul {
+    display:            none;
+  }
 }

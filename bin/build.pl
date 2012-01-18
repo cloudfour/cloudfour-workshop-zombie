@@ -99,6 +99,9 @@ sub build_survival {
   my $needs_update    = 0;
   my $css             = "fieldnotes.css";
   my $flags           = "--from=markdown --to=html --html5 --section-divs --standalone";
+  if ($base =~ /field-notes/) {
+    $flags .= ' --toc';
+  }
   if (&needs_update($_, $output)) {
     system("$pandoc $flags --css=$css $_ > $output"); 
     print "$_ updated --> $output \n";

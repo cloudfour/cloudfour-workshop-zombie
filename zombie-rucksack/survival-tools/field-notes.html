@@ -36,27 +36,115 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <h1 class="title">Field Notes | Zombie 101, Webvisions NYC</h1>
 <h3 class="author">Jason Grigsby and Lyza Danger Gardner</h3>
 </header>
+<nav id="TOC">
+<ul>
+<li><a href="#boot-camp-performance-and-semantic-clarity">2. Boot Camp: Performance and Semantic Clarity</a><ul>
+<li><a href="#sigma-stronghold-web-site">Sigma Stronghold Web Site</a></li>
+<li><a href="#weapons-for-performance">Weapons for Performance</a><ul>
+<li><a href="#sing-along-if-you-like">Sing Along if you Like!</a></li>
+<li><a href="#fixing-whats-broken-and-getting-rid-of-the-weather">Fixing what's broken and getting rid of the weather</a></li>
+<li><a href="#the-missing-bits">The missing bits</a></li>
+<li><a href="#deflabbing-some-images">Deflabbing some images</a></li>
+<li><a href="#server-side-optimization-in-apache-2.x">Server-side optimization in Apache 2.x</a></li>
+</ul></li>
+<li><a href="#getting-all-semantic-up-in-here">Getting all semantic up in here</a><ul>
+<li><a href="#some-of-the-things-improved-in-the-sigma-stronghold-markup">Some of the things improved in the Sigma Stronghold markup:</a></li>
+<li><a href="#taking-it-further...">Taking it further...</a></li>
+<li><a href="#other-tools-for-training">Other Tools for Training</a></li>
+<li><a href="#survival-tools">Survival Tools</a></li>
+</ul></li>
+<li><a href="#do-this-dropping-in-optimized-files"><em>Do this</em>: Dropping in optimized files!</a><ul>
+<li><a href="#get-ready-to-go-into-battle">Get ready to go into battle!</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#release-the-hounds-responsive-web-design">3. Release the Hounds! Responsive Web Design</a><ul>
+<li><a href="#do-this-converting-the-css-to-a-fluid-layout"><em>Do This</em>: Converting the CSS to a fluid layout</a><ul>
+<li><a href="#instead-of">Instead of</a></li>
+<li><a href="#use">Use</a></li>
+<li><a href="#instead-of-1">Instead of</a></li>
+<li><a href="#use-1">Use</a></li>
+<li><a href="#instead-of-2">Instead of</a></li>
+<li><a href="#use-2">use</a></li>
+<li><a href="#instead-of-3">Instead of</a></li>
+<li><a href="#use-3">Use</a></li>
+</ul></li>
+<li><a href="#media-queries">Media Queries!</a><ul>
+<li><a href="#mobile--or-content-first-rwd">Mobile- (or content-)first RWD</a><ul>
+<li><a href="#baseline-css">Baseline CSS</a></li>
+<li><a href="#px-breakpoint-and-wider">750px Breakpoint (and wider)</a></li>
+<li><a href="#px-breakpoint-and-narrower">550px Breakpoint (and narrower)</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#do-this-create-mobile-first-css"><em>Do This</em>: Create Mobile-first CSS</a><ul>
+<li><a href="#baseline-changes">Baseline Changes</a><ul>
+<li><a href="#instead-of-4">Instead of</a></li>
+<li><a href="#use-4">Use</a></li>
+<li><a href="#instead-of-5">Instead Of</a></li>
+<li><a href="#use-5">Use</a></li>
+<li><a href="#instead-of-6">Instead of</a></li>
+<li><a href="#use-6">Use</a></li>
+<li><a href="#instead-of-7">Instead of</a></li>
+<li><a href="#use-7">Use</a></li>
+</ul></li>
+<li><a href="#adding-a-breakpoint-for-column-reflow">Adding a breakpoint for column reflow</a></li>
+<li><a href="#now-add-a-breakpoint-for-narrow-screens">Now add a breakpoint for narrow screens</a></li>
+<li><a href="#if-you-have-any-woes...">If you have any woes...</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#a-honed-killing-machine">5. A Honed Killing Machine</a><ul>
+<li><a href="#applicationcache">ApplicationCache!</a><ul>
+<li><a href="#more-information-about-applicationcache">More Information about ApplicationCache</a></li>
+<li><a href="#cache-manifest-quickies">Cache Manifest Quickies</a></li>
+<li><a href="#creating-a-cache-manifest-for-the-sigma-stronghold-site">Creating a Cache Manifest for the Sigma Stronghold Site</a></li>
+<li><a href="#improving-the-cache-manifest">Improving the Cache Manifest</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#device-apis-focus-on-geolocation">Device APIs: Focus on Geolocation!</a><ul>
+<li><a href="#w3c-geolocation-api">W3C Geolocation API</a><ul>
+<li><a href="#quick-details">Quick Details</a><ul>
+<li><a href="#code-snippets">Code Snippets</a></li>
+</ul></li>
+<li><a href="#running-a-local-web-server">Running a local web server</a></li>
+<li><a href="#building-a-quickie-geolocation-test-page">Building a Quickie Geolocation Test Page</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#a-band-of-brothers">6. A Band of Brothers</a><ul>
+<li><a href="#exercise-1-a-jquery-mobile-page-for-nabbing-zombies">Exercise 1: A jQuery Mobile Page for Nabbing Zombies</a></li>
+<li><a href="#step-2-making-the-data-persistent">Step 2: Making the data persistent</a></li>
+</ul></li>
+<li><a href="#desperate-times-call-for...">7. Desperate Times call for...</a><ul>
+<li><a href="#hybrid-app-development-with-phonegap-and-phonegap-build">Hybrid App Development with PhoneGap and PhoneGap Build</a></li>
+<li><a href="#anatomy-of-a-phonegap-build-config-file">Anatomy of a PhoneGap Build Config File</a></li>
+</ul></li>
+<li><a href="#know-thy-enemy">8. Know Thy Enemy</a><ul>
+<li><a href="#many-device-detection-database-options">Many device detection database options</a></li>
+<li><a href="#some-sample-user-agent-strings">Some sample User Agent strings</a></li>
+<li><a href="#sniffing-em-out">Sniffing 'em out</a></li>
+<li><a href="#wurfl-code-snipp-lets">WURFL code snipp-lets</a></li>
+</ul></li>
+</ul>
+</nav>
 <hr />
-<section id="boot-camp">
-<h1>Boot Camp</h1>
+<section id="boot-camp-performance-and-semantic-clarity">
+<h1><a href="#TOC">2. Boot Camp: Performance and Semantic Clarity</a></h1>
 <section id="sigma-stronghold-web-site">
-<h2>Sigma Stronghold Web Site</h2>
+<h2><a href="#TOC">Sigma Stronghold Web Site</a></h2>
 <p>You'll find the Sigma Stronghold web site landing page in <code>zombie-rucksack/sigma-stronghold-website/index.html</code>. <a href="../sigma-stronghold-website/">Here's what it looks like right now</a>.</p>
 </section>
-<section id="weapons">
-<h2>Weapons</h2>
+<section id="weapons-for-performance">
+<h2><a href="#TOC">Weapons for Performance</a></h2>
 <ul>
 <li><a href="http://developer.yahoo.com/yslow/">ySlow</a></li>
 <li><a href="http://validator.w3.org/">W3C validator</a></li>
 <li><a href="http://smush.it">Smush.it</a></li>
 <li><a href="http://spriteme.org/">SpriteMe</a></li>
 </ul>
-</section>
 <section id="sing-along-if-you-like">
-<h2>Sing Along if you Like!</h2>
+<h3><a href="#TOC">Sing Along if you Like!</a></h3>
 <p>You can optionally follow along in your own text editor as we clean up Sigma Stronghold's (markup) act.</p>
+</section>
 <section id="fixing-whats-broken-and-getting-rid-of-the-weather">
-<h3>Fixing what's broken and getting rid of the weather</h3>
+<h3><a href="#TOC">Fixing what's broken and getting rid of the weather</a></h3>
 <ol type="1">
 <li>Find and fix the broken nested <code>&lt;span&gt;</code> elements in index.html. Use the <a href="http://validator.w3.org/" title="W3C Validator">W3C validator</a> as your guide.</li>
 <li>Remove the entire weather widget (<code>div#weather</code>).</li>
@@ -64,7 +152,7 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ol>
 </section>
 <section id="the-missing-bits">
-<h3>The missing bits</h3>
+<h3><a href="#TOC">The missing bits</a></h3>
 <ol type="1">
 <li>Reduce the Google fonts stylesheets to a single <code>&lt;link&gt;</code> tag.
 <ol type="a">
@@ -83,7 +171,7 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ol>
 </section>
 <section id="deflabbing-some-images">
-<h3>Deflabbing some images</h3>
+<h3><a href="#TOC">Deflabbing some images</a></h3>
 <ol type="1">
 <li>Remove the <code>zombie-girl</code> image and its containing <code>&lt;div&gt;</code> entirely (<code>div#nozombies</code>).</li>
 <li><p>Replace the image for contact-HQ with the following HTML chunk:</p>
@@ -98,7 +186,7 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ol>
 </section>
 <section id="server-side-optimization-in-apache-2.x">
-<h3>Server-side optimization in Apache 2.x</h3>
+<h3><a href="#TOC">Server-side optimization in Apache 2.x</a></h3>
 <p>A sample .htaccess file.</p>
 <pre><code>    # Turn on and configure GZIP compression
     &lt;IfModule mod_deflate.c&gt;
@@ -132,9 +220,9 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </section>
 </section>
 <section id="getting-all-semantic-up-in-here">
-<h2>Getting all semantic up in here</h2>
+<h2><a href="#TOC">Getting all semantic up in here</a></h2>
 <section id="some-of-the-things-improved-in-the-sigma-stronghold-markup">
-<h3>Some of the things improved in the Sigma Stronghold markup:</h3>
+<h3><a href="#TOC">Some of the things improved in the Sigma Stronghold markup:</a></h3>
 <ul>
 <li><code>div#navigation</code> changed to <code>&lt;nav&gt;</code> element.</li>
 <li><code>#page</code> id removed from <code>&lt;div&gt;</code>; used parent-child selector instead.</li>
@@ -148,7 +236,7 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ul>
 </section>
 <section id="taking-it-further...">
-<h3>Taking it further...</h3>
+<h3><a href="#TOC">Taking it further...</a></h3>
 <p>We didn't do these things but they might be cool, too:</p>
 <ul>
 <li>Address could be hCard</li>
@@ -157,23 +245,23 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ul>
 </section>
 <section id="other-tools-for-training">
-<h3>Other Tools for Training</h3>
+<h3><a href="#TOC">Other Tools for Training</a></h3>
 <ul>
 <li><a href="http://spriteme.org/">SpriteMe</a> for creating CSS sprites. By combining multiple CSS images into individual sprites, you both reduce overall image file size (usually) and reduce the number of HTTP requests (definitely).</li>
 <li><a href="http://www.refresh-sf.com/yui/">Online YUI Compressor</a> Handy tool to help compress and minify CSS and JavaScript.</li>
 </ul>
 </section>
 <section id="survival-tools">
-<h3>Survival Tools</h3>
+<h3><a href="#TOC">Survival Tools</a></h3>
 <ul>
 <li><a href="../survival-tools/.htaccess.example">Sample .htaccess file</a>.</li>
 </ul>
 </section>
 </section>
+<section id="do-this-dropping-in-optimized-files">
+<h2><a href="#TOC"><em>Do this</em>: Dropping in optimized files!</a></h2>
 <section id="get-ready-to-go-into-battle">
-<h2>Get ready to go into battle!</h2>
-<section id="do-this">
-<h3>Do this!</h3>
+<h3><a href="#TOC">Get ready to go into battle!</a></h3>
 <ul>
 <li>Replace the current versions of <code>index.html</code> and <code>styles.css</code> in your <code>sigma-stronghold-website</code> directory with the versions in <a href="../supplemental/boot-camp"><code>supplemental/boot-camp</code></a>.</li>
 <li>If you haven't already, copy the <code>favicon.ico</code> file from <a href="../supplemental/boot-camp"><code>supplemental/boot-camp</code></a> to your <code>sigma-stronghold-website</code> folder.</li>
@@ -183,100 +271,144 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </section>
 </section>
 </section>
-<section id="release-the-hounds">
-<h1>3. Release the Hounds!</h1>
+<section id="release-the-hounds-responsive-web-design">
+<h1><a href="#TOC">3. Release the Hounds! Responsive Web Design</a></h1>
 <p>For more expounding on the topic of relinquishing control, see Lyza's presentation <a href="http://www.slideshare.net/lyzadanger/crap-it-doesnt-look-quite-right-or-how-i-learned-to-stop-worrying-and-set-my-mobile-web-sites-free-9518337">&quot;Crap, it doesn't look quite right: Or, How I learned to stop worrying and set my mobile web sites free&quot;</a> on Slideshare.</p>
-<section id="notes-on-fluid-css-and-responsive-web-design-rwd">
-<h2>Notes on Fluid CSS and Responsive Web Design (RWD)</h2>
 <ul>
 <li>See Ethan's (<a href="http://twitter.com/beep">@beep</a>) original article about RWD on <a href="http://www.alistapart.com/articles/responsive-web-design/">A List Apart</a></li>
 <li>Fluid formula: <code>result = target / context</code></li>
 <li>Rough rule of thumb for font sizes: <code>1em = 100% ~= 16px ~= 12pt</code>. <em>Approximately</em>.</li>
 <li>Percentages (%) and <code>em</code>s are both fluid units, <code>pt</code>s, <code>px</code>, inches and pica are fixed. (Technically, <code>px</code> are not <em>absolute</em> absolute, as the size of a pixel varies with different devices and screens and are not <em>fixed</em>, per se. However, for our purposes, they are effectively absolute, as they do not scale).</li>
 </ul>
-</section>
-<section id="exercise-1-going-fluid">
-<h2>Exercise 1: Going Fluid</h2>
+<section id="do-this-converting-the-css-to-a-fluid-layout">
+<h2><a href="#TOC"><em>Do This</em>: Converting the CSS to a fluid layout</a></h2>
 <ol type="1">
 <li>Edit <code>styles.css</code> in the <code>sigma-stronghold-website</code> folder in your rucksack.</li>
 <li>Set a <code>max-width</code> instead of a <code>width</code> on the two main containing elements, <code>body &gt; div</code> and <code>#container</code>. Change the <code>padding</code> on <code>#container</code> to be in <code>em</code>s (relative) instead of <code>px</code> (absolute). You should end up with these two rules:</li>
 </ol>
 <section id="instead-of">
-<h3>Instead of</h3>
-<pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br />  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span><br />  <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span><br />  <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span><br />  <span class="kw">border-style:</span> <span class="dt">solid</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
+<h3><a href="#TOC">Instead of</a></h3>
+<pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br />  <span class="kw">width:</span> <span class="dt">920px</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span><br />  <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span><br />  <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
 </section>
 <section id="use">
-<h3>Use</h3>
-<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">padding:</span> <span class="dt">.625em</span><span class="kw">;</span><br />  <span class="kw">max-width:</span> <span class="dt">900px</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+<h3><a href="#TOC">Use</a></h3>
+<pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br />  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span><br />  <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span><br />  <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
 </section>
 <section id="instead-of-1">
-<h3>Instead of</h3>
-<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">margin-left:</span> <span class="dt">10px</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">width:</span> <span class="dt">550px</span><span class="kw">;</span><br />  <span class="er">...</span>           <span class="er">//</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span><br /><span class="kw">}</span></code></pre>
+<h3><a href="#TOC">Instead of</a></h3>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">padding:</span> <span class="dt">10px</span><span class="kw">;</span><br />  <span class="kw">width:</span> <span class="dt">900px</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
 </section>
 <section id="use-1">
-<h3>use</h3>
-<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span><br />  <span class="er">...</span><br /><span class="kw">}</span></code></pre>
+<h3><a href="#TOC">Use</a></h3>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">padding:</span> <span class="dt">.625em</span><span class="kw">;</span><br />  <span class="kw">max-width:</span> <span class="dt">900px</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
 </section>
 <section id="instead-of-2">
-<h3>Instead of</h3>
-<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span><br />  <span class="kw">margin-left:</span> <span class="dt">570px</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
+<h3><a href="#TOC">Instead of</a></h3>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">margin-left:</span> <span class="dt">10px</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">width:</span> <span class="dt">550px</span><span class="kw">;</span><br />  <span class="er">...</span>           <span class="er">//</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span><br /><span class="kw">}</span></code></pre>
 </section>
 <section id="use-2">
-<h3>Use</h3>
+<h3><a href="#TOC">use</a></h3>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span><br />  <span class="er">...</span><br /><span class="kw">}</span></code></pre>
+</section>
+<section id="instead-of-3">
+<h3><a href="#TOC">Instead of</a></h3>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span><br />  <span class="kw">margin-left:</span> <span class="dt">570px</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
+</section>
+<section id="use-3">
+<h3><a href="#TOC">Use</a></h3>
 <pre class="sourceCode"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span><br />  <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+<p>TODO: Provide end result CSS here.</p>
 </section>
 </section>
 <section id="media-queries">
-<h2>Media Queries!</h2>
+<h2><a href="#TOC">Media Queries!</a></h2>
 <ul>
 <li>You can always <a href="http://www.w3.org/TR/css3-mediaqueries/">read the spec</a></li>
 </ul>
-<section id="exercise-adding-media-queries-to-the-sigma-stronghold-css">
-<h3>Exercise: Adding media queries to the Sigma Stronghold CSS</h3>
-<ol type="1">
-<li><p>Edit <code>styles.css</code> in the <code>sigma-stronghold-website</code> folder.</p></li>
-<li><p>Make <code>#main</code> and <code>#sidebar</code> not float:</p>
-<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span><br />  <span class="fl">#main</span>, <span class="fl">#sidebar</span> <span class="kw">{</span><br />    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span><br />    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span><br />    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br />    <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span> <br />  <span class="kw">}</span><br /><span class="dv">}</span></code></pre></li>
-<li><p>Get rid of the background image:</p>
-<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span><br />  <span class="fl">...</span>   // <span class="fl">#main</span>, <span class="fl">#sidebar</span><br />  body <span class="kw">{</span><br />    <span class="kw">background-image:</span> <span class="dt">none</span><span class="kw">;</span> <br />  <span class="kw">}</span><br /><span class="dv">}</span></code></pre></li>
-<li><p>Make the navigation vertically-oriented and tap-able:</p>
-<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span><br />  <span class="fl">...</span> // <span class="fl">#main</span>, <span class="fl">#sidebar</span>, body<br />  <span class="fl">#header</span> nav ul li <span class="kw">{</span><br />    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span><br />    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br />    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span><br />    <span class="kw">margin:</span> <span class="dt">.5em</span> <span class="dt">0</span><span class="kw">;</span> <br />  <span class="kw">}</span><br />  <span class="fl">#header</span> nav ul li a <span class="kw">{</span><br />      <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span><br />      <span class="kw">padding:</span> <span class="dt">.75em</span><span class="kw">;</span> <br />  <span class="kw">}</span><br /><span class="dv">}</span></code></pre></li>
-<li><p>Adjust padding and font sizes:</p>
-<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span><br />  <span class="fl">...</span> // <span class="fl">#main</span>, <span class="fl">#sidebar</span>, body, <span class="fl">#header</span> nav<span class="fl">...</span><br />  <span class="fl">#header</span> <span class="kw">{</span><br />    <span class="kw">padding:</span> <span class="dt">1em</span> <span class="dt">0</span><span class="kw">;</span> <span class="kw">}</span><br />  <span class="fl">#header</span> h1, <span class="fl">#header</span> h3 <span class="kw">{</span><br />    <span class="kw">padding:</span> <span class="dt">0</span> <span class="dt">.375em</span><span class="kw">;</span> <span class="kw">}</span><br />  h1 <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">1.75em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span> <span class="kw">}</span><br />  h3 <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">1.1em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.2em</span><span class="kw">;</span> <span class="kw">}</span><br />  p <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">.9em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.4em</span><span class="kw">;</span> <span class="kw">}</span><br /><span class="dv">}</span></code></pre></li>
-<li><p>You can find the whole <a href="sigma-media-query.html">chunk of CSS here</a>.</p></li>
-</ol>
-</section>
-<section id="mobile-first-rwd">
-<h3>Mobile-first RWD</h3>
+<p>If you are curious, you can see the <a href="sigma-media-query.html">first version of media query CSS here</a> (the desktop-first, single breakpoint version).</p>
+<section id="mobile--or-content-first-rwd">
+<h3><a href="#TOC">Mobile- (or content-)first RWD</a></h3>
 <section id="baseline-css">
-<h4>Baseline CSS</h4>
+<h4><a href="#TOC">Baseline CSS</a></h4>
 <ul>
 <li>Single-column view</li>
 <li>Tabbed navigation</li>
 <li>No body background image</li>
 </ul>
 </section>
-<section id="px-breakpoint">
-<h4>&gt;=750px Breakpoint</h4>
+<section id="px-breakpoint-and-wider">
+<h4><a href="#TOC">750px Breakpoint (and wider)</a></h4>
 <ul>
 <li>Two-column layout</li>
 <li>Body background image</li>
 <li>Font and padding adjustments</li>
 </ul>
 </section>
-<section id="px-breakpoint-1">
-<h4>&lt;= 550px Breakpoint</h4>
+<section id="px-breakpoint-and-narrower">
+<h4><a href="#TOC">550px Breakpoint (and narrower)</a></h4>
 <ul>
 <li>Vertical navigation</li>
 <li>Font and padding adjustments</li>
 </ul>
 </section>
 </section>
-<section id="quick-exercise-drop-in-mobile-first-css">
-<h3>Quick Exercise: Drop in mobile-first CSS</h3>
-<p>No new CSS is added for this (aside from the media query adjustment), we're not going to make you do the busywork of moving the rules around in the file.</p>
+</section>
+<section id="do-this-create-mobile-first-css">
+<h2><a href="#TOC"><em>Do This</em>: Create Mobile-first CSS</a></h2>
+<p>Edit the <code>styles.css</code> file in the <code>sigma-stronghold-website</code> directory.</p>
+<section id="baseline-changes">
+<h3><a href="#TOC">Baseline Changes</a></h3>
+<ul>
+<li>No background image on the body</li>
+<li>Get rid of the wide, semi-transparent border on the body content area</li>
+</ul>
+<section id="instead-of-4">
+<h4><a href="#TOC">Instead of</a></h4>
+<pre class="sourceCode"><code class="sourceCode css">body <span class="kw">{</span><br />  <span class="kw">background-color:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span><br />  <span class="kw">font:</span> <span class="dt">100%</span> <span class="st">&quot;Special Elite&quot;</span><span class="kw">;</span><br />  <span class="kw">background-image:</span> <span class="dt">url(</span>images/moon<span class="dt">.</span>jpg<span class="dt">)</span><span class="kw">;</span><br />  <span class="kw">background-repeat:</span> <span class="dt">no-repeat</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+</section>
+<section id="use-4">
+<h4><a href="#TOC">Use</a></h4>
+<pre class="sourceCode"><code class="sourceCode css">body <span class="kw">{</span><br />  <span class="kw">background-color:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span><br />  <span class="kw">font:</span> <span class="dt">100%</span> <span class="st">&quot;Special Elite&quot;</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+</section>
+<section id="instead-of-5">
+<h4><a href="#TOC">Instead Of</a></h4>
+<pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br />  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span><br />  <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span><br />  <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span><br />  <span class="kw">border-style:</span> <span class="dt">solid</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+</section>
+<section id="use-5">
+<h4><a href="#TOC">Use</a></h4>
+<pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br />  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
+</section>
+<section id="instead-of-6">
+<h4><a href="#TOC">Instead of</a></h4>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span><br />  <span class="er">///</span> <span class="er">...</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span> <span class="er">...</span><br /><span class="kw">}</span></code></pre>
+</section>
+<section id="use-6">
+<h4><a href="#TOC">Use</a></h4>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span><br />  <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span><br />  <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="er">///</span> <span class="er">...</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span> <span class="er">...</span><br /><span class="kw">}</span></code></pre>
+</section>
+<section id="instead-of-7">
+<h4><a href="#TOC">Instead of</a></h4>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span><br />  <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+</section>
+<section id="use-7">
+<h4><a href="#TOC">Use</a></h4>
+<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span><br />  <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
+</section>
+</section>
+<section id="adding-a-breakpoint-for-column-reflow">
+<h3><a href="#TOC">Adding a breakpoint for column reflow</a></h3>
+<p>Add the following CSS to the <code>styles.css</code> file.</p>
+<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:750px)</span> <span class="dv">{</span><br />  <span class="co">/* Adding back in the background image */</span><br />  body <span class="kw">{</span><br />    <span class="kw">background-image:</span> <span class="dt">url(</span>images/moon<span class="dt">.</span>jpg<span class="dt">)</span><span class="kw">;</span><br />    <span class="kw">background-repeat:</span> <span class="dt">no-repeat</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><br />  <span class="co">/* Here's a border */</span><br />  body &gt; div <span class="kw">{</span><br />    <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span><br />    <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span><br />    <span class="kw">border-style:</span> <span class="dt">solid</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><br />  <span class="co">/* Float #main left; make it 60% width of its parent container */</span><br />  <span class="fl">#main</span> <span class="kw">{</span><br />    <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span><br />    <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />    <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />    <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><br />  <span class="co">/* A fluid left margin for a right-aligned #sidebar */</span><br />  <span class="fl">#sidebar</span> <span class="kw">{</span><br />    <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span><br />    <span class="kw">clear:</span> <span class="dt">none</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><span class="dv">}</span></code></pre>
+</section>
+<section id="now-add-a-breakpoint-for-narrow-screens">
+<h3><a href="#TOC">Now add a breakpoint for narrow screens</a></h3>
+<p>This is where we'll go to vertical, stacked navigation. We are also adjusting some fonts and margins.</p>
+<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:550px)</span> <span class="dv">{</span><br />  <span class="co">/* Here is the stacked navigation */</span><br />  <span class="fl">#header</span> nav ul li <span class="kw">{</span><br />    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span><br />    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br />    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span><br />    <span class="kw">margin:</span> <span class="dt">.5em</span> <span class="dt">0</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  <span class="fl">#header</span> nav ul li a <span class="kw">{</span><br />    <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span><br />    <span class="kw">padding:</span> <span class="dt">.75em</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  <span class="co">/* Padding and font adjustments */</span><br />  h1 <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">1.75em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  h3 <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">1.1em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.2em</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  p <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">.9em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.4em</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  <span class="fl">#header</span> <span class="kw">{</span><br />    <span class="kw">padding:</span> <span class="dt">1em</span> <span class="dt">0</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  <span class="fl">#header</span> h1, <span class="fl">#header</span> h3 <span class="kw">{</span><br />    <span class="kw">padding:</span> <span class="dt">0</span> <span class="dt">.375em</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><span class="dv">}</span></code></pre>
+</section>
+<section id="if-you-have-any-woes...">
+<h3><a href="#TOC">If you have any woes...</a></h3>
 <ol type="1">
-<li>Find the updated, <a href="../supplemental/release-hounds/mobile-first.css">mobile-first CSS file here</a>.</li>
+<li>You can find the updated, <a href="../supplemental/release-hounds/mobile-first.css">mobile-first CSS file here</a>.</li>
 <li>Replace the <code>styles.css</code> in <code>sigma-stronghold-website</code> with this CSS.</li>
 </ol>
 <hr />
@@ -284,11 +416,11 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </section>
 </section>
 <section id="a-honed-killing-machine">
-<h1>4. A Honed Killing Machine</h1>
+<h1><a href="#TOC">5. A Honed Killing Machine</a></h1>
 <section id="applicationcache">
-<h2>ApplicationCache!</h2>
+<h2><a href="#TOC">ApplicationCache!</a></h2>
 <section id="more-information-about-applicationcache">
-<h3>More Information about ApplicationCache</h3>
+<h3><a href="#TOC">More Information about ApplicationCache</a></h3>
 <ul>
 <li>There are enough little gotchas in appCache that it may behoove you to <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html">read the spec</a>.</li>
 <li>A handy site that lists a lot of the common gotchas can be found at <a href="http://appcachefacts.info/"><code class="url">http://appcachefacts.info/</code></a>.</li>
@@ -296,7 +428,7 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ul>
 </section>
 <section id="cache-manifest-quickies">
-<h3>Cache Manifest Quickies</h3>
+<h3><a href="#TOC">Cache Manifest Quickies</a></h3>
 <ol type="1">
 <li><p>File must be served as <code>text/application-cache</code>. Often this can be effected by adding the following line to an apache config (<code>.htaccess</code> file or the like).</p>
 <pre><code>AddType text/cache-manifest .appcache
@@ -314,7 +446,7 @@ ding/dong.html
 </ol>
 </section>
 <section id="creating-a-cache-manifest-for-the-sigma-stronghold-site">
-<h3>Creating a Cache Manifest for the Sigma Stronghold Site</h3>
+<h3><a href="#TOC">Creating a Cache Manifest for the Sigma Stronghold Site</a></h3>
 <p><em>Note</em>: If you are not running apache locally, you may not be able to get cache manifests working on your laptop. No worries!</p>
 <ol type="1">
 <li>Create a file called <code>manifest.appcache</code> in the <code>sigma-stronghold-website</code> folder in your rucksack.</li>
@@ -342,7 +474,7 @@ http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
 </ol>
 </section>
 <section id="improving-the-cache-manifest">
-<h3>Improving the Cache Manifest</h3>
+<h3><a href="#TOC">Improving the Cache Manifest</a></h3>
 <p>We need to cache those Google fonts! Add this to the end of the <code>CACHE</code> section:</p>
 <pre><code>http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff
 http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff
@@ -351,22 +483,22 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 </section>
 </section>
 <section id="device-apis-focus-on-geolocation">
-<h1>Device APIs: Focus on Geolocation!</h1>
+<h1><a href="#TOC">Device APIs: Focus on Geolocation!</a></h1>
 <section id="w3c-geolocation-api">
-<h2>W3C Geolocation API</h2>
+<h2><a href="#TOC">W3C Geolocation API</a></h2>
 <ul>
 <li>The spec for the <a href="http://dev.w3.org/geo/api/spec-source.html">W3C Geolocation API spec</a> is relatively short and easy to understand (as specs go).</li>
 </ul>
 <section id="quick-details">
-<h3>Quick Details</h3>
+<h3><a href="#TOC">Quick Details</a></h3>
 <p>Browsers that implement the W3C geolocation spec expose the <code>navigator.geolocation</code> object and its methods to the browser.</p>
 <section id="code-snippets">
-<h4>Code Snippets</h4>
+<h4><a href="#TOC">Code Snippets</a></h4>
 <pre class="sourceCode"><code class="sourceCode javascript">    <span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(successCallback, errorCallback)<br /><br />    <span class="kw">function</span> successCallback(position) {<br />      <span class="co">// Latitude and Longitude are usually what you're after.</span><br />      <span class="co">// They're properties of the coords object on position.</span><br />      alert(<span class="kw">position.coords</span>.<span class="fu">latitude</span> + <span class="ch">', '</span> + <span class="kw">position.coords</span>.<span class="fu">longitude</span>);<br />    }<br />    <span class="kw">function</span> errorCallback(error) {<br />      <span class="co">// Do something or freak out.</span><br />    }</code></pre>
 </section>
 </section>
 <section id="running-a-local-web-server">
-<h3>Running a local web server</h3>
+<h3><a href="#TOC">Running a local web server</a></h3>
 <p><em>Note</em>: If you view the geolocation test page (next section) as a <code>file://</code> in your web browser (that is, as a local file; not served by a web server), security settings will generally prevent you from geolocation information. Typically, an error will be generated akin to the user denying permission for geolocation.</p>
 <p>Some possible ways to get things working:</p>
 <ol type="1">
@@ -380,7 +512,7 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <p><em>If you don't have a web-served environment handy, no biggie. You can still follow along!</em></p>
 </section>
 <section id="building-a-quickie-geolocation-test-page">
-<h3>Building a Quickie Geolocation Test Page</h3>
+<h3><a href="#TOC">Building a Quickie Geolocation Test Page</a></h3>
 <ol type="1">
 <li>Open the <code>index.html</code> file in the <code>where-am-i</code> folder in your rucksack.</li>
 <li><p>Find the <code>&lt;script&gt;</code> tags.</p>
@@ -397,12 +529,12 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 </section>
 </section>
 <section id="a-band-of-brothers">
-<h1>6. A Band of Brothers</h1>
+<h1><a href="#TOC">6. A Band of Brothers</a></h1>
 <ul>
 <li><a href="http://www.jquerymobile.com">jQuery Mobile</a></li>
 </ul>
 <section id="exercise-1-a-jquery-mobile-page-for-nabbing-zombies">
-<h2>Exercise 1: A jQuery Mobile Page for Nabbing Zombies</h2>
+<h2><a href="#TOC">Exercise 1: A jQuery Mobile Page for Nabbing Zombies</a></h2>
 <ol type="1">
 <li>Find the &quot;I got one!&quot; starting point in your rucksack in <a href="../i-got-one/index.html"><code>i-got-one/index.html</code></a>.</li>
 <li><p>Add a header:</p>
@@ -415,7 +547,7 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 </ol>
 </section>
 <section id="step-2-making-the-data-persistent">
-<h2>Step 2: Making the data persistent</h2>
+<h2><a href="#TOC">Step 2: Making the data persistent</a></h2>
 <p>For this step, we use <a href="http://westcoastlogic.com/lawnchair/">Lawnchair</a>, an open-source JS library for storing data on the client:</p>
 <ol type="1">
 <li><p>Edit the <code>zombie.js</code> file.</p></li>
@@ -437,16 +569,16 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 </section>
 </section>
 <section id="desperate-times-call-for...">
-<h1>7. Desperate Times call for...</h1>
+<h1><a href="#TOC">7. Desperate Times call for...</a></h1>
 <section id="hybrid-app-development-with-phonegap-and-phonegap-build">
-<h2>Hybrid App Development with PhoneGap and PhoneGap Build</h2>
+<h2><a href="#TOC">Hybrid App Development with PhoneGap and PhoneGap Build</a></h2>
 <ul>
 <li><a href="http://www.phonegap.com">PhoneGap</a></li>
 <li><a href="http://build.phonegap.com">PhoneGap Build</a></li>
 </ul>
 </section>
 <section id="anatomy-of-a-phonegap-build-config-file">
-<h2>Anatomy of a PhoneGap Build Config File</h2>
+<h2><a href="#TOC">Anatomy of a PhoneGap Build Config File</a></h2>
 <p>Here's our example <code>config.xml</code> file.</p>
 <pre class="sourceCode"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; <span class="kw">?&gt;</span><br />    <span class="kw">&lt;widget</span><span class="ot"> xmlns</span> <span class="ot">=</span> <span class="st">&quot;http://www.w3.org/ns/widgets&quot;</span><br /><span class="ot">        xmlns:gap</span> <span class="ot">=</span> <span class="st">&quot;http://phonegap.com/ns/1.0&quot;</span><br /><span class="ot">        id</span>        <span class="ot">=</span> <span class="st">&quot;com.cloudfour.gotone&quot;</span><br /><span class="ot">        versionCode=</span><span class="st">&quot;10&quot;</span><br /><span class="ot">        version</span>   <span class="ot">=</span> <span class="st">&quot;1.0.0&quot;</span><span class="kw">&gt;</span><br /><br />    <span class="kw">&lt;name&gt;</span>I Got One<span class="kw">&lt;/name&gt;</span><br /><br />    <span class="kw">&lt;description&gt;</span><br />       Track your zombie kills!<br />    <span class="kw">&lt;/description&gt;</span><br /><br />    <span class="kw">&lt;author</span><span class="ot"> href=</span><span class="st">&quot;https://www.cloudfour.com&quot;</span><span class="ot"> email=</span><span class="st">&quot;info@cloudfour.com&quot;</span><span class="kw">&gt;</span><br />        Lyza Gardner and Jason Grigsby<br />    <span class="kw">&lt;/author&gt;</span><br /><br />    <span class="kw">&lt;preference</span><span class="ot"> name=</span><span class="st">&quot;orientation&quot;</span><span class="ot"> value=</span><span class="st">&quot;portrait&quot;</span> <span class="kw">/&gt;</span><br /><br />    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-iphone.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;57&quot;</span><span class="ot"> height=</span><span class="st">&quot;57&quot;</span><span class="kw">/&gt;</span><br />    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-ipad.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;72&quot;</span><span class="ot"> height=</span><span class="st">&quot;72&quot;</span><span class="kw">/&gt;</span><br />    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-iphone4.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;114&quot;</span><span class="ot"> height=</span><span class="st">&quot;114&quot;</span><span class="kw">/&gt;</span><br /><br />    <span class="kw">&lt;gap:splash</span><span class="ot"> src=</span><span class="st">&quot;app-icons/splash.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;320&quot;</span><span class="ot"> height=</span><span class="st">&quot;480&quot;</span> <span class="kw">/&gt;</span><br />    <span class="kw">&lt;gap:splash</span><span class="ot"> src=</span><span class="st">&quot;app-icons/splash-2x.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;640&quot;</span><span class="ot"> height=</span><span class="st">&quot;960&quot;</span><span class="kw">/&gt;</span><br /><span class="kw">&lt;/widget&gt;</span></code></pre>
 <p>(You can also find this in <a href="../supplemental/desperate-times/config.xml"><code>supplemental/desperate-times/config.xml</code></a>).</p>
@@ -454,9 +586,9 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 </section>
 </section>
 <section id="know-thy-enemy">
-<h1>8. Know Thy Enemy</h1>
+<h1><a href="#TOC">8. Know Thy Enemy</a></h1>
 <section id="many-device-detection-database-options">
-<h2>Many device detection database options</h2>
+<h2><a href="#TOC">Many device detection database options</a></h2>
 <ul>
 <li><a href="http://wurfl.sourceforge.net/">WURFL</a> (Wireless Universal Resource FiLe) by <a href="http://www.scientiamobile.com/">ScientiaMobile</a></li>
 <li><a href="http://deviceatlas.com/">DeviceAtlas</a> by <a href="http://mtld.mobi/">dotMobi</a></li>
@@ -465,7 +597,7 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 </ul>
 </section>
 <section id="some-sample-user-agent-strings">
-<h2>Some sample User Agent strings</h2>
+<h2><a href="#TOC">Some sample User Agent strings</a></h2>
 <pre><code><br />Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5
 
 Mozilla/5.0 (Linux; U; Android 2.2.1; en-us; DROIDX Build/VZW) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 480X854 motorola DROIDX
@@ -488,7 +620,7 @@ facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
 </code></pre>
 </section>
 <section id="sniffing-em-out">
-<h2>Sniffing 'em out</h2>
+<h2><a href="#TOC">Sniffing 'em out</a></h2>
 <ol type="1">
 <li>Go to the <a href="http://www.tera-wurfl.com/explore/">ScientiaMobile WURFL Explorer</a> on your mobile phone</li>
 <li>Check out the various attributes. What do you see that would be useful?</li>
@@ -498,7 +630,7 @@ facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
 </ol>
 </section>
 <section id="wurfl-code-snipp-lets">
-<h2>WURFL code snipp-lets</h2>
+<h2><a href="#TOC">WURFL code snipp-lets</a></h2>
 <pre class="sourceCode"><code class="sourceCode php"><span class="kw">&lt;?php</span><br /><span class="co">// This assumes the WURFL library is installed and</span><br /><span class="co">// a $device object has been initialized.</span><br /><span class="kw">$value</span> = <span class="kw">$device</span>-&gt;getCapability<span class="ot">(</span><span class="st">'is_wireless_device'</span><span class="ot">);</span><br /><span class="kw">$value</span> = <span class="kw">$device</span>-&gt;getCapability<span class="ot">(</span><span class="st">'cookie_support'</span><span class="ot">);</span><br /><span class="kw">?&gt;</span></code></pre>
 <p>More documentation on WURFL available on its <a href="http://wurfl.sourceforge.net/">Sourceforge page</a>.</p>
 </section>

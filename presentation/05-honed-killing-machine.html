@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="AppCache and Geolocation and Things that Make Mobile Shine" />
+  <title>A Honed Killing Machine</title>
+  <style type="text/css">
+/*<![CDATA[*/
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode, table.sourceCode pre 
+   { margin: 0; padding: 0; border: 0; vertical-align: baseline; border: none; }
+td.lineNumbers { border-right: 1px solid #AAAAAA; text-align: right; color: #AAAAAA; padding-right: 5px; padding-left: 5px; }
+td.sourceCode { padding-left: 5px; }
+code.sourceCode span.kw { color: #007020; font-weight: bold; } 
+code.sourceCode span.dt { color: #902000; }
+code.sourceCode span.dv { color: #40a070; }
+code.sourceCode span.bn { color: #40a070; }
+code.sourceCode span.fl { color: #40a070; }
+code.sourceCode span.ch { color: #4070a0; }
+code.sourceCode span.st { color: #4070a0; }
+code.sourceCode span.co { color: #60a0b0; font-style: italic; }
+code.sourceCode span.ot { color: #007020; }
+code.sourceCode span.al { color: red; font-weight: bold; }
+code.sourceCode span.fu { color: #06287e; }
+code.sourceCode span.re { }
+code.sourceCode span.er { color: red; font-weight: bold; }
+/*]]>*/
+  </style>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+    href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
+  <link rel="stylesheet" type="text/css" media="screen, projection, print"
+   href="../assets/styles/workshop.css" />
+  <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js.gz"
+    charset="utf-8" type="text/javascript"></script>
+</head>
+<body>
+<div class="slide titlepage">
+  <h1 class="title">A Honed Killing Machine</h1>
+  <p class="author">
+AppCache and Geolocation and Things that Make Mobile Shine
+  </p>
+</div>
+<div id="faster-better-stronger" class="slide">
+<h1>Faster, Better, Stronger</h1>
+<p>We're well into the fray now. Our squad is well-trained and looking sharp. It's time to add to our mobile zombie specializations by training in some more techniques!</p>
+<ul>
+<li><em>ApplicationCache</em>: We'll use a cache manifest file to create an offline mode for the Sigma Stronghold site.</li>
+<li><em>Device APIs</em>: We'll introduce you to the world of device APIs by playing around with geolocation.</li>
+</ul>
+</div>
+<div id="applicationcache" class="slide">
+<h1>ApplicationCache</h1>
+<ul>
+<li>An API that is part of the HTML5 spec</li>
+<li>Define what resources should (or should not be) cached using a cache manifest</li>
+<li>ApplicationCache object and its methods exposed to JavaScript</li>
+</ul>
+</div>
+<div id="cache-manifests" class="slide">
+<h1>Cache manifests</h1>
+<div class="figure">
+<img src="images/04-cache-manifest.png" /><p class="caption"></p>
+</div>
+<p>A <em>cache manifest</em> is a file that lets you tell the client about resources that should be cached.</p>
+<p>You can use a cache manifest to create an <em>offline mode</em> for your web site or app.</p>
+</div>
+<div id="cache-manifests-at-a-glance" class="slide">
+<h1>Cache manifests at a glance</h1>
+<p>To create and use a cache manifest:</p>
+<ol style="list-style-type: decimal">
+<li>Write a cache manifest file that lists resources on the site that the browser should cache.</li>
+<li>Configure your web server to serve the cache manifest as the correct <code>MIME</code> type.</li>
+<li>Tell browsers about your manifest by using the <code>manifest</code> attribute on the <code>&lt;html&gt;</code> tag.</li>
+</ol>
+</div>
+<div id="step-1-writing-the-manifest" class="slide">
+<h1>Step 1: Writing the manifest</h1>
+<div id="cache-manifest-syntax">
+<h2>Cache manifest syntax</h2>
+<p>Writing a cache manifest file sounds simple—in premise. In its simplest:</p>
+<pre><code>CACHE MANIFEST
+
+CACHE:
+foo.jpg
+bar.png
+index.html
+ding/dong.html
+</code></pre>
+<div id="manifest.appcache">
+<h5>manifest.appcache</h5>
+</div>
+</div>
+</div>
+<div id="step-2-serving-cache-manifests" class="slide">
+<h1>Step 2: Serving cache manifests</h1>
+<p>Cache manifest files must be served as a particular <code>MIME</code> type (<code>text/cache-manifest</code>) or browsers will not recognize them.</p>
+<p>Often this can be handled by adding the following to your <code>.htaccess</code> or other Apache configuration file:</p>
+<p><code>AddType text/cache-manifest .appcache</code></p>
+<p>(Preferred extension is <code>.appcache</code>)</p>
+</div>
+<div id="step-3-tell-the-browser-about-your-manifest" class="slide">
+<h1>Step 3: Tell the browser about your manifest</h1>
+<p>There is a <code>manifest</code> attribute on the <code>html</code> element.</p>
+<p><code>&lt;html manifest=&quot;manifest.appcache&quot;&gt;</code></p>
+</div>
+<div id="ways-things-end-up-in-appcache" class="slide">
+<h1>Ways things end up in appCache</h1>
+<ul>
+<li>Listed in the cache manifest file (explicit)</li>
+<li>Is a document with a manifest defined (implicit)</li>
+</ul>
+</div>
+<div id="be-very-wary" class="slide">
+<h1>Be very wary</h1>
+<div class="figure">
+<img src="images/04-danger.png" /><p class="caption"></p>
+</div>
+<ul>
+<li>If an HTML document is in the cache, any resource it references (images, CSS, whatever) <em>must</em> be declared in the cache manifest file or they will not be available to the browser. At all.</li>
+<li>Changes to files listed in the cache manifest will be ignored by browsers unless the <em>cache manifest file</em> itself changes.</li>
+<li>Any error in the cache manifest will cause the whole thing not to work. A single 404 can also wreak havoc.</li>
+<li>A changed cache manifest requires <em>two</em> subsequent requests for the changes to be visible.</li>
+</ul>
+</div>
+<div id="so-should-we-just-list-all-of-the-files-on-a-site-in-the-cache-manifest" class="slide">
+<h1>So, should we just list all of the files on a site in the cache manifest?</h1>
+<ul>
+<li>This is of course a maintenance pain.</li>
+<li>More importantly, as soon as a browser gets a cache manifest file, it will <em>immediately</em> (asynchronously) download all of the resources in that cache manifest.</li>
+</ul>
+</div>
+<div id="conclusion" class="slide">
+<h1>Conclusion</h1>
+<p>Cache manifest can be a good approach for creating offline modes of web sites and apps. It tends to be more manageable for smaller or app-like web sites.</p>
+<div id="speaker-notes">
+<h2>Speaker Notes</h2>
+<p>As cache manifests get more extensive and complex, one often ends up having to create dynamic cache manifest files on the server. Things can get very complicated, very fast.</p>
+</div>
+</div>
+<div id="manifesting-the-sigma-stronghold-site" class="slide">
+<h1>Manifesting the Sigma Stronghold Site</h1>
+<p>Let's create a simple cache manifest for the Sigma Stronghold site.</p>
+<ul>
+<li>Need to add the landing page and its needed resources to the <code>CACHE</code> section.</li>
+<li>Like this:</li>
+</ul>
+<div id="code">
+<h2>Code</h2>
+<pre><code>    CACHE MANIFEST
+
+    CACHE:
+    index.html
+    favicon.ico
+    images/blip.png
+    images/bomb.png
+    images/moon.jpg
+    styles.css
+    http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
+</code></pre>
+</div>
+<div id="speaker-notes-1">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Not technically required to add index.html to the cache manifest, but it is good form.</li>
+<li>&quot;I'm going to add that to a cache manifest file..&quot;</li>
+</ul>
+</div>
+</div>
+<div id="updating-the-config" class="slide">
+<h1>Updating the config</h1>
+<p>Now we need to edit the <code>.htaccess</code> file to serve this file correctly. Like we said before, that looks like:</p>
+<pre><code>AddType text/cache-manifest .appcache
+</code></pre>
+</div>
+<div id="let-er-rip" class="slide">
+<h1>Let 'er Rip</h1>
+<div class="figure">
+<img src="images/04-confusion.png" /><p class="caption"></p>
+</div>
+<p>How'd that go?</p>
+<p>Wait a minute...</p>
+</div>
+<div id="whered-our-fonts-go" class="slide">
+<h1>Where'd our fonts go?</h1>
+<p>We added the Google Fonts CSS stylesheet to our cache manifest, but the actual font files are not in the cache manifest. Uh oh! Now what?</p>
+<p>We need to add the Google Font files to the cache, explicitly:</p>
+<pre><code>http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff
+http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff
+</code></pre>
+</div>
+<div id="it-aint-perfect" class="slide">
+<h1>It ain't perfect</h1>
+<p>This cache manifest situation works nicely in iOS, Android and in Chrome on the desktop. FireFox, however, is not thrilled about it.</p>
+<p>This is <em>so</em> typical of mobile web development.</p>
+<div id="speaker-notes-2">
+<h2>Speaker Notes</h2>
+<p>Good fallback fonts!</p>
+</div>
+</div>
+<div id="but-hey-its-pretty-decent" class="slide">
+<h1>But hey, it's pretty decent</h1>
+<div class="figure">
+<img src="images/04-drawing-line.png" /><p class="caption"></p>
+</div>
+<p>It's all about what we're targeting and where we're drawing the line.</p>
+<div id="speaker-notes-3">
+<h2>Speaker Notes</h2>
+<p>There are other options, like dynamically generating cache manifests or only delivering them to certain user agents.</p>
+</div>
+</div>
+<div id="and-now-for-something-completely-different" class="slide">
+<h1>And now for something completely different</h1>
+<p>Let's rinse off that cache manifest stink, shall we? It's time to get down to the stuff that really makes mobile <em>mobile</em>. Something that will make us like Navy SEALs or otherwise really cool.</p>
+</div>
+<div id="lets-talk-about-device-apis" class="slide">
+<h1>Let's talk about device APIs</h1>
+<div id="figure-device-apis">
+<h2>Figure: Device APIS!</h2>
+<div class="figure">
+<img src="images/04-device-apis.png" /><p class="caption"></p>
+</div>
+</div>
+</div>
+<div id="geolocation" class="slide">
+<h1>Geolocation</h1>
+<div class="figure">
+<img src="images/04-compass.png" /><p class="caption"></p>
+</div>
+<p>Geolocation is the darling of many. It's consummately mobile and easy to describe. There are oh so many ways to make good use of a user's current location to deliver adapted experiences or add functionality to applications. Whee!</p>
+<p>It is also one of the device APIs that is relatively widely supported in the browser.</p>
+</div>
+<div id="w3c-geolocation-api" class="slide">
+<h1>W3C Geolocation API</h1>
+<p>The W3C Geolocation API is a standard way of exposing geolocation information to JavaScript in the browser. It is rather well adopted.</p>
+<p>Browsers that implement the W3C Geolocation API expose the <code>navigator.geolocation</code> object and its methods to the browser.</p>
+</div>
+<div id="using-the-w3c-api-to-get-the-current-location" class="slide">
+<h1>Using the W3C API to get the current location</h1>
+<p>Here's what it looks like:</p>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(successCallback, errorCallback)</code></pre>
+<div id="speaker-notes-4">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Use the function defined as successCallback to work with position stuff.</li>
+</ul>
+</div>
+</div>
+<div id="lets-try-it-out" class="slide">
+<h1>Let's try it out</h1>
+<p>Hey, let's build a basic geolocation test page to see how that geolocation API works. Most modern leading desktop browsers support the W3C geolocation spec (but you'll need at least IE9; they were (surprise!) a bit late to the party).</p>
+<ul>
+<li>Find a starting point in the <code>index.html</code> file in your rucksack, inside of the <code>where-am-i</code> folder.</li>
+</ul>
+</div>
+<div id="testing-for-api-support" class="slide">
+<h1>Testing for API support</h1>
+<pre class="sourceCode"><code class="sourceCode javascript">&lt;script&gt;<br />  <span class="kw">if</span> (<span class="kw">navigator</span>.<span class="fu">geolocation</span>) {<br />    <span class="co">// Do something, dammit!</span><br />  }<br />&lt;/script&gt;</code></pre>
+</div>
+<div id="doing-something-dammit" class="slide">
+<h1>Doing something, dammit</h1>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">if</span> (<span class="kw">navigator</span>.<span class="fu">geolocation</span>) {<br />  <span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(onGeoSuccess, onGeoError);<br />} <span class="kw">else</span> {<br />  onGeoError(<span class="kw">new</span> Error(<span class="ch">'Sorry, Geolocation not supported in this browser!'</span>));<br />}</code></pre>
+</div>
+<div id="and-now-what..." class="slide">
+<h1>And now what...?</h1>
+<p>We need to define our success and error callbacks.</p>
+<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">function</span> onGeoSuccess(position) {<br />  <span class="kw">var</span> coordinates = <span class="kw">position</span>.<span class="fu">coords</span>;<br />  alert(<span class="kw">coordinates</span>.<span class="fu">latitude</span> + <span class="st">&quot;, &quot;</span> + <span class="kw">coordinates</span>.<span class="fu">longitude</span>);<br />}<br /><span class="kw">function</span> onGeoError(error) {<br />  alert(<span class="kw">error</span>.<span class="fu">message</span>);<br />}</code></pre>
+</div>
+<div id="all-together-now" class="slide">
+<h1>All together now!</h1>
+<p>Using your field notes as a guide, update the <code>index.html</code> in the <code>where-am-i</code> folder and try it out!</p>
+<p>If it works, you should get a JavaScript alert with your current location.</p>
+<div id="speaker-notes-5">
+<h2>Speaker Notes</h2>
+<p>Most browsers will prompt you for permission first.</p>
+</div>
+</div>
+<div id="so-this-doesnt-work-everywhere" class="slide">
+<h1>So, this doesn't work everywhere</h1>
+<p>A lot of modern browsers implement the W3C geolocation API. But not all of them, by a sight. In cases like these, we can lean on our zombie-fighting community. Let's go meet the <a href="06-band-of-brothers.html">band of brothers</a>.</p>
+</div>
+</body>
+</html>

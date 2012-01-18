@@ -83,21 +83,11 @@ Right now, the Sigma Stronghold web site's structure is like this.
 
 ![](images/03-fluid-formula.png)
 
-# Result = Target / Context
+# The fluid formula
 
-## Result
+## Figure: The fluid formula applied
 
-![](images/03-result.png)
-
-Proportional units
-
-# Result = Target / Context
-
-## Target
-
-![](images/03-target.png)
-
-Our original, absolute units
+![](images/03-formula-applied.png)
 
 # Result = Target / Context
 
@@ -106,6 +96,8 @@ Our original, absolute units
 ## Context
 
 Let's talk about *context* a bit, yes?
+
+#### TARGET / CONTEXT = RESULT
 
 # Applying the fluid formula
 
@@ -184,12 +176,6 @@ body > div {
  ...
 }
 ~~~~
-
-## Speaker Notes
-
-* This constrains our outer container to never exceed 920px—but it can certainly be smaller.
-* Strictly speaking, this div is probably not necessary.
-* `body > div` and `div#main` are centered in the browser window by way of the `margin: 0 auto`.
 
 # Revising our CSS, cont.
 
@@ -322,13 +308,6 @@ Media types have been around a while. It's how we make print stylesheets, e.g.
 <link rel="stylesheet" media="print" href="print.css">
 ~~~
 
-## Speaker Notes
-
-Other popular media types
-
-* screen
-* projection
-
 # Media Features
 
 #### Media types have media features.
@@ -368,20 +347,15 @@ By using media queries, we can apply different CSS in different situations.
 
 The problem with the Sigma Stronghold site on narrow screens is that the columns are too small and the nav feels too cramped.
 
-## Speaker Notes
+# Here's one way we could do it
 
-* The most popular application of this is to adapt layout depending on the current window width, which is what we are going to do.
+### For narrower screens
 
-# Let's make this more responsive
+* Instead of two columns of content, we could have a single column.
+* And instead of tabbed navigation, we could make the navigation elements bigger and more tap-able.
+* Let's say that any screen narrower than 600px should have a single-column view of the content, and vertical navigation items.
 
-* Let's make the site layout more *responsive* by adapting it for narrower windows.
-
-    * Instead of two columns of content, let's have a single column.
-    * And instead of tabbed navigation, let's make the navigation elements bigger and more tap-able.
-
-# First whack at media queries
-
-Let's say that any screen narrower than 600px should have a single-column view of the content, and vertical navigation items.
+# Something like this...
 
 ## Figure: Adaptive Layout
 
@@ -453,6 +427,8 @@ Let's make the navigation vertical and tap-able.
 
 Often as screen sizes change, proportions feel a bit different. 
 
+## Code
+
 ~~~ {.css}
 @media screen and (max-width:600px) {
   ... // #main, #sidebar, body, #header nav...
@@ -488,6 +464,10 @@ Often as screen sizes change, proportions feel a bit different.
 
 ![](images/sigma-site-screenshots/android-responsive.png)
 
+# But...let's think about this a bit more.
+
+Thinking.
+
 # Mobile first RWD
 
 * Content- and mobile-first approach
@@ -500,16 +480,16 @@ Stepping back and thinking what we want our baseline experience to be.
 
 * Let's make the single-column width the default layout and *enhance* to the two-column view and the background image.
 * *But*, let's make the tabbed navigation default (not the vertical).
+
+# Thinking through some breakpoints
+
 * Let's also fine-tune the _breakpoints_.
     * Let's make the vertical navigation appear for windows <= 550px.
     * Let's make the double column view kick in and the moon background appear for windows >= 750px.
 
-## Speaker Notes
-
-* TODO: Ask Jason about image download (moon)
-* Talk about media query support and how it's a bit easier to handle on the desktop
-
 # CSS Restructuring
+
+## Code
 
 ~~~ {.css}
 // Baseline CSS
@@ -532,4 +512,8 @@ Stepping back and thinking what we want our baseline experience to be.
 
 Look at that, soldier! We're thinking mobile- and content-first. We're adapting our requirements and our layout based on the yins and yangs of project and customer requirements. Balance is key.
 
-Now we're trained, we've got a bit of flight time under our belt. It's time to specialize, to [shape ourselves into ultimate fighting machines](04-honed-killing-machine.html)!
+# And now we ride off into the Zombie-tinted sunset?
+
+![](images/04-sunset.png)
+
+Zombies are known for not being the easiest things to kill. What do we do when we start facing [bloodier battles](04-bloodier-uprisings.html)?

@@ -3,20 +3,20 @@
 
 ----------------
 
-# Boot Camp
+# 2. Boot Camp: Performance and Semantic Clarity
 
 ## Sigma Stronghold Web Site
 
 You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma-stronghold-website/index.html`. [Here's what it looks like right now](../sigma-stronghold-website/).
 
-## Weapons
+## Weapons for Performance
 
 * [ySlow](http://developer.yahoo.com/yslow/)
 * [W3C validator](http://validator.w3.org/)
 * [Smush.it](http://smush.it)
 * [SpriteMe](http://spriteme.org/)
 
-## Sing Along if you Like!
+### Sing Along if you Like!
 
 You can optionally follow along in your own text editor as we clean up Sigma Stronghold's (markup) act.
 
@@ -128,9 +128,9 @@ We didn't do these things but they might be cool, too:
 
 * [Sample .htaccess file](../survival-tools/.htaccess.example).
 
-## Get ready to go into battle!
+## *Do this*: Dropping in optimized files!
 
-### Do this!
+### Get ready to go into battle!
 
 * Replace the current versions of `index.html` and `styles.css` in your `sigma-stronghold-website` directory with the versions in [`supplemental/boot-camp`](../supplemental/boot-camp). 
 * If you haven't already, copy the `favicon.ico` file from [`supplemental/boot-camp`](../supplemental/boot-camp) to your `sigma-stronghold-website` folder.
@@ -139,18 +139,16 @@ Now you have the semantically-improved, optimized version of Sigma Stronghold's 
 
 -----------------------
 
-# 3. Release the Hounds!
+# 3. Release the Hounds! Responsive Web Design
 
 For more expounding on the topic of relinquishing control, see Lyza's presentation ["Crap, it doesn't look quite right: Or, How I learned to stop worrying and set my mobile web sites free"](http://www.slideshare.net/lyzadanger/crap-it-doesnt-look-quite-right-or-how-i-learned-to-stop-worrying-and-set-my-mobile-web-sites-free-9518337) on Slideshare.
-
-## Notes on Fluid CSS and Responsive Web Design (RWD)
 
 * See Ethan's ([@beep](http://twitter.com/beep)) original article about RWD on [A List Apart](http://www.alistapart.com/articles/responsive-web-design/)
 * Fluid formula: `result = target / context`
 * Rough rule of thumb for font sizes: `1em = 100% ~= 16px ~= 12pt`. *Approximately*.
 * Percentages (%) and `em`s are both fluid units, `pt`s, `px`, inches and pica are fixed. (Technically, `px` are not *absolute* absolute, as the size of a pixel varies with different devices and screens and are not *fixed*, per se. However, for our purposes, they are effectively absolute, as they do not scale).
 
-## Exercise 1: Going Fluid
+## *Do This*: Converting the CSS to a fluid layout
 
 1. Edit `styles.css` in the `sigma-stronghold-website` folder in your rucksack.
 2. Set a `max-width` instead of a `width` on the two main containing elements, `body > div` and `#container`. Change the `padding` on `#container` to be in `em`s (relative) instead of `px` (absolute). You should end up with these two rules:
@@ -159,11 +157,33 @@ For more expounding on the topic of relinquishing control, see Lyza's presentati
 
 ~~~ {.css}
 body > div {
+  width: 920px;
+  margin: 0 auto;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-width: 0px 7px; 
+}
+~~~
+
+### Use
+
+~~~ {.css}
+body > div {
   max-width: 920px;
   margin: 0 auto;
   border-color: rgba(255, 255, 255, 0.2);
   border-width: 0px 7px;
-  border-style: solid; 
+}
+~~~
+
+### Instead of
+
+~~~ {.css}
+#container {
+  zoom: 1;
+  background: black;
+  padding: 10px;
+  width: 900px;
+  clear: both; 
 }
 ~~~
 
@@ -221,80 +241,15 @@ body > div {
 }
 ~~~
 
+TODO: Provide end result CSS here.
+
 ## Media Queries!
 
 * You can always [read the spec](http://www.w3.org/TR/css3-mediaqueries/)
 
-### Exercise: Adding media queries to the Sigma Stronghold CSS
+If you are curious, you can see the [first version of media query CSS here](sigma-media-query.html) (the desktop-first, single breakpoint version).
 
-1. Edit `styles.css` in the `sigma-stronghold-website` folder.
-
-1. Make `#main` and `#sidebar` not float:
-
-    ~~~ {.css}
-    @media screen and (max-width:600px) {
-      #main, #sidebar {
-        width: 100%;
-        float: none;
-        clear: both;
-        margin: 0; 
-      }
-    }
-    ~~~
-    
-1. Get rid of the background image:
-
-    ~~~ {.css}
-    @media screen and (max-width:600px) {
-      ...   // #main, #sidebar
-      body {
-        background-image: none; 
-      }
-    }
-    ~~~
-    
-1. Make the navigation vertically-oriented and tap-able:
-
-    ~~~ {.css}
-    @media screen and (max-width:600px) {
-      ... // #main, #sidebar, body
-      #header nav ul li {
-        float: none;
-        clear: both;
-        width: 100%;
-        margin: .5em 0; 
-      }
-      #header nav ul li a {
-          margin: 0;
-          padding: .75em; 
-      }
-    }
-    ~~~
-    
-1. Adjust padding and font sizes:
-
-    ~~~ {.css}
-    @media screen and (max-width:600px) {
-      ... // #main, #sidebar, body, #header nav...
-      #header {
-        padding: 1em 0; }
-      #header h1, #header h3 {
-        padding: 0 .375em; }
-      h1 {
-        font-size: 1.75em;
-        line-height: 1.25em; }
-      h3 {
-        font-size: 1.1em;
-        line-height: 1.2em; }
-      p {
-        font-size: .9em;
-        line-height: 1.4em; }
-    }
-    ~~~
-
-1. You can find the whole [chunk of CSS here](sigma-media-query.html).
-
-### Mobile-first RWD
+### Mobile- (or content-)first RWD
 
 #### Baseline CSS
 
@@ -302,27 +257,195 @@ body > div {
 * Tabbed navigation
 * No body background image
 
-#### >=750px Breakpoint
+#### 750px Breakpoint (and wider)
 
 * Two-column layout
 * Body background image
 * Font and padding adjustments
 
-#### <= 550px Breakpoint
+#### 550px Breakpoint (and narrower)
 
 * Vertical navigation
 * Font and padding adjustments
 
-### Quick Exercise: Drop in mobile-first CSS
+## *Do This*: Create Mobile-first CSS
 
-No new CSS is added for this (aside from the media query adjustment), we're not going to make you do the busywork of moving the rules around in the file.
+Edit the `styles.css` file in the `sigma-stronghold-website` directory.
 
-1. Find the updated, [mobile-first CSS file here](../supplemental/release-hounds/mobile-first.css).
+### Baseline Changes
+
+* No background image on the body
+* Get rid of the wide, semi-transparent border on the body content area
+
+#### Instead of
+
+~~~ {.css}
+body {
+  background-color: black;
+  color: white;
+  font: 100% "Special Elite";
+  background-image: url(images/moon.jpg);
+  background-repeat: no-repeat;
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+body {
+  background-color: black;
+  color: white;
+  font: 100% "Special Elite";
+}
+~~~
+
+#### Instead Of
+
+~~~ {.css}
+body > div {
+  max-width: 920px;
+  margin: 0 auto;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-width: 0px 7px;
+  border-style: solid;
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+body > div {
+  max-width: 920px;
+  margin: 0 auto; 
+}
+~~~
+
+#### Instead of
+
+~~~ {.css}
+#main {
+  zoom: 1;
+  margin-left: 1.5%;
+  clear: left;
+  float: left;
+  width: 60%;
+  /// ... And so on ...
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+#main {
+  width: 100%;
+  float: none;
+  clear: both;
+  margin: 0;
+  zoom: 1;
+  /// ... And so on ...
+}
+~~~
+
+#### Instead of
+
+~~~ {.css}
+#sidebar {
+  margin-left: 63.5%;
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+#sidebar {
+  float: none;
+  clear: both;
+  margin: 0; 
+}
+~~~
+
+### Adding a breakpoint for column reflow
+
+Add the following CSS to the `styles.css` file.
+
+~~~ {.css}
+@media all and (min-width:750px) {
+  /* Adding back in the background image */
+  body {
+    background-image: url(images/moon.jpg);
+    background-repeat: no-repeat;
+  }
+
+  /* Here's a border */
+  body > div {
+    border-color: rgba(255, 255, 255, 0.2);
+    border-width: 0px 7px;
+    border-style: solid;
+  }
+
+  /* Float #main left; make it 60% width of its parent container */
+  #main {
+    margin-left: 1.5%;
+    clear: left;
+    float: left;
+    width: 60%;
+  }
+
+  /* A fluid left margin for a right-aligned #sidebar */
+  #sidebar {
+    margin-left: 63.5%;
+    clear: none;
+  }
+}
+~~~
+
+### Now add a breakpoint for narrow screens
+
+This is where we'll go to vertical, stacked navigation. We are also adjusting some fonts and margins.
+
+~~~ {.css}
+@media all and (max-width:550px) {
+  /* Here is the stacked navigation */
+  #header nav ul li {
+    float: none;
+    clear: both;
+    width: 100%;
+    margin: .5em 0;
+  }
+  #header nav ul li a {
+    margin: 0;
+    padding: .75em;
+  }
+  /* Padding and font adjustments */
+  h1 {
+    font-size: 1.75em;
+    line-height: 1.25em;
+  }
+  h3 {
+    font-size: 1.1em;
+    line-height: 1.2em;
+  }
+  p {
+    font-size: .9em;
+    line-height: 1.4em;
+  }
+  #header {
+    padding: 1em 0;
+  }
+  #header h1, #header h3 {
+    padding: 0 .375em;
+  }
+}
+~~~
+
+### If you have any woes...
+
+1. You can find the updated, [mobile-first CSS file here](../supplemental/release-hounds/mobile-first.css).
 2. Replace the `styles.css` in `sigma-stronghold-website` with this CSS.
 
 -----------------------------
 
-# 4. A Honed Killing Machine
+# 5. A Honed Killing Machine
 
 ## ApplicationCache!
 
