@@ -483,6 +483,138 @@ This is where we'll go to vertical, stacked navigation. We are also adjusting so
 
 -----------------------------
 
+# 4. Bloodier Uprisings
+
+## Techniques for handling IE in RWD
+
+### Conditional Comments
+
+~~~ {.html}
+<link rel="stylesheet" type="text/css" href="taps.css" />
+<link rel="stylesheet" type="text/css" href="layout.css" media="all and min-width: 481px)">
+<!--[if (lt IE 9) & (!IEMobile)]>
+<link rel="stylesheet" type="text/css" href="layout.css" media="all" />
+<![endif]-->
+~~~
+
+The conditional comments only apply to IE versions less than 9 (lt IE 9) and those that are not IE Mobile (!IEMobile). IE9 supports media queries and since this is a mobile first responsive web design, the fact IE Mobile doesn’t support the media query is fine. It should get the mobile (default) layout regardess.
+
+#### References
+
+* [Windows mobile media queries](http://adactio.com/journal/4494/)
+* [Microsoft documentation on conditional comments syntax](http://msdn.microsoft.com/en-us/library/ie/ms537512(v=vs.85).aspx)
+
+### JavaScript Polyfills
+
+These solutions use JavaScript to make Internet Explorer understand some basic media queries.
+
+* [Respond.js](https://github.com/scottjehl/Respond)
+* [css3-mediaqueries-js](http://code.google.com/p/css3-mediaqueries-js/)
+
+Respond.js was created by Scott Jehl and the Filament Group for the Boston Globe project. It is the fastest solution, but only supports a subset of media query options.
+
+When using these polyfills, test carefully and verify the scripts perform adequately for you on older computers. The scripts are fairly intensive.
+
+## Preventing extra downloads when using CSS background images 
+
+### Things that work:
+
+* Use display:none on the parent element
+* Media queries that don’t overlap:
+
+~~~ {.css }
+@media all and (max-width: 500px) {
+    #logo {background-image:url('small.png');}
+}
+@media all and (min-width: 501px) {
+    #logo {background-image:url('large.png');}
+}
+~~~
+
+### Newer browsers support more
+
+As of iOS 4.2:
+
+* background-image:none on the element will override image without an extra download
+* replacing a background-image will only result in one image being downloaded
+
+Be aware that even in the latest browsers, display:none on element still downloads images.
+
+#### References
+
+* [Media Query Image Download Test](http://www.cloudfour.com/examples/mediaqueries/image-test/)
+* [Media Queries for Mobile Devices](http://aaronmentele.com/2012/01/15/media-queries-for-mobile-browsers/)
+
+## Responsive IMGs
+
+Big challege for RWD: img tags only allow one src attribute. 
+
+## Option 1: JavaScript checks screen width and sets a cookie
+
+###Best examples
+
+* [Responsive Images JS](https://github.com/filamentgroup/Responsive-Images)
+* [Adaptive Images](http://adaptive-images.com/)
+
+### Problems
+
+* Sometimes the browser requests images before the JavaScript executes which means the cookie isn’t set. Race condition.
+* What is the fallback if cookies aren’t enabled?
+* Relies on the current way browsers load content which could change. No contract between the browser and the developer.
+
+## Option 2: Noscript tag
+
+* Put small image inside noscript tag.
+* Put info for other images in data-* on noscript tag.
+* Use javascript to build correct img tag for screen size.
+
+~~~ {.html}
+<noscript data-large="Koala.jpg" data-small="Koala-small.jpg" data-alt="Koala">
+<img scr="Koala.jpg" alt="Koala" />
+</noscript>
+~~~
+
+### Best examples
+
+* [Testing Responsive Images](http://www.monoliitti.com/images/)
+* [Creating responsive images using the noscript tag](http://www.headlondon.com/our-thoughts/technology/posts/creating-responsive-images-using-the-noscript-tag)
+
+### Problems
+
+* Markup has been changed in a way that only makes sense for this solution.
+* No longer semantic.
+
+## Option 3: Sencha.io SRC
+
+* Use or build a service like Sencha.io SRC to deliver the correctly sized image:
+
+~~~ {.html}
+<img src="http://src.sencha.io/[ORIGINAL IMAGE URL]" />
+~~~
+
+### Best examples
+
+* [How to use src.sencha.io](http://www.sencha.com/learn/how-to-use-src-sencha-io/)
+* [Sencha.io Src Update](http://www.sencha.com/blog/sencha-io-src-update/)
+
+### Problems
+
+* All of your images are being routed through a third-party service.
+* How does Sencha know what size image to use anyways? It relies on device detection which some developers dislike.
+
+## Other RWD Challenges
+
+* Delivering the right size video
+* Breakpoint management and zoom levels
+    * Look at using EMs for media queries like [Paul Robert Lloyd’s site](http://paulrobertlloyd.com/)
+* Progressively enhancing from XHTML-MP to HTML5
+* Content ordering (Flexbox can’t come soon enough)
+    * [Learn You a Flexbox for Great Good!](http://www.the-haystack.com/2012/01/04/learn-you-a-flexbox/)
+* Third-party widgets (particularly ad networks)
+* Integrating with content management systems
+
+-----------------------------
+
 # 5. A Honed Killing Machine
 
 ## ApplicationCache!
