@@ -10,6 +10,7 @@
 <h1>Geolocation Testing</h1>
 </body>
 <script>
+
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
 } else {
@@ -22,5 +23,6 @@ function onGeoSuccess(position) {
 function onGeoError(error) {
   alert(error.message);
 }
+
 </script>
 </html>

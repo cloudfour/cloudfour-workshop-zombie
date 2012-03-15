@@ -1,5 +1,6 @@
 window.zombieManager = (function() {
   var zombies       = new Array();
+  var zombieChair   = Lawnchair({name: 'zombies'}, function() {});
   // Each killing method has a corresponding icon. Here we map them.
   var zombie_icons  = {
     'nukes'         : 'z2.png',
@@ -13,6 +14,7 @@ window.zombieManager = (function() {
   // Wipe out the zombies and start over
   var resetZombies = function() {
     zombies = new Array();
+    zombieChair.nuke();
     $('li.zombie').remove();
     $('#zombielist').listview('refresh');
   };
@@ -71,6 +73,17 @@ window.zombieManager = (function() {
   
   // Return object literal with two available methods (init and addZombie)
   return {
+    init          : function() {
+      zombieChair.get('zombies', function(zombiesOnIce) {
+        if (zombiesOnIce) {
+          // If there are zombies stored, populate the 
+          // zombies array with those zombies
+          zombies = zombiesOnIce.value;
+        }
+      });
+      // Now, show the zombies
+      showZombies();
+    },
     // Add a new zombie to the list of zombies
     addZombie     : function(zombieWhen, zombieWhere, zombieHow) {
       zombies[zombies.length] = {
@@ -78,12 +91,14 @@ window.zombieManager = (function() {
         where     : zombieWhere,
         how       : zombieHow
       };
+      zombieChair.save({key: 'zombies', value : zombies });
       showZombies();
     }
   }
 }());
 
 $("#nab-zombie").live('pageinit', function() {
+  zombieManager.init();
   // Is Geolocation supported?
   var geoHappy = geo_position_js.init();
   // Click handler for the "Got One" button
