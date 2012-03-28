@@ -1,0 +1,29 @@
+% Setting up a Local Web Server
+
+### Running a local web server
+
+While most of what we'll look at can be viewed as files in a web browser, **some of the examples in today's shenanigans require an actual web server** to be running locally. *It is not a big deal* if you can't or don't want to set up a local web server; you can just follow along on the big screen.
+
+#### Examples that require a web server
+
+1. Performance optimization using an `.htaccess` file (section 2: Boot Camp)
+2. Cache manifests/ApplicationCache (section 5: Honed Killing Machine)
+3. Geolocation (section 5, section 6: A Band of Brothers)
+    a. You can still build the web app in section 6; it simply won't do geolocation
+    b. Geolocation is not generally possible when viewing web pages as files (i.e. without a web server) in a browser for security reasons.
+
+
+### Some possible ways to get things working:
+
+1. If you run OS X's default apache web server, you can move the contents of the zombie rucksack somewhere within the area (document root) served as web resources. This is typically in the `Sites` folder in your user's home directory (note that Web Sharing will need to be enabled in your system settings to get this to work).
+2. If you have a hosting provider, you could do your work there, if you choose.
+3. Here is a ruby one-liner for serving the current directory (you'd access your stuff by going to `localhost:9090` in a browser):
+
+    ~~~ {.ruby}
+    ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 9090, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"
+    ~~~
+    
+4. There is also a [one-line python script](http://www.garyrobinson.net/2004/03/one_line_python.html) for doing the same general thing.
+5. I use [MAMP](http://www.mamp.info) on my Mac as a web server (comes with PHP and mysql). There's [XAMPP](www.apachefriends.org/en/xampp.html) for Windows and Linux. These are pretty easy installs but might be more than you want to deal with right at this second.
+
+*If you don't have a web-served environment handy, no biggie. You can still follow along!*

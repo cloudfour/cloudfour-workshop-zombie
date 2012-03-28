@@ -1,0 +1,183 @@
+@font-face {
+  font-family: 'Nosifer';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Nosifer"), local("Nosifer-Regular"), url("http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Anonymous Pro"), local("AnonymousPro"), url("http://themes.googleusercontent.com/static/fonts/anonymouspro/v3/Zhfjj_gat3waL4JSju74E2hf89WnxcRaqxnpCB_GMi0.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Arimo';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Arimo"), url("http://themes.googleusercontent.com/static/fonts/arimo/v3/ZS0wkeOZuckNE3boyLYNt6CWcynf_cDxXwCLxiixG1c.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Special Elite';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Special Elite"), local("SpecialElite-Regular"), url("http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff") format("woff");
+}
+
+body {
+  background-color: #fffeee;
+  color: #555555;
+  font-family: "Special Elite", serif;
+  line-height: 1.5em;
+}
+
+h1, h2 {
+  margin: 0;
+  padding: .5em;
+}
+
+h1 {
+  color: #555555;
+  font-size: 2.25em;
+}
+
+h2 {
+  color: #555555;
+  border-width: 0 0 1px 0;
+  border-style: dashed;
+  border-color: rgba(85, 85, 85, 0.65);
+}
+
+h2 a {
+  color: #555555;
+}
+
+a, a:visited {
+  color: #bb1a1a;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a {
+  text-decoration: none;
+}
+
+hr {
+  display: none;
+}
+
+pre, code {
+  border-width: 1px;
+  border-style: dashed;
+  border-color: #e43d3d;
+  font-family: "Anonymous Pro", monospace;
+  font-size: .95em;
+  padding: .15em .35em;
+  margin: 0 .25em;
+}
+
+pre {
+  overflow: scroll;
+}
+
+pre code {
+  border-width: 0;
+}
+
+body > section {
+  padding: 0 1em;
+}
+
+body > section.level1 {
+  box-shadow: 0 7px 10px 5px #ccc;
+  border: 1px solid #555555;
+  border-radius: 1em;
+  margin: 1em .5em 2em .5em;
+}
+
+body > section > section {
+  background-color: #fffeee;
+  zoom: 1;
+}
+body > section > section:after {
+  content: ' ';
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+section[id^="instead"] {
+  float: left;
+  width: 45%;
+  clear: left;
+  margin-bottom: 1em;
+  zoom: 1;
+}
+section[id^="instead"]:after {
+  content: ' ';
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+section[id^="use"] {
+  float: right;
+  clear: right;
+  width: 45%;
+  margin-bottom: 1em;
+  border-bottom: 1px;
+  zoom: 1;
+}
+section[id^="use"]:after {
+  content: ' ';
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+section[id^="mission"] {
+  float: right;
+  width: 30%;
+  margin: 0 1%;
+  padding: 0 1%;
+  box-shadow: 2px 8px 4px 1px #a2a2a2;
+  background-color: #d5d3b2;
+  color: #3b3b3b;
+  text-shadow: 1px 1px 0px #fff;
+}
+section[id^="mission"] p {
+  text-transform: uppercase;
+}
+section[id^="mission"] h2, section[id^="mission"] h3 {
+  border-bottom: none;
+  padding: .5em 0 0 0;
+  text-align: center;
+  text-transform: uppercase;
+  color: #555555;
+}
+section[id^="mission"] h2:before, section[id^="mission"] h3:before {
+  content: "****";
+  font-size: .75em;
+  padding-right: .5em;
+}
+section[id^="mission"] h2:after, section[id^="mission"] h3:after {
+  content: "****";
+  font-size: .75em;
+  padding-left: .5em;
+}
+
+nav#TOC ul > li > ul > li > ul {
+  display: none;
+}
+
+section[id^="done"] ul li {
+  list-style-type: none;
+  margin-left: 1.5em;
+}
+section[id^="done"] ul li:before {
+  content: "\2713";
+  color: #e43d3d;
+  font-size: 2em;
+  margin-left: -1em;
+  padding-right: .5em;
+}

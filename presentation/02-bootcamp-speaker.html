@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Mobile web performance and semantic markup">
+  <title>Boot Camp</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="../assets/styles/speaker.css">
+</head>
+<body>
+<header>
+<h1 class="title">Boot Camp</h1>
+<h2 class="author">Mobile web performance and semantic markup</h2>
+</header>
+<section class="level1" id="a-cleansing-boot-camp-to-prepare-your-body-and-soul">
+<h1>A cleansing boot camp to prepare your body and soul</h1>
+<figure>
+<img src="images/02-gomer.png" title="You got fat, Gomer Pyle"><figcaption></figcaption>
+</figure>
+<blockquote>
+<p>You got fat, Gomer Pyle.</p>
+</blockquote>
+<p>Before we even let you <em>look</em> at zombie enemies, we're going to have to slim you down and smarten you up.</p>
+</section>
+<section class="level1" id="we-dont-want-to-end-up-dead">
+<h1>We don't want to end up dead</h1>
+<figure>
+<img src="images/02-zombie-device.png"><figcaption></figcaption>
+</figure>
+<blockquote>
+<p>Initial contacts with zombies are extremely traumatic, causing shock, panic, disbelief and possibly denial, hampering survivors' ability to deal with hostile encounters. — <a href="http://en.wikipedia.org/wiki/Zombie_apocalypse" title="Wikipedia article on Zombie Apocalypse">Wikipedia</a></p>
+</blockquote>
+</section>
+<section class="level1" id="the-web-is-fat">
+<h1>The web is fat</h1>
+<section class="level2" id="figure-the-web-is-fat">
+<h2>Figure: The Web is Fat</h2>
+<figure>
+<img src="images/02-web-is-fat.png" title="The Web is Fat"><figcaption></figcaption>
+</figure>
+</section>
+<section class="level2" id="speaker-notes">
+<h2>Speaker Notes</h2>
+<p>Syrupy Flash videos, gimmicky news tickers, potbellied background images, slapdash syndicated content, an irrelevant weather forecast: the crap we fling around on web pages these days is the internet equivalent of corn syrup, trans fat or bubblegum. Lots of empty calories clogging the arteries of the web.</p>
+<ul>
+<li>The mobile web is like an economy seat.</li>
+<li>Average size of a web page is growing.</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="we-got-sloppy">
+<h1>We got sloppy</h1>
+<section class="level2" id="figure-sad-phone">
+<h2>Figure: Sad Phone</h2>
+<figure>
+<img src="images/02-i-am-sad.png" title="I am sad"><figcaption></figcaption>
+</figure>
+</section>
+<section class="level2" id="speaker-notes-1">
+<h2>Speaker Notes</h2>
+<p>We web devs are, as a species, not exactly lazy. But we will take advantage of shortcuts and see what we can get away with.</p>
+<section class="level3" id="a-false-sense-of-security">
+<h3>A false sense of security</h3>
+<ul>
+<li>Browsers let us get away with <del>anything</del> almost anything.</li>
+<li>Broadband is &quot;everywhere.&quot;</li>
+<li>The customer doesn't want to hear about optimization, anyway. It's not sexy.</li>
+</ul>
+<p>It's like we forgot to zip up our fly, and no one really notices anyway.</p>
+</section>
+</section>
+</section>
+<section class="level1" id="unfortunately">
+<h1>Unfortunately</h1>
+<figure>
+<img src="images/02-my-fat-site.png" title="My fat site"><figcaption></figcaption>
+</figure>
+<ul>
+<li>Bytes cost money.</li>
+<li>Slow costs money.</li>
+<li>Invalid markup costs money.</li>
+</ul>
+<section class="level2" id="speaker-notes-2">
+<h2>Speaker Notes</h2>
+<p>When it comes to the mobile web, the notion of valid markup and lean pages is not just something to mutter platitudes about. It's important.</p>
+<p>Pause/transition.</p>
+</section>
+</section>
+<section class="level1" id="sergeant-dingus-and-his-bright-idea">
+<h1>Sergeant Dingus and his Bright Idea</h1>
+<figure>
+<img src="images/02-dingus.png" alt="Sergeant Dingus"><figcaption>Sergeant Dingus</figcaption>
+</figure>
+<p>Sergeant Dingus built a <a href="../rucksack/missions/sigma-stronghold-website">web site</a> to cheer on his comrades in basic training at the Sigma Stronghold.</p>
+<section class="level2" id="speaker-notes-3">
+<h2>Speaker Notes</h2>
+<p>This ragtag group of underdogs is the neighborhood's only hope against the staggering Zombie horde.</p>
+</section>
+</section>
+<section class="level1" id="sigma-stronghold">
+<h1>Sigma Stronghold</h1>
+<figure>
+<img src="images/02-sigma-start.png"><figcaption></figcaption>
+</figure>
+<p>Our recruit Gomer and this web site are not too different. Bloated, lazy and distracted.</p>
+<section class="level2" id="its-our-mission...">
+<h2>It's our mission...</h2>
+<section class="level3" id="help-gomer-and-sgt.-dingus-get-this-sorry-sack-of-a-web-page-in-fighting-trim.">
+<h3>Help Gomer and Sgt. Dingus get this sorry sack of a web page in fighting trim.</h3>
+</section>
+</section>
+<section class="level2" id="speaker-notes-4">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Walk through site, quickly, in browser window.</li>
+<li>You can look at it, too. Use the link in your field notes.</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="we-have-pity">
+<h1>We have pity</h1>
+<figure>
+<img src="images/02-paradox.png" title="Huh, what?"><figcaption></figcaption>
+</figure>
+<p>Welcome to a paradox:</p>
+<section class="level3" id="the-first-and-most-important-step-toward-being-a-mobile-web-ninja-is-extreme-focus-on-performance">
+<h3>The first and most important step toward being a mobile web ninja is <em>extreme focus</em> on performance</h3>
+<section class="level5" id="and-yet">
+<h5>(And yet)</h5>
+</section>
+</section>
+<section class="level3" id="optimization-and-performance-exercises-put-everyone-to-sleep">
+<h3>Optimization and performance exercises put everyone to sleep</h3>
+<section class="level5" id="so-yeah-well-do-most-of-the-work-here-for-you">
+<h5>(So yeah, we'll do most of the work here for you)</h5>
+</section>
+</section>
+</section>
+<section class="level1" id="the-goal">
+<h1>The goal</h1>
+<section class="level2" id="figure-yslow">
+<h2>Figure: ySlow</h2>
+<figure>
+<img src="images/02-yslow.png"><figcaption></figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="the-plan">
+<h1>The plan</h1>
+<figure>
+<img src="images/02-plan.png" title="A Man with a plan" alt="The Plan"><figcaption>The Plan</figcaption>
+</figure>
+<p>The Sigma Stronghold web site won't hold up to the zombie horde packing around that much lard. Once we fix the code to make it valid, what else can we do to make this tub of guts a bit more spritely?</p>
+<section class="level2" id="speaker-notes-5">
+<h2>Speaker Notes</h2>
+<p>Let's get a quick picture of the problem</p>
+</section>
+</section>
+<section class="level1" id="getting-a-sense-of-the-problem">
+<h1>Getting a sense of the Problem</h1>
+<p><img src="images/02-yslow-button.png"> By clicking on the ySlow extension button...we see...</p>
+<section class="level2" id="figure-more-yslow-stats">
+<h2>Figure: More ySlow Stats</h2>
+<figure>
+<img src="images/02-yslow-start-stats-annotated.png" title="ySlow Starting Grade: Stats" alt="ySlow Starting Point"><figcaption>ySlow Starting Point</figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="a-bit-sloppy">
+<h1>A bit sloppy</h1>
+<section class="level2" id="figure-invalid-code">
+<h2>Figure: Invalid Code</h2>
+<figure>
+<img src="images/02-invalid-code.png" alt="validator.w3c.org has some complaints"><figcaption>validator.w3c.org has some complaints</figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="why-do-we-have-to-do-so-many-drills">
+<h1>Why do we have to do so many drills?</h1>
+<ul>
+<li>Invalid code is less tolerated by mobile devices and browsers</li>
+<li>Concurrent HTTP connections are limited</li>
+<li>Latency is high</li>
+<li>Processors are less beefy</li>
+<li>Poor folks have to pay for data</li>
+<li>Support for certain desktop technologies not possible</li>
+</ul>
+<section class="level2" id="speaker-notes-6">
+<h2>Speaker Notes</h2>
+<p>TODO: Ask Jason/John about current concurrency situation</p>
+</section>
+</section>
+<section class="level1" id="the-obstacle-course-between-us-and-a-site-ready-for-the-zombie-hordes">
+<h1>The obstacle course between us and a site ready for the zombie hordes</h1>
+<ol type="1">
+<li>Get rid of unnecessary content and hone the important content—treat our content with respect!</li>
+<li>Make our code valid.</li>
+<li>Keep a sharp eye for performance gotchas.</li>
+<li>Optimize and compress our media.</li>
+<li>Perform some server-side tuning.</li>
+</ol>
+<p>TODO: Obstacle Course image</p>
+</section>
+<section class="level1" id="ready">
+<h1>Ready?</h1>
+<section class="level2" id="figure-lets-go">
+<h2>Figure: Let's Go!</h2>
+<figure>
+<img src="images/02-traffic-light.png" title="Let&#39;s go"><figcaption></figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="content.-what-flab-can-we-trim">
+<h1>Content. What flab can we trim?</h1>
+<section class="level2" id="figure-weather-widget">
+<h2>Figure: Weather widget</h2>
+<figure>
+<img src="images/02-sigma-weather.png" title="Weather Widget" alt="This is a weather widget"><figcaption>This is a weather widget</figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="weather-widget">
+<h1>Weather Widget</h1>
+<section class="level2" id="figure-bloated-weather-widget">
+<h2>Figure: Bloated weather widget</h2>
+<figure>
+<img src="images/02-weather-widget.png" title="Weather Widget" alt="This is a weather widget"><figcaption>This is a weather widget</figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="the-dark-side-of-the-weather">
+<h1>The dark side of the weather</h1>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;weather&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> style=</span><span class="st">&#39;width: 240px; height: 420px; </span>
+<span class="st">   background-image: url( http://vortex.accuweather.com/adcbin/netweather_v2/backgrounds/black_240x420_bg.jpg );</span>
+<span class="st">   background-repeat: no-repeat; background-color: #000000;&#39;</span> <span class="kw">&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&#39;NetweatherContainer&#39;</span><span class="ot"> style=</span><span class="st">&#39;height: 405px;&#39;</span> <span class="kw">&gt;</span>
+  <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&#39;http://netweather.accuweather.com/adcbin/netweather_v2/netweatherV2ex.asp?</span>
+<span class="st">    partner=netweather</span><span class="er">&amp;</span><span class="st">tStyle=whteYell</span><span class="er">&amp;</span><span class="st">logo=1</span><span class="er">&amp;</span><span class="st">zipcode=10001</span><span class="er">&amp;</span><span class="st">lang=eng</span><span class="er">&amp;</span><span class="st">size=12</span><span class="er">&amp;</span><span class="st">theme=black</span><span class="er">&amp;</span><span class="st">metric=0</span><span class="er">&amp;</span><span class="st">target=_self&#39;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;/script&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> style=</span><span class="st">&#39;text-align:center; font-family:arial, helvetica, verdana, sans-serif; font-size:10px; line-height:15px; color:#FFFFFF;&#39;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;a</span><span class="ot"> style=</span><span class="st">&#39;font-size: 10px; color: #FFFFFF&#39;</span> 
+<span class="ot">    href=</span><span class="st">&#39;http://www.accuweather.com/us/ny/new-york/10001/city-weather-forecast.asp?partner=accuweather&#39;</span> <span class="kw">&gt;</span>
+    Weather Forecast<span class="kw">&lt;/a&gt;</span> | <span class="kw">&lt;a</span><span class="ot"> style=</span><span class="st">&#39;color: #FFFFFF&#39;</span><span class="ot"> href=</span><span class="st">&#39;http://www.accuweather.com/maps-satellite.asp&#39;</span> <span class="kw">&gt;</span>Weather Maps<span class="kw">&lt;/a&gt;</span> | 
+  <span class="kw">&lt;a</span><span class="ot"> style=</span><span class="st">&#39;color: #FFFFFF&#39;</span><span class="ot"> href=</span><span class="st">&#39;http://www.accuweather.com/index-radar.asp?partner=accuweather</span><span class="er">&amp;</span><span class="st">zipcode=10001&#39;</span> <span class="kw">&gt;</span>Weather Radar<span class="kw">&lt;/a&gt;</span>
+  <span class="kw">&lt;/div&gt;&lt;/div&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;/div&gt;</span></code></pre>
+<section class="level5" id="index.html">
+<h5>index.html</h5>
+</section>
+<section class="level2" id="speaker-notes-7">
+<h2>Speaker notes</h2>
+<p>Ask folks what's broken about this</p>
+<ul>
+<li>It's Flash (Flash doesn't work on most mobile web browsers).</li>
+<li>It creates a number of HTTP requests (more HTTP requests = worse performance).</li>
+<li>It has janky inline CSS (difficult to style; messy code).</li>
+<li>It's big, filesize-wise (again, performance).</li>
+<li>It's URL parameters aren't escaped (causes code validation errors).</li>
+<li>Since the end of the civilized world, it hasn't really worked.</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="dingus-responds">
+<h1>Dingus Responds</h1>
+<figure>
+<img src="images/02-dingus-2.png"><figcaption></figcaption>
+</figure>
+<blockquote>
+<p>I thought the weather widget looked kinda cool. But I admit, it hasn't had an accurate weather reading since four months ago. I guess AccuWeather HQ must have suffered a direct hit. — Sgt. Dingus</p>
+</blockquote>
+<section class="level3" id="were-going-to-get-rid-of-that-weather-widget">
+<h3>We're going to get rid of that weather widget</h3>
+</section>
+<section class="level2" id="done">
+<h2>Done</h2>
+<ul>
+<li>Weather widget axed</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="time-to-get-medieval">
+<h1>Time to Get Medieval</h1>
+<section class="level2" id="time-for-some-quick-extreme-training">
+<h2>Time for some quick, extreme training</h2>
+<p>TODO: pew-pew type of image</p>
+</section>
+</section>
+<section class="level1" id="quick-hits-making-our-code-better">
+<h1>Quick hits; making our code better</h1>
+<p>Google font optimization (reduce size and number of HTTP requests)</p>
+<pre><code>    &lt;link href=&quot;http://fonts.googleapis.com/css?family=Cool+Font|Squiggly&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
+<section class="level3" id="instead-of">
+<h3>Instead of</h3>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Nosifer&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Butcherman&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Creepster&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Special+Elite&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span></code></pre>
+</section>
+<section class="level3" id="use">
+<h3>Use</h3>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Nosifer|Special+Elite&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span></code></pre>
+</section>
+<section class="level2" id="speaker-notes-8">
+<h2>Speaker Notes</h2>
+<ul>
+<li>4 HTTP requests down to one</li>
+<li>Reduced payload</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="quick-hits-making-our-code-better-1">
+<h1>Quick hits; making our code better</h1>
+<figure>
+<img src="images/02-404s.png" title="Missing things"><figcaption></figcaption>
+</figure>
+<ul>
+<li>404s (cleanliness and HTTP requests)
+<ul>
+<li><code>home.css</code> doesn't exist, yet there is a stylesheet link to it.</li>
+<li>There's a reference to <code>blip.jpg</code> in a CSS rule, yet that file doesn't exist (the correct image filename is <code>blip.png</code>).</li>
+</ul></li>
+</ul>
+</section>
+<section class="level1" id="quick-hits">
+<h1>Quick Hits</h1>
+<section class="level2" id="done-1">
+<h2>Done!</h2>
+<ul>
+<li>Concatenate font <code>&lt;link&gt;</code>s</li>
+<li>Remove <code>&lt;link&gt;</code> to missing stylesheet</li>
+<li>fix image <code>url</code> in styles</li>
+</ul>
+<section class="level5" id="index.html-and-styles.css">
+<h5>index.html and styles.css</h5>
+</section>
+</section>
+<section class="level2" id="speaker-notes-9">
+<h2>Speaker notes</h2>
+<section class="level3" id="google-font-madness">
+<h3>Google font madness</h3>
+<ul>
+<li>The Sigma Stronghold site uses Google fonts for web typography.</li>
+<li>Some of the stylesheets are for Google fonts that aren't being used.</li>
+<li>Also, we can concatenate our Google font CSS so that we don't have to make multiple HTTP requests.
+<ul>
+<li>You can do this by separating the font names with the pipe <code>|</code> character.</li>
+<li><p>e.g.</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Cool+Font|Squiggly&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span></code></pre></li>
+</ul></li>
+</ul>
+</section>
+<section class="level3" id="some-of-these-things-seem-to-be-missing">
+<h3>Some of these things seem to be missing</h3>
+<ul>
+<li><code>home.css</code> doesn't exist, yet there is a stylesheet link to it.</li>
+<li>There's a reference to <code>blip.jpg</code> in a CSS rule, yet that file doesn't exist (the correct image filename is <code>blip.png</code>).</li>
+</ul>
+</section>
+</section>
+</section>
+<section class="level1" id="its-still-fat">
+<h1>It's still fat</h1>
+<p>OK, we've sort of got the site in regulation uniform, but it's still bulgy. More stuff on the chopping block:</p>
+<section class="level2" id="figure-yslow-test-run-again">
+<h2>Figure: ySlow test run again</h2>
+<figure>
+<img src="images/02-yslow-2.png" alt="Updated ySlow Stats"><figcaption>Updated ySlow Stats</figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="less-than-ideal-1">
+<h1>Less than Ideal #1</h1>
+<figure>
+<img src="images/02-zombie-image.png" title="Text data in image, bad"><figcaption></figcaption>
+</figure>
+<p>The contact information for HQ is an image. This is bad. It is also a huge image. Also bad.</p>
+</section>
+<section class="level1" id="less-than-ideal-2">
+<h1>Less than Ideal #2</h1>
+<figure>
+<img src="images/02-zombie-girl.png" title="Un-optimized image, bad"><figcaption></figcaption>
+</figure>
+<p>The zombie girl image is hideous, and it is also very large.</p>
+</section>
+<section class="level1" id="less-than-ideal-3">
+<h1>Less than Ideal #3</h1>
+<p>The moon background image is ginormous.</p>
+<figure>
+<img src="images/02-moon-image.png" title="Un-optimized image, bad"><figcaption></figcaption>
+</figure>
+</section>
+<section class="level1" id="lets-fix-it">
+<h1>Let's fix it</h1>
+<figure>
+<img src="images/02-dingus-3.png"><figcaption></figcaption>
+</figure>
+<blockquote>
+<p>I'm a bit embarrassed about the HQ address image. I didn't even really think about it. Also, we've had some of the troops complain about too much specific zombie imagery on the site overall. I'm attached to the moon photo because my brother took it and I think it's kind of cool. The other images, meh. — Sgt. Dingus.</p>
+</blockquote>
+</section>
+<section class="level1" id="smushing-our-moon">
+<h1>Smushing our moon</h1>
+<section class="level2" id="figure-smush.it">
+<h2>Figure: Smush.it</h2>
+<figure>
+<img src="images/02-smushit.png" title="Smushing the moon" alt="http://smush.it"><figcaption>http://smush.it</figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="done-2">
+<h1>Done!</h1>
+<section class="level2" id="figure-smaller-now">
+<h2>Figure: Smaller now!</h2>
+<figure>
+<img src="images/02-yslow-smaller.png" alt="Updated ySlow stats"><figcaption>Updated ySlow stats</figcaption>
+</figure>
+</section>
+<section class="level2" id="done-3">
+<h2>Done</h2>
+<ul>
+<li>Removed bloated images that serve no purpose to our content</li>
+<li>Optimized a big background image.</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="review">
+<h1>Review</h1>
+<section class="level2" id="figure-working-through-the-performance-fun">
+<h2>Figure: Working through the performance fun</h2>
+<figure>
+<img src="images/02-midpoint.png" alt="Updated Sigma Stronghold Site"><figcaption>Updated Sigma Stronghold Site</figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="the-final-mile-server-side-tweaks">
+<h1>The final mile: server-side tweaks</h1>
+<section class="level2" id="quick-hits-in-.htaccess">
+<h2>Quick hits in .htaccess</h2>
+<p>By tuning our apache server configuration, we can work minor wonders. Let me show you a bit of trickery!</p>
+</section>
+</section>
+<section class="level1" id="starting-point">
+<h1>Starting Point</h1>
+<p><img src="images/02-yslow-button.png"> By clicking on the ySlow extension button...we see...</p>
+<section class="level2" id="figure-yslow-statistics">
+<h2>Figure: ySlow Statistics</h2>
+<figure>
+<img src="images/02-yslow-start.png" title="ySlow Starting Grade" alt="ySlow Starting Point"><figcaption>ySlow Starting Point</figcaption>
+</figure>
+</section>
+<section class="level2" id="speaker-notes-10">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Pause and allow folks to follow along if they so choose.</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="meaning-what">
+<h1>Meaning what?</h1>
+<section class="level2" id="figure-yslow-annotated">
+<h2>Figure: ySlow Annotated</h2>
+<figure>
+<img src="images/02-yslow-start-annotated.png" title="ySlow Starting Grade: Annotated" alt="ySlow Starting Point"><figcaption>ySlow Starting Point</figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="apache-configuration-magic">
+<h1>Apache configuration magic</h1>
+<section class="level2" id="enabling-gzip-compression-in-apache...">
+<h2>Enabling GZIP compression in apache...</h2>
+<section class="level3" id="apache-2.x">
+<h3>Apache 2.x</h3>
+<pre><code>&lt;IfModule mod_deflate.c&gt;
+  SetOutputFilter DEFLATE
+  # Don’t compress
+  SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+  SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+  #Dealing with proxy servers
+  &lt;IfModule mod_headers.c&gt;
+    Header append Vary User-Agent
+  &lt;/IfModule&gt;
+&lt;/IfModule&gt;</code></pre>
+</section>
+</section>
+</section>
+<section class="level1" id="setting-far-future-expires-headers">
+<h1>Setting far-future expires headers</h1>
+<pre><code>&lt;IfModule mod_expires.c&gt;
+ExpiresActive On
+ExpiresByType text/html &quot;access plus 1 seconds&quot;
+ExpiresByType image/gif &quot;access plus 2 years&quot;
+ExpiresByType image/jpeg &quot;access plus 2 years&quot;
+ExpiresByType image/png &quot;access plus 2 years&quot;
+ExpiresByType text/css &quot;access plus 2 years&quot;
+ExpiresByType text/javascript &quot;access plus 2 years&quot;
+ExpiresByType application/x-javascript &quot;access plus 2 years&quot;
+ExpiresByType image/x-icon &quot;access plus 2 years&quot;
+&lt;/IfModule&gt;</code></pre>
+</section>
+<section class="level1" id="turning-off-etags">
+<h1>Turning off ETags</h1>
+<pre><code>FileETag none</code></pre>
+</section>
+<section class="level1" id="what-just-happened">
+<h1>What just happened?</h1>
+<section class="level2" id="done-server-side-shenanigans">
+<h2>Done: Server-side shenanigans</h2>
+<ul>
+<li>Turned on GZIP compression</li>
+<li>Set far-future expires headers</li>
+<li>Turned off eTags</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="and">
+<h1>And?</h1>
+<section class="level2" id="figure-yslow-updated-stats">
+<h2>Figure: ySlow Updated Stats</h2>
+<figure>
+<img src="images/02-yslow-done.png" alt="Lookit ySlow now!"><figcaption>Lookit ySlow now!</figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="nice">
+<h1>Nice!</h1>
+<figure>
+<img src="images/02-yslow-stats-done.png" alt="Stats!"><figcaption>Stats!</figcaption>
+</figure>
+<ul>
+<li>Our total page weight has gone from ~530k to ~111k on an empty cache...</li>
+<li>...and a primed cache means the page is teensy tiny!</li>
+</ul>
+<section class="level3" id="nice-work-soldiers">
+<h3>Nice work, soldiers!</h3>
+</section>
+<section class="level2" id="speaker-notes-11">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Can anyone guess why there is .2k on a primed cache?</li>
+<li>Tell where to find updated code/version</li>
+<li>Transition here to advanced, second part</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="part-ii-advanced-boot-camp">
+<h1>Part II: Advanced Boot Camp</h1>
+<section class="level2" id="getting-ready-for-the-mobile-leap-by-getting-semantic">
+<h2>Getting ready for the mobile leap by getting semantic</h2>
+<p>You're no longer quite as green, soldiers, but there is still work to be done.</p>
+</section>
+</section>
+<section class="level1" id="some-of-the-markup-is-a-bit-stupid">
+<h1>Some of the markup is a bit stupid</h1>
+<p>There, we said it. There are a few daft things in the markup that are going to hold it back from being the mobile-friendly success it could be.</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;news-item kill&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;title&quot;</span><span class="kw">&gt;&lt;h3&gt;</span>Kill confirm: <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;red&quot;</span><span class="kw">&gt;</span>zombie #421<span class="kw">&lt;/span&gt;</span> has been neutralized<span class="kw">&lt;/h3&gt;&lt;/div&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;summary&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;inner&quot;</span><span class="kw">&gt;</span>
+      <span class="kw">&lt;div&gt;&lt;span</span><span class="ot"> class=</span><span class="st">&quot;grey&quot;</span><span class="kw">&gt;</span>20120622//0800 :: <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;black&quot;</span><span class="kw">&gt;</span>Sigma Stronghold<span class="kw">&lt;/span&gt;</span> Sector 4-Echo<span class="kw">&lt;/span&gt;&lt;/div&gt;</span>
+      <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;details&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;detail-data&quot;</span><span class="kw">&gt;</span>
+          <span class="kw">&lt;p&gt;</span>Zombieforces PFC Clair Donohue presented the zombie finger at 0700, confirming the elimination of the 421st enemy combatant zombie within the Sigma Stronghold&#39;s containment boundaries. Godspeed to the Brotherhood! Victory will be ours!<span class="kw">&lt;/p&gt;</span>
+        <span class="kw">&lt;/div&gt;</span>
+      <span class="kw">&lt;/div&gt;</span>
+    <span class="kw">&lt;/div&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;/div&gt;</span></code></pre>
+</section>
+<section class="level1" id="daft">
+<h1>Daft?</h1>
+<p>Some examples:</p>
+<ul>
+<li><code>&lt;span class=&quot;red&quot;&gt;</code>, etc.</li>
+<li><code>&lt;div id=&quot;left&quot;&gt;</code>, etc.</li>
+<li>Needlessly nested <code>&lt;div&gt;</code> elements in the news item section.</li>
+</ul>
+</section>
+<section class="level1" id="and-there-are-some-things-that-could-be-more-sophisticated">
+<h1>And there are some things that could be more sophisticated</h1>
+<p>We're dealing with an HTML5 document, but not taking advantage of all that HTML5 has to offer here. Ditto with more advanced CSS2.1 and CSS3 selectors.</p>
+<ul>
+<li>We can use some relevant HTML5 elements (<code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code>, etc.)</li>
+<li>We can use basic HTML elements instead of <code>&lt;span&gt;</code>s and classes so that the markup carries semantic meaning.</li>
+<li>We can cut down on the div-itis.</li>
+</ul>
+<section class="level2" id="speaker-notes-12">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Can anyone tell me why div-itis is more painful/relevant for us?</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="getting-more-semantic">
+<h1>Getting more semantic</h1>
+<section class="level3" id="instead-of-1">
+<h3>Instead of</h3>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;title&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;h3&gt;</span>Kill confirm: 
+    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;red&quot;</span><span class="kw">&gt;</span>
+      zombie #421
+    <span class="kw">&lt;/span&gt;</span> 
+    has been neutralized
+  <span class="kw">&lt;/h3&gt;</span>
+<span class="kw">&lt;/div&gt;</span></code></pre>
+</section>
+<section class="level3" id="use-1">
+<h3>Use</h3>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;h3&gt;</span>Kill confirm: 
+  <span class="kw">&lt;em&gt;</span>zombie #421<span class="kw">&lt;/em&gt;</span> 
+  has been neutralized
+<span class="kw">&lt;/h3&gt;</span></code></pre>
+</section>
+</section>
+<section class="level1" id="getting-more-semantic-cont.">
+<h1>Getting more semantic, cont.</h1>
+<section class="level3" id="instead-of-2">
+<h3>Instead of</h3>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div&gt;</span>
+  <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;grey&quot;</span><span class="kw">&gt;</span>20120621//1935 :: 
+    <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;byline grey&quot;</span><span class="kw">&gt;</span>
+      A/V Wonk Phil Starken
+    <span class="kw">&lt;/span&gt;</span>
+  <span class="kw">&lt;/span&gt;</span>
+<span class="kw">&lt;/div&gt;</span></code></pre>
+</section>
+<section class="level3" id="use-2">
+<h3>Use</h3>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;small&gt;</span>
+  20120621//1935 :: A/V Wonk Phil Starken
+<span class="kw">&lt;/small&gt;</span></code></pre>
+</section>
+<section class="level2" id="speaker-notes-13">
+<h2>Speaker Notes</h2>
+<p>Pull up the old and new HTML side by side?</p>
+<section class="level3" id="what-we-did-for-you">
+<h3>What we did for you</h3>
+<ul>
+<li><code>div#navigation</code> changed to <code>&lt;nav&gt;</code> element.</li>
+<li><code>#page</code> id removed from <code>&lt;div&gt;</code>; used parent-child selector instead.</li>
+<li>Convert <code>#footer</code> to <code>&lt;footer&gt;</code> element.</li>
+<li>Reduce structural complexity in news items: removed extra <code>&lt;div&gt;</code>s.</li>
+<li>Replaced <code>span.grey</code> with <code>&lt;small&gt;</code></li>
+<li><code>span.black</code> was pointless; no style for it. Also some other useless spans in the news divs.</li>
+<li>Instead of <code>.red</code>, used an <code>&lt;em&gt;</code> element, which carries semantic meaning.</li>
+<li>Removed extra internal <code>&lt;div&gt;</code>s from sidebar.</li>
+<li><code>#left</code> and <code>#right</code> renamed to <code>#main</code> and <code>#sidebar</code>, respectively</li>
+</ul>
+</section>
+<section class="level3" id="taking-it-further...">
+<h3>Taking it further...</h3>
+<p>We didn't do these things but they might be cool, too:</p>
+<ul>
+<li>Address could be hCard</li>
+<li><code>&lt;article&gt;</code> element instead of <code>&lt;div&gt;</code> for news items.</li>
+<li><code>&lt;section&gt;</code> element instead of other <code>&lt;div&gt;</code>s.</li>
+</ul>
+</section>
+</section>
+</section>
+<section class="level1" id="what-have-we-accomplished-here">
+<h1>What have we accomplished here?</h1>
+<ul>
+<li>Much, much fewer bytes.</li>
+<li>Much cleaner markup.</li>
+<li>We've identified content that is important to us. We've sloughed off some less important stuff.</li>
+<li>We've gone semantic.</li>
+</ul>
+</section>
+<section class="level1" id="congratulations">
+<h1>Congratulations</h1>
+<p>The Sigma Stronghold web site no longer sucks so much. It's leaner, faster and stronger and better—much like you, recruit.</p>
+<section class="level3" id="you-have-now-graduated-from-zombie-boot-camp.-get-ready-to-face-the-bad-guys.">
+<h3>You have now graduated from Zombie boot camp. <a href="03-release-hounds.html">Get ready</a> to face the bad guys.</h3>
+</section>
+</section>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>First go at Media Queries (CSS)</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="fieldnotes.css">
+</head>
+<body>
+<header>
+<h1 class="title">First go at Media Queries (CSS)</h1>
+</header>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span>
+  <span class="fl">#main</span>, <span class="fl">#sidebar</span> <span class="kw">{</span>
+    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span>
+    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+    <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span> 
+  <span class="kw">}</span>
+  body <span class="kw">{</span>
+    <span class="kw">background-image:</span> <span class="dt">none</span><span class="kw">;</span> 
+  <span class="kw">}</span>
+  <span class="fl">#header</span> nav ul li <span class="kw">{</span>
+    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span>
+    <span class="kw">margin:</span> <span class="dt">.5em</span> <span class="dt">0</span><span class="kw">;</span> 
+  <span class="kw">}</span>
+  <span class="fl">#header</span> nav ul li a <span class="kw">{</span>
+    <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
+    <span class="kw">padding:</span> <span class="dt">.75em</span><span class="kw">;</span> 
+  <span class="kw">}</span>
+  <span class="fl">#header</span> h1, <span class="fl">#header</span> h3 <span class="kw">{</span>
+    <span class="kw">padding:</span> <span class="dt">0</span> <span class="dt">.375em</span><span class="kw">;</span> 
+  <span class="kw">}</span>
+  <span class="fl">#header</span> <span class="kw">{</span>
+    <span class="kw">padding:</span> <span class="dt">1em</span> <span class="dt">0</span><span class="kw">;</span> 
+  <span class="kw">}</span>
+  h1 <span class="kw">{</span>
+    <span class="kw">font-size:</span> <span class="dt">1.75em</span><span class="kw">;</span>
+    <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span> 
+  <span class="kw">}</span>
+  h3 <span class="kw">{</span>
+    <span class="kw">font-size:</span> <span class="dt">1.1em</span><span class="kw">;</span>
+    <span class="kw">line-height:</span> <span class="dt">1.2em</span><span class="kw">;</span> 
+  <span class="kw">}</span>
+  p <span class="kw">{</span>
+    <span class="kw">font-size:</span> <span class="dt">.9em</span><span class="kw">;</span>
+    <span class="kw">line-height:</span> <span class="dt">1.4em</span><span class="kw">;</span> 
+  <span class="kw">}</span> 
+<span class="dv">}</span></code></pre>
+</body>
+</html>

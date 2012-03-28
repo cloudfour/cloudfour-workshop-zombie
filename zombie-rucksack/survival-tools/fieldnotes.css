@@ -50,10 +50,6 @@ h2 {
   border-color: rgba(85, 85, 85, 0.65);
 }
 
-h3, h4 {
-  clear: both;
-}
-
 a, a:visited {
   color: #bb1a1a;
 }
@@ -120,6 +116,11 @@ section[id^="use"]:after {
   display: block;
   height: 0;
   clear: both;
+}
+
+section[id^="mission"] {
+  float: right;
+  width: 30%;
 }
 
 nav#TOC ul > li > ul > li > ul {

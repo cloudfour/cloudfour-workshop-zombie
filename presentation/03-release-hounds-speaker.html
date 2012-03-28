@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Responsive Web Design">
+  <title>Release the Hounds!</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="../assets/styles/speaker.css">
+</head>
+<body>
+<header>
+<h1 class="title">Release the Hounds!</h1>
+<h2 class="author">Responsive Web Design</h2>
+</header>
+<section class="level1" id="you-already-have-some-blunt-weapons">
+<h1>You already have some blunt weapons</h1>
+<figure>
+<img src="images/03-sharpen.png"><figcaption></figcaption>
+</figure>
+<section class="level2" id="lets-sharpen-them">
+<h2>Let's sharpen them</h2>
+<p>It may seem like we're still mired on the desktop with all that Sigma Stronghold optimization.</p>
+<section class="level3" id="its-time-to-get-mobile">
+<h3>It's time to get mobile</h3>
+</section>
+</section>
+</section>
+<section class="level1" id="oh-dear-thats-ugly-isnt-it">
+<h1>Oh dear, that's ugly, isn't it?</h1>
+<p><img src="images/sigma-site-screenshots/iphone-broken-2.jpg"> <img src="images/sigma-site-screenshots/android-broken.png"></p>
+<p>The current structure of the Sigma Stronghold web site is a <em>fixed-width, rigid layout</em>. That is not going to adapt in the face of the zombie gadget crisis. What do we do?</p>
+</section>
+<section class="level1" id="we-adapt">
+<h1>We adapt!</h1>
+<p>When the going gets tough, we kill zombies.</p>
+<figure>
+<img src="images/03-pew.png"><figcaption></figcaption>
+</figure>
+</section>
+<section class="level1" id="lesson-1-quarantine-never-works">
+<h1>Lesson 1: Quarantine never works</h1>
+<figure>
+<img src="images/03-quarantine-never-works.png"><figcaption></figcaption>
+</figure>
+<ul>
+<li>We have to relinquish our false sense of control and set our content free.</li>
+<li>We don't get to <em>decide</em> or even reliably <em>know</em> our user's screen sizes.</li>
+<li>If we try to quarantine the zombies with rigid, pixel-perfect designs, they'll just be more pissed off when they ultimately escape.</li>
+</ul>
+<section class="level2" id="speaker-notes">
+<h2>Speaker Notes</h2>
+<p>Expound on limits of control.</p>
+</section>
+</section>
+<section class="level1" id="responsive-web-design-rwd">
+<h1>Responsive Web Design (RWD)</h1>
+<p>Responsive Web Design (RWD) is a technique, championed by Ethan Marcotte (@beep), that argues adapting an experience for the user's environment, instead of using a rigid, one-size-fits-all type of structure.</p>
+<p>RWD is based upon the notion of creating a fluid, proportional layout (instead of pixel- or absolute-unit-based layouts). RWD layouts <em>scale, flex and adapt</em> to <em>flow comfortably</em> in the user's browser, whatever size or shape it might be at the moment.</p>
+</section>
+<section class="level1" id="rwd-elements">
+<h1>RWD Elements</h1>
+<p>RWD is driven by three main technical pieces:</p>
+<ul>
+<li>Fluid CSS layouts</li>
+<li>CSS3 Media Queries</li>
+<li>Responsive Images and Objects</li>
+</ul>
+</section>
+<section class="level1" id="rwd-part-i-fluid-css-layouts">
+<h1>RWD Part I: Fluid CSS layouts</h1>
+<figure>
+<img src="images/03-sigma-site-structure.png" title="Site structure"><figcaption></figcaption>
+</figure>
+<p>Right now, the Sigma Stronghold web site's structure is like this.</p>
+<ul>
+<li><code>body &gt; div</code> that contains all content: 920px</li>
+<li><code>#container</code> (all content is inside of this <code>div</code>): 900px</li>
+<li><code>#main</code>: 500px</li>
+<li><code>#sidebar</code>: No specific width set, but a left margin of 570px</li>
+</ul>
+</section>
+<section class="level1" id="whats-so-bad-about-fixed-layouts">
+<h1>What's so bad about fixed layouts?</h1>
+<section class="level2" id="figure-portals-into-content">
+<h2>Figure: Portals into content</h2>
+<figure>
+<img src="images/03-portals.png"><figcaption></figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="accounts-for-this">
+<h1>Accounts for this</h1>
+<section class="level2" id="figure-cut-off-site-on-mobile">
+<h2>Figure: Cut off site on mobile</h2>
+<figure>
+<img src="images/sigma-site-screenshots/android-broken.png" title="Oopsie"><figcaption></figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="fluid-layouts-on-the-other-hand...">
+<h1>Fluid layouts, on the other hand...</h1>
+<section class="level2" id="figure-fluid-layouts-scale">
+<h2>Figure: Fluid Layouts Scale</h2>
+<figure>
+<img src="images/03-fluid-scales.png"><figcaption></figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="the-fluid-formula">
+<h1>The fluid formula</h1>
+<section class="level2" id="figure-fluid-formula-result-target-context">
+<h2>Figure: Fluid Formula: Result = Target / Context</h2>
+<figure>
+<img src="images/03-fluid-formula.png"><figcaption></figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="the-fluid-formula-1">
+<h1>The fluid formula</h1>
+<section class="level2" id="figure-the-fluid-formula-applied">
+<h2>Figure: The fluid formula applied</h2>
+<figure>
+<img src="images/03-formula-applied.png"><figcaption></figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="result-target-context">
+<h1>Result = Target / Context</h1>
+<figure>
+<img src="images/03-context.png"><figcaption></figcaption>
+</figure>
+<section class="level2" id="context">
+<h2>Context</h2>
+<p>Let's talk about <em>context</em> a bit, yes?</p>
+<section class="level4" id="target-context-result">
+<h4>TARGET / CONTEXT = RESULT</h4>
+<ul>
+<li>A <code>div</code> of 250px wide</li>
+<li>Inside of a 500px <code>div</code></li>
+<li>Overall content width of 750px</li>
+<li>The 500px <code>div</code> is the context</li>
+</ul>
+</section>
+<section class="level4" id="px-500px-50-not-250px-750px-33.33">
+<h4>250px / 500px = 50% <em>not</em> 250px / 750px = 33.33%</h4>
+</section>
+</section>
+</section>
+<section class="level1" id="applying-the-fluid-formula">
+<h1>Applying the fluid formula</h1>
+<figure>
+<img src="images/03-formula-applied.png"><figcaption></figcaption>
+</figure>
+<section class="level2" id="current-metrics-of-sigma-stronghold-site">
+<h2>Current metrics of Sigma Stronghold site</h2>
+<ul>
+<li><code>body &gt; div</code> that contains all content: 920px</li>
+<li><code>#container</code> (all content is inside of this <code>div</code>): 900px</li>
+<li><code>#main</code>: 500px</li>
+<li><code>#sidebar</code>: No specific width set, but a left margin of 570px</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="applying-the-formula-to-the-main-div">
+<h1>Applying the formula to the #main div</h1>
+<figure>
+<img src="images/03-main.png"><figcaption></figcaption>
+</figure>
+<p>Let's see how this plays out on the <code>div#main</code> on the Sigma Stronghold site, shall we?</p>
+</section>
+<section class="level1" id="example-of-the-formula">
+<h1>Example of the formula</h1>
+<section class="level2" id="figure-a-precise-example-of-the-formula">
+<h2>Figure: A precise example of the formula</h2>
+<figure>
+<img src="images/03-formula-example.png"><figcaption></figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="or-roughly">
+<h1>Or, roughly</h1>
+<section class="level2" id="figure-approximation-of-formula-results">
+<h2>Figure: Approximation of formula results</h2>
+<figure>
+<img src="images/03-formula-approximate.png"><figcaption></figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="lets-start-from-the-top">
+<h1>Let's start from the top</h1>
+<figure>
+<img src="images/03-containers.png"><figcaption></figcaption>
+</figure>
+<p>Let's start with the first items in our list:</p>
+<ul>
+<li><code>body &gt; div</code> that contains all content: 920px</li>
+<li><code>#container</code> (all content is inside of this <code>div</code>): 900px</li>
+</ul>
+<section class="level3" id="goal-convert-the-sigma-stronghold-web-site-to-a-fluid-layout.">
+<h3>Goal: Convert the Sigma Stronghold web site to a fluid layout.</h3>
+</section>
+<section class="level2" id="speaker-notes-1">
+<h2>Speaker Notes</h2>
+<ul>
+<li>We're making the design executive decision that we never want the content of the page to be wider than these measurements. The design can scale down but 920px and 900px are as large as these elements should ever appear.</li>
+<li>This is a bit of a curveball on the normal, full-fluid approach, but, hey, the web is a crazy place. And this is still viable, as long as you're OK with the content being a bit narrow on very wide screens.</li>
+<li>It's all about give and take and evaluation.</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="lets-dive-in...">
+<h1>Let's dive in...</h1>
+<p>Open your <code>styles.css</code> file in the Sigma Stronghold web site folder.</p>
+<section class="level3" id="lets-convert-this-thing-to-scale-and-adapt-to-different-devices-and-browsers">
+<h3>Let's convert this thing to scale and adapt to different devices and browsers</h3>
+<p>We don't have to throw the undead baby out with the bathwater here. We can change some CSS rules in a targeted way to get fluid!</p>
+</section>
+</section>
+<section class="level1" id="revising-our-css">
+<h1>Revising our CSS</h1>
+<p>To achieve the goal of the overall content width—never wider than 920px overall—we'll use the <code>max-width</code> CSS property.</p>
+<section class="level3" id="instead-of">
+<h3>Instead of</h3>
+<pre class="sourceCode css"><code class="sourceCode css">body &gt; div <span class="kw">{</span>
+  <span class="kw">width:</span> <span class="dt">920px</span><span class="kw">;</span>
+  <span class="er">...</span>
+ <span class="kw">}</span></code></pre>
+</section>
+<section class="level3" id="use">
+<h3>Use</h3>
+<pre class="sourceCode css"><code class="sourceCode css">body &gt; div <span class="kw">{</span>
+ <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span>
+ <span class="er">...</span>
+<span class="kw">}</span></code></pre>
+</section>
+</section>
+<section class="level1" id="revising-our-css-cont.">
+<h1>Revising our CSS, cont.</h1>
+<section class="level3" id="instead-of-1">
+<h3>Instead of</h3>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span>
+  <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
+  <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span>
+  <span class="kw">padding:</span> <span class="dt">10px</span><span class="kw">;</span>
+  <span class="kw">width:</span> <span class="dt">900px</span><span class="kw">;</span>
+  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span> <span class="kw">}</span></code></pre>
+</section>
+<section class="level3" id="use-1">
+<h3>Use</h3>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span>
+  <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
+  <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span>
+  <span class="kw">padding:</span> <span class="dt">.625em</span><span class="kw">;</span>
+  <span class="kw">max-width:</span> <span class="dt">900px</span><span class="kw">;</span>
+  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span> <span class="kw">}</span></code></pre>
+</section>
+<section class="level2" id="speaker-notes-2">
+<h2>Speaker Notes</h2>
+<ul>
+<li>If folks are curious, the <code>zoom</code> property is part of a clearfix for IE.</li>
+<li>Note the padding conversion to <code>em</code>.</li>
+<li>Similar to the containing div, we're making this never wider than 900px. That's an absolute. Sometimes there are absolutes.</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="making-the-content-areas-stretchy-and-fluid">
+<h1>Making the content areas stretchy and fluid</h1>
+<section class="level2" id="figure-the-containers-scale-down-comfortably-now">
+<h2>Figure: The containers scale down comfortably now</h2>
+<figure>
+<img src="images/03-containers-scale.png"><figcaption></figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="onward">
+<h1>Onward!</h1>
+<p>We've already done the sloppy math on <code>#main</code> and decided it should be 60% wide.</p>
+<section class="level3" id="instead-of-2">
+<h3>Instead of</h3>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">#main</span> <span class="kw">{</span>
+      <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
+      <span class="kw">margin-left:</span> <span class="dt">10px</span><span class="kw">;</span>
+      <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span>
+      <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+      <span class="kw">width:</span> <span class="dt">550px</span><span class="kw">;</span>
+      <span class="er">...</span>
+    <span class="kw">}</span></code></pre>
+</section>
+<section class="level3" id="use-2">
+<h3>use</h3>
+<pre class="sourceCode css"><code class="sourceCode css">    <span class="fl">#main</span> <span class="kw">{</span>
+      <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
+      <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span>
+      <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span>
+      <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+      <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span>
+      <span class="er">...</span>
+    <span class="kw">}</span></code></pre>
+</section>
+</section>
+<section class="level1" id="what-about-the-sidebar">
+<h1>What about the sidebar?</h1>
+<section class="level2" id="the-sidebar-currently-has-a-left-margin-of-570px">
+<h2>The sidebar currently has a left margin of 570px</h2>
+<figure>
+<img src="images/03-sidebar.png"><figcaption></figcaption>
+</figure>
+<p>570px is within the context of the <code>#container</code> element. So, to convert it to fluid, we apply the formula:</p>
+<section class="level4" id="target-900-context-63.5">
+<h4>570 (target) / 900 (context) ~= 63.5%</h4>
+<p>(It's closer to 63.25%, but we have a little bit of wiggle room in our math right now)</p>
+</section>
+</section>
+</section>
+<section class="level1" id="margins-can-be-proportional-too">
+<h1>Margins can be proportional, too</h1>
+<section class="level3" id="instead-of-3">
+<h3>Instead of</h3>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span>
+  <span class="kw">margin-left:</span> <span class="dt">570px</span><span class="kw">;</span> 
+  <span class="kw">}</span></code></pre>
+</section>
+<section class="level3" id="use-3">
+<h3>Use</h3>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span>
+  <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+</section>
+</section>
+<section class="level1" id="in-summary...">
+<h1>In summary...</h1>
+<ul>
+<li>We edited the rules for <code>body &gt; div</code>, <code>#container</code>, <code>#main</code> and <code>#sidebar</code>.</li>
+<li><code>body &gt; div</code> and <code>#container</code> retain a pixel-based width, but it is a <code>max-width</code>. These containers scale <em>down</em> but not up. This was a design decision.</li>
+<li><code>#main</code> and <code>#sidebar</code> and their padding and margin widths are proportional now. These elements scale within their parent element <code>#container</code>.</li>
+<li>If you like, you can find the finished version of the fluid CSS in your rucksack (see field notes for details).</li>
+</ul>
+</section>
+<section class="level1" id="so-what-did-that-get-us">
+<h1>So, what did that get us?</h1>
+<p><img src="images/sigma-site-screenshots/iphone-fluid-broken.jpg" title="Oh, dear"> <img src="images/sigma-site-screenshots/iphone-fluid-broken-2.jpg" title="Oh, dear"></p>
+<p>It's proportional, all right.</p>
+<section class="level3" id="what-was-the-point-of-that-still-looks-wretched-on-mobile">
+<h3>What was the point of that? Still looks wretched on mobile</h3>
+</section>
+</section>
+<section class="level1" id="thats-where-media-queries-come-in">
+<h1>That's where Media Queries come in</h1>
+<figure>
+<img src="images/03-media-queries.png"><figcaption></figcaption>
+</figure>
+<p>Fluid grids are the first tenet of RWD. Now it's time for the vital second tenet:</p>
+<section class="level2" id="media-queries">
+<h2>Media Queries!</h2>
+<section class="level4" id="css3-media-queries-let-you-selectively-apply-css-based-upon-the-present-environment-of-the-users-browser.">
+<h4>CSS3 media queries let you <em>selectively apply CSS</em> based upon the present environment of the user's browser.</h4>
+</section>
+</section>
+</section>
+<section class="level1" id="media-types">
+<h1>Media Types</h1>
+<p>Media types have been around a while. It's how we make print stylesheets, e.g.</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> media=</span><span class="st">&quot;print&quot;</span><span class="ot"> href=</span><span class="st">&quot;print.css&quot;</span><span class="kw">&gt;</span></code></pre>
+</section>
+<section class="level1" id="media-features">
+<h1>Media Features</h1>
+<section class="level4" id="media-types-have-media-features.">
+<h4>Media types have media features.</h4>
+<p>For example, <code>width</code> is a media feature of several media types, including <code>screen</code>, <code>print</code> and more.</p>
+<p><code>orientation</code> is a media feature of various bitmap media types.</p>
+</section>
+</section>
+<section class="level1" id="logical-expressions">
+<h1>Logical expressions</h1>
+<section class="level4" id="css-media-queries-evaluate-the-current-value-of-media-features-in-logical-expressions-to-determine-whether-to-apply-the-enclosed-css.">
+<h4>CSS media queries evaluate the current value of <em>media features</em> in logical expressions to determine whether to apply the enclosed CSS.</h4>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(min-width:</span> <span class="er">600px)</span> <span class="dv">{</span>
+  // In browsers that support media queries,
+  // rules in here will only be applied if the
+  // query expression evaluates as true
+<span class="dv">}</span></code></pre>
+</section>
+<section class="level3" id="also">
+<h3>Also</h3>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> media=</span><span class="st">&quot;screen and (min-width:600px)&quot;</span><span class="ot"> href=</span><span class="st">&quot;thing.css&quot;</span><span class="kw">&gt;</span></code></pre>
+</section>
+<section class="level2" id="speaker-notes-3">
+<h2>Speaker Notes</h2>
+<ul>
+<li>@import syntax also supported.</li>
+<li>Mention that <code>width</code> is the media feature; <code>min-width</code> is a query on that feature.</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="so">
+<h1>So?</h1>
+<p><img src="images/sigma-site-screenshots/iphone-fluid-broken.jpg" title="Oh, dear"> <img src="images/sigma-site-screenshots/iphone-fluid-broken-2.jpg" title="Oh, dear"></p>
+<p>By using media queries, we can apply different CSS in different situations.</p>
+<p>The problem with the Sigma Stronghold site on narrow screens is that the columns are too small and the nav feels too cramped.</p>
+</section>
+<section class="level1" id="heres-one-way-we-could-do-it">
+<h1>Here's one way we could do it</h1>
+<section class="level3" id="for-narrower-screens">
+<h3>For narrower screens</h3>
+<ul>
+<li>Instead of two columns of content, we could have a single column.</li>
+<li>And instead of tabbed navigation, we could make the navigation elements bigger and more tap-able.</li>
+<li>Let's say that any screen narrower than 600px should have a single-column view of the content, and vertical navigation items.</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="something-like-this...">
+<h1>Something like this...</h1>
+<section class="level2" id="figure-adaptive-layout">
+<h2>Figure: Adaptive Layout</h2>
+<figure>
+<img src="images/03-responsive-layout.png"><figcaption></figcaption>
+</figure>
+</section>
+<section class="level2" id="speaker-notes-4">
+<h2>Speaker Notes</h2>
+<p>Choosing a breakpoint at 600px somewhat arbitrarily.</p>
+</section>
+</section>
+<section class="level1" id="constructing-our-media-query">
+<h1>Constructing our media query</h1>
+<p>We want to create a set of CSS rules that only get applied to browser windows narrower than 600 px. That looks like:</p>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span>
+  // Rules for narrow screens here
+<span class="dv">}</span></code></pre>
+</section>
+<section class="level1" id="and-what-goes-inside-of-there">
+<h1>And what goes inside of there?</h1>
+<p>First, let's make the two content containers span the full width of their parent container and not float:</p>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span>
+  <span class="fl">#main</span>, <span class="fl">#sidebar</span> <span class="kw">{</span>
+    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span>
+    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+    <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span> 
+  <span class="kw">}</span>
+<span class="dv">}</span></code></pre>
+</section>
+<section class="level1" id="moonset">
+<h1>Moonset</h1>
+<p>That moon image is simply too huge and wonky for mobile. Let's kill it.</p>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span>
+  <span class="fl">...</span>   // <span class="fl">#main</span>, <span class="fl">#sidebar</span>
+  body <span class="kw">{</span>
+    <span class="kw">background-image:</span> <span class="dt">none</span><span class="kw">;</span> 
+  <span class="kw">}</span>
+<span class="dv">}</span></code></pre>
+</section>
+<section class="level1" id="navigational-aids">
+<h1>Navigational Aids</h1>
+<p>Let's make the navigation vertical and tap-able.</p>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span>
+  <span class="fl">...</span> // <span class="fl">#main</span>, <span class="fl">#sidebar</span>, body
+  <span class="fl">#header</span> nav ul li <span class="kw">{</span>
+    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span>
+    <span class="kw">margin:</span> <span class="dt">.5em</span> <span class="dt">0</span><span class="kw">;</span> 
+  <span class="kw">}</span>
+  <span class="fl">#header</span> nav ul li a <span class="kw">{</span>
+      <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
+      <span class="kw">padding:</span> <span class="dt">.75em</span><span class="kw">;</span> 
+  <span class="kw">}</span>
+<span class="dv">}</span></code></pre>
+</section>
+<section class="level1" id="a-question-of-taste">
+<h1>A question of taste</h1>
+<p>Often as screen sizes change, proportions feel a bit different.</p>
+<section class="level2" id="code">
+<h2>Code</h2>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span>
+  <span class="fl">...</span> // <span class="fl">#main</span>, <span class="fl">#sidebar</span>, body, <span class="fl">#header</span> nav<span class="fl">...</span>
+  <span class="fl">#header</span> <span class="kw">{</span>
+    <span class="kw">padding:</span> <span class="dt">1em</span> <span class="dt">0</span><span class="kw">;</span> <span class="kw">}</span>
+  <span class="fl">#header</span> h1, <span class="fl">#header</span> h3 <span class="kw">{</span>
+    <span class="kw">padding:</span> <span class="dt">0</span> <span class="dt">.375em</span><span class="kw">;</span> <span class="kw">}</span>
+  h1 <span class="kw">{</span>
+    <span class="kw">font-size:</span> <span class="dt">1.75em</span><span class="kw">;</span>
+    <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span> <span class="kw">}</span>
+  h3 <span class="kw">{</span>
+    <span class="kw">font-size:</span> <span class="dt">1.1em</span><span class="kw">;</span>
+    <span class="kw">line-height:</span> <span class="dt">1.2em</span><span class="kw">;</span> <span class="kw">}</span>
+  p <span class="kw">{</span>
+    <span class="kw">font-size:</span> <span class="dt">.9em</span><span class="kw">;</span>
+    <span class="kw">line-height:</span> <span class="dt">1.4em</span><span class="kw">;</span> <span class="kw">}</span>
+<span class="dv">}</span></code></pre>
+</section>
+<section class="level2" id="speaker-notes-5">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Put the ending brace on the same line for space reasons here.</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="and...check-it-out...">
+<h1>And...check it out...</h1>
+<section class="level2" id="figure-iphone-responsive">
+<h2>Figure: iPhone Responsive</h2>
+<figure>
+<img src="images/sigma-site-screenshots/iphone-responsive-2.jpg"><figcaption></figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="and...">
+<h1>And...</h1>
+<section class="level2" id="figure-android-responsive">
+<h2>Figure: Android responsive</h2>
+<figure>
+<img src="images/sigma-site-screenshots/android-responsive.png"><figcaption></figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="but...lets-think-about-this-a-bit-more.">
+<h1>But...let's think about this a bit more.</h1>
+<section class="level2" id="figure-thinking">
+<h2>Figure: Thinking</h2>
+<figure>
+<img src="images/03-thinking.png"><figcaption></figcaption>
+</figure>
+</section>
+</section>
+<section class="level1" id="mobile-first-rwd">
+<h1>Mobile first RWD</h1>
+<ul>
+<li>Content- and mobile-first approach</li>
+<li>More subtle approach that focuses our thinking</li>
+<li>Instead of adapting downward for simpler browsers/devices, more adherance to progressive enhancement</li>
+</ul>
+</section>
+<section class="level1" id="inverting-the-picture">
+<h1>Inverting the picture</h1>
+<p>Stepping back and thinking what we want our baseline experience to be.</p>
+<ul>
+<li>Let's make the single-column width the default layout and <em>enhance</em> to the two-column view and the background image.</li>
+<li><em>But</em>, let's make the tabbed navigation default (not the vertical).</li>
+</ul>
+</section>
+<section class="level1" id="thinking-through-some-breakpoints">
+<h1>Thinking through some breakpoints</h1>
+<ul>
+<li>Let's also fine-tune the <em>breakpoints</em>.
+<ul>
+<li>Let's make the vertical navigation appear for windows &lt;= 550px.</li>
+<li>Let's make the double column view kick in and the moon background appear for windows &gt;= 750px.</li>
+</ul></li>
+</ul>
+</section>
+<section class="level1" id="css-restructuring">
+<h1>CSS Restructuring</h1>
+<section class="level2" id="code-1">
+<h2>Code</h2>
+<pre class="sourceCode css"><code class="sourceCode css">// Baseline CSS
+// Single column layout for <span class="fl">#main</span> and <span class="fl">#sidebar</span>
+// No background moon image
+// Tabbed nav (horizontal)
+
+<span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(min-width:</span> <span class="er">750px)</span> <span class="dv">{</span>
+  // Two-column view
+  // Moon background image
+  // Proportion adjustments for padding and fonts
+<span class="dv">}</span>
+<span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(max-width:</span> <span class="er">550px)</span> <span class="dv">{</span>
+  // Vertical navigation
+  // Proportion adjustments for padding and fonts
+<span class="dv">}</span></code></pre>
+</section>
+</section>
+<section class="level1" id="building-the-baseline">
+<h1>Building the baseline</h1>
+<section class="level4" id="instead-of-4">
+<h4>Instead of</h4>
+<pre class="sourceCode css"><code class="sourceCode css">body <span class="kw">{</span>
+  <span class="kw">background-color:</span> <span class="dt">black</span><span class="kw">;</span>
+  <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span>
+  <span class="kw">font:</span> <span class="dt">100%</span> <span class="st">&quot;Special Elite&quot;</span><span class="kw">;</span>
+  <span class="kw">background-image:</span> <span class="dt">url(</span>images/moon<span class="dt">.</span>jpg<span class="dt">)</span><span class="kw">;</span>
+  <span class="kw">background-repeat:</span> <span class="dt">no-repeat</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+</section>
+<section class="level4" id="use-4">
+<h4>Use</h4>
+<pre class="sourceCode css"><code class="sourceCode css">body <span class="kw">{</span>
+  <span class="kw">background-color:</span> <span class="dt">black</span><span class="kw">;</span>
+  <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span>
+  <span class="kw">font:</span> <span class="dt">100%</span> <span class="st">&quot;Special Elite&quot;</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+</section>
+</section>
+<section class="level1" id="baseline-cont.">
+<h1>Baseline (cont.)</h1>
+<section class="level4" id="instead-of-5">
+<h4>Instead Of</h4>
+<pre class="sourceCode css"><code class="sourceCode css">body &gt; div <span class="kw">{</span>
+  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span>
+  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span>
+  <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span>
+  <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span>
+  <span class="kw">border-style:</span> <span class="dt">solid</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+</section>
+<section class="level4" id="use-5">
+<h4>Use</h4>
+<pre class="sourceCode css"><code class="sourceCode css">body &gt; div <span class="kw">{</span>
+  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span>
+  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span> 
+<span class="kw">}</span></code></pre>
+</section>
+</section>
+<section class="level1" id="baseline-cont.-1">
+<h1>Baseline (cont.)</h1>
+<section class="level4" id="instead-of-6">
+<h4>Instead of</h4>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span>
+  <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
+  <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span>
+  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span>
+  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+  <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span>
+  <span class="er">///</span> <span class="er">...</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span> <span class="er">...</span>
+<span class="kw">}</span></code></pre>
+</section>
+<section class="level4" id="use-6">
+<h4>Use</h4>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span>
+  <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span>
+  <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span>
+  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+  <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
+  <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
+  <span class="er">///</span> <span class="er">...</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span> <span class="er">...</span>
+<span class="kw">}</span></code></pre>
+</section>
+</section>
+<section class="level1" id="baseline-cont.-2">
+<h1>Baseline (cont.)</h1>
+<section class="level4" id="instead-of-7">
+<h4>Instead of</h4>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span>
+  <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+</section>
+<section class="level4" id="use-7">
+<h4>Use</h4>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span>
+  <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span>
+  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+  <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span> 
+<span class="kw">}</span></code></pre>
+</section>
+</section>
+<section class="level1" id="a-breakpoint-for-wider-screens">
+<h1>A breakpoint for wider screens</h1>
+<section class="level2" id="code-2">
+<h2>Code</h2>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:750px)</span> <span class="dv">{</span>
+  <span class="co">/* Adding back in the background image */</span>
+  body <span class="kw">{</span>
+    <span class="kw">background-image:</span> <span class="dt">url(</span>images/moon<span class="dt">.</span>jpg<span class="dt">)</span><span class="kw">;</span>
+    <span class="kw">background-repeat:</span> <span class="dt">no-repeat</span><span class="kw">;</span>
+  <span class="kw">}</span>
+
+  <span class="co">/* Here&#39;s a border */</span>
+  body &gt; div <span class="kw">{</span>
+    <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span>
+    <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span>
+    <span class="kw">border-style:</span> <span class="dt">solid</span><span class="kw">;</span>
+  <span class="kw">}</span>
+
+  <span class="co">/* Float #main left; make it 60% width of its parent container */</span>
+  <span class="fl">#main</span> <span class="kw">{</span>
+    <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span>
+    <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span>
+    <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+    <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span>
+  <span class="kw">}</span>
+
+  <span class="co">/* A fluid left margin for a right-aligned #sidebar */</span>
+  <span class="fl">#sidebar</span> <span class="kw">{</span>
+    <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span>
+    <span class="kw">clear:</span> <span class="dt">none</span><span class="kw">;</span>
+  <span class="kw">}</span>
+<span class="dv">}</span></code></pre>
+</section>
+</section>
+<section class="level1" id="a-narrower-breakpoint">
+<h1>A narrower breakpoint</h1>
+<section class="level2" id="code-3">
+<h2>Code</h2>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:550px)</span> <span class="dv">{</span>
+  <span class="co">/* Here is the stacked navigation */</span>
+  <span class="fl">#header</span> nav ul li <span class="kw">{</span>
+    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span>
+    <span class="kw">margin:</span> <span class="dt">.5em</span> <span class="dt">0</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  <span class="fl">#header</span> nav ul li a <span class="kw">{</span>
+    <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
+    <span class="kw">padding:</span> <span class="dt">.75em</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  <span class="co">/* Padding and font adjustments */</span>
+  h1 <span class="kw">{</span>
+    <span class="kw">font-size:</span> <span class="dt">1.75em</span><span class="kw">;</span>
+    <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  h3 <span class="kw">{</span>
+    <span class="kw">font-size:</span> <span class="dt">1.1em</span><span class="kw">;</span>
+    <span class="kw">line-height:</span> <span class="dt">1.2em</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  p <span class="kw">{</span>
+    <span class="kw">font-size:</span> <span class="dt">.9em</span><span class="kw">;</span>
+    <span class="kw">line-height:</span> <span class="dt">1.4em</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  <span class="fl">#header</span> <span class="kw">{</span>
+    <span class="kw">padding:</span> <span class="dt">1em</span> <span class="dt">0</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  <span class="fl">#header</span> h1, <span class="fl">#header</span> h3 <span class="kw">{</span>
+    <span class="kw">padding:</span> <span class="dt">0</span> <span class="dt">.375em</span><span class="kw">;</span>
+  <span class="kw">}</span>
+<span class="dv">}</span></code></pre>
+</section>
+</section>
+<section class="level1" id="were-now-mobile-first">
+<h1>We're now mobile-first</h1>
+<p>Look at that, soldier! We're thinking mobile- and content-first. We're adapting our requirements and our layout based on the yins and yangs of project and customer requirements. Balance is key.</p>
+</section>
+<section class="level1" id="and-now-we-ride-off-into-the-zombie-tinted-sunset">
+<h1>And now we ride off into the Zombie-tinted sunset?</h1>
+<figure>
+<img src="images/04-sunset.png"><figcaption></figcaption>
+</figure>
+<p>Zombies are known for not being the easiest things to kill. What do we do when we start facing <a href="04-bloodier-uprisings.html">bloodier battles</a>?</p>
+</section>
+</body>
+</html>

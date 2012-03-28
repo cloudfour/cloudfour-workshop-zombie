@@ -76,6 +76,22 @@ li ul li {
   font-style:           normal;
 }
 
+div[id^="done"] {
+  ul {    
+    li {
+      list-style-type: none;
+      margin-left: 1.5em;
+      &:before {
+        content: "\2713";
+        color:   $color-accent;
+        font-size: 2em;
+        margin-left: -1em;
+        padding-right: .5em;
+      }
+    }
+  }
+}
+
 div[id^="speaker-notes"] {
   display: none;
 }

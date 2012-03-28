@@ -1,80 +1,90 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Jason Grigsby and Lyza Danger Gardner" />
   <title>Field Notes | Zombie 101, Webvisions NYC</title>
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
   <style type="text/css">
-/*<![CDATA[*/
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode, table.sourceCode pre 
-   { margin: 0; padding: 0; border: 0; vertical-align: baseline; border: none; }
-td.lineNumbers { border-right: 1px solid #AAAAAA; text-align: right; color: #AAAAAA; padding-right: 5px; padding-left: 5px; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
 td.sourceCode { padding-left: 5px; }
-code.sourceCode span.kw { color: #007020; font-weight: bold; } 
-code.sourceCode span.dt { color: #902000; }
-code.sourceCode span.dv { color: #40a070; }
-code.sourceCode span.bn { color: #40a070; }
-code.sourceCode span.fl { color: #40a070; }
-code.sourceCode span.ch { color: #4070a0; }
-code.sourceCode span.st { color: #4070a0; }
-code.sourceCode span.co { color: #60a0b0; font-style: italic; }
-code.sourceCode span.ot { color: #007020; }
-code.sourceCode span.al { color: red; font-weight: bold; }
-code.sourceCode span.fu { color: #06287e; }
-code.sourceCode span.re { }
-code.sourceCode span.er { color: red; font-weight: bold; }
-/*]]>*/
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
   </style>
   <link rel="stylesheet" href="fieldnotes.css" />
 </head>
 <body>
-<header>
+<div id="header">
 <h1 class="title">Field Notes | Zombie 101, Webvisions NYC</h1>
-<h3 class="author">Jason Grigsby and Lyza Danger Gardner</h3>
-</header>
-<nav id="TOC">
+<h2 class="author">Jason Grigsby and Lyza Danger Gardner</h2>
+</div>
+<div id="TOC">
 <ul>
 <li><a href="#building-your-battle-kit">0. Building your battle kit</a><ul>
-<li><a href="#weapons">Weapons</a><ul>
-<li><a href="#running-a-local-web-server">Running a local web server</a><ul>
-<li><a href="#examples-that-require-a-web-server">Examples that require a web server</a></li>
-<li><a href="#some-possible-ways-to-get-things-working">Some possible ways to get things working:</a></li>
-</ul></li>
-</ul></li>
+<li><a href="#weapons">Weapons</a></li>
+<li><a href="#suit-up">Suit Up</a></li>
+<li><a href="#launch">Launch</a></li>
+<li><a href="#stuff-that-needs-sorting">Stuff that needs sorting</a></li>
+<li><a href="#weapons-for-performance">Weapons for Performance</a></li>
 </ul></li>
 <li><a href="#boot-camp-performance-and-semantic-clarity">2. Boot Camp: Performance and Semantic Clarity</a><ul>
-<li><a href="#sigma-stronghold-web-site">Sigma Stronghold Web Site</a></li>
-<li><a href="#weapons-for-performance">Weapons for Performance</a><ul>
-<li><a href="#sing-along-if-you-like">Sing Along if you Like!</a></li>
-<li><a href="#fixing-whats-broken-and-getting-rid-of-the-weather">Fixing what's broken and getting rid of the weather</a></li>
-<li><a href="#the-missing-bits">The missing bits</a></li>
-<li><a href="#deflabbing-some-images">Deflabbing some images</a></li>
-<li><a href="#server-side-optimization-in-apache-2.x">Server-side optimization in Apache 2.x</a></li>
-</ul></li>
-<li><a href="#getting-all-semantic-up-in-here">Getting all semantic up in here</a><ul>
-<li><a href="#some-of-the-things-improved-in-the-sigma-stronghold-markup">Some of the things improved in the Sigma Stronghold markup:</a></li>
-<li><a href="#taking-it-further...">Taking it further...</a></li>
-<li><a href="#other-tools-for-training">Other Tools for Training</a></li>
-<li><a href="#survival-tools">Survival Tools</a></li>
-</ul></li>
-<li><a href="#do-this-dropping-in-optimized-files"><em>Do this</em>: Dropping in optimized files!</a><ul>
-<li><a href="#get-ready-to-go-into-battle">Get ready to go into battle!</a></li>
+<li><a href="#mission">Mission</a></li>
+<li><a href="#step-0-getting-the-current-picture">Step 0: Getting the current picture</a><ul>
+<li><a href="#tools">Tools</a></li>
+<li><a href="#do-this">Do This</a></li>
+<li><a href="#extra-credit">Extra Credit</a></li>
+<li><a href="#snippet-reference">Snippet Reference</a><ul>
+<li><a href="#weather-widget">Weather widget</a><ul>
+<li><a href="#index.html">index.html</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#release-the-hounds-responsive-web-design">3. Release the Hounds! Responsive Web Design</a><ul>
-<li><a href="#do-this-converting-the-css-to-a-fluid-layout"><em>Do This</em>: Converting the CSS to a fluid layout</a><ul>
+</ul></li>
+<li><a href="#step-1-fixing-whats-broken-and-removing-unused-or-unneeded-elements">Step 1: Fixing what's broken and removing unused or unneeded elements</a><ul>
+<li><a href="#snippet-reference-1">Snippet Reference</a><ul>
 <li><a href="#instead-of">Instead of</a></li>
 <li><a href="#use">Use</a></li>
 <li><a href="#instead-of-1">Instead of</a></li>
 <li><a href="#use-1">Use</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#step-2-image-optimization">Step 2: Image optimization</a><ul>
+<li><a href="#tools-1">Tools</a></li>
+</ul></li>
+<li><a href="#step-3-server-side-shenanigans">Step 3: Server-side shenanigans</a><ul>
+<li><a href="#snippet-reference-2">Snippet Reference</a></li>
+</ul></li>
+<li><a href="#getting-all-semantic-up-in-here">Getting all semantic up in here</a><ul>
+<li><a href="#some-of-the-things-improved-in-the-sigma-stronghold-markup">Some of the things improved in the Sigma Stronghold markup:</a></li>
+<li><a href="#taking-it-further...">Taking it further...</a></li>
+</ul></li>
+<li><a href="#resources">Resources</a></li>
+</ul></li>
+<li><a href="#release-the-hounds-responsive-web-design">3. Release the Hounds! Responsive Web Design</a><ul>
+<li><a href="#mission-1">Mission</a></li>
+<li><a href="#foo">FOO</a></li>
+<li><a href="#do-this-converting-the-css-to-a-fluid-layout"><em>Do This</em>: Converting the CSS to a fluid layout</a><ul>
 <li><a href="#instead-of-2">Instead of</a></li>
-<li><a href="#use-2">use</a></li>
+<li><a href="#use-2">Use</a></li>
 <li><a href="#instead-of-3">Instead of</a></li>
 <li><a href="#use-3">Use</a></li>
+<li><a href="#instead-of-4">Instead of</a></li>
+<li><a href="#use-4">use</a></li>
+<li><a href="#instead-of-5">Instead of</a></li>
+<li><a href="#use-5">Use</a></li>
 </ul></li>
 <li><a href="#media-queries">Media Queries!</a><ul>
 <li><a href="#mobile--or-content-first-rwd">Mobile- (or content-)first RWD</a><ul>
@@ -85,14 +95,14 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ul></li>
 <li><a href="#do-this-create-mobile-first-css"><em>Do This</em>: Create Mobile-first CSS</a><ul>
 <li><a href="#baseline-changes">Baseline Changes</a><ul>
-<li><a href="#instead-of-4">Instead of</a></li>
-<li><a href="#use-4">Use</a></li>
-<li><a href="#instead-of-5">Instead Of</a></li>
-<li><a href="#use-5">Use</a></li>
 <li><a href="#instead-of-6">Instead of</a></li>
 <li><a href="#use-6">Use</a></li>
-<li><a href="#instead-of-7">Instead of</a></li>
+<li><a href="#instead-of-7">Instead Of</a></li>
 <li><a href="#use-7">Use</a></li>
+<li><a href="#instead-of-8">Instead of</a></li>
+<li><a href="#use-8">Use</a></li>
+<li><a href="#instead-of-9">Instead of</a></li>
+<li><a href="#use-9">Use</a></li>
 </ul></li>
 <li><a href="#adding-a-breakpoint-for-column-reflow">Adding a breakpoint for column reflow</a></li>
 <li><a href="#now-add-a-breakpoint-for-narrow-screens">Now add a breakpoint for narrow screens</a></li>
@@ -157,56 +167,31 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li><a href="#wurfl-code-snipp-lets">WURFL code snipp-lets</a></li>
 </ul></li>
 </ul>
-</nav>
-<hr />
-<section id="building-your-battle-kit">
+</div>
+<hr>
+<section class="level1" id="building-your-battle-kit">
 <h1><a href="#TOC">0. Building your battle kit</a></h1>
-<section id="weapons">
+<section class="level2" id="weapons">
 <h2><a href="#TOC">Weapons</a></h2>
+<p>Arm yourself with these tools for our adventure today:</p>
 <ol type="1">
-<li>The <a href="http://developer.yahoo.com/yslow/">ySlow</a> browser extension (Chrome and Firefox).</li>
-<li>A local web server (optional, but handy!)</li>
+<li>A local web server (optional, but handy!) <a href="web-server.html">more info</a></li>
 <li>A good text editor</li>
 <li>A JavaScript/DOM debug tool (We recommend WebInspector in Chrome/Safari/Webkit browsers or FireBug in FireFox).</li>
-<li>This zombie rucksack.</li>
-</ol>
-<section id="running-a-local-web-server">
-<h3><a href="#TOC">Running a local web server</a></h3>
-<p>Some examples in today's workshop will only fully work on a proper web server. <em>It is not a big deal</em> if you can't or don't want to set up a local web server; you can just follow along on the big screen.</p>
-<section id="examples-that-require-a-web-server">
-<h4><a href="#TOC">Examples that require a web server</a></h4>
-<ol type="1">
-<li>Performance optimization using an <code>.htaccess</code> file (section 2: Boot Camp)</li>
-<li>Cache manifests/ApplicationCache (section 5: Honed Killing Machine)</li>
-<li>Geolocation (section 5, section 6: A Band of Brothers)
-<ol type="a">
-<li>You can still build the web app in section 6; it simply won't do geolocation</li>
-<li>Geolocation is not generally possible when viewing web pages as files (i.e. without a web server) in a browser for security reasons.</li>
-</ol></li>
 </ol>
 </section>
-<section id="some-possible-ways-to-get-things-working">
-<h4><a href="#TOC">Some possible ways to get things working:</a></h4>
-<ol type="1">
-<li>If you run OS X's default apache web server, you can move the contents of the zombie rucksack somewhere within the area (document root) served as web resources. This is typically in the <code>Sites</code> folder in your user's home directory (note that Web Sharing will need to be enabled in your system settings to get this to work).</li>
-<li>If you have a hosting provider, you could do your work there, if you choose.</li>
-<li><p>Here is a ruby one-liner for serving the current directory (you'd access your stuff by going to <code>localhost:9090</code> in a browser):</p>
-<pre class="sourceCode"><code class="sourceCode ruby">ruby -r webrick -e <span class="st">&quot;s = WEBrick::HTTPServer.new(:Port =&gt; 9090, :DocumentRoot =&gt; Dir.pwd); trap('INT') { s.shutdown }; s.start&quot;</span></code></pre></li>
-<li>There is also a <a href="http://www.garyrobinson.net/2004/03/one_line_python.html">one-line python script</a> for doing the same general thing.</li>
-<li><p>I use <a href="http://www.mamp.info">MAMP</a> on my Mac as a web server (comes with PHP and mysql). There's <a href="www.apachefriends.org/en/xampp.html">XAMPP</a> for Windows and Linux. These are pretty easy installs but might be more than you want to deal with right at this second.</p></li>
-</ol>
-<p><em>If you don't have a web-served environment handy, no biggie. You can still follow along!</em></p>
+<section class="level2" id="suit-up">
+<h2><a href="#TOC">Suit Up</a></h2>
+<p>TODO: Go install these things from the rucksack</p>
 </section>
+<section class="level2" id="launch">
+<h2><a href="#TOC">Launch</a></h2>
+<p>TODO: Watch first set of slides</p>
 </section>
+<section class="level2" id="stuff-that-needs-sorting">
+<h2><a href="#TOC">Stuff that needs sorting</a></h2>
 </section>
-</section>
-<section id="boot-camp-performance-and-semantic-clarity">
-<h1><a href="#TOC">2. Boot Camp: Performance and Semantic Clarity</a></h1>
-<section id="sigma-stronghold-web-site">
-<h2><a href="#TOC">Sigma Stronghold Web Site</a></h2>
-<p>You'll find the Sigma Stronghold web site landing page in <code>zombie-rucksack/sigma-stronghold-website/index.html</code>. <a href="../sigma-stronghold-website/">Here's what it looks like right now</a>.</p>
-</section>
-<section id="weapons-for-performance">
+<section class="level2" id="weapons-for-performance">
 <h2><a href="#TOC">Weapons for Performance</a></h2>
 <ul>
 <li><a href="http://developer.yahoo.com/yslow/">ySlow</a></li>
@@ -214,54 +199,120 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li><a href="http://smush.it">Smush.it</a></li>
 <li><a href="http://spriteme.org/">SpriteMe</a></li>
 </ul>
-<section id="sing-along-if-you-like">
-<h3><a href="#TOC">Sing Along if you Like!</a></h3>
-<p>You can optionally follow along in your own text editor as we clean up Sigma Stronghold's (markup) act.</p>
+<hr>
 </section>
-<section id="fixing-whats-broken-and-getting-rid-of-the-weather">
-<h3><a href="#TOC">Fixing what's broken and getting rid of the weather</a></h3>
-<ol type="1">
-<li>Find and fix the broken nested <code>&lt;span&gt;</code> elements in index.html. Use the <a href="http://validator.w3.org/" title="W3C Validator">W3C validator</a> as your guide.</li>
-<li>Remove the entire weather widget (<code>div#weather</code>).</li>
-<li>Revalidate/repeat until you see the green happy color.</li>
-</ol>
 </section>
-<section id="the-missing-bits">
-<h3><a href="#TOC">The missing bits</a></h3>
-<ol type="1">
-<li>Reduce the Google fonts stylesheets to a single <code>&lt;link&gt;</code> tag.
-<ol type="a">
-<li>The two fonts actually being used on the page are <em>Nosifer</em> (drippy headlines) and <em>Special Elite</em> (body).</li>
-<li>Remove the <code>&lt;link&gt;</code> tags for fonts that aren't being used at all.</li>
-<li>Concatenate the remaining two fonts into a single <code>&lt;link&gt;</code> tag using this format: <code>&lt;link href=&quot;http://fonts.googleapis.com/css?family=Cool+Font|Squiggly&quot; rel=&quot;stylesheet&quot;&gt;</code></li>
-</ol></li>
-<li>Remove the <code>&lt;link&gt;</code> tag that points to <code>home.css</code>.</li>
-<li>Update the CSS rule for <code>h2</code>. Update the filename from <code>blip.jpg</code> to <code>blip.png</code>.</li>
-<li>Add a favicon.
-<ol type="a">
-<li>Find <code>favicon.ico</code> in the <code>supplemental/boot-camp</code> folder inside of your rucksack.</li>
-<li>Copy that into the <code>sigma-stronghold-website</code> directory (at the top level of your rucksack).</li>
-<li>Add this code just after the Google fonts stylesheet <code>&lt;link&gt;</code>s: <code>&lt;link rel=&quot;shortcut icon&quot; href=&quot;favicon.ico&quot; /&gt;</code></li>
-</ol></li>
-</ol>
+<section class="level1" id="boot-camp-performance-and-semantic-clarity">
+<h1><a href="#TOC">2. Boot Camp: Performance and Semantic Clarity</a></h1>
+<section class="level2" id="mission">
+<h2><a href="#TOC">Mission</a></h2>
+<p>Learn how to analyze front-end performance, fix common gotcha and tweak server-side settings to speed up sites for all users, mobile included. Use semantic markup to be ready for the future. Get ready to face the zombies.</p>
 </section>
-<section id="deflabbing-some-images">
-<h3><a href="#TOC">Deflabbing some images</a></h3>
-<ol type="1">
-<li>Remove the <code>zombie-girl</code> image and its containing <code>&lt;div&gt;</code> entirely (<code>div#nozombies</code>).</li>
-<li><p>Replace the image for contact-HQ with the following HTML chunk:</p>
-<pre class="sourceCode"><code class="sourceCode html">    <span class="kw">&lt;h2&gt;</span>Contact HQ<span class="kw">&lt;/h2&gt;</span><br />    <span class="kw">&lt;p&gt;</span>Abandoned Post Office<span class="kw">&lt;br</span> <span class="kw">/&gt;</span><br />    23 Daryl Dixon Road<span class="kw">&lt;br</span> <span class="kw">/&gt;</span><br />    Manhattan Offset Zone<span class="kw">&lt;br</span> <span class="kw">/&gt;</span><br />    <span class="kw">&lt;a</span><span class="ot"> href=</span><span class="st">&quot;mailto:help@sigma-stronghold.com&quot;</span><span class="kw">&gt;</span>help@sigma-stronghold.com<span class="kw">&lt;/a&gt;&lt;br</span> <span class="kw">/&gt;</span><br />    CB Channel 32.6<span class="kw">&lt;/p&gt;</span></code></pre></li>
-<li><p>Deflate the moon image using the smush.it tool.</p>
-<ol type="a">
-<li>Go to <a href="http://smush.it">smush.it</a></li>
-<li>Use the <em>Uploader</em> tab.</li>
-<li>Upload the image <code>images/moon.jpg</code> (in your rucksack, in the <code>sigma-stronghold-website</code> directory).</li>
-<li>Replace <code>images/moon.jpg</code> with the smushed version.</li>
-</ol></li>
-</ol>
+<section class="level2" id="step-0-getting-the-current-picture">
+<h2><a href="#TOC">Step 0: Getting the current picture</a></h2>
+<p>By using the <em>ySlow</em> browser extension, we can see that the Sigma Stronghold website is over half a megabyte in size. We've identified some invalid code, as well. Our goal: smaller, better faster.</p>
+<section class="level3" id="tools">
+<h3><a href="#TOC">Tools</a></h3>
+<ul>
+<li><a href="http://developer.yahoo.com/yslow/">ySlow</a></li>
+<li><a href="http://validator.w3.org/" title="W3C Validator">W3C validator</a></li>
+</ul>
 </section>
-<section id="server-side-optimization-in-apache-2.x">
-<h3><a href="#TOC">Server-side optimization in Apache 2.x</a></h3>
+<section class="level3" id="do-this">
+<h3><a href="#TOC">Do This</a></h3>
+<ul>
+<li><a href="missions/sigma-stronghold-website/">View the current Sigma Stronghold web site</a> in a browser.</li>
+</ul>
+</section>
+<section class="level3" id="extra-credit">
+<h3><a href="#TOC">Extra Credit</a></h3>
+<ul>
+<li>If you have the ySlow extension installed, you can run it yourself.</li>
+<li>Run the HTML code in LINK TO INDEX HTML through the W3C validator.</li>
+</ul>
+</section>
+<section class="level3" id="snippet-reference">
+<h3><a href="#TOC">Snippet Reference</a></h3>
+<section class="level4" id="weather-widget">
+<h4><a href="#TOC">Weather widget</a></h4>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;weather&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> style=</span><span class="st">&#39;width: 240px; height: 420px; </span>
+<span class="st">   background-image: url( http://vortex.accuweather.com/adcbin/netweather_v2/backgrounds/black_240x420_bg.jpg );</span>
+<span class="st">   background-repeat: no-repeat; background-color: #000000;&#39;</span> <span class="kw">&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&#39;NetweatherContainer&#39;</span><span class="ot"> style=</span><span class="st">&#39;height: 405px;&#39;</span> <span class="kw">&gt;</span>
+  <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&#39;http://netweather.accuweather.com/adcbin/netweather_v2/netweatherV2ex.asp?</span>
+<span class="st">    partner=netweather</span><span class="er">&amp;</span><span class="st">tStyle=whteYell</span><span class="er">&amp;</span><span class="st">logo=1</span><span class="er">&amp;</span><span class="st">zipcode=10001</span><span class="er">&amp;</span><span class="st">lang=eng</span><span class="er">&amp;</span><span class="st">size=12</span><span class="er">&amp;</span><span class="st">theme=black</span><span class="er">&amp;</span><span class="st">metric=0</span><span class="er">&amp;</span><span class="st">target=_self&#39;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;/script&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> style=</span><span class="st">&#39;text-align:center; font-family:arial, helvetica, verdana, sans-serif; font-size:10px; line-height:15px; color:#FFFFFF;&#39;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;a</span><span class="ot"> style=</span><span class="st">&#39;font-size: 10px; color: #FFFFFF&#39;</span> 
+<span class="ot">    href=</span><span class="st">&#39;http://www.accuweather.com/us/ny/new-york/10001/city-weather-forecast.asp?partner=accuweather&#39;</span> <span class="kw">&gt;</span>
+    Weather Forecast<span class="kw">&lt;/a&gt;</span> | <span class="kw">&lt;a</span><span class="ot"> style=</span><span class="st">&#39;color: #FFFFFF&#39;</span><span class="ot"> href=</span><span class="st">&#39;http://www.accuweather.com/maps-satellite.asp&#39;</span> <span class="kw">&gt;</span>Weather Maps<span class="kw">&lt;/a&gt;</span> | 
+  <span class="kw">&lt;a</span><span class="ot"> style=</span><span class="st">&#39;color: #FFFFFF&#39;</span><span class="ot"> href=</span><span class="st">&#39;http://www.accuweather.com/index-radar.asp?partner=accuweather</span><span class="er">&amp;</span><span class="st">zipcode=10001&#39;</span> <span class="kw">&gt;</span>Weather Radar<span class="kw">&lt;/a&gt;</span>
+  <span class="kw">&lt;/div&gt;&lt;/div&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;/div&gt;</span></code></pre>
+<section class="level5" id="index.html">
+<h5><a href="#TOC">index.html</a></h5>
+</section>
+</section>
+</section>
+</section>
+<section class="level2" id="step-1-fixing-whats-broken-and-removing-unused-or-unneeded-elements">
+<h2><a href="#TOC">Step 1: Fixing what's broken and removing unused or unneeded elements</a></h2>
+<p>Mobile browsers and devices have less tolerance for broken code, and size really, really matters. We have to write clean markup and pay attention to <em>why</em> we're dropping stuff onto our web pages.</p>
+<section class="level3" id="snippet-reference-1">
+<h3><a href="#TOC">Snippet Reference</a></h3>
+<p>TODO: Fix CSS to display file names</p>
+<section class="level4" id="instead-of">
+<h4><a href="#TOC">Instead of</a></h4>
+<pre class="sourceCode html"><code class="sourceCode html">  <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Nosifer&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Butcherman&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Creepster&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Special+Elite&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span></code></pre>
+</section>
+<section class="level4" id="use">
+<h4><a href="#TOC">Use</a></h4>
+<pre class="sourceCode html"><code class="sourceCode html">
+<span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Nosifer|Special+Elite&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span></code></pre>
+</section>
+<section class="level4" id="instead-of-1">
+<h4><a href="#TOC">Instead of</a></h4>
+<pre class="sourceCode css"><code class="sourceCode css">h2 <span class="kw">{</span>
+  <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span>
+  <span class="kw">font-size:</span> <span class="dt">1.25em</span><span class="kw">;</span>
+  <span class="kw">background:</span> <span class="dt">url(</span>images/blip<span class="dt">.</span>jpg<span class="dt">)</span> <span class="dt">no-repeat</span> <span class="dt">0</span> <span class="dt">2px</span><span class="kw">;</span>
+  <span class="kw">padding-left:</span> <span class="dt">25px</span><span class="kw">;</span>
+  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">0</span> <span class="dt">.25em</span> <span class="dt">0</span><span class="kw">;</span> 
+<span class="kw">}</span></code></pre>
+</section>
+<section class="level4" id="use-1">
+<h4><a href="#TOC">Use</a></h4>
+<pre class="sourceCode css"><code class="sourceCode css">h2 <span class="kw">{</span>
+  <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span>
+  <span class="kw">font-size:</span> <span class="dt">1.25em</span><span class="kw">;</span>
+  <span class="kw">background:</span> <span class="dt">url(</span>images/blip<span class="dt">.</span>png<span class="dt">)</span> <span class="dt">no-repeat</span> <span class="dt">0</span> <span class="dt">2px</span><span class="kw">;</span>
+  <span class="kw">padding-left:</span> <span class="dt">25px</span><span class="kw">;</span>
+  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">0</span> <span class="dt">.25em</span> <span class="dt">0</span><span class="kw">;</span> 
+<span class="kw">}</span></code></pre>
+</section>
+</section>
+</section>
+<section class="level2" id="step-2-image-optimization">
+<h2><a href="#TOC">Step 2: Image optimization</a></h2>
+<p>Remember the 90s, when we optimized our GIF color palettes and made sure our images were small? It's back. Don't forget about those core tenets of image optimization!</p>
+<section class="level3" id="tools-1">
+<h3><a href="#TOC">Tools</a></h3>
+<ul>
+<li><a href="http://smush.it">Smush.it</a></li>
+</ul>
+</section>
+</section>
+<section class="level2" id="step-3-server-side-shenanigans">
+<h2><a href="#TOC">Step 3: Server-side shenanigans</a></h2>
+<p>For front-end devs, the idea of futzing about on the server can sometimes feel onerous. For many, many sites hosted using the Apache web server, it really is as easy as editing an <strong><code>.htaccess</code></strong> file.</p>
+<section class="level3" id="snippet-reference-2">
+<h3><a href="#TOC">Snippet Reference</a></h3>
 <p>A sample .htaccess file.</p>
 <pre><code>    # Turn on and configure GZIP compression
     &lt;IfModule mod_deflate.c&gt;
@@ -289,14 +340,13 @@ code.sourceCode span.er { color: red; font-weight: bold; }
     &lt;/IfModule&gt;
 
     # Turn off ETags
-    FileETag none
-</code></pre>
-<p><a href="http://www.techiepark.com/tutorials/how-to-enable-gzip-compression-in-apache-server-to-speed-up-website/">More information about enabling GZIP on apache</a></p>
+    FileETag none</code></pre>
 </section>
 </section>
-<section id="getting-all-semantic-up-in-here">
+<section class="level2" id="getting-all-semantic-up-in-here">
 <h2><a href="#TOC">Getting all semantic up in here</a></h2>
-<section id="some-of-the-things-improved-in-the-sigma-stronghold-markup">
+<p>Fighting the good fight of truly separating content from presentation.</p>
+<section class="level3" id="some-of-the-things-improved-in-the-sigma-stronghold-markup">
 <h3><a href="#TOC">Some of the things improved in the Sigma Stronghold markup:</a></h3>
 <ul>
 <li><code>div#navigation</code> changed to <code>&lt;nav&gt;</code> element.</li>
@@ -310,7 +360,7 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li><code>#left</code> and <code>#right</code> renamed to <code>#main</code> and <code>#sidebar</code>, respectively</li>
 </ul>
 </section>
-<section id="taking-it-further...">
+<section class="level3" id="taking-it-further...">
 <h3><a href="#TOC">Taking it further...</a></h3>
 <p>We didn't do these things but they might be cool, too:</p>
 <ul>
@@ -319,35 +369,29 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li><code>&lt;section&gt;</code> element instead of other <code>&lt;div&gt;</code>s.</li>
 </ul>
 </section>
-<section id="other-tools-for-training">
-<h3><a href="#TOC">Other Tools for Training</a></h3>
+</section>
+<section class="level2" id="resources">
+<h2><a href="#TOC">Resources</a></h2>
 <ul>
+<li><a href="http://oli.jp/2009/html5-structure4/">HTML5 structure—HTML 4 and XHTML 1 to HTML5</a></li>
+<li><a href="http://www.alistapart.com/articles/semanticsinhtml5/"><em>A List Apart</em>: Semantics in HTML5 (John Allsop)</a></li>
+<li><a href="http://diveintohtml5.info/semantics.html">Dive into HTML5: Semantics</a></li>
+<li><a href="../survival-tools/.htaccess.example">Sample .htaccess file</a>.</li>
 <li><a href="http://spriteme.org/">SpriteMe</a> for creating CSS sprites. By combining multiple CSS images into individual sprites, you both reduce overall image file size (usually) and reduce the number of HTTP requests (definitely).</li>
 <li><a href="http://www.refresh-sf.com/yui/">Online YUI Compressor</a> Handy tool to help compress and minify CSS and JavaScript.</li>
+<li><a href="http://www.techiepark.com/tutorials/how-to-enable-gzip-compression-in-apache-server-to-speed-up-website/">More information about enabling GZIP on apache</a></li>
 </ul>
-</section>
-<section id="survival-tools">
-<h3><a href="#TOC">Survival Tools</a></h3>
-<ul>
-<li><a href="../survival-tools/.htaccess.example">Sample .htaccess file</a>.</li>
-</ul>
+<hr>
 </section>
 </section>
-<section id="do-this-dropping-in-optimized-files">
-<h2><a href="#TOC"><em>Do this</em>: Dropping in optimized files!</a></h2>
-<section id="get-ready-to-go-into-battle">
-<h3><a href="#TOC">Get ready to go into battle!</a></h3>
-<ul>
-<li>Replace the current versions of <code>index.html</code> and <code>styles.css</code> in your <code>sigma-stronghold-website</code> directory with the versions in <a href="../supplemental/boot-camp"><code>supplemental/boot-camp</code></a>.</li>
-<li>If you haven't already, copy the <code>favicon.ico</code> file from <a href="../supplemental/boot-camp"><code>supplemental/boot-camp</code></a> to your <code>sigma-stronghold-website</code> folder.</li>
-</ul>
-<p>Now you have the semantically-improved, optimized version of Sigma Stronghold's web site. <em>Onward!</em></p>
-<hr />
-</section>
-</section>
-</section>
-<section id="release-the-hounds-responsive-web-design">
+<section class="level1" id="release-the-hounds-responsive-web-design">
 <h1><a href="#TOC">3. Release the Hounds! Responsive Web Design</a></h1>
+<section class="level2" id="mission-1">
+<h2><a href="#TOC">Mission</a></h2>
+<p>Learn to let our content flow like water and create a site that adapts itself to different environments.</p>
+</section>
+<section class="level2" id="foo">
+<h2><a href="#TOC">FOO</a></h2>
 <p>For more expounding on the topic of relinquishing control, see Lyza's presentation <a href="http://www.slideshare.net/lyzadanger/crap-it-doesnt-look-quite-right-or-how-i-learned-to-stop-worrying-and-set-my-mobile-web-sites-free-9518337">&quot;Crap, it doesn't look quite right: Or, How I learned to stop worrying and set my mobile web sites free&quot;</a> on Slideshare.</p>
 <ul>
 <li>See Ethan's (<a href="http://twitter.com/beep">@beep</a>) original article about RWD on <a href="http://www.alistapart.com/articles/responsive-web-design/">A List Apart</a></li>
@@ -355,54 +399,95 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li>Rough rule of thumb for font sizes: <code>1em = 100% ~= 16px ~= 12pt</code>. <em>Approximately</em>.</li>
 <li>Percentages (%) and <code>em</code>s are both fluid units, <code>pt</code>s, <code>px</code>, inches and pica are fixed. (Technically, <code>px</code> are not <em>absolute</em> absolute, as the size of a pixel varies with different devices and screens and are not <em>fixed</em>, per se. However, for our purposes, they are effectively absolute, as they do not scale).</li>
 </ul>
-<section id="do-this-converting-the-css-to-a-fluid-layout">
+</section>
+<section class="level2" id="do-this-converting-the-css-to-a-fluid-layout">
 <h2><a href="#TOC"><em>Do This</em>: Converting the CSS to a fluid layout</a></h2>
 <ol type="1">
 <li>Edit <code>styles.css</code> in the <code>sigma-stronghold-website</code> folder in your rucksack.</li>
 <li>Set a <code>max-width</code> instead of a <code>width</code> on the two main containing elements, <code>body &gt; div</code> and <code>#container</code>. Change the <code>padding</code> on <code>#container</code> to be in <code>em</code>s (relative) instead of <code>px</code> (absolute). You should end up with these changes:</li>
 </ol>
-<section id="instead-of">
+<section class="level3" id="instead-of-2">
 <h3><a href="#TOC">Instead of</a></h3>
-<pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br />  <span class="kw">width:</span> <span class="dt">920px</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span><br />  <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span><br />  <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css">body &gt; div <span class="kw">{</span>
+  <span class="kw">width:</span> <span class="dt">920px</span><span class="kw">;</span>
+  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span>
+  <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span>
+  <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span> 
+<span class="kw">}</span></code></pre>
 </section>
-<section id="use">
+<section class="level3" id="use-2">
 <h3><a href="#TOC">Use</a></h3>
-<pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br />  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span><br />  <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span><br />  <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css">body &gt; div <span class="kw">{</span>
+  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span>
+  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span>
+  <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span>
+  <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
 </section>
-<section id="instead-of-1">
+<section class="level3" id="instead-of-3">
 <h3><a href="#TOC">Instead of</a></h3>
-<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">padding:</span> <span class="dt">10px</span><span class="kw">;</span><br />  <span class="kw">width:</span> <span class="dt">900px</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span>
+  <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
+  <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span>
+  <span class="kw">padding:</span> <span class="dt">10px</span><span class="kw">;</span>
+  <span class="kw">width:</span> <span class="dt">900px</span><span class="kw">;</span>
+  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span> 
+<span class="kw">}</span></code></pre>
 </section>
-<section id="use-1">
+<section class="level3" id="use-3">
 <h3><a href="#TOC">Use</a></h3>
-<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">padding:</span> <span class="dt">.625em</span><span class="kw">;</span><br />  <span class="kw">max-width:</span> <span class="dt">900px</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span>
+  <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
+  <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span>
+  <span class="kw">padding:</span> <span class="dt">.625em</span><span class="kw">;</span>
+  <span class="kw">max-width:</span> <span class="dt">900px</span><span class="kw">;</span>
+  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
 </section>
-<section id="instead-of-2">
+<section class="level3" id="instead-of-4">
 <h3><a href="#TOC">Instead of</a></h3>
-<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">margin-left:</span> <span class="dt">10px</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">width:</span> <span class="dt">550px</span><span class="kw">;</span><br />  <span class="er">...</span>           <span class="er">//</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span><br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span>
+  <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
+  <span class="kw">margin-left:</span> <span class="dt">10px</span><span class="kw">;</span>
+  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span>
+  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+  <span class="kw">width:</span> <span class="dt">550px</span><span class="kw">;</span>
+  <span class="er">...</span>           <span class="er">//</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span>
+<span class="kw">}</span></code></pre>
 </section>
-<section id="use-2">
+<section class="level3" id="use-4">
 <h3><a href="#TOC">use</a></h3>
-<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span><br />  <span class="er">...</span><br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span>
+  <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
+  <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span>
+  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span>
+  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+  <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span>
+  <span class="er">...</span>
+<span class="kw">}</span></code></pre>
 </section>
-<section id="instead-of-3">
+<section class="level3" id="instead-of-5">
 <h3><a href="#TOC">Instead of</a></h3>
-<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span><br />  <span class="kw">margin-left:</span> <span class="dt">570px</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span>
+  <span class="kw">margin-left:</span> <span class="dt">570px</span><span class="kw">;</span> 
+<span class="kw">}</span></code></pre>
 </section>
-<section id="use-3">
+<section class="level3" id="use-5">
 <h3><a href="#TOC">Use</a></h3>
-<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span><br />  <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span>
+  <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
 </section>
 </section>
-<section id="media-queries">
+<section class="level2" id="media-queries">
 <h2><a href="#TOC">Media Queries!</a></h2>
 <ul>
 <li>You can always <a href="http://www.w3.org/TR/css3-mediaqueries/">read the spec</a></li>
 </ul>
 <p>If you are curious, you can see the <a href="sigma-media-query.html">first version of media query CSS here</a> (the desktop-first, single breakpoint version).</p>
-<section id="mobile--or-content-first-rwd">
+<section class="level3" id="mobile--or-content-first-rwd">
 <h3><a href="#TOC">Mobile- (or content-)first RWD</a></h3>
-<section id="baseline-css">
+<section class="level4" id="baseline-css">
 <h4><a href="#TOC">Baseline CSS</a></h4>
 <ul>
 <li>Single-column view</li>
@@ -410,7 +495,7 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li>No body background image</li>
 </ul>
 </section>
-<section id="px-breakpoint-and-wider">
+<section class="level4" id="px-breakpoint-and-wider">
 <h4><a href="#TOC">750px Breakpoint (and wider)</a></h4>
 <ul>
 <li>Two-column layout</li>
@@ -418,7 +503,7 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li>Font and padding adjustments</li>
 </ul>
 </section>
-<section id="px-breakpoint-and-narrower">
+<section class="level4" id="px-breakpoint-and-narrower">
 <h4><a href="#TOC">550px Breakpoint (and narrower)</a></h4>
 <ul>
 <li>Vertical navigation</li>
@@ -427,77 +512,178 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </section>
 </section>
 </section>
-<section id="do-this-create-mobile-first-css">
+<section class="level2" id="do-this-create-mobile-first-css">
 <h2><a href="#TOC"><em>Do This</em>: Create Mobile-first CSS</a></h2>
 <p>Edit the <code>styles.css</code> file in the <code>sigma-stronghold-website</code> directory.</p>
-<section id="baseline-changes">
+<section class="level3" id="baseline-changes">
 <h3><a href="#TOC">Baseline Changes</a></h3>
 <ul>
 <li>No background image on the body</li>
 <li>Get rid of the wide, semi-transparent border on the body content area</li>
 </ul>
-<section id="instead-of-4">
+<section class="level4" id="instead-of-6">
 <h4><a href="#TOC">Instead of</a></h4>
-<pre class="sourceCode"><code class="sourceCode css">body <span class="kw">{</span><br />  <span class="kw">background-color:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span><br />  <span class="kw">font:</span> <span class="dt">100%</span> <span class="st">&quot;Special Elite&quot;</span><span class="kw">;</span><br />  <span class="kw">background-image:</span> <span class="dt">url(</span>images/moon<span class="dt">.</span>jpg<span class="dt">)</span><span class="kw">;</span><br />  <span class="kw">background-repeat:</span> <span class="dt">no-repeat</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css">body <span class="kw">{</span>
+  <span class="kw">background-color:</span> <span class="dt">black</span><span class="kw">;</span>
+  <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span>
+  <span class="kw">font:</span> <span class="dt">100%</span> <span class="st">&quot;Special Elite&quot;</span><span class="kw">;</span>
+  <span class="kw">background-image:</span> <span class="dt">url(</span>images/moon<span class="dt">.</span>jpg<span class="dt">)</span><span class="kw">;</span>
+  <span class="kw">background-repeat:</span> <span class="dt">no-repeat</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
 </section>
-<section id="use-4">
+<section class="level4" id="use-6">
 <h4><a href="#TOC">Use</a></h4>
-<pre class="sourceCode"><code class="sourceCode css">body <span class="kw">{</span><br />  <span class="kw">background-color:</span> <span class="dt">black</span><span class="kw">;</span><br />  <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span><br />  <span class="kw">font:</span> <span class="dt">100%</span> <span class="st">&quot;Special Elite&quot;</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css">body <span class="kw">{</span>
+  <span class="kw">background-color:</span> <span class="dt">black</span><span class="kw">;</span>
+  <span class="kw">color:</span> <span class="dt">white</span><span class="kw">;</span>
+  <span class="kw">font:</span> <span class="dt">100%</span> <span class="st">&quot;Special Elite&quot;</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
 </section>
-<section id="instead-of-5">
+<section class="level4" id="instead-of-7">
 <h4><a href="#TOC">Instead Of</a></h4>
-<pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br />  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span><br />  <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span><br />  <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span><br />  <span class="kw">border-style:</span> <span class="dt">solid</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css">body &gt; div <span class="kw">{</span>
+  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span>
+  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span>
+  <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span>
+  <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span>
+  <span class="kw">border-style:</span> <span class="dt">solid</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
 </section>
-<section id="use-5">
+<section class="level4" id="use-7">
 <h4><a href="#TOC">Use</a></h4>
-<pre class="sourceCode"><code class="sourceCode css">body &gt; div <span class="kw">{</span><br />  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css">body &gt; div <span class="kw">{</span>
+  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span>
+  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span> 
+<span class="kw">}</span></code></pre>
 </section>
-<section id="instead-of-6">
+<section class="level4" id="instead-of-8">
 <h4><a href="#TOC">Instead of</a></h4>
-<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />  <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span><br />  <span class="er">///</span> <span class="er">...</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span> <span class="er">...</span><br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span>
+  <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
+  <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span>
+  <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span>
+  <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+  <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span>
+  <span class="er">///</span> <span class="er">...</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span> <span class="er">...</span>
+<span class="kw">}</span></code></pre>
 </section>
-<section id="use-6">
+<section class="level4" id="use-8">
 <h4><a href="#TOC">Use</a></h4>
-<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span><br />  <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span><br />  <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span><br />  <span class="kw">zoom</span><span class="kw">:</span> <span class="dt">1</span><span class="kw">;</span><br />  <span class="er">///</span> <span class="er">...</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span> <span class="er">...</span><br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span>
+  <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span>
+  <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span>
+  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+  <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
+  <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
+  <span class="er">///</span> <span class="er">...</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span> <span class="er">...</span>
+<span class="kw">}</span></code></pre>
 </section>
-<section id="instead-of-7">
+<section class="level4" id="instead-of-9">
 <h4><a href="#TOC">Instead of</a></h4>
-<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span><br />  <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span><br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span>
+  <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
 </section>
-<section id="use-7">
+<section class="level4" id="use-9">
 <h4><a href="#TOC">Use</a></h4>
-<pre class="sourceCode"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span><br />  <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span><br />  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br />  <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span> <br /><span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span>
+  <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span>
+  <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+  <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span> 
+<span class="kw">}</span></code></pre>
 </section>
 </section>
-<section id="adding-a-breakpoint-for-column-reflow">
+<section class="level3" id="adding-a-breakpoint-for-column-reflow">
 <h3><a href="#TOC">Adding a breakpoint for column reflow</a></h3>
 <p>Add the following CSS to the <code>styles.css</code> file.</p>
-<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:750px)</span> <span class="dv">{</span><br />  <span class="co">/* Adding back in the background image */</span><br />  body <span class="kw">{</span><br />    <span class="kw">background-image:</span> <span class="dt">url(</span>images/moon<span class="dt">.</span>jpg<span class="dt">)</span><span class="kw">;</span><br />    <span class="kw">background-repeat:</span> <span class="dt">no-repeat</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><br />  <span class="co">/* Here's a border */</span><br />  body &gt; div <span class="kw">{</span><br />    <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span><br />    <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span><br />    <span class="kw">border-style:</span> <span class="dt">solid</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><br />  <span class="co">/* Float #main left; make it 60% width of its parent container */</span><br />  <span class="fl">#main</span> <span class="kw">{</span><br />    <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span><br />    <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span><br />    <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span><br />    <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><br />  <span class="co">/* A fluid left margin for a right-aligned #sidebar */</span><br />  <span class="fl">#sidebar</span> <span class="kw">{</span><br />    <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span><br />    <span class="kw">clear:</span> <span class="dt">none</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><span class="dv">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:750px)</span> <span class="dv">{</span>
+  <span class="co">/* Adding back in the background image */</span>
+  body <span class="kw">{</span>
+    <span class="kw">background-image:</span> <span class="dt">url(</span>images/moon<span class="dt">.</span>jpg<span class="dt">)</span><span class="kw">;</span>
+    <span class="kw">background-repeat:</span> <span class="dt">no-repeat</span><span class="kw">;</span>
+  <span class="kw">}</span>
+
+  <span class="co">/* Here&#39;s a border */</span>
+  body &gt; div <span class="kw">{</span>
+    <span class="kw">border-color:</span> <span class="dt">rgba(255</span>, <span class="dt">255</span>, <span class="dt">255</span>, <span class="dt">0.2)</span><span class="kw">;</span>
+    <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span>
+    <span class="kw">border-style:</span> <span class="dt">solid</span><span class="kw">;</span>
+  <span class="kw">}</span>
+
+  <span class="co">/* Float #main left; make it 60% width of its parent container */</span>
+  <span class="fl">#main</span> <span class="kw">{</span>
+    <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span>
+    <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span>
+    <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
+    <span class="kw">width:</span> <span class="dt">60%</span><span class="kw">;</span>
+  <span class="kw">}</span>
+
+  <span class="co">/* A fluid left margin for a right-aligned #sidebar */</span>
+  <span class="fl">#sidebar</span> <span class="kw">{</span>
+    <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span>
+    <span class="kw">clear:</span> <span class="dt">none</span><span class="kw">;</span>
+  <span class="kw">}</span>
+<span class="dv">}</span></code></pre>
 </section>
-<section id="now-add-a-breakpoint-for-narrow-screens">
+<section class="level3" id="now-add-a-breakpoint-for-narrow-screens">
 <h3><a href="#TOC">Now add a breakpoint for narrow screens</a></h3>
 <p>This is where we'll go to vertical, stacked navigation. We are also adjusting some fonts and margins.</p>
-<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:550px)</span> <span class="dv">{</span><br />  <span class="co">/* Here is the stacked navigation */</span><br />  <span class="fl">#header</span> nav ul li <span class="kw">{</span><br />    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span><br />    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span><br />    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span><br />    <span class="kw">margin:</span> <span class="dt">.5em</span> <span class="dt">0</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  <span class="fl">#header</span> nav ul li a <span class="kw">{</span><br />    <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span><br />    <span class="kw">padding:</span> <span class="dt">.75em</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  <span class="co">/* Padding and font adjustments */</span><br />  h1 <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">1.75em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  h3 <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">1.1em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.2em</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  p <span class="kw">{</span><br />    <span class="kw">font-size:</span> <span class="dt">.9em</span><span class="kw">;</span><br />    <span class="kw">line-height:</span> <span class="dt">1.4em</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  <span class="fl">#header</span> <span class="kw">{</span><br />    <span class="kw">padding:</span> <span class="dt">1em</span> <span class="dt">0</span><span class="kw">;</span><br />  <span class="kw">}</span><br />  <span class="fl">#header</span> h1, <span class="fl">#header</span> h3 <span class="kw">{</span><br />    <span class="kw">padding:</span> <span class="dt">0</span> <span class="dt">.375em</span><span class="kw">;</span><br />  <span class="kw">}</span><br /><span class="dv">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:550px)</span> <span class="dv">{</span>
+  <span class="co">/* Here is the stacked navigation */</span>
+  <span class="fl">#header</span> nav ul li <span class="kw">{</span>
+    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span>
+    <span class="kw">margin:</span> <span class="dt">.5em</span> <span class="dt">0</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  <span class="fl">#header</span> nav ul li a <span class="kw">{</span>
+    <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
+    <span class="kw">padding:</span> <span class="dt">.75em</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  <span class="co">/* Padding and font adjustments */</span>
+  h1 <span class="kw">{</span>
+    <span class="kw">font-size:</span> <span class="dt">1.75em</span><span class="kw">;</span>
+    <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  h3 <span class="kw">{</span>
+    <span class="kw">font-size:</span> <span class="dt">1.1em</span><span class="kw">;</span>
+    <span class="kw">line-height:</span> <span class="dt">1.2em</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  p <span class="kw">{</span>
+    <span class="kw">font-size:</span> <span class="dt">.9em</span><span class="kw">;</span>
+    <span class="kw">line-height:</span> <span class="dt">1.4em</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  <span class="fl">#header</span> <span class="kw">{</span>
+    <span class="kw">padding:</span> <span class="dt">1em</span> <span class="dt">0</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  <span class="fl">#header</span> h1, <span class="fl">#header</span> h3 <span class="kw">{</span>
+    <span class="kw">padding:</span> <span class="dt">0</span> <span class="dt">.375em</span><span class="kw">;</span>
+  <span class="kw">}</span>
+<span class="dv">}</span></code></pre>
 </section>
-<section id="if-you-have-any-woes...">
+<section class="level3" id="if-you-have-any-woes...">
 <h3><a href="#TOC">If you have any woes...</a></h3>
 <ol type="1">
 <li>You can find the updated, <a href="../supplemental/release-hounds/mobile-first.css">mobile-first CSS file here</a>.</li>
 <li>Replace the <code>styles.css</code> in <code>sigma-stronghold-website</code> with this CSS.</li>
 </ol>
-<hr />
+<hr>
 </section>
 </section>
 </section>
-<section id="bloodier-uprisings">
+<section class="level1" id="bloodier-uprisings">
 <h1><a href="#TOC">4. Bloodier Uprisings</a></h1>
-<section id="techniques-for-handling-ie-in-rwd">
+<section class="level2" id="techniques-for-handling-ie-in-rwd">
 <h2><a href="#TOC">Techniques for handling IE in RWD</a></h2>
-<section id="conditional-comments">
+<section class="level3" id="conditional-comments">
 <h3><a href="#TOC">Conditional Comments</a></h3>
-<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;taps.css&quot;</span> <span class="kw">/&gt;</span><br /><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;layout.css&quot;</span><span class="ot"> media=</span><span class="st">&quot;all and min-width: 481px)&quot;</span><span class="kw">&gt;</span><br /><span class="co">&lt;!--[if (lt IE 9) &amp; (!IEMobile)]&gt;</span><br /><span class="co">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;layout.css&quot; media=&quot;all&quot; /&gt;</span><br /><span class="co">&lt;![endif]--&gt;</span></code></pre>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;taps.css&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="ot"> href=</span><span class="st">&quot;layout.css&quot;</span><span class="ot"> media=</span><span class="st">&quot;all and min-width: 481px)&quot;</span><span class="kw">&gt;</span>
+<span class="co">&lt;!--[if (lt IE 9) &amp; (!IEMobile)]&gt;</span>
+<span class="co">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;layout.css&quot; media=&quot;all&quot; /&gt;</span>
+<span class="co">&lt;![endif]--&gt;</span></code></pre>
 <p>The conditional comments only apply to IE versions less than 9 (lt IE 9) and those that are not IE Mobile (!IEMobile). IE9 supports media queries and since this is a mobile first responsive web design, the fact IE Mobile doesn’t support the media query is fine. It should get the mobile (default) layout regardess.</p>
-<section id="references">
+<section class="level4" id="references">
 <h4><a href="#TOC">References</a></h4>
 <ul>
 <li><a href="http://adactio.com/journal/4494/">Windows mobile media queries</a></li>
@@ -505,7 +691,7 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ul>
 </section>
 </section>
-<section id="javascript-polyfills">
+<section class="level3" id="javascript-polyfills">
 <h3><a href="#TOC">JavaScript Polyfills</a></h3>
 <p>These solutions use JavaScript to make Internet Explorer understand some basic media queries.</p>
 <ul>
@@ -516,17 +702,22 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <p>When using these polyfills, test carefully and verify the scripts perform adequately for you on older computers. The scripts are fairly intensive.</p>
 </section>
 </section>
-<section id="preventing-extra-downloads-when-using-css-background-images">
+<section class="level2" id="preventing-extra-downloads-when-using-css-background-images">
 <h2><a href="#TOC">Preventing extra downloads when using CSS background images</a></h2>
-<section id="things-that-work">
+<section class="level3" id="things-that-work">
 <h3><a href="#TOC">Things that work:</a></h3>
 <ul>
 <li>Use display:none on the parent element</li>
 <li>Media queries that don’t overlap:</li>
 </ul>
-<pre class="sourceCode"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:</span> <span class="er">500px)</span> <span class="dv">{</span><br />    <span class="fl">#logo</span> <span class="kw">{background-image:</span><span class="dt">url(</span><span class="st">'small.png'</span><span class="dt">)</span><span class="kw">;}</span><br /><span class="dv">}</span><br /><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:</span> <span class="er">501px)</span> <span class="dv">{</span><br />    <span class="fl">#logo</span> <span class="kw">{background-image:</span><span class="dt">url(</span><span class="st">'large.png'</span><span class="dt">)</span><span class="kw">;}</span><br /><span class="dv">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:</span> <span class="er">500px)</span> <span class="dv">{</span>
+    <span class="fl">#logo</span> <span class="kw">{background-image:</span><span class="dt">url(</span><span class="st">&#39;small.png&#39;</span><span class="dt">)</span><span class="kw">;}</span>
+<span class="dv">}</span>
+<span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:</span> <span class="er">501px)</span> <span class="dv">{</span>
+    <span class="fl">#logo</span> <span class="kw">{background-image:</span><span class="dt">url(</span><span class="st">&#39;large.png&#39;</span><span class="dt">)</span><span class="kw">;}</span>
+<span class="dv">}</span></code></pre>
 </section>
-<section id="newer-browsers-support-more">
+<section class="level3" id="newer-browsers-support-more">
 <h3><a href="#TOC">Newer browsers support more</a></h3>
 <p>As of iOS 4.2:</p>
 <ul>
@@ -534,7 +725,7 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li>replacing a background-image will only result in one image being downloaded</li>
 </ul>
 <p>Be aware that even in the latest browsers, display:none on element still downloads images.</p>
-<section id="references-1">
+<section class="level4" id="references-1">
 <h4><a href="#TOC">References</a></h4>
 <ul>
 <li><a href="http://www.cloudfour.com/examples/mediaqueries/image-test/">Media Query Image Download Test</a></li>
@@ -543,20 +734,20 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </section>
 </section>
 </section>
-<section id="responsive-imgs">
+<section class="level2" id="responsive-imgs">
 <h2><a href="#TOC">Responsive IMGs</a></h2>
 <p>Big challege for RWD: img tags only allow one src attribute.</p>
 </section>
-<section id="option-1-javascript-checks-screen-width-and-sets-a-cookie">
+<section class="level2" id="option-1-javascript-checks-screen-width-and-sets-a-cookie">
 <h2><a href="#TOC">Option 1: JavaScript checks screen width and sets a cookie</a></h2>
-<section id="best-examples">
+<section class="level3" id="best-examples">
 <h3><a href="#TOC">Best examples</a></h3>
 <ul>
 <li><a href="https://github.com/filamentgroup/Responsive-Images">Responsive Images JS</a></li>
 <li><a href="http://adaptive-images.com/">Adaptive Images</a></li>
 </ul>
 </section>
-<section id="problems">
+<section class="level3" id="problems">
 <h3><a href="#TOC">Problems</a></h3>
 <ul>
 <li>Sometimes the browser requests images before the JavaScript executes which means the cookie isn’t set. Race condition.</li>
@@ -565,22 +756,24 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ul>
 </section>
 </section>
-<section id="option-2-noscript-tag">
+<section class="level2" id="option-2-noscript-tag">
 <h2><a href="#TOC">Option 2: Noscript tag</a></h2>
 <ul>
 <li>Put small image inside noscript tag.</li>
 <li>Put info for other images in data-* on noscript tag.</li>
 <li>Use javascript to build correct img tag for screen size.</li>
 </ul>
-<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;noscript</span><span class="ot"> data-large=</span><span class="st">&quot;Koala.jpg&quot;</span><span class="ot"> data-small=</span><span class="st">&quot;Koala-small.jpg&quot;</span><span class="ot"> data-alt=</span><span class="st">&quot;Koala&quot;</span><span class="kw">&gt;</span><br /><span class="kw">&lt;img</span><span class="ot"> scr=</span><span class="st">&quot;Koala.jpg&quot;</span><span class="ot"> alt=</span><span class="st">&quot;Koala&quot;</span> <span class="kw">/&gt;</span><br /><span class="kw">&lt;/noscript&gt;</span></code></pre>
-<section id="best-examples-1">
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;noscript</span><span class="ot"> data-large=</span><span class="st">&quot;Koala.jpg&quot;</span><span class="ot"> data-small=</span><span class="st">&quot;Koala-small.jpg&quot;</span><span class="ot"> data-alt=</span><span class="st">&quot;Koala&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;img</span><span class="ot"> scr=</span><span class="st">&quot;Koala.jpg&quot;</span><span class="ot"> alt=</span><span class="st">&quot;Koala&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;/noscript&gt;</span></code></pre>
+<section class="level3" id="best-examples-1">
 <h3><a href="#TOC">Best examples</a></h3>
 <ul>
 <li><a href="http://www.monoliitti.com/images/">Testing Responsive Images</a></li>
 <li><a href="http://www.headlondon.com/our-thoughts/technology/posts/creating-responsive-images-using-the-noscript-tag">Creating responsive images using the noscript tag</a></li>
 </ul>
 </section>
-<section id="problems-1">
+<section class="level3" id="problems-1">
 <h3><a href="#TOC">Problems</a></h3>
 <ul>
 <li>Markup has been changed in a way that only makes sense for this solution.</li>
@@ -588,20 +781,20 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ul>
 </section>
 </section>
-<section id="option-3-sencha.io-src">
+<section class="level2" id="option-3-sencha.io-src">
 <h2><a href="#TOC">Option 3: Sencha.io SRC</a></h2>
 <ul>
 <li>Use or build a service like Sencha.io SRC to deliver the correctly sized image:</li>
 </ul>
-<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;http://src.sencha.io/[ORIGINAL IMAGE URL]&quot;</span> <span class="kw">/&gt;</span></code></pre>
-<section id="best-examples-2">
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;img</span><span class="ot"> src=</span><span class="st">&quot;http://src.sencha.io/[ORIGINAL IMAGE URL]&quot;</span> <span class="kw">/&gt;</span></code></pre>
+<section class="level3" id="best-examples-2">
 <h3><a href="#TOC">Best examples</a></h3>
 <ul>
 <li><a href="http://www.sencha.com/learn/how-to-use-src-sencha-io/">How to use src.sencha.io</a></li>
 <li><a href="http://www.sencha.com/blog/sencha-io-src-update/">Sencha.io Src Update</a></li>
 </ul>
 </section>
-<section id="problems-2">
+<section class="level3" id="problems-2">
 <h3><a href="#TOC">Problems</a></h3>
 <ul>
 <li>All of your images are being routed through a third-party service.</li>
@@ -609,7 +802,7 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 </ul>
 </section>
 </section>
-<section id="other-rwd-challenges">
+<section class="level2" id="other-rwd-challenges">
 <h2><a href="#TOC">Other RWD Challenges</a></h2>
 <ul>
 <li>Delivering the right size video</li>
@@ -625,14 +818,14 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li>Third-party widgets (particularly ad networks)</li>
 <li>Integrating with content management systems</li>
 </ul>
-<hr />
+<hr>
 </section>
 </section>
-<section id="a-honed-killing-machine">
+<section class="level1" id="a-honed-killing-machine">
 <h1><a href="#TOC">5. A Honed Killing Machine</a></h1>
-<section id="applicationcache">
+<section class="level2" id="applicationcache">
 <h2><a href="#TOC">ApplicationCache!</a></h2>
-<section id="more-information-about-applicationcache">
+<section class="level3" id="more-information-about-applicationcache">
 <h3><a href="#TOC">More Information about ApplicationCache</a></h3>
 <ul>
 <li>There are enough little gotchas in appCache that it may behoove you to <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html">read the spec</a>.</li>
@@ -640,12 +833,11 @@ code.sourceCode span.er { color: red; font-weight: bold; }
 <li>We find that it is easiest to inspect and debug appCache using's Webkit's Web Inspector tool (available in Chrome, Safari).</li>
 </ul>
 </section>
-<section id="cache-manifest-quickies">
+<section class="level3" id="cache-manifest-quickies">
 <h3><a href="#TOC">Cache Manifest Quickies</a></h3>
 <ol type="1">
 <li><p>File must be served as <code>text/application-cache</code>. Often this can be effected by adding the following line to an apache config (<code>.htaccess</code> file or the like).</p>
-<pre><code>AddType text/cache-manifest .appcache
-</code></pre></li>
+<pre><code>AddType text/cache-manifest .appcache</code></pre></li>
 <li><p>Basic cache manifest syntax:</p>
 <pre><code>CACHE MANIFEST
 
@@ -653,12 +845,11 @@ CACHE:
 foo.jpg
 bar.png
 index.html
-ding/dong.html
-</code></pre></li>
+ding/dong.html</code></pre></li>
 <li><p>Reference a cache manifest with the <code>manifest</code> attribute of the <code>&lt;html&gt;</code> tag. e.g. <code>&lt;html manifest=&quot;manifest.appcache&quot;&gt;</code>.</p></li>
 </ol>
 </section>
-<section id="creating-a-cache-manifest-for-the-sigma-stronghold-site">
+<section class="level3" id="creating-a-cache-manifest-for-the-sigma-stronghold-site">
 <h3><a href="#TOC">Creating a Cache Manifest for the Sigma Stronghold Site</a></h3>
 <p><em>Note</em>: If you are not running apache locally, you may not be able to get cache manifests working on your laptop. No worries!</p>
 <ol type="1">
@@ -674,119 +865,217 @@ images/blip.png
 images/bomb.png
 images/moon.jpg
 styles.css
-http://fonts.googleapis.com/css?family=Nosifer|Special+Elite
-</code></pre></li>
+http://fonts.googleapis.com/css?family=Nosifer|Special+Elite</code></pre></li>
 <li><p>Edit the <code>.htaccess</code> file in the <code>sigma-stronghold-website</code> directory (create <code>.htaccess</code> if it doesn't exist yet).</p></li>
 <li><p>Add the line:</p>
-<pre><code>AddType text/cache-manifest .appcache
-</code></pre></li>
+<pre><code>AddType text/cache-manifest .appcache</code></pre></li>
 <li><p>Edit <code>index.html</code>. Change the <code>&lt;html&gt;</code> tag to read:</p>
-<pre><code>&lt;html manifest=&quot;manifest.appcache&quot;&gt;
-</code></pre></li>
+<pre><code>&lt;html manifest=&quot;manifest.appcache&quot;&gt;</code></pre></li>
 <li><p>Use the WebInspector to see if your appCache worked!</p></li>
 </ol>
 </section>
-<section id="improving-the-cache-manifest">
+<section class="level3" id="improving-the-cache-manifest">
 <h3><a href="#TOC">Improving the Cache Manifest</a></h3>
 <p>We need to cache those Google fonts! Add this to the end of the <code>CACHE</code> section:</p>
 <pre><code>http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff
-http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff
-</code></pre>
+http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff</code></pre>
 </section>
 </section>
-<section id="device-apis-focus-on-geolocation">
+<section class="level2" id="device-apis-focus-on-geolocation">
 <h2><a href="#TOC">Device APIs: Focus on Geolocation!</a></h2>
-<section id="w3c-geolocation-api">
+<section class="level3" id="w3c-geolocation-api">
 <h3><a href="#TOC">W3C Geolocation API</a></h3>
 <ul>
 <li>The spec for the <a href="http://dev.w3.org/geo/api/spec-source.html">W3C Geolocation API spec</a> is relatively short and easy to understand (as specs go).</li>
 </ul>
-<section id="quick-details">
+<section class="level4" id="quick-details">
 <h4><a href="#TOC">Quick Details</a></h4>
 <p>Browsers that implement the W3C geolocation spec expose the <code>navigator.geolocation</code> object and its methods to the browser.</p>
 </section>
-<section id="code-snippets">
+<section class="level4" id="code-snippets">
 <h4><a href="#TOC">Code Snippets</a></h4>
-<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(successCallback, errorCallback);<br /><br /><span class="kw">function</span> successCallback(position) {<br />  <span class="co">// Latitude and Longitude are usually what you're after.</span><br />  <span class="co">// They're properties of the coords object on position.</span><br />  alert(<span class="kw">position.coords</span>.<span class="fu">latitude</span> + <span class="ch">', '</span> + <span class="kw">position.coords</span>.<span class="fu">longitude</span>);<br />}<br /><span class="kw">function</span> errorCallback(error) {<br />  <span class="co">// Do something or freak out.</span><br />}</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(successCallback, errorCallback);
+
+<span class="kw">function</span> successCallback(position) {
+  <span class="co">// Latitude and Longitude are usually what you&#39;re after.</span>
+  <span class="co">// They&#39;re properties of the coords object on position.</span>
+  alert(<span class="kw">position.coords</span>.<span class="fu">latitude</span> + <span class="ch">&#39;, &#39;</span> + <span class="kw">position.coords</span>.<span class="fu">longitude</span>);
+}
+<span class="kw">function</span> errorCallback(error) {
+  <span class="co">// Do something or freak out.</span>
+}</code></pre>
 </section>
 </section>
 </section>
-<section id="do-this-building-a-quickie-geolocation-test-page">
+<section class="level2" id="do-this-building-a-quickie-geolocation-test-page">
 <h2><a href="#TOC"><em>Do This</em>: Building a Quickie Geolocation Test Page</a></h2>
 <ol type="1">
 <li>Open the <code>index.html</code> file in the <code>where-am-i</code> folder in your rucksack.</li>
 <li><p>Find the <code>&lt;script&gt;</code> tags.</p>
-<pre class="sourceCode"><code class="sourceCode javascript">&lt;script&gt;<br />  <span class="kw">if</span> (<span class="kw">navigator</span>.<span class="fu">geolocation</span>) { <span class="co">// Test for W3C geolocation support</span><br /><br />  }<br />&lt;/script&gt;</code></pre></li>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">&lt;script&gt;
+  <span class="kw">if</span> (<span class="kw">navigator</span>.<span class="fu">geolocation</span>) { <span class="co">// Test for W3C geolocation support</span>
+
+  }
+&lt;/script&gt;</code></pre></li>
 <li><p>OK! Now expand upon that:</p>
-<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">if</span> (<span class="kw">navigator</span>.<span class="fu">geolocation</span>) {<br />  <span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(onGeoSuccess, onGeoError);<br />} <span class="kw">else</span> {<br />  onGeoError(<span class="kw">new</span> Error(<span class="ch">'Sorry, Geolocation not supported in this browser!'</span>));<br />}</code></pre></li>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">if</span> (<span class="kw">navigator</span>.<span class="fu">geolocation</span>) {
+  <span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(onGeoSuccess, onGeoError);
+} <span class="kw">else</span> {
+  onGeoError(<span class="kw">new</span> Error(<span class="ch">&#39;Sorry, Geolocation not supported in this browser!&#39;</span>));
+}</code></pre></li>
 <li><p><em>Note</em>: This won't work (well, there will be JS errors) until we define the <code>onGeoSuccess</code> and <code>onGeoError</code> callback functions. So let's do that now. Add this to the JavaScript (right after what's already there):</p>
-<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">function</span> onGeoSuccess(position) {<br />  <span class="kw">var</span> coordinates = <span class="kw">position</span>.<span class="fu">coords</span>;<br />  alert(<span class="kw">coordinates</span>.<span class="fu">latitude</span> + <span class="st">&quot;, &quot;</span> + <span class="kw">coordinates</span>.<span class="fu">longitude</span>);<br />}<br /><span class="kw">function</span> onGeoError(error) {<br />  alert(<span class="kw">error</span>.<span class="fu">message</span>);<br />}</code></pre></li>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">function</span> onGeoSuccess(position) {
+  <span class="kw">var</span> coordinates = <span class="kw">position</span>.<span class="fu">coords</span>;
+  alert(<span class="kw">coordinates</span>.<span class="fu">latitude</span> + <span class="st">&quot;, &quot;</span> + <span class="kw">coordinates</span>.<span class="fu">longitude</span>);
+}
+<span class="kw">function</span> onGeoError(error) {
+  alert(<span class="kw">error</span>.<span class="fu">message</span>);
+}</code></pre></li>
 <li><p>Try it out!</p></li>
 <li><p>Having trouble? Find the contents of the <code>&lt;script&gt;</code> in <a href="../supplemental/where-am-i/geo-script.js"><code>supplemental/where-am-i/geo-script.js</code></a>.</p></li>
 </ol>
-<hr />
+<hr>
 </section>
 </section>
-<section id="a-band-of-brothers">
+<section class="level1" id="a-band-of-brothers">
 <h1><a href="#TOC">6. A Band of Brothers</a></h1>
 <ul>
 <li><a href="http://www.jquerymobile.com">jQuery Mobile</a></li>
 <li><a href="http://jacwright.com/projects/javascript/date_format/">JavaScript Date.Format</a>: A small library to emulate PHP-style date formatting.</li>
 <li><a href="http://code.google.com/p/geo-location-javascript/">Geo-location-js</a>: A very easy cross-platform geolocation library that emulates the W3C Geolocation API.</li>
 </ul>
-<section id="do-this-a-jquery-mobile-page-for-nabbing-zombies">
+<section class="level2" id="do-this-a-jquery-mobile-page-for-nabbing-zombies">
 <h2><a href="#TOC"><em>Do This</em>: A jQuery Mobile Page for Nabbing Zombies</a></h2>
 <ol type="1">
 <li>Find the &quot;I got one!&quot; starting point in your rucksack in <a href="../i-got-one/index.html"><code>i-got-one/index.html</code></a>.</li>
 <li><p>Add a header:</p>
-<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;h1&gt;</span>I got one!<span class="kw">&lt;/h1&gt;</span><br /><span class="kw">&lt;/div&gt;</span></code></pre></li>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;h1&gt;</span>I got one!<span class="kw">&lt;/h1&gt;</span>
+<span class="kw">&lt;/div&gt;</span></code></pre></li>
 <li><p>Add a <code>&lt;select&gt;</code> element, an <code>&lt;input&gt;</code> button and an empty <code>&lt;ul&gt;</code> to hold our incoming dead zombies. This should be the contents of the <code>&lt;div data-role=&quot;content&quot;&gt;</code>:</p>
-<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;fieldcontain&quot;</span><span class="kw">&gt;</span><br />    <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span>How'd you nab it?<span class="kw">&lt;/label&gt;</span><br />    <span class="kw">&lt;select</span><span class="ot"> name=</span><span class="st">&quot;how-zombie&quot;</span><span class="ot"> id=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;tank&quot;</span><span class="kw">&gt;</span>Tank<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;conflagration&quot;</span><span class="kw">&gt;</span>Conflagration<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;poison&quot;</span><span class="kw">&gt;</span>Poison<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;nukes&quot;</span><span class="kw">&gt;</span>Micro-nukes<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;trickery&quot;</span><span class="kw">&gt;</span>Trickery<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;corrosive&quot;</span><span class="kw">&gt;</span>Corrosive<span class="kw">&lt;/option&gt;</span><br />      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;dismemberment&quot;</span><span class="kw">&gt;</span>Dismemberment<span class="kw">&lt;/option&gt;</span><br />    <span class="kw">&lt;/select&gt;</span><br />  <span class="kw">&lt;/div&gt;</span><br />  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;button&quot;</span><span class="ot"> value=</span><span class="st">&quot;I got one!&quot;</span><span class="ot"> id=</span><span class="st">&quot;got-one&quot;</span><span class="ot"> data-theme=</span><span class="st">&quot;b&quot;</span> <span class="kw">/&gt;</span><br /><br />  <span class="kw">&lt;ul</span><span class="ot"> data-role=</span><span class="st">&quot;listview&quot;</span><span class="ot"> data-inset=</span><span class="st">&quot;true&quot;</span><span class="ot"> id=</span><span class="st">&quot;zombielist&quot;</span><span class="kw">&gt;</span><br />  <span class="kw">&lt;/ul&gt;</span><br /><br /><span class="kw">&lt;/div&gt;</span></code></pre></li>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;fieldcontain&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span>How&#39;d you nab it?<span class="kw">&lt;/label&gt;</span>
+    <span class="kw">&lt;select</span><span class="ot"> name=</span><span class="st">&quot;how-zombie&quot;</span><span class="ot"> id=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span>
+      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;tank&quot;</span><span class="kw">&gt;</span>Tank<span class="kw">&lt;/option&gt;</span>
+      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;conflagration&quot;</span><span class="kw">&gt;</span>Conflagration<span class="kw">&lt;/option&gt;</span>
+      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;poison&quot;</span><span class="kw">&gt;</span>Poison<span class="kw">&lt;/option&gt;</span>
+      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;nukes&quot;</span><span class="kw">&gt;</span>Micro-nukes<span class="kw">&lt;/option&gt;</span>
+      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;trickery&quot;</span><span class="kw">&gt;</span>Trickery<span class="kw">&lt;/option&gt;</span>
+      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;corrosive&quot;</span><span class="kw">&gt;</span>Corrosive<span class="kw">&lt;/option&gt;</span>
+      <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;dismemberment&quot;</span><span class="kw">&gt;</span>Dismemberment<span class="kw">&lt;/option&gt;</span>
+    <span class="kw">&lt;/select&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;button&quot;</span><span class="ot"> value=</span><span class="st">&quot;I got one!&quot;</span><span class="ot"> id=</span><span class="st">&quot;got-one&quot;</span><span class="ot"> data-theme=</span><span class="st">&quot;b&quot;</span> <span class="kw">/&gt;</span>
+
+  <span class="kw">&lt;ul</span><span class="ot"> data-role=</span><span class="st">&quot;listview&quot;</span><span class="ot"> data-inset=</span><span class="st">&quot;true&quot;</span><span class="ot"> id=</span><span class="st">&quot;zombielist&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;/ul&gt;</span>
+
+<span class="kw">&lt;/div&gt;</span></code></pre></li>
 <li><p>Drop in the intial JavaScript by adding a <code>&lt;script&gt;</code> tag after the <code>geo.js</code> <code>&lt;script&gt;</code> tag:</p>
-<pre class="sourceCode"><code class="sourceCode html"><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;zombie.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></code></pre></li>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;zombie.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></code></pre></li>
 <li><p>You can find the finished version of <code>index.html</code> for this step in your rucksack in <a href="../supplemental/band-of-brothers/step1.html"><code>supplemental/band-of-brothers/step1.html</code></a>.</p></li>
 </ol>
 </section>
-<section id="do-this-persistant-data-with-lawnchair">
+<section class="level2" id="do-this-persistant-data-with-lawnchair">
 <h2><a href="#TOC"><em>Do This</em>: Persistant data with Lawnchair</a></h2>
 <p>For this step, we use <a href="http://westcoastlogic.com/lawnchair/">Lawnchair</a>, an open-source JS library for storing data on the client:</p>
 <ol type="1">
 <li><p>Edit the <code>zombie.js</code> file.</p></li>
 <li><p>Instantiate the Lawnchair. Add <code>var zombieChair   = Lawnchair({name: 'zombies'}, function() {});</code> right after the <code>zombies</code> array is created.</p>
-<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">window</span>.<span class="fu">zombieManager</span> = (<span class="kw">function</span>() {<br />  <span class="kw">var</span> zombies       = <span class="kw">new</span> <span class="kw">Array</span>();<br />  <span class="kw">var</span> zombieChair   = Lawnchair({<span class="dt">name</span>: <span class="ch">'zombies'</span>}, <span class="kw">function</span>() {});</code></pre></li>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">window</span>.<span class="fu">zombieManager</span> = (<span class="kw">function</span>() {
+  <span class="kw">var</span> zombies       = <span class="kw">new</span> <span class="kw">Array</span>();
+  <span class="kw">var</span> zombieChair   = Lawnchair({<span class="dt">name</span>: <span class="ch">&#39;zombies&#39;</span>}, <span class="kw">function</span>() {});</code></pre></li>
 <li><p>Add an init function. This should go in the returned object in the <code>zombieManager</code> function:</p>
-<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">return</span> {<br />  <span class="co">// Init; build initial #zombielist</span><br />  <span class="dt">init          </span>: <span class="kw">function</span>() {<br />    <span class="kw">zombieChair</span>.<span class="fu">get</span>(<span class="ch">'zombies'</span>, <span class="kw">function</span>(zombiesOnIce) {<br />      <span class="kw">if</span> (zombiesOnIce) {<br />        zombies = <span class="kw">zombiesOnIce</span>.<span class="fu">value</span>;<br />      }<br />    });<br />    showZombies();<br />  },<br />  <span class="co">// Add a new zombie to the list of zombies</span><br />  <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) {<br />  <span class="co">// ...</span></code></pre></li>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">return</span> {
+  <span class="co">// Init; build initial #zombielist</span>
+  <span class="dt">init          </span>: <span class="kw">function</span>() {
+    <span class="kw">zombieChair</span>.<span class="fu">get</span>(<span class="ch">&#39;zombies&#39;</span>, <span class="kw">function</span>(zombiesOnIce) {
+      <span class="kw">if</span> (zombiesOnIce) {
+        zombies = <span class="kw">zombiesOnIce</span>.<span class="fu">value</span>;
+      }
+    });
+    showZombies();
+  },
+  <span class="co">// Add a new zombie to the list of zombies</span>
+  <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) {
+  <span class="co">// ...</span></code></pre></li>
 <li><p>Update the <code>addZombie</code> function such that it also saves the incoming zombie to the Lawnchair:</p>
-<pre class="sourceCode"><code class="sourceCode javascript">  },<br />  <span class="co">// Add a new zombie to the list of zombies</span><br />  <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) {<br />    zombies[<span class="kw">zombies</span>.<span class="fu">length</span>] = {<br />      <span class="dt">when      </span>: <span class="kw">zombieWhen</span>.<span class="fu">valueOf</span>(),<br />      <span class="dt">where     </span>: zombieWhere,<br />      <span class="dt">how       </span>: zombieHow<br />    };<br />    <span class="kw">zombieChair</span>.<span class="fu">save</span>({<span class="dt">key</span>: <span class="ch">'zombies'</span>, <span class="dt">value </span>: zombies });<br />    showZombies();<br />  }</code></pre></li>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">  },
+  <span class="co">// Add a new zombie to the list of zombies</span>
+  <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) {
+    zombies[<span class="kw">zombies</span>.<span class="fu">length</span>] = {
+      <span class="dt">when      </span>: <span class="kw">zombieWhen</span>.<span class="fu">valueOf</span>(),
+      <span class="dt">where     </span>: zombieWhere,
+      <span class="dt">how       </span>: zombieHow
+    };
+    <span class="kw">zombieChair</span>.<span class="fu">save</span>({<span class="dt">key</span>: <span class="ch">&#39;zombies&#39;</span>, <span class="dt">value </span>: zombies });
+    showZombies();
+  }</code></pre></li>
 <li><p>Update the <code>resetZombies</code> function to clear the Lawnchair using the <code>nuke</code> method:</p>
-<pre class="sourceCode"><code class="sourceCode javascript"><span class="kw">var</span> resetZombies = <span class="kw">function</span>() {<br />    zombies = <span class="kw">new</span> <span class="kw">Array</span>();<br />    <span class="kw">zombieChair</span>.<span class="fu">nuke</span>();<br />    $(<span class="ch">'li.zombie'</span>).<span class="fu">remove</span>();<br />    $(<span class="ch">'#zombielist'</span>).<span class="fu">listview</span>(<span class="ch">'refresh'</span>);<br />  };</code></pre></li>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> resetZombies = <span class="kw">function</span>() {
+    zombies = <span class="kw">new</span> <span class="kw">Array</span>();
+    <span class="kw">zombieChair</span>.<span class="fu">nuke</span>();
+    $(<span class="ch">&#39;li.zombie&#39;</span>).<span class="fu">remove</span>();
+    $(<span class="ch">&#39;#zombielist&#39;</span>).<span class="fu">listview</span>(<span class="ch">&#39;refresh&#39;</span>);
+  };</code></pre></li>
 <li><p>Now add a call to that new <code>init</code> function we wrote...</p>
-<pre class="sourceCode"><code class="sourceCode javascript">$(<span class="st">&quot;#nab-zombie&quot;</span>).<span class="fu">live</span>(<span class="ch">'pageinit'</span>, <span class="kw">function</span>() {<br /><br />  <span class="co">// Initialize our list of zombies</span><br />  <span class="kw">zombieManager</span>.<span class="fu">init</span>();<br />  <span class="co">// Is Geolocation supported?</span><br />  <span class="co">// ...</span></code></pre></li>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">$(<span class="st">&quot;#nab-zombie&quot;</span>).<span class="fu">live</span>(<span class="ch">&#39;pageinit&#39;</span>, <span class="kw">function</span>() {
+
+  <span class="co">// Initialize our list of zombies</span>
+  <span class="kw">zombieManager</span>.<span class="fu">init</span>();
+  <span class="co">// Is Geolocation supported?</span>
+  <span class="co">// ...</span></code></pre></li>
 <li><p>That's a lot of JavaScript. You can also find a final version of <code>zombie.js</code> in <a href="../supplemental/band-of-brothers/zombie.js"><code>supplemental/band-of-brothers/zombie.js</code></a>.</p></li>
 </ol>
-<hr />
+<hr>
 </section>
 </section>
-<section id="desperate-times-call-for...">
+<section class="level1" id="desperate-times-call-for...">
 <h1><a href="#TOC">7. Desperate Times call for...</a></h1>
-<section id="hybrid-app-development-with-phonegap-and-phonegap-build">
+<section class="level2" id="hybrid-app-development-with-phonegap-and-phonegap-build">
 <h2><a href="#TOC">Hybrid App Development with PhoneGap and PhoneGap Build</a></h2>
 <ul>
 <li><a href="http://www.phonegap.com">PhoneGap</a></li>
 <li><a href="http://build.phonegap.com">PhoneGap Build</a></li>
 </ul>
 </section>
-<section id="anatomy-of-a-phonegap-build-config-file">
+<section class="level2" id="anatomy-of-a-phonegap-build-config-file">
 <h2><a href="#TOC">Anatomy of a PhoneGap Build Config File</a></h2>
 <p>Here's our example <code>config.xml</code> file.</p>
-<pre class="sourceCode"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; <span class="kw">?&gt;</span><br />    <span class="kw">&lt;widget</span><span class="ot"> xmlns</span> <span class="ot">=</span> <span class="st">&quot;http://www.w3.org/ns/widgets&quot;</span><br /><span class="ot">        xmlns:gap</span> <span class="ot">=</span> <span class="st">&quot;http://phonegap.com/ns/1.0&quot;</span><br /><span class="ot">        id</span>        <span class="ot">=</span> <span class="st">&quot;com.cloudfour.gotone&quot;</span><br /><span class="ot">        versionCode=</span><span class="st">&quot;10&quot;</span><br /><span class="ot">        version</span>   <span class="ot">=</span> <span class="st">&quot;1.0.0&quot;</span><span class="kw">&gt;</span><br /><br />    <span class="kw">&lt;name&gt;</span>I Got One<span class="kw">&lt;/name&gt;</span><br /><br />    <span class="kw">&lt;description&gt;</span><br />       Track your zombie kills!<br />    <span class="kw">&lt;/description&gt;</span><br /><br />    <span class="kw">&lt;author</span><span class="ot"> href=</span><span class="st">&quot;https://www.cloudfour.com&quot;</span><span class="ot"> email=</span><span class="st">&quot;info@cloudfour.com&quot;</span><span class="kw">&gt;</span><br />        Lyza Gardner and Jason Grigsby<br />    <span class="kw">&lt;/author&gt;</span><br /><br />    <span class="kw">&lt;preference</span><span class="ot"> name=</span><span class="st">&quot;orientation&quot;</span><span class="ot"> value=</span><span class="st">&quot;portrait&quot;</span> <span class="kw">/&gt;</span><br /><br />    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-iphone.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;57&quot;</span><span class="ot"> height=</span><span class="st">&quot;57&quot;</span><span class="kw">/&gt;</span><br />    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-ipad.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;72&quot;</span><span class="ot"> height=</span><span class="st">&quot;72&quot;</span><span class="kw">/&gt;</span><br />    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-iphone4.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;114&quot;</span><span class="ot"> height=</span><span class="st">&quot;114&quot;</span><span class="kw">/&gt;</span><br /><br />    <span class="kw">&lt;gap:splash</span><span class="ot"> src=</span><span class="st">&quot;app-icons/splash.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;320&quot;</span><span class="ot"> height=</span><span class="st">&quot;480&quot;</span> <span class="kw">/&gt;</span><br />    <span class="kw">&lt;gap:splash</span><span class="ot"> src=</span><span class="st">&quot;app-icons/splash-2x.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;640&quot;</span><span class="ot"> height=</span><span class="st">&quot;960&quot;</span><span class="kw">/&gt;</span><br /><span class="kw">&lt;/widget&gt;</span></code></pre>
+<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; <span class="kw">?&gt;</span>
+    <span class="kw">&lt;widget</span><span class="ot"> xmlns</span> <span class="ot">=</span> <span class="st">&quot;http://www.w3.org/ns/widgets&quot;</span>
+<span class="ot">        xmlns:gap</span> <span class="ot">=</span> <span class="st">&quot;http://phonegap.com/ns/1.0&quot;</span>
+<span class="ot">        id</span>        <span class="ot">=</span> <span class="st">&quot;com.cloudfour.gotone&quot;</span>
+<span class="ot">        versionCode=</span><span class="st">&quot;10&quot;</span>
+<span class="ot">        version</span>   <span class="ot">=</span> <span class="st">&quot;1.0.0&quot;</span><span class="kw">&gt;</span>
+
+    <span class="kw">&lt;name&gt;</span>I Got One<span class="kw">&lt;/name&gt;</span>
+
+    <span class="kw">&lt;description&gt;</span>
+       Track your zombie kills!
+    <span class="kw">&lt;/description&gt;</span>
+
+    <span class="kw">&lt;author</span><span class="ot"> href=</span><span class="st">&quot;https://www.cloudfour.com&quot;</span><span class="ot"> email=</span><span class="st">&quot;info@cloudfour.com&quot;</span><span class="kw">&gt;</span>
+        Lyza Gardner and Jason Grigsby
+    <span class="kw">&lt;/author&gt;</span>
+
+    <span class="kw">&lt;preference</span><span class="ot"> name=</span><span class="st">&quot;orientation&quot;</span><span class="ot"> value=</span><span class="st">&quot;portrait&quot;</span> <span class="kw">/&gt;</span>
+
+    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-iphone.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;57&quot;</span><span class="ot"> height=</span><span class="st">&quot;57&quot;</span><span class="kw">/&gt;</span>
+    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-ipad.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;72&quot;</span><span class="ot"> height=</span><span class="st">&quot;72&quot;</span><span class="kw">/&gt;</span>
+    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-iphone4.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;114&quot;</span><span class="ot"> height=</span><span class="st">&quot;114&quot;</span><span class="kw">/&gt;</span>
+
+    <span class="kw">&lt;gap:splash</span><span class="ot"> src=</span><span class="st">&quot;app-icons/splash.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;320&quot;</span><span class="ot"> height=</span><span class="st">&quot;480&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;gap:splash</span><span class="ot"> src=</span><span class="st">&quot;app-icons/splash-2x.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;640&quot;</span><span class="ot"> height=</span><span class="st">&quot;960&quot;</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;/widget&gt;</span></code></pre>
 <p>(You can also find this in <a href="../supplemental/desperate-times/config.xml"><code>supplemental/desperate-times/config.xml</code></a>).</p>
-<hr />
+<hr>
 </section>
 </section>
-<section id="know-thy-enemy">
+<section class="level1" id="know-thy-enemy">
 <h1><a href="#TOC">8. Know Thy Enemy</a></h1>
-<section id="many-device-detection-database-options">
+<section class="level2" id="many-device-detection-database-options">
 <h2><a href="#TOC">Many device detection database options</a></h2>
 <ul>
 <li><a href="http://wurfl.sourceforge.net/">WURFL</a> (Wireless Universal Resource FiLe) by <a href="http://www.scientiamobile.com/">ScientiaMobile</a></li>
@@ -795,9 +1084,10 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <li><a href="http://51degrees.mobi/Products/DeviceData.aspx">51degrees</a></li>
 </ul>
 </section>
-<section id="some-sample-user-agent-strings">
+<section class="level2" id="some-sample-user-agent-strings">
 <h2><a href="#TOC">Some sample User Agent strings</a></h2>
-<pre><code><br />Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5
+<pre><code>
+Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5
 
 Mozilla/5.0 (Linux; U; Android 2.2.1; en-us; DROIDX Build/VZW) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 480X854 motorola DROIDX
 
@@ -815,10 +1105,9 @@ BlackBerry9300/5.0.0.794 Profile/MIDP-2.1 Configuration/CLDC-1.1 VendorID/245
 
 Mozilla/5.0 (Linux; U; Android 2.1-update1; en-us; SAMSUNG-SGH-I897/I897UCJH7 Build/ECLAIR) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17
 
-facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
-</code></pre>
+facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)</code></pre>
 </section>
-<section id="do-this-sniffing-em-out">
+<section class="level2" id="do-this-sniffing-em-out">
 <h2><a href="#TOC"><em>Do This</em>: Sniffing 'em out</a></h2>
 <ol type="1">
 <li>Go to the <a href="http://www.tera-wurfl.com/explore/">ScientiaMobile WURFL Explorer</a> on your mobile phone</li>
@@ -828,9 +1117,14 @@ facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
 <li>Try some other mobile user agents from your rucksack for comparison</li>
 </ol>
 </section>
-<section id="wurfl-code-snipp-lets">
+<section class="level2" id="wurfl-code-snipp-lets">
 <h2><a href="#TOC">WURFL code snipp-lets</a></h2>
-<pre class="sourceCode"><code class="sourceCode php"><span class="kw">&lt;?php</span><br /><span class="co">// This assumes the WURFL library is installed and</span><br /><span class="co">// a $device object has been initialized.</span><br /><span class="kw">$value</span> = <span class="kw">$device</span>-&gt;getCapability<span class="ot">(</span><span class="st">'is_wireless_device'</span><span class="ot">);</span><br /><span class="kw">$value</span> = <span class="kw">$device</span>-&gt;getCapability<span class="ot">(</span><span class="st">'cookie_support'</span><span class="ot">);</span><br /><span class="kw">?&gt;</span></code></pre>
+<pre class="sourceCode php"><code class="sourceCode php"><span class="kw">&lt;?php</span>
+<span class="co">// This assumes the WURFL library is installed and</span>
+<span class="co">// a $device object has been initialized.</span>
+<span class="kw">$value</span> = <span class="kw">$device</span>-&gt;getCapability<span class="ot">(</span><span class="st">&#39;is_wireless_device&#39;</span><span class="ot">);</span>
+<span class="kw">$value</span> = <span class="kw">$device</span>-&gt;getCapability<span class="ot">(</span><span class="st">&#39;cookie_support&#39;</span><span class="ot">);</span>
+<span class="kw">?&gt;</span></code></pre>
 <p>More documentation on WURFL available on its <a href="http://wurfl.sourceforge.net/">Sourceforge page</a>.</p>
 </section>
 </section>

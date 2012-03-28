@@ -17,7 +17,11 @@ Before we even let you *look* at zombie enemies, we're going to have to slim you
 
 # The web is fat
 
+## Figure: The Web is Fat
+
 ![](images/02-web-is-fat.png "The Web is Fat")
+
+## Speaker Notes
 
 Syrupy Flash videos, gimmicky news tickers, potbellied background images, slapdash syndicated content, an irrelevant weather forecast: the crap we fling around on web pages these days is the internet equivalent of corn syrup, trans fat or bubblegum. Lots of empty calories clogging the arteries of the web.
 
@@ -26,11 +30,15 @@ Syrupy Flash videos, gimmicky news tickers, potbellied background images, slapda
 
 # We got sloppy
 
+## Figure: Sad Phone
+
 ![](images/02-i-am-sad.png "I am sad")
+
+## Speaker Notes
 
 We web devs are, as a species, not exactly lazy. But we will take advantage of shortcuts and see what we can get away with.
 
-## A false sense of security
+### A false sense of security
 
 * Browsers let us get away with ~~anything~~ almost anything.
 * Broadband is "everywhere."
@@ -42,17 +50,31 @@ It's like we forgot to zip up our fly, and no one really notices anyway.
 
 ![](images/02-my-fat-site.png "My fat site")
 
-When it comes to the mobile web, the notion of valid markup and lean pages is not just something to mutter platitudes about. It's important.
-
 * Bytes cost money.
 * Slow costs money.
 * Invalid markup costs money.
 
+
+## Speaker Notes
+
+When it comes to the mobile web, the notion of valid markup and lean pages is not just something to mutter platitudes about. It's important.
+
+
+Pause/transition.
+
+# Sergeant Dingus and his Bright Idea
+
+![Sergeant Dingus](images/02-dingus.png)
+
+Sergeant Dingus built a [web site](../rucksack/missions/sigma-stronghold-website) to cheer on his comrades in basic training at the Sigma Stronghold.
+
+## Speaker Notes
+
+This ragtag group of underdogs is the neighborhood's only hope against the staggering Zombie horde.
+
 # Sigma Stronghold
 
 ![](images/02-sigma-start.png)
-
-Sergeant Dingus built a [web site](../zombie-rucksack/sigma-stronghold-website) to cheer on his comrades in basic training at the Sigma Stronghold. This ragtag group of underdogs is the neighborhood's only hope against the staggering Zombie horde.
 
 Our recruit Gomer and this web site are not too different. Bloated, lazy and distracted.
 
@@ -60,72 +82,202 @@ Our recruit Gomer and this web site are not too different. Bloated, lazy and dis
 
 ### Help Gomer and Sgt. Dingus get this sorry sack of a web page in fighting trim.
 
-# OK, Grasshopper
+## Speaker Notes
 
-We can hear your collective moans. What? Cleaning up and optimizing a *desktop* web site is akin to KP or repetitive calisthenics.
+* Walk through site, quickly, in browser window.
+* You can look at it, too. Use the link in your field notes.
 
-However, the first battle is with ourselves. To become refined zombie-squishing machines, we must practice relentless discipline. 
+# We have pity
 
-# Doing a bit of Recon
+![](images/02-paradox.png "Huh, what?")
 
-We need to load our weapons:
+Welcome to a paradox:
 
-1. [ySlow](http://developer.yahoo.com/yslow/)
-2. [W3C validator](http://validator.w3.org/)
+### The first and most important step toward being a mobile web ninja is *extreme focus* on performance
 
-## What's broken?
+#####  (And yet)
 
-First things first. Let's go see what's presently broken.
+### Optimization and performance exercises put everyone to sleep
 
-# Getting the big, heavy picture
+##### (So yeah, we'll do most of the work here for you)
 
-Let's see just how overweight this page is by using the *ySlow* tool.
+
+# The goal
 
 ## Figure: ySlow
 
 ![](images/02-yslow.png)
 
-# What's the plan?
+# The plan
+
+![The Plan](images/02-plan.png "A Man with a plan")
 
 The Sigma Stronghold web site won't hold up to the zombie horde packing around that much lard. Once we fix the code to make it valid, what else can we do to make this tub of guts a bit more spritely?
 
-### A motley list of tactical weapons
+## Speaker Notes
 
-* Optimize images.
-* Discuss goals of content and evaluate what is core and vital versus what is really just fluff. De-fluff.
-* Reduce the amount of HTTP requests by CSS concatenation and fixing 404s.
-* Perform some server-side tuning.
+Let's get a quick picture of the problem
 
-# What flab can we trim?
 
-* Let's talk about the weather widget
+# Getting a sense of the Problem
 
-~~~~
+![](images/02-yslow-button.png) By clicking on the ySlow extension button...we see...
+
+## Figure: More ySlow Stats
+
+![ySlow Starting Point](images/02-yslow-start-stats-annotated.png "ySlow Starting Grade: Stats")
+
+# A bit sloppy
+
+## Figure: Invalid Code
+
+![validator.w3c.org has some complaints](images/02-invalid-code.png)
+
+# Why do we have to do so many drills?
+
+* Invalid code is less tolerated by mobile devices and browsers
+* Concurrent HTTP connections are limited
+* Latency is high
+* Processors are less beefy
+* Poor folks have to pay for data
+* Support for certain desktop technologies not possible
+
+
+## Speaker Notes
+
+TODO: Ask Jason/John about current concurrency situation
+
+
+# The obstacle course between us and a site ready for the zombie hordes
+
+1. Get rid of unnecessary content and hone the important content—treat our content with respect!
+2. Make our code valid.
+3. Keep a sharp eye for performance gotchas.
+4. Optimize and compress our media.
+5. Perform some server-side tuning.
+
+TODO: Obstacle Course image
+
+# Ready?
+
+## Figure: Let's Go!
+
+![](images/02-traffic-light.png "Let's go")
+
+# Content. What flab can we trim?
+
+## Figure: Weather widget
+
+![This is a weather widget](images/02-sigma-weather.png "Weather Widget")
+
+# Weather Widget
+
+## Figure: Bloated weather widget
+
+![This is a weather widget](images/02-weather-widget.png "Weather Widget")
+
+# The dark side of the weather
+
+~~~~{.html}
 <div id="weather">
-  <div style='width: 240px; height: 420px; background-image: url( http://vortex.accuweather.com/adcbin/netweather_v2/backgrounds/black_240x420_bg.jpg ); background-repeat: no-repeat; background-color: #000000;' >
+  <div style='width: 240px; height: 420px; 
+   background-image: url( http://vortex.accuweather.com/adcbin/netweather_v2/backgrounds/black_240x420_bg.jpg );
+   background-repeat: no-repeat; background-color: #000000;' >
   <div id='NetweatherContainer' style='height: 405px;' >
-  <script src='http://netweather.accuweather.com/adcbin/netweather_v2/netweatherV2ex.asp?partner=netweather&tStyle=whteYell&logo=1&zipcode=10001&lang=eng&size=12&theme=black&metric=0&target=_self'></script>
+  <script src='http://netweather.accuweather.com/adcbin/netweather_v2/netweatherV2ex.asp?
+    partner=netweather&tStyle=whteYell&logo=1&zipcode=10001&lang=eng&size=12&theme=black&metric=0&target=_self'>
+  </script>
   </div>
-  <div style='text-align: center; font-family: arial, helvetica, verdana, sans-serif; font-size: 10px; line-height: 15px; color: #FFFFFF;' >
-  <a style='font-size: 10px; color: #FFFFFF' href='http://www.accuweather.com/us/ny/new-york/10001/city-weather-forecast.asp?partner=accuweather' >Weather Forecast</a> | <a style='color: #FFFFFF' href='http://www.accuweather.com/maps-satellite.asp' >Weather Maps</a> | 
-  <a style='color: #FFFFFF' href='http://www.accuweather.com/index-radar.asp?partner=accuweather&zipcode=10001' >Weather Radar</a></div></div>
+  <div style='text-align:center; font-family:arial, helvetica, verdana, sans-serif; font-size:10px; line-height:15px; color:#FFFFFF;'>
+  <a style='font-size: 10px; color: #FFFFFF' 
+    href='http://www.accuweather.com/us/ny/new-york/10001/city-weather-forecast.asp?partner=accuweather' >
+    Weather Forecast</a> | <a style='color: #FFFFFF' href='http://www.accuweather.com/maps-satellite.asp' >Weather Maps</a> | 
+  <a style='color: #FFFFFF' href='http://www.accuweather.com/index-radar.asp?partner=accuweather&zipcode=10001' >Weather Radar</a>
+  </div></div>
   </div>
 </div>
 
 ~~~~
 
-# Problems with that weather
+##### index.html
+
+## Speaker notes
+
+Ask folks what's broken about this
 
 * It's Flash (Flash doesn't work on most mobile web browsers).
 * It creates a number of HTTP requests (more HTTP requests = worse performance).
 * It has janky inline CSS (difficult to style; messy code).
-* It's kinda big, filesize-wise (again, performance).
-* It's URL parameters aren't escaped (causes validation errors).
+* It's big, filesize-wise (again, performance).
+* It's URL parameters aren't escaped (causes code validation errors).
 * Since the end of the civilized world, it hasn't really worked.
+
+# Dingus Responds
+
+![](images/02-dingus-2.png)
 
 > I thought the weather widget looked kinda cool. But I admit, it hasn't had an accurate weather reading since four months ago. I guess AccuWeather HQ must have suffered a direct hit. — Sgt. Dingus
 
-# Google font madness
+### We're going to get rid of that weather widget
+
+## Done
+
+* Weather widget axed
+
+# Time to Get Medieval
+
+## Time for some quick, extreme training
+
+TODO: pew-pew type of image
+
+# Quick hits; making our code better
+
+Google font optimization (reduce size and number of HTTP requests)
+
+        <link href="http://fonts.googleapis.com/css?family=Cool+Font|Squiggly" rel="stylesheet">
+        
+### Instead of
+
+~~~~{.html}
+<link href="http://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Butcherman" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Creepster" rel="stylesheet">
+<link href="http://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+
+~~~~
+
+### Use
+
+~~~~{.html}
+<link href="http://fonts.googleapis.com/css?family=Nosifer|Special+Elite" rel="stylesheet">
+~~~~
+
+## Speaker Notes
+
+* 4 HTTP requests down to one
+* Reduced payload
+
+# Quick hits; making our code better
+
+![](images/02-404s.png "Missing things")
+  
+* 404s (cleanliness and HTTP requests)
+    * `home.css` doesn't exist, yet there is a stylesheet link to it.
+    * There's a reference to `blip.jpg` in a CSS rule, yet that file doesn't exist (the correct image filename is `blip.png`).
+
+# Quick Hits
+
+## Done!
+
+* Concatenate font `<link>`s
+* Remove `<link>` to missing stylesheet
+* fix image `url` in styles
+
+##### index.html and styles.css
+
+## Speaker notes
+
+### Google font madness
 
 * The Sigma Stronghold site uses Google fonts for web typography.
 * Some of the stylesheets are for Google fonts that aren't being used.
@@ -137,35 +289,94 @@ The Sigma Stronghold web site won't hold up to the zombie horde packing around t
         <link href="http://fonts.googleapis.com/css?family=Cool+Font|Squiggly" rel="stylesheet">
         ~~~
 
-# Some of these things seem to be missing
+### Some of these things seem to be missing
 
 * `home.css` doesn't exist, yet there is a stylesheet link to it.
 * There's a reference to `blip.jpg` in a CSS rule, yet that file doesn't exist (the correct image filename is `blip.png`).
-* The site doesn't have a favico(n). We can fix that...
+
 
 # It's still fat
 
-OK, we've sort of got the site in regulation uniform, but it's still bulgy. *Let's talk about images*.
+OK, we've sort of got the site in regulation uniform, but it's still bulgy. More stuff on the chopping block:
 
-* The contact information for HQ is an image. This is bad. It is also a huge image. Also bad.
-* The zombie girl image is hideous, and it is also very large.
-* The moon background image is ginormous.
+## Figure: ySlow test run again
+
+![Updated ySlow Stats](images/02-yslow-2.png)
+
+
+# Less than Ideal #1
+
+![](images/02-zombie-image.png "Text data in image, bad")
+
+The contact information for HQ is an image. This is bad. It is also a huge image. Also bad.
+
+# Less than Ideal #2
+
+![](images/02-zombie-girl.png "Un-optimized image, bad")
+
+The zombie girl image is hideous, and it is also very large.
+
+# Less than Ideal #3
+
+The moon background image is ginormous.
+
+![](images/02-moon-image.png "Un-optimized image, bad")
 
 # Let's fix it
 
+![](images/02-dingus-3.png)
+
 > I'm a bit embarrassed about the HQ address image. I didn't even really think about it. Also, we've had some of the troops complain about too much specific zombie imagery on the site overall. I'm attached to the moon photo because my brother took it and I think it's kind of cool. The other images, meh. — Sgt. Dingus.
 
-* Moon image is ~135k by itself.
-* Let's optimize that image using [smush.it](http://smush.it).
-* Let's also get rid of the zombie girl drawing and convert the address to text.
+# Smushing our moon
 
-# What now?
+## Figure: Smush.it
 
-* Several of ySlow's grading criteria require web server configuration adjustments.
+![http://smush.it](images/02-smushit.png "Smushing the moon")
+
+# Done!
+
+## Figure: Smaller now!
+
+![Updated ySlow stats](images/02-yslow-smaller.png)
+
+## Done
+
+* Removed bloated images that serve no purpose to our content
+* Optimized a big background image.
+
+# Review
+
+## Figure: Working through the performance fun
+
+![Updated Sigma Stronghold Site](images/02-midpoint.png)
+
+
+# The final mile: server-side tweaks
 
 ## Quick hits in .htaccess
 
 By tuning our apache server configuration, we can work minor wonders. Let me show you a bit of trickery!
+
+# Starting Point
+
+![](images/02-yslow-button.png) By clicking on the ySlow extension button...we see...
+
+## Figure: ySlow Statistics
+
+![ySlow Starting Point](images/02-yslow-start.png "ySlow Starting Grade")
+
+
+## Speaker Notes
+
+* Pause and allow folks to follow along if they so choose.
+
+# Meaning what?
+
+## Figure: ySlow Annotated
+
+![ySlow Starting Point](images/02-yslow-start-annotated.png "ySlow Starting Grade: Annotated")
+
 
 # Apache configuration magic
 
@@ -208,22 +419,65 @@ ExpiresByType image/x-icon "access plus 2 years"
 FileETag none
 ~~~~
 
+# What just happened?
+
+## Done: Server-side shenanigans
+
+* Turned on GZIP compression
+* Set far-future expires headers
+* Turned off eTags
+
+# And?
+
+## Figure: ySlow Updated Stats
+
+![Lookit ySlow now!](images/02-yslow-done.png)
+
 # Nice!
 
+![Stats!](images/02-yslow-stats-done.png)
+
 * Our total page weight has gone from ~530k to ~111k on an empty cache...
-* ...and a primed cache means the page is only a few kilobytes!
+* ...and a primed cache means the page is teensy tiny!
 
 ### Nice work, soldiers!
 
-# Advanced Boot Camp
+## Speaker Notes
+
+* Can anyone guess why there is .2k on a primed cache?
+* Tell where to find updated code/version
+* Transition here to advanced, second part
+
+# Part II: Advanced Boot Camp
 
 ## Getting ready for the mobile leap by getting semantic
 
 You're no longer quite as green, soldiers, but there is still work to be done.
 
+
 # Some of the markup is a bit stupid
 
-There, we said it. There are a few daft things in the markup that are going to hold it back from being the mobile-friendly success it could be. Some examples:
+There, we said it. There are a few daft things in the markup that are going to hold it back from being the mobile-friendly success it could be.
+
+~~~~{.html}
+<div class="news-item kill">
+  <div class="title"><h3>Kill confirm: <span class="red">zombie #421</span> has been neutralized</h3></div>
+  <div class="summary">
+    <div class="inner">
+      <div><span class="grey">20120622//0800 :: <span class="black">Sigma Stronghold</span> Sector 4-Echo</span></div>
+      <div class="details">
+        <div class="detail-data">
+          <p>Zombieforces PFC Clair Donohue presented the zombie finger at 0700, confirming the elimination of the 421st enemy combatant zombie within the Sigma Stronghold's containment boundaries. Godspeed to the Brotherhood! Victory will be ours!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+~~~~
+
+# Daft?
+
+Some examples:
 
 * `<span class="red">`, etc.
 * `<div id="left">`, etc.
@@ -236,6 +490,10 @@ We're dealing with an HTML5 document, but not taking advantage of all that HTML5
 * We can use some relevant HTML5 elements (`<footer>`, `<nav>`, etc.)
 * We can use basic HTML elements instead of `<span>`s and classes so that the markup carries semantic meaning.
 * We can cut down on the div-itis.
+
+## Speaker Notes
+
+* Can anyone tell me why div-itis is more painful/relevant for us?
 
 # Getting more semantic
 

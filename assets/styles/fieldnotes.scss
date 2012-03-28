@@ -18,16 +18,15 @@ h1 {
 }
 
 h2 {
-  color:                $color-accent;
+  color:                $color-dark;
   border-width:         0 0 1px 0;
   border-style:         dashed;
   border-color:         rgba($color-dark, .65);
 }
 
-h3, h4 {
-  clear:                both;
+h2 a {
+  color:                $color-dark;
 }
-
 a, a:visited {
   color:                darken($color-accent, 15%);
 }
@@ -38,11 +37,16 @@ a {
   }
 }
 
+hr {
+  display:              none;
+}
+
 pre, code {
   border-width:         1px;
   border-style:         dashed;
   border-color:         $color-accent;
   font-family:          $code-font;
+  font-size:            .95em;
   padding:              .15em .35em;
   margin:               0 .25em;
 }
@@ -56,6 +60,13 @@ pre code {
 }
 body > section {
   padding:              0 1em;
+}
+
+body > section.level1 {
+  box-shadow:           0 7px 10px 5px #ccc;
+  border:               1px solid $color-dark;
+  border-radius:        1em;
+  margin:               1em .5em 2em .5em;
 }
 
 body > section > section {
@@ -73,14 +84,62 @@ section[id^="instead"] {
 
 section[id^="use"] {
   float:                right;
+  clear:                right;
   width:                45%;
   margin-bottom:        1em;
   border-bottom:        1px;
   @include              ghetto-clearfix;
 }
 
+section[id^="mission"] {
+  float:                right;
+  width:                30%;
+  margin:               0 1%;
+  padding:              0 1%;
+  box-shadow:           2px 8px 4px 1px lighten($color-dark, 30%);
+  background-color:     desaturate(darken($color-warm, 20%), 70%);
+  color:                darken($color-dark, 10%);
+  text-shadow:          1px 1px 0px #fff;
+  p {
+    text-transform:     uppercase;
+  }
+  h2, h3 {
+    border-bottom:      none;
+    padding:            .5em 0 0 0;
+    text-align:         center;
+    text-transform:     uppercase;
+    color:              $color-dark;
+    &:before {
+      content:          "****";
+      font-size:        .75em;
+      padding-right:    .5em;
+    }
+    &:after {
+      content:          "****";
+      font-size:        .75em;
+      padding-left:     .5em;
+    }
+  }
+}
+
 nav#TOC {
   ul > li > ul > li > ul {
     display:            none;
+  }
+}
+
+section[id^="done"] {
+  ul {    
+    li {
+      list-style-type: none;
+      margin-left: 1.5em;
+      &:before {
+        content: "\2713";
+        color:   $color-accent;
+        font-size: 2em;
+        margin-left: -1em;
+        padding-right: .5em;
+      }
+    }
   }
 }

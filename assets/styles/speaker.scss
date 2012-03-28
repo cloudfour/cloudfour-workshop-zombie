@@ -1,0 +1,19 @@
+@import 'fieldnotes';
+
+section, figure, img {
+  display: none;
+}
+
+section.level1, section.level1 h1 {
+  display: block;
+}
+
+section[id^="speaker-notes"] {
+  display: block;
+  ul {
+    display: block;
+  }
+  h2, h3, h4, h5, h6 {
+    color: $color-accent;
+  }
+}

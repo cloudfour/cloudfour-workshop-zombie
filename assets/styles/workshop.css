@@ -2,61 +2,75 @@
   font-family: 'Nosifer';
   font-style: normal;
   font-weight: 400;
-  src: local("Nosifer"), local("Nosifer-Regular"), url("http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff") format("woff"); }
+  src: local("Nosifer"), local("Nosifer-Regular"), url("http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff") format("woff");
+}
 
 @font-face {
   font-family: 'Anonymous Pro';
   font-style: normal;
   font-weight: normal;
-  src: local("Anonymous Pro"), local("AnonymousPro"), url("http://themes.googleusercontent.com/static/fonts/anonymouspro/v3/Zhfjj_gat3waL4JSju74E2hf89WnxcRaqxnpCB_GMi0.woff") format("woff"); }
+  src: local("Anonymous Pro"), local("AnonymousPro"), url("http://themes.googleusercontent.com/static/fonts/anonymouspro/v3/Zhfjj_gat3waL4JSju74E2hf89WnxcRaqxnpCB_GMi0.woff") format("woff");
+}
 
 @font-face {
   font-family: 'Arimo';
   font-style: normal;
   font-weight: normal;
-  src: local("Arimo"), url("http://themes.googleusercontent.com/static/fonts/arimo/v3/ZS0wkeOZuckNE3boyLYNt6CWcynf_cDxXwCLxiixG1c.woff") format("woff"); }
+  src: local("Arimo"), url("http://themes.googleusercontent.com/static/fonts/arimo/v3/ZS0wkeOZuckNE3boyLYNt6CWcynf_cDxXwCLxiixG1c.woff") format("woff");
+}
 
 @font-face {
   font-family: 'Special Elite';
   font-style: normal;
   font-weight: normal;
-  src: local("Special Elite"), local("SpecialElite-Regular"), url("http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff") format("woff"); }
+  src: local("Special Elite"), local("SpecialElite-Regular"), url("http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff") format("woff");
+}
 
 body {
   background-color: black;
   color: #fffeee;
   font-family: "Special Elite", serif;
-  line-height: 1.6em; }
+  line-height: 1.6em;
+}
 
 h1 {
   font-family: "Nosifer", cursive;
   color: #e43d3d;
-  text-shadow: 3px 3px 5px #300; }
+  text-shadow: 3px 3px 5px #300;
+}
 
 h2 {
   color: #e43d3d;
-  font-size: 1.25em; }
+  font-size: 1.25em;
+}
 
 h3 {
-  text-transform: uppercase; }
-  h3:before {
-    content: "**"; }
-  h3:after {
-    content: "**"; }
+  text-transform: uppercase;
+}
+h3:before {
+  content: "**";
+}
+h3:after {
+  content: "**";
+}
 
 h4 {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+}
 
 h5 {
   margin: 0;
   font-size: .5em;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
 a, a:visited {
-  color: #e43d3d !important; }
+  color: #e43d3d !important;
+}
 
 code, pre {
-  font-family: "Anonymous Pro", monospace; }
+  font-family: "Anonymous Pro", monospace;
+}
 
 code {
   padding: .15em;
@@ -64,77 +78,111 @@ code {
   font-family: "Anonymous Pro", monospace;
   border: 1px dashed #e43d3d;
   white-space: nowrap;
-  overflow: scroll; }
+  overflow: scroll;
+}
 
 pre {
   overflow: scroll;
   border-width: 1px;
   border: 1px solid #e43d3d;
-  color: black; }
+  color: black;
+}
 
 pre code {
   border-width: 0px;
   font-size: .75em;
-  white-space: pre; }
+  white-space: pre;
+}
 
 blockquote {
-  line-height: 1.2em; }
+  line-height: 1.2em;
+}
 
 li ul li {
-  font-style: normal; }
+  font-style: normal;
+}
+
+div[id^="done"] ul li {
+  list-style-type: none;
+  margin-left: 1.5em;
+}
+div[id^="done"] ul li:before {
+  content: "\2713";
+  color: #e43d3d;
+  font-size: 2em;
+  margin-left: -1em;
+  padding-right: .5em;
+}
 
 div[id^="speaker-notes"] {
-  display: none; }
+  display: none;
+}
 
 div.slide {
   line-height: 1.5em;
-  font-size: 1.25em; }
-  div.slide h1 {
-    margin: .5em; }
-  div.slide img {
-    max-width: 20%;
-    margin: 0 1em; }
-  div.slide p img {
-    float: right; }
-  div.slide img[alt^='Big'], div.slide p img[alt^='Big'] {
-    max-width: 85%;
-    max-height: 65%;
-    float: none; }
-  div.slide div.figure {
-    float: right;
-    margin-right: 1em;
-    width: 40%;
-    max-width: 50%; }
-    div.slide div.figure img {
-      max-width: 100%;
-      max-height: 65%; }
-  div.slide div[id^="figure"] {
-    max-width: 100%;
-    text-align: center; }
-    div.slide div[id^="figure"] h2, div.slide div[id^="figure"] h3 {
-      display: none; }
-    div.slide div[id^="figure"] div.figure {
-      width: 100%;
-      max-width: 100%; }
-    div.slide div[id^="figure"] img {
-      max-width: 100%;
-      max-height: 70%;
-      float: none; }
-  div.slide div[id^="code"] h1, div.slide div[id^="code"] h2, div.slide div[id^="code"] h3, div.slide div[id^="code"] h4, div.slide div[id^="code"] h5, div.slide div[id^="code"] h6 {
-    display: none; }
-  div.slide div[id^="code"] pre {
-    font-size: .65em;
-    line-height: .9em; }
-  div.slide div[id^="instead"] {
-    float: left;
-    width: 45%; }
-  div.slide div[id^="use"] {
-    float: right;
-    width: 45%; }
+  font-size: 1.25em;
+}
+div.slide h1 {
+  margin: .5em;
+}
+div.slide img {
+  max-width: 20%;
+  margin: 0 1em;
+}
+div.slide p img {
+  float: right;
+}
+div.slide img[alt^='Big'], div.slide p img[alt^='Big'] {
+  max-width: 85%;
+  max-height: 65%;
+  float: none;
+}
+div.slide div.figure {
+  float: right;
+  margin-right: 1em;
+  width: 40%;
+  max-width: 50%;
+}
+div.slide div.figure img {
+  max-width: 100%;
+  max-height: 65%;
+}
+div.slide div[id^="figure"] {
+  max-width: 100%;
+  text-align: center;
+}
+div.slide div[id^="figure"] h2, div.slide div[id^="figure"] h3 {
+  display: none;
+}
+div.slide div[id^="figure"] div.figure {
+  width: 100%;
+  max-width: 100%;
+}
+div.slide div[id^="figure"] img {
+  max-width: 100%;
+  max-height: 70%;
+  float: none;
+}
+div.slide div[id^="code"] h1, div.slide div[id^="code"] h2, div.slide div[id^="code"] h3, div.slide div[id^="code"] h4, div.slide div[id^="code"] h5, div.slide div[id^="code"] h6 {
+  display: none;
+}
+div.slide div[id^="code"] pre {
+  font-size: .65em;
+  line-height: .9em;
+}
+div.slide div[id^="instead"] {
+  float: left;
+  width: 45%;
+}
+div.slide div[id^="use"] {
+  float: right;
+  width: 45%;
+}
 
 div.toolbar {
   height: 1em;
   font-size: .5em;
   background-color: #fffeee;
   line-height: 1em;
-  padding: .5em; }
+  padding: .5em;
+}

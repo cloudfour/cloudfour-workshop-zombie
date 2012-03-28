@@ -1,4 +1,4 @@
-% Field Notes | Zombie 101, Webvisions NYC
+% Field Notes | Zombie 101, Breaking Development, Orlando
 % Jason Grigsby and Lyza Danger Gardner
 
 ----------------
@@ -7,45 +7,21 @@
 
 ## Weapons
 
-1. The [ySlow](http://developer.yahoo.com/yslow/) browser extension (Chrome and Firefox).
-2. A local web server (optional, but handy!)
-3. A good text editor
-4. A JavaScript/DOM debug tool (We recommend WebInspector in Chrome/Safari/Webkit browsers or FireBug in FireFox).
-5. This zombie rucksack.
+Arm yourself with these tools for our adventure today:
 
-### Running a local web server
+1. A local web server (optional, but handy!) [more info](web-server.html)
+2. A good text editor
+3. A JavaScript/DOM debug tool (We recommend WebInspector in Chrome/Safari/Webkit browsers or FireBug in FireFox).
 
-Some examples in today's workshop will only fully work on a proper web server. *It is not a big deal* if you can't or don't want to set up a local web server; you can just follow along on the big screen.
+## Suit Up
 
-#### Examples that require a web server
+TODO: Go install these things from the rucksack
 
-1. Performance optimization using an `.htaccess` file (section 2: Boot Camp)
-2. Cache manifests/ApplicationCache (section 5: Honed Killing Machine)
-3. Geolocation (section 5, section 6: A Band of Brothers)
-    a. You can still build the web app in section 6; it simply won't do geolocation
-    b. Geolocation is not generally possible when viewing web pages as files (i.e. without a web server) in a browser for security reasons.
+## Launch
 
-#### Some possible ways to get things working:
+TODO: Watch first set of slides
 
-1. If you run OS X's default apache web server, you can move the contents of the zombie rucksack somewhere within the area (document root) served as web resources. This is typically in the `Sites` folder in your user's home directory (note that Web Sharing will need to be enabled in your system settings to get this to work).
-2. If you have a hosting provider, you could do your work there, if you choose.
-3. Here is a ruby one-liner for serving the current directory (you'd access your stuff by going to `localhost:9090` in a browser):
-
-    ~~~ {.ruby}
-    ruby -r webrick -e "s = WEBrick::HTTPServer.new(:Port => 9090, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start"
-    ~~~
-    
-4. There is also a [one-line python script](http://www.garyrobinson.net/2004/03/one_line_python.html) for doing the same general thing.
-5. I use [MAMP](http://www.mamp.info) on my Mac as a web server (comes with PHP and mysql). There's [XAMPP](www.apachefriends.org/en/xampp.html) for Windows and Linux. These are pretty easy installs but might be more than you want to deal with right at this second.
-
-*If you don't have a web-served environment handy, no biggie. You can still follow along!*
-
-
-# 2. Boot Camp: Performance and Semantic Clarity
-
-## Sigma Stronghold Web Site
-
-You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma-stronghold-website/index.html`. [Here's what it looks like right now](../sigma-stronghold-website/).
+## Stuff that needs sorting
 
 ## Weapons for Performance
 
@@ -54,54 +30,126 @@ You'll find the Sigma Stronghold web site landing page in `zombie-rucksack/sigma
 * [Smush.it](http://smush.it)
 * [SpriteMe](http://spriteme.org/)
 
-### Sing Along if you Like!
+-----------------------
 
-You can optionally follow along in your own text editor as we clean up Sigma Stronghold's (markup) act.
+# 2. Boot Camp: Performance and Semantic Clarity
 
-### Fixing what's broken and getting rid of the weather
+## Mission
 
-1. Find and fix the broken nested `<span>` elements in index.html. Use the [W3C validator][w3cv] as your guide.
-2. Remove the entire weather widget (`div#weather`).
-3. Revalidate/repeat until you see the green happy color.
+Learn how to analyze front-end performance, fix common gotchas and tweak server-side settings to speed up sites for all users, mobile included. Use semantic markup to be ready for the future. Get ready to face the zombies.
 
-### The missing bits
+## Step 0: Getting the current picture
 
-1. Reduce the Google fonts stylesheets to a single `<link>` tag.
-    a. The two fonts actually being used on the page are *Nosifer* (drippy headlines) and *Special Elite* (body).
-    b. Remove the `<link>` tags for fonts that aren't being used at all.
-    c. Concatenate the remaining two fonts into a single `<link>` tag using this format:
-    `<link href="http://fonts.googleapis.com/css?family=Cool+Font|Squiggly" rel="stylesheet">`
-2. Remove the `<link>` tag that points to `home.css`.
-3. Update the CSS rule for `h2`. Update the filename from `blip.jpg` to `blip.png`.
-4. Add a favicon.
-    a. Find `favicon.ico` in the `supplemental/boot-camp` folder inside of your rucksack.
-    b. Copy that into the `sigma-stronghold-website` directory (at the top level of your rucksack).
-    c. Add this code just after the Google fonts stylesheet `<link>`s: `<link rel="shortcut icon" href="favicon.ico" />`
+By using the *ySlow* browser extension, we can see that the Sigma Stronghold website is over half a megabyte in size. We've identified some invalid code, as well. Our goal: smaller, better faster.
 
-[w3cv]: http://validator.w3.org/ "W3C Validator"
+### Tools
 
-### Deflabbing some images
+* [ySlow](http://developer.yahoo.com/yslow/)
+* [W3C validator][w3cv]
 
-1. Remove the `zombie-girl` image and its containing `<div>` entirely (`div#nozombies`).
-2. Replace the image for contact-HQ with the following HTML chunk:
+### Do This
 
-    ~~~ {.html}
-        <h2>Contact HQ</h2>
-        <p>Abandoned Post Office<br />
-        23 Daryl Dixon Road<br />
-        Manhattan Offset Zone<br />
-        <a href="mailto:help@sigma-stronghold.com">help@sigma-stronghold.com</a><br />
-        CB Channel 32.6</p>
-    ~~~
-        
-3. Deflate the moon image using the smush.it tool.
+* [View the current Sigma Stronghold web site](../missions/sigma-stronghold-website/) in a browser.
 
-    a. Go to [smush.it](http://smush.it)
-    b. Use the *Uploader* tab.
-    c. Upload the image `images/moon.jpg` (in your rucksack, in the `sigma-stronghold-website` directory).
-    d. Replace `images/moon.jpg` with the smushed version.
 
-### Server-side optimization in Apache 2.x 
+### Extra Credit
+
+* If you have the ySlow extension installed, you can run it yourself.
+* Run the HTML code in [index.html](../missions/sigma-stronghold-website/index.html) through the W3C validator.
+
+### Snippet Reference
+
+#### Weather widget
+
+~~~~{.html}
+<div id="weather">
+  <div style='width: 240px; height: 420px; 
+   background-image: url( http://vortex.accuweather.com/adcbin/netweather_v2/backgrounds/black_240x420_bg.jpg );
+   background-repeat: no-repeat; background-color: #000000;' >
+  <div id='NetweatherContainer' style='height: 405px;' >
+  <script src='http://netweather.accuweather.com/adcbin/netweather_v2/netweatherV2ex.asp?
+    partner=netweather&tStyle=whteYell&logo=1&zipcode=10001&lang=eng&size=12&theme=black&metric=0&target=_self'>
+  </script>
+  </div>
+  <div style='text-align:center; font-family:arial, helvetica, verdana, sans-serif; font-size:10px; line-height:15px; color:#FFFFFF;'>
+  <a style='font-size: 10px; color: #FFFFFF' 
+    href='http://www.accuweather.com/us/ny/new-york/10001/city-weather-forecast.asp?partner=accuweather' >
+    Weather Forecast</a> | <a style='color: #FFFFFF' href='http://www.accuweather.com/maps-satellite.asp' >Weather Maps</a> | 
+  <a style='color: #FFFFFF' href='http://www.accuweather.com/index-radar.asp?partner=accuweather&zipcode=10001' >Weather Radar</a>
+  </div></div>
+  </div>
+</div>
+
+~~~~
+
+##### index.html
+
+## Step 1: Fixing what's broken and removing unused or unneeded elements
+
+Mobile browsers and devices have less tolerance for broken code, and size really, really matters. We have to write clean markup and pay attention to *why* we're dropping stuff onto our web pages.
+
+### Snippet Reference
+
+TODO: Fix CSS to display file names
+
+
+#### Instead of
+
+~~~~{.html}
+  <link href="http://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Butcherman" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Creepster" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+~~~~
+
+#### Use
+
+~~~~{.html}
+
+<link href="http://fonts.googleapis.com/css?family=Nosifer|Special+Elite" rel="stylesheet">
+~~~~~
+
+#### Instead of
+
+~~~~{.css}
+h2 {
+  line-height: 1.25em;
+  font-size: 1.25em;
+  background: url(images/blip.jpg) no-repeat 0 2px;
+  padding-left: 25px;
+  margin: 0 0 .25em 0; 
+}
+
+~~~~
+  
+#### Use
+
+~~~~{.css}
+h2 {
+  line-height: 1.25em;
+  font-size: 1.25em;
+  background: url(images/blip.png) no-repeat 0 2px;
+  padding-left: 25px;
+  margin: 0 0 .25em 0; 
+}
+
+~~~~
+
+## Step 2: Image optimization
+
+Remember the 90s, when we optimized our GIF color palettes and made sure our images were small? It's back. Don't forget about those core tenets of image optimization!
+
+### Tools
+
+* [Smush.it](http://smush.it)
+
+
+
+## Step 3: Server-side shenanigans
+
+For front-end devs, the idea of futzing about on the server can sometimes feel onerous. For many, many sites hosted using the Apache web server, it really is as easy as editing an **`.htaccess`** file.
+
+### Snippet Reference
 
 A sample .htaccess file.
 
@@ -133,9 +181,11 @@ A sample .htaccess file.
         # Turn off ETags
         FileETag none
 
-[More information about enabling GZIP on apache](http://www.techiepark.com/tutorials/how-to-enable-gzip-compression-in-apache-server-to-speed-up-website/)
 
 ## Getting all semantic up in here
+
+Fighting the good fight of truly separating content from presentation.
+
 
 ### Some of the things improved in the Sigma Stronghold markup:
 
@@ -157,36 +207,51 @@ We didn't do these things but they might be cool, too:
 * `<article>` element instead of `<div>` for news items.
 * `<section>` element instead of other `<div>`s.
 
-### Other Tools for Training
+## Resources
 
-* [SpriteMe](http://spriteme.org/) for creating CSS sprites. By combining multiple CSS images into individual sprites, you both reduce overall image file size (usually) and reduce the number of HTTP requests (definitely).
-* [Online YUI Compressor](http://www.refresh-sf.com/yui/) Handy tool to help compress and minify CSS and JavaScript.
+* Developer Tools
 
-### Survival Tools
+    * [ySlow](http://developer.yahoo.com/yslow/)
+    * [W3C validator][w3cv]
+    * [Smush.it](http://smush.it)
+    * [SpriteMe](http://spriteme.org/) for creating CSS sprites. By combining multiple CSS images into individual sprites, you both reduce overall image file size (usually) and reduce the number of HTTP requests (definitely).
+    * [Online YUI Compressor](http://www.refresh-sf.com/yui/) Handy tool to help compress and minify CSS and JavaScript.
+    * [More information about enabling GZIP on apache](http://www.techiepark.com/tutorials/how-to-enable-gzip-compression-in-apache-server-to-speed-up-website/)
 
-* [Sample .htaccess file](../survival-tools/.htaccess.example).
+* HTML5 and Semantics
 
-## *Do this*: Dropping in optimized files!
+    * [HTML5 structure—HTML 4 and XHTML 1 to HTML5](http://oli.jp/2009/html5-structure4/)
+    * [*A List Apart*: Semantics in HTML5 (John Allsop)](http://www.alistapart.com/articles/semanticsinhtml5/)
+    * [Dive into HTML5: Semantics](http://diveintohtml5.info/semantics.html)
 
-### Get ready to go into battle!
+* Code resources
 
-* Replace the current versions of `index.html` and `styles.css` in your `sigma-stronghold-website` directory with the versions in [`supplemental/boot-camp`](../supplemental/boot-camp). 
-* If you haven't already, copy the `favicon.ico` file from [`supplemental/boot-camp`](../supplemental/boot-camp) to your `sigma-stronghold-website` folder.
+    * [Sample .htaccess file](../survival-tools/.htaccess.example).
+    * [Starting point of Sigma Stronghold Web site](../missions/sigma-stronghold-website)
+    * [Sigma Stronghold Web site now TBD TODO](../missions/sigma-stronghold-website)
 
-Now you have the semantically-improved, optimized version of Sigma Stronghold's web site. *Onward!*
+
+## Done and learned: Level Up!
+
+* Analyzed performance and validated code using *ySlow* and the *W3C Validator*.
+* Reviewed and considered content for its usefulness and performance impacts.
+* Optimized images and reduced overall payload.
+* Reduced div-itis and clutter; improved markup to be more semantic and future friendly.
+* Learned about performance gotchas that are especially important for mobile.
+
+[w3cv]: http://validator.w3.org/ "W3C Validator"
 
 -----------------------
 
 # 3. Release the Hounds! Responsive Web Design
 
-For more expounding on the topic of relinquishing control, see Lyza's presentation ["Crap, it doesn't look quite right: Or, How I learned to stop worrying and set my mobile web sites free"](http://www.slideshare.net/lyzadanger/crap-it-doesnt-look-quite-right-or-how-i-learned-to-stop-worrying-and-set-my-mobile-web-sites-free-9518337) on Slideshare.
+## Mission
 
-* See Ethan's ([@beep](http://twitter.com/beep)) original article about RWD on [A List Apart](http://www.alistapart.com/articles/responsive-web-design/)
-* Fluid formula: `result = target / context`
-* Rough rule of thumb for font sizes: `1em = 100% ~= 16px ~= 12pt`. *Approximately*.
-* Percentages (%) and `em`s are both fluid units, `pt`s, `px`, inches and pica are fixed. (Technically, `px` are not *absolute* absolute, as the size of a pixel varies with different devices and screens and are not *fixed*, per se. However, for our purposes, they are effectively absolute, as they do not scale).
+Learn to let our content flow like water and create a site that adapts itself to different environments.
 
-## *Do This*: Converting the CSS to a fluid layout
+## Step 0: Converting the CSS to a fluid layout
+
+### Do This
 
 1. Edit `styles.css` in the `sigma-stronghold-website` folder in your rucksack.
 2. Set a `max-width` instead of a `width` on the two main containing elements, `body > div` and `#container`. Change the `padding` on `#container` to be in `em`s (relative) instead of `px` (absolute). You should end up with these changes:
@@ -479,7 +544,20 @@ This is where we'll go to vertical, stacked navigation. We are also adjusting so
 1. You can find the updated, [mobile-first CSS file here](../supplemental/release-hounds/mobile-first.css).
 2. Replace the `styles.css` in `sigma-stronghold-website` with this CSS.
 
------------------------------
+
+## Resources
+
+For more expounding on the topic of relinquishing control, see Lyza's presentation ["Crap, it doesn't look quite right: Or, How I learned to stop worrying and set my mobile web sites free"](http://www.slideshare.net/lyzadanger/crap-it-doesnt-look-quite-right-or-how-i-learned-to-stop-worrying-and-set-my-mobile-web-sites-free-9518337) on Slideshare.
+
+* See Ethan's ([@beep](http://twitter.com/beep)) original article about RWD on [A List Apart](http://www.alistapart.com/articles/responsive-web-design/)
+* Fluid formula: `result = target / context`
+* Rough rule of thumb for font sizes: `1em = 100% ~= 16px ~= 12pt`. *Approximately*.
+* Percentages (%) and `em`s are both fluid units, `pt`s, `px`, inches and pica are fixed. (Technically, `px` are not *absolute* absolute, as the size of a pixel varies with different devices and screens and are not *fixed*, per se. However, for our purposes, they are effectively absolute, as they do not scale).
+
+## Done
+
+
+-----------------------------------
 
 # 4. Bloodier Uprisings
 

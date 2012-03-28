@@ -1,10 +1,10 @@
 % Zombie Apocalypse of Device Preparedness 101
 % Jason Grigsby and Lyza Gardner
-% Web Visions NYC, January 18, 2012
+% Breaking Development, April 18, 2012
 
 # Welcome to Zombie Preparedness 101
 
-The zombie apocalypse is already upon us. Some have chosen to ignore the signs. Or believe that the few friendly zombies that they and their neighbors know are indicative of the larger zombie populace. Naive.
+The zombie apocalypse is already upon us. Some have chosen to ignore the signs. Or believe that the few friendly zombies that they and their neighbors know are indicative of the larger zombie populace. Naïve.
 
 Thankfully you’ve chosen to get ready for the inevitable. To get the tools to fight back.
 
@@ -14,37 +14,28 @@ You’re in the right place.
 
 * Mobile web performance and semantic markup
 * Responsive web design & Mobile First RWD
-* ApplicationCache and GeoLocation APIs
-* jQuery Mobile and other third-party tools and libraries
-* PhoneGap Build
-* Device Detection
+* Device APIs like ApplicationCache and Geolocation
+* Development frameworks: jQuery Mobile and others
+* Hybrid application development (using PhoneGap Build)
+* Device Detection and server-side techniques
 
-But before we begin…
+But before we begin...
 
 # The Zombies are coming—make sure to lay in supplies
 
-* Get ye to your rucksack. You can download your `zombie-rucksack` at [http://cloudfour.github.com/rucksack.zip](http://cloudfour.github.com/rucksack.zip).
-* Make sure to have a text editor easily at hand.
-* Open the file `survival-tools/field-notes.html` in a web browser. You'll need it!
-* If you have access to a web server (locally or on a hosting provider), that's super. You *can* simply view example files in your browser, but there are a few exercises you won't be able to participate in. See section 0 of your field notes for details.
+1. Get ye to your rucksack. Your USB keychain drive is your only hope. If you're reading this document, you're already in the right place!
+2.  Make sure to have a text editor easily at hand.
+3.  Open your field notes in a web browser. You'll need it!
+4.  If you have access to a web server (locally or on a hosting provider), that's super. You *can* simply view example files in your browser, but there are a few exercises you won't be able to participate in. See section 0 of your field notes for details. TODO: ADAPT THIS
 
 # Inside of your rucksack
 
 You've got to fight zombies. We're giving you some tools.
 
-* In this pocket you'll find the very-vital `field-notes.html`. You'll want to open that up first thing in a browser so you can follow along. Go do that now!
-*  We know how frustrating it is to get a bit behind in an example during a group exercise. So we've put lots of finished code snippets in here. They're linked to from your field notes.
-* The other pockets in your rucksack (`i-got-one`, `sigma-stronghold-website`, etc.) are starting points for the stuff we're going to do.
+TODO: layout of rucksack
 
-# Act as if your life depends on it…
+# Act as if your life depends on it...
 
 * Ask questions.
 * Speak up if you are confused!
 * Give feedback!
-
-[Let's Go!](01-assess-the-threat.html)
-
-## Speaker Notes
-
-* Section 5
-* Responsive Images
