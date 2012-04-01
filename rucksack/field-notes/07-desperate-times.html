@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Jason Grigsby and Lyza Danger Gardner">
+  <title>Field Notes | 07: Desperate Times...</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="fieldnotes.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="fieldnotes.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<header>
+<h1 class="title">Field Notes | 07: Desperate Times...</h1>
+<h2 class="author">Jason Grigsby and Lyza Danger Gardner</h2>
+</header>
+<hr>
+<section class="level1" id="desperate-times-call-for...">
+<h1>7. Desperate Times call for...</h1>
+<section class="level2" id="hybrid-app-development-with-phonegap-and-phonegap-build">
+<h2>Hybrid App Development with PhoneGap and PhoneGap Build</h2>
+<ul>
+<li><a href="http://www.phonegap.com">PhoneGap</a></li>
+<li><a href="http://build.phonegap.com">PhoneGap Build</a></li>
+</ul>
+</section>
+<section class="level2" id="anatomy-of-a-phonegap-build-config-file">
+<h2>Anatomy of a PhoneGap Build Config File</h2>
+<p>Here's our example <code>config.xml</code> file.</p>
+<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; <span class="kw">?&gt;</span>
+    <span class="kw">&lt;widget</span><span class="ot"> xmlns</span> <span class="ot">=</span> <span class="st">&quot;http://www.w3.org/ns/widgets&quot;</span>
+<span class="ot">        xmlns:gap</span> <span class="ot">=</span> <span class="st">&quot;http://phonegap.com/ns/1.0&quot;</span>
+<span class="ot">        id</span>        <span class="ot">=</span> <span class="st">&quot;com.cloudfour.gotone&quot;</span>
+<span class="ot">        versionCode=</span><span class="st">&quot;10&quot;</span>
+<span class="ot">        version</span>   <span class="ot">=</span> <span class="st">&quot;1.0.0&quot;</span><span class="kw">&gt;</span>
+
+    <span class="kw">&lt;name&gt;</span>I Got One<span class="kw">&lt;/name&gt;</span>
+
+    <span class="kw">&lt;description&gt;</span>
+       Track your zombie kills!
+    <span class="kw">&lt;/description&gt;</span>
+
+    <span class="kw">&lt;author</span><span class="ot"> href=</span><span class="st">&quot;https://www.cloudfour.com&quot;</span><span class="ot"> email=</span><span class="st">&quot;info@cloudfour.com&quot;</span><span class="kw">&gt;</span>
+        Lyza Gardner and Jason Grigsby
+    <span class="kw">&lt;/author&gt;</span>
+
+    <span class="kw">&lt;preference</span><span class="ot"> name=</span><span class="st">&quot;orientation&quot;</span><span class="ot"> value=</span><span class="st">&quot;portrait&quot;</span> <span class="kw">/&gt;</span>
+
+    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-iphone.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;57&quot;</span><span class="ot"> height=</span><span class="st">&quot;57&quot;</span><span class="kw">/&gt;</span>
+    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-ipad.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;72&quot;</span><span class="ot"> height=</span><span class="st">&quot;72&quot;</span><span class="kw">/&gt;</span>
+    <span class="kw">&lt;icon</span><span class="ot"> src=</span><span class="st">&quot;app-icons/touch-icon-iphone4.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;114&quot;</span><span class="ot"> height=</span><span class="st">&quot;114&quot;</span><span class="kw">/&gt;</span>
+
+    <span class="kw">&lt;gap:splash</span><span class="ot"> src=</span><span class="st">&quot;app-icons/splash.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;320&quot;</span><span class="ot"> height=</span><span class="st">&quot;480&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;gap:splash</span><span class="ot"> src=</span><span class="st">&quot;app-icons/splash-2x.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;640&quot;</span><span class="ot"> height=</span><span class="st">&quot;960&quot;</span><span class="kw">/&gt;</span>
+<span class="kw">&lt;/widget&gt;</span></code></pre>
+<p>(You can also find this in <a href="../supplemental/desperate-times/config.xml"><code>supplemental/desperate-times/config.xml</code></a>).</p>
+</section>
+</section>
+</body>
+</html>

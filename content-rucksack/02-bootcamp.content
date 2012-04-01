@@ -1,0 +1,229 @@
+% Field Notes | 02: Boot Camp
+% Jason Grigsby and Lyza Danger Gardner
+
+
+# 2. Boot Camp: Performance and Semantic Clarity
+
+## Level Up
+
+Learn how to analyze front-end performance, fix common gotchas and tweak server-side settings to speed up sites for all users, mobile included. Use semantic markup to be ready for the future. Get ready to face the zombies.
+
+### Mission
+
+Help Sergeant Dingus and Private Pyle make improvements to the Sigma Stronghold website to make it ready for the mobile/zombie web.
+
+## Step 0: Getting the current picture
+
+By using the *ySlow* browser extension, we can see that the Sigma Stronghold website is over half a megabyte in size. We've identified some invalid code, as well. Our goal: smaller, better faster.
+
+### Tools
+
+* [ySlow](http://developer.yahoo.com/yslow/)
+* [W3C validator][w3cv]
+
+### Do This
+
+1. [View the current Sigma Stronghold web site](../missions/01-bootcamp-performance/) in a browser.
+
+
+### Extra Credit
+
+* If you have the ySlow extension installed, you can run it yourself.
+* Run the HTML code in [index.html](../missions/01-bootcamp-performance/index.html) through the W3C validator.
+
+## Step 1: Fixing what's broken and removing unused or unneeded elements
+
+Mobile browsers and devices have less tolerance for broken code, and size really, really matters. We have to write clean markup and pay attention to *why* we're dropping stuff onto our web pages.
+
+### Snippet Reference: Weather
+
+#### Weather widget
+
+~~~~{.html}
+<div id="weather">
+  <div style='width: 240px; height: 420px; 
+   background-image: url( http://vortex.accuweather.com/adcbin/netweather_v2/backgrounds/black_240x420_bg.jpg );
+   background-repeat: no-repeat; background-color: #000000;' >
+  <div id='NetweatherContainer' style='height: 405px;' >
+  <script src='http://netweather.accuweather.com/adcbin/netweather_v2/netweatherV2ex.asp?
+    partner=netweather&tStyle=whteYell&logo=1&zipcode=10001&lang=eng&size=12&theme=black&metric=0&target=_self'>
+  </script>
+  </div>
+  <div style='text-align:center; font-family:arial, helvetica, verdana, sans-serif; font-size:10px; line-height:15px; color:#FFFFFF;'>
+  <a style='font-size: 10px; color: #FFFFFF' 
+    href='http://www.accuweather.com/us/ny/new-york/10001/city-weather-forecast.asp?partner=accuweather' >
+    Weather Forecast</a> | <a style='color: #FFFFFF' href='http://www.accuweather.com/maps-satellite.asp' >Weather Maps</a> | 
+  <a style='color: #FFFFFF' href='http://www.accuweather.com/index-radar.asp?partner=accuweather&zipcode=10001' >Weather Radar</a>
+  </div></div>
+  </div>
+</div>
+
+~~~~
+
+##### index.html
+
+
+### Snippet Reference: Concatenate `<link>` tags
+
+#### CSS link tag optimization
+
+#### Reduce this:
+
+~~~~{.html}
+  <link href="http://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Butcherman" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Creepster" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+~~~~
+
+#### To this:
+
+~~~~{.html}
+<link href="http://fonts.googleapis.com/css?family=Nosifer|Special+Elite" rel="stylesheet">
+~~~~~
+
+##### index.html
+
+### Snippet Reference: Fixing 404s
+
+#### Fixing stylesheet
+
+##### Instead of
+
+~~~~{.css}
+h2 {
+  line-height: 1.25em;
+  font-size: 1.25em;
+  background: url(images/blip.jpg) no-repeat 0 2px;
+  padding-left: 25px;
+  margin: 0 0 .25em 0; 
+}
+
+~~~~
+  
+##### Use
+
+~~~~{.css}
+h2 {
+  line-height: 1.25em;
+  font-size: 1.25em;
+  background: url(images/blip.png) no-repeat 0 2px;
+  padding-left: 25px;
+  margin: 0 0 .25em 0; 
+}
+
+~~~~
+
+
+## Step 2: Image optimization
+
+Remember the 90s, when we optimized our GIF color palettes and made sure our images were small? It's back. Don't forget about those core tenets of image optimization!
+
+### Tools
+
+* [Smush.it](http://smush.it)
+
+
+
+## Step 3: Server-side shenanigans
+
+For front-end devs, the idea of futzing about on the server can sometimes feel onerous. For many, many sites hosted using the Apache web server, it really is as easy as editing an **`.htaccess`** file.
+
+### Snippet Reference: .htaccess
+
+#### A sample .htaccess file.
+
+        # Turn on and configure GZIP compression
+        <IfModule mod_deflate.c>
+         SetOutputFilter DEFLATE
+         # Don’t compress
+         SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+         SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+         #Dealing with proxy servers
+         <IfModule mod_headers.c>
+         Header append Vary User-Agent
+         </IfModule>
+        </IfModule>
+        
+        # Use mod_expires to set future expirations on resources
+        <IfModule mod_expires.c>
+        ExpiresActive On
+        ExpiresByType text/html "access plus 1 seconds"
+        ExpiresByType image/gif "access plus 2 years"
+        ExpiresByType image/jpeg "access plus 2 years"
+        ExpiresByType image/png "access plus 2 years"
+        ExpiresByType text/css "access plus 2 years"
+        ExpiresByType text/javascript "access plus 2 years"
+        ExpiresByType application/x-javascript "access plus 2 years"
+        ExpiresByType image/x-icon "access plus 2 years"
+        </IfModule>
+
+        # Turn off ETags
+        FileETag none
+
+
+## Getting all semantic up in here
+
+Fighting the good fight of truly separating content from presentation.
+
+### Some Details
+
+#### Some of the things improved in the Sigma Stronghold markup:
+
+* `div#navigation` changed to `<nav>` element.
+* `#page` id removed from `<div>`; used parent-child selector instead.
+* Convert `#footer` to `<footer>` element.
+* Reduce structural complexity in news items: removed extra `<div>`s.
+* Replaced `span.grey` with `<small>`
+* `span.black` was pointless; no style for it. Also some other useless spans in the news divs.
+* Instead of `.red`, used an `<em>` element, which carries semantic meaning.
+* Removed extra internal `<div>`s from sidebar.
+* `#left` and `#right` renamed to `#main` and `#sidebar`, respectively
+
+#### Taking it further...
+
+We didn't do these things but they might be cool, too:
+
+* Address could be hCard
+* `<article>` element instead of `<div>` for news items.
+* `<section>` element instead of other `<div>`s.
+
+## Resources
+
+* Developer Tools
+
+    * [ySlow](http://developer.yahoo.com/yslow/)
+    * [W3C validator][w3cv]
+    * [Smush.it](http://smush.it)
+    * [SpriteMe](http://spriteme.org/) for creating CSS sprites. By combining multiple CSS images into individual sprites, you both reduce overall image file size (usually) and reduce the number of HTTP requests (definitely).
+    * [Online YUI Compressor](http://www.refresh-sf.com/yui/) Handy tool to help compress and minify CSS and JavaScript.
+    * [More information about enabling GZIP on apache](http://www.techiepark.com/tutorials/how-to-enable-gzip-compression-in-apache-server-to-speed-up-website/)
+
+* HTML5 and Semantics
+
+    * [HTML5 structure—HTML 4 and XHTML 1 to HTML5](http://oli.jp/2009/html5-structure4/)
+    * [*A List Apart*: Semantics in HTML5 (John Allsop)](http://www.alistapart.com/articles/semanticsinhtml5/)
+    * [Dive into HTML5: Semantics](http://diveintohtml5.info/semantics.html)
+
+* Code resources
+
+    * [Sample .htaccess file](../survival-tools/.htaccess.example).
+    * [Starting point of Sigma Stronghold Web site](../missions/01-bootcamp-performance)
+    * [Sigma Stronghold Web site now TBD TODO](../victories/01-bootcamp-performance)
+
+
+## Done and learned: Level Up!
+
+* Analyzed performance and validated code using *ySlow* and the *W3C Validator*.
+* Reviewed and considered content for its usefulness and performance impacts.
+* Optimized images and reduced overall payload.
+* Reduced div-itis and clutter; improved markup to be more semantic and future friendly.
+* Learned about performance gotchas that are especially important for mobile.
+
+## The Result
+
+See the performance-optimized [Sigma Stronghold website](../victories/01-bootcamp-performance).
+
+[w3cv]: http://validator.w3.org/ "W3C Validator"
+
+-----------------------

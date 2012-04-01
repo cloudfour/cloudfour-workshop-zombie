@@ -12,9 +12,14 @@ It may seem like we're still mired on the desktop with all that Sigma Stronghold
 
 # Oh dear, that's ugly, isn't it?
 
-![](images/sigma-site-screenshots/iphone-broken-2.jpg) ![](images/sigma-site-screenshots/android-broken.png)
+![](images/sigma-site-screenshots/iphone-broken-2.jpg)
 
-The current structure of the Sigma Stronghold web site is a *fixed-width, rigid layout*. That is not going to adapt in the face of the zombie gadget crisis. What do we do?
+![](images/sigma-site-screenshots/android-broken.png)
+
+
+## Speaker Notes
+
+We've prioritized our content just fine, but the current structure of the Sigma Stronghold web site is a *fixed-width, rigid layout*. That is not going to adapt in the face of the zombie gadget crisis. What do we do?
 
 # We adapt!
 
@@ -24,31 +29,35 @@ When the going gets tough, we kill zombies.
 
 # Lesson 1: Quarantine never works
 
+## Figure: Quarantine Never Works
+
 ![](images/03-quarantine-never-works.png)
+
+## Speaker Notes
 
 * We have to relinquish our false sense of control and set our content free.
 * We don't get to *decide* or even reliably *know* our user's screen sizes.
 * If we try to quarantine the zombies with rigid, pixel-perfect designs, they'll just be more pissed off when they ultimately escape.
 
-## Speaker Notes
-
 Expound on limits of control.
 
 # Responsive Web Design (RWD)
 
-Responsive Web Design (RWD) is a technique, championed by Ethan Marcotte (@beep), that argues adapting an experience for the user's environment, instead of using a rigid, one-size-fits-all type of structure.
+Responsive Web Design (RWD) is a technique for adapting an experience for the user's environment, instead of using a rigid, one-size-fits-all type of structure.
 
-RWD is based upon the notion of creating a fluid, proportional layout (instead of pixel- or absolute-unit-based layouts). RWD layouts *scale, flex and adapt* to *flow comfortably* in the user's browser, whatever size or shape it might be at the moment.
+RWD is based upon the notion of creating a fluid, proportional layout. RWD layouts *scale, flex and adapt* to *flow comfortably* in the user's browser, whatever size or shape it might be at the moment.
+
+## Speaker Notes
 
 # RWD Elements
 
 RWD is driven by three main technical pieces:
 
-* Fluid CSS layouts
-* CSS3 Media Queries
-* Responsive Images and Objects
+1. Fluid CSS layouts
+2. CSS3 Media Queries
+3. Responsive Images and Objects
 
-# RWD Part I: Fluid CSS layouts
+# A Bit of Recon
 
 ![](images/03-sigma-site-structure.png "Site structure")
 
@@ -58,6 +67,8 @@ Right now, the Sigma Stronghold web site's structure is like this.
 * `#container` (all content is inside of this `div`): 900px
 * `#main`: 500px
 * `#sidebar`: No specific width set, but a left margin of 570px
+
+TODO: Better graphic
 
 # What's so bad about fixed layouts?
 
@@ -77,21 +88,34 @@ Right now, the Sigma Stronghold web site's structure is like this.
 
 ![](images/03-fluid-scales.png)
 
-# The fluid formula
+## Speaker Notes
 
-## Figure: Fluid Formula: Result = Target / Context
+Pause here. Reconnect idea of fluid layouts back to being a) first step in Responsive, b) having some meaning/purpose.
+
+"So if we have decided that we want to convert the Sigma Stronghold site to a fluid layout..."
+
+# Converting Pixel-based Designs to Fluid
 
 ![](images/03-fluid-formula.png)
 
-# The fluid formula
+## The Fluid Formula
 
-## Figure: The fluid formula applied
+To convert a layout element with pixel widths be fluid, we apply the fluid formula.
+
+# The Fluid Formula Exposed
+
+## Figure: The fluid formula
 
 ![](images/03-formula-applied.png)
 
-# Result = Target / Context
+# Example
 
-![](images/03-context.png)
+* Say you have a 720-pixel-wide left column
+* Say your entire layout width is 960px
+* To convert the 720px width to a proportional, fluid one, apply the fluid formula
+
+
+# Result = Target / Context
 
 ## Context
 
@@ -99,12 +123,20 @@ Let's talk about *context* a bit, yes?
 
 #### TARGET / CONTEXT = RESULT
 
+In our example, the context was the full layout width—960px
+
+# Context changes
+
+![](images/03-context.png)
+
 * A `div` of 250px wide
 * Inside of a 500px `div`
 * Overall content width of 750px
 * The 500px `div` is the context
 
-#### 250px / 500px = 50% *not* 250px / 750px = 33.33%
+#### 250px / 500px = 50% 
+
+#### --**not** 250px / 750px = 33.33%--
 
 # Applying the fluid formula
 
@@ -135,6 +167,10 @@ Let's see how this plays out on the `div#main` on the Sigma Stronghold site, sha
 
 ![](images/03-formula-approximate.png)
 
+## Speaker Notes
+
+Talk about wiggle room in math.
+
 # Let's start from the top
 
 ![](images/03-containers.png)
@@ -144,7 +180,7 @@ Let's start with the first items in our list:
 * `body > div` that contains all content: 920px
 * `#container` (all content is inside of this `div`): 900px
 
-### Goal: Convert the Sigma Stronghold web site to a fluid layout.
+### Mission: Convert the Sigma Stronghold web site to a fluid layout.
 
 ## Speaker Notes
 
@@ -154,11 +190,14 @@ Let's start with the first items in our list:
 
 # Let's dive in...
 
-Open your `styles.css` file in the Sigma Stronghold web site folder.
-
-### Let's convert this thing to scale and adapt to different devices and browsers
+Open the `styles.css` file linked to in Step 1 of your Field Notes.
 
 We don't have to throw the undead baby out with the bathwater here. We can change some CSS rules in a targeted way to get fluid!
+
+## Speaker Notes
+
+* The first thing we're going to do is establish the width of the layout overall. In a lot of cases, this is effectively 100%, but...
+* To do this, we'll want to edit the rules for `body > div` and `#container`.
 
 # Revising our CSS
 
@@ -181,6 +220,12 @@ body > div {
  ...
 }
 ~~~~
+
+## Speaker Notes
+
+* The rule for `body > div` is ~ line 50 in the file.
+* As of now, the layout will not flex narrower than 920px. 
+
 
 # Revising our CSS, cont.
 
@@ -212,6 +257,7 @@ body > div {
 * If folks are curious, the `zoom` property is part of a clearfix for IE.
 * Note the padding conversion to `em`.
 * Similar to the containing div, we're making this never wider than 900px. That's an absolute. Sometimes there are absolutes.
+* Around line 108ish of file.
 
 
 # Making the content areas stretchy and fluid
@@ -250,6 +296,10 @@ We've already done the sloppy math on `#main` and decided it should be 60% wide.
     }
 ~~~
 
+## Speaker Notes
+
+* Rule for `#main` at Line ~121 in `styles.css`
+
 # What about the sidebar?
 
 ## The sidebar currently has a left margin of 570px
@@ -280,11 +330,21 @@ We've already done the sloppy math on `#main` and decided it should be 60% wide.
 }
 ~~~
 
+## Speaker Notes
+
+* `#sidebar` is at line 147 of `styles.css`.
+
 # In summary...
+
+## Done
 
 * We edited the rules for `body > div`, `#container`, `#main` and `#sidebar`.
 * `body > div` and `#container` retain a pixel-based width, but it is a `max-width`. These containers scale *down* but not up. This was a design decision.
 * `#main` and `#sidebar` and their padding and margin widths are proportional now. These elements scale within their parent element `#container`.
+
+## Speaker Notes
+
+* End of Step 1 in Field Notes
 * If you like, you can find the finished version of the fluid CSS in your rucksack (see field notes for details).
 
 # So, what did that get us?
@@ -457,6 +517,15 @@ Often as screen sizes change, proportions feel a bit different.
 
 * Put the ending brace on the same line for space reasons here.
 
+# Wrapping it up...
+
+* Adding the CSS in the media query to the end of the `styles.css` file.
+* Reviewing [the result](../rucksack/victories/03-media-queries) in a browser.
+
+## Speaker Notes
+
+Remember, we've been editing a file that just contains the media query piece of the CSS.
+
 # And...check it out...
 
 ## Figure: iPhone Responsive
@@ -475,7 +544,13 @@ Often as screen sizes change, proportions feel a bit different.
 
 ![](images/03-thinking.png)
 
-# Mobile first RWD
+# (X) First
+
+* Mobile First!
+* Content First!
+* Baseline First!
+
+# Pause. Content.
 
 * Content- and mobile-first approach
 * More subtle approach that focuses our thinking
@@ -568,7 +643,6 @@ body > div {
 
 ~~~ {.css}
 #main {
-  zoom: 1;
   margin-left: 1.5%;
   clear: left;
   float: left;
@@ -585,7 +659,6 @@ body > div {
   float: none;
   clear: both;
   margin: 0;
-  zoom: 1;
   /// ... And so on ...
 }
 ~~~
@@ -609,6 +682,11 @@ body > div {
   margin: 0; 
 }
 ~~~
+
+## Speaker Notes
+
+* We are now complete with step 3, reworking the baseline. Find help in the snippet section.
+* **Now**, delete the 600px media query and its contents from the bottom of the file. We're going to replace it with two media queries.
 
 # A breakpoint for wider screens
 
@@ -685,13 +763,41 @@ body > div {
 ~~~
 
 
-
 # We're now mobile-first
 
 Look at that, soldier! We're thinking mobile- and content-first. We're adapting our requirements and our layout based on the yins and yangs of project and customer requirements. Balance is key.
 
 # And now we ride off into the Zombie-tinted sunset?
 
+## Figure: Zombie-tinted sunset
+
 ![](images/04-sunset.png)
+
+# One more thing...
+
+We can go more fluid. Did you notice that even though we have made much of Sigma Stronghold's layout fluid, our media queries are in pixels?
+
+# Font Size Baseline
+
+### 1em = 100% ~= 14px ~=16px
+
+# So?
+
+TODO: Screen shots
+
+# Conversion of our media queries
+
+* 750px in `ems` ~= (750px / 16px) ~= `46.875em`
+* 500px in `ems` ~= (500px / 16px) ~= `31.25em`
+
+## Updated Media Queries
+
+~~~{.css}
+@media all and (min-width: 46.875em) { }
+
+@media all and (min-width: 31.25em) { }
+~~~
+
+# Onward!
 
 Zombies are known for not being the easiest things to kill. What do we do when we start facing [bloodier battles](04-bloodier-uprisings.html)?

@@ -44,12 +44,16 @@ AppCache and Geolocation and Things that Make Mobile Shine
 <div class="section slide level1" id="faster-better-stronger">
 <h1>Faster, Better, Stronger</h1>
 <p>We're well into the fray now. Our squad is well-trained and looking sharp. It's time to add to our mobile zombie specializations by training in some more techniques!</p>
-<ul>
-<li><em>ApplicationCache</em>: We'll use a cache manifest file to create an offline mode for the Sigma Stronghold site.</li>
-<li><em>Device APIs</em>: We'll introduce you to the world of device APIs by playing around with geolocation.</li>
-</ul>
+<div class="section level2" id="applicationcache">
+<h2>ApplicationCache</h2>
+<p>We'll use a cache manifest file to create an offline mode for the Sigma Stronghold site.</p>
 </div>
-<div class="section slide level1" id="applicationcache">
+<div class="section level2" id="geolocation">
+<h2>Geolocation</h2>
+<p>We'll introduce you to the world of device APIs by playing around with geolocation.</p>
+</div>
+</div>
+<div class="section slide level1" id="applicationcache-1">
 <h1>ApplicationCache</h1>
 <ul>
 <li>An API that is part of the HTML5 spec</li>
@@ -107,7 +111,7 @@ ding/dong.html</code></pre>
 <h1>Ways things end up in appCache</h1>
 <ul>
 <li>Listed in the cache manifest file (explicit)</li>
-<li>Is a document with a manifest defined (implicit)</li>
+<li>Is a document with a manifest attribute defined (implicit)</li>
 </ul>
 </div>
 <div class="section slide level1" id="be-very-wary">
@@ -185,6 +189,23 @@ ding/dong.html</code></pre>
 <pre><code>http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff
 http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff</code></pre>
 </div>
+<div class="section slide level1" id="not-far-enough...">
+<h1>Not far enough...</h1>
+<p>TODO: More font files</p>
+</div>
+<div class="section slide level1" id="updating">
+<h1>Updating</h1>
+<p>TODO</p>
+</div>
+<div class="section slide level1" id="there-are-still-some-drawbacks">
+<h1>There are still some drawbacks</h1>
+<div class="section level2" id="figure-appcache-internals">
+<h2>Figure: Appcache-internals</h2>
+<div class="figure">
+<img src="images/05-appcache-internals.png" /><p class="caption"></p>
+</div>
+</div>
+</div>
 <div class="section slide level1" id="it-aint-perfect">
 <h1>It ain't perfect</h1>
 <p>This cache manifest situation works nicely in iOS, Android and in Chrome on the desktop. FireFox, however, is not thrilled about it.</p>
@@ -218,7 +239,7 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 </div>
 </div>
 </div>
-<div class="section slide level1" id="geolocation">
+<div class="section slide level1" id="geolocation-1">
 <h1>Geolocation</h1>
 <div class="figure">
 <img src="images/04-compass.png" /><p class="caption"></p>
@@ -245,9 +266,6 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <div class="section slide level1" id="lets-try-it-out">
 <h1>Let's try it out</h1>
 <p>Hey, let's build a basic geolocation test page to see how that geolocation API works. Most modern leading desktop browsers support the W3C geolocation spec (but you'll need at least IE9; they were (surprise!) a bit late to the party).</p>
-<ul>
-<li>Find a starting point in the <code>index.html</code> file in your rucksack, inside of the <code>where-am-i</code> folder.</li>
-</ul>
 </div>
 <div class="section slide level1" id="testing-for-api-support">
 <h1>Testing for API support</h1>
@@ -278,8 +296,7 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 </div>
 <div class="section slide level1" id="all-together-now">
 <h1>All together now!</h1>
-<p>Using your field notes as a guide, update the <code>index.html</code> in the <code>where-am-i</code> folder and try it out!</p>
-<p>If it works, you should get a JavaScript alert with your current location.</p>
+<p>If it works, you should get a JavaScript alert with your current latitude and longitude coordinates.</p>
 <div class="section level2" id="speaker-notes-5">
 <h2>Speaker Notes</h2>
 <p>Most browsers will prompt you for permission first.</p>

@@ -5,8 +5,13 @@
 
 We're well into the fray now. Our squad is well-trained and looking sharp. It's time to add to our mobile zombie specializations by training in some more techniques!
 
-* *ApplicationCache*: We'll use a cache manifest file to create an offline mode for the Sigma Stronghold site.
-* *Device APIs*: We'll introduce you to the world of device APIs by playing around with geolocation.
+## ApplicationCache
+
+We'll use a cache manifest file to create an offline mode for the Sigma Stronghold site.
+
+## Geolocation
+
+We'll introduce you to the world of device APIs by playing around with geolocation.
 
 # ApplicationCache
 
@@ -67,7 +72,7 @@ There is a `manifest` attribute on the `html` element.
 # Ways things end up in appCache
 
 * Listed in the cache manifest file (explicit)
-* Is a document with a manifest defined (implicit)
+* Is a document with a manifest attribute defined (implicit)
 
 # Be very wary
 
@@ -141,6 +146,20 @@ We need to add the Google Font files to the cache, explicitly:
 http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff
 http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff
 ~~~
+
+# Not far enough...
+
+TODO: More font files
+
+# Updating
+
+TODO
+
+# There are still some drawbacks
+
+## Figure: Appcache-internals
+
+![](images/05-appcache-internals.png)
     
 # It ain't perfect
 
@@ -202,8 +221,6 @@ navigator.geolocation.getCurrentPosition(successCallback, errorCallback)
 
 Hey, let's build a basic geolocation test page to see how that geolocation API works. Most modern leading desktop browsers support the W3C geolocation spec (but you'll need at least IE9; they were (surprise!) a bit late to the party).
 
-* Find a starting point in the `index.html` file in your rucksack, inside of the `where-am-i` folder.
-
 # Testing for API support
 
 ~~~ {.javascript}
@@ -240,9 +257,7 @@ function onGeoError(error) {
 
 # All together now!
 
-Using your field notes as a guide, update the `index.html` in the `where-am-i` folder and try it out!
-
-If it works, you should get a JavaScript alert with your current location.
+If it works, you should get a JavaScript alert with your current latitude and longitude coordinates.
 
 ## Speaker Notes
 

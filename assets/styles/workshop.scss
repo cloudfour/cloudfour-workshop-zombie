@@ -42,30 +42,39 @@ a, a:visited {
   color:                $color-accent !important;
 }
 
+em {
+  border-bottom:        1px dashed $color-accent;
+}
+
 code, pre {
   font-family:          $code-font;
+}
+
+pre code, pre {
+  background-color:     lighten($color-background, 10%);
 }
 
 code {
   padding:              .15em;
   margin:               0 .15em;
   font-family:          $code-font;
-  border:               1px dashed $color-accent;
   white-space:          nowrap;
   overflow:             scroll;
+  background-color:     lighten($color-background, 12%);
 }
 
 pre {
   overflow:             scroll;
   border-width:         1px;
   border:               1px solid $color-accent;
-  color:                $color-background;
+
 }
 
 pre code {
   border-width:         0px;
   font-size:            .75em;
   white-space:          pre;
+  color: #fff;
 }
 
 blockquote {
@@ -153,10 +162,15 @@ div.slide {
   div[id^="instead"] {
     float:                left;
     width:                45%;
+    clear:                left;
   }
   div[id^="use"] {
     float:                right;
     width:                45%;
+    clear:                right;
+  }
+  div[id^="use"]+div, div[id^="use"] > div {
+    clear:                both;
   }
 }
 
@@ -167,3 +181,16 @@ div.toolbar {
   line-height:          1em;
   padding:              .5em;
 }
+
+code > span.kw { color: #fff; font-weight: bold; } // element
+code > span.dt { color: #fff; }
+code > span.dv { color: #fff; }
+code > span.bn { color: #fff; }
+code > span.fl { color: #fff; }
+code > span.ch { color: #fff; }
+code > span.st { color: #fff; } // attr value
+code > span.co { color: #fff; font-style: italic; }
+code > span.ot { color: #fff; } // Attr
+code > span.al { color: #fff; font-weight: bold; }
+code > span.fu { color: #fff; }
+code > span.er { color: #fff; font-weight: bold; }

@@ -28,6 +28,9 @@ code > span.fu { color: #06287e; }
 code > span.er { color: #ff0000; font-weight: bold; }
   </style>
   <link rel="stylesheet" href="fieldnotes.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="fieldnotes.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <header>
@@ -70,9 +73,13 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </section>
 <section class="level1" id="boot-camp-performance-and-semantic-clarity">
 <h1>2. Boot Camp: Performance and Semantic Clarity</h1>
-<section class="level2" id="mission">
-<h2>Mission</h2>
+<section class="level2" id="level-up">
+<h2>Level Up</h2>
 <p>Learn how to analyze front-end performance, fix common gotchas and tweak server-side settings to speed up sites for all users, mobile included. Use semantic markup to be ready for the future. Get ready to face the zombies.</p>
+<section class="level3" id="mission">
+<h3>Mission</h3>
+<p>Help Sergeant Dingus and Private Pyle make improvements to the Sigma Stronghold website to make it ready for the mobile/zombie web.</p>
+</section>
 </section>
 <section class="level2" id="step-0-getting-the-current-picture">
 <h2>Step 0: Getting the current picture</h2>
@@ -86,19 +93,19 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </section>
 <section class="level3" id="do-this">
 <h3>Do This</h3>
-<ul>
-<li><a href="../missions/sigma-stronghold-website/">View the current Sigma Stronghold web site</a> in a browser.</li>
-</ul>
+<ol type="1">
+<li><a href="../missions/01-bootcamp-performance/">View the current Sigma Stronghold web site</a> in a browser.</li>
+</ol>
 </section>
 <section class="level3" id="extra-credit">
 <h3>Extra Credit</h3>
 <ul>
 <li>If you have the ySlow extension installed, you can run it yourself.</li>
-<li>Run the HTML code in <a href="../missions/sigma-stronghold-website/index.html">index.html</a> through the W3C validator.</li>
+<li>Run the HTML code in <a href="../missions/01-bootcamp-performance/index.html">index.html</a> through the W3C validator.</li>
 </ul>
 </section>
-<section class="level3" id="snippet-reference">
-<h3>Snippet Reference</h3>
+<section class="level3" id="snippet-reference-weather">
+<h3>Snippet Reference: Weather</h3>
 <section class="level4" id="weather-widget">
 <h4>Weather widget</h4>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;weather&quot;</span><span class="kw">&gt;</span>
@@ -127,23 +134,28 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <section class="level2" id="step-1-fixing-whats-broken-and-removing-unused-or-unneeded-elements">
 <h2>Step 1: Fixing what's broken and removing unused or unneeded elements</h2>
 <p>Mobile browsers and devices have less tolerance for broken code, and size really, really matters. We have to write clean markup and pay attention to <em>why</em> we're dropping stuff onto our web pages.</p>
-<section class="level3" id="snippet-reference-1">
-<h3>Snippet Reference</h3>
+<section class="level3" id="snippet-reference-quick-hits">
+<h3>Snippet Reference: Quick hits</h3>
 <p>TODO: Fix CSS to display file names</p>
-<section class="level4" id="instead-of">
-<h4>Instead of</h4>
+<section class="level4" id="css-link-tag-optimization">
+<h4>CSS link tag optimization</h4>
+<section class="level5" id="instead-of">
+<h5>Instead of</h5>
 <pre class="sourceCode html"><code class="sourceCode html">  <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Nosifer&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
   <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Butcherman&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
   <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Creepster&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
   <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Special+Elite&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span></code></pre>
 </section>
-<section class="level4" id="use">
-<h4>Use</h4>
+<section class="level5" id="use">
+<h5>Use</h5>
 <pre class="sourceCode html"><code class="sourceCode html">
 <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Nosifer|Special+Elite&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span></code></pre>
 </section>
-<section class="level4" id="instead-of-1">
-<h4>Instead of</h4>
+</section>
+<section class="level4" id="fix-404s">
+<h4>Fix 404s</h4>
+<section class="level5" id="instead-of-1">
+<h5>Instead of</h5>
 <pre class="sourceCode css"><code class="sourceCode css">h2 <span class="kw">{</span>
   <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span>
   <span class="kw">font-size:</span> <span class="dt">1.25em</span><span class="kw">;</span>
@@ -152,8 +164,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
   <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">0</span> <span class="dt">.25em</span> <span class="dt">0</span><span class="kw">;</span> 
 <span class="kw">}</span></code></pre>
 </section>
-<section class="level4" id="use-1">
-<h4>Use</h4>
+<section class="level5" id="use-1">
+<h5>Use</h5>
 <pre class="sourceCode css"><code class="sourceCode css">h2 <span class="kw">{</span>
   <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span>
   <span class="kw">font-size:</span> <span class="dt">1.25em</span><span class="kw">;</span>
@@ -161,6 +173,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
   <span class="kw">padding-left:</span> <span class="dt">25px</span><span class="kw">;</span>
   <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">0</span> <span class="dt">.25em</span> <span class="dt">0</span><span class="kw">;</span> 
 <span class="kw">}</span></code></pre>
+</section>
 </section>
 </section>
 </section>
@@ -177,9 +190,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <section class="level2" id="step-3-server-side-shenanigans">
 <h2>Step 3: Server-side shenanigans</h2>
 <p>For front-end devs, the idea of futzing about on the server can sometimes feel onerous. For many, many sites hosted using the Apache web server, it really is as easy as editing an <strong><code>.htaccess</code></strong> file.</p>
-<section class="level3" id="snippet-reference-2">
-<h3>Snippet Reference</h3>
-<p>A sample .htaccess file.</p>
+<section class="level3" id="snippet-reference-.htaccess">
+<h3>Snippet Reference: .htaccess</h3>
+<section class="level4" id="a-sample-.htaccess-file.">
+<h4>A sample .htaccess file.</h4>
 <pre><code>    # Turn on and configure GZIP compression
     &lt;IfModule mod_deflate.c&gt;
      SetOutputFilter DEFLATE
@@ -209,11 +223,14 @@ code > span.er { color: #ff0000; font-weight: bold; }
     FileETag none</code></pre>
 </section>
 </section>
+</section>
 <section class="level2" id="getting-all-semantic-up-in-here">
 <h2>Getting all semantic up in here</h2>
 <p>Fighting the good fight of truly separating content from presentation.</p>
-<section class="level3" id="some-of-the-things-improved-in-the-sigma-stronghold-markup">
-<h3>Some of the things improved in the Sigma Stronghold markup:</h3>
+<section class="level3" id="some-details">
+<h3>Some Details</h3>
+<section class="level4" id="some-of-the-things-improved-in-the-sigma-stronghold-markup">
+<h4>Some of the things improved in the Sigma Stronghold markup:</h4>
 <ul>
 <li><code>div#navigation</code> changed to <code>&lt;nav&gt;</code> element.</li>
 <li><code>#page</code> id removed from <code>&lt;div&gt;</code>; used parent-child selector instead.</li>
@@ -226,14 +243,15 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><code>#left</code> and <code>#right</code> renamed to <code>#main</code> and <code>#sidebar</code>, respectively</li>
 </ul>
 </section>
-<section class="level3" id="taking-it-further...">
-<h3>Taking it further...</h3>
+<section class="level4" id="taking-it-further...">
+<h4>Taking it further...</h4>
 <p>We didn't do these things but they might be cool, too:</p>
 <ul>
 <li>Address could be hCard</li>
 <li><code>&lt;article&gt;</code> element instead of <code>&lt;div&gt;</code> for news items.</li>
 <li><code>&lt;section&gt;</code> element instead of other <code>&lt;div&gt;</code>s.</li>
 </ul>
+</section>
 </section>
 </section>
 <section class="level2" id="resources">
@@ -257,8 +275,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><p>Code resources</p>
 <ul>
 <li><a href="../survival-tools/.htaccess.example">Sample .htaccess file</a>.</li>
-<li><a href="../missions/sigma-stronghold-website">Starting point of Sigma Stronghold Web site</a></li>
-<li><a href="../missions/sigma-stronghold-website">Sigma Stronghold Web site now TBD TODO</a></li>
+<li><a href="../missions/01-bootcamp-performance">Starting point of Sigma Stronghold Web site</a></li>
+<li><a href="../victories/01-bootcamp-performance">Sigma Stronghold Web site now TBD TODO</a></li>
 </ul></li>
 </ul>
 </section>
@@ -276,21 +294,35 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </section>
 <section class="level1" id="release-the-hounds-responsive-web-design">
 <h1>3. Release the Hounds! Responsive Web Design</h1>
-<section class="level2" id="mission-1">
-<h2>Mission</h2>
+<section class="level2" id="level-up-1">
+<h2>Level Up</h2>
 <p>Learn to let our content flow like water and create a site that adapts itself to different environments.</p>
+<section class="level3" id="mission-1">
+<h3>Mission</h3>
+<p>Convert the Sigma Stronghold website to a mobile-first Responsive Web Design.</p>
+</section>
+</section>
+<section class="level2" id="the-fluid-formula">
+<h2>The Fluid Formula</h2>
+<p>To convert pixel-based layout elements to fluid ones in CSS:</p>
+<pre><code> result = target
+          ------
+          context</code></pre>
 </section>
 <section class="level2" id="step-0-converting-the-css-to-a-fluid-layout">
 <h2>Step 0: Converting the CSS to a fluid layout</h2>
 <section class="level3" id="do-this-1">
 <h3>Do This</h3>
 <ol type="1">
-<li>Edit <code>styles.css</code> in the <code>sigma-stronghold-website</code> folder in your rucksack.</li>
-<li>Set a <code>max-width</code> instead of a <code>width</code> on the two main containing elements, <code>body &gt; div</code> and <code>#container</code>. Change the <code>padding</code> on <code>#container</code> to be in <code>em</code>s (relative) instead of <code>px</code> (absolute). You should end up with these changes:</li>
+<li>View <a href="../missions/02-fluid-layout/">the current version of the Sigma Stronghold website</a> in your browser.</li>
+<li>Open the <a href="../missions/02-fluid-layout/styles.css"><code>styles.css</code></a> file in a text editor.</li>
+<li>Edit the CSS properties for the selectors <code>body &gt; div</code> and <code>#container</code>. Change <code>width</code> to <code>max-width</code>.</li>
 </ol>
 </section>
-<section class="level3" id="instead-of-2">
-<h3>Instead of</h3>
+<section class="level3" id="snippet-reference-styles.css">
+<h3>Snippet Reference: styles.css</h3>
+<section class="level4" id="instead-of-2">
+<h4>Instead of</h4>
 <pre class="sourceCode css"><code class="sourceCode css">body &gt; div <span class="kw">{</span>
   <span class="kw">width:</span> <span class="dt">920px</span><span class="kw">;</span>
   <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span>
@@ -298,8 +330,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
   <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span> 
 <span class="kw">}</span></code></pre>
 </section>
-<section class="level3" id="use-2">
-<h3>Use</h3>
+<section class="level4" id="use-2">
+<h4>Use</h4>
 <pre class="sourceCode css"><code class="sourceCode css">body &gt; div <span class="kw">{</span>
   <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span>
   <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">auto</span><span class="kw">;</span>
@@ -307,8 +339,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
   <span class="kw">border-width:</span> <span class="dt">0px</span> <span class="dt">7px</span><span class="kw">;</span>
 <span class="kw">}</span></code></pre>
 </section>
-<section class="level3" id="instead-of-3">
-<h3>Instead of</h3>
+<section class="level4" id="instead-of-3">
+<h4>Instead of</h4>
 <pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span>
   <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
   <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span>
@@ -317,8 +349,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
   <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span> 
 <span class="kw">}</span></code></pre>
 </section>
-<section class="level3" id="use-3">
-<h3>Use</h3>
+<section class="level4" id="use-3">
+<h4>Use</h4>
 <pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#container</span> <span class="kw">{</span>
   <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
   <span class="kw">background:</span> <span class="dt">black</span><span class="kw">;</span>
@@ -327,8 +359,20 @@ code > span.er { color: #ff0000; font-weight: bold; }
   <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
 <span class="kw">}</span></code></pre>
 </section>
-<section class="level3" id="instead-of-4">
-<h3>Instead of</h3>
+</section>
+<section class="level3" id="do-this-2">
+<h3>Do This</h3>
+<ol type="1">
+<li>Edit the CSS rule for <code>#main</code>. Set the width to the percentage we determine.</li>
+<li>Edit the CSS rule for <code>#sidebar</code>. Set the <code>margin-left</code> value to the percentage we determine.</li>
+<li>Save the file. We're fluid!</li>
+<li>Reload the <a href="../missions/02-fluid-layout/">Sigma Stronghold website</a> in your browser with your new styles.</li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-styles.css-cont.">
+<h3>Snippet Reference: styles.css, cont.</h3>
+<section class="level4" id="instead-of-4">
+<h4>Instead of</h4>
 <pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span>
   <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
   <span class="kw">margin-left:</span> <span class="dt">10px</span><span class="kw">;</span>
@@ -338,8 +382,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
   <span class="er">...</span>           <span class="er">//</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span>
 <span class="kw">}</span></code></pre>
 </section>
-<section class="level3" id="use-4">
-<h3>use</h3>
+<section class="level4" id="use-4">
+<h4>use</h4>
 <pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span>
   <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
   <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span>
@@ -349,61 +393,143 @@ code > span.er { color: #ff0000; font-weight: bold; }
   <span class="er">...</span>
 <span class="kw">}</span></code></pre>
 </section>
-<section class="level3" id="instead-of-5">
-<h3>Instead of</h3>
+<section class="level4" id="instead-of-5">
+<h4>Instead of</h4>
 <pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span>
   <span class="kw">margin-left:</span> <span class="dt">570px</span><span class="kw">;</span> 
 <span class="kw">}</span></code></pre>
 </section>
-<section class="level3" id="use-5">
-<h3>Use</h3>
+<section class="level4" id="use-5">
+<h4>Use</h4>
 <pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#sidebar</span> <span class="kw">{</span>
   <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span>
 <span class="kw">}</span></code></pre>
 </section>
 </section>
-<section class="level2" id="media-queries">
-<h2>Media Queries!</h2>
-<ul>
-<li>You can always <a href="http://www.w3.org/TR/css3-mediaqueries/">read the spec</a></li>
-</ul>
-<p>If you are curious, you can see the <a href="sigma-media-query.html">first version of media query CSS here</a> (the desktop-first, single breakpoint version).</p>
-<section class="level3" id="mobile--or-content-first-rwd">
-<h3>Mobile- (or content-)first RWD</h3>
-<section class="level4" id="baseline-css">
-<h4>Baseline CSS</h4>
-<ul>
-<li>Single-column view</li>
-<li>Tabbed navigation</li>
-<li>No body background image</li>
-</ul>
-</section>
-<section class="level4" id="px-breakpoint-and-wider">
-<h4>750px Breakpoint (and wider)</h4>
-<ul>
-<li>Two-column layout</li>
-<li>Body background image</li>
-<li>Font and padding adjustments</li>
-</ul>
-</section>
-<section class="level4" id="px-breakpoint-and-narrower">
-<h4>550px Breakpoint (and narrower)</h4>
-<ul>
-<li>Vertical navigation</li>
-<li>Font and padding adjustments</li>
-</ul>
+<section class="level3" id="snippet-reference-finished-fluid-css">
+<h3>Snippet Reference: Finished Fluid CSS</h3>
+<section class="level4" id="final-css">
+<h4>Final CSS</h4>
+<p>You can find the final CSS for the fluid layout in <a href="../victories/02a-fluid-layout/styles.css">this file</a></p>
 </section>
 </section>
 </section>
-<section class="level2" id="do-this-create-mobile-first-css">
-<h2><em>Do This</em>: Create Mobile-first CSS</h2>
-<p>Edit the <code>styles.css</code> file in the <code>sigma-stronghold-website</code> directory.</p>
-<section class="level3" id="baseline-changes">
-<h3>Baseline Changes</h3>
+<section class="level2" id="step-1-media-queries">
+<h2>Step 1: Media Queries!</h2>
+<section class="level3" id="snippet-reference-sample-media-queries">
+<h3>Snippet Reference: Sample Media Queries</h3>
+<section class="level4" id="inline">
+<h4>Inline</h4>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">screen</span> <span class="er">and</span> <span class="er">(min-width:</span> <span class="er">600px)</span> <span class="dv">{</span>
+  // In browsers that support media queries,
+  // rules in here will only be applied if the
+  // query expression evaluates as true
+<span class="dv">}</span></code></pre>
+</section>
+<section class="level4" id="link-tag">
+<h4>Link tag</h4>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> media=</span><span class="st">&quot;screen and (min-width:600px)&quot;</span><span class="ot"> href=</span><span class="st">&quot;thing.css&quot;</span><span class="kw">&gt;</span></code></pre>
+</section>
+</section>
+<section class="level3" id="do-this-building-our-media-query">
+<h3>Do This: Building our Media Query</h3>
+<p>We're going to make the fluid layout of the Sigma Stronghold site more responsive by adding some media queries for narrow-width screens.</p>
+<ol type="1">
+<li><strong>Close</strong> the current styles.css file you were editing. We're going to move to the next mission.</li>
+<li>Load the <a href="../missions/03-responsive/">fluid version of the Sigma Stronghold website</a> in your browser.</li>
+<li><strong>Open</strong> <a href="../missions/03-responsive/media-query.css">this starter CSS file</a> in your text editor—we'll be building our media query-wrapped CSS here.</li>
+<li>Replace the placeholder <code>@media</code> text at the top of the file with the appropriate media query.</li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference">
+<h3>Snippet Reference</h3>
+<section class="level5" id="our-media-query">
+<h5>Our Media Query</h5>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:600px</span> <span class="dv">{</span>
+  body <span class="kw">{</span>
+    <span class="co">/* EDIT ME */</span>
+  <span class="kw">}</span>
+  <span class="fl">...</span> <span class="co">/* More CSS Rules */</span>
+<span class="dv">}</span></code></pre>
+</section>
+</section>
+<section class="level3" id="do-this-changing-the-layout-for-narrow-screens">
+<h3>Do This: Changing the layout for narrow screens</h3>
+<ol type="1">
+<li>Edit the <code>#main, #sidebar</code> rule to clear and not float.</li>
+<li>Edit the <code>body</code> rule to remove the background image.</li>
+<li>Edit the <code>#header nav ul li</code> rule to make nav items span the full width and not float.</li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-layout-updates-in-css">
+<h3>Snippet Reference: Layout updates in CSS</h3>
+<section class="level4" id="updated-css-rules">
+<h4>Updated CSS Rules</h4>
+<pre class="sourceCode css"><code class="sourceCode css">
+<span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:600px)</span> <span class="dv">{</span>
+  <span class="fl">#main</span>, <span class="fl">#sidebar</span> <span class="kw">{</span>
+    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span>
+    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+    <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
+  <span class="kw">}</span>
+
+  body <span class="kw">{</span>
+    <span class="kw">background-image:</span> <span class="dt">none</span><span class="kw">;</span>
+  <span class="kw">}</span>
+
+  <span class="fl">#header</span> <span class="kw">{</span>
+    <span class="kw">padding:</span> <span class="dt">1em</span> <span class="dt">0</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  <span class="fl">#header</span> nav ul li <span class="kw">{</span>
+    <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span>
+    <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
+    <span class="kw">width:</span> <span class="dt">100%</span><span class="kw">;</span>
+    <span class="kw">margin:</span> <span class="dt">.5em</span> <span class="dt">0</span><span class="kw">;</span>
+  <span class="kw">}</span>
+  <span class="fl">...</span></code></pre>
+</section>
+</section>
+<section class="level3" id="do-this-putting-it-together">
+<h3>Do This: Putting it together</h3>
+<ol type="1">
+<li>Copy the finished media query CSS into <strong>the bottom of the <code>styles.css</code> file</strong> you should have open above (if you don't, <a href="../missions/03-media-queries/styles.css">here is a link to it</a> ).</li>
+<li>Save it!</li>
+<li>Launch! Reload the <a href="../missions/03-media-queries">updated Sigma Stronghold website</a> site to check your changes.</li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-stuck">
+<h3>Snippet Reference: Stuck?</h3>
+<section class="level4" id="the-updated-site">
+<h4>The updated site</h4>
+<p>You can view the Sigma Stronghold website with the narrow-screen media queries applied <a href="../victories/03-media-queries">here</a>.</p>
+</section>
+</section>
+<section class="level3" id="done">
+<h3>Done</h3>
 <ul>
-<li>No background image on the body</li>
-<li>Get rid of the wide, semi-transparent border on the body content area</li>
+<li>Sigma Stronghold site layout is now proportional and fluid, with some max-widths on containers.</li>
 </ul>
+</section>
+</section>
+<section class="level2" id="step-2-reworking-the-baseline-css">
+<h2>Step 2: Reworking the Baseline CSS</h2>
+<section class="level3" id="do-this-3">
+<h3>Do This</h3>
+<ol type="1">
+<li>Close the current <code>stlyes.css</code> in your editor. We are moving on!</li>
+<li>Open the new and improved <a href="../missions/04-mobile-first/styles.css"><code>styles.css</code></a> in your editor.</li>
+<li><p>Edit the following rules. <em>Be careful not to edit the rules within the media query yet</em>.</p>
+<ol type="1">
+<li><code>#body</code>: Remove <code>background-image</code> and <code>background-repeat</code> properties (no background image in baseline).</li>
+<li><code>#body &gt; div</code>: Remove all <code>border-</code> properties (no border in baseline).</li>
+<li><code>#main</code>: Replace contents of this rule with the version inside of the media query (single-column layout is baseline).</li>
+<li><code>#sidebar</code>: Ditto. Replace with version from media query (ditto).</li>
+</ol></li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-baseline-css-changes">
+<h3>Snippet Reference: Baseline CSS changes</h3>
 <section class="level4" id="instead-of-6">
 <h4>Instead of</h4>
 <pre class="sourceCode css"><code class="sourceCode css">body <span class="kw">{</span>
@@ -476,9 +602,35 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <span class="kw">}</span></code></pre>
 </section>
 </section>
-<section class="level3" id="adding-a-breakpoint-for-column-reflow">
-<h3>Adding a breakpoint for column reflow</h3>
-<p>Add the following CSS to the <code>styles.css</code> file.</p>
+</section>
+<section class="level2" id="step-3-adding-breakpoint-css">
+<h2>Step 3: Adding breakpoint CSS</h2>
+<section class="level3" id="do-this-4">
+<h3>Do This</h3>
+<ol type="1">
+<li>Remove the media query <code>(max-width: 600px)</code> and all of its contained CSS from the bottom of the file. We are going to rebuild it.</li>
+<li>Add a new media query to the bottom of the file (with no rules in it yet). It should apply to <code>all</code> media types that have a minimum width of <code>750px</code>.</li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-750px-media-query">
+<h3>Snippet Reference: 750px Media Query</h3>
+<section class="level4" id="new-media-query">
+<h4>New media query</h4>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:750px)</span> <span class="dv">{</span>
+
+<span class="dv">}</span></code></pre>
+</section>
+</section>
+<section class="level3" id="do-this-5">
+<h3>Do This</h3>
+<ol type="1">
+<li>Add rules to 750px breakpoint. For speed, we're giving them to you. Copy and paste from the Snippet Reference.</li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-750px-breakpoint-css">
+<h3>Snippet Reference: 750px breakpoint CSS</h3>
+<section class="level4" id="in-styles.css">
+<h4>In styles.css</h4>
 <pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:750px)</span> <span class="dv">{</span>
   <span class="co">/* Adding back in the background image */</span>
   body <span class="kw">{</span>
@@ -508,9 +660,17 @@ code > span.er { color: #ff0000; font-weight: bold; }
   <span class="kw">}</span>
 <span class="dv">}</span></code></pre>
 </section>
-<section class="level3" id="now-add-a-breakpoint-for-narrow-screens">
-<h3>Now add a breakpoint for narrow screens</h3>
-<p>This is where we'll go to vertical, stacked navigation. We are also adjusting some fonts and margins.</p>
+</section>
+<section class="level3" id="do-this-add-a-breakpoint-for-narrow-screens">
+<h3>Do This: Add a breakpoint for narrow screens</h3>
+<ol type="1">
+<li>Add a media query and relevant CSS rules for screens 550px or narrower. Use the CSS in the Snippet Reference. Paste this at the <em>bottom</em> of <code>styles.css</code>.</li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-500px-breakpoint-css">
+<h3>Snippet Reference: 500px Breakpoint CSS</h3>
+<section class="level4" id="at-the-bottom-of-styles.css">
+<h4>At the bottom of styles.css</h4>
 <pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(max-width:550px)</span> <span class="dv">{</span>
   <span class="co">/* Here is the stacked navigation */</span>
   <span class="fl">#header</span> nav ul li <span class="kw">{</span>
@@ -544,11 +704,11 @@ code > span.er { color: #ff0000; font-weight: bold; }
   <span class="kw">}</span>
 <span class="dv">}</span></code></pre>
 </section>
+</section>
 <section class="level3" id="if-you-have-any-woes...">
 <h3>If you have any woes...</h3>
 <ol type="1">
-<li>You can find the updated, <a href="../supplemental/release-hounds/mobile-first.css">mobile-first CSS file here</a>.</li>
-<li>Replace the <code>styles.css</code> in <code>sigma-stronghold-website</code> with this CSS.</li>
+<li>You can find the updated file HERE TBD TODO</li>
 </ol>
 </section>
 </section>
@@ -562,9 +722,43 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>Percentages (%) and <code>em</code>s are both fluid units, <code>pt</code>s, <code>px</code>, inches and pica are fixed. (Technically, <code>px</code> are not <em>absolute</em> absolute, as the size of a pixel varies with different devices and screens and are not <em>fixed</em>, per se. However, for our purposes, they are effectively absolute, as they do not scale).</li>
 </ul>
 </section>
-<section class="level2" id="done">
+<section class="level2" id="done-1">
 <h2>Done</h2>
+<ul>
+<li>stuff</li>
+</ul>
+</section>
+<section class="level2" id="needs-sorting">
+<h2>Needs sorting</h2>
+<section class="level3" id="mobile--or-content-first-rwd">
+<h3>Mobile- (or content-)first RWD</h3>
+<section class="level4" id="baseline-css">
+<h4>Baseline CSS</h4>
+<ul>
+<li>Single-column view</li>
+<li>Tabbed navigation</li>
+<li>No body background image</li>
+</ul>
+</section>
+<section class="level4" id="px-breakpoint-and-wider">
+<h4>750px Breakpoint (and wider)</h4>
+<ul>
+<li>Two-column layout</li>
+<li>Body background image</li>
+<li>Font and padding adjustments</li>
+</ul>
+</section>
+<section class="level4" id="px-breakpoint-and-narrower">
+<h4>550px Breakpoint (and narrower)</h4>
+<ul>
+<li>Vertical navigation</li>
+<li><p>Font and padding adjustments</p></li>
+<li><p>You can always <a href="http://www.w3.org/TR/css3-mediaqueries/">read the spec</a></p></li>
+</ul>
+<p>If you are curious, you can see the <a href="sigma-media-query.html">first version of media query CSS here</a> (the desktop-first, single breakpoint version).</p>
 <hr>
+</section>
+</section>
 </section>
 </section>
 <section class="level1" id="bloodier-uprisings">

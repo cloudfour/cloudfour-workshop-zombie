@@ -56,8 +56,16 @@ Responsive Web Design
 </div>
 <div class="section slide level1" id="oh-dear-thats-ugly-isnt-it">
 <h1>Oh dear, that's ugly, isn't it?</h1>
-<p><img src="images/sigma-site-screenshots/iphone-broken-2.jpg" /> <img src="images/sigma-site-screenshots/android-broken.png" /></p>
-<p>The current structure of the Sigma Stronghold web site is a <em>fixed-width, rigid layout</em>. That is not going to adapt in the face of the zombie gadget crisis. What do we do?</p>
+<div class="figure">
+<img src="images/sigma-site-screenshots/iphone-broken-2.jpg" /><p class="caption"></p>
+</div>
+<div class="figure">
+<img src="images/sigma-site-screenshots/android-broken.png" /><p class="caption"></p>
+</div>
+<div class="section level2" id="speaker-notes">
+<h2>Speaker Notes</h2>
+<p>We've prioritized our content just fine, but the current structure of the Sigma Stronghold web site is a <em>fixed-width, rigid layout</em>. That is not going to adapt in the face of the zombie gadget crisis. What do we do?</p>
+</div>
 </div>
 <div class="section slide level1" id="we-adapt">
 <h1>We adapt!</h1>
@@ -68,35 +76,41 @@ Responsive Web Design
 </div>
 <div class="section slide level1" id="lesson-1-quarantine-never-works">
 <h1>Lesson 1: Quarantine never works</h1>
+<div class="section level2" id="figure-quarantine-never-works">
+<h2>Figure: Quarantine Never Works</h2>
 <div class="figure">
 <img src="images/03-quarantine-never-works.png" /><p class="caption"></p>
 </div>
+</div>
+<div class="section level2" id="speaker-notes-1">
+<h2>Speaker Notes</h2>
 <ul>
 <li>We have to relinquish our false sense of control and set our content free.</li>
 <li>We don't get to <em>decide</em> or even reliably <em>know</em> our user's screen sizes.</li>
 <li>If we try to quarantine the zombies with rigid, pixel-perfect designs, they'll just be more pissed off when they ultimately escape.</li>
 </ul>
-<div class="section level2" id="speaker-notes">
-<h2>Speaker Notes</h2>
 <p>Expound on limits of control.</p>
 </div>
 </div>
 <div class="section slide level1" id="responsive-web-design-rwd">
 <h1>Responsive Web Design (RWD)</h1>
-<p>Responsive Web Design (RWD) is a technique, championed by Ethan Marcotte (@beep), that argues adapting an experience for the user's environment, instead of using a rigid, one-size-fits-all type of structure.</p>
-<p>RWD is based upon the notion of creating a fluid, proportional layout (instead of pixel- or absolute-unit-based layouts). RWD layouts <em>scale, flex and adapt</em> to <em>flow comfortably</em> in the user's browser, whatever size or shape it might be at the moment.</p>
+<p>Responsive Web Design (RWD) is a technique for adapting an experience for the user's environment, instead of using a rigid, one-size-fits-all type of structure.</p>
+<p>RWD is based upon the notion of creating a fluid, proportional layout. RWD layouts <em>scale, flex and adapt</em> to <em>flow comfortably</em> in the user's browser, whatever size or shape it might be at the moment.</p>
+<div class="section level2" id="speaker-notes-2">
+<h2>Speaker Notes</h2>
+</div>
 </div>
 <div class="section slide level1" id="rwd-elements">
 <h1>RWD Elements</h1>
 <p>RWD is driven by three main technical pieces:</p>
-<ul>
+<ol style="list-style-type: decimal">
 <li>Fluid CSS layouts</li>
 <li>CSS3 Media Queries</li>
 <li>Responsive Images and Objects</li>
-</ul>
+</ol>
 </div>
-<div class="section slide level1" id="rwd-part-i-fluid-css-layouts">
-<h1>RWD Part I: Fluid CSS layouts</h1>
+<div class="section slide level1" id="a-bit-of-recon">
+<h1>A Bit of Recon</h1>
 <div class="figure">
 <img src="images/03-sigma-site-structure.png" title="Site structure" /><p class="caption"></p>
 </div>
@@ -107,6 +121,7 @@ Responsive Web Design
 <li><code>#main</code>: 500px</li>
 <li><code>#sidebar</code>: No specific width set, but a left margin of 570px</li>
 </ul>
+<p>TODO: Better graphic</p>
 </div>
 <div class="section slide level1" id="whats-so-bad-about-fixed-layouts">
 <h1>What's so bad about fixed layouts?</h1>
@@ -134,45 +149,66 @@ Responsive Web Design
 <img src="images/03-fluid-scales.png" /><p class="caption"></p>
 </div>
 </div>
+<div class="section level2" id="speaker-notes-3">
+<h2>Speaker Notes</h2>
+<p>Pause here. Reconnect idea of fluid layouts back to being a) first step in Responsive, b) having some meaning/purpose.</p>
+<p>&quot;So if we have decided that we want to convert the Sigma Stronghold site to a fluid layout...&quot;</p>
 </div>
-<div class="section slide level1" id="the-fluid-formula">
-<h1>The fluid formula</h1>
-<div class="section level2" id="figure-fluid-formula-result-target-context">
-<h2>Figure: Fluid Formula: Result = Target / Context</h2>
+</div>
+<div class="section slide level1" id="converting-pixel-based-designs-to-fluid">
+<h1>Converting Pixel-based Designs to Fluid</h1>
 <div class="figure">
 <img src="images/03-fluid-formula.png" /><p class="caption"></p>
 </div>
+<div class="section level2" id="the-fluid-formula">
+<h2>The Fluid Formula</h2>
+<p>To convert a layout element with pixel widths be fluid, we apply the fluid formula.</p>
 </div>
 </div>
-<div class="section slide level1" id="the-fluid-formula-1">
-<h1>The fluid formula</h1>
-<div class="section level2" id="figure-the-fluid-formula-applied">
-<h2>Figure: The fluid formula applied</h2>
+<div class="section slide level1" id="the-fluid-formula-exposed">
+<h1>The Fluid Formula Exposed</h1>
+<div class="section level2" id="figure-the-fluid-formula">
+<h2>Figure: The fluid formula</h2>
 <div class="figure">
 <img src="images/03-formula-applied.png" /><p class="caption"></p>
 </div>
 </div>
 </div>
+<div class="section slide level1" id="example">
+<h1>Example</h1>
+<ul>
+<li>Say you have a 720-pixel-wide left column</li>
+<li>Say your entire layout width is 960px</li>
+<li>To convert the 720px width to a proportional, fluid one, apply the fluid formula</li>
+</ul>
+</div>
 <div class="section slide level1" id="result-target-context">
 <h1>Result = Target / Context</h1>
-<div class="figure">
-<img src="images/03-context.png" /><p class="caption"></p>
-</div>
 <div class="section level2" id="context">
 <h2>Context</h2>
 <p>Let's talk about <em>context</em> a bit, yes?</p>
 <div class="section level4" id="target-context-result">
 <h4>TARGET / CONTEXT = RESULT</h4>
+<p>In our example, the context was the full layout width—960px</p>
+</div>
+</div>
+</div>
+<div class="section slide level1" id="context-changes">
+<h1>Context changes</h1>
+<div class="figure">
+<img src="images/03-context.png" /><p class="caption"></p>
+</div>
 <ul>
 <li>A <code>div</code> of 250px wide</li>
 <li>Inside of a 500px <code>div</code></li>
 <li>Overall content width of 750px</li>
 <li>The 500px <code>div</code> is the context</li>
 </ul>
+<div class="section level4" id="px-500px-50">
+<h4>250px / 500px = 50%</h4>
 </div>
-<div class="section level4" id="px-500px-50-not-250px-750px-33.33">
-<h4>250px / 500px = 50% <em>not</em> 250px / 750px = 33.33%</h4>
-</div>
+<div class="section level4" id="not-250px-750px-33.33--">
+<h4>--<strong>not</strong> 250px / 750px = 33.33%--</h4>
 </div>
 </div>
 <div class="section slide level1" id="applying-the-fluid-formula">
@@ -214,6 +250,10 @@ Responsive Web Design
 <img src="images/03-formula-approximate.png" /><p class="caption"></p>
 </div>
 </div>
+<div class="section level2" id="speaker-notes-4">
+<h2>Speaker Notes</h2>
+<p>Talk about wiggle room in math.</p>
+</div>
 </div>
 <div class="section slide level1" id="lets-start-from-the-top">
 <h1>Let's start from the top</h1>
@@ -225,10 +265,10 @@ Responsive Web Design
 <li><code>body &gt; div</code> that contains all content: 920px</li>
 <li><code>#container</code> (all content is inside of this <code>div</code>): 900px</li>
 </ul>
-<div class="section level3" id="goal-convert-the-sigma-stronghold-web-site-to-a-fluid-layout.">
-<h3>Goal: Convert the Sigma Stronghold web site to a fluid layout.</h3>
+<div class="section level3" id="mission-convert-the-sigma-stronghold-web-site-to-a-fluid-layout.">
+<h3>Mission: Convert the Sigma Stronghold web site to a fluid layout.</h3>
 </div>
-<div class="section level2" id="speaker-notes-1">
+<div class="section level2" id="speaker-notes-5">
 <h2>Speaker Notes</h2>
 <ul>
 <li>We're making the design executive decision that we never want the content of the page to be wider than these measurements. The design can scale down but 920px and 900px are as large as these elements should ever appear.</li>
@@ -239,10 +279,14 @@ Responsive Web Design
 </div>
 <div class="section slide level1" id="lets-dive-in...">
 <h1>Let's dive in...</h1>
-<p>Open your <code>styles.css</code> file in the Sigma Stronghold web site folder.</p>
-<div class="section level3" id="lets-convert-this-thing-to-scale-and-adapt-to-different-devices-and-browsers">
-<h3>Let's convert this thing to scale and adapt to different devices and browsers</h3>
+<p>Open the <code>styles.css</code> file linked to in Step 1 of your Field Notes.</p>
 <p>We don't have to throw the undead baby out with the bathwater here. We can change some CSS rules in a targeted way to get fluid!</p>
+<div class="section level2" id="speaker-notes-6">
+<h2>Speaker Notes</h2>
+<ul>
+<li>The first thing we're going to do is establish the width of the layout overall. In a lot of cases, this is effectively 100%, but...</li>
+<li>To do this, we'll want to edit the rules for <code>body &gt; div</code> and <code>#container</code>.</li>
+</ul>
 </div>
 </div>
 <div class="section slide level1" id="revising-our-css">
@@ -261,6 +305,13 @@ Responsive Web Design
  <span class="kw">max-width:</span> <span class="dt">920px</span><span class="kw">;</span>
  <span class="er">...</span>
 <span class="kw">}</span></code></pre>
+</div>
+<div class="section level2" id="speaker-notes-7">
+<h2>Speaker Notes</h2>
+<ul>
+<li>The rule for <code>body &gt; div</code> is ~ line 50 in the file.</li>
+<li>As of now, the layout will not flex narrower than 920px.</li>
+</ul>
 </div>
 </div>
 <div class="section slide level1" id="revising-our-css-cont.">
@@ -283,12 +334,13 @@ Responsive Web Design
   <span class="kw">max-width:</span> <span class="dt">900px</span><span class="kw">;</span>
   <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span> <span class="kw">}</span></code></pre>
 </div>
-<div class="section level2" id="speaker-notes-2">
+<div class="section level2" id="speaker-notes-8">
 <h2>Speaker Notes</h2>
 <ul>
 <li>If folks are curious, the <code>zoom</code> property is part of a clearfix for IE.</li>
 <li>Note the padding conversion to <code>em</code>.</li>
 <li>Similar to the containing div, we're making this never wider than 900px. That's an absolute. Sometimes there are absolutes.</li>
+<li>Around line 108ish of file.</li>
 </ul>
 </div>
 </div>
@@ -326,6 +378,12 @@ Responsive Web Design
       <span class="er">...</span>
     <span class="kw">}</span></code></pre>
 </div>
+<div class="section level2" id="speaker-notes-9">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Rule for <code>#main</code> at Line ~121 in <code>styles.css</code></li>
+</ul>
+</div>
 </div>
 <div class="section slide level1" id="what-about-the-sidebar">
 <h1>What about the sidebar?</h1>
@@ -355,15 +413,30 @@ Responsive Web Design
   <span class="kw">margin-left:</span> <span class="dt">63.5%</span><span class="kw">;</span>
 <span class="kw">}</span></code></pre>
 </div>
+<div class="section level2" id="speaker-notes-10">
+<h2>Speaker Notes</h2>
+<ul>
+<li><code>#sidebar</code> is at line 147 of <code>styles.css</code>.</li>
+</ul>
+</div>
 </div>
 <div class="section slide level1" id="in-summary...">
 <h1>In summary...</h1>
+<div class="section level2" id="done">
+<h2>Done</h2>
 <ul>
 <li>We edited the rules for <code>body &gt; div</code>, <code>#container</code>, <code>#main</code> and <code>#sidebar</code>.</li>
 <li><code>body &gt; div</code> and <code>#container</code> retain a pixel-based width, but it is a <code>max-width</code>. These containers scale <em>down</em> but not up. This was a design decision.</li>
 <li><code>#main</code> and <code>#sidebar</code> and their padding and margin widths are proportional now. These elements scale within their parent element <code>#container</code>.</li>
+</ul>
+</div>
+<div class="section level2" id="speaker-notes-11">
+<h2>Speaker Notes</h2>
+<ul>
+<li>End of Step 1 in Field Notes</li>
 <li>If you like, you can find the finished version of the fluid CSS in your rucksack (see field notes for details).</li>
 </ul>
+</div>
 </div>
 <div class="section slide level1" id="so-what-did-that-get-us">
 <h1>So, what did that get us?</h1>
@@ -413,7 +486,7 @@ Responsive Web Design
 <h3>Also</h3>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> media=</span><span class="st">&quot;screen and (min-width:600px)&quot;</span><span class="ot"> href=</span><span class="st">&quot;thing.css&quot;</span><span class="kw">&gt;</span></code></pre>
 </div>
-<div class="section level2" id="speaker-notes-3">
+<div class="section level2" id="speaker-notes-12">
 <h2>Speaker Notes</h2>
 <ul>
 <li>@import syntax also supported.</li>
@@ -446,7 +519,7 @@ Responsive Web Design
 <img src="images/03-responsive-layout.png" /><p class="caption"></p>
 </div>
 </div>
-<div class="section level2" id="speaker-notes-4">
+<div class="section level2" id="speaker-notes-13">
 <h2>Speaker Notes</h2>
 <p>Choosing a breakpoint at 600px somewhat arbitrarily.</p>
 </div>
@@ -519,11 +592,22 @@ Responsive Web Design
     <span class="kw">line-height:</span> <span class="dt">1.4em</span><span class="kw">;</span> <span class="kw">}</span>
 <span class="dv">}</span></code></pre>
 </div>
-<div class="section level2" id="speaker-notes-5">
+<div class="section level2" id="speaker-notes-14">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Put the ending brace on the same line for space reasons here.</li>
 </ul>
+</div>
+</div>
+<div class="section slide level1" id="wrapping-it-up...">
+<h1>Wrapping it up...</h1>
+<ul>
+<li>Adding the CSS in the media query to the end of the <code>styles.css</code> file.</li>
+<li>Reviewing <a href="../rucksack/victories/03-media-queries">the result</a> in a browser.</li>
+</ul>
+<div class="section level2" id="speaker-notes-15">
+<h2>Speaker Notes</h2>
+<p>Remember, we've been editing a file that just contains the media query piece of the CSS.</p>
 </div>
 </div>
 <div class="section slide level1" id="and...check-it-out...">
@@ -553,8 +637,16 @@ Responsive Web Design
 </div>
 </div>
 </div>
-<div class="section slide level1" id="mobile-first-rwd">
-<h1>Mobile first RWD</h1>
+<div class="section slide level1" id="x-first">
+<h1>(X) First</h1>
+<ul>
+<li>Mobile First!</li>
+<li>Content First!</li>
+<li>Baseline First!</li>
+</ul>
+</div>
+<div class="section slide level1" id="pause.-content.">
+<h1>Pause. Content.</h1>
 <ul>
 <li>Content- and mobile-first approach</li>
 <li>More subtle approach that focuses our thinking</li>
@@ -645,7 +737,6 @@ Responsive Web Design
 <div class="section level4" id="instead-of-6">
 <h4>Instead of</h4>
 <pre class="sourceCode css"><code class="sourceCode css"><span class="fl">#main</span> <span class="kw">{</span>
-  <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
   <span class="kw">margin-left:</span> <span class="dt">1.5%</span><span class="kw">;</span>
   <span class="kw">clear:</span> <span class="dt">left</span><span class="kw">;</span>
   <span class="kw">float:</span> <span class="dt">left</span><span class="kw">;</span>
@@ -660,7 +751,6 @@ Responsive Web Design
   <span class="kw">float:</span> <span class="dt">none</span><span class="kw">;</span>
   <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
   <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span>
-  <span class="kw">zoom:</span> <span class="dt">1</span><span class="kw">;</span>
   <span class="er">///</span> <span class="er">...</span> <span class="er">And</span> <span class="er">so</span> <span class="er">on</span> <span class="er">...</span>
 <span class="kw">}</span></code></pre>
 </div>
@@ -680,6 +770,13 @@ Responsive Web Design
   <span class="kw">clear:</span> <span class="dt">both</span><span class="kw">;</span>
   <span class="kw">margin:</span> <span class="dt">0</span><span class="kw">;</span> 
 <span class="kw">}</span></code></pre>
+</div>
+<div class="section level2" id="speaker-notes-16">
+<h2>Speaker Notes</h2>
+<ul>
+<li>We are now complete with step 3, reworking the baseline. Find help in the snippet section.</li>
+<li><strong>Now</strong>, delete the 600px media query and its contents from the bottom of the file. We're going to replace it with two media queries.</li>
+</ul>
 </div>
 </div>
 <div class="section slide level1" id="a-breakpoint-for-wider-screens">
@@ -760,9 +857,42 @@ Responsive Web Design
 </div>
 <div class="section slide level1" id="and-now-we-ride-off-into-the-zombie-tinted-sunset">
 <h1>And now we ride off into the Zombie-tinted sunset?</h1>
+<div class="section level2" id="figure-zombie-tinted-sunset">
+<h2>Figure: Zombie-tinted sunset</h2>
 <div class="figure">
 <img src="images/04-sunset.png" /><p class="caption"></p>
 </div>
+</div>
+</div>
+<div class="section slide level1" id="one-more-thing...">
+<h1>One more thing...</h1>
+<p>We can go more fluid. Did you notice that even though we have made much of Sigma Stronghold's layout fluid, our media queries are in pixels?</p>
+</div>
+<div class="section slide level1" id="font-size-baseline">
+<h1>Font Size Baseline</h1>
+<div class="section level3" id="em-100-14px-16px">
+<h3>1em = 100% ~= 14px ~=16px</h3>
+</div>
+</div>
+<div class="section slide level1" id="so-1">
+<h1>So?</h1>
+<p>TODO: Screen shots</p>
+</div>
+<div class="section slide level1" id="conversion-of-our-media-queries">
+<h1>Conversion of our media queries</h1>
+<ul>
+<li>750px in <code>ems</code> ~= (750px / 16px) ~= <code>46.875em</code></li>
+<li>500px in <code>ems</code> ~= (500px / 16px) ~= <code>31.25em</code></li>
+</ul>
+<div class="section level2" id="updated-media-queries">
+<h2>Updated Media Queries</h2>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:</span> <span class="er">46.875em)</span> <span class="dv">{</span> <span class="dv">}</span>
+
+<span class="dv">@media</span> <span class="dv">all</span> <span class="er">and</span> <span class="er">(min-width:</span> <span class="er">31.25em)</span> <span class="dv">{</span> <span class="dv">}</span></code></pre>
+</div>
+</div>
+<div class="section slide level1" id="onward-1">
+<h1>Onward!</h1>
 <p>Zombies are known for not being the easiest things to kill. What do we do when we start facing <a href="04-bloodier-uprisings.html">bloodier battles</a>?</p>
 </div>
 </body>

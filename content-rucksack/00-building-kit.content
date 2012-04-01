@@ -1,0 +1,39 @@
+% Field Notes | 00: Building your battle kit
+% Jason Grigsby and Lyza Danger Gardner
+
+----------------
+
+# 0. Building your battle kit
+
+## Weapons
+
+Arm yourself with these tools for our adventure today:
+
+1. A local web server (optional, but handy!) [more info](web-server.html)
+2. A good text editor
+3. A JavaScript/DOM debug tool (We recommend WebInspector in Chrome/Safari/Webkit browsers or FireBug in FireFox).
+
+## Suit Up
+
+TODO: Go install these things from the rucksack
+
+* ySlow
+* Android SDK
+* web server
+
+## Launch
+
+* Host the rucksack content in your web server
+
+TODO: Watch first set of slides
+
+## Stuff that needs sorting
+
+## Weapons for Performance
+
+* [ySlow](http://developer.yahoo.com/yslow/)
+* [W3C validator](http://validator.w3.org/)
+* [Smush.it](http://smush.it)
+* [SpriteMe](http://spriteme.org/)
+
+

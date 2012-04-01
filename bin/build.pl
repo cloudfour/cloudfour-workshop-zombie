@@ -22,13 +22,14 @@ my $dir = dir($Bin);
 # Our 'base path' is one level higher... use Path::Class for this
 my $basepath = $dir->parent;
 
-$content_path = $basepath . "/content";
-$html_path    = $basepath . "/web";
-$slide_path   = $basepath . "/presentation";
-$src_path     = $basepath . "/assets";
-$pack_path    = $basepath . "/rucksack";
-$ex_path      = $basepath . "/exercises";
-$flags    = '--from=markdown --to=slidy --standalone';
+$content_path       = $basepath . "/content";
+$html_path          = $basepath . "/web";
+$slide_path         = $basepath . "/presentation";
+$src_path           = $basepath . "/assets";
+$pack_path          = $basepath . "/rucksack";
+$pack_content_path  = $basepath . "/content-rucksack";
+$ex_path            = $basepath . "/exercises";
+$flags              = '--from=markdown --to=slidy --standalone';
 
 ## When was the last time a shared/common resource was updated?
 my $common_mtime = 0;
@@ -57,7 +58,7 @@ sub build_presentation {
     my $test_update = needs_update($_, $output);
     if ($test_update) {
       system("$pandoc $flags --section-divs --css=../assets/styles/workshop.css $_ > $output");
-      system("$pandoc --from=markdown --to=html5 --standalone --section-divs --css=../assets/styles/speaker.css $_ > $speaker_output");
+      # system("$pandoc --from=markdown --to=html5 --standalone --section-divs --css=../assets/styles/speaker.css $_ > $speaker_output");
       if ($opts{v}) {
         print "Updated $_ --> $output \n";
       }
@@ -96,17 +97,19 @@ sub needs_update {
 }
 
 sub build_survival {
-  ($base, $dir, $ext) = fileparse($File::Find::name, '\..*'); # Split path into dir, file basename, extension
-  my $output          = $pack_path . "/field-notes/" . $base . ".html";
-  my $needs_update    = 0;
-  my $css             = "fieldnotes.css";
-  my $flags           = "--from=markdown --to=html5 --section-divs --standalone";
-  #if ($base =~ /field-notes/) {
-  #  $flags .= ' --toc';
-  #}
-  if (&needs_update($_, $output)) {
-    system("$pandoc $flags --css=$css $_ > $output"); 
-    print "$_ updated --> $output \n";
+  if ($_ =~ /\.content/) {
+    ($base, $dir, $ext) = fileparse($File::Find::name, '\..*'); # Split path into dir, file basename, extension
+    my $output          = $pack_path . "/field-notes/" . $base . ".html";
+    my $needs_update    = 0;
+    my $css             = "fieldnotes.css";
+    my $flags           = "--from=markdown --to=html5 --section-divs --standalone --include-in-header=$src_path/head-includes.txt";
+    #if ($base =~ /field-notes/) {
+    #  $flags .= ' --toc';
+    #}
+    if (&needs_update($_, $output)) {
+      system("$pandoc $flags --css=$css $_ > $output"); 
+      print "$_ updated --> $output \n";
+    }
   }
 }
 
@@ -127,7 +130,7 @@ my @dirlist = $content_path;
 find(\&build_presentation, @dirlist);
 
 # Build field notes and other rucksack items
-my @survival_items = ($content_path . "/rucksack",
+my @survival_items = ($pack_content_path,
                       $ex_path . "/03-release-hounds/01-going-fluid/fluid-css-changes.content",
                       $ex_path . "/03-release-hounds/02-media-queries/sigma-media-query.content");
 find(\&build_survival, @survival_items);

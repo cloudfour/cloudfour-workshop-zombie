@@ -1,0 +1,520 @@
+% Field Notes | 03: Release the Hounds
+% Jason Grigsby and Lyza Danger Gardner
+
+
+# 3. Release the Hounds! Responsive Web Design
+
+## Level Up
+
+Learn to let our content flow like water and create a site that adapts itself to different environments.
+
+### Mission
+
+Convert the Sigma Stronghold website to a mobile-first Responsive Web Design.
+
+## Responsive Web Design (RWD)
+
+1. Fluid layouts (CSS)
+2. Media Queries
+3. Responsive Images
+
+## The Fluid Formula
+
+To convert pixel-based layout elements to fluid ones in CSS:
+
+     result = target
+              ------
+              context
+
+## Step 0: A bit of recon
+
+### Do This
+
+1. View [the current version of the Sigma Stronghold website](../missions/02-fluid-layout/) in your browser.
+
+
+## Step 1: Converting the CSS to a fluid layout
+
+### Do This
+
+1. Open the [`rucksack/missions/02-fluid-layout/styles.css`](../missions/02-fluid-layout/styles.css) file in a text editor.
+2. Edit the CSS properties for the selectors `body > div` and `#container`. Change `width` to `max-width`.
+
+
+### Snippet Reference: styles.css
+
+
+#### Instead of
+
+~~~ {.css}
+body > div {
+  width: 920px;
+  margin: 0 auto;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-width: 0px 7px; 
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+body > div {
+  max-width: 920px;
+  margin: 0 auto;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-width: 0px 7px;
+}
+~~~
+
+#### Instead of
+
+~~~ {.css}
+#container {
+  zoom: 1;
+  background: black;
+  padding: 10px;
+  width: 900px;
+  clear: both; 
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+#container {
+  zoom: 1;
+  background: black;
+  padding: .625em;
+  max-width: 900px;
+  clear: both;
+}
+~~~
+
+### Do This
+
+1. Edit the CSS rule for `#main`. Set the width to the percentage we determine.
+2. Edit the CSS rule for `#sidebar`. Set the `margin-left` value to the percentage we determine.
+3. Save the file. We're fluid!
+4. Reload the [Sigma Stronghold website](../missions/02-fluid-layout/) in your browser with your new styles.
+
+### Snippet Reference: styles.css, cont.
+
+#### Instead of
+
+~~~ {.css}
+#main {
+  zoom: 1;
+  margin-left: 10px;
+  clear: left;
+  float: left;
+  width: 550px;
+  ...           // And so on
+}
+~~~
+
+#### use
+
+~~~ {.css}
+#main {
+  zoom: 1;
+  margin-left: 1.5%;
+  clear: left;
+  float: left;
+  width: 60%;
+  ...
+}
+~~~
+
+#### Instead of
+
+~~~ {.css}
+#sidebar {
+  margin-left: 570px; 
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+#sidebar {
+  margin-left: 63.5%;
+}
+~~~
+
+## Step 2: Media Queries!
+
+### Snippet Reference: Sample Media Queries
+
+#### Inline
+
+~~~ {.css}
+@media screen and (min-width: 600px) {
+  // In browsers that support media queries,
+  // rules in here will only be applied if the
+  // query expression evaluates as true
+}
+~~~
+
+#### Link tag
+
+~~~ {.html}
+<link rel="stylesheet" media="screen and (min-width:600px)" href="thing.css">
+~~~
+
+
+### Do This: Building our Media Query
+
+We're going to make the fluid layout of the Sigma Stronghold site more responsive by adding some media queries for narrow-width screens.
+
+1. **Close** the current styles.css file you were editing. We're going to move to the next mission.
+2. Load the [fluid version of the Sigma Stronghold website](../missions/03-responsive/) in your browser.
+3. **Open** [`rucksack/missions/03-responsive/media-query.css`](../missions/03-media-queries/media-query.css) in your text editor—we'll be building our media query-wrapped CSS here.
+4. Replace the placeholder `@media` text at the top of the file with the appropriate media query.
+
+### Snippet Reference
+
+##### Our Media Query
+
+~~~{.css}
+@media all and (max-width:600px {
+  body {
+    /* EDIT ME */
+  }
+  ... /* More CSS Rules */
+}
+~~~
+
+
+### Do This: Changing the layout for narrow screens
+
+1. Edit the `#main, #sidebar` rule to clear and not float.
+2. Edit the `body` rule to remove the background image.
+3. Edit the `#header nav ul li` rule to make nav items span the full width and not float.
+
+### Snippet Reference: Layout updates in CSS
+
+#### Updated CSS Rules
+
+~~~{.css}
+
+@media all and (max-width:600px) {
+  #main, #sidebar {
+    width: 100%;
+    float: none;
+    clear: both;
+    margin: 0;
+  }
+
+  body {
+    background-image: none;
+  }
+
+  #header {
+    padding: 1em 0;
+  }
+  #header nav ul li {
+    float: none;
+    clear: both;
+    width: 100%;
+    margin: .5em 0;
+  }
+  ...
+
+~~~
+
+### Do This: Putting it together
+
+1. Open the [`rucksack/missions/03-media-queries/styles.css`](../missions/03-media-queries/styles.css) file in your text editor. 
+2. Copy the finished media query CSS you've been building into **the bottom of the `styles.css` file**.
+3. Save it!
+4. Launch! Reload the [updated Sigma Stronghold website](../missions/03-media-queries) site to check your changes.
+
+### Snippet Reference: Stuck?
+
+#### The updated site
+
+You can view the Sigma Stronghold website with the narrow-screen media queries applied [here](../victories/03-media-queries).
+
+### Done
+
+* Sigma Stronghold site layout is now proportional and fluid, with some max-widths on containers.
+
+## Step 3: Reworking the Baseline CSS
+
+### Snippet Reference: The Plan
+
+
+#### Baseline CSS
+
+* Single-column view
+* Tabbed navigation
+* No body background image
+
+#### 750px Breakpoint (and wider)
+
+* Two-column layout
+* Body background image
+* Font and padding adjustments
+
+#### 550px Breakpoint (and narrower)
+
+* Vertical navigation
+* Font and padding adjustments
+
+### Do This
+
+1. Close the current `styles.css` in your editor. We are moving on!
+2. Open the new and improved [`rucksack/missions/04-mobile-first/styles.css`](../missions/04-mobile-first/styles.css) in your editor.
+3. Edit the following rules. *Be careful not to edit the rules within the media query yet*.
+
+    1. `#body`: Remove `background-image` and `background-repeat` properties (no background image in baseline).
+    2. `#body > div`: Remove all `border-` properties (no border in baseline).
+    3. `#main`: Replace contents of this rule with the version inside of the media query (single-column layout is baseline).
+    4. `#sidebar`: Ditto. Replace with version from media query (ditto).
+
+
+### Snippet Reference: Baseline CSS changes
+
+
+#### Instead of
+
+~~~ {.css}
+body {
+  background-color: black;
+  color: white;
+  font: 100% "Special Elite";
+  background-image: url(images/moon.jpg);
+  background-repeat: no-repeat;
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+body {
+  background-color: black;
+  color: white;
+  font: 100% "Special Elite";
+}
+~~~
+
+#### Instead Of
+
+~~~ {.css}
+body > div {
+  max-width: 920px;
+  margin: 0 auto;
+  border-color: rgba(255, 255, 255, 0.2);
+  border-width: 0px 7px;
+  border-style: solid;
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+body > div {
+  max-width: 920px;
+  margin: 0 auto; 
+}
+~~~
+
+#### Instead of
+
+~~~ {.css}
+#main {
+  zoom: 1;
+  margin-left: 1.5%;
+  clear: left;
+  float: left;
+  width: 60%;
+  /// ... And so on ...
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+#main {
+  width: 100%;
+  float: none;
+  clear: both;
+  margin: 0;
+  zoom: 1;
+  /// ... And so on ...
+}
+~~~
+
+#### Instead of
+
+~~~ {.css}
+#sidebar {
+  margin-left: 63.5%;
+}
+~~~
+
+#### Use
+
+~~~ {.css}
+#sidebar {
+  float: none;
+  clear: both;
+  margin: 0; 
+}
+~~~
+
+## Step 3: Adding breakpoint CSS
+
+
+
+### Do This
+
+1. Remove the media query `(max-width: 600px)` and all of its contained CSS from the bottom of the file. We are going to rebuild it.
+2. Add a new media query to the bottom of the file (with no rules in it yet). It should apply to `all` media types that have a minimum width of `750px`.
+
+### Snippet Reference: 750px Media Query
+
+#### New media query
+
+~~~{.css}
+@media all and (min-width:750px) {
+
+}
+~~~
+
+### Do This
+
+1. Add rules to 750px breakpoint. For speed, we're giving them to you. Copy and paste from the Snippet Reference.
+
+### Snippet Reference: 750px breakpoint CSS
+
+#### In styles.css
+
+~~~ {.css}
+@media all and (min-width:750px) {
+  /* Adding back in the background image */
+  body {
+    background-image: url(images/moon.jpg);
+    background-repeat: no-repeat;
+  }
+
+  /* Here's a border */
+  body > div {
+    border-color: rgba(255, 255, 255, 0.2);
+    border-width: 0px 7px;
+    border-style: solid;
+  }
+
+  /* Float #main left; make it 60% width of its parent container */
+  #main {
+    margin-left: 1.5%;
+    clear: left;
+    float: left;
+    width: 60%;
+  }
+
+  /* A fluid left margin for a right-aligned #sidebar */
+  #sidebar {
+    margin-left: 63.5%;
+    clear: none;
+  }
+}
+~~~
+
+
+### Do This: Add a breakpoint for narrow screens
+
+1. Add a media query and relevant CSS rules for screens 550px or narrower. Use the CSS in the Snippet Reference. Paste this at the *bottom* of `styles.css`.
+
+### Snippet Reference: 500px Breakpoint CSS
+
+#### At the bottom of styles.css
+
+
+~~~ {.css}
+@media all and (max-width:550px) {
+  /* Here is the stacked navigation */
+  #header nav ul li {
+    float: none;
+    clear: both;
+    width: 100%;
+    margin: .5em 0;
+  }
+  #header nav ul li a {
+    margin: 0;
+    padding: .75em;
+  }
+  /* Padding and font adjustments */
+  h1 {
+    font-size: 1.75em;
+    line-height: 1.25em;
+  }
+  h3 {
+    font-size: 1.1em;
+    line-height: 1.2em;
+  }
+  p {
+    font-size: .9em;
+    line-height: 1.4em;
+  }
+  #header {
+    padding: 1em 0;
+  }
+  #header h1, #header h3 {
+    padding: 0 .375em;
+  }
+}
+~~~
+
+### Snippet Reference: Updated CSS File
+
+#### Styles.css
+
+You can find the updated `styles.css` file, with the baseline CSS and the two breakpoint media query CSS content in [`rucksack/victories/04-mobile-first/styles.css`](../victories/04-mobile-first/styles.css)
+
+## Step 4: Going fluid all the Way
+
+### Font size baseline: Rough rule of thumb
+
+~~~
+1em = 100% ~=14pt ~=16px
+~~~
+
+### Do This: Convert Media Queries to ems
+
+1. Change the `750px` and `550px` media queries to use `em` units in the `styles.css` file.
+
+### Snippet Reference: Em-based media queries
+
+#### Styles.css
+
+~~~{.css}
+@media all and (min-width: 46.875em) { ... }
+
+@media all and (min-width: 31.25em) { ... }
+~~~
+
+## Resources
+
+For more expounding on the topic of relinquishing control, see Lyza's presentation ["Crap, it doesn't look quite right: Or, How I learned to stop worrying and set my mobile web sites free"](http://www.slideshare.net/lyzadanger/crap-it-doesnt-look-quite-right-or-how-i-learned-to-stop-worrying-and-set-my-mobile-web-sites-free-9518337) on Slideshare.
+
+* See Ethan's ([@beep](http://twitter.com/beep)) original article about RWD on [A List Apart](http://www.alistapart.com/articles/responsive-web-design/)
+* Fluid formula: `result = target / context`
+* Rough rule of thumb for font sizes: `1em = 100% ~= 16px ~= 12pt`. *Approximately*.
+* Percentages (%) and `em`s are both fluid units, `pt`s, `px`, inches and pica are fixed. (Technically, `px` are not *absolute* absolute, as the size of a pixel varies with different devices and screens and are not *fixed*, per se. However, for our purposes, they are effectively absolute, as they do not scale).
+* You can always [read the CSS3 Media Queries spec](http://www.w3.org/TR/css3-mediaqueries/)
+
+## Done and learned: Level Up!
+
+* Learned the fluid formula.
+* Converted the pixel-based CSS layout to a fluid CSS layout.
+* Re-factored the baseline CSS with a content- or mobile-first approach.
+* Added additional breakpoints to the layout.
+* Converted our media queries to proportional, em-based media queries.
+
+
+## The Result
+
+See the final, mobile-first, proportional [Sigma Stronghold website](../victories/05-proportional-media-queries).
+
+-----------------------------------

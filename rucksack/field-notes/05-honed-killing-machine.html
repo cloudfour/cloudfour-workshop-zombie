@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Jason Grigsby and Lyza Danger Gardner">
+  <title>Field Notes | 05: Honed Killing Machine</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="fieldnotes.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="fieldnotes.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<header>
+<h1 class="title">Field Notes | 05: Honed Killing Machine</h1>
+<h2 class="author">Jason Grigsby and Lyza Danger Gardner</h2>
+</header>
+<section class="level1" id="a-honed-killing-machine">
+<h1>5. A Honed Killing Machine</h1>
+<section class="level2" id="level-up">
+<h2>Level Up</h2>
+<p>Get a grasp on some of the badass HTML5 APIs that give us some real firepower against those mobile zombies.</p>
+<section class="level3" id="mission">
+<h3>Mission</h3>
+<p>Train up as a specialist in the ApplicationCache and Geolocation APIs to give the Sigma Stronghold an offline mode and prep for the next, highly-classified mission.</p>
+</section>
+</section>
+<section class="level2" id="applicationcache">
+<h2>ApplicationCache!</h2>
+<section class="level3" id="important-note">
+<h3>Important Note</h3>
+<p>Both of the examples in this section (ApplicationCache and Geolocation) need a local apache web server to function. If you are viewing the examples as local files in your browser, you may experience some difficulty. Not a big deal! If you don't have a local web server, you can still follow along!</p>
+</section>
+<section class="level3" id="cache-manifest-quickies">
+<h3>Cache Manifest Quickies</h3>
+<ol type="1">
+<li><p>File must be served as <code>text/application-cache</code>. Often this can be effected by adding the following line to an apache config (<code>.htaccess</code> file or the like).</p>
+<pre><code>AddType text/cache-manifest .appcache</code></pre></li>
+<li><p>Basic cache manifest syntax:</p>
+<pre><code>CACHE MANIFEST
+
+CACHE:
+foo.jpg
+bar.png
+index.html
+ding/dong.html</code></pre></li>
+<li><p>Reference a cache manifest with the <code>manifest</code> attribute of the <code>&lt;html&gt;</code> tag. e.g. <code>&lt;html manifest=&quot;manifest.appcache&quot;&gt;</code>.</p></li>
+</ol>
+</section>
+</section>
+<section class="level2" id="step-1-creating-a-cache-manifest-for-the-sigma-stronghold-site">
+<h2>Step 1: Creating a Cache Manifest for the Sigma Stronghold Site</h2>
+<section class="level3" id="do-this">
+<h3>Do This</h3>
+<ol type="1">
+<li>Review the contents of the <a href="../missions/06-appcache/"><code>rucksack/missions/06-appcache</code></a> folder.</li>
+<li>Edit <code>.htaccess</code> in a text editor. We need to make sure that the <code>manifest.appcache</code> file is served correctly so that browsers recognize it as a cache manifest.</li>
+<li>Edit the <code>index.html</code> file. Add a <code>manifest</code> attribute that references the cache manifest file.</li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-.htaccess-and-index.html">
+<h3>Snippet Reference: .htaccess and index.html</h3>
+<section class="level4" id="add-to-the-top-of-the-.htaccess-file">
+<h4>Add to the top of the <code>.htaccess</code> file</h4>
+<pre><code>AddType text/cache-manifest .appcache</code></pre>
+</section>
+<section class="level4" id="edit-the-html-tag-in-index.html">
+<h4>Edit the <code>&lt;html&gt;</code> tag in <code>index.html</code></h4>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;html</span><span class="ot"> manifest=</span><span class="st">&quot;manifest.appcache&quot;</span><span class="kw">&gt;</span></code></pre>
+</section>
+</section>
+</section>
+<section class="level2" id="step-2-improving-our-appcache">
+<h2>Step 2: Improving our AppCache</h2>
+<section class="level3" id="tools">
+<h3>Tools</h3>
+<ul>
+<li><a href="http://www.fontsquirrel.com/fontface/generator">Font Squirrel</a></li>
+</ul>
+</section>
+<section class="level3" id="google-font-situation">
+<h3>Google Font situation</h3>
+<p>By changing the User Agent sent by our browser, we can see that Google serves up different font file types for different clients</p>
+</section>
+<section class="level3" id="snippet-reference-google-fonts">
+<h3>Snippet Reference: Google fonts</h3>
+<section class="level4" id="different-font-files">
+<h4>Different font files</h4>
+<p>Here are some of the font files Google uses for different browsers. These are for our two fonts, <code>Nosifer</code> and <code>Special Elite</code>.</p>
+<pre><code>http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm8OV-75E7mII8OPOWd5roDg.eot
+http://themes.googleusercontent.com/static/fonts/nosifer/v2/22TLRN_sb7eGnW3UzCoN7w.eot
+http://themes.googleusercontent.com/font?kit=9-wW4zu3WNoD5Fjka35JmzyKAGS2js9R2mTcvyyc0eU#SpecialElite
+http://themes.googleusercontent.com/font?kit=D7AHdI04SWFitvSDiAIeWQ#Nosifer
+http://themes.googleusercontent.com/static/fonts/nosifer/v2/7n0ZFTD4V11-kkhjuR2UIwLUuEpTyoUstqEm5AMlJo4.woff
+http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff</code></pre>
+</section>
+</section>
+<section class="level3" id="do-this-1">
+<h3>Do This</h3>
+<p>We're going to configure our own web fonts. We've put the fonts you need in <a href="../missions/06-appcache/fonts"><code>rucksack/missions/06-appcache/fonts</code></a>.</p>
+<ol type="1">
+<li>Edit <a href="../missions/06-appcache/styles.css"><code>rucksack/missions/06-appcache/styles.css</code></a>. Add the <code>@font-face</code> rules to the top of the stylesheet.</li>
+<li>Edit the <code>manifest.appcache</code> file. Add the URLs for the fonts we are now serving ourselves.</li>
+<li>Remove the Google Fonts stylesheet <code>&lt;link&gt;</code> tag from <code>index.html</code>.</li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-web-fonts">
+<h3>Snippet Reference: Web Fonts</h3>
+<section class="level4" id="styles.css">
+<h4>styles.css</h4>
+<p>Add the following to the very top of the <code>styles.css</code> file:</p>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="co">/* Generated by Font Squirrel (http://www.fontsquirrel.com) on April 1, 2012 */</span>
+<span class="dv">@font-face</span> <span class="kw">{</span>
+    <span class="kw">font-family:</span> <span class="st">&#39;NosiferRegular&#39;</span><span class="kw">;</span>
+    <span class="kw">src:</span> <span class="dt">url(</span><span class="st">&#39;fonts/nosifer-webfont.eot&#39;</span><span class="dt">)</span><span class="kw">;</span>
+    <span class="kw">src:</span> <span class="dt">url(</span><span class="st">&#39;fonts/nosifer-webfont.eot?#iefix&#39;</span><span class="dt">)</span> <span class="dt">format(</span><span class="st">&#39;embedded-opentype&#39;</span><span class="dt">)</span>,
+         <span class="dt">url(</span><span class="st">&#39;fonts/nosifer-webfont.woff&#39;</span><span class="dt">)</span> <span class="dt">format(</span><span class="st">&#39;woff&#39;</span><span class="dt">)</span>,
+         <span class="dt">url(</span><span class="st">&#39;fonts/nosifer-webfont.ttf&#39;</span><span class="dt">)</span> <span class="dt">format(</span><span class="st">&#39;truetype&#39;</span><span class="dt">)</span>,
+         <span class="dt">url(</span><span class="st">&#39;fonts/nosifer-webfont.svg#NosiferRegular&#39;</span><span class="dt">)</span> <span class="dt">format(</span><span class="st">&#39;svg&#39;</span><span class="dt">)</span><span class="kw">;</span>
+    <span class="kw">font-weight:</span> <span class="dt">normal</span><span class="kw">;</span>
+    <span class="kw">font-style:</span> <span class="dt">normal</span><span class="kw">;</span>
+
+<span class="kw">}</span>
+<span class="dv">@font-face</span> <span class="kw">{</span>
+    <span class="kw">font-family:</span> <span class="st">&#39;SpecialEliteRegular&#39;</span><span class="kw">;</span>
+    <span class="kw">src:</span> <span class="dt">url(</span><span class="st">&#39;fonts/special-elite-webfont.eot&#39;</span><span class="dt">)</span><span class="kw">;</span>
+    <span class="kw">src:</span> <span class="dt">url(</span><span class="st">&#39;fonts/special-elite-webfont.eot?#iefix&#39;</span><span class="dt">)</span> <span class="dt">format(</span><span class="st">&#39;embedded-opentype&#39;</span><span class="dt">)</span>,
+         <span class="dt">url(</span><span class="st">&#39;fonts/special-elite-webfont.woff&#39;</span><span class="dt">)</span> <span class="dt">format(</span><span class="st">&#39;woff&#39;</span><span class="dt">)</span>,
+         <span class="dt">url(</span><span class="st">&#39;fonts/special-elite-webfont.ttf&#39;</span><span class="dt">)</span> <span class="dt">format(</span><span class="st">&#39;truetype&#39;</span><span class="dt">)</span>,
+         <span class="dt">url(</span><span class="st">&#39;fonts/special-elite-webfont.svg#SpecialEliteRegular&#39;</span><span class="dt">)</span> <span class="dt">format(</span><span class="st">&#39;svg&#39;</span><span class="dt">)</span><span class="kw">;</span>
+    <span class="kw">font-weight:</span> <span class="dt">normal</span><span class="kw">;</span>
+    <span class="kw">font-style:</span> <span class="dt">normal</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+</section>
+<section class="level4" id="manifest.appcache">
+<h4>manifest.appcache</h4>
+<p>Add these to the bottom of the <code>CACHE</code> section in the <code>manifest.appcache</code>:</p>
+<pre><code>fonts/nosifer-webfont.eot
+fonts/nosifer-webfont.svg
+fonts/nosifer-webfont.ttf
+fonts/nosifer-webfont.woff
+fonts/special-elite-webfont.eot
+fonts/special-elite-webfont.svg
+fonts/special-elite-webfont.ttf
+fonts/special-elite-webfont.woff</code></pre>
+</section>
+<section class="level4" id="remove-google-fonts-link">
+<h4>Remove Google Fonts <code>&lt;link&gt;</code></h4>
+<p>Remove this line from <code>index.html</code>:</p>
+<pre><code>&lt;link href=&quot;http://fonts.googleapis.com/css?family=Nosifer|Special+Elite&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
+</section>
+</section>
+</section>
+<section class="level2" id="step-3-focus-on-geolocation">
+<h2>Step 3: Focus on Geolocation!</h2>
+<section class="level4" id="quick-details">
+<h4>Quick Details</h4>
+<p>Browsers that implement the W3C geolocation spec expose the <code>navigator.geolocation</code> object and its methods to the browser.</p>
+</section>
+<section class="level3" id="reference-using-the-w3c-geolocation-api">
+<h3>Reference: Using the W3C Geolocation API</h3>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(successCallback, errorCallback);
+
+<span class="kw">function</span> successCallback(position) {
+  <span class="co">// Latitude and Longitude are often what you&#39;re after.</span>
+  <span class="co">// They&#39;re properties of the coords object on position.</span>
+  alert(<span class="kw">position.coords</span>.<span class="fu">latitude</span> + <span class="ch">&#39;, &#39;</span> + <span class="kw">position.coords</span>.<span class="fu">longitude</span>);
+}
+<span class="kw">function</span> errorCallback(error) {
+  <span class="co">// Do something or freak out.</span>
+}</code></pre>
+</section>
+<section class="level3" id="do-this-2">
+<h3>Do This</h3>
+<ol type="1">
+<li>Open the <a href="../missions/07-geolocation/index.html"><code>rucksack/missions/07-geolocation/index.html</code></a> file in your text editor.</li>
+<li>Call the <code>getCurrentPosition</code> method in supporting browsers.</li>
+<li>Define success callback and error callback functions.</li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-geolocation-javascript">
+<h3>Snippet Reference: Geolocation JavaScript</h3>
+<section class="level4" id="javascript">
+<h4>JavaScript</h4>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">if</span> (<span class="kw">navigator</span>.<span class="fu">geolocation</span>) {
+  <span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(onGeoSuccess, onGeoError);
+} <span class="kw">else</span> {
+  onGeoError(<span class="kw">new</span> Error(<span class="ch">&#39;Sorry, Geolocation not supported in this browser!&#39;</span>));
+}
+<span class="kw">function</span> onGeoSuccess(position) { <span class="co">// Our success callback</span>
+  <span class="kw">var</span> coordinates = <span class="kw">position</span>.<span class="fu">coords</span>;
+  alert(<span class="kw">coordinates</span>.<span class="fu">latitude</span> + <span class="st">&quot;, &quot;</span> + <span class="kw">coordinates</span>.<span class="fu">longitude</span>);
+}
+<span class="kw">function</span> onGeoError(error) { <span class="co">// Our error callback</span>
+  alert(<span class="kw">error</span>.<span class="fu">message</span>);
+}</code></pre>
+</section>
+</section>
+</section>
+<section class="level2" id="resources">
+<h2>Resources</h2>
+<section class="level3" id="applicationcache-1">
+<h3>ApplicationCache</h3>
+<ul>
+<li><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html">WHATWG ApplicationCache/Offline Spec</a></li>
+<li><a href="http://www.html5rocks.com/en/tutorials/appcache/beginner/">HTML5Rocks Tutorial on AppCache</a></li>
+<li>A handy site that lists a lot of the common gotchas can be found at <a href="http://appcachefacts.info/"><code class="url">http://appcachefacts.info/</code></a>.</li>
+<li>View current ApplicationCache information in Chrome by navigating to <code>chrome://appcache-internals</code>.</li>
+<li><a href="http://www.w3.org/community/fixing-appcache/">W3C Fixing ApplicationCache Community Group</a></li>
+</ul>
+</section>
+<section class="level3" id="a-bit-on-font-face">
+<h3>A bit on <code>@font-face</code></h3>
+<ul>
+<li><a href="http://sixrevisions.com/css/font-face-guide/">Essential Guide to @font-face</a> (A bit out of date, but decent)</li>
+<li>Paul Irish's <a href="http://paulirish.com/2009/bulletproof-font-face-implementation-syntax/">Bulletproof @font-face</a></li>
+<li><a href="http://www.fontsquirrel.com/fontface/generator">Font Squirrel</a></li>
+</ul>
+</section>
+<section class="level3" id="geolocation">
+<h3>Geolocation</h3>
+<ul>
+<li>The spec for the <a href="http://dev.w3.org/geo/api/spec-source.html">W3C Geolocation API spec</a> is relatively short and easy to understand (as specs go).</li>
+</ul>
+</section>
+</section>
+<section class="level2" id="done">
+<h2>Done</h2>
+<ul>
+<li>Trained up on the basics of ApplicationCache.</li>
+<li>Built a cache manifest for the Sigma Stronghold site.</li>
+<li>Worked around cache manifest hardships by hosting our web fonts and updating our CSS.</li>
+<li>Learned the basics of the Geolocation API.</li>
+<li>Built a quick sample page using the W3C Geolocation API.</li>
+</ul>
+</section>
+<section class="level2" id="the-result">
+<h2>The Result</h2>
+<ul>
+<li>The <a href="../victories/06-appcache">Sigma Stronghold website with an offline mode</a> via Application Cache.</li>
+<li>A test of the <a href="../victories/07-geolocation">W3C Geolocation</a> API.</li>
+</ul>
+</section>
+</section>
+</body>
+</html>

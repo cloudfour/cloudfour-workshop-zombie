@@ -203,14 +203,16 @@ TODO: Obstacle Course image
 
 ## Speaker notes
 
-Ask folks what's broken about this
+* Note the copy in field notes
 
-* It's Flash (Flash doesn't work on most mobile web browsers).
-* It creates a number of HTTP requests (more HTTP requests = worse performance).
-* It has janky inline CSS (difficult to style; messy code).
-* It's big, filesize-wise (again, performance).
-* It's URL parameters aren't escaped (causes code validation errors).
-* Since the end of the civilized world, it hasn't really worked.
+* Ask folks what's broken about this
+
+    * It's Flash (Flash doesn't work on most mobile web browsers).
+    * It creates a number of HTTP requests (more HTTP requests = worse performance).
+    * It has janky inline CSS (difficult to style; messy code).
+    * It's big, filesize-wise (again, performance).
+    * Its URL parameters aren't escaped (causes code validation errors).
+    * Since the end of the civilized world, it hasn't really worked.
 
 # Dingus Responds
 
@@ -543,7 +545,8 @@ We're dealing with an HTML5 document, but not taking advantage of all that HTML5
 
 ## Speaker Notes
 
-Pull up the old and new HTML side by side?
+* Pull up the old and new HTML side by side?
+* Note the notes in field notes, Hee.
 
 ### What we did for you
 

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Jason Grigsby and Lyza Danger Gardner">
+  <title>Field Notes | 08: Know thy Enemy</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="fieldnotes.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="fieldnotes.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<header>
+<h1 class="title">Field Notes | 08: Know thy Enemy</h1>
+<h2 class="author">Jason Grigsby and Lyza Danger Gardner</h2>
+</header>
+<hr>
+<section class="level1" id="know-thy-enemy">
+<h1>8. Know Thy Enemy</h1>
+<section class="level2" id="many-device-detection-database-options">
+<h2>Many device detection database options</h2>
+<ul>
+<li><a href="http://wurfl.sourceforge.net/">WURFL</a> (Wireless Universal Resource FiLe) by <a href="http://www.scientiamobile.com/">ScientiaMobile</a></li>
+<li><a href="http://deviceatlas.com/">DeviceAtlas</a> by <a href="http://mtld.mobi/">dotMobi</a></li>
+<li>[OpenDDR][openddr] / New Apache <a href="http://wiki.apache.org/incubator/DeviceMapProposal">DeviceMap</a> Project</li>
+<li><a href="http://51degrees.mobi/Products/DeviceData.aspx">51degrees</a></li>
+</ul>
+</section>
+<section class="level2" id="some-sample-user-agent-strings">
+<h2>Some sample User Agent strings</h2>
+<pre><code>
+Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5
+
+Mozilla/5.0 (Linux; U; Android 2.2.1; en-us; DROIDX Build/VZW) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 480X854 motorola DROIDX
+
+Mozilla/5.0 (webOS/1.4.5; U; en-US) AppleWebKit/532.2 (KHTML, like Gecko) Version/1.0 Safari/532.2 Pre/1.0
+
+Mozilla/5.0 (Linux; U; Android 2.3.3; en-us; Nexus S Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1
+
+Mozilla/5.0 (PlayBook; U; RIM Tablet OS 1.0.0; en-US) AppleWebKit/534.8+ (KHTML, like Gecko) Version/0.0.1 Safari/534.8+
+
+PantechP2020/JIUS05172010R; Mozilla/5.0 (Profile/MIDP-2.0 Configuration/CLDC-1.1; Opera Mini/att/4.2.19039; U; en-US) Opera 9.50
+
+BlackBerry8330/4.5.0.77 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/105
+
+BlackBerry9300/5.0.0.794 Profile/MIDP-2.1 Configuration/CLDC-1.1 VendorID/245
+
+Mozilla/5.0 (Linux; U; Android 2.1-update1; en-us; SAMSUNG-SGH-I897/I897UCJH7 Build/ECLAIR) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17
+
+facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)</code></pre>
+</section>
+<section class="level2" id="do-this-sniffing-em-out">
+<h2><em>Do This</em>: Sniffing 'em out</h2>
+<ol type="1">
+<li>Go to the <a href="http://www.tera-wurfl.com/explore/">ScientiaMobile WURFL Explorer</a> on your mobile phone</li>
+<li>Check out the various attributes. What do you see that would be useful?</li>
+<li>Can you find the screen resolution of your phone?</li>
+<li>Go to the <a href="http://www.tera-wurfl.com/explore/">ScientiaMobile WURFL Explorer</a> on your laptop</li>
+<li>Try some other mobile user agents from your rucksack for comparison</li>
+</ol>
+</section>
+<section class="level2" id="wurfl-code-snipp-lets">
+<h2>WURFL code snipp-lets</h2>
+<pre class="sourceCode php"><code class="sourceCode php"><span class="kw">&lt;?php</span>
+<span class="co">// This assumes the WURFL library is installed and</span>
+<span class="co">// a $device object has been initialized.</span>
+<span class="kw">$value</span> = <span class="kw">$device</span>-&gt;getCapability<span class="ot">(</span><span class="st">&#39;is_wireless_device&#39;</span><span class="ot">);</span>
+<span class="kw">$value</span> = <span class="kw">$device</span>-&gt;getCapability<span class="ot">(</span><span class="st">&#39;cookie_support&#39;</span><span class="ot">);</span>
+<span class="kw">?&gt;</span></code></pre>
+<p>More documentation on WURFL available on its <a href="http://wurfl.sourceforge.net/">Sourceforge page</a>.</p>
+</section>
+</section>
+</body>
+</html>

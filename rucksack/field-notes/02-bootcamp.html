@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Jason Grigsby and Lyza Danger Gardner">
+  <title>Field Notes | 02: Boot Camp</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <link rel="stylesheet" href="fieldnotes.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="fieldnotes.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<header>
+<h1 class="title">Field Notes | 02: Boot Camp</h1>
+<h2 class="author">Jason Grigsby and Lyza Danger Gardner</h2>
+</header>
+<section class="level1" id="boot-camp-performance-and-semantic-clarity">
+<h1>2. Boot Camp: Performance and Semantic Clarity</h1>
+<section class="level2" id="level-up">
+<h2>Level Up</h2>
+<p>Learn how to analyze front-end performance, fix common gotchas and tweak server-side settings to speed up sites for all users, mobile included. Use semantic markup to be ready for the future. Get ready to face the zombies.</p>
+<section class="level3" id="mission">
+<h3>Mission</h3>
+<p>Help Sergeant Dingus and Private Pyle make improvements to the Sigma Stronghold website to make it ready for the mobile/zombie web.</p>
+</section>
+</section>
+<section class="level2" id="step-0-getting-the-current-picture">
+<h2>Step 0: Getting the current picture</h2>
+<p>By using the <em>ySlow</em> browser extension, we can see that the Sigma Stronghold website is over half a megabyte in size. We've identified some invalid code, as well. Our goal: smaller, better faster.</p>
+<section class="level3" id="tools">
+<h3>Tools</h3>
+<ul>
+<li><a href="http://developer.yahoo.com/yslow/">ySlow</a></li>
+<li><a href="http://validator.w3.org/" title="W3C Validator">W3C validator</a></li>
+</ul>
+</section>
+<section class="level3" id="do-this">
+<h3>Do This</h3>
+<ol type="1">
+<li><a href="../missions/01-bootcamp-performance/">View the current Sigma Stronghold web site</a> in a browser.</li>
+</ol>
+</section>
+<section class="level3" id="extra-credit">
+<h3>Extra Credit</h3>
+<ul>
+<li>If you have the ySlow extension installed, you can run it yourself.</li>
+<li>Run the HTML code in <a href="../missions/01-bootcamp-performance/index.html">index.html</a> through the W3C validator.</li>
+</ul>
+</section>
+</section>
+<section class="level2" id="step-1-fixing-whats-broken-and-removing-unused-or-unneeded-elements">
+<h2>Step 1: Fixing what's broken and removing unused or unneeded elements</h2>
+<p>Mobile browsers and devices have less tolerance for broken code, and size really, really matters. We have to write clean markup and pay attention to <em>why</em> we're dropping stuff onto our web pages.</p>
+<section class="level3" id="snippet-reference-weather">
+<h3>Snippet Reference: Weather</h3>
+<section class="level4" id="weather-widget">
+<h4>Weather widget</h4>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;weather&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> style=</span><span class="st">&#39;width: 240px; height: 420px; </span>
+<span class="st">   background-image: url( http://vortex.accuweather.com/adcbin/netweather_v2/backgrounds/black_240x420_bg.jpg );</span>
+<span class="st">   background-repeat: no-repeat; background-color: #000000;&#39;</span> <span class="kw">&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&#39;NetweatherContainer&#39;</span><span class="ot"> style=</span><span class="st">&#39;height: 405px;&#39;</span> <span class="kw">&gt;</span>
+  <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&#39;http://netweather.accuweather.com/adcbin/netweather_v2/netweatherV2ex.asp?</span>
+<span class="st">    partner=netweather</span><span class="er">&amp;</span><span class="st">tStyle=whteYell</span><span class="er">&amp;</span><span class="st">logo=1</span><span class="er">&amp;</span><span class="st">zipcode=10001</span><span class="er">&amp;</span><span class="st">lang=eng</span><span class="er">&amp;</span><span class="st">size=12</span><span class="er">&amp;</span><span class="st">theme=black</span><span class="er">&amp;</span><span class="st">metric=0</span><span class="er">&amp;</span><span class="st">target=_self&#39;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;/script&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> style=</span><span class="st">&#39;text-align:center; font-family:arial, helvetica, verdana, sans-serif; font-size:10px; line-height:15px; color:#FFFFFF;&#39;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;a</span><span class="ot"> style=</span><span class="st">&#39;font-size: 10px; color: #FFFFFF&#39;</span> 
+<span class="ot">    href=</span><span class="st">&#39;http://www.accuweather.com/us/ny/new-york/10001/city-weather-forecast.asp?partner=accuweather&#39;</span> <span class="kw">&gt;</span>
+    Weather Forecast<span class="kw">&lt;/a&gt;</span> | <span class="kw">&lt;a</span><span class="ot"> style=</span><span class="st">&#39;color: #FFFFFF&#39;</span><span class="ot"> href=</span><span class="st">&#39;http://www.accuweather.com/maps-satellite.asp&#39;</span> <span class="kw">&gt;</span>Weather Maps<span class="kw">&lt;/a&gt;</span> | 
+  <span class="kw">&lt;a</span><span class="ot"> style=</span><span class="st">&#39;color: #FFFFFF&#39;</span><span class="ot"> href=</span><span class="st">&#39;http://www.accuweather.com/index-radar.asp?partner=accuweather</span><span class="er">&amp;</span><span class="st">zipcode=10001&#39;</span> <span class="kw">&gt;</span>Weather Radar<span class="kw">&lt;/a&gt;</span>
+  <span class="kw">&lt;/div&gt;&lt;/div&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;/div&gt;</span></code></pre>
+<section class="level5" id="index.html">
+<h5>index.html</h5>
+</section>
+</section>
+</section>
+<section class="level3" id="snippet-reference-concatenate-link-tags">
+<h3>Snippet Reference: Concatenate <code>&lt;link&gt;</code> tags</h3>
+<section class="level4" id="css-link-tag-optimization">
+<h4>CSS link tag optimization</h4>
+</section>
+<section class="level4" id="reduce-this">
+<h4>Reduce this:</h4>
+<pre class="sourceCode html"><code class="sourceCode html">  <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Nosifer&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Butcherman&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Creepster&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Special+Elite&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span></code></pre>
+</section>
+<section class="level4" id="to-this">
+<h4>To this:</h4>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Nosifer|Special+Elite&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span></code></pre>
+<section class="level5" id="index.html-1">
+<h5>index.html</h5>
+</section>
+</section>
+</section>
+<section class="level3" id="snippet-reference-fixing-404s">
+<h3>Snippet Reference: Fixing 404s</h3>
+<section class="level4" id="fixing-stylesheet">
+<h4>Fixing stylesheet</h4>
+<section class="level5" id="instead-of">
+<h5>Instead of</h5>
+<pre class="sourceCode css"><code class="sourceCode css">h2 <span class="kw">{</span>
+  <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span>
+  <span class="kw">font-size:</span> <span class="dt">1.25em</span><span class="kw">;</span>
+  <span class="kw">background:</span> <span class="dt">url(</span>images/blip<span class="dt">.</span>jpg<span class="dt">)</span> <span class="dt">no-repeat</span> <span class="dt">0</span> <span class="dt">2px</span><span class="kw">;</span>
+  <span class="kw">padding-left:</span> <span class="dt">25px</span><span class="kw">;</span>
+  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">0</span> <span class="dt">.25em</span> <span class="dt">0</span><span class="kw">;</span> 
+<span class="kw">}</span></code></pre>
+</section>
+<section class="level5" id="use">
+<h5>Use</h5>
+<pre class="sourceCode css"><code class="sourceCode css">h2 <span class="kw">{</span>
+  <span class="kw">line-height:</span> <span class="dt">1.25em</span><span class="kw">;</span>
+  <span class="kw">font-size:</span> <span class="dt">1.25em</span><span class="kw">;</span>
+  <span class="kw">background:</span> <span class="dt">url(</span>images/blip<span class="dt">.</span>png<span class="dt">)</span> <span class="dt">no-repeat</span> <span class="dt">0</span> <span class="dt">2px</span><span class="kw">;</span>
+  <span class="kw">padding-left:</span> <span class="dt">25px</span><span class="kw">;</span>
+  <span class="kw">margin:</span> <span class="dt">0</span> <span class="dt">0</span> <span class="dt">.25em</span> <span class="dt">0</span><span class="kw">;</span> 
+<span class="kw">}</span></code></pre>
+</section>
+</section>
+</section>
+</section>
+<section class="level2" id="step-2-image-optimization">
+<h2>Step 2: Image optimization</h2>
+<p>Remember the 90s, when we optimized our GIF color palettes and made sure our images were small? It's back. Don't forget about those core tenets of image optimization!</p>
+<section class="level3" id="tools-1">
+<h3>Tools</h3>
+<ul>
+<li><a href="http://smush.it">Smush.it</a></li>
+</ul>
+</section>
+</section>
+<section class="level2" id="step-3-server-side-shenanigans">
+<h2>Step 3: Server-side shenanigans</h2>
+<p>For front-end devs, the idea of futzing about on the server can sometimes feel onerous. For many, many sites hosted using the Apache web server, it really is as easy as editing an <strong><code>.htaccess</code></strong> file.</p>
+<section class="level3" id="snippet-reference-.htaccess">
+<h3>Snippet Reference: .htaccess</h3>
+<section class="level4" id="a-sample-.htaccess-file.">
+<h4>A sample .htaccess file.</h4>
+<pre><code>    # Turn on and configure GZIP compression
+    &lt;IfModule mod_deflate.c&gt;
+     SetOutputFilter DEFLATE
+     # Don’t compress
+     SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
+     SetEnvIfNoCase Request_URI \.(?:exe|t?gz|zip|bz2|sit|rar)$ no-gzip dont-vary
+     #Dealing with proxy servers
+     &lt;IfModule mod_headers.c&gt;
+     Header append Vary User-Agent
+     &lt;/IfModule&gt;
+    &lt;/IfModule&gt;
+
+    # Use mod_expires to set future expirations on resources
+    &lt;IfModule mod_expires.c&gt;
+    ExpiresActive On
+    ExpiresByType text/html &quot;access plus 1 seconds&quot;
+    ExpiresByType image/gif &quot;access plus 2 years&quot;
+    ExpiresByType image/jpeg &quot;access plus 2 years&quot;
+    ExpiresByType image/png &quot;access plus 2 years&quot;
+    ExpiresByType text/css &quot;access plus 2 years&quot;
+    ExpiresByType text/javascript &quot;access plus 2 years&quot;
+    ExpiresByType application/x-javascript &quot;access plus 2 years&quot;
+    ExpiresByType image/x-icon &quot;access plus 2 years&quot;
+    &lt;/IfModule&gt;
+
+    # Turn off ETags
+    FileETag none</code></pre>
+</section>
+</section>
+</section>
+<section class="level2" id="getting-all-semantic-up-in-here">
+<h2>Getting all semantic up in here</h2>
+<p>Fighting the good fight of truly separating content from presentation.</p>
+<section class="level3" id="some-details">
+<h3>Some Details</h3>
+<section class="level4" id="some-of-the-things-improved-in-the-sigma-stronghold-markup">
+<h4>Some of the things improved in the Sigma Stronghold markup:</h4>
+<ul>
+<li><code>div#navigation</code> changed to <code>&lt;nav&gt;</code> element.</li>
+<li><code>#page</code> id removed from <code>&lt;div&gt;</code>; used parent-child selector instead.</li>
+<li>Convert <code>#footer</code> to <code>&lt;footer&gt;</code> element.</li>
+<li>Reduce structural complexity in news items: removed extra <code>&lt;div&gt;</code>s.</li>
+<li>Replaced <code>span.grey</code> with <code>&lt;small&gt;</code></li>
+<li><code>span.black</code> was pointless; no style for it. Also some other useless spans in the news divs.</li>
+<li>Instead of <code>.red</code>, used an <code>&lt;em&gt;</code> element, which carries semantic meaning.</li>
+<li>Removed extra internal <code>&lt;div&gt;</code>s from sidebar.</li>
+<li><code>#left</code> and <code>#right</code> renamed to <code>#main</code> and <code>#sidebar</code>, respectively</li>
+</ul>
+</section>
+<section class="level4" id="taking-it-further...">
+<h4>Taking it further...</h4>
+<p>We didn't do these things but they might be cool, too:</p>
+<ul>
+<li>Address could be hCard</li>
+<li><code>&lt;article&gt;</code> element instead of <code>&lt;div&gt;</code> for news items.</li>
+<li><code>&lt;section&gt;</code> element instead of other <code>&lt;div&gt;</code>s.</li>
+</ul>
+</section>
+</section>
+</section>
+<section class="level2" id="resources">
+<h2>Resources</h2>
+<ul>
+<li><p>Developer Tools</p>
+<ul>
+<li><a href="http://developer.yahoo.com/yslow/">ySlow</a></li>
+<li><a href="http://validator.w3.org/" title="W3C Validator">W3C validator</a></li>
+<li><a href="http://smush.it">Smush.it</a></li>
+<li><a href="http://spriteme.org/">SpriteMe</a> for creating CSS sprites. By combining multiple CSS images into individual sprites, you both reduce overall image file size (usually) and reduce the number of HTTP requests (definitely).</li>
+<li><a href="http://www.refresh-sf.com/yui/">Online YUI Compressor</a> Handy tool to help compress and minify CSS and JavaScript.</li>
+<li><a href="http://www.techiepark.com/tutorials/how-to-enable-gzip-compression-in-apache-server-to-speed-up-website/">More information about enabling GZIP on apache</a></li>
+</ul></li>
+<li><p>HTML5 and Semantics</p>
+<ul>
+<li><a href="http://oli.jp/2009/html5-structure4/">HTML5 structure—HTML 4 and XHTML 1 to HTML5</a></li>
+<li><a href="http://www.alistapart.com/articles/semanticsinhtml5/"><em>A List Apart</em>: Semantics in HTML5 (John Allsop)</a></li>
+<li><a href="http://diveintohtml5.info/semantics.html">Dive into HTML5: Semantics</a></li>
+</ul></li>
+<li><p>Code resources</p>
+<ul>
+<li><a href="../survival-tools/.htaccess.example">Sample .htaccess file</a>.</li>
+<li><a href="../missions/01-bootcamp-performance">Starting point of Sigma Stronghold Web site</a></li>
+<li><a href="../victories/01-bootcamp-performance">Sigma Stronghold Web site now TBD TODO</a></li>
+</ul></li>
+</ul>
+</section>
+<section class="level2" id="done-and-learned-level-up">
+<h2>Done and learned: Level Up!</h2>
+<ul>
+<li>Analyzed performance and validated code using <em>ySlow</em> and the <em>W3C Validator</em>.</li>
+<li>Reviewed and considered content for its usefulness and performance impacts.</li>
+<li>Optimized images and reduced overall payload.</li>
+<li>Reduced div-itis and clutter; improved markup to be more semantic and future friendly.</li>
+<li>Learned about performance gotchas that are especially important for mobile.</li>
+</ul>
+</section>
+<section class="level2" id="the-result">
+<h2>The Result</h2>
+<p>See the performance-optimized <a href="../victories/01-bootcamp-performance">Sigma Stronghold website</a>.</p>
+<hr>
+</section>
+</section>
+</body>
+</html>

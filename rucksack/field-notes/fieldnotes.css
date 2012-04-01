@@ -33,17 +33,24 @@ body {
   line-height: 1.5em;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ropa Sans';
+}
+
 h1, h2 {
   margin: 0;
   padding: .5em;
+  letter-spacing: -0.05em;
 }
 
 h1 {
-  color: #555555;
+  color: #e43d3d;
+  text-shadow: 1px 1px 0px #555555;
   font-size: 2.25em;
 }
 
 h2 {
+  font-style: italic;
   color: #555555;
   border-width: 0 0 1px 0;
   border-style: dashed;
@@ -52,6 +59,10 @@ h2 {
 
 h2 a {
   color: #555555;
+}
+
+h5 {
+  margin: 0.25em 0;
 }
 
 a, a:visited {
@@ -67,13 +78,18 @@ hr {
 }
 
 pre, code {
-  border-width: 1px;
-  border-style: dashed;
-  border-color: #e43d3d;
+  background-color: #fdfbd7;
   font-family: "Anonymous Pro", monospace;
   font-size: .95em;
   padding: .15em .35em;
   margin: 0 .25em;
+  color: #484848;
+}
+
+pre {
+  border-width: 1px;
+  border-style: dotted;
+  border-color: #555555;
 }
 
 pre {
@@ -92,18 +108,15 @@ body > section.level1 {
   box-shadow: 0 7px 10px 5px #ccc;
   border: 1px solid #555555;
   border-radius: 1em;
-  margin: 1em .5em 2em .5em;
+  margin: 1em .5em 4em .5em;
 }
 
 body > section > section {
   background-color: #fffeee;
-  zoom: 1;
 }
-body > section > section:after {
-  content: ' ';
-  display: block;
-  height: 0;
-  clear: both;
+
+section.level2 {
+  margin-bottom: .5em;
 }
 
 section[id^="instead"] {
@@ -135,7 +148,7 @@ section[id^="use"]:after {
   clear: both;
 }
 
-section[id^="mission"] {
+section[id^="level-up"] {
   float: right;
   width: 30%;
   margin: 0 1%;
@@ -145,25 +158,88 @@ section[id^="mission"] {
   color: #3b3b3b;
   text-shadow: 1px 1px 0px #fff;
 }
-section[id^="mission"] p {
+section[id^="level-up"] p {
   text-transform: uppercase;
 }
-section[id^="mission"] h2, section[id^="mission"] h3 {
+section[id^="level-up"] h2, section[id^="level-up"] h3 {
+  font-style: normal;
+  font-family: "Special Elite", serif;
   border-bottom: none;
   padding: .5em 0 0 0;
   text-align: center;
   text-transform: uppercase;
   color: #555555;
 }
-section[id^="mission"] h2:before, section[id^="mission"] h3:before {
+section[id^="level-up"] h2:before, section[id^="level-up"] h3:before {
   content: "****";
   font-size: .75em;
   padding-right: .5em;
 }
-section[id^="mission"] h2:after, section[id^="mission"] h3:after {
+section[id^="level-up"] h2:after, section[id^="level-up"] h3:after {
   content: "****";
   font-size: .75em;
   padding-left: .5em;
+}
+section[id^="level-up"] h3 {
+  color: #e43d3d;
+}
+
+section[id^="step"] > h2 {
+  margin-left: -1.5em;
+  background-color: #6e6e6e;
+  color: #fffeee;
+  border-bottom: none;
+  text-shadow: 1px 1px 0px #555555;
+}
+section[id^="step"] > section {
+  margin-left: 1.5em;
+}
+section[id^="step"] ol {
+  counter-reset: listnumbering;
+  list-style: none outside none;
+}
+section[id^="step"] ol li {
+  margin: 2em 0;
+}
+section[id^="step"] ol li:before {
+  font-size: 1.5em;
+  color: #555555;
+  content: "" counter(listnumbering, decimal);
+  counter-increment: listnumbering;
+  float: left;
+  width: 1.5em;
+  height: 1.5em;
+  margin: -0.35em 0.5em 0 -1em;
+  line-height: 1.75em;
+  border-radius: 3em;
+  text-align: center;
+  background-color: #fffeee;
+  border: 1px dashed #555555;
+}
+
+section[id^="resources"] h2 {
+  border-left: 8px solid #e43d3d;
+  border-color: #e43d3d;
+}
+
+section[id^="do-this"] > h3:before, section[id^="do-this"] > h4:before {
+  font-size: 2em;
+  color: #e43d3d;
+}
+
+section[id^="snippet"] {
+  clear: both;
+  padding: 0em 1em;
+  zoom: 1;
+  border-radius: 1em;
+  border: 1px dotted #555555;
+  margin: .5em;
+}
+section[id^="snippet"]:after {
+  content: ' ';
+  display: block;
+  height: 0;
+  clear: both;
 }
 
 nav#TOC ul > li > ul > li > ul {
@@ -180,4 +256,21 @@ section[id^="done"] ul li:before {
   font-size: 2em;
   margin-left: -1em;
   padding-right: .5em;
+}
+
+.snippet h2, .snippet h3 {
+  color: #e43d3d;
+  cursor: pointer;
+}
+
+.snippet h3:before {
+  content: "\25B8";
+  font-size: 1.5em;
+  margin-right: .5em;
+  width: 2em;
+  color: #555555;
+}
+
+.snippet.open h3:before {
+  content: "\25BE";
 }

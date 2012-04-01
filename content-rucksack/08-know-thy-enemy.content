@@ -1,0 +1,69 @@
+% Field Notes | 08: Know thy Enemy
+% Jason Grigsby and Lyza Danger Gardner
+
+-------------------------
+# 8. Know Thy Enemy
+
+## Many device detection database options
+
+* [WURFL][wurfl] (Wireless Universal Resource FiLe) by [ScientiaMobile][scientiamobile]
+* [DeviceAtlas][deviceatlas] by [dotMobi][dotmobi]
+* [OpenDDR][openddr] / New Apache [DeviceMap][devicemap] Project
+* [51degrees][51]
+
+## Some sample User Agent strings
+
+~~~
+
+Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5
+
+Mozilla/5.0 (Linux; U; Android 2.2.1; en-us; DROIDX Build/VZW) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 480X854 motorola DROIDX
+
+Mozilla/5.0 (webOS/1.4.5; U; en-US) AppleWebKit/532.2 (KHTML, like Gecko) Version/1.0 Safari/532.2 Pre/1.0
+
+Mozilla/5.0 (Linux; U; Android 2.3.3; en-us; Nexus S Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1
+
+Mozilla/5.0 (PlayBook; U; RIM Tablet OS 1.0.0; en-US) AppleWebKit/534.8+ (KHTML, like Gecko) Version/0.0.1 Safari/534.8+
+
+PantechP2020/JIUS05172010R; Mozilla/5.0 (Profile/MIDP-2.0 Configuration/CLDC-1.1; Opera Mini/att/4.2.19039; U; en-US) Opera 9.50
+
+BlackBerry8330/4.5.0.77 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/105
+
+BlackBerry9300/5.0.0.794 Profile/MIDP-2.1 Configuration/CLDC-1.1 VendorID/245
+
+Mozilla/5.0 (Linux; U; Android 2.1-update1; en-us; SAMSUNG-SGH-I897/I897UCJH7 Build/ECLAIR) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17
+
+facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
+~~~
+
+## *Do This*: Sniffing 'em out
+
+1. Go to the [ScientiaMobile WURFL Explorer][explorer] on your mobile phone
+2. Check out the various attributes. What do you see that would be useful?
+3. Can you find the screen resolution of your phone?
+4. Go to the [ScientiaMobile WURFL Explorer][explorer] on your laptop
+5. Try some other mobile user agents from your rucksack for comparison
+
+## WURFL code snipp-lets
+
+~~~ {.php}
+<?php
+// This assumes the WURFL library is installed and
+// a $device object has been initialized.
+$value = $device->getCapability('is_wireless_device');
+$value = $device->getCapability('cookie_support');
+?>
+~~~
+
+More documentation on WURFL available on its [Sourceforge page][wurfl].
+
+
+[zombie-types]: http://uncyclopedia.wikia.com/wiki/Zombie_Types
+[wurfl]: http://wurfl.sourceforge.net/
+[scientiamobile]: http://www.scientiamobile.com/
+[deviceatlas]: http://deviceatlas.com/
+[dotmobi]: http://mtld.mobi/
+[51]: http://51degrees.mobi/Products/DeviceData.aspx
+[devicemap]: http://wiki.apache.org/incubator/DeviceMapProposal
+[explorer]: http://www.tera-wurfl.com/explore/
+[ress]: http://www.lukew.com/ff/entry.asp?1392

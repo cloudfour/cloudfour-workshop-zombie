@@ -68,30 +68,38 @@ a, a:visited {
   color: #e43d3d !important;
 }
 
+em {
+  border-bottom: 1px dashed #e43d3d;
+}
+
 code, pre {
   font-family: "Anonymous Pro", monospace;
+}
+
+pre code, pre {
+  background-color: #1a1a1a;
 }
 
 code {
   padding: .15em;
   margin: 0 .15em;
   font-family: "Anonymous Pro", monospace;
-  border: 1px dashed #e43d3d;
   white-space: nowrap;
   overflow: scroll;
+  background-color: #1f1f1f;
 }
 
 pre {
   overflow: scroll;
   border-width: 1px;
   border: 1px solid #e43d3d;
-  color: black;
 }
 
 pre code {
   border-width: 0px;
   font-size: .75em;
   white-space: pre;
+  color: #fff;
 }
 
 blockquote {
@@ -173,10 +181,15 @@ div.slide div[id^="code"] pre {
 div.slide div[id^="instead"] {
   float: left;
   width: 45%;
+  clear: left;
 }
 div.slide div[id^="use"] {
   float: right;
   width: 45%;
+  clear: right;
+}
+div.slide div[id^="use"] + div, div.slide div[id^="use"] > div {
+  clear: both;
 }
 
 div.toolbar {
@@ -185,4 +198,56 @@ div.toolbar {
   background-color: #fffeee;
   line-height: 1em;
   padding: .5em;
+}
+
+code > span.kw {
+  color: #fff;
+  font-weight: bold;
+}
+
+code > span.dt {
+  color: #fff;
+}
+
+code > span.dv {
+  color: #fff;
+}
+
+code > span.bn {
+  color: #fff;
+}
+
+code > span.fl {
+  color: #fff;
+}
+
+code > span.ch {
+  color: #fff;
+}
+
+code > span.st {
+  color: #fff;
+}
+
+code > span.co {
+  color: #fff;
+  font-style: italic;
+}
+
+code > span.ot {
+  color: #fff;
+}
+
+code > span.al {
+  color: #fff;
+  font-weight: bold;
+}
+
+code > span.fu {
+  color: #fff;
+}
+
+code > span.er {
+  color: #fff;
+  font-weight: bold;
 }
