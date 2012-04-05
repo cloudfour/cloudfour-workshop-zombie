@@ -102,13 +102,13 @@ sub build_survival {
     my $output          = $pack_path . "/field-notes/" . $base . ".html";
     my $needs_update    = 0;
     my $css             = "fieldnotes.css";
-    my $flags           = "--from=markdown --to=html5 --section-divs --standalone --include-in-header=$src_path/head-includes.txt --include-before-body=$src_path/body-includes.txt";
+    my $flags           = "--from=markdown --to=html5 --section-divs --standalone --include-in-header=$src_path/head-includes.txt";
+    if ($base !~ 'index') {
+      $flags = $flags . " --include-before-body=$src_path/body-includes.txt";
+    }
     if ($base =~ /00/) {
       $flags            = "--toc " . $flags;
     }
-    #if ($base =~ /field-notes/) {
-    #  $flags .= ' --toc';
-    #}
     if (&needs_update($_, $output)) {
       system("$pandoc $flags --css=$css $_ > $output"); 
       print "$_ updated --> $output \n";
