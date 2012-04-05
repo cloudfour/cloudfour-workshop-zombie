@@ -102,7 +102,7 @@ sub build_survival {
     my $output          = $pack_path . "/field-notes/" . $base . ".html";
     my $needs_update    = 0;
     my $css             = "fieldnotes.css";
-    my $flags           = "--from=markdown --to=html5 --section-divs --standalone --include-in-header=$src_path/head-includes.txt";
+    my $flags           = "--from=markdown --to=html5 --section-divs --standalone --include-in-header=$src_path/head-includes.txt --include-before-body=$src_path/body-includes.txt";
     if ($base =~ /00/) {
       $flags            = "--toc " . $flags;
     }

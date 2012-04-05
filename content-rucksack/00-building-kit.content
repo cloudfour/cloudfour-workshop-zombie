@@ -74,6 +74,8 @@ While most of what we'll look at can be viewed as files in a web browser, **some
 
 One of our workshop projects involves building a native mobile app using web technologies. We'll be creating an Android app that can be either viewed in an emulator in the Android SDK or can be installed on your Android device if you have one.
 
+Installing the Android SDK is highly optional.
+
 ### Important Notes
 
 The Android SDK takes a little while to install, like, long enough to go make a cup of coffee while it's doing its thing. **We also ask that you install the Android SDK BEFORE you come to the workshop, as bandwidth will be limited at the workshop, and, again, the process takes a little while. You're always welcome to simply follow along as we demo this, if you don't feel like installing the SDK.**
