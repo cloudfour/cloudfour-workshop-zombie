@@ -40,40 +40,18 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <hr>
 <section class="level1" id="know-thy-enemy">
 <h1>8. Know Thy Enemy</h1>
-<section class="level2" id="many-device-detection-database-options">
-<h2>Many device detection database options</h2>
-<ul>
-<li><a href="http://wurfl.sourceforge.net/">WURFL</a> (Wireless Universal Resource FiLe) by <a href="http://www.scientiamobile.com/">ScientiaMobile</a></li>
-<li><a href="http://deviceatlas.com/">DeviceAtlas</a> by <a href="http://mtld.mobi/">dotMobi</a></li>
-<li>[OpenDDR][openddr] / New Apache <a href="http://wiki.apache.org/incubator/DeviceMapProposal">DeviceMap</a> Project</li>
-<li><a href="http://51degrees.mobi/Products/DeviceData.aspx">51degrees</a></li>
-</ul>
+<section class="level2" id="level-up">
+<h2>Level Up</h2>
+<p>Learn to spy on and understand the activities and motives of our zombie-devices by using server- and client-side device detection.</p>
+<section class="level3" id="mission">
+<h3>Mission</h3>
+<p>Build some sample server- and client-side device detection and feature detection code to be ready to do some recon.</p>
 </section>
-<section class="level2" id="some-sample-user-agent-strings">
-<h2>Some sample User Agent strings</h2>
-<pre><code>
-Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5
-
-Mozilla/5.0 (Linux; U; Android 2.2.1; en-us; DROIDX Build/VZW) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 480X854 motorola DROIDX
-
-Mozilla/5.0 (webOS/1.4.5; U; en-US) AppleWebKit/532.2 (KHTML, like Gecko) Version/1.0 Safari/532.2 Pre/1.0
-
-Mozilla/5.0 (Linux; U; Android 2.3.3; en-us; Nexus S Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1
-
-Mozilla/5.0 (PlayBook; U; RIM Tablet OS 1.0.0; en-US) AppleWebKit/534.8+ (KHTML, like Gecko) Version/0.0.1 Safari/534.8+
-
-PantechP2020/JIUS05172010R; Mozilla/5.0 (Profile/MIDP-2.0 Configuration/CLDC-1.1; Opera Mini/att/4.2.19039; U; en-US) Opera 9.50
-
-BlackBerry8330/4.5.0.77 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/105
-
-BlackBerry9300/5.0.0.794 Profile/MIDP-2.1 Configuration/CLDC-1.1 VendorID/245
-
-Mozilla/5.0 (Linux; U; Android 2.1-update1; en-us; SAMSUNG-SGH-I897/I897UCJH7 Build/ECLAIR) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17
-
-facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)</code></pre>
 </section>
-<section class="level2" id="do-this-sniffing-em-out">
-<h2><em>Do This</em>: Sniffing 'em out</h2>
+<section class="level2" id="step-1-a-bit-of-recon">
+<h2>Step 1: A bit of Recon</h2>
+<section class="level3" id="do-this">
+<h3>Do This</h3>
 <ol type="1">
 <li>Go to the <a href="http://www.tera-wurfl.com/explore/">ScientiaMobile WURFL Explorer</a> on your mobile phone</li>
 <li>Check out the various attributes. What do you see that would be useful?</li>
@@ -82,15 +60,76 @@ facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)</code>
 <li>Try some other mobile user agents from your rucksack for comparison</li>
 </ol>
 </section>
-<section class="level2" id="wurfl-code-snipp-lets">
-<h2>WURFL code snipp-lets</h2>
-<pre class="sourceCode php"><code class="sourceCode php"><span class="kw">&lt;?php</span>
-<span class="co">// This assumes the WURFL library is installed and</span>
-<span class="co">// a $device object has been initialized.</span>
-<span class="kw">$value</span> = <span class="kw">$device</span>-&gt;getCapability<span class="ot">(</span><span class="st">&#39;is_wireless_device&#39;</span><span class="ot">);</span>
-<span class="kw">$value</span> = <span class="kw">$device</span>-&gt;getCapability<span class="ot">(</span><span class="st">&#39;cookie_support&#39;</span><span class="ot">);</span>
-<span class="kw">?&gt;</span></code></pre>
-<p>More documentation on WURFL available on its <a href="http://wurfl.sourceforge.net/">Sourceforge page</a>.</p>
+</section>
+<section class="level2" id="step-2-server-side-device-feature-detection-with-wurfl-cloud">
+<h2>Step 2: Server-side Device Feature Detection with WURFL Cloud</h2>
+<section class="level3" id="do-this-1">
+<h3>Do This</h3>
+<p>This example requires you to have a web server that can run PHP code. If you don't have that, go ahead and sit back and watch as we demo this...</p>
+<ol type="1">
+<li>If you have a <em>WURFL Cloud API Key</em>, open the file <a href="../missions/10-device-detection/zombie-detect.php"><code>rucksack/missions/10-device-detection/zombie-detect.php</code></a> in your text editor.
+<ol type="a">
+<li>Paste in your API Key in the indicated place near the top of the file to populate the <code>$api_key</code> variable and save the file.</li>
+</ol></li>
+<li>View the <a href="../missions/10-device-detection/"><code>rucksack/missions/10-device-detection/</code></a> landing page in your browser. You can do this even if you don't have an API key; you just won't get as much information on the page.</li>
+</ol>
+</section>
+</section>
+<section class="level2" id="step-3-client-side-feature-detection-with-modernizr">
+<h2>Step 3: Client-side Feature Detection with Modernizr</h2>
+<section class="level3" id="do-this-2">
+<h3>Do This</h3>
+<ol type="1">
+<li>Edit <code>index.php</code> in your text editor (it's in <code>rucksack/missions/10-device-detection</code>).</li>
+<li><p>Add a <code>&lt;script&gt;</code> tag to include <code>Modernizr-touch.js</code> near the top of the <code>&lt;head&gt;</code> element:</p>
+<p><code>&lt;script src=&quot;Modernizr-touch.js&quot;&gt;&lt;/script&gt;</code></p></li>
+</ol>
+</section>
+</section>
+<section class="level2" id="step-4-client-side-pixel-density-detection">
+<h2>Step 4: Client-side Pixel Density detection</h2>
+<section class="level3" id="do-this-3">
+<h3>Do This</h3>
+<ol type="1">
+<li>Add the snippet (below) to the <code>&lt;head&gt;</code> of <code>index.php</code>, <strong>after</strong> the inclusion of the jQuery library.</li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-pixel-density">
+<h3>Snippet Reference: Pixel density</h3>
+<section class="level4" id="index.php">
+<h4>index.php</h4>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">&lt;script&gt;
+  $(<span class="kw">document</span>).<span class="fu">ready</span>(<span class="kw">function</span>() {
+    <span class="kw">if</span> (<span class="kw">window</span>.<span class="fu">devicePixelRatio</span>) {
+      <span class="kw">var</span> $li = $(<span class="ch">&#39;&lt;li&gt;&lt;/li&gt;&#39;</span>).<span class="fu">html</span>(<span class="ch">&#39;Device Pixel Ratio: &#39;</span> + <span class="kw">window</span>.<span class="fu">devicePixelRatio</span>);
+      $(<span class="st">&quot;#javascript&quot;</span>).<span class="fu">next</span>(<span class="ch">&#39;ul&#39;</span>).<span class="fu">append</span>($li);
+    }
+  });
+&lt;/script&gt;</code></pre>
+</section>
+</section>
+</section>
+<section class="level2" id="resources">
+<h2>Resources</h2>
+<ul>
+<li><a href="wurfl.sourceforge.net">WURFL</a> (Wireless Universal Resource FiLe) by <a href="http://www.scientiamobile.com/">ScientiaMobile</a></li>
+<li><a href="http://www.scientiamobile.com/wurflCloud">WURFL Cloud Service</a></li>
+<li><a href="http://www.deviceatlas.com">DeviceAtlas</a> by <a href="http://mtld.mobi/">dotMobi</a></li>
+</ul>
+</section>
+<section class="level2" id="done-and-level-up">
+<h2>Done and Level Up!</h2>
+<ul>
+<li>Learned about server-side feature detection and device database options</li>
+<li>Explored some basic device capabilities with server-side detection</li>
+<li>Did some client feature detection using the Modernizr tool</li>
+<li>Did some client feature detection using our own JavaScript/jQuery</li>
+<li>Got a glimpse of inspection and debug possibilities using Adobe Shadow</li>
+</ul>
+</section>
+<section class="level2" id="the-final-result">
+<h2>The Final Result</h2>
+<p>As this example requires <em>your</em> API key to work, there is no final version except what you make!</p>
 </section>
 </section>
 </body>

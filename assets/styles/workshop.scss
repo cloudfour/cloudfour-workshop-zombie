@@ -112,6 +112,8 @@ div.slide {
     margin:               .5em;
   }
   img {
+    padding:            .5em;
+    border:             1px dashed $color-accent;
     max-width:            20%;
     margin:               0 1em;
   }
@@ -144,6 +146,7 @@ div.slide {
       max-width:          100%;
     }
     img {
+      border: none;
       max-width:          100%;
       max-height:         70%;
       float: none;
@@ -181,16 +184,17 @@ div.toolbar {
   line-height:          1em;
   padding:              .5em;
 }
+pre code.sourceCode { color: #fcf9f9; text-shadow: 1px 1px 1px #000; font-size: .85em; line-height: 1.75em; font-weight: 400;}
+code > span.kw { color: desaturate(#E43D3D, 20%); font-weight: 800; }
+code > span.dt, 
+code > span.dv, 
+code > span.bn, 
+code > span.fl,
+code > span.ch,
+code > span.st { color: #B8A3D8; }
 
-code > span.kw { color: #fff; font-weight: bold; } // element
-code > span.dt { color: #fff; }
-code > span.dv { color: #fff; }
-code > span.bn { color: #fff; }
-code > span.fl { color: #fff; }
-code > span.ch { color: #fff; }
-code > span.st { color: #fff; } // attr value
-code > span.co { color: #fff; font-style: italic; }
-code > span.ot { color: #fff; } // Attr
-code > span.al { color: #fff; font-weight: bold; }
-code > span.fu { color: #fff; }
-code > span.er { color: #fff; font-weight: bold; }
+code > span.co { color: invert(#60a0b0); font-style: italic; }
+code > span.ot { color: desaturate(#E43D3D, 20%); }
+code > span.al { color: invert(#ff0000); font-weight: bold; }
+code > span.fu { color: #F9D781;  }
+code > span.er { color: invert(#ff0000); font-weight: bold; }

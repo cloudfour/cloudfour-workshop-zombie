@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Jason Grigsby and Lyza Danger Gardner">
-  <title>Field Notes | 00: Building your battle kit</title>
+  <title>Field Notes | Orientation: Preparing for the Battle</title>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -15,49 +15,226 @@
 </head>
 <body>
 <header>
-<h1 class="title">Field Notes | 00: Building your battle kit</h1>
+<h1 class="title">Field Notes | Orientation: Preparing for the Battle</h1>
 <h2 class="author">Jason Grigsby and Lyza Danger Gardner</h2>
 </header>
+<nav id="TOC">
+<ul>
+<li><a href="#do-this-first-get-ready-for-your-workshop">Do This First: Get Ready for your workshop</a><ul>
+<li><a href="#level-up">Level Up</a><ul>
+<li><a href="#mission">Mission</a></li>
+</ul></li>
+<li><a href="#get-the-most-out-of-your-workshop">Get the most out of your workshop</a></li>
+</ul></li>
+<li><a href="#help-us-make-things-awesome-for-you">Help us make things awesome for you</a></li>
+<li><a href="#getting-your-environment-ready">Getting your Environment Ready</a><ul>
+<li><a href="#youll-need">You'll Need</a></li>
+</ul></li>
+<li><a href="#arming-your-weapons-tools-and-software-ftw">Arming Your Weapons: Tools and Software FTW</a><ul>
+<li><a href="#step-1-set-up-a-local-web-server">Step 1: Set up a Local Web Server</a><ul>
+<li><a href="#why">Why?</a></li>
+<li><a href="#how">How</a></li>
+<li><a href="#some-details-configuring-a-local-web-server">Some Details: Configuring a local web server</a><ul>
+<li><a href="#running-a-local-web-server">Running a local web server</a><ul>
+<li><a href="#examples-that-require-a-web-server">Examples that require a web server</a></li>
+</ul></li>
+<li><a href="#some-possible-ways-to-get-things-working">Some possible ways to get things working:</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#step-2-install-the-android-sdk">Step 2: Install the Android SDK</a><ul>
+<li><a href="#why-1">Why?</a></li>
+<li><a href="#important-notes">Important Notes</a></li>
+<li><a href="#some-details-how-to">Some Details: How To</a><ul>
+<li><a href="#installing-the-sdk">Installing the SDK</a></li>
+</ul></li>
+<li><a href="#resources">Resources</a></li>
+</ul></li>
+<li><a href="#step-3-sign-up-for-wurfl-cloud-on-scientiamobile-and-get-your-api-key">Step 3: Sign up for WURFL Cloud on ScientiaMobile and get your API key</a></li>
+<li><a href="#step-4-other-nice-to-have-weapons">Step 4: Other nice-to-have weapons</a></li>
+</ul></li>
+<li><a href="#what-to-expect-at-the-workshop">What to expect at the workshop</a></li>
+<li><a href="#about-your-rucksack">About your Rucksack</a><ul>
+<li><a href="#done-and-level-up">Done and Level Up!</a></li>
+</ul></li>
+<li><a href="#onward">Onward!</a></li>
+</ul>
+</nav>
 <hr>
-<section class="level1" id="building-your-battle-kit">
-<h1>0. Building your battle kit</h1>
-<section class="level2" id="weapons">
-<h2>Weapons</h2>
-<p>Arm yourself with these tools for our adventure today:</p>
+<section class="level1" id="do-this-first-get-ready-for-your-workshop">
+<h1><a href="#TOC">Do This First: Get Ready for your workshop</a></h1>
+<section class="level2" id="level-up">
+<h2><a href="#TOC">Level Up</a></h2>
+<p>Get your gear in order before arriving at zombie fighting prep school. Turn up looking sharp!</p>
+<section class="level3" id="mission">
+<h3><a href="#TOC">Mission</a></h3>
+<p>Configure your dev environment and install some tools we'll be using in the workshop.</p>
+</section>
+</section>
+<section class="level2" id="get-the-most-out-of-your-workshop">
+<h2><a href="#TOC">Get the most out of your workshop</a></h2>
+<p>First things first, Recruit! This introductory document will help you prepare and get the most out of your workshop: <em>The Zombie Apocalpyse of Device Preparedness 101</em>.</p>
+<p>All of the tasks on this page are voluntary, but each will help you get more out of the workshop!</p>
+</section>
+</section>
+<section class="level1" id="help-us-make-things-awesome-for-you">
+<h1><a href="#TOC">Help us make things awesome for you</a></h1>
+<p>Please take this <a href="http://www.surveymonkey.com/s/QXZCCC8">short survey</a>. It should only take you a moment, and will help us evaluate which topics we should cover more in depth during the workshop. Help us tailor the content to your needs!</p>
+</section>
+<section class="level1" id="getting-your-environment-ready">
+<h1><a href="#TOC">Getting your Environment Ready</a></h1>
+<p>Here are the most important things to have at your fingertips when you arrive for the workshop:</p>
+<section class="level3" id="youll-need">
+<h3><a href="#TOC">You'll Need</a></h3>
 <ol type="1">
-<li>A local web server (optional, but handy!) <a href="web-server.html">more info</a></li>
-<li>A good text editor</li>
-<li>A JavaScript/DOM debug tool (We recommend WebInspector in Chrome/Safari/Webkit browsers or FireBug in FireFox).</li>
+<li>A good <strong>text editor</strong> that you can use to edit HTML, CSS and JavaScript files.</li>
+<li>A nice, recent <strong>web browser</strong><sup><a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup>. Recommended: Chrome, FireFox or Safari.</li>
+<li>You'll receive your Zombie Rucksack files when you arrive at the workshop. Ideally, you'll want to put the contents of the <code>rucksack</code> folder where they can be <strong>served by a web server</strong>.</li>
+<li>If you have a mobile device or devices, do bring!</li>
 </ol>
 </section>
-<section class="level2" id="suit-up">
-<h2>Suit Up</h2>
-<p>TODO: Go install these things from the rucksack</p>
+</section>
+<section class="level1" id="arming-your-weapons-tools-and-software-ftw">
+<h1><a href="#TOC">Arming Your Weapons: Tools and Software FTW</a></h1>
+<section class="level2" id="step-1-set-up-a-local-web-server">
+<h2><a href="#TOC">Step 1: Set up a Local Web Server</a></h2>
+<section class="level3" id="why">
+<h3><a href="#TOC">Why?</a></h3>
+<p>A few of the examples in the workshop require a &quot;real&quot; web server to work correctly (versus opening/viewing the web pages involved as <code>file</code>s in your web browser).</p>
+</section>
+<section class="level3" id="how">
+<h3><a href="#TOC">How</a></h3>
+<p>We've jotted down a few notes about how to get a local web server set up. It's not too tricky!</p>
+</section>
+<section class="level3" id="some-details-configuring-a-local-web-server">
+<h3><a href="#TOC">Some Details: Configuring a local web server</a></h3>
+<section class="level4" id="running-a-local-web-server">
+<h4><a href="#TOC">Running a local web server</a></h4>
+<p>While most of what we'll look at can be viewed as files in a web browser, <strong>some of the examples in today's shenanigans require an actual web server</strong> to be running locally. <em>It is not a big deal</em> if you can't or don't want to set up a local web server; you can just follow along on the big screen.</p>
+<section class="level5" id="examples-that-require-a-web-server">
+<h5><a href="#TOC">Examples that require a web server</a></h5>
+<ol type="1">
+<li>Performance optimization using an <code>.htaccess</code> file (section 2: Boot Camp)</li>
+<li>Cache manifests/ApplicationCache (section 5: Honed Killing Machine)</li>
+<li>Geolocation (section 5, section 6: A Band of Brothers)
+<ol type="a">
+<li>You can still build the web app in section 6; it simply won't do geolocation</li>
+<li>Geolocation is not generally possible when viewing web pages as files (i.e. without a web server) in a browser for security reasons.</li>
+</ol></li>
+</ol>
+</section>
+</section>
+<section class="level4" id="some-possible-ways-to-get-things-working">
+<h4><a href="#TOC">Some possible ways to get things working:</a></h4>
+<ol type="1">
+<li>If you run OS X's default apache web server, you can move the contents of the zombie rucksack somewhere within the area (document root) served as web resources. This is typically in the <code>Sites</code> folder in your user's home directory (note that Web Sharing will need to be enabled in your system settings to get this to work).</li>
+<li>If you have a hosting provider, you could do your work there, if you choose.</li>
+<li>There is a <a href="http://www.garyrobinson.net/2004/03/one_line_python.html">one-line python script</a> for spinning up a web server.</li>
+<li>I use <a href="http://www.mamp.info">MAMP</a> on my Mac as a web server (comes with PHP and mysql). There's <a href="www.apachefriends.org/en/xampp.html">XAMPP</a> for Windows and Linux. These are pretty easy installs but might be more than you want to deal with right at this second.</li>
+</ol>
+</section>
+</section>
+</section>
+<section class="level2" id="step-2-install-the-android-sdk">
+<h2><a href="#TOC">Step 2: Install the Android SDK</a></h2>
+<section class="level3" id="why-1">
+<h3><a href="#TOC">Why?</a></h3>
+<p>One of our workshop projects involves building a native mobile app using web technologies. We'll be creating an Android app that can be either viewed in an emulator in the Android SDK or can be installed on your Android device if you have one.</p>
+</section>
+<section class="level3" id="important-notes">
+<h3><a href="#TOC">Important Notes</a></h3>
+<p>The Android SDK takes a little while to install, like, long enough to go make a cup of coffee while it's doing its thing. <strong>We also ask that you install the Android SDK BEFORE you come to the workshop, as bandwidth will be limited at the workshop, and, again, the process takes a little while. You're always welcome to simply follow along as we demo this, if you don't feel like installing the SDK.</strong></p>
+</section>
+<section class="level3" id="some-details-how-to">
+<h3><a href="#TOC">Some Details: How To</a></h3>
+<section class="level4" id="installing-the-sdk">
+<h4><a href="#TOC">Installing the SDK</a></h4>
+<ol type="1">
+<li>Launch and run the <a href="http://developer.android.com/sdk/index.html">SDK installer</a> appropriate for your platform (Mac/Windows/Linux).</li>
+<li>You'll need to install the following packages:
+<ol type="1">
+<li><code>tools</code></li>
+<li><code>platform-tools</code></li>
+</ol></li>
+<li>Install as many <code>platforms</code> as you like (Android versions). Keep in mind that 3.x platforms are tablet only. And we don't recommend trying to run the example we'll build on anything older than, say, 2.2 or so.</li>
+<li>Set up a few &quot;virtual devices&quot; (emulated devices) by using the <code>Tools -&gt; Manage AVDs...</code> menu command. Pro tip: do <em>not</em> select the <code>snapshot</code> option in any of your AVDs. Tends to get very crashy.</li>
+</ol>
+<p><em>Note</em>: You do <em>not</em> need to install Eclipse or the Eclipse plugin for what we are doing in the workshop.</p>
+</section>
+</section>
+<section class="level3" id="resources">
+<h3><a href="#TOC">Resources</a></h3>
 <ul>
-<li>ySlow</li>
-<li>Android SDK</li>
-<li>web server</li>
+<li><a href="http://developer.android.com/sdk/installing.html">SDK installation instructions</a> on developer.android.com.</li>
+<li>If you have <a href="http://bit.ly/hf-mw">our book</a>, there is an entire, in-depth appendix about installing the Android SDK in the particular way we'll be using it for the workshop.</li>
 </ul>
 </section>
-<section class="level2" id="launch">
-<h2>Launch</h2>
+</section>
+<section class="level2" id="step-3-sign-up-for-wurfl-cloud-on-scientiamobile-and-get-your-api-key">
+<h2><a href="#TOC">Step 3: Sign up for WURFL Cloud on ScientiaMobile and get your API key</a></h2>
+<ol type="1">
+<li>Go to <a href="https://www.scientiamobile.com/cloud/signup/free">WURFL Cloud signup on ScientiaMobile</a> and sign up for the free Cloud service.</li>
+<li>Go to the <code>My Account</code> link (top right of screen) and click into the account you just created.</li>
+<li>Click on the <code>capabilities</code> link. You get two capabilities with a free account. Activate the following and save:
+<ol type="1">
+<li><code>is_touchscreen</code></li>
+<li><code>has_cellular_radio</code></li>
+</ol></li>
+<li>Back on the main screen for the account you created (you should be able to click the <code>back to my account</code> link): click into the <code>API Keys</code> link.</li>
+<li>Copy your API key somewhere that you can access easily during the workshop.</li>
+</ol>
+</section>
+<section class="level2" id="step-4-other-nice-to-have-weapons">
+<h2><a href="#TOC">Step 4: Other nice-to-have weapons</a></h2>
 <ul>
-<li>Host the rucksack content in your web server</li>
+<li>The <a href="http://developer.yahoo.com/yslow/">ySlow browser tool</a></li>
+<li><a href="http://labs.adobe.com/downloads/shadow.html">Adobe Shadow</a> inspection and preview tool</li>
 </ul>
-<p>TODO: Watch first set of slides</p>
 </section>
-<section class="level2" id="stuff-that-needs-sorting">
-<h2>Stuff that needs sorting</h2>
 </section>
-<section class="level2" id="weapons-for-performance">
-<h2>Weapons for Performance</h2>
+<section class="level1" id="what-to-expect-at-the-workshop">
+<h1><a href="#TOC">What to expect at the workshop</a></h1>
+<p>The workshop is in nine sections, each covering a specific topic of the mobile web:</p>
+<ol type="1">
+<li>Assessing the threat: Getting a sense of the zombie/mobile landscape</li>
+<li>Bootcamp: Whipping you flabby recruits into shape to face the mobile zombie hordes</li>
+<li>Release the Hounds: Responsive Web Design and Mobile-first Responsive Web Design</li>
+<li>Bloodier Uprisings: When things go wrong out there in Responsive Land.</li>
+<li>A Honed Killing Machine: Mobile awesome-sauce with ApplicationCache and Geolocation.</li>
+<li>A Band of Brothers: Using frameworks and libraries to build a kick-ass mobile web app.</li>
+<li>Desperate Times...: Hybrid native mobile apps with web technologies (PhoneGap Build)</li>
+<li>Know Thy Enemy: Device detection and testing.</li>
+<li>A Brave Future: Keeping it future friendly!</li>
+</ol>
+<p>The workshop content is a mixture of specific demos, high-level technical information, and hands-on coding. While it's probably more fun to do some of the hacking with your peers, if you feel more comfortable just watching, that's OK, too!</p>
+</section>
+<section class="level1" id="about-your-rucksack">
+<h1><a href="#TOC">About your Rucksack</a></h1>
+<p>Upon arrival to the conference or the workshop, you will receive a USB keychain drive with your Zombie Rucksack. The Zombie Rucksack includes:</p>
 <ul>
-<li><a href="http://developer.yahoo.com/yslow/">ySlow</a></li>
-<li><a href="http://validator.w3.org/">W3C validator</a></li>
-<li><a href="http://smush.it">Smush.it</a></li>
-<li><a href="http://spriteme.org/">SpriteMe</a></li>
+<li><code>field-notes</code>: These field notes will accompany you through your missions at the workshop. You're looking at the first field note page now!</li>
+<li><code>missions</code>: Here is where you will find the starting point of each of our missions. If you're ready to get your hands dirty, here's where you'll edit files and try things out!</li>
+<li><code>victories</code>: If you get left in the dust or don't feel like hacking on a particular mission, the end results of most missions can be found in here.</li>
+</ul>
+<section class="level2" id="done-and-level-up">
+<h2><a href="#TOC">Done and Level Up!</a></h2>
+<ul>
+<li>Made sure our regulation dev uniform is freshly ironed and pressed: editing tools and environment ready to go!</li>
+<li>Configured a local web server, checked the status of an existing one, or made plans to use a hosted web server to do our workshop hackery!</li>
+<li>Installed the Android SDK</li>
+<li>Considered some other tools</li>
+<li>Got oriented about the workshop and the rucksack</li>
 </ul>
 </section>
+</section>
+<section class="level1" id="onward">
+<h1><a href="#TOC">Onward!</a></h1>
+<p>When it's time for the workshop to begin, we'll tell yah. And then you'll want to <a href="01-assess-the-threat.html">start the adventure</a>.</p>
+</section>
+<section class="footnotes">
+<hr>
+<ol>
+<li id="fn1"><p>We've done some work with the code examples we'll be working with to do some cross-browser and cross-platform testing. Not so, however, with the field notes that you'll be following along with during the workshop itself. The field notes use some fancy CSS 3 stuff and probably won't work in most versions of IE. You gotta choose your battles, and we didn't choose that one.<a href="#fnref1">↩</a></p></li>
+</ol>
 </section>
 </body>
 </html>

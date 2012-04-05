@@ -50,6 +50,10 @@ a {
   }
 }
 
+strong {
+  color:                darken(desaturate($color-accent, 40%), 15%);
+}
+
 hr {
   display:              none;
 }
@@ -158,6 +162,9 @@ section[id^="step"] {
     color: $color-warm;
     border-bottom: none;
     text-shadow: 1px 1px 0px $color-dark;
+    a {
+      color: $color-warm;
+    }
   }
   & > section {
     margin-left:    1.5em;
@@ -207,8 +214,19 @@ section[id^="snippet"] {
 }
 
 nav#TOC {
-  ul > li > ul > li > ul {
+  box-shadow:           0 7px 10px 5px #ccc;
+  border:               1px solid $color-dark;
+  border-radius:        1em;
+  margin:               1em .5em 4em .5em;
+  ul > li > ul {
     display:            none;
+  }
+  &:before {
+    display: block;
+    content: "On This Page";
+    padding: 1em 1em 0 1em;
+    font-family: 'Ropa Sans';
+    font-size: 1.25em;
   }
 }
 

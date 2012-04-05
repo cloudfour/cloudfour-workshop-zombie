@@ -1,39 +1,152 @@
-% Field Notes | 00: Building your battle kit
+% Field Notes | Orientation: Preparing for the Battle
 % Jason Grigsby and Lyza Danger Gardner
 
 ----------------
 
-# 0. Building your battle kit
+# Do This First: Get Ready for your workshop
 
-## Weapons
+## Level Up
 
-Arm yourself with these tools for our adventure today:
+Get your gear in order before arriving at zombie fighting prep school. Turn up looking sharp!
 
-1. A local web server (optional, but handy!) [more info](web-server.html)
-2. A good text editor
-3. A JavaScript/DOM debug tool (We recommend WebInspector in Chrome/Safari/Webkit browsers or FireBug in FireFox).
+### Mission
 
-## Suit Up
+Configure your dev environment and install some tools we'll be using in the workshop.
 
-TODO: Go install these things from the rucksack
+## Get the most out of your workshop
 
-* ySlow
-* Android SDK
-* web server
+First things first, Recruit! This introductory document will help you prepare and get the most out of your workshop: *The Zombie Apocalpyse of Device Preparedness 101*.
 
-## Launch
+All of the tasks on this page are voluntary, but each will help you get more out of the workshop!
 
-* Host the rucksack content in your web server
+# Help us make things awesome for you
 
-TODO: Watch first set of slides
+Please take this [short survey](http://www.surveymonkey.com/s/QXZCCC8). It should only take you a moment, and will help us evaluate which topics we should cover more in depth during the workshop. Help us tailor the content to your needs!
 
-## Stuff that needs sorting
+# Getting your Environment Ready
 
-## Weapons for Performance
+Here are the most important things to have at your fingertips when you arrive for the workshop:
 
-* [ySlow](http://developer.yahoo.com/yslow/)
-* [W3C validator](http://validator.w3.org/)
-* [Smush.it](http://smush.it)
-* [SpriteMe](http://spriteme.org/)
+### You'll Need
+
+1. A good **text editor** that you can use to edit HTML, CSS and JavaScript files.
+2. A nice, recent **web browser**[^1]. Recommended: Chrome, FireFox or Safari.
+3. You'll receive your Zombie Rucksack files when you arrive at the workshop. Ideally, you'll want to put the contents of the `rucksack` folder where they can be **served by a web server**.
+4. If you have a mobile device or devices, do bring!
+
+# Arming Your Weapons: Tools and Software FTW
+
+## Step 1: Set up a Local Web Server
+
+### Why?
+
+A few of the examples in the workshop require a "real" web server to work correctly (versus opening/viewing the web pages involved as `file`s in your web browser). 
+
+### How
+
+We've jotted down a few notes about how to get a local web server set up. It's not too tricky!
+
+### Some Details: Configuring a local web server
+
+#### Running a local web server
+
+While most of what we'll look at can be viewed as files in a web browser, **some of the examples in today's shenanigans require an actual web server** to be running locally. *It is not a big deal* if you can't or don't want to set up a local web server; you can just follow along on the big screen.
+
+##### Examples that require a web server
+
+1. Performance optimization using an `.htaccess` file (section 2: Boot Camp)
+2. Cache manifests/ApplicationCache (section 5: Honed Killing Machine)
+3. Geolocation (section 5, section 6: A Band of Brothers)
+    a. You can still build the web app in section 6; it simply won't do geolocation
+    b. Geolocation is not generally possible when viewing web pages as files (i.e. without a web server) in a browser for security reasons.
 
 
+#### Some possible ways to get things working:
+
+1. If you run OS X's default apache web server, you can move the contents of the zombie rucksack somewhere within the area (document root) served as web resources. This is typically in the `Sites` folder in your user's home directory (note that Web Sharing will need to be enabled in your system settings to get this to work).
+2. If you have a hosting provider, you could do your work there, if you choose.
+3. There is a [one-line python script](http://www.garyrobinson.net/2004/03/one_line_python.html) for spinning up a web server.
+4. I use [MAMP](http://www.mamp.info) on my Mac as a web server (comes with PHP and mysql). There's [XAMPP](www.apachefriends.org/en/xampp.html) for Windows and Linux. These are pretty easy installs but might be more than you want to deal with right at this second.
+
+## Step 2: Install the Android SDK
+
+### Why?
+
+One of our workshop projects involves building a native mobile app using web technologies. We'll be creating an Android app that can be either viewed in an emulator in the Android SDK or can be installed on your Android device if you have one.
+
+### Important Notes
+
+The Android SDK takes a little while to install, like, long enough to go make a cup of coffee while it's doing its thing. **We also ask that you install the Android SDK BEFORE you come to the workshop, as bandwidth will be limited at the workshop, and, again, the process takes a little while. You're always welcome to simply follow along as we demo this, if you don't feel like installing the SDK.**
+
+### Some Details: How To
+
+#### Installing the SDK 
+
+1. Launch and run the [SDK installer](http://developer.android.com/sdk/index.html) appropriate for your platform (Mac/Windows/Linux).
+2. You'll need to install the following packages:
+    1. `tools`
+    2. `platform-tools`
+3. Install as many `platforms` as you like (Android versions). Keep in mind that 3.x platforms are tablet only. And we don't recommend trying to run the example we'll build on anything older than, say, 2.2 or so.
+4. Set up a few "virtual devices" (emulated devices) by using the `Tools -> Manage AVDs...` menu command. Pro tip: do *not* select the `snapshot` option in any of your AVDs. Tends to get very crashy.
+
+*Note*: You do *not* need to install Eclipse or the Eclipse plugin for what we are doing in the workshop.
+
+### Resources
+
+* [SDK installation instructions](http://developer.android.com/sdk/installing.html) on developer.android.com.
+* If you have [our book](http://bit.ly/hf-mw), there is an entire, in-depth appendix about installing the Android SDK in the particular way we'll be using it for the workshop.
+
+## Step 3: Sign up for WURFL Cloud on ScientiaMobile and get your API key
+
+1. Go to [WURFL Cloud signup on ScientiaMobile](https://www.scientiamobile.com/cloud/signup/free) and sign up for the free Cloud service.
+2. Go to the `My Account` link (top right of screen) and click into the account you just created.
+3. Click on the `capabilities` link. You get two capabilities with a free account. Activate the following and save:
+    1. `is_touchscreen`
+    2. `has_cellular_radio`
+4. Back on the main screen for the account you created (you should be able to click the `back to my account` link): click into the `API Keys` link.
+5. Copy your API key somewhere that you can access easily during the workshop.
+
+
+## Step 4: Other nice-to-have weapons
+
+* The [ySlow browser tool](http://developer.yahoo.com/yslow/)
+* [Adobe Shadow](http://labs.adobe.com/downloads/shadow.html) inspection and preview tool
+
+# What to expect at the workshop
+
+The workshop is in nine sections, each covering a specific topic of the mobile web:
+
+1. Assessing the threat: Getting a sense of the zombie/mobile landscape
+2. Bootcamp: Whipping you flabby recruits into shape to face the mobile zombie hordes
+3. Release the Hounds: Responsive Web Design and Mobile-first Responsive Web Design
+4. Bloodier Uprisings: When things go wrong out there in Responsive Land.
+5. A Honed Killing Machine: Mobile awesome-sauce with ApplicationCache and Geolocation.
+6. A Band of Brothers: Using frameworks and libraries to build a kick-ass mobile web app.
+7. Desperate Times...: Hybrid native mobile apps with web technologies (PhoneGap Build)
+8. Know Thy Enemy: Device detection and testing.
+9. A Brave Future: Keeping it future friendly!
+
+The workshop content is a mixture of specific demos, high-level technical information, and hands-on coding. While it's probably more fun to do some of the hacking with your peers, if you feel more comfortable just watching, that's OK, too!
+
+# About your Rucksack
+
+Upon arrival to the conference or the workshop, you will receive a USB keychain drive with your Zombie Rucksack. The Zombie Rucksack includes:
+
+* `field-notes`: These field notes will accompany you through your missions at the workshop. You're looking at the first field note page now!
+* `missions`: Here is where you will find the starting point of each of our missions. If you're ready to get your hands dirty, here's where you'll edit files and try things out!
+* `victories`: If you get left in the dust or don't feel like hacking on a particular mission, the end results of most missions can be found in here.
+
+## Done and Level Up!
+
+* Made sure our regulation dev uniform is freshly ironed and pressed: editing tools and environment ready to go!
+* Configured a local web server, checked the status of an existing one, or made plans to use a hosted web server to do our workshop hackery!
+* Installed the Android SDK
+* Considered some other tools
+* Got oriented about the workshop and the rucksack
+
+# Onward!
+
+When it's time for the workshop to begin, we'll tell yah. And then you'll want to [start the adventure](01-assess-the-threat.html).
+
+
+[^1]: We've done some work with the code examples we'll be working with to do some cross-browser and cross-platform testing. Not so, however, with the  field notes that you'll be following along with during the workshop itself. The field notes use some fancy CSS 3 stuff and probably won't work in most versions of IE. You gotta choose your battles, and we didn't choose that one.

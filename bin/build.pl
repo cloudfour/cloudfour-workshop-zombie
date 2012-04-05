@@ -103,6 +103,9 @@ sub build_survival {
     my $needs_update    = 0;
     my $css             = "fieldnotes.css";
     my $flags           = "--from=markdown --to=html5 --section-divs --standalone --include-in-header=$src_path/head-includes.txt";
+    if ($base =~ /00/) {
+      $flags            = "--toc " . $flags;
+    }
     #if ($base =~ /field-notes/) {
     #  $flags .= ' --toc';
     #}
@@ -134,10 +137,3 @@ my @survival_items = ($pack_content_path,
                       $ex_path . "/03-release-hounds/01-going-fluid/fluid-css-changes.content",
                       $ex_path . "/03-release-hounds/02-media-queries/sigma-media-query.content");
 find(\&build_survival, @survival_items);
-
-$src_file = $content_path . "/outline.mdown";
-$output   = $slide_path   . "/outline.html";
-if (&needs_update($src_file, $output)) {
-  system("$pandoc $flags --css=../assets/styles/workshop.css $src_file > $output");
-  print "Outline updated \n";
-}

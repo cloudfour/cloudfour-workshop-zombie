@@ -231,3 +231,7 @@ function onGeoError(error) { // Our error callback
 
 * The [Sigma Stronghold website with an offline mode](../victories/06-appcache) via Application Cache.
 * A test of the [W3C Geolocation](../victories/07-geolocation) API.
+
+# Onward!
+
+Turns out Sigma Stronghold isn't alone, nor are you. We can join with the mobile web [band of brothers](06-band-of-brothers.html).

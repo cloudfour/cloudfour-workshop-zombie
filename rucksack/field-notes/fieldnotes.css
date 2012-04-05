@@ -8,6 +8,27 @@
 @font-face {
   font-family: 'Anonymous Pro';
   font-style: normal;
+  font-weight: bold;
+  src: local("Anonymous Pro Bold"), local("AnonymousPro-Bold"), url("http://themes.googleusercontent.com/static/fonts/anonymouspro/v3/WDf5lZYgdmmKhO8E1AQud6bFb7dg54i-VmmWhYOQ_f4.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  font-style: italic;
+  font-weight: normal;
+  src: local("Anonymous Pro Italic"), local("AnonymousPro-Italic"), url("http://themes.googleusercontent.com/static/fonts/anonymouspro/v3/q0u6LFHwttnT_69euiDbWD5Cha8LoWvgx12Qrck9dWM.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  font-style: italic;
+  font-weight: bold;
+  src: local("Anonymous Pro Bold Italic"), local("AnonymousPro-BoldItalic"), url("http://themes.googleusercontent.com/static/fonts/anonymouspro/v3/_fVr_XGln-cetWSUc-JpfKJE2wVFcEsdJKhjc97P7F0.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Anonymous Pro';
+  font-style: normal;
   font-weight: normal;
   src: local("Anonymous Pro"), local("AnonymousPro"), url("http://themes.googleusercontent.com/static/fonts/anonymouspro/v3/Zhfjj_gat3waL4JSju74E2hf89WnxcRaqxnpCB_GMi0.woff") format("woff");
 }
@@ -71,6 +92,10 @@ a, a:visited {
 
 h1 a, h2 a, h3 a, h4 a, h5 a {
   text-decoration: none;
+}
+
+strong {
+  color: #904444;
 }
 
 hr {
@@ -191,6 +216,9 @@ section[id^="step"] > h2 {
   border-bottom: none;
   text-shadow: 1px 1px 0px #555555;
 }
+section[id^="step"] > h2 a {
+  color: #fffeee;
+}
 section[id^="step"] > section {
   margin-left: 1.5em;
 }
@@ -242,8 +270,21 @@ section[id^="snippet"]:after {
   clear: both;
 }
 
-nav#TOC ul > li > ul > li > ul {
+nav#TOC {
+  box-shadow: 0 7px 10px 5px #ccc;
+  border: 1px solid #555555;
+  border-radius: 1em;
+  margin: 1em .5em 4em .5em;
+}
+nav#TOC ul > li > ul {
   display: none;
+}
+nav#TOC:before {
+  display: block;
+  content: "On This Page";
+  padding: 1em 1em 0 1em;
+  font-family: 'Ropa Sans';
+  font-size: 1.25em;
 }
 
 section[id^="done"] ul li {

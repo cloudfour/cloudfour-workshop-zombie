@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="author" content="Frameworks (jQuery Mobile) and localStorage" />
+  <meta name="author" content="Frameworks (jQuery Mobile) and the localStorage API" />
   <title>A Band of Brothers</title>
   <style type="text/css">
 table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
@@ -38,7 +38,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <div class="slide titlepage">
   <h1 class="title">A Band of Brothers</h1>
   <p class="author">
-Frameworks (jQuery Mobile) and localStorage
+Frameworks (jQuery Mobile) and the localStorage API
   </p>
 </div>
 <div class="section slide level1" id="i-got-one">
@@ -49,10 +49,19 @@ Frameworks (jQuery Mobile) and localStorage
 <p>Sigma Stronghold leaders want a way for agents in the field to be able to record their zombie kills.</p>
 <p>Each time a soldier nabs a zombie out there, he or she should be able to record when, where and how that zombie met its fate. Kind of like a zombie kill board.</p>
 </div>
+<div class="section slide level1" id="were-going-to-build-this">
+<h1>We're going to build this!</h1>
+<div class="section level2" id="figure-the-end-result">
+<h2>Figure: The end result</h2>
+<div class="figure">
+<img src="images/06-screen.png" /><p class="caption"></p>
+</div>
+</div>
+</div>
 <div class="section slide level1" id="frameworks">
 <h1>Frameworks</h1>
 <div class="section level2" id="so-how-do-we-build-something-like-this">
-<h2>So, how do we build something like this?</h2>
+<h2>So, <em>how</em> do we build something like this?</h2>
 <p>Sometimes you don't want to keep re-inventing the same zombie-blasting cannon over and over again. We zombie fighters might be a ragtag bunch, but we stick together.</p>
 <p>Frameworks, libraries, tools, templates...all of these can give you a leg up.</p>
 </div>
@@ -65,14 +74,23 @@ Frameworks (jQuery Mobile) and localStorage
 <p>jQuery Mobile is a mobile web framework built atop the popular jQuery library.</p>
 <p>jQuery Mobile works hand-in-hand with semantic HTML5 markup.</p>
 </div>
+<div class="section slide level1" id="to-build-our-app">
+<h1>To Build our app</h1>
+<ol style="list-style-type: decimal">
+<li>Build a basic jQuery Mobile page.</li>
+<li>Add the special sauce to create our &quot;I got one!&quot; app</li>
+<li>Use a JavaScript library to make our zombie-kill data persistent.</li>
+</ol>
+</div>
 <div class="section slide level1" id="building-with-jquery-mobile">
 <h1>Building with jQuery Mobile</h1>
 <p>Content and applications with jQuery Mobile are constructed from:</p>
-<ul>
-<li>Rather basic HTML5 markup.</li>
-<li>The inclusion of the jQuery core JavaScript library, the jQuery Mobile JS and the jQuery Mobile CSS.</li>
-<li>You can build on this with your own JavaScript, as you please.</li>
-</ul>
+<ol style="list-style-type: decimal">
+<li>HTML5 markup.</li>
+<li>JavaScript: jQuery core and jQuery Mobile</li>
+<li>CSS: jQuery Mobile's CSS</li>
+<li>Your own custom stuff</li>
+</ol>
 </div>
 <div class="section slide level1" id="structure-of-jquery-mobile-page">
 <h1>Structure of jQuery Mobile Page</h1>
@@ -131,12 +149,11 @@ Frameworks (jQuery Mobile) and localStorage
 <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/jquery-1.6.4.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
 <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
 <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;date.format.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
-<span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;http://code.google.com/apis/gears/gears_init.js&quot;</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
 <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;geo.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
 <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;zombie.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></code></pre>
 <ul>
 <li><code>date.format.js</code> (Date.format) lets us do much easier date formatting with JavaScript.</li>
-<li>Using Google Gears and the <code>geo-location-js</code> library makes cross-platform geolocation a snap.</li>
+<li>The <code>geo-location-js</code> library makes cross-platform geolocation a snap.</li>
 </ul>
 </div>
 </div>

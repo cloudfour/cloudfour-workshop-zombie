@@ -18,6 +18,24 @@
 @font-face {
   font-family: 'Anonymous Pro';
   font-style: normal;
+  font-weight: bold;
+  src: local('Anonymous Pro Bold'), local('AnonymousPro-Bold'), url('http://themes.googleusercontent.com/static/fonts/anonymouspro/v3/WDf5lZYgdmmKhO8E1AQud6bFb7dg54i-VmmWhYOQ_f4.woff') format('woff');
+}
+@font-face {
+  font-family: 'Anonymous Pro';
+  font-style: italic;
+  font-weight: normal;
+  src: local('Anonymous Pro Italic'), local('AnonymousPro-Italic'), url('http://themes.googleusercontent.com/static/fonts/anonymouspro/v3/q0u6LFHwttnT_69euiDbWD5Cha8LoWvgx12Qrck9dWM.woff') format('woff');
+}
+@font-face {
+  font-family: 'Anonymous Pro';
+  font-style: italic;
+  font-weight: bold;
+  src: local('Anonymous Pro Bold Italic'), local('AnonymousPro-BoldItalic'), url('http://themes.googleusercontent.com/static/fonts/anonymouspro/v3/_fVr_XGln-cetWSUc-JpfKJE2wVFcEsdJKhjc97P7F0.woff') format('woff');
+}
+@font-face {
+  font-family: 'Anonymous Pro';
+  font-style: normal;
   font-weight: normal;
   src: local('Anonymous Pro'), local('AnonymousPro'), url('http://themes.googleusercontent.com/static/fonts/anonymouspro/v3/Zhfjj_gat3waL4JSju74E2hf89WnxcRaqxnpCB_GMi0.woff') format('woff');
 }

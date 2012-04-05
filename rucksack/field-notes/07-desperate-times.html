@@ -40,6 +40,14 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <hr>
 <section class="level1" id="desperate-times-call-for...">
 <h1>7. Desperate Times call for...</h1>
+<section class="level2" id="level-up">
+<h2>Level Up</h2>
+<p>Learn how to create native apps with relative ease, using web technologies and the PhoneGap Build service.</p>
+<section class="level3" id="mission">
+<h3>Mission</h3>
+<p>Create a native Android app from the &quot;I got one!&quot; web app.</p>
+</section>
+</section>
 <section class="level2" id="hybrid-app-development-with-phonegap-and-phonegap-build">
 <h2>Hybrid App Development with PhoneGap and PhoneGap Build</h2>
 <ul>
@@ -76,8 +84,51 @@ code > span.er { color: #ff0000; font-weight: bold; }
     <span class="kw">&lt;gap:splash</span><span class="ot"> src=</span><span class="st">&quot;app-icons/splash.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;320&quot;</span><span class="ot"> height=</span><span class="st">&quot;480&quot;</span> <span class="kw">/&gt;</span>
     <span class="kw">&lt;gap:splash</span><span class="ot"> src=</span><span class="st">&quot;app-icons/splash-2x.png&quot;</span><span class="ot"> width=</span><span class="st">&quot;640&quot;</span><span class="ot"> height=</span><span class="st">&quot;960&quot;</span><span class="kw">/&gt;</span>
 <span class="kw">&lt;/widget&gt;</span></code></pre>
-<p>(You can also find this in <a href="../supplemental/desperate-times/config.xml"><code>supplemental/desperate-times/config.xml</code></a>).</p>
+<p>(You can also find this in <a href="../missions/09-phonegap/config.xml"><code>missions/09-phonegap/config.xml</code></a>).</p>
 </section>
+<section class="level2" id="step-1-build-a-native-android-app">
+<h2>Step 1: Build a Native Android App</h2>
+<p><em>Note</em>: Due to bandwidth constraints at the workshop, it's likely not feasible for everyone to build and download the app. Instead, find the final application APK in <code>rucksack/victories/09-phonegap/igotone.apk</code>.</p>
+<section class="level3" id="watch-us-as-we">
+<h3>Watch us as we:</h3>
+<ol type="1">
+<li>ZIP up the contents of the I Got One! web app (including the <code>config.xml</code> file).</li>
+<li>Upload the ZIP file to the PhoneGap build site and build the app.</li>
+<li>Download the APK.</li>
+</ol>
+</section>
+<section class="level3" id="do-this">
+<h3>Do This</h3>
+<p>(This assumes you have installed the Android SDK and created some virtual devices).</p>
+<ol type="1">
+<li>Launch your Android SDK.</li>
+<li>Use the <code>Tools -&gt; Manage AVDs...</code> menu option to open the window with your virtual devices.</li>
+<li>Launch a virtual device. 2.3 or 4.0 should work.</li>
+<li>Open a terminal window. <code>cd</code> to the directory where the <code>igotone.apk</code> file is hanging out.</li>
+<li>Run the command <code>adb install igotone.apk</code></li>
+<li>Return to your emulated virtual device. The <code>I Got One!</code> app should be in your applications screen <sup><a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup> .</li>
+<li>If you want to uninstall the app, run the command <code>adb uninstall com.cloudfour.igotone</code>. Note that uninstalling uses the reverse-dot-notation com ID of the app, whereas install uses the filename.</li>
+</ol>
+</section>
+</section>
+<section class="level2" id="done-and-level-up">
+<h2>Done and Level Up!</h2>
+<ul>
+<li>Discovered some things about hybrid mobile web app development and the PhoneGap Build service.</li>
+<li>Learned how to assemble a PhoneGap Build project.</li>
+<li>Tried out a PhoneGap Build app on Android.</li>
+</ul>
+</section>
+</section>
+<section class="level1" id="onward">
+<h1>Onward!</h1>
+<p>We've learned the importance of observation and recon during our journey. Let's sharpen our investigative skills so we can <a href="08-know-thy-enemy.html">know our enemy</a>.</p>
+</section>
+<section class="footnotes">
+<hr>
+<ol>
+<li id="fn1"><p>This is one of those &quot;This <em>should</em> work&quot; kinds of things. There are lots of moving parts involved with versions of the Android SDK and conflicts and whatnot, so if you are not able to get the app to run or install, don't fret too hard. And feel free to come bug us after the workshop to see if we can help you out, if you'd like!<a href="#fnref1">↩</a></p></li>
+</ol>
 </section>
 </body>
 </html>

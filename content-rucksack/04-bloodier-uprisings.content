@@ -3,6 +3,14 @@
 
 # 4. Bloodier Uprisings: Tricky realities of mobile-first RWD
 
+## Level Up
+
+Face the brutal reality of cross-platform and cross-browser support for the elements of Responsive Web Design.
+
+### Mission
+
+Find the right weapons and armor for those harder-to-kill zombies like IE.
+
 ## Techniques for handling IE in RWD
 
 ### Conditional Comments
@@ -131,4 +139,15 @@ Big challege for RWD: img tags only allow one src attribute.
 * Third-party widgets (particularly ad networks)
 * Integrating with content management systems
 
+## Done and Level Up!
+
+* Learned how to trick IE into acting like a modern browser (and supporting media queries) using conditional comments or JavaScript polyfills.
+* We avoided costly extra downloads by making sure our CSS is shipshape.
+* We learned about the high casualty rate of different `<img>` tag approaches and about how the real doomsday weapon might require a new HTML element.
+
+
 -----------------------------
+
+# Onward!
+
+Fighting zombies is a messy business. But we're getting stronger, turning into a [honed killing machine](05-honed-killing-machine.html).

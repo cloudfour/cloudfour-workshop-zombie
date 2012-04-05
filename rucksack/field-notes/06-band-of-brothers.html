@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Jason Grigsby and Lyza Danger Gardner">
-  <title>Field Notes | 04: Bloodier Uprisings</title>
+  <title>Field Notes | 06: A Band of Brothers</title>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
@@ -34,29 +34,76 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </head>
 <body>
 <header>
-<h1 class="title">Field Notes | 04: Bloodier Uprisings</h1>
+<h1 class="title">Field Notes | 06: A Band of Brothers</h1>
 <h2 class="author">Jason Grigsby and Lyza Danger Gardner</h2>
 </header>
 <hr>
 <section class="level1" id="a-band-of-brothers">
 <h1>6. A Band of Brothers</h1>
-<ul>
-<li><a href="http://www.jquerymobile.com">jQuery Mobile</a></li>
-<li><a href="http://jacwright.com/projects/javascript/date_format/">JavaScript Date.Format</a>: A small library to emulate PHP-style date formatting.</li>
-<li><a href="http://code.google.com/p/geo-location-javascript/">Geo-location-js</a>: A very easy cross-platform geolocation library that emulates the W3C Geolocation API.</li>
-</ul>
-<section class="level2" id="do-this-a-jquery-mobile-page-for-nabbing-zombies">
-<h2><em>Do This</em>: A jQuery Mobile Page for Nabbing Zombies</h2>
+<section class="level2" id="level-up">
+<h2>Level Up</h2>
+<p>Lean on our band of brothers—a mobile framework and some JavaScript libraries—for some real firepower.</p>
+<section class="level3" id="mission">
+<h3>Mission</h3>
+<p>Build the morale-boosting &quot;I got one!&quot; mobile web app to let Sigma Stronghold members record their zombie kills!</p>
+</section>
+</section>
+<section class="level2" id="step-1-build-a-basic-jquery-mobile-page">
+<h2>Step 1: Build a basic jQuery Mobile Page</h2>
+<section class="level3" id="do-this">
+<h3>Do This</h3>
 <ol type="1">
-<li>Find the &quot;I got one!&quot; starting point in your rucksack in <a href="../i-got-one/index.html"><code>i-got-one/index.html</code></a>.</li>
-<li><p>Add a header:</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;</span>
-  <span class="kw">&lt;h1&gt;</span>I got one!<span class="kw">&lt;/h1&gt;</span>
-<span class="kw">&lt;/div&gt;</span></code></pre></li>
-<li><p>Add a <code>&lt;select&gt;</code> element, an <code>&lt;input&gt;</code> button and an empty <code>&lt;ul&gt;</code> to hold our incoming dead zombies. This should be the contents of the <code>&lt;div data-role=&quot;content&quot;&gt;</code>:</p>
+<li>Add <code>&lt;link&gt;</code> <code>&lt;script&gt;</code>, and <code>&lt;viewport&gt;</code> tags to the <code>&lt;head&gt;</code> element of <code>index.html</code> to include the needed JavaScript and CSS.</li>
+<li>Add simple page elements to <code>index.html</code>.</li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-head-items">
+<h3>Snippet Reference: <code>&lt;head&gt;</code> items</h3>
+<section class="level4" id="index.html">
+<h4>index.html</h4>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css&quot;</span> <span class="kw">/&gt;</span>
+<span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/jquery-1.6.4.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;date.format.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;geo.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></code></pre>
+</section>
+</section>
+<section class="level3" id="snippet-reference-basic-page-elements">
+<h3>Snippet Reference: Basic Page Elements</h3>
+<section class="level4" id="index.html-1">
+<h4>Index.html</h4>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;page&quot;</span><span class="ot"> id=</span><span class="st">&quot;nab-zombie&quot;</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;header&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;h1&gt;</span>I got one!<span class="kw">&lt;/h1&gt;</span>
+  <span class="kw">&lt;/div&gt;</span>
+
+  <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span>
+
+  <span class="kw">&lt;/div&gt;</span>
+<span class="kw">&lt;/div&gt;</span></code></pre>
+</section>
+</section>
+</section>
+<section class="level2" id="step-2-add-our-controls">
+<h2>Step 2: Add our controls</h2>
+<section class="level3" id="do-this-1">
+<h3>Do This</h3>
+<ol type="1">
+<li>Update the content <code>div</code> element. Add a <code>select</code> input so soldiers can indicate <em>how</em> they just killed a zombie.</li>
+<li>After the select element, add an &quot;I got one!&quot; button.</li>
+<li>Add a <code>&lt;ul&gt;</code> element to store our burgeoning list of dead zombies.</li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-html-markup-for-controls">
+<h3>Snippet Reference: HTML markup for controls</h3>
+<section class="level4" id="index.html-select-element">
+<h4>index.html: Select element</h4>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;content&quot;</span><span class="kw">&gt;</span>
   <span class="kw">&lt;div</span><span class="ot"> data-role=</span><span class="st">&quot;fieldcontain&quot;</span><span class="kw">&gt;</span>
+
     <span class="kw">&lt;label</span><span class="ot"> for=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span>How&#39;d you nab it?<span class="kw">&lt;/label&gt;</span>
+
     <span class="kw">&lt;select</span><span class="ot"> name=</span><span class="st">&quot;how-zombie&quot;</span><span class="ot"> id=</span><span class="st">&quot;how-zombie&quot;</span><span class="kw">&gt;</span>
       <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;tank&quot;</span><span class="kw">&gt;</span>Tank<span class="kw">&lt;/option&gt;</span>
       <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;conflagration&quot;</span><span class="kw">&gt;</span>Conflagration<span class="kw">&lt;/option&gt;</span>
@@ -66,70 +113,198 @@ code > span.er { color: #ff0000; font-weight: bold; }
       <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;corrosive&quot;</span><span class="kw">&gt;</span>Corrosive<span class="kw">&lt;/option&gt;</span>
       <span class="kw">&lt;option</span><span class="ot"> value=</span><span class="st">&quot;dismemberment&quot;</span><span class="kw">&gt;</span>Dismemberment<span class="kw">&lt;/option&gt;</span>
     <span class="kw">&lt;/select&gt;</span>
+
   <span class="kw">&lt;/div&gt;</span>
-  <span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;button&quot;</span><span class="ot"> value=</span><span class="st">&quot;I got one!&quot;</span><span class="ot"> id=</span><span class="st">&quot;got-one&quot;</span><span class="ot"> data-theme=</span><span class="st">&quot;b&quot;</span> <span class="kw">/&gt;</span>
-
-  <span class="kw">&lt;ul</span><span class="ot"> data-role=</span><span class="st">&quot;listview&quot;</span><span class="ot"> data-inset=</span><span class="st">&quot;true&quot;</span><span class="ot"> id=</span><span class="st">&quot;zombielist&quot;</span><span class="kw">&gt;</span>
-  <span class="kw">&lt;/ul&gt;</span>
-
-<span class="kw">&lt;/div&gt;</span></code></pre></li>
-<li><p>Drop in the intial JavaScript by adding a <code>&lt;script&gt;</code> tag after the <code>geo.js</code> <code>&lt;script&gt;</code> tag:</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;zombie.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></code></pre></li>
-<li><p>You can find the finished version of <code>index.html</code> for this step in your rucksack in <a href="../supplemental/band-of-brothers/step1.html"><code>supplemental/band-of-brothers/step1.html</code></a>.</p></li>
-</ol>
+<span class="kw">&lt;/div&gt;</span></code></pre>
 </section>
-<section class="level2" id="do-this-persistant-data-with-lawnchair">
-<h2><em>Do This</em>: Persistant data with Lawnchair</h2>
-<p>For this step, we use <a href="http://westcoastlogic.com/lawnchair/">Lawnchair</a>, an open-source JS library for storing data on the client:</p>
+<section class="level4" id="index.html-i-got-one-button">
+<h4>Index.html: I GOT ONE! button</h4>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;input</span><span class="ot"> type=</span><span class="st">&quot;button&quot;</span><span class="ot"> value=</span><span class="st">&quot;I got one!&quot;</span><span class="ot"> id=</span><span class="st">&quot;got-one&quot;</span><span class="ot"> data-theme=</span><span class="st">&quot;b&quot;</span> <span class="kw">/&gt;</span></code></pre>
+</section>
+<section class="level4" id="index.html-ul-for-dead-zombie-storage">
+<h4>Index.html <code>&lt;ul&gt;</code> for dead zombie storage</h4>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;ul</span><span class="ot"> data-role=</span><span class="st">&quot;listview&quot;</span><span class="ot"> data-inset=</span><span class="st">&quot;true&quot;</span><span class="ot"> id=</span><span class="st">&quot;zombielist&quot;</span><span class="kw">&gt;</span>
+<span class="kw">&lt;/ul&gt;</span></code></pre>
+</section>
+</section>
+</section>
+<section class="level2" id="step-3-add-our-javascript-logic">
+<h2>Step 3: Add our JavaScript logic</h2>
+<section class="level3" id="do-this-2">
+<h3>Do This</h3>
 <ol type="1">
-<li><p>Edit the <code>zombie.js</code> file.</p></li>
-<li><p>Instantiate the Lawnchair. Add <code>var zombieChair   = Lawnchair({name: 'zombies'}, function() {});</code> right after the <code>zombies</code> array is created.</p>
-<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">window</span>.<span class="fu">zombieManager</span> = (<span class="kw">function</span>() {
-  <span class="kw">var</span> zombies       = <span class="kw">new</span> <span class="kw">Array</span>();
-  <span class="kw">var</span> zombieChair   = Lawnchair({<span class="dt">name</span>: <span class="ch">&#39;zombies&#39;</span>}, <span class="kw">function</span>() {});</code></pre></li>
-<li><p>Add an init function. This should go in the returned object in the <code>zombieManager</code> function:</p>
-<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">return</span> {
-  <span class="co">// Init; build initial #zombielist</span>
-  <span class="dt">init          </span>: <span class="kw">function</span>() {
-    <span class="kw">zombieChair</span>.<span class="fu">get</span>(<span class="ch">&#39;zombies&#39;</span>, <span class="kw">function</span>(zombiesOnIce) {
-      <span class="kw">if</span> (zombiesOnIce) {
-        zombies = <span class="kw">zombiesOnIce</span>.<span class="fu">value</span>;
-      }
-    });
-    showZombies();
-  },
-  <span class="co">// Add a new zombie to the list of zombies</span>
-  <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) {
-  <span class="co">// ...</span></code></pre></li>
-<li><p>Update the <code>addZombie</code> function such that it also saves the incoming zombie to the Lawnchair:</p>
-<pre class="sourceCode javascript"><code class="sourceCode javascript">  },
-  <span class="co">// Add a new zombie to the list of zombies</span>
-  <span class="dt">addZombie     </span>: <span class="kw">function</span>(zombieWhen, zombieWhere, zombieHow) {
-    zombies[<span class="kw">zombies</span>.<span class="fu">length</span>] = {
-      <span class="dt">when      </span>: <span class="kw">zombieWhen</span>.<span class="fu">valueOf</span>(),
-      <span class="dt">where     </span>: zombieWhere,
-      <span class="dt">how       </span>: zombieHow
-    };
-    <span class="kw">zombieChair</span>.<span class="fu">save</span>({<span class="dt">key</span>: <span class="ch">&#39;zombies&#39;</span>, <span class="dt">value </span>: zombies });
-    showZombies();
-  }</code></pre></li>
-<li><p>Update the <code>resetZombies</code> function to clear the Lawnchair using the <code>nuke</code> method:</p>
-<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> resetZombies = <span class="kw">function</span>() {
-    zombies = <span class="kw">new</span> <span class="kw">Array</span>();
-    <span class="kw">zombieChair</span>.<span class="fu">nuke</span>();
-    $(<span class="ch">&#39;li.zombie&#39;</span>).<span class="fu">remove</span>();
-    $(<span class="ch">&#39;#zombielist&#39;</span>).<span class="fu">listview</span>(<span class="ch">&#39;refresh&#39;</span>);
-  };</code></pre></li>
-<li><p>Now add a call to that new <code>init</code> function we wrote...</p>
-<pre class="sourceCode javascript"><code class="sourceCode javascript">$(<span class="st">&quot;#nab-zombie&quot;</span>).<span class="fu">live</span>(<span class="ch">&#39;pageinit&#39;</span>, <span class="kw">function</span>() {
-
-  <span class="co">// Initialize our list of zombies</span>
-  <span class="kw">zombieManager</span>.<span class="fu">init</span>();
-  <span class="co">// Is Geolocation supported?</span>
-  <span class="co">// ...</span></code></pre></li>
-<li><p>That's a lot of JavaScript. You can also find a final version of <code>zombie.js</code> in <a href="../supplemental/band-of-brothers/zombie.js"><code>supplemental/band-of-brothers/zombie.js</code></a>.</p></li>
+<li>Add the <code>zombie.js</code> script to <code>index.html</code>.</li>
 </ol>
 </section>
+<section class="level3" id="snippet-reference-add-the-script-tag">
+<h3>Snippet Reference: Add the <code>&lt;script&gt;</code> tag</h3>
+<section class="level4" id="index.html-2">
+<h4>index.html</h4>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;zombie.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></code></pre>
+</section>
+</section>
+</section>
+<section class="level2" id="step-4-persistent-storage">
+<h2>Step 4: Persistent storage</h2>
+<section class="level3" id="do-this-3">
+<h3>Do This</h3>
+<ol type="1">
+<li>Add <code>&lt;script&gt;</code> tags for <code>Lawnchair.js</code> and <code>dom.js</code>.</li>
+<li>Initialize a Lawnchair called <code>zombieChair</code>.</li>
+<li>Update the <code>addZombie</code> method to save data to the <code>zombieChair.</code></li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-setting-up-the-zombiechair">
+<h3>Snippet Reference: Setting up the ZombieChair</h3>
+<section class="level4" id="index.html-3">
+<h4>Index.html</h4>
+<p>The <code>&lt;head&gt;</code> element of <code>index.html</code> should now look like:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;head&gt;</span> 
+    <span class="kw">&lt;title&gt;</span>I Got One!<span class="kw">&lt;/title&gt;</span> 
+
+    <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1, maximum-scale=1&quot;</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;link</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="ot"> href=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css&quot;</span> <span class="kw">/&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/jquery-1.6.4.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="ot"> src=</span><span class="st">&quot;http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;Lawnchair.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;dom.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;date.format.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;geo.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+    <span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;zombie.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;/head&gt;</span> </code></pre>
+</section>
+<section class="level4" id="add-code-to-zombies.js">
+<h4>Add code to <code>zombies.js</code></h4>
+</section>
+<section class="level4" id="instead-of">
+<h4>Instead of</h4>
+<pre class="js"><code>window.zombieManager = (function() {
+  var zombies       = new Array(),
+  zombie_icons      = {   // Each killing method has a corresponding icon
+    &#39;nukes&#39;         : &#39;z2.png&#39;,
+    &#39;conflagration&#39; : &#39;z5.png&#39;,
+    &#39;tank&#39;          : &#39;z7.png&#39;,
+    &#39;trickery&#39;      : &#39;z11.png&#39;,
+    &#39;poison&#39;        : &#39;z13.png&#39;,
+    &#39;corrosive&#39;     : &#39;z8.png&#39;,
+    &#39;dismemberment&#39; : &#39;z14.png&#39;
+  },</code></pre>
+</section>
+<section class="level4" id="use">
+<h4>Use</h4>
+<pre class="js"><code>window.zombieManager = (function() {
+  var zombies       = new Array(),
+  zombieChair       = Lawnchair({name: &#39;zombies&#39;}, function() {}),
+  zombie_icons      = {   // Each killing method has a corresponding icon
+    &#39;nukes&#39;         : &#39;z2.png&#39;,
+    &#39;conflagration&#39; : &#39;z5.png&#39;,
+    &#39;tank&#39;          : &#39;z7.png&#39;,
+    &#39;trickery&#39;      : &#39;z11.png&#39;,
+    &#39;poison&#39;        : &#39;z13.png&#39;,
+    &#39;corrosive&#39;     : &#39;z8.png&#39;,
+    &#39;dismemberment&#39; : &#39;z14.png&#39;
+  },</code></pre>
+</section>
+<section class="level4" id="instead-of-1">
+<h4>Instead of</h4>
+<pre class="js"><code>addZombie = function(zombieWhen, zombieWhere, zombieHow) {
+    zombies[zombies.length] = {
+      when      : zombieWhen.valueOf(),
+      where     : zombieWhere,
+      how       : zombieHow
+    };
+    showZombies();  
+},</code></pre>
+</section>
+<section class="level4" id="use-1">
+<h4>Use</h4>
+<pre class="js"><code>addZombie = function(zombieWhen, zombieWhere, zombieHow) {
+    zombies[zombies.length] = {
+      when      : zombieWhen.valueOf(),
+      where     : zombieWhere,
+      how       : zombieHow
+    };
+    zombieChair.save({key: &#39;zombies&#39;, value : zombies });
+    showZombies();  
+},</code></pre>
+</section>
+</section>
+<section class="level3" id="do-this-part-ii">
+<h3>Do This, Part II</h3>
+<ol start="4" type="1">
+<li>Update the <code>init</code> method to check for data in the <code>zombieChair</code>.</li>
+<li>Nuke the <code>zombieChair</code> data when the reset button is clicked or tapped.</li>
+</ol>
+</section>
+<section class="level3" id="snippet-reference-more-zombiechair">
+<h3>Snippet Reference: More zombieChair</h3>
+<section class="level4" id="instead-of-2">
+<h4>Instead of</h4>
+<pre class="js"><code>init = function() {
+  // ...
+  showZombies(); 
+},</code></pre>
+</section>
+<section class="level4" id="use-2">
+<h4>Use</h4>
+<pre class="js"><code>init = function() {
+  // ...
+
+  zombieChair.get(&#39;zombies&#39;, function(zombiesOnIce) {
+    if (zombiesOnIce) {
+      zombies = zombiesOnIce.value;
+    }
+  });
+  showZombies(); 
+},</code></pre>
+</section>
+<section class="level4" id="instead-of-3">
+<h4>Instead of</h4>
+<pre class="js"><code>resetZombies = function() {
+  zombies = [];
+  $(&#39;li.zombie&#39;).remove();
+  $(&#39;#zombielist&#39;).listview(&#39;refresh&#39;);
+};</code></pre>
+</section>
+<section class="level4" id="use-3">
+<h4>Use</h4>
+<pre class="js"><code>resetZombies = function() {
+  zombies = [];
+  zombieChair.nuke();
+  $(&#39;li.zombie&#39;).remove();
+  $(&#39;#zombielist&#39;).listview(&#39;refresh&#39;);
+};</code></pre>
+</section>
+</section>
+</section>
+<section class="level2" id="resources">
+<h2>Resources</h2>
+<ul>
+<li><a href="http://www.jquerymobile.com">jQuery Mobile</a></li>
+<li><a href="http://jacwright.com/projects/javascript/date_format/">JavaScript Date.Format</a>: A small library to emulate PHP-style date formatting.</li>
+<li><a href="http://code.google.com/p/geo-location-javascript/">Geo-location-js</a>: A very easy cross-platform geolocation library that emulates the W3C Geolocation API.</li>
+<li><a href="http://westcoastlogic.com/lawnchair/">Lawnchair</a></li>
+</ul>
+</section>
+<section class="level2" id="done-and-learned-level-up">
+<h2>Done and Learned: Level Up!</h2>
+<ul>
+<li>Built a simple page with jQuery Mobile.</li>
+<li>Added interface elements to a jQuery Mobile page.</li>
+<li>Used a geolocation library for better cross-device support.</li>
+<li>Took advantage of a date library, too.</li>
+<li>Added custom functionality to our web app.</li>
+<li>Stored data persistently using the Lawnchair library.</li>
+</ul>
+</section>
+<section class="level2" id="the-result">
+<h2>The Result</h2>
+<p>See the finished, persistent <a href="../victories/08-got-one">I Got One!</a> mobile web app.</p>
+</section>
+</section>
+<section class="level1" id="onward">
+<h1>Onward!</h1>
+<p>Sometimes desparate times call for <a href="07-desperate-times.html">native mobile apps</a> (but built with web technologies, of course!).</p>
 </section>
 </body>
 </html>

@@ -57,7 +57,6 @@ Let’s do a test run using a device detection database.
 2. Check out the various attributes. What do you see that would be useful?
 3. Can you find the screen resolution of your phone?
 4. Go to the [ScientiaMobile WURFL Explorer][explorer] on your laptop
-5. Try some other mobile user agents from your rucksack for comparison
 
 # Testing capabilities
 
@@ -105,6 +104,12 @@ A *device class* is an abstract collection of common characteristics that define
 * Use JavaScript to verify the detection and correct errors
 * Feed the corrections back into your database
 * [RESS: Responsive Design + Server Side Components][ress]
+
+# Combining Sources of Information
+
+* Server-side Device Detection
+* Client-side Device Detection using Modernizr
+* Other client-side tests
 
 # Can we have that sunset back?
 

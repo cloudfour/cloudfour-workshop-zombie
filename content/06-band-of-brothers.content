@@ -1,5 +1,5 @@
 % A Band of Brothers
-% Frameworks (jQuery Mobile) and localStorage
+% Frameworks (jQuery Mobile) and the localStorage API
 
 
 # I got one!
@@ -10,13 +10,20 @@ Sigma Stronghold leaders want a way for agents in the field to be able to record
 
 Each time a soldier nabs a zombie out there, he or she should be able to record when, where and how that zombie met its fate. Kind of like a zombie kill board.
 
+# We're going to build this!
+
+## Figure: The end result
+
+![](images/06-screen.png)
+
 # Frameworks
 
-## So, how do we build something like this?
+## So, *how* do we build something like this?
 
 Sometimes you don't want to keep re-inventing the same zombie-blasting cannon over and over again. We zombie fighters might be a ragtag bunch, but we stick together.
 
 Frameworks, libraries, tools, templates...all of these can give you a leg up.
+
 
 # jQuery Mobile
 
@@ -26,14 +33,20 @@ jQuery Mobile is a mobile web framework built atop the popular jQuery library.
 
 jQuery Mobile works hand-in-hand with semantic HTML5 markup.
 
+# To Build our app
+
+1. Build a basic jQuery Mobile page.
+2. Add the special sauce to create our "I got one!" app
+3. Use a JavaScript library to make our zombie-kill data persistent.
+
 # Building with jQuery Mobile
 
 Content and applications with jQuery Mobile are constructed from:
 
-* Rather basic HTML5 markup.
-* The inclusion of the jQuery core JavaScript library, the jQuery Mobile JS and the jQuery Mobile CSS.
-* You can build on this with your own JavaScript, as you please.
-
+1. HTML5 markup.
+2. JavaScript: jQuery core and jQuery Mobile
+3. CSS: jQuery Mobile's CSS
+4. Your own custom stuff
 
 # Structure of jQuery Mobile Page
 
@@ -92,13 +105,12 @@ Content and applications with jQuery Mobile are constructed from:
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
 <script src="date.format.js"></script>
-<script src="http://code.google.com/apis/gears/gears_init.js" type="text/javascript"></script>
 <script src="geo.js"></script>
 <script src="zombie.js"></script>
 ~~~
 
 * `date.format.js` (Date.format) lets us do much easier date formatting with JavaScript.
-* Using Google Gears and the `geo-location-js` library makes cross-platform geolocation a snap.
+* The `geo-location-js` library makes cross-platform geolocation a snap.
 
 # OK, let's go!
 

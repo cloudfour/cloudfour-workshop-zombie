@@ -5,6 +5,14 @@
 
 # 7. Desperate Times call for...
 
+## Level Up
+
+Learn how to create native apps with relative ease, using web technologies and the PhoneGap Build service.
+
+### Mission
+
+Create a native Android app from the "I got one!" web app.
+
 ## Hybrid App Development with PhoneGap and PhoneGap Build
 
 * [PhoneGap](http://www.phonegap.com)
@@ -43,5 +51,39 @@ Here's our example `config.xml` file.
 </widget>
 ~~~
 
-(You can also find this in [`supplemental/desperate-times/config.xml`](../supplemental/desperate-times/config.xml)).
+(You can also find this in [`missions/09-phonegap/config.xml`](../missions/09-phonegap/config.xml)).
 
+## Step 1: Build a Native Android App
+
+*Note*: Due to bandwidth constraints at the workshop, it's likely not feasible for everyone to build and download the app. Instead, find the final application APK in `rucksack/victories/09-phonegap/igotone.apk`.
+
+### Watch us as we:
+
+1. ZIP up the contents of the I Got One! web app (including the `config.xml` file).
+2. Upload the ZIP file to the PhoneGap build site and build the app.
+3. Download the APK.
+
+### Do This
+
+(This assumes you have installed the Android SDK and created some virtual devices).
+
+1. Launch your Android SDK.
+2. Use the `Tools -> Manage AVDs...` menu option to open the window with your virtual devices.
+3. Launch a virtual device. 2.3 or 4.0 should work.
+4. Open a terminal window. `cd` to the directory where the `igotone.apk` file is hanging out.
+5. Run the command `adb install igotone.apk`
+6. Return to your emulated virtual device. The `I Got One!` app should be in your applications screen [^1] .
+7. If you want to uninstall the app, run the command `adb uninstall com.cloudfour.igotone`. Note that uninstalling uses the reverse-dot-notation com ID of the app, whereas install uses the filename.
+
+## Done and Level Up!
+
+* Discovered some things about hybrid mobile web app development and the PhoneGap Build service.
+* Learned how to assemble a PhoneGap Build project.
+* Tried out a PhoneGap Build app on Android.
+
+# Onward!
+
+We've learned the importance of observation and recon during our journey. Let's sharpen our investigative skills so we can [know our enemy](08-know-thy-enemy.html).
+
+
+[^1]: This is one of those "This *should* work" kinds of things. There are lots of moving parts involved with versions of the Android SDK and conflicts and whatnot, so if you are not able to get the app to run or install, don't fret too hard. And feel free to come bug us after the workshop to see if we can help you out, if you'd like!

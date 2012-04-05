@@ -4,39 +4,17 @@
 -------------------------
 # 8. Know Thy Enemy
 
-## Many device detection database options
+## Level Up
 
-* [WURFL][wurfl] (Wireless Universal Resource FiLe) by [ScientiaMobile][scientiamobile]
-* [DeviceAtlas][deviceatlas] by [dotMobi][dotmobi]
-* [OpenDDR][openddr] / New Apache [DeviceMap][devicemap] Project
-* [51degrees][51]
+Learn to spy on and understand the activities and motives of our zombie-devices by using server- and client-side device detection.
 
-## Some sample User Agent strings
+### Mission
 
-~~~
+Build some sample server- and client-side device detection and feature detection code to be ready to do some recon.
 
-Mozilla/5.0 (iPod; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5
+## Step 1: A bit of Recon
 
-Mozilla/5.0 (Linux; U; Android 2.2.1; en-us; DROIDX Build/VZW) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1 480X854 motorola DROIDX
-
-Mozilla/5.0 (webOS/1.4.5; U; en-US) AppleWebKit/532.2 (KHTML, like Gecko) Version/1.0 Safari/532.2 Pre/1.0
-
-Mozilla/5.0 (Linux; U; Android 2.3.3; en-us; Nexus S Build/GRI40) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1
-
-Mozilla/5.0 (PlayBook; U; RIM Tablet OS 1.0.0; en-US) AppleWebKit/534.8+ (KHTML, like Gecko) Version/0.0.1 Safari/534.8+
-
-PantechP2020/JIUS05172010R; Mozilla/5.0 (Profile/MIDP-2.0 Configuration/CLDC-1.1; Opera Mini/att/4.2.19039; U; en-US) Opera 9.50
-
-BlackBerry8330/4.5.0.77 Profile/MIDP-2.0 Configuration/CLDC-1.1 VendorID/105
-
-BlackBerry9300/5.0.0.794 Profile/MIDP-2.1 Configuration/CLDC-1.1 VendorID/245
-
-Mozilla/5.0 (Linux; U; Android 2.1-update1; en-us; SAMSUNG-SGH-I897/I897UCJH7 Build/ECLAIR) AppleWebKit/530.17 (KHTML, like Gecko) Version/4.0 Mobile Safari/530.17
-
-facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
-~~~
-
-## *Do This*: Sniffing 'em out
+### Do This
 
 1. Go to the [ScientiaMobile WURFL Explorer][explorer] on your mobile phone
 2. Check out the various attributes. What do you see that would be useful?
@@ -44,26 +22,67 @@ facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)
 4. Go to the [ScientiaMobile WURFL Explorer][explorer] on your laptop
 5. Try some other mobile user agents from your rucksack for comparison
 
-## WURFL code snipp-lets
+## Step 2: Server-side Device Feature Detection with WURFL Cloud
 
-~~~ {.php}
-<?php
-// This assumes the WURFL library is installed and
-// a $device object has been initialized.
-$value = $device->getCapability('is_wireless_device');
-$value = $device->getCapability('cookie_support');
-?>
+### Do This
+
+This example requires you to have a web server that can run PHP code. If you don't have that, go ahead and sit back and watch as we demo this...
+
+1. If you have a *WURFL Cloud API Key*, open the file [`rucksack/missions/10-device-detection/zombie-detect.php`](../missions/10-device-detection/zombie-detect.php) in your text editor.
+    a. Paste in your API Key in the indicated place near the top of the file to populate the `$api_key` variable and save the file.
+2. View the [`rucksack/missions/10-device-detection/`](../missions/10-device-detection/) landing page in your browser. You can do this even if you don't have an API key; you just won't get as much information on the page.
+
+## Step 3: Client-side Feature Detection with Modernizr
+
+### Do This
+
+1. Edit `index.php` in your text editor (it's in `rucksack/missions/10-device-detection`).
+2. Add a `<script>` tag to include `Modernizr-touch.js` near the top of the `<head>` element:
+    
+    `<script src="Modernizr-touch.js"></script>`
+
+## Step 4: Client-side Pixel Density detection
+
+### Do This
+
+1. Add the snippet (below) to the `<head>` of `index.php`, **after** the inclusion of the jQuery library.
+
+### Snippet Reference: Pixel density
+
+#### index.php
+
+~~~{.javascript}
+<script>
+  $(document).ready(function() {
+    if (window.devicePixelRatio) {
+      var $li = $('<li></li>').html('Device Pixel Ratio: ' + window.devicePixelRatio);
+      $("#javascript").next('ul').append($li);
+    }
+  });
+</script>
 ~~~
 
-More documentation on WURFL available on its [Sourceforge page][wurfl].
+## Resources
 
+* [WURFL][wurfl] (Wireless Universal Resource FiLe) by [ScientiaMobile][scientiamobile]
+* [WURFL Cloud Service][wurflcloud]
+* [DeviceAtlas][deviceatlas] by [dotMobi][dotmobi]
 
-[zombie-types]: http://uncyclopedia.wikia.com/wiki/Zombie_Types
-[wurfl]: http://wurfl.sourceforge.net/
+## Done and Level Up!
+
+* Learned about server-side feature detection and device database options
+* Explored some basic device capabilities with server-side detection
+* Did some client feature detection using the Modernizr tool
+* Did some client feature detection using our own JavaScript/jQuery
+* Got a glimpse of inspection and debug possibilities using Adobe Shadow
+
+## The Final Result
+
+As this example requires *your* API key to work, there is no final version except what you make!
+
+[wurfl]: wurfl.sourceforge.net
 [scientiamobile]: http://www.scientiamobile.com/
-[deviceatlas]: http://deviceatlas.com/
+[deviceatlas]: http://www.deviceatlas.com
 [dotmobi]: http://mtld.mobi/
-[51]: http://51degrees.mobi/Products/DeviceData.aspx
-[devicemap]: http://wiki.apache.org/incubator/DeviceMapProposal
+[wurflcloud]: http://www.scientiamobile.com/wurflCloud
 [explorer]: http://www.tera-wurfl.com/explore/
-[ress]: http://www.lukew.com/ff/entry.asp?1392
