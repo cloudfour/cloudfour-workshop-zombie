@@ -233,7 +233,6 @@ body > div {
 
 ~~~ {.css}
 #container {
-  zoom: 1;
   background: black;
   padding: 10px;
   width: 900px;
@@ -244,7 +243,6 @@ body > div {
 
 ~~~ {.css}
 #container {
-  zoom: 1;
   background: black;
   padding: .625em;
   max-width: 900px;
@@ -254,7 +252,6 @@ body > div {
 
 ## Speaker Notes
 
-* If folks are curious, the `zoom` property is part of a clearfix for IE.
 * Note the padding conversion to `em`.
 * Similar to the containing div, we're making this never wider than 900px. That's an absolute. Sometimes there are absolutes.
 * Around line 108ish of file.
@@ -274,7 +271,6 @@ We've already done the sloppy math on `#main` and decided it should be 60% wide.
 
 ~~~ {.css}
     #main {
-      zoom: 1;
       margin-left: 10px;
       clear: left;
       float: left;
@@ -287,7 +283,6 @@ We've already done the sloppy math on `#main` and decided it should be 60% wide.
 
 ~~~ {.css}
     #main {
-      zoom: 1;
       margin-left: 1.5%;
       clear: left;
       float: left;

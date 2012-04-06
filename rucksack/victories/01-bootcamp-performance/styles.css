@@ -83,7 +83,6 @@ small {
 #header {
   background-color: rgba(0, 0, 0, 0.4);
   display: block;
-  zoom: 1;
   padding: 1em 0 0 1em;
   clear: both;
 }
@@ -107,7 +106,6 @@ small {
 }
 
 #container {
-  zoom: 1;
   background: black;
   padding: 10px;
   width: 900px;
@@ -121,7 +119,6 @@ small {
 }
 
 #main {
-  zoom: 1;
   margin-left: 10px;
   clear: left;
   float: left;

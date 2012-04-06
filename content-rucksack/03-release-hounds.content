@@ -70,7 +70,6 @@ body > div {
 
 ~~~ {.css}
 #container {
-  zoom: 1;
   background: black;
   padding: 10px;
   width: 900px;
@@ -82,7 +81,6 @@ body > div {
 
 ~~~ {.css}
 #container {
-  zoom: 1;
   background: black;
   padding: .625em;
   max-width: 900px;
@@ -103,7 +101,6 @@ body > div {
 
 ~~~ {.css}
 #main {
-  zoom: 1;
   margin-left: 10px;
   clear: left;
   float: left;
@@ -116,7 +113,6 @@ body > div {
 
 ~~~ {.css}
 #main {
-  zoom: 1;
   margin-left: 1.5%;
   clear: left;
   float: left;
@@ -322,8 +318,7 @@ body > div {
 #### Instead of
 
 ~~~ {.css}
-#main {
-  zoom: 1;
+#main { 
   margin-left: 1.5%;
   clear: left;
   float: left;
@@ -340,7 +335,6 @@ body > div {
   float: none;
   clear: both;
   margin: 0;
-  zoom: 1;
   /// ... And so on ...
 }
 ~~~

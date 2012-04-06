@@ -149,7 +149,6 @@ section[id^="instead"] {
   width: 45%;
   clear: left;
   margin-bottom: 1em;
-  zoom: 1;
 }
 section[id^="instead"]:after {
   content: ' ';
@@ -164,7 +163,6 @@ section[id^="use"] {
   width: 45%;
   margin-bottom: 1em;
   border-bottom: 1px;
-  zoom: 1;
 }
 section[id^="use"]:after {
   content: ' ';
@@ -258,7 +256,6 @@ section[id^="do-this"] > h3:before, section[id^="do-this"] > h4:before {
 section[id^="snippet"] {
   clear: both;
   padding: 0em 1em;
-  zoom: 1;
   border-radius: 1em;
   border: 1px dotted #555555;
   margin: .5em;
