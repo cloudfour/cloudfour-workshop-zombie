@@ -68,7 +68,15 @@ While most of what we'll look at can be viewed as files in a web browser, **some
 3. There is a [one-line python script](http://www.garyrobinson.net/2004/03/one_line_python.html) for spinning up a web server.
 4. I use [MAMP](http://www.mamp.info) on my Mac as a web server (comes with PHP and mysql). There's [XAMPP](www.apachefriends.org/en/xampp.html) for Windows and Linux. These are pretty easy installs but might be more than you want to deal with right at this second.
 
-## Step 2: Install the Android SDK
+## Step 2: Install the Window Resizer Extension
+
+### Why?
+
+It's so much easier to debug and understand responsive design layouts if you can control the size of and know the size of your browser window.
+
+[Window Resizer browser extension for Chrome](https://chrome.google.com/webstore/detail/kkelicaakdanhinjdeammmilcgefonfh)
+
+## Step 3: Install the Android SDK
 
 ### Why?
 
@@ -98,7 +106,7 @@ The Android SDK takes a little while to install, like, long enough to go make a 
 * [SDK installation instructions](http://developer.android.com/sdk/installing.html) on developer.android.com.
 * If you have [our book](http://bit.ly/hf-mw), there is an entire, in-depth appendix about installing the Android SDK in the particular way we'll be using it for the workshop.
 
-## Step 3: Sign up for WURFL Cloud on ScientiaMobile and get your API key
+## Step 4: Sign up for WURFL Cloud on ScientiaMobile and get your API key
 
 1. Go to [WURFL Cloud signup on ScientiaMobile](https://www.scientiamobile.com/cloud/signup/free) and sign up for the free Cloud service.
 2. Go to the `My Account` link (top right of screen) and click into the account you just created.
@@ -109,7 +117,7 @@ The Android SDK takes a little while to install, like, long enough to go make a 
 5. Copy your API key somewhere that you can access easily during the workshop.
 
 
-## Step 4: Other nice-to-have weapons
+## Step 5: Other nice-to-have weapons
 
 Totally optional, but neat things.
 

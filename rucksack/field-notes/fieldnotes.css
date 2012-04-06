@@ -106,8 +106,6 @@ pre, code {
   background-color: #fdfbd7;
   font-family: "Anonymous Pro", monospace;
   font-size: .95em;
-  padding: .15em .35em;
-  margin: 0 .25em;
   color: #484848;
 }
 
@@ -119,6 +117,7 @@ pre {
 
 pre {
   overflow: scroll;
+  padding: .5em;
 }
 
 pre code {
