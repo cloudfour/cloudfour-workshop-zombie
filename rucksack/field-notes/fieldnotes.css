@@ -312,3 +312,7 @@ section[id^="done"] ul li:before {
 .snippet.open h3:before {
   content: "\25BE";
 }
+
+.snippet.open {
+  padding-bottom: .5em;
+}

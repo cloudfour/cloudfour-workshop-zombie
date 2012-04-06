@@ -497,6 +497,7 @@ For more expounding on the topic of relinquishing control, see Lyza's presentati
 * Rough rule of thumb for font sizes: `1em = 100% ~= 16px ~= 12pt`. *Approximately*.
 * Percentages (%) and `em`s are both fluid units, `pt`s, `px`, inches and pica are fixed. (Technically, `px` are not *absolute* absolute, as the size of a pixel varies with different devices and screens and are not *fixed*, per se. However, for our purposes, they are effectively absolute, as they do not scale).
 * You can always [read the CSS3 Media Queries spec](http://www.w3.org/TR/css3-mediaqueries/)
+* [The Ems Have it](http://blog.cloudfour.com/the-ems-have-it-proportional-media-queries-ftw/), a blog post on our blog about em-based media queries.
 
 ## Done and learned: Level Up!
 

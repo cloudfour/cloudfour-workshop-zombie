@@ -262,3 +262,7 @@ section[id^="done"] {
 .snippet.open h3:before {
   content: "\25BE";
 }
+
+.snippet.open {
+  padding-bottom:     .5em;
+}
