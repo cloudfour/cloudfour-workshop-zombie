@@ -2,7 +2,7 @@
 
 // Include the WURFL Cloud Client 
 require_once 'WurflCloudClient-PHP-1.0.2-Simple/Client/Client.php';
-$api_key = '626854:Eb2qiUjVhWl4w0raK9XNHSYk1cmeGMnJ';
+$api_key = ''; // ADD YOUR API KEY IF YOU HAVE ONE
 $is_phone_like = NULL;
 $is_touch = NULL;
 

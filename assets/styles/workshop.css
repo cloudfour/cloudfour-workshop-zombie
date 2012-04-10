@@ -47,6 +47,20 @@
   src: local("Special Elite"), local("SpecialElite-Regular"), url("http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fjka35Jm4kaQb-UsZVONjobs91YQtw.woff") format("woff");
 }
 
+@font-face {
+  font-family: 'Cabin Sketch';
+  font-style: normal;
+  font-weight: bold;
+  src: local("CabinSketch Bold"), local("CabinSketch-Bold"), url("http://themes.googleusercontent.com/static/fonts/cabinsketch/v5/ki3SSN5HMOO0-IOLOj069BAPw1J91axKNXP_-QX9CC8.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Cabin Sketch';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Cabin Sketch Regular"), local("CabinSketch-Regular"), url("http://themes.googleusercontent.com/static/fonts/cabinsketch/v5/d9fijO34zQajqQvl3YHRCaRDOzjiPcYnFooOUGCOsRk.woff") format("woff");
+}
+
 body {
   background-color: black;
   color: #fffeee;
@@ -58,6 +72,7 @@ h1 {
   font-family: "Nosifer", cursive;
   color: #e43d3d;
   text-shadow: 3px 3px 5px #300;
+  font-weight: 400;
 }
 
 h2 {
