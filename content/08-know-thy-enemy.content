@@ -44,7 +44,7 @@ Plus, 25 of Alexa’s Top 30 sites use device detection. The five that don’t? 
 
 * [WURFL][wurfl] (Wireless Universal Resource FiLe) by [ScientiaMobile][scientiamobile]
 * [DeviceAtlas][deviceatlas] by [dotMobi][dotmobi]
-* [OpenDDR][openddr] / New Apache [DeviceMap][devicemap] Project
+* New Apache [DeviceMap][devicemap] Project
 * [51degrees][51]
 
 Pay special attention to the licenses.
@@ -71,6 +71,67 @@ OR
 ## Does this browser-device combo support cookies?
 
 `$value = $device->getCapability('cookie_support');`
+
+## Speaker Notes
+
+* This is WURFL PHP API syntax
+
+# Sniff, Sniff
+
+We can combine a few weapons when we sniff out our zombies:
+
+* Server-side device detection and capability detection using the WURFL Cloud Service.
+* Client-side feature detection using the Modernizr JavaScript library.
+* Client-side feature detection with our own JavaScript.
+
+# Client-Side Device Detection
+
+## Figure: Client-side device detection
+
+![](images/08-device-detection-start.png)
+
+### Mission: Do some browser recon
+
+# Device Pixel Ratio
+
+I'm leaning on jQuery here a bit...
+
+~~~{.javascript}
+$(document).ready(function() {
+  if (window.devicePixelRatio) {
+    var $li = $('<li></li>').html('Device Pixel Ratio: ' + window.devicePixelRatio);
+    $("#javascript").next('ul').append($li);
+  }
+});
+~~~
+
+# Touch Event Support via Modernizr
+
+Modernizr can be set up to add CSS classes to the `<html>` element:
+
+~~~{.css}
+.touchdetails { display: none; }
+.touch #details-touch { display: list-item; }
+.no-touch #details-notouch { display: list-item; }
+~~~
+
+## Speaker Notes
+
+This build of Modernizr *only* tests for touch and adds the classes.
+
+# Filling in those empty slots
+
+I can get stuff to show up in those empty slots by setting a valid WURFL API key.
+
+~~~{.php}
+$api_key = ''; // ADD YOUR API KEY IF YOU HAVE ONE
+~~~
+
+# Now we know more about our Zombie
+
+## Figure: Zombie sniffed
+
+![](images/08-device-detection-done.png)
 
 # Zombie are like snowflakes
 
@@ -105,11 +166,6 @@ A *device class* is an abstract collection of common characteristics that define
 * Feed the corrections back into your database
 * [RESS: Responsive Design + Server Side Components][ress]
 
-# Combining Sources of Information
-
-* Server-side Device Detection
-* Client-side Device Detection using Modernizr
-* Other client-side tests
 
 # Can we have that sunset back?
 

@@ -31,6 +31,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
     href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
    href="../assets/styles/workshop.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="../assets/workshop.js"></script>
   <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js.gz"
     charset="utf-8" type="text/javascript"></script>
 </head>
@@ -62,8 +64,8 @@ Mobile web performance and semantic markup
 </div>
 <div class="section slide level1" id="the-web-is-fat">
 <h1>The web is fat</h1>
-<div class="section level2" id="figure-the-web-is-fat">
-<h2>Figure: The Web is Fat</h2>
+<div class="section level2" id="illustration-the-web-is-fat">
+<h2>Illustration: The Web is Fat</h2>
 <div class="figure">
 <img src="images/02-web-is-fat.png" title="The Web is Fat" /><p class="caption"></p>
 </div>
@@ -79,8 +81,8 @@ Mobile web performance and semantic markup
 </div>
 <div class="section slide level1" id="we-got-sloppy">
 <h1>We got sloppy</h1>
-<div class="section level2" id="figure-sad-phone">
-<h2>Figure: Sad Phone</h2>
+<div class="section level2" id="illustration-sad-phone">
+<h2>Illustration: Sad Phone</h2>
 <div class="figure">
 <img src="images/02-i-am-sad.png" title="I am sad" /><p class="caption"></p>
 </div>
@@ -102,16 +104,24 @@ Mobile web performance and semantic markup
 <div class="section slide level1" id="unfortunately">
 <h1>Unfortunately</h1>
 <div class="figure">
-<img src="images/02-my-fat-site.png" title="My fat site" /><p class="caption"></p>
+<img src="images/02-my-fat-site.png" title="My fat site" alt="I&#39;m too fat!" /><p class="caption">I'm too fat!</p>
 </div>
 <ul>
 <li>Bytes cost money.</li>
 <li>Slow costs money.</li>
 <li>Invalid markup costs money.</li>
+<li>Money.</li>
+<li>And sad.</li>
 </ul>
 <div class="section level2" id="speaker-notes-2">
 <h2>Speaker Notes</h2>
-<p>When it comes to the mobile web, the notion of valid markup and lean pages is not just something to mutter platitudes about. It's important.</p>
+<ul>
+<li>When it comes to the mobile web, the notion of valid markup and lean pages is not just something to mutter platitudes about. It's important.</li>
+<li>Indirectly and directly, it costs money. It costs users money (for data); it costs companies money (lost sales opportunities, abandoned user sessions as folks get frustrated).</li>
+<li>It makes people sad. Crashing. Waiting. Draining batteries.</li>
+<li>So we have to hit home some topics that may seem a bit remedial, but are of the utmost importance as we venture out on the mobile web.</li>
+</ul>
+<p>TODO: Ask Jason about study.</p>
 <p>Pause/transition.</p>
 </div>
 </div>
@@ -120,18 +130,23 @@ Mobile web performance and semantic markup
 <div class="figure">
 <img src="images/02-dingus.png" alt="Sergeant Dingus" /><p class="caption">Sergeant Dingus</p>
 </div>
-<p>Sergeant Dingus built a <a href="../rucksack/missions/sigma-stronghold-website">web site</a> to cheer on his comrades in basic training at the Sigma Stronghold.</p>
+<p>Sergeant Dingus built a <a href="../rucksack/missions/01-bootcamp-performance">web site</a> to cheer on his comrades in basic training at the Sigma Stronghold.</p>
 <div class="section level2" id="speaker-notes-3">
 <h2>Speaker Notes</h2>
-<p>This ragtag group of underdogs is the neighborhood's only hope against the staggering Zombie horde.</p>
+<ul>
+<li>This ragtag group of underdogs is the neighborhood's only hope against the staggering Zombie horde.</li>
+</ul>
 </div>
 </div>
 <div class="section slide level1" id="sigma-stronghold">
 <h1>Sigma Stronghold</h1>
+<div class="section level2" id="big-sigma-stronghold">
+<h2>Big: Sigma Stronghold</h2>
 <div class="figure">
-<img src="images/02-sigma-start.png" /><p class="caption"></p>
+<img src="images/02-sigma-start.png" alt="Sigma Stronghold Website" /><p class="caption">Sigma Stronghold Website</p>
 </div>
 <p>Our recruit Gomer and this web site are not too different. Bloated, lazy and distracted.</p>
+</div>
 <div class="section level2" id="its-our-mission...">
 <h2>It's our mission...</h2>
 <div class="section level3" id="help-gomer-and-sgt.-dingus-get-this-sorry-sack-of-a-web-page-in-fighting-trim.">
@@ -141,17 +156,27 @@ Mobile web performance and semantic markup
 <div class="section level2" id="speaker-notes-4">
 <h2>Speaker Notes</h2>
 <ul>
+<li><a href="../rucksack/missions/01-bootcamp-performance">Sigma Stronghold Web Site</a></li>
 <li>Walk through site, quickly, in browser window.</li>
-<li>You can look at it, too. Use the link in your field notes.</li>
 </ul>
+<div class="section level3" id="do-this">
+<h3>Do This</h3>
+<ul>
+<li>You can look at the web site in your browser by clicking on the link under <a href="../rucksack/field-notes/02-bootcamp.html#step-0-getting-the-current-picture" title="Field Notes">step 0 in field notes</a>.</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="section slide level1" id="we-have-pity">
 <h1>We have pity</h1>
+<div class="section level2" id="reverse-zzzzz">
+<h2>Reverse: Zzzzz</h2>
 <div class="figure">
 <img src="images/02-paradox.png" title="Huh, what?" /><p class="caption"></p>
 </div>
-<p>Welcome to a paradox:</p>
+</div>
+<div class="section level2" id="welcome-to-a-paradox">
+<h2>Welcome to a paradox:</h2>
 <div class="section level3" id="the-first-and-most-important-step-toward-being-a-mobile-web-ninja-is-extreme-focus-on-performance">
 <h3>The first and most important step toward being a mobile web ninja is <em>extreme focus</em> on performance</h3>
 <div class="section level5" id="and-yet">
@@ -165,10 +190,11 @@ Mobile web performance and semantic markup
 </div>
 </div>
 </div>
+</div>
 <div class="section slide level1" id="the-goal">
 <h1>The goal</h1>
-<div class="section level2" id="figure-yslow">
-<h2>Figure: ySlow</h2>
+<div class="section level2" id="illustration-yslow">
+<h2>Illustration: ySlow</h2>
 <div class="figure">
 <img src="images/02-yslow.png" /><p class="caption"></p>
 </div>
@@ -194,6 +220,20 @@ Mobile web performance and semantic markup
 <img src="images/02-yslow-start-stats-annotated.png" title="ySlow Starting Grade: Stats" alt="ySlow Starting Point" /><p class="caption">ySlow Starting Point</p>
 </div>
 </div>
+<div class="section level2" id="speaker-notes-6">
+<h2>Speaker Notes</h2>
+<ul>
+<li>ySlow is from the Yahoo! Exceptional Performance Team that can be installed as an extension to several browsers.</li>
+<li>Gives you detailed info about the performance of your web page.</li>
+<li>Let's see what it says about Sigma Stronghold.</li>
+</ul>
+<div class="section level3" id="do-this-1">
+<h3>Do This</h3>
+<ul>
+<li>If you have ySlow installed, you can run it yourself.</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="section slide level1" id="a-bit-sloppy">
 <h1>A bit sloppy</h1>
@@ -211,13 +251,9 @@ Mobile web performance and semantic markup
 <li>Concurrent HTTP connections are limited</li>
 <li>Latency is high</li>
 <li>Processors are less beefy</li>
-<li>Poor folks have to pay for data</li>
+<li>Many folks have to pay for data</li>
 <li>Support for certain desktop technologies not possible</li>
 </ul>
-<div class="section level2" id="speaker-notes-6">
-<h2>Speaker Notes</h2>
-<p>TODO: Ask Jason/John about current concurrency situation</p>
-</div>
 </div>
 <div class="section slide level1" id="the-obstacle-course-between-us-and-a-site-ready-for-the-zombie-hordes">
 <h1>The obstacle course between us and a site ready for the zombie hordes</h1>
@@ -228,12 +264,11 @@ Mobile web performance and semantic markup
 <li>Optimize and compress our media.</li>
 <li>Perform some server-side tuning.</li>
 </ol>
-<p>TODO: Obstacle Course image</p>
 </div>
 <div class="section slide level1" id="ready">
 <h1>Ready?</h1>
-<div class="section level2" id="figure-lets-go">
-<h2>Figure: Let's Go!</h2>
+<div class="section level2" id="illustration-lets-go">
+<h2>Illustration: Let's Go!</h2>
 <div class="figure">
 <img src="images/02-traffic-light.png" title="Let&#39;s go" /><p class="caption"></p>
 </div>
@@ -247,6 +282,10 @@ Mobile web performance and semantic markup
 <img src="images/02-sigma-weather.png" title="Weather Widget" alt="This is a weather widget" /><p class="caption">This is a weather widget</p>
 </div>
 </div>
+<div class="section level2" id="speaker-notes-7">
+<h2>Speaker Notes</h2>
+<p>If you scroll down to the bottom of the Sigma Stronghold website, you'll see this widget.</p>
+</div>
 </div>
 <div class="section slide level1" id="weather-widget">
 <h1>Weather Widget</h1>
@@ -259,6 +298,8 @@ Mobile web performance and semantic markup
 </div>
 <div class="section slide level1" id="the-dark-side-of-the-weather">
 <h1>The dark side of the weather</h1>
+<div class="section level2" id="code">
+<h2>Code</h2>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;weather&quot;</span><span class="kw">&gt;</span>
   <span class="kw">&lt;div</span><span class="ot"> style=</span><span class="st">&#39;width: 240px; height: 420px; </span>
 <span class="st">   background-image: url( http://vortex.accuweather.com/adcbin/netweather_v2/backgrounds/black_240x420_bg.jpg );</span>
@@ -279,10 +320,11 @@ Mobile web performance and semantic markup
 <div class="section level5" id="index.html">
 <h5>index.html</h5>
 </div>
-<div class="section level2" id="speaker-notes-7">
+</div>
+<div class="section level2" id="speaker-notes-8">
 <h2>Speaker notes</h2>
 <ul>
-<li><p>Note the copy in field notes</p></li>
+<li><p>Note the copy in field notes under &quot;Snippet Reference: Weather&quot;</p></li>
 <li><p>Ask folks what's broken about this</p>
 <ul>
 <li>It's Flash (Flash doesn't work on most mobile web browsers).</li>
@@ -297,6 +339,8 @@ Mobile web performance and semantic markup
 </div>
 <div class="section slide level1" id="dingus-responds">
 <h1>Dingus Responds</h1>
+<div class="section level2" id="reverse-sergeant-dingus">
+<h2>Reverse: Sergeant Dingus</h2>
 <div class="figure">
 <img src="images/02-dingus-2.png" /><p class="caption"></p>
 </div>
@@ -306,10 +350,17 @@ Mobile web performance and semantic markup
 <div class="section level3" id="were-going-to-get-rid-of-that-weather-widget">
 <h3>We're going to get rid of that weather widget</h3>
 </div>
+</div>
 <div class="section level2" id="done">
 <h2>Done</h2>
 <ul>
 <li>Weather widget axed</li>
+</ul>
+</div>
+<div class="section level2" id="speaker-notes-9">
+<h2>Speaker Notes</h2>
+<ul>
+<li>So, what does Sgt. Dingus say?</li>
 </ul>
 </div>
 </div>
@@ -317,36 +368,53 @@ Mobile web performance and semantic markup
 <h1>Time to Get Medieval</h1>
 <div class="section level2" id="time-for-some-quick-extreme-training">
 <h2>Time for some quick, extreme training</h2>
-<p>TODO: pew-pew type of image</p>
+<div class="section level3" id="quick-mission-make-several-quick-changes-to-clean-up-the-sigma-stronghold-websites-act">
+<h3>Quick mission: Make several quick changes to clean up the Sigma Stronghold Website's act</h3>
+</div>
 </div>
 </div>
 <div class="section slide level1" id="quick-hits-making-our-code-better">
 <h1>Quick hits; making our code better</h1>
+<div class="section level5" id="index.html-1">
+<h5>Index.html</h5>
 <p>Google font optimization (reduce size and number of HTTP requests)</p>
 <pre><code>    &lt;link href=&quot;http://fonts.googleapis.com/css?family=Cool+Font|Squiggly&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
+</div>
 <div class="section level3" id="instead-of">
 <h3>Instead of</h3>
+<div class="section level4" id="code-1">
+<h4>Code</h4>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Nosifer&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
 <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Butcherman&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
 <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Creepster&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span>
 <span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Special+Elite&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span></code></pre>
 </div>
+</div>
 <div class="section level3" id="use">
 <h3>Use</h3>
+<div class="section level4" id="code-2">
+<h4>Code</h4>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Nosifer|Special+Elite&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span></code></pre>
 </div>
-<div class="section level2" id="speaker-notes-8">
+</div>
+<div class="section level2" id="speaker-notes-10">
 <h2>Speaker Notes</h2>
 <ul>
 <li>4 HTTP requests down to one</li>
 <li>Reduced payload</li>
+<li>Snippet is in field notes under <code>concatenate link tags</code></li>
 </ul>
 </div>
 </div>
 <div class="section slide level1" id="quick-hits-making-our-code-better-1">
 <h1>Quick hits; making our code better</h1>
+<div class="section level5" id="index.html-and-styles.css">
+<h5>index.html and styles.css</h5>
+</div>
+<div class="section level2" id="figure-web-inspector">
+<h2>Figure: Web Inspector</h2>
 <div class="figure">
-<img src="images/02-404s.png" title="Missing things" /><p class="caption"></p>
+<img src="images/02-404s.png" title="Missing things" alt="Screen shot of Web Inspector" /><p class="caption">Screen shot of Web Inspector</p>
 </div>
 <ul>
 <li>404s (cleanliness and HTTP requests)
@@ -356,8 +424,18 @@ Mobile web performance and semantic markup
 </ul></li>
 </ul>
 </div>
+<div class="section level2" id="speaker-notes-11">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Snippet is under <code>Fixing 404s</code></li>
+</ul>
+</div>
+</div>
 <div class="section slide level1" id="quick-hits">
 <h1>Quick Hits</h1>
+<div class="section level5" id="index.html-and-styles.css-1">
+<h5>index.html and styles.css</h5>
+</div>
 <div class="section level2" id="done-1">
 <h2>Done!</h2>
 <ul>
@@ -365,32 +443,12 @@ Mobile web performance and semantic markup
 <li>Remove <code>&lt;link&gt;</code> to missing stylesheet</li>
 <li>fix image <code>url</code> in styles</li>
 </ul>
-<div class="section level5" id="index.html-and-styles.css">
-<h5>index.html and styles.css</h5>
 </div>
-</div>
-<div class="section level2" id="speaker-notes-9">
-<h2>Speaker notes</h2>
-<div class="section level3" id="google-font-madness">
-<h3>Google font madness</h3>
+<div class="section level2" id="speaker-notes-12">
+<h2>Speaker Notes</h2>
 <ul>
-<li>The Sigma Stronghold site uses Google fonts for web typography.</li>
-<li>Some of the stylesheets are for Google fonts that aren't being used.</li>
-<li>Also, we can concatenate our Google font CSS so that we don't have to make multiple HTTP requests.
-<ul>
-<li>You can do this by separating the font names with the pipe <code>|</code> character.</li>
-<li><p>e.g.</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;link</span><span class="ot"> href=</span><span class="st">&quot;http://fonts.googleapis.com/css?family=Cool+Font|Squiggly&quot;</span><span class="ot"> rel=</span><span class="st">&quot;stylesheet&quot;</span><span class="kw">&gt;</span></code></pre></li>
-</ul></li>
+<li>Pause. We're about to talk about how it's still fat.</li>
 </ul>
-</div>
-<div class="section level3" id="some-of-these-things-seem-to-be-missing">
-<h3>Some of these things seem to be missing</h3>
-<ul>
-<li><code>home.css</code> doesn't exist, yet there is a stylesheet link to it.</li>
-<li>There's a reference to <code>blip.jpg</code> in a CSS rule, yet that file doesn't exist (the correct image filename is <code>blip.png</code>).</li>
-</ul>
-</div>
 </div>
 </div>
 <div class="section slide level1" id="its-still-fat">
@@ -402,26 +460,50 @@ Mobile web performance and semantic markup
 <img src="images/02-yslow-2.png" alt="Updated ySlow Stats" /><p class="caption">Updated ySlow Stats</p>
 </div>
 </div>
+<div class="section level2" id="speaker-notes-13">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Transition to &quot;OK, how do we cut some weight?&quot;</li>
+<li>Moving into Step 2: Image Optimization in fieldnotes.</li>
+<li>Some of this may feel old-school or remedial, but, I gotta tell you. There's a lot of people who don't pay their dues to the optimization gods.</li>
+<li>What are the main sources of the excess flab?</li>
+</ul>
+</div>
 </div>
 <div class="section slide level1" id="less-than-ideal-1">
 <h1>Less than Ideal #1</h1>
+<div class="section level2" id="reverse-zombie-image">
+<h2>Reverse: Zombie Image</h2>
 <div class="figure">
 <img src="images/02-zombie-image.png" title="Text data in image, bad" /><p class="caption"></p>
 </div>
 <p>The contact information for HQ is an image. This is bad. It is also a huge image. Also bad.</p>
 </div>
+<div class="section level2" id="speaker-notes-14">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Hitting on another theme of content, accessibility and semantic goodness.</li>
+</ul>
+</div>
+</div>
 <div class="section slide level1" id="less-than-ideal-2">
 <h1>Less than Ideal #2</h1>
+<div class="section level2" id="reverse-zombie-girl">
+<h2>Reverse: Zombie Girl</h2>
 <div class="figure">
 <img src="images/02-zombie-girl.png" title="Un-optimized image, bad" /><p class="caption"></p>
 </div>
 <p>The zombie girl image is hideous, and it is also very large.</p>
 </div>
+</div>
 <div class="section slide level1" id="less-than-ideal-3">
 <h1>Less than Ideal #3</h1>
 <p>The moon background image is ginormous.</p>
+<div class="section level2" id="figure-background-image">
+<h2>Figure: Background Image</h2>
 <div class="figure">
 <img src="images/02-moon-image.png" title="Un-optimized image, bad" /><p class="caption"></p>
+</div>
 </div>
 </div>
 <div class="section slide level1" id="lets-fix-it">
@@ -432,6 +514,13 @@ Mobile web performance and semantic markup
 <blockquote>
 <p>I'm a bit embarrassed about the HQ address image. I didn't even really think about it. Also, we've had some of the troops complain about too much specific zombie imagery on the site overall. I'm attached to the moon photo because my brother took it and I think it's kind of cool. The other images, meh. — Sgt. Dingus.</p>
 </blockquote>
+<div class="section level2" id="speaker-notes-15">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Read Dingus quote</li>
+<li>Example of give and take so ineherent to the web world.</li>
+</ul>
+</div>
 </div>
 <div class="section slide level1" id="smushing-our-moon">
 <h1>Smushing our moon</h1>
@@ -466,6 +555,12 @@ Mobile web performance and semantic markup
 <img src="images/02-midpoint.png" alt="Updated Sigma Stronghold Site" /><p class="caption">Updated Sigma Stronghold Site</p>
 </div>
 </div>
+<div class="section level2" id="speaker-notes-16">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Let's go the final mile by getting all up into the .htaccess</li>
+</ul>
+</div>
 </div>
 <div class="section slide level1" id="the-final-mile-server-side-tweaks">
 <h1>The final mile: server-side tweaks</h1>
@@ -483,10 +578,11 @@ Mobile web performance and semantic markup
 <img src="images/02-yslow-start.png" title="ySlow Starting Grade" alt="ySlow Starting Point" /><p class="caption">ySlow Starting Point</p>
 </div>
 </div>
-<div class="section level2" id="speaker-notes-10">
+<div class="section level2" id="speaker-notes-17">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Pause and allow folks to follow along if they so choose.</li>
+<li>&quot;This is a different tab in the ySlow tool&quot;</li>
 </ul>
 </div>
 </div>
@@ -546,6 +642,12 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <li>Turned off eTags</li>
 </ul>
 </div>
+<div class="section level2" id="speaker-notes-18">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Find this <code>.htaccess</code> reference code in step 3 under Snippet Reference there</li>
+</ul>
+</div>
 </div>
 <div class="section slide level1" id="and">
 <h1>And?</h1>
@@ -568,11 +670,10 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <div class="section level3" id="nice-work-soldiers">
 <h3>Nice work, soldiers!</h3>
 </div>
-<div class="section level2" id="speaker-notes-11">
+<div class="section level2" id="speaker-notes-19">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Can anyone guess why there is .2k on a primed cache?</li>
-<li>Tell where to find updated code/version</li>
 <li>Transition here to advanced, second part</li>
 </ul>
 </div>
@@ -587,6 +688,8 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <div class="section slide level1" id="some-of-the-markup-is-a-bit-stupid">
 <h1>Some of the markup is a bit stupid</h1>
 <p>There, we said it. There are a few daft things in the markup that are going to hold it back from being the mobile-friendly success it could be.</p>
+<div class="section level2" id="code-3">
+<h2>Code</h2>
 <pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;news-item kill&quot;</span><span class="kw">&gt;</span>
   <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;title&quot;</span><span class="kw">&gt;&lt;h3&gt;</span>Kill confirm: <span class="kw">&lt;span</span><span class="ot"> class=</span><span class="st">&quot;red&quot;</span><span class="kw">&gt;</span>zombie #421<span class="kw">&lt;/span&gt;</span> has been neutralized<span class="kw">&lt;/h3&gt;&lt;/div&gt;</span>
   <span class="kw">&lt;div</span><span class="ot"> class=</span><span class="st">&quot;summary&quot;</span><span class="kw">&gt;</span>
@@ -600,6 +703,7 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
     <span class="kw">&lt;/div&gt;</span>
   <span class="kw">&lt;/div&gt;</span>
 <span class="kw">&lt;/div&gt;</span></code></pre>
+</div>
 </div>
 <div class="section slide level1" id="daft">
 <h1>Daft?</h1>
@@ -618,7 +722,7 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
 <li>We can use basic HTML elements instead of <code>&lt;span&gt;</code>s and classes so that the markup carries semantic meaning.</li>
 <li>We can cut down on the div-itis.</li>
 </ul>
-<div class="section level2" id="speaker-notes-12">
+<div class="section level2" id="speaker-notes-20">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Can anyone tell me why div-itis is more painful/relevant for us?</li>
@@ -664,11 +768,12 @@ ExpiresByType image/x-icon &quot;access plus 2 years&quot;
   20120621//1935 :: A/V Wonk Phil Starken
 <span class="kw">&lt;/small&gt;</span></code></pre>
 </div>
-<div class="section level2" id="speaker-notes-13">
+<div class="section level2" id="speaker-notes-21">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Pull up the old and new HTML side by side?</li>
 <li>Note the notes in field notes, Hee.</li>
+<li>Some details in <code>Some Details</code> in field notes.</li>
 </ul>
 <div class="section level3" id="what-we-did-for-you">
 <h3>What we did for you</h3>

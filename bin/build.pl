@@ -57,7 +57,7 @@ sub build_presentation {
     my $speaker_output = $slide_path . "/" . $base . '-speaker.html';
     my $test_update = needs_update($_, $output);
     if ($test_update) {
-      system("$pandoc $flags --section-divs --css=../assets/styles/workshop.css $_ > $output");
+      system("$pandoc $flags --section-divs --css=../assets/styles/workshop.css --include-in-header=$src_path/presentation-includes.txt $_ > $output");
       # system("$pandoc --from=markdown --to=html5 --standalone --section-divs --css=../assets/styles/speaker.css $_ > $speaker_output");
       if ($opts{v}) {
         print "Updated $_ --> $output \n";

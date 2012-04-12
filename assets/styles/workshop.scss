@@ -12,6 +12,13 @@ h1 {
   color:                $color-accent;
   text-shadow:          3px 3px 5px #300;
   font-weight:          400;
+  div.slide & {
+    margin:               0;
+    padding:              .5em .25em 0 .5em;
+    background:           -webkit-linear-gradient(top, #000 0%, #3a3333 100%);
+    border-bottom:        1px solid $color-accent;
+  }
+  
 }
 
 h2 {
@@ -34,7 +41,7 @@ h4 {
 }
 
 h5 {
-  margin:               0;
+  margin:               0 0 0 1em;
   font-size:            .5em;
   font-weight:          normal;
 }
@@ -51,12 +58,12 @@ code, pre {
   font-family:          $code-font;
 }
 
+/* Deal with pre/code */
 pre code, pre {
   background-color:     lighten($color-background, 10%);
 }
 
 code {
-  padding:              .15em;
   margin:               0 .15em;
   font-family:          $code-font;
   white-space:          nowrap;
@@ -77,15 +84,153 @@ pre code {
   white-space:          pre;
   color: #fff;
 }
+/* END */
 
 blockquote {
-  line-height:          1.2em;
+  line-height:          1.4em;
 }
 
 li ul li {
   font-style:           normal;
 }
 
+
+
+div[id^="speaker-notes"] {
+  display: none;
+}
+
+div.slide {
+  line-height:            1.5em;
+  font-size:              1.25em;
+  padding-left:           0;
+  padding-right:          0;
+  
+  div[id^="code"] {
+    h1, h2, h3, h4, h5, h6 {
+      display:            none;
+    }
+    & pre, .sourceCode {
+      font-size:          .7em;
+      line-height:        1em;
+    }
+  }
+  
+  ul {
+    margin-top: 1em;
+    list-style-type: none;
+    li {
+      list-style: none;
+      &:before {
+        content: '\272a';
+        color: $color-accent;
+        margin-right: .5em;
+      }
+    }
+  }
+  div[id^="instead"] {
+    float:                left;
+    width:                45%;
+    clear:                left;
+  }
+  div[id^="use"] {
+    float:                right;
+    width:                45%;
+    clear:                right;
+  }
+  div[id^="use"]+div, div[id^="use"] > div {
+    clear:                both;
+  }
+  div.figure { // Default image placement (left)
+    border: 3px solid $color-accent;
+    margin: .5em 2em .5em .5em;
+    float: left;
+    padding: 1em 1em .5em 1em;
+    background-color: $color-warm;
+    max-width: 40%;
+    img {
+      padding: 0;
+      background-color: black;
+      max-width: 100%;
+      max-height: 75%;
+      box-shadow: 10px 15px 25px #aaa;
+    }
+    p.caption {
+      font-size: .6em;
+      color: $color-dark;
+      margin: 0;
+      text-align: center;
+      text-shadow: 1px 1px 2px #000;
+    }
+  }
+  div[id^='figure'] {
+    & h1, & h2, & h3 {
+      display: none;
+    }
+    div.figure {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+      border: none;
+      margin: 0;
+      background: none;
+      img {
+        max-height: 70%;
+        max-width: 100%;
+        box-shadow: none;
+        border: 2px solid $color-accent;
+        box-shadow: 10px 20px 40px #544;
+      }
+      p.caption {
+        color: $color-warm;
+      }
+    }  
+  }
+  p.caption {
+    line-height: 1.1em;
+  }
+
+  div[id^='illustration'] { // Full-width images
+    & h1, & h2, & h3 {
+      display: none;
+    }
+    div.figure {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+      border: none;
+      margin: 0;
+      background: none;
+      img {
+        max-width: 100%;
+        box-shadow: none;
+      }
+    }
+  }
+  div[id^='reverse'] { // Float image right
+    & div.figure {
+      float: right;
+      margin: 0.5em .5em .5em .5em;
+    }
+    & h1, & h2, & h3 {
+      display: none;
+    }
+  }
+  div[id^='big'] {
+    & h1, & h2, & h3 {
+      display: none;
+    }
+    & div.figure {
+      max-width: 55%;
+      padding: .25em;
+      float: right;
+      margin: 0 0.5em .5em .5em;
+      img {
+        box-shadow: none;
+      }
+    }   
+  }
+}
 div[id^="done"] {
   ul {    
     li {
@@ -102,82 +247,6 @@ div[id^="done"] {
   }
 }
 
-div[id^="speaker-notes"] {
-  display: none;
-}
-
-div.slide {
-  line-height:            1.5em;
-  font-size:              1.25em;
-  h1 {
-    margin:               .5em;
-  }
-  img {
-    padding:            .5em;
-    border:             1px dashed $color-accent;
-    max-width:            20%;
-    margin:               0 1em;
-  }
-  p img {
-    float: right;
-  }
-  img[alt^='Big'], p img[alt^='Big'] {
-    max-width:            85%;
-    max-height:           65%;
-    float:                none;
-  }
-  div.figure {
-    float:                right;
-    margin-right:         1em;
-    width:                40%;
-    max-width:            50%;
-    img {
-      max-width:          100%;
-      max-height:         65%;
-    }
-  }
-  div[id^="figure"] {
-    max-width:            100%;
-    text-align:           center;
-    & h2, & h3 {
-      display: none;
-    }
-    div.figure {
-      width:              100%;
-      max-width:          100%;
-    }
-    img {
-      border: none;
-      max-width:          100%;
-      max-height:         70%;
-      float: none;
-    }
-  }
-  
-  div[id^="code"] {
-    h1, h2, h3, h4, h5, h6 {
-      display:            none;
-    }
-    & pre {
-      font-size:          .65em;
-      line-height:        .9em;
-    }
-  }
-  div[id^="instead"] {
-    float:                left;
-    width:                45%;
-    clear:                left;
-  }
-  div[id^="use"] {
-    float:                right;
-    width:                45%;
-    clear:                right;
-  }
-  div[id^="use"]+div, div[id^="use"] > div {
-    clear:                both;
-  }
-}
-
 div.toolbar {
   height:               1em;
   font-size:            .5em;
@@ -185,6 +254,8 @@ div.toolbar {
   line-height:          1em;
   padding:              .5em;
 }
+
+
 pre code.sourceCode { color: #fcf9f9; text-shadow: 1px 1px 1px #000; font-size: .85em; line-height: 1.75em; font-weight: 400;}
 code > span.kw { color: desaturate(#E43D3D, 20%); font-weight: 800; }
 code > span.dt, 

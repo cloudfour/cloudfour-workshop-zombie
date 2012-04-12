@@ -17,7 +17,7 @@ Before we even let you *look* at zombie enemies, we're going to have to slim you
 
 # The web is fat
 
-## Figure: The Web is Fat
+## Illustration: The Web is Fat
 
 ![](images/02-web-is-fat.png "The Web is Fat")
 
@@ -30,7 +30,7 @@ Syrupy Flash videos, gimmicky news tickers, potbellied background images, slapda
 
 # We got sloppy
 
-## Figure: Sad Phone
+## Illustration: Sad Phone
 
 ![](images/02-i-am-sad.png "I am sad")
 
@@ -48,17 +48,23 @@ It's like we forgot to zip up our fly, and no one really notices anyway.
 
 # Unfortunately
 
-![](images/02-my-fat-site.png "My fat site")
+![I'm too fat!](images/02-my-fat-site.png "My fat site")
 
 * Bytes cost money.
 * Slow costs money.
 * Invalid markup costs money.
+* Money.
+* And sad.
 
 
 ## Speaker Notes
 
-When it comes to the mobile web, the notion of valid markup and lean pages is not just something to mutter platitudes about. It's important.
+* When it comes to the mobile web, the notion of valid markup and lean pages is not just something to mutter platitudes about. It's important.
+* Indirectly and directly, it costs money. It costs users money (for data); it costs companies money (lost sales opportunities, abandoned user sessions as folks get frustrated).
+* It makes people sad. Crashing. Waiting. Draining batteries.
+* So we have to hit home some topics that may seem a bit remedial, but are of the utmost importance as we venture out on the mobile web.
 
+TODO: Ask Jason about study.
 
 Pause/transition.
 
@@ -66,15 +72,18 @@ Pause/transition.
 
 ![Sergeant Dingus](images/02-dingus.png)
 
-Sergeant Dingus built a [web site](../rucksack/missions/sigma-stronghold-website) to cheer on his comrades in basic training at the Sigma Stronghold.
+Sergeant Dingus built a [web site](../rucksack/missions/01-bootcamp-performance) to cheer on his comrades in basic training at the Sigma Stronghold.
 
 ## Speaker Notes
 
-This ragtag group of underdogs is the neighborhood's only hope against the staggering Zombie horde.
+* This ragtag group of underdogs is the neighborhood's only hope against the staggering Zombie horde.
 
 # Sigma Stronghold
 
-![](images/02-sigma-start.png)
+
+## Big: Sigma Stronghold
+
+![Sigma Stronghold Website](images/02-sigma-start.png)
 
 Our recruit Gomer and this web site are not too different. Bloated, lazy and distracted.
 
@@ -84,14 +93,20 @@ Our recruit Gomer and this web site are not too different. Bloated, lazy and dis
 
 ## Speaker Notes
 
+* [Sigma Stronghold Web Site](../rucksack/missions/01-bootcamp-performance)
 * Walk through site, quickly, in browser window.
-* You can look at it, too. Use the link in your field notes.
+
+### Do This
+
+* You can look at the web site in your browser by clicking on the link under [step 0 in field notes](../rucksack/field-notes/02-bootcamp.html#step-0-getting-the-current-picture "Field Notes").
 
 # We have pity
 
+## Reverse: Zzzzz
+
 ![](images/02-paradox.png "Huh, what?")
 
-Welcome to a paradox:
+## Welcome to a paradox:
 
 ### The first and most important step toward being a mobile web ninja is *extreme focus* on performance
 
@@ -104,7 +119,7 @@ Welcome to a paradox:
 
 # The goal
 
-## Figure: ySlow
+## Illustration: ySlow
 
 ![](images/02-yslow.png)
 
@@ -127,6 +142,16 @@ Let's get a quick picture of the problem
 
 ![ySlow Starting Point](images/02-yslow-start-stats-annotated.png "ySlow Starting Grade: Stats")
 
+## Speaker Notes
+
+* ySlow is from the Yahoo! Exceptional Performance Team that can be installed as an extension to several browsers.
+* Gives you detailed info about the performance of your web page.
+* Let's see what it says about Sigma Stronghold.
+
+### Do This
+
+* If you have ySlow installed, you can run it yourself.
+
 # A bit sloppy
 
 ## Figure: Invalid Code
@@ -139,13 +164,8 @@ Let's get a quick picture of the problem
 * Concurrent HTTP connections are limited
 * Latency is high
 * Processors are less beefy
-* Poor folks have to pay for data
+* Many folks have to pay for data
 * Support for certain desktop technologies not possible
-
-
-## Speaker Notes
-
-TODO: Ask Jason/John about current concurrency situation
 
 
 # The obstacle course between us and a site ready for the zombie hordes
@@ -156,11 +176,10 @@ TODO: Ask Jason/John about current concurrency situation
 4. Optimize and compress our media.
 5. Perform some server-side tuning.
 
-TODO: Obstacle Course image
 
 # Ready?
 
-## Figure: Let's Go!
+## Illustration: Let's Go!
 
 ![](images/02-traffic-light.png "Let's go")
 
@@ -170,6 +189,10 @@ TODO: Obstacle Course image
 
 ![This is a weather widget](images/02-sigma-weather.png "Weather Widget")
 
+## Speaker Notes
+
+If you scroll down to the bottom of the Sigma Stronghold website, you'll see this widget.
+
 # Weather Widget
 
 ## Figure: Bloated weather widget
@@ -177,6 +200,9 @@ TODO: Obstacle Course image
 ![This is a weather widget](images/02-weather-widget.png "Weather Widget")
 
 # The dark side of the weather
+
+
+## Code
 
 ~~~~{.html}
 <div id="weather">
@@ -203,7 +229,7 @@ TODO: Obstacle Course image
 
 ## Speaker notes
 
-* Note the copy in field notes
+* Note the copy in field notes under "Snippet Reference: Weather"
 
 * Ask folks what's broken about this
 
@@ -216,6 +242,8 @@ TODO: Obstacle Course image
 
 # Dingus Responds
 
+## Reverse: Sergeant Dingus
+
 ![](images/02-dingus-2.png)
 
 > I thought the weather widget looked kinda cool. But I admit, it hasn't had an accurate weather reading since four months ago. I guess AccuWeather HQ must have suffered a direct hit. — Sgt. Dingus
@@ -226,19 +254,28 @@ TODO: Obstacle Course image
 
 * Weather widget axed
 
+## Speaker Notes
+
+* So, what does Sgt. Dingus say?
+
+
 # Time to Get Medieval
 
 ## Time for some quick, extreme training
 
-TODO: pew-pew type of image
+### Quick mission: Make several quick changes to clean up the Sigma Stronghold Website's act
 
 # Quick hits; making our code better
+
+##### Index.html
 
 Google font optimization (reduce size and number of HTTP requests)
 
         <link href="http://fonts.googleapis.com/css?family=Cool+Font|Squiggly" rel="stylesheet">
         
 ### Instead of
+
+#### Code
 
 ~~~~{.html}
 <link href="http://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet">
@@ -250,6 +287,8 @@ Google font optimization (reduce size and number of HTTP requests)
 
 ### Use
 
+#### Code
+
 ~~~~{.html}
 <link href="http://fonts.googleapis.com/css?family=Nosifer|Special+Elite" rel="stylesheet">
 ~~~~
@@ -258,16 +297,27 @@ Google font optimization (reduce size and number of HTTP requests)
 
 * 4 HTTP requests down to one
 * Reduced payload
+* Snippet is in field notes under `concatenate link tags`
 
 # Quick hits; making our code better
 
-![](images/02-404s.png "Missing things")
+##### index.html and styles.css
+
+## Figure: Web Inspector
+
+![Screen shot of Web Inspector](images/02-404s.png "Missing things")
   
 * 404s (cleanliness and HTTP requests)
     * `home.css` doesn't exist, yet there is a stylesheet link to it.
     * There's a reference to `blip.jpg` in a CSS rule, yet that file doesn't exist (the correct image filename is `blip.png`).
 
+## Speaker Notes
+
+* Snippet is under `Fixing 404s`
+
 # Quick Hits
+
+##### index.html and styles.css
 
 ## Done!
 
@@ -275,26 +325,9 @@ Google font optimization (reduce size and number of HTTP requests)
 * Remove `<link>` to missing stylesheet
 * fix image `url` in styles
 
-##### index.html and styles.css
+## Speaker Notes
 
-## Speaker notes
-
-### Google font madness
-
-* The Sigma Stronghold site uses Google fonts for web typography.
-* Some of the stylesheets are for Google fonts that aren't being used.
-* Also, we can concatenate our Google font CSS so that we don't have to make multiple HTTP requests.
-    * You can do this by separating the font names with the pipe `|` character.
-    * e.g. 
-        
-        ~~~ {.html}
-        <link href="http://fonts.googleapis.com/css?family=Cool+Font|Squiggly" rel="stylesheet">
-        ~~~
-
-### Some of these things seem to be missing
-
-* `home.css` doesn't exist, yet there is a stylesheet link to it.
-* There's a reference to `blip.jpg` in a CSS rule, yet that file doesn't exist (the correct image filename is `blip.png`).
+* Pause. We're about to talk about how it's still fat.
 
 
 # It's still fat
@@ -305,14 +338,29 @@ OK, we've sort of got the site in regulation uniform, but it's still bulgy. More
 
 ![Updated ySlow Stats](images/02-yslow-2.png)
 
+## Speaker Notes
+
+* Transition to "OK, how do we cut some weight?"
+* Moving into Step 2: Image Optimization in fieldnotes.
+* Some of this may feel old-school or remedial, but, I gotta tell you. There's a lot of people who don't pay their dues to the optimization gods.
+* What are the main sources of the excess flab?
+
 
 # Less than Ideal #1
+
+## Reverse: Zombie Image
 
 ![](images/02-zombie-image.png "Text data in image, bad")
 
 The contact information for HQ is an image. This is bad. It is also a huge image. Also bad.
 
+## Speaker Notes
+
+* Hitting on another theme of content, accessibility and semantic goodness.
+
 # Less than Ideal #2
+
+## Reverse: Zombie Girl
 
 ![](images/02-zombie-girl.png "Un-optimized image, bad")
 
@@ -322,6 +370,8 @@ The zombie girl image is hideous, and it is also very large.
 
 The moon background image is ginormous.
 
+## Figure: Background Image
+
 ![](images/02-moon-image.png "Un-optimized image, bad")
 
 # Let's fix it
@@ -329,6 +379,11 @@ The moon background image is ginormous.
 ![](images/02-dingus-3.png)
 
 > I'm a bit embarrassed about the HQ address image. I didn't even really think about it. Also, we've had some of the troops complain about too much specific zombie imagery on the site overall. I'm attached to the moon photo because my brother took it and I think it's kind of cool. The other images, meh. — Sgt. Dingus.
+
+## Speaker Notes
+
+* Read Dingus quote
+* Example of give and take so ineherent to the web world.
 
 # Smushing our moon
 
@@ -353,6 +408,9 @@ The moon background image is ginormous.
 
 ![Updated Sigma Stronghold Site](images/02-midpoint.png)
 
+## Speaker Notes
+
+* Let's go the final mile by getting all up into the .htaccess
 
 # The final mile: server-side tweaks
 
@@ -368,10 +426,10 @@ By tuning our apache server configuration, we can work minor wonders. Let me sho
 
 ![ySlow Starting Point](images/02-yslow-start.png "ySlow Starting Grade")
 
-
 ## Speaker Notes
 
 * Pause and allow folks to follow along if they so choose.
+* "This is a different tab in the ySlow tool"
 
 # Meaning what?
 
@@ -429,6 +487,11 @@ FileETag none
 * Set far-future expires headers
 * Turned off eTags
 
+## Speaker Notes
+
+* Find this `.htaccess` reference code in step 3 under Snippet Reference there
+
+
 # And?
 
 ## Figure: ySlow Updated Stats
@@ -447,7 +510,6 @@ FileETag none
 ## Speaker Notes
 
 * Can anyone guess why there is .2k on a primed cache?
-* Tell where to find updated code/version
 * Transition here to advanced, second part
 
 # Part II: Advanced Boot Camp
@@ -460,6 +522,8 @@ You're no longer quite as green, soldiers, but there is still work to be done.
 # Some of the markup is a bit stupid
 
 There, we said it. There are a few daft things in the markup that are going to hold it back from being the mobile-friendly success it could be.
+
+## Code
 
 ~~~~{.html}
 <div class="news-item kill">
@@ -547,6 +611,7 @@ We're dealing with an HTML5 document, but not taking advantage of all that HTML5
 
 * Pull up the old and new HTML side by side?
 * Note the notes in field notes, Hee.
+* Some details in `Some Details` in field notes.
 
 ### What we did for you
 

@@ -2,6 +2,9 @@
 % Responsive Web Design
 
 # You already have some blunt weapons
+
+## Reverse: Blunt Weapons
+
 ![](images/03-sharpen.png)
 
 ## Let's sharpen them
@@ -25,11 +28,13 @@ We've prioritized our content just fine, but the current structure of the Sigma 
 
 When the going gets tough, we kill zombies.
 
+## Illustration: Pew Pew
+
 ![](images/03-pew.png)
 
 # Lesson 1: Quarantine never works
 
-## Figure: Quarantine Never Works
+## Illustration: Quarantine Never Works
 
 ![](images/03-quarantine-never-works.png)
 
@@ -43,7 +48,7 @@ Expound on limits of control.
 
 # Responsive Web Design (RWD)
 
-Responsive Web Design (RWD) is a technique for adapting an experience for the user's environment, instead of using a rigid, one-size-fits-all type of structure.
+Responsive Web Design (RWD) is a set of techniques for adapting an experience for the user's environment, instead of using a rigid, one-size-fits-all type of structure.
 
 RWD is based upon the notion of creating a fluid, proportional layout. RWD layouts *scale, flex and adapt* to *flow comfortably* in the user's browser, whatever size or shape it might be at the moment.
 
@@ -59,6 +64,9 @@ RWD is driven by three main technical pieces:
 
 # A Bit of Recon
 
+
+## Reverse: Layout
+
 ![](images/03-sigma-site-structure.png "Site structure")
 
 Right now, the Sigma Stronghold web site's structure is like this.
@@ -68,11 +76,14 @@ Right now, the Sigma Stronghold web site's structure is like this.
 * `#main`: 500px
 * `#sidebar`: No specific width set, but a left margin of 570px
 
-TODO: Better graphic
+## Speaker Notes
 
-# What's so bad about fixed layouts?
+* Step 0: A bit of Recon. Open the [current version of](../rucksack/missions/02-fluid-layout) of the web site in your browser.
+* Layout is handled by `styles.css`
 
-## Figure: Portals into content
+# What's so bad about about layouts defined in fixed units?
+
+## Illustration: Portals into content
 
 ![](images/03-portals.png)
 
@@ -84,7 +95,7 @@ TODO: Better graphic
 
 # Fluid layouts, on the other hand...
 
-## Figure: Fluid Layouts Scale
+## Illustration: Fluid Layouts Scale
 
 ![](images/03-fluid-scales.png)
 
@@ -94,7 +105,11 @@ Pause here. Reconnect idea of fluid layouts back to being a) first step in Respo
 
 "So if we have decided that we want to convert the Sigma Stronghold site to a fluid layout..."
 
+...How would we do that?
+
 # Converting Pixel-based Designs to Fluid
+
+## Figure: Fluid Formula
 
 ![](images/03-fluid-formula.png)
 
@@ -114,6 +129,10 @@ To convert a layout element with pixel widths be fluid, we apply the fluid formu
 * Say your entire layout width is 960px
 * To convert the 720px width to a proportional, fluid one, apply the fluid formula
 
+## Speaker Notes
+
+* Use a piece of paper/flip chart to draw out this equation
+* Answer is 75%;
 
 # Result = Target / Context
 
@@ -140,6 +159,8 @@ In our example, the context was the full layout width—960px
 
 # Applying the fluid formula
 
+## Reverse: Fluid Formula Application
+
 ![](images/03-formula-applied.png)
 
 ## Current metrics of Sigma Stronghold site
@@ -157,21 +178,23 @@ Let's see how this plays out on the `div#main` on the Sigma Stronghold site, sha
 
 # Example of the formula
 
-## Figure: A precise example of the formula
+## Illustration: A precise example of the formula
 
 ![](images/03-formula-example.png)
 
 # Or, roughly
 
-## Figure: Approximation of formula results
+## Illustration: Approximation of formula results
 
 ![](images/03-formula-approximate.png)
 
 ## Speaker Notes
 
-Talk about wiggle room in math.
+Talk about wiggle room in math. Rounding down.
 
 # Let's start from the top
+
+## Reverse: Container widths
 
 ![](images/03-containers.png)
 
@@ -192,10 +215,13 @@ Let's start with the first items in our list:
 
 Open the `styles.css` file linked to in Step 1 of your Field Notes.
 
+> `rucksack/missions/02-fluid-layout/styles.css`
+
 We don't have to throw the undead baby out with the bathwater here. We can change some CSS rules in a targeted way to get fluid!
 
 ## Speaker Notes
 
+* We're on `Step 1` now. Open this CSS file in a text editor if you want to play along.
 * The first thing we're going to do is establish the width of the layout overall. In a lot of cases, this is effectively 100%, but...
 * To do this, we'll want to edit the rules for `body > div` and `#container`.
 
@@ -259,7 +285,7 @@ body > div {
 
 # Making the content areas stretchy and fluid
 
-## Figure: The containers scale down comfortably now
+## Illustration: The containers scale down comfortably now
 
 ![](images/03-containers-scale.png)
 
@@ -297,9 +323,11 @@ We've already done the sloppy math on `#main` and decided it should be 60% wide.
 
 # What about the sidebar?
 
-## The sidebar currently has a left margin of 570px
+## Reverse: Sidebar
 
 ![](images/03-sidebar.png)
+
+## The sidebar currently has a left margin of 570px
 
 570px is within the context of the `#container` element. So, to convert it to fluid, we apply the formula:
 
@@ -340,17 +368,21 @@ We've already done the sloppy math on `#main` and decided it should be 60% wide.
 ## Speaker Notes
 
 * End of Step 1 in Field Notes
+* Adapted fluid layout
 * If you like, you can find the finished version of the fluid CSS in your rucksack (see field notes for details).
 
 # So, what did that get us?
 
-![](images/sigma-site-screenshots/iphone-fluid-broken.jpg "Oh, dear") ![](images/sigma-site-screenshots/iphone-fluid-broken-2.jpg "Oh, dear")
+![](images/sigma-site-screenshots/iphone-fluid-broken.jpg "Oh, dear") 
 
-It's proportional, all right.
+![](images/sigma-site-screenshots/iphone-fluid-broken-2.jpg "Oh, dear")
+
 
 ### What was the point of that? Still looks wretched on mobile
 
 # That's where Media Queries come in
+
+## Reverse: Media Queries
 
 ![](images/03-media-queries.png)
 
@@ -401,11 +433,10 @@ For example, `width` is a media feature of several media types, including `scree
 
 # So?
 
-![](images/sigma-site-screenshots/iphone-fluid-broken.jpg "Oh, dear") ![](images/sigma-site-screenshots/iphone-fluid-broken-2.jpg "Oh, dear")
+![By using media queries, we can apply different CSS in different situations](images/sigma-site-screenshots/iphone-fluid-broken.jpg "Oh, dear") 
 
-By using media queries, we can apply different CSS in different situations.
+![](images/sigma-site-screenshots/iphone-fluid-broken-2.jpg "Oh, dear")
 
-The problem with the Sigma Stronghold site on narrow screens is that the columns are too small and the nav feels too cramped.
 
 # Here's one way we could do it
 
@@ -417,13 +448,20 @@ The problem with the Sigma Stronghold site on narrow screens is that the columns
 
 # Something like this...
 
-## Figure: Adaptive Layout
+## Illustration: Adaptive Layout
 
 ![](images/03-responsive-layout.png)
 
 ## Speaker Notes
 
 Choosing a breakpoint at 600px somewhat arbitrarily.
+
+Now we are moving into step 2 of the hands on work.
+
+1. View fluid site in browser
+2. Open the media query editing file. We'll do this together. `rucksack/missions/03-responsive/media-query.css`. Note that this is NOT the `styles.css` file.
+
+
 
 # Constructing our media query
 
@@ -535,7 +573,7 @@ Remember, we've been editing a file that just contains the media query piece of 
 
 # But...let's think about this a bit more.
 
-## Figure: Thinking
+## Illustration: Thinking
 
 ![](images/03-thinking.png)
 
@@ -563,6 +601,11 @@ Stepping back and thinking what we want our baseline experience to be.
 * Let's also fine-tune the _breakpoints_.
     * Let's make the vertical navigation appear for windows <= 550px.
     * Let's make the double column view kick in and the moon background appear for windows >= 750px.
+    
+## Speaker Notes
+
+Intro to step 3. Closing file, opening the `styles.css` file in 04-mobile-first.
+
 
 # CSS Restructuring
 
@@ -609,6 +652,10 @@ body {
 }
 ~~~
 
+## Speaker Notes
+
+`body` rule is near the top of the `styles.css` file.
+
 # Baseline (cont.)
 
 #### Instead Of
@@ -631,6 +678,10 @@ body > div {
   margin: 0 auto; 
 }
 ~~~
+
+## Speaker Notes
+
+`body > div` is around line 50.
 
 # Baseline (cont.)
 
@@ -658,6 +709,10 @@ body > div {
 }
 ~~~
 
+## Speaker Notes
+
+`#main` is at about line 121. Note that it is a long rule and we're not showing all of it.
+
 # Baseline (cont.)
 
 #### Instead of
@@ -680,8 +735,17 @@ body > div {
 
 ## Speaker Notes
 
+* Line 147 in the file is the `#sidebar` rule.
 * We are now complete with step 3, reworking the baseline. Find help in the snippet section.
-* **Now**, delete the 600px media query and its contents from the bottom of the file. We're going to replace it with two media queries.
+* **Now**, delete the 600px media query and its contents from the bottom of the file. We're going to replace it with two media queries. This starts at line 169.
+
+# A breakpoint for wider screens
+
+## We need a media query for screens of a maximum width of 750px...anyone? Bueller?
+
+## Speaker Notes
+
+* Moving into step 3 in our field notes
 
 # A breakpoint for wider screens
 
@@ -717,6 +781,10 @@ body > div {
   }
 }
 ~~~
+
+## Speaker Notes
+
+* Challenge folks to create a media query for min-width 750px.
 
 # A narrower breakpoint
 
@@ -762,9 +830,14 @@ body > div {
 
 Look at that, soldier! We're thinking mobile- and content-first. We're adapting our requirements and our layout based on the yins and yangs of project and customer requirements. Balance is key.
 
+## Speaker Notes
+
+* Now look at [../rucksack/victories/04-mobile-first](The site)
+
+
 # And now we ride off into the Zombie-tinted sunset?
 
-## Figure: Zombie-tinted sunset
+## Illustration: Zombie-tinted sunset
 
 ![](images/04-sunset.png)
 
@@ -772,13 +845,21 @@ Look at that, soldier! We're thinking mobile- and content-first. We're adapting 
 
 We can go more fluid. Did you notice that even though we have made much of Sigma Stronghold's layout fluid, our media queries are in pixels?
 
+## Also, WTF is a pixel, anyway?
+
+
 # Font Size Baseline
 
-### 1em = 100% ~= 14px ~=16px
+### 1em = 100% ~= 14pt ~=16px
+
+
 
 # So?
 
-TODO: Screen shots
+
+![](http://cloudfour.github.com/figures/ems/medium-borken.jpg)
+
+![](http://cloudfour.github.com/figures/ems/medium-ems.jpg)
 
 # Conversion of our media queries
 
@@ -792,6 +873,12 @@ TODO: Screen shots
 
 @media all and (min-width: 31.25em) { }
 ~~~
+
+## Speaker Notes
+
+* [Final version](../rucksack/victories/05-proportional-media-queries)
+* This is in the victories folder under `05-proportional-media-queries`
+
 
 # Onward!
 

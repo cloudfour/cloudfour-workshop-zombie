@@ -8,10 +8,31 @@
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Device Detection" />
   <title>Know Thy Enemy</title>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
     href="http://www.w3.org/Talks/Tools/Slidy2/styles/slidy.css" />
   <link rel="stylesheet" type="text/css" media="screen, projection, print"
    href="../assets/styles/workshop.css" />
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="../assets/workshop.js"></script>
   <script src="http://www.w3.org/Talks/Tools/Slidy2/scripts/slidy.js.gz"
     charset="utf-8" type="text/javascript"></script>
 </head>
@@ -66,7 +87,7 @@ Chrome/14.0.792.0 Safari/535.1</code></pre>
 <ul>
 <li><a href="http://wurfl.sourceforge.net/">WURFL</a> (Wireless Universal Resource FiLe) by <a href="http://www.scientiamobile.com/">ScientiaMobile</a></li>
 <li><a href="http://deviceatlas.com/">DeviceAtlas</a> by <a href="http://mtld.mobi/">dotMobi</a></li>
-<li><a href="http://openddr.org">OpenDDR</a> / New Apache <a href="http://wiki.apache.org/incubator/DeviceMapProposal">DeviceMap</a> Project</li>
+<li>New Apache <a href="http://wiki.apache.org/incubator/DeviceMapProposal">DeviceMap</a> Project</li>
 <li><a href="http://51degrees.mobi/Products/DeviceData.aspx">51degrees</a></li>
 </ul>
 <p>Pay special attention to the licenses.</p>
@@ -92,6 +113,68 @@ Chrome/14.0.792.0 Safari/535.1</code></pre>
 <div class="section level2" id="does-this-browser-device-combo-support-cookies">
 <h2>Does this browser-device combo support cookies?</h2>
 <p><code>$value = $device-&gt;getCapability('cookie_support');</code></p>
+</div>
+<div class="section level2" id="speaker-notes">
+<h2>Speaker Notes</h2>
+<ul>
+<li>This is WURFL PHP API syntax</li>
+</ul>
+</div>
+</div>
+<div class="section slide level1" id="sniff-sniff">
+<h1>Sniff, Sniff</h1>
+<p>We can combine a few weapons when we sniff out our zombies:</p>
+<ul>
+<li>Server-side device detection and capability detection using the WURFL Cloud Service.</li>
+<li>Client-side feature detection using the Modernizr JavaScript library.</li>
+<li>Client-side feature detection with our own JavaScript.</li>
+</ul>
+</div>
+<div class="section slide level1" id="client-side-device-detection">
+<h1>Client-Side Device Detection</h1>
+<div class="section level2" id="figure-client-side-device-detection">
+<h2>Figure: Client-side device detection</h2>
+<div class="figure">
+<img src="images/08-device-detection-start.png" /><p class="caption"></p>
+</div>
+<div class="section level3" id="mission-do-some-browser-recon">
+<h3>Mission: Do some browser recon</h3>
+</div>
+</div>
+</div>
+<div class="section slide level1" id="device-pixel-ratio">
+<h1>Device Pixel Ratio</h1>
+<p>I'm leaning on jQuery here a bit...</p>
+<pre class="sourceCode javascript"><code class="sourceCode javascript">$(<span class="kw">document</span>).<span class="fu">ready</span>(<span class="kw">function</span>() {
+  <span class="kw">if</span> (<span class="kw">window</span>.<span class="fu">devicePixelRatio</span>) {
+    <span class="kw">var</span> $li = $(<span class="ch">&#39;&lt;li&gt;&lt;/li&gt;&#39;</span>).<span class="fu">html</span>(<span class="ch">&#39;Device Pixel Ratio: &#39;</span> + <span class="kw">window</span>.<span class="fu">devicePixelRatio</span>);
+    $(<span class="st">&quot;#javascript&quot;</span>).<span class="fu">next</span>(<span class="ch">&#39;ul&#39;</span>).<span class="fu">append</span>($li);
+  }
+});</code></pre>
+</div>
+<div class="section slide level1" id="touch-event-support-via-modernizr">
+<h1>Touch Event Support via Modernizr</h1>
+<p>Modernizr can be set up to add CSS classes to the <code>&lt;html&gt;</code> element:</p>
+<pre class="sourceCode css"><code class="sourceCode css"><span class="fl">.touchdetails</span> <span class="kw">{</span> <span class="kw">display:</span> <span class="dt">none</span><span class="kw">;</span> <span class="kw">}</span>
+<span class="fl">.touch</span> <span class="fl">#details-touch</span> <span class="kw">{</span> <span class="kw">display:</span> <span class="dt">list-item</span><span class="kw">;</span> <span class="kw">}</span>
+<span class="fl">.no-touch</span> <span class="fl">#details-notouch</span> <span class="kw">{</span> <span class="kw">display:</span> <span class="dt">list-item</span><span class="kw">;</span> <span class="kw">}</span></code></pre>
+<div class="section level2" id="speaker-notes-1">
+<h2>Speaker Notes</h2>
+<p>This build of Modernizr <em>only</em> tests for touch and adds the classes.</p>
+</div>
+</div>
+<div class="section slide level1" id="filling-in-those-empty-slots">
+<h1>Filling in those empty slots</h1>
+<p>I can get stuff to show up in those empty slots by setting a valid WURFL API key.</p>
+<pre class="sourceCode php"><code class="sourceCode php">$api_key = &#39;&#39;; // ADD YOUR API KEY IF YOU HAVE ONE</code></pre>
+</div>
+<div class="section slide level1" id="now-we-know-more-about-our-zombie">
+<h1>Now we know more about our Zombie</h1>
+<div class="section level2" id="figure-zombie-sniffed">
+<h2>Figure: Zombie sniffed</h2>
+<div class="figure">
+<img src="images/08-device-detection-done.png" /><p class="caption"></p>
+</div>
 </div>
 </div>
 <div class="section slide level1" id="zombie-are-like-snowflakes">
@@ -132,14 +215,6 @@ Chrome/14.0.792.0 Safari/535.1</code></pre>
 <li>Use JavaScript to verify the detection and correct errors</li>
 <li>Feed the corrections back into your database</li>
 <li><a href="http://www.lukew.com/ff/entry.asp?1392">RESS: Responsive Design + Server Side Components</a></li>
-</ul>
-</div>
-<div class="section slide level1" id="combining-sources-of-information">
-<h1>Combining Sources of Information</h1>
-<ul>
-<li>Server-side Device Detection</li>
-<li>Client-side Device Detection using Modernizr</li>
-<li>Other client-side tests</li>
 </ul>
 </div>
 <div class="section slide level1" id="can-we-have-that-sunset-back">
