@@ -16,11 +16,13 @@ $(document).ready(function() {
     }
   };
   
-  $('body').one('click', function(e) {
-    newWindow = window.open('../assets/speakernotes.html','Speaker Notes');
-    setTimeout(slaveWindow, 1500);
-  });
-  $('body').bind('keyup click', function() {
-    var waitASec = setTimeout(showNotes, 400);
-  });
+  if ($('body').find('[id^="speaker"]').length) {
+    $('body').one('click', function(e) {
+      newWindow = window.open('../assets/speakernotes.html','Speaker Notes', 'width=800,height=600,status=no,toolbar=no');
+      setTimeout(slaveWindow, 1500);
+    });
+    $('body').bind('keyup click', function() {
+      var waitASec = setTimeout(showNotes, 400);
+    });
+  }
 });

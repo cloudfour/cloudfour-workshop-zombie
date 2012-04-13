@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>Creating Slideshow Content</title>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="rucksack/field-notes/fieldnotes.css">
+</head>
+<body>
+<header>
+<h1 class="title">Creating Slideshow Content</h1>
+</header>
+<h2 id="slideshow-controls">Slideshow Controls</h2>
+<ul>
+<li><code>B</code>: Make content/font bigger (like zooming in)</li>
+<li><code>S</code>: Make content/font smaller (like zooming out)</li>
+<li><code>F</code>: Show/hide bottom bar</li>
+<li><code>A</code>: Toggle showing of <em>all</em> slides at once</li>
+<li><code>Home</code>: Go to first slide</li>
+<li><code>End</code>: Go to last slide</li>
+</ul>
+<h2 id="image-alignment-and-styling-on-slides">Image alignment and styling on slides</h2>
+<h3 id="default">Default</h3>
+<p>Markdown like this:</p>
+<pre class="markdown"><code># Signs of the Apocalypse are Everywhere!
+
+![](images/01-iphone-adoption-graph.png)</code></pre>
+<p>will result in an image floated left, with styling/background/border, spanning approximately half of the slide horizontally. See: <a href="presentation/01-assess-the-threat.html#(2)">example of default image alignment</a></p>
+<h3 id="other-alignments">Other Alignments</h3>
+<p><em>Note:</em> The text in the heading elements used in the following examples is <em>not</em> displayed to the screen.</p>
+<h4 id="reverse-alignment">Reverse Alignment</h4>
+<p>Reverse-aligned images are presently about the same as default, but with the float to the right. To effect this, use code like:</p>
+<pre class="markdown"><code>## Reverse: Android Fragmentation
+
+![](images/01-there-is-no-android.jpg)</code></pre>
+<p>That is, a heading of any level that starts with the word <code>Reverse</code> and an image within that section. See <a href="presentation/01-assess-the-threat.html#(5)">example of reverse image alignment</a>.</p>
+<h4 id="figuresspanning-full-width">Figures/Spanning Full Width</h4>
+<p>You can also make a standalone image slide, in which the image spans full width and has less background space used.</p>
+<p>Do this by using:</p>
+<pre class="markdown"><code>## Figure: Opera Mini Growth Chart
+
+![](images/01-opera-mini-growth.png)</code></pre>
+<p>That is, any heading level that starts with <code>Figure</code>, containing an image. See <a href="presentation/01-assess-the-threat.html#(3)">example of full-span figure alignment</a>.</p>
+<h4 id="illustrative-images">Illustrative Images</h4>
+<p>There is also a way to remove all background styling from images and have them span wide. I'm using this for images that are &quot;illustrative&quot; versus figurative.</p>
+<p>This can be done with:</p>
+<pre class="markdown"><code>## Illustration: Pew Pew
+
+![](images/03-pew.png)</code></pre>
+<p>That is, any heading element starting with <code>Illustration</code> that has a contained image.</p>
+<p>See an example of how this <a href="presentation/03-release-hounds.html#(4)">illustration style looks</a>.</p>
+<h4 id="image-captions">Image Captions</h4>
+<p>You can add captions to any of the image types listed above by doing this:</p>
+<pre class="markdown"><code>![I&#39;m too fat!](images/02-my-fat-site.png &quot;My fat site&quot;)</code></pre>
+<p><a href="presentation/02-bootcamp.html#(6)">See how this caption lays out.</a></p>
+<h4 id="note-to-self">Note to self</h4>
+<p>I used the following pandoc command to build this HTML page:</p>
+<pre><code>pandoc --from=markdown --to=html5 --standalone --css=rucksack/field-notes/fieldnotes.css writing-content.md &gt; writing-content.html</code></pre>
+</body>
+</html>
