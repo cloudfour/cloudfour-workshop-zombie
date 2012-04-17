@@ -90,6 +90,12 @@ We can combine a few weapons when we sniff out our zombies:
 
 ![](images/08-device-detection-start.png)
 
+## Speaker Notes
+
+* This is the starting point of `missions/10-device-detection/index.php`
+* Yes, it is a PHP page. If you don't have PHP installed, you can just follow along
+* Apologies that I may not have mentioned PHP in the pre-requisite notes 
+
 ### Mission: Do some browser recon
 
 # Device Pixel Ratio
@@ -126,6 +132,11 @@ I can get stuff to show up in those empty slots by setting a valid WURFL API key
 ~~~{.php}
 $api_key = ''; // ADD YOUR API KEY IF YOU HAVE ONE
 ~~~
+
+## Speaker Notes
+
+`626854:Eb2qiUjVhWl4w0raK9XNHSYk1cmeGMnJ`
+
 
 # Now we know more about our Zombie
 

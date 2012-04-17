@@ -370,6 +370,7 @@ We've already done the sloppy math on `#main` and decided it should be 60% wide.
 * End of Step 1 in Field Notes
 * Adapted fluid layout
 * If you like, you can find the finished version of the fluid CSS in your rucksack (see field notes for details).
+* Show the [fluid layout](../rucksack/victories/02-fluid-layout)
 
 # So, what did that get us?
 
@@ -445,6 +446,10 @@ For example, `width` is a media feature of several media types, including `scree
 * Instead of two columns of content, we could have a single column.
 * And instead of tabbed navigation, we could make the navigation elements bigger and more tap-able.
 * Let's say that any screen narrower than 600px should have a single-column view of the content, and vertical navigation items.
+
+## Speaker Notes
+
+* Sketch this out on the flip chart
 
 # Something like this...
 
@@ -878,6 +883,7 @@ We can go more fluid. Did you notice that even though we have made much of Sigma
 
 * [Final version](../rucksack/victories/05-proportional-media-queries)
 * This is in the victories folder under `05-proportional-media-queries`
+* We haven't taken this all the way. Navigation is not super. 
 
 
 # Onward!

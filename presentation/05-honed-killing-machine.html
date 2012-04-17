@@ -79,6 +79,12 @@ AppCache and Geolocation and Things that Make Mobile Shine
 <li>Configure your web server to serve the cache manifest as the correct <code>MIME</code> type.</li>
 <li>Tell browsers about your manifest by using the <code>manifest</code> attribute on the <code>&lt;html&gt;</code> tag.</li>
 </ol>
+<div class="section level2" id="speaker-notes">
+<h2>Speaker Notes</h2>
+<ul>
+<li>Write these items on flip chart</li>
+</ul>
+</div>
 </div>
 <div class="section slide level1" id="step-1-writing-the-manifest">
 <h1>Step 1: Writing the manifest</h1>
@@ -96,7 +102,7 @@ ding/dong.html</code></pre>
 <h5>manifest.appcache</h5>
 </div>
 </div>
-<div class="section level2" id="speaker-notes">
+<div class="section level2" id="speaker-notes-1">
 <h2>Speaker Notes</h2>
 <ul>
 <li>You can see this example at the top of the field notes for this section.</li>
@@ -136,7 +142,7 @@ ding/dong.html</code></pre>
 <li>A changed cache manifest requires <em>two</em> subsequent requests for the changes to be visible.</li>
 </ul>
 </div>
-<div class="section level2" id="speaker-notes-1">
+<div class="section level2" id="speaker-notes-2">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Application Cache: Douchebag by Jake Archibald came out too recently to link to in your field notes.</li>
@@ -153,7 +159,7 @@ ding/dong.html</code></pre>
 <div class="section slide level1" id="conclusion">
 <h1>Conclusion</h1>
 <p>Cache manifest can be a good approach for creating offline modes of web sites and apps. It tends to be more manageable for smaller or app-like web sites.</p>
-<div class="section level2" id="speaker-notes-2">
+<div class="section level2" id="speaker-notes-3">
 <h2>Speaker Notes</h2>
 <p>As cache manifests get more extensive and complex, one often ends up having to create dynamic cache manifest files on the server. Things can get very complicated, very fast.</p>
 </div>
@@ -169,7 +175,7 @@ ding/dong.html</code></pre>
 <h5>.htaccess</h5>
 </div>
 </div>
-<div class="section level2" id="speaker-notes-3">
+<div class="section level2" id="speaker-notes-4">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Moving into step 1 in field notes.</li>
@@ -199,7 +205,7 @@ ding/dong.html</code></pre>
     styles.css
     http://fonts.googleapis.com/css?family=Nosifer|Special+Elite</code></pre>
 </div>
-<div class="section level2" id="speaker-notes-4">
+<div class="section level2" id="speaker-notes-5">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Not technically required to add index.html to the cache manifest, but it is good form.</li>
@@ -222,7 +228,7 @@ ding/dong.html</code></pre>
 </div>
 <p>How'd that go?</p>
 <p>Wait a minute...</p>
-<div class="section level2" id="speaker-notes-5">
+<div class="section level2" id="speaker-notes-6">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Review <a href="../rucksack/missions/06-appcache">the updated page with manifest</a></li>
@@ -261,7 +267,7 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
 <img src="images/05-fontsquirrel.png" /><p class="caption"></p>
 </div>
 </div>
-<div class="section level2" id="speaker-notes-6">
+<div class="section level2" id="speaker-notes-7">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Start step 2</li>
@@ -304,7 +310,7 @@ http://themes.googleusercontent.com/static/fonts/specialelite/v3/9-wW4zu3WNoD5Fj
     <span class="kw">font-style:</span> <span class="dt">normal</span><span class="kw">;</span>
 <span class="kw">}</span></code></pre>
 </div>
-<div class="section level2" id="speaker-notes-7">
+<div class="section level2" id="speaker-notes-8">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Paste this CSS at top of CSS file</li>
@@ -325,7 +331,7 @@ fonts/special-elite-webfont.svg
 fonts/special-elite-webfont.ttf
 fonts/special-elite-webfont.woff</code></pre>
 </div>
-<div class="section level2" id="speaker-notes-8">
+<div class="section level2" id="speaker-notes-9">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Let 'er rip, view <a href="../rucksack/victories/06-appcache">the updated victorious version</a>.</li>
@@ -348,7 +354,7 @@ fonts/special-elite-webfont.woff</code></pre>
 <img src="images/04-drawing-line.png" /><p class="caption"></p>
 </div>
 <p>It's all about what we're targeting and where we're drawing the line.</p>
-<div class="section level2" id="speaker-notes-9">
+<div class="section level2" id="speaker-notes-10">
 <h2>Speaker Notes</h2>
 <p>There are other options, like dynamically generating cache manifests or only delivering them to certain user agents.</p>
 </div>
@@ -383,7 +389,7 @@ fonts/special-elite-webfont.woff</code></pre>
 <h1>Using the W3C API to get the current location</h1>
 <p>Here's what it looks like:</p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">navigator</span>.<span class="fu">geolocation</span>.<span class="fu">getCurrentPosition</span>(successCallback, errorCallback)</code></pre>
-<div class="section level2" id="speaker-notes-10">
+<div class="section level2" id="speaker-notes-11">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Use the function defined as successCallback to work with position stuff.</li>
@@ -394,7 +400,7 @@ fonts/special-elite-webfont.woff</code></pre>
 <div class="section slide level1" id="lets-try-it-out">
 <h1>Let's try it out</h1>
 <p>Hey, let's build a basic geolocation test page to see how that geolocation API works. Most modern leading desktop browsers support the W3C geolocation spec (but you'll need at least IE9; they were (surprise!) a bit late to the party).</p>
-<div class="section level2" id="speaker-notes-11">
+<div class="section level2" id="speaker-notes-12">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Starting step 3 in Field Notes.</li>
@@ -409,7 +415,7 @@ fonts/special-elite-webfont.woff</code></pre>
     <span class="co">// Do something, dammit!</span>
   }
 &lt;/script&gt;</code></pre>
-<div class="section level2" id="speaker-notes-12">
+<div class="section level2" id="speaker-notes-13">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Here's where we've started you.</li>
@@ -438,7 +444,7 @@ fonts/special-elite-webfont.woff</code></pre>
 <div class="section slide level1" id="all-together-now">
 <h1>All together now!</h1>
 <p>If it works, you should get a JavaScript alert with your current latitude and longitude coordinates.</p>
-<div class="section level2" id="speaker-notes-13">
+<div class="section level2" id="speaker-notes-14">
 <h2>Speaker Notes</h2>
 <ul>
 <li>Most browsers will prompt you for permission first.</li>

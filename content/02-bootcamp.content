@@ -180,6 +180,9 @@ Let's get a quick picture of the problem
 4. Optimize and compress our media.
 5. Perform some server-side tuning.
 
+## Speaker Notes
+
+* Write this on flip chart
 
 # Ready?
 
@@ -202,6 +205,10 @@ If you scroll down to the bottom of the Sigma Stronghold website, you'll see thi
 ## Figure: Bloated weather widget
 
 ![This is a weather widget](images/02-weather-widget.png "Weather Widget")
+
+## Speaker Notes
+
+So, why is this weather widget here? As Ethan urged yesterday: "Simplification before suppression." Let's take a sharp look at why this is here at all.
 
 # The dark side of the weather
 
@@ -233,6 +240,7 @@ If you scroll down to the bottom of the Sigma Stronghold website, you'll see thi
 
 ## Speaker notes
 
+* First we can look at the source of the weather itself to get a sense of what grief it might be causing us.
 * Note the copy in field notes under "Snippet Reference: Weather"
 
 * Ask folks what's broken about this

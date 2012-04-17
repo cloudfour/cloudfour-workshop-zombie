@@ -3,6 +3,8 @@
 
 # A blistering quick ride through hybrid-land
 
+## Reverse: Hybrid structure
+
 ![](images/07-hybrid.png)
 
 Sometimes you need to do something that you just can't quite pull off (yet) on the mobile web.
@@ -17,15 +19,18 @@ Giddyup!
 
 ![](images/07-phonegap-platforms.png)
 
-## PhoneGap
 
-![](images/07-phonegap-logo.png) ![](images/07-phonegapbuild-logo.png)
+![](images/07-phonegap-logo.png) 
+
 
 * PhoneGap is one option for using HTML5 technologies to create native apps for multiple platforms.
 
-## PhoneGap Build
+# PhoneGap Build
+
+![](images/07-phonegapbuild-logo.png)
 
 * With PhoneGap Build you can build your projects in the cloud (that is, you don't have to compile/build natively for each platform yourself).
+
 
 ## Speaker Notes
 

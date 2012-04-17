@@ -35,6 +35,10 @@ To create and use a cache manifest:
 2. Configure your web server to serve the cache manifest as the correct `MIME` type.
 3. Tell browsers about your manifest by using the `manifest` attribute on the `<html>` tag.
 
+## Speaker Notes
+
+* Write these items on flip chart
+
 # Step 1: Writing the manifest
 
 ## Cache manifest syntax
