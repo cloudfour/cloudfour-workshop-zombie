@@ -182,6 +182,21 @@ div.slide ul li:before {
   color: #e43d3d;
   margin-right: .5em;
 }
+div.slide ol {
+  counter-reset: listnumbering;
+  margin-top: 1em;
+  list-style: none outside none;
+}
+div.slide ol li {
+  list-style: none;
+}
+div.slide ol li:before {
+  content: "< " counter(listnumbering, decimal) " >>";
+  counter-increment: listnumbering;
+  color: #e43d3d;
+  margin-right: .5em;
+  margin-left: -1em;
+}
 div.slide div[id^="instead"] {
   float: left;
   width: 45%;

@@ -95,7 +95,6 @@ li ul li {
 }
 
 
-
 div[id^="speaker-notes"] {
   display: none;
 }
@@ -125,6 +124,21 @@ div.slide {
         content: '\272a';
         color: $color-accent;
         margin-right: .5em;
+      }
+    }
+  }
+  ol {
+    counter-reset: listnumbering;
+    margin-top: 1em;
+    list-style: none outside none;
+    li {
+      list-style: none;
+      &:before {
+        content: "< " counter(listnumbering, decimal) " >>";
+        counter-increment: listnumbering;
+        color: $color-accent;
+        margin-right: .5em;
+        margin-left: -1em;
       }
     }
   }
