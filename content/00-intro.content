@@ -23,19 +23,15 @@ But before we begin...
 
 # The Zombies are coming—make sure to lay in supplies
 
-1. Get ye to your rucksack. Your USB keychain drive is your only hope. If you're reading this document, you're already in the right place!
-2.  Make sure to have a text editor easily at hand.
-3.  Open your field notes in a web browser. You'll need it!
-4.  If you have access to a web server (locally or on a hosting provider), that's super. You *can* simply view example files in your browser, but there are a few exercises you won't be able to participate in. See section 0 of your field notes for details. TODO: ADAPT THIS
-
-# Inside of your rucksack
-
-You've got to fight zombies. We're giving you some tools.
-
-TODO: layout of rucksack
+1. Get ye to your zombie-fighting rucksack. You'll find it on your USB keychain drive.
+2. Follow along in your *field notes*—each section has its own page of field notes.
+3. If you want to fight alongside us, have a text editor at hand.
+4. Some examples require a web server. One advanced technique requires PHP. If you don't have a web server to work on, that's OK. You can watch as we nab those particular zombies for you.
 
 # Act as if your life depends on it...
 
 * Ask questions.
 * Speak up if you are confused!
 * Give feedback!
+
+### OK, [let's go](01-assess-the-threat.html)
