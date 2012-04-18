@@ -503,7 +503,6 @@ FileETag none
 
 * Find this `.htaccess` reference code in step 3 under Snippet Reference there
 
-
 # And?
 
 ## Figure: ySlow Updated Stats
@@ -523,6 +522,15 @@ FileETag none
 
 * Can anyone guess why there is .2k on a primed cache?
 * Transition here to advanced, second part
+
+# When in battle, remember three things
+
+Yahoo has 14 rules and there are even more things that improve performance, but majority of sites benefit most from four things:
+
+* Well-compressed images
+* Turning on GZIP
+* Reducing HTTP requests
+* Setting Far Future Expires headers
 
 # Part II: Advanced Boot Camp
 
