@@ -5,13 +5,11 @@
 
 We're well into the fray now. Our squad is well-trained and looking sharp. It's time to add to our mobile zombie specializations by training in some more techniques!
 
-## ApplicationCache
+# ApplicationCache
 
-We'll use a cache manifest file to create an offline mode for the Sigma Stronghold site.
+Turns out, the mobile connectivity of Sigma Stronghold troops is not so great, especially in dicey zombie-controlled neighborhoods. Yet those troops need quick access to some of the stuff on the Sigma Stronghold site.
 
-## Geolocation
-
-We'll introduce you to the world of device APIs by playing around with geolocation.
+### Can we help them out?
 
 # ApplicationCache
 
@@ -20,6 +18,9 @@ We'll introduce you to the world of device APIs by playing around with geolocati
 * ApplicationCache object and its methods exposed to JavaScript
 
 # Cache manifests
+
+
+## Reverse: Cache manifest
 
 ![](images/04-cache-manifest.png)
 

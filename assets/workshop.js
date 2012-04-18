@@ -7,8 +7,12 @@ $(document).ready(function() {
   },
   showNotes = function() {
     var $nowSlide = $('div.slide:visible'),
-            speakerNotes = $nowSlide.find('[id^="speaker"]').html();
-    if(speakerNotes && $speakerWindow) {
+        speakerNotes;
+    if($speakerWindow) {
+      speakerNotes = $nowSlide.find('[id^="speaker"]').html();
+      if (!speakerNotes) {
+        speakerNotes = '[No speaker notes]';
+      }
       speakerNotes = '<h1>' + $('div.slide:visible').find('h1').html() + '</h1>' + speakerNotes;
       $speakerWindow.find('body').html(speakerNotes);
       $speakerWindow.find('a').attr('target', 'workshop'); // Open all links from speaker notes in an external, but reused, window
