@@ -1,14 +1,19 @@
-@media [FILL ME IN] {
+@media screen and (max-width:600px) {
   body {
-    /* EDIT ME */
+    background-image: none;
   }
   
-  #main, #sidebar {
-    /* EDIT ME */
+    #main, #sidebar {
+    width: 100%;
+    float: none;
+    clear: both;
+    margin: 0; 
   }
   
   #header nav ul li {
-    /* EDIT ME */
+    float: none;
+    clear: both;
+    width: 100%;
     margin: .5em 0;
   }
   

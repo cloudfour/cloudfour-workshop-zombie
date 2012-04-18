@@ -15,8 +15,6 @@ body {
   background-color: black;
   color: white;
   font: 100% "Special Elite";
-  background-image: url(images/moon.jpg);
-  background-repeat: no-repeat;
 }
 
 h1, h2 {
@@ -50,9 +48,6 @@ a {
 body > div {
   max-width: 920px;
   margin: 0 auto;
-  border-color: rgba(255, 255, 255, 0.2);
-  border-width: 0px 7px;
-  border-style: solid;
 }
 
 small {
@@ -119,10 +114,9 @@ small {
 }
 
 #main {
-  margin-left: 1.5%;
+  margin-left: 0;
   clear: left;
-  float: left;
-  width: 60%;
+  width: 100%;
   background: transparent;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(50%, rgba(228, 61, 61, 0.1)), color-stop(100%, rgba(228, 61, 61, 0.2)));
   background: -moz-linear-gradient(top, transparent 0%, rgba(228, 61, 61, 0.1) 50%, rgba(228, 61, 61, 0.2) 100%);
@@ -145,7 +139,7 @@ small {
 }
 
 #sidebar {
-  margin-left: 63.5%;
+  margin-left: 100%;
 }
 #sidebar > div {
   padding: .5em;
@@ -210,3 +204,60 @@ footer {
     line-height: 1.4em;
   }
 }
+@media all and (min-width:750px) {
+  /* Adding back in the background image */
+  body {
+    background-image: url(images/moon.jpg);
+    background-repeat: no-repeat;
+  }
+
+  /* Here's a border */
+  body > div {
+    border-color: rgba(255, 255, 255, 0.2);
+    border-width: 0px 7px;
+    border-style: solid;
+  }
+
+  /* Float #main left; make it 60% width of its parent container */
+  #main {
+    margin-left: 1.5%;
+    clear: left;
+    float: left;
+    width: 60%;
+  }
+
+  /* A fluid left margin for a right-aligned #sidebar */
+  #sidebar {
+    margin-left: 63.5%;
+    clear: none;
+  }
+}
+@media all and (max-width:550px) {
+  /* Here is the stacked navigation */
+  #header nav ul li {
+    float: none;
+    clear: both;
+    width: 100%;
+    margin: .5em 0;
+  }
+  #header nav ul li a {
+    margin: 0;
+    padding: .75em;
+  }
+  /* Padding and font adjustments */
+  h1 {
+    font-size: 1.75em;
+    line-height: 1.25em;
+  }
+  h3 {
+    font-size: 1.1em;
+    line-height: 1.2em;
+  }
+  p {
+    font-size: .9em;
+    line-height: 1.4em;
+  }
+  #header {
+    padding: 1em 0;
+  }
+  #header h1, #heade

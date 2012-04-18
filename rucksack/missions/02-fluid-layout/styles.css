@@ -48,7 +48,7 @@ a {
 }
 
 body > div {
-  width: 920px;
+  max-width: 920px;
   margin: 0 auto;
   border-color: rgba(255, 255, 255, 0.2);
   border-width: 0px 7px;
@@ -107,8 +107,8 @@ small {
 
 #container {
   background: black;
-  padding: 10px;
-  width: 900px;
+  padding: .625em;
+  max-width: 900px;
   clear: both;
 }
 #container:after {
@@ -119,10 +119,10 @@ small {
 }
 
 #main {
-  margin-left: 10px;
+  margin-left: 1.5%;
   clear: left;
   float: left;
-  width: 550px;
+  width: 60%;
   background: transparent;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(50%, rgba(228, 61, 61, 0.1)), color-stop(100%, rgba(228, 61, 61, 0.2)));
   background: -moz-linear-gradient(top, transparent 0%, rgba(228, 61, 61, 0.1) 50%, rgba(228, 61, 61, 0.2) 100%);
@@ -145,7 +145,7 @@ small {
 }
 
 #sidebar {
-  margin-left: 570px;
+  margin-left: 63.5%;
 }
 #sidebar > div {
   padding: .5em;
